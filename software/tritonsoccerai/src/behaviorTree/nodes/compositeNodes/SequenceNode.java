@@ -15,6 +15,7 @@ public class SequenceNode extends CompositeNode {
         this.sequence = sequence;
     }
 
+    @Override
     public boolean execute() {
         for (BTNode sequenceNode : this.sequence) {
             boolean completed = sequenceNode.execute();

@@ -1,5 +1,9 @@
 package behaviorTree.nodes;
 
-public class BTNode {
+public abstract class BTNode {
+
+    String name;
+
+    public abstract boolean execute();
 
 }
