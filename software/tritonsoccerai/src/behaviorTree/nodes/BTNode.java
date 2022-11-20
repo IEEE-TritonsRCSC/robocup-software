@@ -3,6 +3,9 @@ package behaviorTree.nodes;
 public class BTNode {
 
     private final String name;
+    protected static final String RUNNING = "running";
+    protected static final String SUCCESS = "success";
+    protected static final String FAILURE = "failure";
 
     public BTNode() {
         this.name = "BT Node";
@@ -12,9 +15,13 @@ public class BTNode {
         this.name = name;
     }
 
-    public boolean execute() {
+    public String execute() {
         // overwrite this method
-        return true;
+        return SUCCESS;
+    }
+
+    public String getName() {
+        return this.name;
     }
 
 }

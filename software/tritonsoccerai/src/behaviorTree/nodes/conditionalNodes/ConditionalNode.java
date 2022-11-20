@@ -1,4 +1,6 @@
-package behaviorTree.nodes;
+package behaviorTree.nodes.conditionalNodes;
+
+import behaviorTree.nodes.BTNode;
 
 // Attach to other nodes and make decisions on whether a branch or a node can be executed
 public class ConditionalNode extends BTNode {
@@ -12,8 +14,9 @@ public class ConditionalNode extends BTNode {
     }
 
     @Override
-    public boolean execute() {
-
+    public String execute() {
+        // TODO
+        return SUCCESS;
     }
 
 }

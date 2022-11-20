@@ -5,7 +5,7 @@ import behaviorTree.nodes.BTNode;
 // executes nodes in sequence until all completed or until one fails
 public class SequenceNode extends CompositeNode {
 
-    private BTNode[] sequence;
+    private final BTNode[] sequence;
 
     public SequenceNode() {
         super("Sequence Node");
@@ -18,14 +18,17 @@ public class SequenceNode extends CompositeNode {
     }
 
     @Override
-    public boolean execute() {
+    public String execute() {
         for (BTNode sequenceNode : this.sequence) {
-            boolean completed = sequenceNode.execute();
-            if (!completed) {
-                return false;
+            String completed = sequenceNode.execute();
+            if (completed == FAILURE) {
+                return FAILURE;
+            }
+            if (completed == RUNNING) {
+                return RUNNING;
             }
         }
-        return true;
+        return SUCCESS;
     }
 
 }

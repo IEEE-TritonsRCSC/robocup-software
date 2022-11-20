@@ -4,7 +4,7 @@ import behaviorTree.nodes.BTNode;
 
 public class SelectorNode extends CompositeNode {
 
-    private BTNode[] options;
+    private final BTNode[] options;
 
     public SelectorNode() {
         super("Selector Node");
@@ -17,8 +17,17 @@ public class SelectorNode extends CompositeNode {
     }
 
     @Override
-    public boolean execute() {
-
+    public String execute() {
+        for (BTNode optionNode : this.options) {
+            String completed = optionNode.execute();
+            if (completed == SUCCESS) {
+                return SUCCESS;
+            }
+            if (completed == RUNNING) {
+                return RUNNING;
+            }
+        }
+        return FAILURE;
     }
 
 }

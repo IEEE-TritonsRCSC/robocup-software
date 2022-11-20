@@ -14,8 +14,9 @@ public class CompositeNode extends BTNode {
     }
 
     @Override
-    public boolean execute() {
-
+    public String execute() {
+        // TODO
+        return SUCCESS;
     }
 
 }
