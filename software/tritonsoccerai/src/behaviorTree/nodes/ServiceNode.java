@@ -4,6 +4,14 @@ package behaviorTree.nodes;
 // used to make checks and updates
 public class ServiceNode extends BTNode {
 
+    public ServiceNode() {
+        super("Service Node");
+    }
+
+    public ServiceNode(String name) {
+        super(name);
+    }
+
     @Override
     public boolean execute() {
 

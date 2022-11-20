@@ -8,10 +8,12 @@ public class SequenceNode extends CompositeNode {
     private BTNode[] sequence;
 
     public SequenceNode() {
+        super("Sequence Node");
         sequence = new BTNode[0];
     }
 
-    public SequenceNode(BTNode[] sequence) {
+    public SequenceNode(String name, BTNode[] sequence) {
+        super(name);
         this.sequence = sequence;
     }
 

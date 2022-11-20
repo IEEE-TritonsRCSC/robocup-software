@@ -1,9 +1,20 @@
 package behaviorTree.nodes;
 
-public abstract class BTNode {
+public class BTNode {
 
-    String name;
+    private final String name;
 
-    public abstract boolean execute();
+    public BTNode() {
+        this.name = "BT Node";
+    }
+
+    public BTNode(String name) {
+        this.name = name;
+    }
+
+    public boolean execute() {
+        // overwrite this method
+        return true;
+    }
 
 }
