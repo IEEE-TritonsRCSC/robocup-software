@@ -1,6 +1,7 @@
 package behaviorTree.nodes.compositeNodes;
 
 import behaviorTree.nodes.BTNode;
+import behaviorTree.nodes.NodeState;
 
 public class SelectorNode extends CompositeNode {
 
@@ -17,17 +18,17 @@ public class SelectorNode extends CompositeNode {
     }
 
     @Override
-    public String execute() {
+    public NodeState execute() {
         for (BTNode optionNode : this.options) {
-            String completed = optionNode.execute();
-            if (completed == SUCCESS) {
-                return SUCCESS;
+            NodeState completed = optionNode.execute();
+            if (completed == NodeState.SUCCESS) {
+                return NodeState.SUCCESS;
             }
-            if (completed == RUNNING) {
-                return RUNNING;
+            if (completed == NodeState.RUNNING) {
+                return NodeState.RUNNING;
             }
         }
-        return FAILURE;
+        return NodeState.FAILURE;
     }
 
 }

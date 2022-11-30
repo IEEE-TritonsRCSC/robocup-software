@@ -15,9 +15,9 @@ public abstract class BTNode {
         this.name = name;
     }
 
-    public String execute() {
+    public NodeState execute() {
         // overwrite this method
-        return SUCCESS;
+        return NodeState.SUCCESS;
     }
 
     public String getName() {

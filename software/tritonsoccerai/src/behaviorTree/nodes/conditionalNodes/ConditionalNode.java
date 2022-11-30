@@ -1,6 +1,7 @@
 package behaviorTree.nodes.conditionalNodes;
 
 import behaviorTree.nodes.BTNode;
+import behaviorTree.nodes.NodeState;
 
 // Attach to other nodes and make decisions on whether a branch or a node can be executed
 public class ConditionalNode extends BTNode {
@@ -14,9 +15,9 @@ public class ConditionalNode extends BTNode {
     }
 
     @Override
-    public String execute() {
+    public NodeState execute() {
         // TODO
-        return SUCCESS;
+        return NodeState.SUCCESS;
     }
 
 }

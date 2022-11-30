@@ -1,6 +1,7 @@
 package behaviorTree.nodes.compositeNodes;
 
 import behaviorTree.nodes.BTNode;
+import behaviorTree.nodes.NodeState;
 
 // executes nodes in sequence until all completed or until one fails
 public class SequenceNode extends CompositeNode {
@@ -18,17 +19,17 @@ public class SequenceNode extends CompositeNode {
     }
 
     @Override
-    public String execute() {
+    public NodeState execute() {
         for (BTNode sequenceNode : this.sequence) {
-            String completed = sequenceNode.execute();
-            if (completed == FAILURE) {
-                return FAILURE;
+            NodeState completed = sequenceNode.execute();
+            if (completed == NodeState.FAILURE) {
+                return NodeState.FAILURE;
             }
-            if (completed == RUNNING) {
-                return RUNNING;
+            if (completed == NodeState.RUNNING) {
+                return NodeState.RUNNING;
             }
         }
-        return SUCCESS;
+        return NodeState.SUCCESS;
     }
 
 }

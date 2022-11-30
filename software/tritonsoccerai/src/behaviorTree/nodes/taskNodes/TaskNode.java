@@ -1,6 +1,7 @@
 package behaviorTree.nodes.taskNodes;
 
 import behaviorTree.nodes.BTNode;
+import behaviorTree.nodes.NodeState;
 
 // leaves of tree; actionable things to do
 public class TaskNode extends BTNode {
@@ -14,9 +15,9 @@ public class TaskNode extends BTNode {
     }
 
     @Override
-    public String execute() {
+    public NodeState execute() {
         // TODO
-        return SUCCESS;
+        return NodeState.SUCCESS;
     }
 
 }

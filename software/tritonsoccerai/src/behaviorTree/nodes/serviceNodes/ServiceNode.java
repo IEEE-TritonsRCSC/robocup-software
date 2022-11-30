@@ -1,6 +1,7 @@
 package behaviorTree.nodes.serviceNodes;
 
 import behaviorTree.nodes.BTNode;
+import behaviorTree.nodes.NodeState;
 
 // Attach to composite nodes and execute at defined frequency while branch is being executed;
 // used to make checks and updates
@@ -15,9 +16,9 @@ public class ServiceNode extends BTNode {
     }
 
     @Override
-    public String execute() {
+    public NodeState execute() {
         // TODO
-        return SUCCESS;
+        return NodeState.SUCCESS;
     }
 
 }
