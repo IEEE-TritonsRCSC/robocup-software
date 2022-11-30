@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+option java_package = "proto";
+
+message Vec2D {
+    double x = 1;
+    double y = 2;
+}
+
+
+message Vec3D {
+    double x = 1;
+    double y = 2;
+    double z = 3;
+}
+
+// message RemoteGeometry {
+//     int32 field_length = 1;
+//     int32 field_width = 2;
+//     int32 goal_width = 3;
+//     int32 goal_depth = 4;
+// }
+
+
+
+message CommandData {
+    bool enable_ball_auto_capture = 1; // if true, motion cmds are disabled, robot will 
+                                       // automatically perform delicate moves to capture ball 
+                                       // that's near the robot 
+
+    int32 mode = 2; /* enum CTRL_Mode {TDRD = 0, //TDRD: translational displacement & rotational displacement (at the same time)
+                                       TDRV = 1, //TDRV: translational displacement & rotational velocity (at the same time)
+                                       TVRD = 2, //TVRD: translational velocity & rotational displacement (at the same time)
+                                       TVRV = 3, //TVRV: translational velocity & rotational velocity (at the same time)  
+                                       NSTDRD = 4, // No slowdown TDRD 
+                                       NSTDRV = 5  // No slowdown TDRV
+                                       }
+                                       */
+
+    bool is_world_frame = 3; // True WorldFrame | False BodyFrame for motion setpoint
+
+    Vec3D motion_set_point = 4; // <x, y, theta> 
+                                // theta is between -180 ~ 180 degree
+
+    Vec2D kicker_set_point = 5; // <x, y>
+
+    // Note: dribbler will be managed by the robot automatically
+}
+
+message VisionData { /* World(Camera) Frame */
+    Vec2D bot_pos = 1; /* Position on the field, relative to World camera's reference frame (world frame) 
+                          unit: mm*/
+    Vec2D bot_vel = 2; // unit: mm/s
+    double bot_ang = 3; // unit: degree (-180 ~ 180), positive==counter-clockwise
+    double bot_ang_vel = 4; // unit: degree/s 
+    Vec2D ball_pos = 5; // unit: mm
+    Vec2D ball_vel = 6; // unit: mm/s
+}
+
+message UDPData {
+    CommandData commandData = 1;
+    VisionData visionData = 2;
+}
