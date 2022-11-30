@@ -1,7 +1,7 @@
-package behaviorTree.nodes.conditionalNodes;
+package core.behaviorTree.nodes.conditionalNodes;
 
-import behaviorTree.nodes.BTNode;
-import behaviorTree.nodes.NodeState;
+import core.behaviorTree.nodes.BTNode;
+import core.behaviorTree.nodes.NodeState;
 
 // Attach to other nodes and make decisions on whether a branch or a node can be executed
 public class ConditionalNode extends BTNode {

@@ -1,4 +1,4 @@
-package robot;
+package core.robot;
 
 public enum Side {
     GoalToGuardAtLeft, // BLUE's side in GrSim

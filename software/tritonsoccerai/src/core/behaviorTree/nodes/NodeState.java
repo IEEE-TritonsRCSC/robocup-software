@@ -1,4 +1,4 @@
-package behaviorTree.nodes;
+package core.behaviorTree.nodes;
 
 public enum NodeState {
     RUNNING,

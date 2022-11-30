@@ -1,7 +1,7 @@
-package behaviorTree.nodes.compositeNodes;
+package core.behaviorTree.nodes.compositeNodes;
 
-import behaviorTree.nodes.BTNode;
-import behaviorTree.nodes.NodeState;
+import core.behaviorTree.nodes.BTNode;
+import core.behaviorTree.nodes.NodeState;
 
 // define the root of a branch and the rules for how the branch is executed
 public class CompositeNode extends BTNode {

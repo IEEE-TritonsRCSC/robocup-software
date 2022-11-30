@@ -1,4 +1,4 @@
-package robot;
+package core.robot;
 
 /**
  * Enum representing the two teams

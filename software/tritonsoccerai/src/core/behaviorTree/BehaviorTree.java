@@ -1,6 +1,6 @@
-package behaviorTree;
+package core.behaviorTree;
 
-import behaviorTree.nodes.BTNode;
+import core.behaviorTree.nodes.BTNode;
 
 public abstract class BehaviorTree {
 

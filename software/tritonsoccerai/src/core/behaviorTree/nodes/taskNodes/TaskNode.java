@@ -1,7 +1,7 @@
-package behaviorTree.nodes.taskNodes;
+package core.behaviorTree.nodes.taskNodes;
 
-import behaviorTree.nodes.BTNode;
-import behaviorTree.nodes.NodeState;
+import core.behaviorTree.nodes.BTNode;
+import core.behaviorTree.nodes.NodeState;
 
 // leaves of tree; actionable things to do
 public class TaskNode extends BTNode {

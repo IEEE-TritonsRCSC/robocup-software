@@ -1,4 +1,4 @@
-package robot;
+package core.robot;
 
 public class Foe {
 }

@@ -1,7 +1,7 @@
-package behaviorTree.robotTrees;
+package core.behaviorTree.robotTrees;
 
-import behaviorTree.BehaviorTree;
-import robot.Ally;
+import core.behaviorTree.BehaviorTree;
+import core.robot.Ally;
 
 public class GoalkeeperTree extends BehaviorTree {
 
