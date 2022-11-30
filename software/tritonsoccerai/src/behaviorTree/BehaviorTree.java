@@ -2,7 +2,7 @@ package behaviorTree;
 
 import behaviorTree.nodes.BTNode;
 
-public class BehaviorTree {
+public abstract class BehaviorTree {
 
     private final BTNode root;
 
@@ -10,8 +10,8 @@ public class BehaviorTree {
         this.root = null;
     }
 
-    public BehaviorTree(BTNode root) {
-        this.root = root;
+    private void initialize() {
+        // overwrite this method
     }
 
     public void execute() {
