@@ -15,7 +15,7 @@ public class BehaviorTree {
     }
 
     public void execute() {
-        // TODO
+        root.execute();
     }
 
 }

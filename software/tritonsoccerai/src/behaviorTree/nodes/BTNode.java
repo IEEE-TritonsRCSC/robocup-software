@@ -1,6 +1,6 @@
 package behaviorTree.nodes;
 
-public class BTNode {
+public abstract class BTNode {
 
     private final String name;
     protected static final String RUNNING = "running";
