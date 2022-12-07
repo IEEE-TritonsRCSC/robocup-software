@@ -1,4 +1,4 @@
-package core.robot;
+package core.fieldObjects.robot;
 
 /**
  * Enum representing the two teams
