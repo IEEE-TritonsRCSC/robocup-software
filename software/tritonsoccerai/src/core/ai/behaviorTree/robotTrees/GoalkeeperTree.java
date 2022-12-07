@@ -1,8 +1,6 @@
-package core.behaviorTree.robotTrees;
+package core.ai.behaviorTree.robotTrees;
 
-import core.ai.GameState;
-import core.behaviorTree.BehaviorTree;
-import core.fieldObjects.robot.Ally;
+import core.ai.behaviorTree.BehaviorTree;
 
 public class GoalkeeperTree extends BehaviorTree {
 

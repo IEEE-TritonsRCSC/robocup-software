@@ -1,4 +1,4 @@
-package core.behaviorTree.nodes;
+package core.ai.behaviorTree.nodes;
 
 public abstract class BTNode {
 

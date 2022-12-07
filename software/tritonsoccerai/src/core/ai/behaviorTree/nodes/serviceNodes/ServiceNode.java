@@ -1,7 +1,7 @@
-package core.behaviorTree.nodes.serviceNodes;
+package core.ai.behaviorTree.nodes.serviceNodes;
 
-import core.behaviorTree.nodes.BTNode;
-import core.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.BTNode;
+import core.ai.behaviorTree.nodes.NodeState;
 
 // Attach to composite nodes and execute at defined frequency while branch is being executed;
 // used to make checks and updates

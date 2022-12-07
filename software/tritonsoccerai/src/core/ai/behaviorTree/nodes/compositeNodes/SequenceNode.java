@@ -1,7 +1,7 @@
-package core.behaviorTree.nodes.compositeNodes;
+package core.ai.behaviorTree.nodes.compositeNodes;
 
-import core.behaviorTree.nodes.BTNode;
-import core.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.BTNode;
+import core.ai.behaviorTree.nodes.NodeState;
 
 // executes nodes in sequence until all completed or until one fails
 public abstract class SequenceNode extends CompositeNode {

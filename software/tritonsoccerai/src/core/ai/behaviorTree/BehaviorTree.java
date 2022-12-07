@@ -1,7 +1,6 @@
-package core.behaviorTree;
+package core.ai.behaviorTree;
 
-import core.behaviorTree.nodes.BTNode;
-import core.behaviorTree.nodes.compositeNodes.CompositeNode;
+import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 
 public abstract class BehaviorTree {
 

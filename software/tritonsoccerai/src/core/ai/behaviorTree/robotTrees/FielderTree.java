@@ -1,11 +1,8 @@
-package core.behaviorTree.robotTrees;
+package core.ai.behaviorTree.robotTrees;
 
-import core.behaviorTree.BehaviorTree;
-import core.behaviorTree.nodes.NodeState;
-import core.behaviorTree.nodes.compositeNodes.CompositeNode;
-import core.fieldObjects.robot.Ally;
-
-import java.util.ArrayList;
+import core.ai.behaviorTree.BehaviorTree;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 
 public class FielderTree extends BehaviorTree {
 
