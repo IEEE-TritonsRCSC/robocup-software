@@ -1,23 +1,17 @@
 package core.behaviorTree.robotTrees;
 
+import core.ai.GameState;
 import core.behaviorTree.BehaviorTree;
-import core.robot.Ally;
+import core.fieldObjects.robot.Ally;
 
 public class GoalkeeperTree extends BehaviorTree {
 
-    private Ally goalkeeper;
-
     public GoalkeeperTree() {
         super();
-    }
-
-    public GoalkeeperTree(Ally goalkeeper) {
-        super();
-        this.goalkeeper = goalkeeper;
         initialize();
     }
 
-    private void initialize() {
+    public void initialize() {
         // TODO
     }
 

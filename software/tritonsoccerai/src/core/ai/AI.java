@@ -2,6 +2,11 @@ package core.ai;
 
 import core.behaviorTree.robotTrees.FielderTree;
 import core.behaviorTree.robotTrees.GoalkeeperTree;
+import core.fieldObjects.ball.Ball;
+import core.fieldObjects.robot.Ally;
+import core.fieldObjects.robot.Foe;
+
+import java.util.ArrayList;
 
 public class AI {
 
