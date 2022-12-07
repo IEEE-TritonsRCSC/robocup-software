@@ -3,7 +3,7 @@ package core.behaviorTree.nodes.compositeNodes;
 import core.behaviorTree.nodes.BTNode;
 import core.behaviorTree.nodes.NodeState;
 
-public class SelectorNode extends CompositeNode {
+public abstract class SelectorNode extends CompositeNode {
 
     private final BTNode[] options;
 

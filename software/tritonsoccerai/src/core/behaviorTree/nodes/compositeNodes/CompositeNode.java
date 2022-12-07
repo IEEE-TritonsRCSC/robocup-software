@@ -4,7 +4,7 @@ import core.behaviorTree.nodes.BTNode;
 import core.behaviorTree.nodes.NodeState;
 
 // define the root of a branch and the rules for how the branch is executed
-public class CompositeNode extends BTNode {
+public abstract class CompositeNode extends BTNode {
 
     public CompositeNode() {
         super("Composite Node");
@@ -15,9 +15,6 @@ public class CompositeNode extends BTNode {
     }
 
     @Override
-    public NodeState execute() {
-        // TODO
-        return NodeState.SUCCESS;
-    }
+    public abstract NodeState execute();
 
 }

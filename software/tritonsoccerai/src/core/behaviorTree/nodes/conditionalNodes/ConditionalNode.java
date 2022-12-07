@@ -4,7 +4,7 @@ import core.behaviorTree.nodes.BTNode;
 import core.behaviorTree.nodes.NodeState;
 
 // Attach to other nodes and make decisions on whether a branch or a node can be executed
-public class ConditionalNode extends BTNode {
+public abstract class ConditionalNode extends BTNode {
 
     public ConditionalNode() {
         super("Conditional Node");
@@ -16,8 +16,14 @@ public class ConditionalNode extends BTNode {
 
     @Override
     public NodeState execute() {
-        // TODO
-        return NodeState.SUCCESS;
+        if (conditionSatisfied()) {
+            return NodeState.SUCCESS;
+        }
+        else {
+            return NodeState.FAILURE;
+        }
     }
+
+    public abstract boolean conditionSatisfied();
 
 }

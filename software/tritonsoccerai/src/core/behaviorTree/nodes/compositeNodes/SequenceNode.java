@@ -4,7 +4,7 @@ import core.behaviorTree.nodes.BTNode;
 import core.behaviorTree.nodes.NodeState;
 
 // executes nodes in sequence until all completed or until one fails
-public class SequenceNode extends CompositeNode {
+public abstract class SequenceNode extends CompositeNode {
 
     private final BTNode[] sequence;
 
