@@ -6,7 +6,7 @@ import core.ai.behaviorTree.nodes.NodeState;
 // executes nodes in sequence until all completed or until one fails
 public abstract class SequenceNode extends CompositeNode {
 
-    private final BTNode[] sequence;
+    protected BTNode[] sequence;
 
     public SequenceNode() {
         super("Sequence Node");

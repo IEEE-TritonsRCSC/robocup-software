@@ -4,7 +4,7 @@ import core.ai.behaviorTree.nodes.BTNode;
 import core.ai.behaviorTree.nodes.NodeState;
 
 // leaves of tree; actionable things to do
-public class TaskNode extends BTNode {
+public abstract class TaskNode extends BTNode {
 
     public TaskNode() {
         super("Task Node");
@@ -15,9 +15,6 @@ public class TaskNode extends BTNode {
     }
 
     @Override
-    public NodeState execute() {
-        // TODO
-        return NodeState.SUCCESS;
-    }
+    public abstract NodeState execute();
 
 }

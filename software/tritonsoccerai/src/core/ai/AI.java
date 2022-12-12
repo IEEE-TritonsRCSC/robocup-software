@@ -1,7 +1,7 @@
 package core.ai;
 
-import core.ai.behaviorTree.robotTrees.FielderTree;
-import core.ai.behaviorTree.robotTrees.GoalkeeperTree;
+import core.ai.behaviorTree.robotTrees.fielder.FielderTree;
+import core.ai.behaviorTree.robotTrees.goalkeeper.GoalkeeperTree;
 
 public class AI {
 
