@@ -14,7 +14,4 @@ public abstract class CompositeNode extends BTNode {
         super(name);
     }
 
-    @Override
-    public abstract NodeState execute();
-
 }
