@@ -7,7 +7,7 @@ import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
 import core.ai.behaviorTree.robotTrees.fielder.defense.DefenseRootNode;
 import core.ai.behaviorTree.robotTrees.fielder.offense.OffenseRootNode;
-import core.ai.behaviorTree.robotTrees.specificStateFunctions.*;
+import core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.*;
 
 // root node of fielder tree
 // if game is in open play, plays offense or defense
