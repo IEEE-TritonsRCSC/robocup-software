@@ -8,6 +8,7 @@ import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
 import core.ai.behaviorTree.robotTrees.fielder.defense.DefenseRootNode;
 import core.ai.behaviorTree.robotTrees.fielder.offense.OffenseRootNode;
 import core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.*;
+import core.fieldObjects.robot.Ally;
 
 // root node of fielder tree
 // if game is in open play, plays offense or defense
@@ -35,7 +36,7 @@ public class FielderRootNode extends CompositeNode {
     private GameState stateCurrentlyRunning;
     private boolean onOffense;
 
-    public FielderRootNode() {
+    public FielderRootNode(Ally ally) {
         super("Fielder Root");
         this.haveBall = new ConditionalNode() {
             @Override
@@ -43,18 +44,18 @@ public class FielderRootNode extends CompositeNode {
                 return GameInfo.getPossessBall();
             }
         };
-        this.offense = new OffenseRootNode();
-        this.defense = new DefenseRootNode();
+        this.offense = new OffenseRootNode(ally);
+        this.defense = new DefenseRootNode(ally);
 
-        this.haltNode = new HaltNode();
-        this.stopNode = new StopNode();
-        this.prepareDirectFreeNode = new DirectFreeNode();
-        this.prepareIndirectFreeNode = new IndirectFreeNode();
-        this.prepareKickoffNode = new KickoffNode();
-        this.preparePenaltyNode = new PenaltyNode();
-        this.normalStartNode = new NormalStartNode();
-        this.forceStartNode = new ForceStartNode();
-        this.ballPlacementNode = new BallPlacementNode();
+        this.haltNode = new HaltNode(ally);
+        this.stopNode = new StopNode(ally);
+        this.prepareDirectFreeNode = new DirectFreeNode(ally);
+        this.prepareIndirectFreeNode = new IndirectFreeNode(ally);
+        this.prepareKickoffNode = new KickoffNode(ally);
+        this.preparePenaltyNode = new PenaltyNode(ally);
+        this.normalStartNode = new NormalStartNode(ally);
+        this.forceStartNode = new ForceStartNode(ally);
+        this.ballPlacementNode = new BallPlacementNode(ally);
 
         this.stateCurrentlyRunning = GameInfo.getCurrState();
         this.onOffense = false;

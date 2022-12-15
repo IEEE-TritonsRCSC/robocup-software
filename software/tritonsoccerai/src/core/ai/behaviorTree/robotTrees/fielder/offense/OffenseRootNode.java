@@ -4,8 +4,7 @@ import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
 import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
-import core.ai.behaviorTree.robotTrees.basicFunctions.MakePlayNode;
-import core.ai.behaviorTree.robotTrees.basicFunctions.ShootBallNode;
+import core.fieldObjects.robot.Ally;
 
 public class OffenseRootNode extends CompositeNode {
 
@@ -13,7 +12,7 @@ public class OffenseRootNode extends CompositeNode {
     private SequenceNode shootBall;
     private CompositeNode makePlay;
 
-    public OffenseRootNode() {
+    public OffenseRootNode(Ally ally) {
         super("Offense Root");
         this.haveOpenShot = new ConditionalNode() {
             @Override
@@ -23,8 +22,8 @@ public class OffenseRootNode extends CompositeNode {
                 return true;
             }
         };
-        this.shootBall = new ShootBallNode();
-        this.makePlay = new MakePlayNode();
+        this.shootBall = new ShootBallNode(ally);
+        this.makePlay = new MakePlayNode(ally);
     }
 
     @Override

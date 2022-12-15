@@ -1,15 +1,19 @@
 package core.ai.behaviorTree.robotTrees.fielder.defense;
 
-import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.BTNode;
 import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
+import core.fieldObjects.robot.Ally;
 
 public class DefenseRootNode extends SequenceNode {
 
-    // TODO
+    private MoveBehindBallNode moveBehindBallNode;
+    private PlayDefenseNode playDefenseNode;
 
-    @Override
-    public NodeState execute() {
-        return null;
+    public DefenseRootNode(Ally ally) {
+        super("Defense Root Node");
+        this.moveBehindBallNode = new MoveBehindBallNode(ally);
+        this.playDefenseNode = new PlayDefenseNode(ally);
+        this.sequence = new BTNode[]{this.moveBehindBallNode, this.playDefenseNode};
     }
 
 }

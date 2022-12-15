@@ -1,13 +1,14 @@
-package core.ai.behaviorTree.robotTrees.basicFunctions;
+package core.ai.behaviorTree.robotTrees.fielder.offense;
 
 import core.ai.behaviorTree.nodes.BTNode;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.fieldObjects.robot.Ally;
 
 public class ShootBallNode extends SequenceNode {
 
-    public ShootBallNode() {
+    public ShootBallNode(Ally ally) {
         this.sequence = new BTNode[2];
         this.sequence[0] = new TaskNode("Orient Robot") {
             @Override

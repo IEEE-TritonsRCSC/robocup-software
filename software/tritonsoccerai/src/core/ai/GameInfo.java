@@ -13,17 +13,21 @@ import java.util.ArrayList;
 public class GameInfo {
 
     private static ArrayList<Ally> fielders;
-    private static ArrayList<Foe> foes;
     private static Ally keeper;
+    private static ArrayList<Ally> allies;
+    private static ArrayList<Foe> foes;
     private static Boolean possessBall;
+    private static Ally allyClosestToBall;
     private static GameState currState;
     private static Ball ball;
 
-    public void initialize(ArrayList<Ally> fielders, ArrayList<Foe> foes,
-                           Ally keeper, GameState currState, Ball ball) {
+    public void initialize(ArrayList<Ally> fielders, Ally keeper,
+                           ArrayList<Foe> foes, GameState currState, Ball ball) {
         GameInfo.fielders = fielders;
-        GameInfo.foes = foes;
         GameInfo.keeper = keeper;
+        GameInfo.allies = new ArrayList<>(fielders);
+        GameInfo.allies.add(keeper);
+        GameInfo.foes = foes;
         GameInfo.currState = currState;
         GameInfo.ball = ball;
     }
@@ -32,16 +36,23 @@ public class GameInfo {
         return fielders;
     }
 
-    public static ArrayList<Foe> getFoes() {
-        return foes;
-    }
-
     public static Ally getKeeper() {
         return keeper;
     }
 
+    public static ArrayList<Ally> getAllies() {
+        return allies;
+    }
+
+    public static ArrayList<Foe> getFoes() {
+        return foes;
+    }
+
     public static Boolean getPossessBall() {
         return possessBall;
+    }
+    public static Ally getAllyClosestToBall() {
+        return allyClosestToBall;
     }
 
     public static GameState getCurrState() {

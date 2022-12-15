@@ -13,6 +13,11 @@ public abstract class SequenceNode extends CompositeNode {
         sequence = new BTNode[0];
     }
 
+    public SequenceNode(String name) {
+        super(name);
+        sequence = new BTNode[0];
+    }
+
     public SequenceNode(String name, BTNode[] sequence) {
         super(name);
         this.sequence = sequence;

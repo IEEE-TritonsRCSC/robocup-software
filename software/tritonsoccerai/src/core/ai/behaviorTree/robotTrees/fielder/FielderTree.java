@@ -1,15 +1,16 @@
 package core.ai.behaviorTree.robotTrees.fielder;
 
 import core.ai.behaviorTree.BehaviorTree;
-import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
-import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
+import core.fieldObjects.robot.Ally;
 
 public class FielderTree extends BehaviorTree {
 
-    public FielderTree() {
+    private Ally fielder;
+
+    public FielderTree(Ally fielder) {
         super();
-        this.root = new FielderRootNode();
+        this.root = new FielderRootNode(fielder);
+        this.fielder = fielder;
     }
 
 }
