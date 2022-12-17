@@ -13,7 +13,6 @@ public class PlayDefenseNode extends CompositeNode {
     private ChaseBallNode chaseBallNode;
     private CutPassingLaneNode cutPassingLaneNode;
     private boolean chasingBall;
-    private Thread branchThread;
 
     public PlayDefenseNode(Ally ally) {
         super("Play Defense Node: " + ally.toString());
@@ -25,23 +24,17 @@ public class PlayDefenseNode extends CompositeNode {
 
     @Override
     public NodeState execute() {
-        // at desired frequency
-        if (NodeState.isSuccess(this.closestToBallNode.execute()) != this.chasingBall) {
-            switchBranch();
-        }
+        // at desired frequency, run playDefense()
         return NodeState.SUCCESS;
     }
 
-    private void switchBranch() {
-        if (this.chasingBall) {
-            // stop chasing ball
-            this.cutPassingLaneNode.execute(); // target of branchThread
+    private void playDefense() {
+        if (NodeState.isSuccess(this.closestToBallNode.execute())) {
+            this.chaseBallNode.execute();
         }
         else {
-            // stop cutting passing lane
-            this.chaseBallNode.execute(); // target of branch thread
+            this.cutPassingLaneNode.execute();
         }
-        this.chasingBall = !this.chasingBall;
     }
 
 }

@@ -36,6 +36,8 @@ public class FielderRootNode extends CompositeNode {
     private GameState stateCurrentlyRunning;
     private boolean onOffense;
 
+    private Thread branchThread;
+
     public FielderRootNode(Ally ally) {
         super("Fielder Root");
         this.haveBall = new ConditionalNode() {
@@ -59,6 +61,8 @@ public class FielderRootNode extends CompositeNode {
 
         this.stateCurrentlyRunning = GameInfo.getCurrState();
         this.onOffense = false;
+
+        this.branchThread = new Thread(); // this may be changed to ScheduledExecutorService
     }
 
     @Override

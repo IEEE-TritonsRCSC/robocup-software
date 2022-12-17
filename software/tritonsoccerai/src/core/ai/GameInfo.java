@@ -3,6 +3,7 @@ package core.ai;
 import core.fieldObjects.ball.Ball;
 import core.fieldObjects.robot.Ally;
 import core.fieldObjects.robot.Foe;
+import core.fieldObjects.robot.Team;
 
 import java.util.ArrayList;
 
@@ -11,6 +12,8 @@ import java.util.ArrayList;
 // BT uses info here to make decisions
 
 public class GameInfo {
+
+    private static Team TEAM_COLOR;
 
     private static ArrayList<Ally> fielders;
     private static Ally keeper;
@@ -21,8 +24,9 @@ public class GameInfo {
     private static GameState currState;
     private static Ball ball;
 
-    public void initialize(ArrayList<Ally> fielders, Ally keeper,
+    public void initialize(Team teamColor, ArrayList<Ally> fielders, Ally keeper,
                            ArrayList<Foe> foes, GameState currState, Ball ball) {
+        GameInfo.TEAM_COLOR = teamColor;
         GameInfo.fielders = fielders;
         GameInfo.keeper = keeper;
         GameInfo.allies = new ArrayList<>(fielders);
@@ -30,6 +34,10 @@ public class GameInfo {
         GameInfo.foes = foes;
         GameInfo.currState = currState;
         GameInfo.ball = ball;
+    }
+
+    public static Team getTeamColor() {
+        return TEAM_COLOR;
     }
 
     public static ArrayList<Ally> getFielders() {
@@ -59,8 +67,16 @@ public class GameInfo {
         return currState;
     }
 
+    public static Ball getBall() {
+        return ball;
+    }
+
     public static void setPossessBall(Boolean possessBall) {
         GameInfo.possessBall = possessBall;
+    }
+
+    public static void setAllyClosestToBall(Ally ally) {
+        GameInfo.allyClosestToBall = ally;
     }
 
     public static void setCurrState(GameState currState) {

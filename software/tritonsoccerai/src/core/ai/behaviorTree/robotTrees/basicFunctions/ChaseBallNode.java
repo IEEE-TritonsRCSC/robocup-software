@@ -1,14 +1,22 @@
 package core.ai.behaviorTree.robotTrees.basicFunctions;
 
-import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.fieldObjects.robot.Ally;
 
-public class ChaseBallNode extends SequenceNode {
+public class ChaseBallNode extends TaskNode {
 
-    // TODO
+    private Ally ally;
 
     public ChaseBallNode(Ally ally) {
+        super();
+        this.ally = ally;
+    }
 
+    @Override
+    public NodeState execute() {
+        // send command to move toward ball
+        return NodeState.SUCCESS;
     }
 
 }
