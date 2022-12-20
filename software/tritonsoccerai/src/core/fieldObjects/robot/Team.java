@@ -1,7 +1,7 @@
 package core.fieldObjects.robot;
 
 /**
- * Enum representing the two teams
+ * Defines the possible team colors to be assigned
  */
 public enum Team {
     BLUE,

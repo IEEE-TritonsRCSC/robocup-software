@@ -1,19 +1,20 @@
 package core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions;
 
-import core.ai.behaviorTree.nodes.BTNode;
-import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
 import core.fieldObjects.robot.Ally;
 
-public class HaltNode extends BTNode {
-    public HaltNode(Ally ally) {
+/**
+ * Handles Halt game state
+ */
+public class HaltNode extends SequenceNode {
 
+    private final Ally ally;
+
+    public HaltNode(Ally ally) {
+        super("Halt Node: " + ally.toString());
+        this.ally = ally;
     }
 
     // TODO
-
-    @Override
-    public NodeState execute() {
-        return NodeState.SUCCESS;
-    }
 
 }

@@ -10,17 +10,21 @@ import java.util.ArrayList;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
+/**
+ * AI Module - refer to Figure 1
+ * Runs all behavior tree modules
+ */
 public class AI extends Module {
 
-    private ArrayList<FielderTree> fielderTrees;
-    private GoalkeeperTree goalkeeperTree;
+    private final ArrayList<FielderTree> fielderTrees;
+    private final GoalkeeperTree goalkeeperTree;
 
     public AI(ScheduledThreadPoolExecutor executor) {
         // TODO
         super(executor);
         // initialize GameInfo
         // create channels for each ally
-        this.fielderTrees = new ArrayList<FielderTree>();
+        this.fielderTrees = new ArrayList<>();
         for (Ally fielder : GameInfo.getFielders()) {
             fielderTrees.add(new FielderTree(fielder));
         }

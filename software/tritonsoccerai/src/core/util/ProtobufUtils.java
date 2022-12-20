@@ -3,7 +3,7 @@ package core.util;
 import core.fieldObjects.robot.Team;
 import proto.simulation.SslGcCommon;
 
-import static com.triton.constant.ProgramConstants.objectConfig;
+import static core.constants.ProgramConstants.objectConfig;
 import static proto.simulation.SslSimulationControl.TeleportBall;
 import static proto.simulation.SslSimulationControl.TeleportRobot;
 import static proto.triton.FilteredObject.Ball;

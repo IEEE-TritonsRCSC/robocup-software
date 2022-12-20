@@ -2,6 +2,9 @@ package core.fieldObjects.ball;
 
 import core.fieldObjects.FieldObject;
 
+/**
+ * Utilized to track attributes of the game ball
+ */
 public class Ball extends FieldObject {
 
     private boolean inAir;
@@ -18,6 +21,10 @@ public class Ball extends FieldObject {
 
     public boolean isInAir() {
         return this.inAir;
+    }
+
+    public void setInAir(boolean inAir) {
+        this.inAir = inAir;
     }
 
 }

@@ -7,10 +7,11 @@ import core.fieldObjects.robot.Team;
 
 import java.util.ArrayList;
 
-// central hub to find all info related to game
-// vision module writes info here
-// BT uses info here to make decisions
-
+/**
+ * central hub to find all info related to game
+ * vision module writes info here
+ * BT uses info here to make decisions
+ */
 public class GameInfo {
 
     private static Team TEAM_COLOR;
@@ -24,6 +25,9 @@ public class GameInfo {
     private static GameState currState;
     private static Ball ball;
 
+    /**
+     * Initialize game information
+     */
     public void initialize(Team teamColor, ArrayList<Ally> fielders, Ally keeper,
                            ArrayList<Foe> foes, GameState currState, Ball ball) {
         GameInfo.TEAM_COLOR = teamColor;
@@ -59,6 +63,7 @@ public class GameInfo {
     public static Boolean getPossessBall() {
         return possessBall;
     }
+
     public static Ally getAllyClosestToBall() {
         return allyClosestToBall;
     }

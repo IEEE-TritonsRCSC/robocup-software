@@ -2,6 +2,9 @@ package core.ai.behaviorTree;
 
 import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 
+/**
+ * Superclass that defines behavior trees
+ */
 public abstract class BehaviorTree {
 
     protected CompositeNode root;

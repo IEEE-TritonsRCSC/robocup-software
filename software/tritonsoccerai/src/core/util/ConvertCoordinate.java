@@ -6,6 +6,9 @@ import core.fieldObjects.robot.Team;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Converts coordinates between biased and unbiased perspectives - refer to Figure 6
+ */
 public class ConvertCoordinate {
 
     public static Vector2d audienceToBiased(ArrayList<Float> vector) {

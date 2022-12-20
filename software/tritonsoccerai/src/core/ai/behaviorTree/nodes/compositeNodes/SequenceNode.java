@@ -3,7 +3,9 @@ package core.ai.behaviorTree.nodes.compositeNodes;
 import core.ai.behaviorTree.nodes.BTNode;
 import core.ai.behaviorTree.nodes.NodeState;
 
-// executes nodes in sequence until all completed or until one fails
+/**
+ * Utilized to perform a sequence of tasks
+ */
 public abstract class SequenceNode extends CompositeNode {
 
     protected BTNode[] sequence;
@@ -23,6 +25,9 @@ public abstract class SequenceNode extends CompositeNode {
         this.sequence = sequence;
     }
 
+    /**
+     * Runs sub-nodes in order until one returns FAILURE or all successfully execute
+     */
     @Override
     public NodeState execute() {
         for (BTNode sequenceNode : this.sequence) {

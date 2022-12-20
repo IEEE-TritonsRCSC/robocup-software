@@ -10,13 +10,14 @@ import core.ai.behaviorTree.robotTrees.fielder.offense.OffenseRootNode;
 import core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.*;
 import core.fieldObjects.robot.Ally;
 
-// root node of fielder tree
-// if game is in open play, plays offense or defense
-// if referee command, takes appropriate action
-// checks for change in game status at defined frequency
-// if game status different, kills current branch execution
-// and starts execution of correct branch
-
+/**
+ * Root node of fielder tree
+ * If game is in open play, plays offense or defense
+ * If referee command, takes appropriate action
+ * Checks for change in game status at defined frequency
+ * If game status different, kills current branch execution
+ * and starts execution of correct branch
+ */
 public class FielderRootNode extends CompositeNode {
 
     private final ConditionalNode haveBall;
@@ -63,69 +64,85 @@ public class FielderRootNode extends CompositeNode {
         this.onOffense = false;
 
         this.branchThread = new Thread(); // this may be changed to ScheduledExecutorService
+        this.branchThread.setDaemon(true);
     }
 
+    /**
+     * At a desired frequency, check if game state and ball possession has changed
+     * If so, switch branch
+     */
     @Override
     public NodeState execute() {
         // TODO
-        // at a desired frequency, check if game state and ball possession has changed
-        // if so, switch branch
         if (this.stateCurrentlyRunning != GameInfo.getCurrState()) {
             switchBranch();
         }
         else if (stateCurrentlyRunning == GameState.OPEN_PLAY) {
             if (NodeState.isSuccess(this.haveBall.execute()) != this.onOffense) {
+                this.onOffense = !this.onOffense;
                 switchBranch();
             }
         }
         return NodeState.RUNNING;
     }
 
+    /**
+     * Kill execution of currently-executing branch
+     * Execute the correct branch
+     */
     private void switchBranch() {
         // kill current thread
-        // start new thread with executeCorrectBranch() as target
+        // TODO interrupt() doesn't actually stop execution of the target
+        this.branchThread.interrupt();
+        // start new thread with executeCorrectBranch()
         executeCorrectBranch();
         this.stateCurrentlyRunning = GameInfo.getCurrState();
     }
 
+    /**
+     * Choose the correct branch to execute based on game state
+     * and execute it in a new thread
+     */
     private void executeCorrectBranch() {
         switch (GameInfo.getCurrState()) {
-            case OPEN_PLAY:
-                if (onOffense) {
-                    this.offense.execute();
-                }
-                else {
-                    this.defense.execute();
-                }
-                break;
             case HALT:
-                this.haltNode.execute();
+                this.branchThread = new Thread(this.haltNode);
                 break;
             case STOP:
-                this.stopNode.execute();
+                this.branchThread = new Thread(this.stopNode);
                 break;
             case PREPARE_DIRECT_FREE:
-                this.prepareDirectFreeNode.execute();
+                this.branchThread = new Thread(this.prepareDirectFreeNode);
                 break;
             case PREPARE_INDIRECT_FREE:
-                this.prepareIndirectFreeNode.execute();
+                this.branchThread = new Thread(this.prepareIndirectFreeNode);
                 break;
             case PREPARE_KICKOFF:
-                this.prepareKickoffNode.execute();
+                this.branchThread = new Thread(this.prepareKickoffNode);
                 break;
             case PREPARE_PENALTY:
-                this.preparePenaltyNode.execute();
+                this.branchThread = new Thread(this.preparePenaltyNode);
                 break;
             case NORMAL_START:
-                this.normalStartNode.execute();
+                this.branchThread = new Thread(this.normalStartNode);
                 break;
             case FORCE_START:
-                this.forceStartNode.execute();
+                this.branchThread = new Thread(this.forceStartNode);
                 break;
             case BALL_PLACEMENT:
-                this.ballPlacementNode.execute();
+                this.branchThread = new Thread(this.ballPlacementNode);
+                break;
+            case OPEN_PLAY:
+                if (onOffense) {
+                    this.branchThread = new Thread(this.offense);
+                }
+                else {
+                    this.branchThread = new Thread(this.defense);
+                }
                 break;
         }
+        this.branchThread.setDaemon(true);
+        this.branchThread.start();
     }
 
 }

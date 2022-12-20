@@ -2,6 +2,9 @@ package core.fieldObjects.robot;
 
 import core.fieldObjects.FieldObject;
 
+/**
+ * Superclass for all types of robots
+ */
 public class Robot extends FieldObject {
 
     private boolean unguarded;

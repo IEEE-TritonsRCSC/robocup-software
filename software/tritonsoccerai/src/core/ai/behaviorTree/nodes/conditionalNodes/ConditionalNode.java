@@ -3,7 +3,10 @@ package core.ai.behaviorTree.nodes.conditionalNodes;
 import core.ai.behaviorTree.nodes.BTNode;
 import core.ai.behaviorTree.nodes.NodeState;
 
-// Attach to other nodes and make decisions on whether a branch or a node can be executed
+/**
+ * Attaches to other nodes to help makes decisions on whether a branch or node can/should
+ * be executed
+ */
 public abstract class ConditionalNode extends BTNode {
 
     public ConditionalNode() {
@@ -14,6 +17,9 @@ public abstract class ConditionalNode extends BTNode {
         super(name);
     }
 
+    /**
+     * Checks if condition satisfied
+     */
     @Override
     public NodeState execute() {
         if (conditionSatisfied()) {
@@ -24,6 +30,10 @@ public abstract class ConditionalNode extends BTNode {
         }
     }
 
+    /**
+     * Defines condition to check
+     * Must be overriden in subclasses
+     */
     public abstract boolean conditionSatisfied();
 
 }

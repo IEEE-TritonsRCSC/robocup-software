@@ -3,8 +3,10 @@ package core.ai.behaviorTree.nodes.serviceNodes;
 import core.ai.behaviorTree.nodes.BTNode;
 import core.ai.behaviorTree.nodes.NodeState;
 
-// Attach to composite nodes and execute at defined frequency while branch is being executed;
-// used to make checks and updates
+/**
+ * Attach to composite nodes and execute at defined frequency while branch is being executed
+ * Used to make checks and updates
+ */
 public abstract class ServiceNode extends BTNode {
 
     public ServiceNode() {

@@ -2,7 +2,9 @@ package core.fieldObjects;
 
 import core.util.Vector2d;
 
-// root class for all on-field objects
+/**
+ * Root class for all on-field objects
+ */
 public abstract class FieldObject {
 
     private Vector2d pos;

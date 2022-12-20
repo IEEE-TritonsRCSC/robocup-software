@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+
+/**
+ * Defines 2D vectors and their main functions
+ * Utilized to track position, velocity, and acceleration of field objects
+ */
 public class Vector2d {
     public float x;
     public float y;

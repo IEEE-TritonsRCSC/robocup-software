@@ -1,5 +1,8 @@
 package core.fieldObjects.robot;
 
+/**
+ * Used to track attributes of each ally robot
+ */
 public class Ally extends Robot {
 
     private boolean hasPossession;

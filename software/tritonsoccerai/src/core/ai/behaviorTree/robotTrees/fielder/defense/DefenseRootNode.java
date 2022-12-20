@@ -4,10 +4,14 @@ import core.ai.behaviorTree.nodes.BTNode;
 import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
 import core.fieldObjects.robot.Ally;
 
+/**
+ * Defines the behavior for playing defense as a fielder
+ * Moves ally behind ball, then either chases ball or cuts a passing lane
+ */
 public class DefenseRootNode extends SequenceNode {
 
-    private MoveBehindBallNode moveBehindBallNode;
-    private PlayDefenseNode playDefenseNode;
+    private final MoveBehindBallNode moveBehindBallNode;
+    private final PlayDefenseNode playDefenseNode;
 
     public DefenseRootNode(Ally ally) {
         super("Defense Root Node");

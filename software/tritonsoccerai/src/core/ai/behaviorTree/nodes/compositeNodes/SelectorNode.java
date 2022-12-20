@@ -3,6 +3,9 @@ package core.ai.behaviorTree.nodes.compositeNodes;
 import core.ai.behaviorTree.nodes.BTNode;
 import core.ai.behaviorTree.nodes.NodeState;
 
+/**
+ * Utilized to choose the appropriate task to perform
+ */
 public abstract class SelectorNode extends CompositeNode {
 
     private final BTNode[] options;
@@ -17,6 +20,10 @@ public abstract class SelectorNode extends CompositeNode {
         this.options = options;
     }
 
+    /**
+     * Runs sub-nodes in order until one returns SUCCESS or RUNNING
+     * Otherwise, returns FAILURE
+     */
     @Override
     public NodeState execute() {
         for (BTNode optionNode : this.options) {
