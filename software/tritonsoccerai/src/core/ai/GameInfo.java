@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class GameInfo {
 
     private static Team TEAM_COLOR;
+    private static Team FOE_TEAM_COLOR;
 
     private static ArrayList<Ally> fielders;
     private static Ally keeper;
@@ -28,9 +29,10 @@ public class GameInfo {
     /**
      * Initialize game information
      */
-    public void initialize(Team teamColor, ArrayList<Ally> fielders, Ally keeper,
+    public void initialize(Team teamColor, Team foeTeamColor, ArrayList<Ally> fielders, Ally keeper,
                            ArrayList<Foe> foes, GameState currState, Ball ball) {
         GameInfo.TEAM_COLOR = teamColor;
+        GameInfo.FOE_TEAM_COLOR = foeTeamColor;
         GameInfo.fielders = fielders;
         GameInfo.keeper = keeper;
         GameInfo.allies = new ArrayList<>(fielders);
@@ -42,6 +44,10 @@ public class GameInfo {
 
     public static Team getTeamColor() {
         return TEAM_COLOR;
+    }
+
+    public static Team getFoeTeamColor() {
+        return FOE_TEAM_COLOR;
     }
 
     public static ArrayList<Ally> getFielders() {
@@ -74,6 +80,14 @@ public class GameInfo {
 
     public static Ball getBall() {
         return ball;
+    }
+
+    public static void setTeamColor(Team teamColor) {
+        GameInfo.TEAM_COLOR = teamColor;
+    }
+
+    public static void setFoeTeamColor(Team teamColor) {
+        GameInfo.FOE_TEAM_COLOR = teamColor;
     }
 
     public static void setPossessBall(Boolean possessBall) {
