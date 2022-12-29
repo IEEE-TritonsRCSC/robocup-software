@@ -2,6 +2,7 @@ package core.ai.behaviorTree.robotTrees.goalkeeper.defense;
 
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 
 /**
  * Defined behavior for goalkeeper when on defense
@@ -9,11 +10,16 @@ import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
  */
 public class GKDefenseRootNode extends CompositeNode {
 
-    // TODO
+    private final TaskNode blockBall;
+
+    public GKDefenseRootNode() {
+        super("GK Defense Node");
+        this.blockBall = new BlockBallNode();
+    }
 
     @Override
     public NodeState execute() {
-        return null;
+        return this.blockBall.execute();
     }
 
 }
