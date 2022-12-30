@@ -4,6 +4,8 @@ import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.fieldObjects.robot.Ally;
 
 /**
  * Defines behavior for goalkeeper when on offense
@@ -12,22 +14,49 @@ import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
  */
 public class GKOffenseRootNode extends CompositeNode {
 
-    // TODO
     private final ConditionalNode havePossession;
-    private final PassBallNode passBallNode;
-    private final GKPositionSelfNode positionSelfNode;
+    private final ConditionalNode passingOption;
+    private final TaskNode passBall;
+    private final TaskNode moveOpenPass;
+    // TODO
 
     public GKOffenseRootNode() {
-        super("GKOffense Root");
+        super("GK Offense Root");
         this.havePossession = new ConditionalNode() {
+
             @Override
             public boolean conditionSatisfied() {
-                return GameInfo.getPossessBall();
+                // TODO not sure how to make sure goalie has possession
+                return true; //ally.getHasPossession();
             }
         };
 
-        this.passBallNode = new PassBallNode();
-        this.positionSelfNode = new GKPositionSelfNode();
+        this.passingOption = new ConditionalNode() {
+            @Override
+            public boolean conditionSatisfied() {
+                // TODO Find way to determine if passing is an option at current location to any ally 
+                return true;
+            }
+        };
+
+        this.passBall = new PassBallNode();
+        this.moveOpenPass = new OpenPassNode();
+    }
+
+    @Override
+    public NodeState execute() {
+        if(NodeState.isSuccess(this.havePossession.execute())) {
+            if(NodeState.isSuccess(this.passingOption.execute())) {
+                this.passBall.execute();
+            }
+            else {
+                this.moveOpenPass.execute();
+            }
+        }
+        else {
+            // TODO unsure of what to do if doesn't have possession and on offense
+        }
+        return null;
     }
 
     /*
