@@ -35,9 +35,9 @@ public class GKOffenseRootNode extends CompositeNode {
 
         }
         else{
-            
+
         }
-        return null;
+        return NodeState.SUCCESS;
     }
 
     
