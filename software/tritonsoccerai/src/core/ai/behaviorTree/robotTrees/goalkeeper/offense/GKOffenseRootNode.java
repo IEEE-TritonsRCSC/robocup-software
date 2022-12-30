@@ -59,21 +59,6 @@ public class GKOffenseRootNode extends CompositeNode {
         return null;
     }
 
-    /*
-     * If goalkeeper doesn't have possession, moves to optimal position to be a passing option
-     * If goalkeeper has possession, passes ball
-     */
-    @Override
-    public NodeState execute() {
-        if (NodeState.isSuccess(this.havePossession.execute())) {
-            this.passBallNode.execute();
-        }
-        else{
-            this.positionSelfNode.execute();
-        }
-        return NodeState.SUCCESS;
-    }
-
     
 
 }
