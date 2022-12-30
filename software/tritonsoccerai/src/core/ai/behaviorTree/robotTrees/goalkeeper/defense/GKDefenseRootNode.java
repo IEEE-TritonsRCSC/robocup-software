@@ -10,10 +10,20 @@ import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 public class GKDefenseRootNode extends CompositeNode {
 
     // TODO
+    private final BlockBallNode blockballnode;
 
+    public GKDefenseRootNode() {
+        super("GKDefense Root");
+        this.blockballnode = new BlockBallNode();
+    }
+
+    /*
+     * Always block ball
+     */
     @Override
     public NodeState execute() {
-        return null;
+        this.blockballnode.execute();
+        return NodeState.SUCCESS;
     }
 
 }
