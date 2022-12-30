@@ -14,6 +14,8 @@ public class GKOffenseRootNode extends CompositeNode {
 
     // TODO
     private final ConditionalNode havePossession;
+    private final PassBallNode passBallNode;
+    private final GKPositionSelfNode positionSelfNode;
 
     public GKOffenseRootNode() {
         super("GKOffense Root");
@@ -23,6 +25,9 @@ public class GKOffenseRootNode extends CompositeNode {
                 return GameInfo.getPossessBall();
             }
         };
+
+        this.passBallNode = new PassBallNode();
+        this.positionSelfNode = new GKPositionSelfNode();
     }
 
     /*
@@ -32,10 +37,10 @@ public class GKOffenseRootNode extends CompositeNode {
     @Override
     public NodeState execute() {
         if (NodeState.isSuccess(this.havePossession.execute())) {
-
+            this.passBallNode.execute();
         }
         else{
-
+            this.positionSelfNode.execute();
         }
         return NodeState.SUCCESS;
     }
