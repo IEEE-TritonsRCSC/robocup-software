@@ -1,13 +1,13 @@
-package core.ai.behaviorTree.robotTrees.goalkeeper.defense;
+package core.ai.behaviorTree.robotTrees.goalkeeper.offense;
 
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.util.Vector2d;
 
 /**
- * Moves goalkeeper to optimal position to block ball
+ * Moves goalkeeper to optimal position to pass ball
  */
-public class BlockBallNode extends TaskNode {
+public class GKPositionSelfNode extends TaskNode{
 
     // TODO
 
@@ -16,6 +16,7 @@ public class BlockBallNode extends TaskNode {
         return null;
     }
 
+
     /**
      * Finds optimal location to position self
      */
@@ -23,5 +24,5 @@ public class BlockBallNode extends TaskNode {
         // TODO
         return null;
     }
-
+    
 }
