@@ -5,6 +5,7 @@ import core.fieldObjects.robot.Ally;
 
 /**
  * Handles Halt game state
+ * Stops robot within 2 seconds without manipulating ball
  */
 public class HaltNode extends SequenceNode {
 

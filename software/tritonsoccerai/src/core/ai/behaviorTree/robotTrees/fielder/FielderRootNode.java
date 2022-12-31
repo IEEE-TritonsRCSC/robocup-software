@@ -5,6 +5,7 @@ import core.ai.GameState;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
 import core.ai.behaviorTree.robotTrees.fielder.defense.DefenseRootNode;
 import core.ai.behaviorTree.robotTrees.fielder.offense.OffenseRootNode;
 import core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.*;
@@ -31,8 +32,9 @@ public class FielderRootNode extends CompositeNode {
     private final KickoffNode prepareKickoffNode;
     private final PenaltyNode preparePenaltyNode;
     private final NormalStartNode normalStartNode;
-    private final ForceStartNode forceStartNode;
     private final BallPlacementNode ballPlacementNode;
+
+    private final ClosestToBallNode closestToBallNode;
 
     private GameState stateCurrentlyRunning;
     private boolean onOffense;
@@ -41,6 +43,9 @@ public class FielderRootNode extends CompositeNode {
 
     public FielderRootNode(Ally ally) {
         super("Fielder Root");
+
+        this.closestToBallNode = new ClosestToBallNode(ally);
+
         this.haveBall = new ConditionalNode() {
             @Override
             public boolean conditionSatisfied() {
@@ -52,13 +57,12 @@ public class FielderRootNode extends CompositeNode {
 
         this.haltNode = new HaltNode(ally);
         this.stopNode = new StopNode(ally);
-        this.prepareDirectFreeNode = new DirectFreeNode(ally);
-        this.prepareIndirectFreeNode = new IndirectFreeNode(ally);
-        this.prepareKickoffNode = new KickoffNode(ally);
-        this.preparePenaltyNode = new PenaltyNode(ally);
-        this.normalStartNode = new NormalStartNode(ally);
-        this.forceStartNode = new ForceStartNode(ally);
-        this.ballPlacementNode = new BallPlacementNode(ally);
+        this.prepareDirectFreeNode = new DirectFreeNode(ally, this.closestToBallNode);
+        this.prepareIndirectFreeNode = new IndirectFreeNode(ally, this.closestToBallNode);
+        this.prepareKickoffNode = new KickoffNode(ally, this.closestToBallNode);
+        this.preparePenaltyNode = new PenaltyNode(ally, this.closestToBallNode);
+        this.normalStartNode = new NormalStartNode(ally, this.closestToBallNode);
+        this.ballPlacementNode = new BallPlacementNode(ally, this.closestToBallNode);
 
         this.stateCurrentlyRunning = GameInfo.getCurrState();
         this.onOffense = false;
@@ -126,23 +130,28 @@ public class FielderRootNode extends CompositeNode {
             case NORMAL_START:
                 this.branchThread = new Thread(this.normalStartNode);
                 break;
-            case FORCE_START:
-                this.branchThread = new Thread(this.forceStartNode);
-                break;
             case BALL_PLACEMENT:
                 this.branchThread = new Thread(this.ballPlacementNode);
                 break;
+            case FORCE_START:
             case OPEN_PLAY:
-                if (onOffense) {
-                    this.branchThread = new Thread(this.offense);
-                }
-                else {
-                    this.branchThread = new Thread(this.defense);
-                }
+                runOpenPlay();
                 break;
         }
         this.branchThread.setDaemon(true);
         this.branchThread.start();
+    }
+
+    /**
+     * Run correct open play node in branch thread
+     */
+    private void runOpenPlay() {
+        if (onOffense) {
+            this.branchThread = new Thread(this.offense);
+        }
+        else {
+            this.branchThread = new Thread(this.defense);
+        }
     }
 
 }
