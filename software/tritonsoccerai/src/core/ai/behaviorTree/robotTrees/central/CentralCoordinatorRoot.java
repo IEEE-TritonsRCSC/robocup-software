@@ -1,21 +1,11 @@
 package core.ai.behaviorTree.robotTrees.central;
 
 import core.ai.GameInfo;
+import core.ai.GameState;
 import core.fieldObjects.robot.Ally;
 import core.util.Vector2d;
 
-/**
- * Responsible for coordinating team actions such as passing
- */
-public class CentralCoordinator {
-
-    /**
-     * Check for messages from robots at defined frequency
-     * When new message received, call correct coordinating method
-     */
-    public static void execute() {
-        // TODO
-    }
+public class CentralCoordinatorRoot implements Runnable {
 
     /**
      * Sends appropriate messages to robot trees based on provided pass details
@@ -32,6 +22,21 @@ public class CentralCoordinator {
                 // send message to all other robots to position based on passLoc
             }
         }
+    }
+
+    /**
+     * Check for messages from robots and check if current state is NormalStart
+     * When new message received, call correct coordinating method
+     * If current state is NormalStart, change current state when ball kicked
+     */
+    @Override
+    public void run() {
+        // TODO
+        if (GameInfo.getCurrState() == GameState.NORMAL_START) {
+            // check if ball has been hit by a robot
+            // if so, switch current game state to OPEN_PLAY
+        }
+        // else check for new message to act upon
     }
 
 }

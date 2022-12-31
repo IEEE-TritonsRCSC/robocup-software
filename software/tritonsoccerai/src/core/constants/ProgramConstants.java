@@ -12,4 +12,7 @@ public class ProgramConstants {
     public static NetworkConfig networkConfig = null;
     public static ObjectConfig objectConfig = null;
 
+    public static final int LOOP_FREQUENCY = 20;
+    public static final long LOOP_DELAY = 1000 / LOOP_FREQUENCY;
+
 }
