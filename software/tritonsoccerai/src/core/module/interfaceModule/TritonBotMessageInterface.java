@@ -5,6 +5,7 @@ import core.ai.GameInfo;
 import core.constants.ProgramConstants;
 import core.module.Module;
 import com.triton.networking.UDP_Client;
+import core.networking.UDP_Client;
 import proto.triton.TritonBotCommunication.TritonBotMessage;
 
 import java.io.IOException;
@@ -105,4 +106,5 @@ public class TritonBotMessageInterface extends Module {
         }
         clientMap.forEach((id, client) -> clientFutures.add(executor.submit(client)));
     }
+
 }

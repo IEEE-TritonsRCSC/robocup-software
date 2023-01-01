@@ -5,7 +5,7 @@ import com.rabbitmq.client.Delivery;
 import core.constants.ProgramConstants;
 import core.fieldObjects.robot.Team;
 import core.module.Module;
-import com.triton.networking.UDP_Client;
+import core.networking.UDP_Client;
 import proto.simulation.SslSimulationConfig;
 import proto.simulation.SslSimulationConfig.SimulatorConfig;
 
