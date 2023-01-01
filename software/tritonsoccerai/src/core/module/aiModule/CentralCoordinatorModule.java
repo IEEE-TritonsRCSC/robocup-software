@@ -1,6 +1,5 @@
 package core.module.aiModule;
 
-import core.ai.GameInfo;
 import core.ai.behaviorTree.robotTrees.central.CentralCoordinatorRoot;
 import core.constants.ProgramConstants;
 import core.module.Module;
@@ -15,8 +14,8 @@ import java.util.concurrent.TimeoutException;
  */
 public class CentralCoordinatorModule extends Module {
 
-    private ScheduledThreadPoolExecutor executor;
-    private CentralCoordinatorRoot centralCoordinatorRoot;
+    private final ScheduledThreadPoolExecutor executor;
+    private final CentralCoordinatorRoot centralCoordinatorRoot;
 
     public CentralCoordinatorModule(ScheduledThreadPoolExecutor executor) {
         super(executor);
@@ -28,7 +27,7 @@ public class CentralCoordinatorModule extends Module {
      * At defined frequency, run Central Coordinator Root
      */
     public void execute() {
-        this.executor.scheduleAtFixedRate(this.centralCoordinatorRoot, 0,
+        this.executor.scheduleAtFixedRate(this.centralCoordinatorRoot, ProgramConstants.INITIAL_DELAY,
                                         ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
     }
 

@@ -9,6 +9,7 @@ import core.fieldObjects.robot.Ally;
 import core.fieldObjects.robot.Team;
 import core.module.Module;
 import core.module.aiModule.AIModule;
+import core.module.aiModule.CentralCoordinatorModule;
 import core.module.aiModule.FielderTreeModule;
 import core.module.aiModule.GKTreeModule;
 import core.module.interfaceModule.CameraInterface;
@@ -146,9 +147,10 @@ public class AI {
         // core ai modules
         startModule(new AIModule(executor));
         for (Ally fielder : GameInfo.getFielders()) {
-            startModule(new FielderTreeModule(executor, new FielderTree(fielder)));
+            startModule(new FielderTreeModule(executor, fielder));
         }
-        startModule(new GKTreeModule(executor, new GoalkeeperTree()));
+        startModule(new GKTreeModule(executor));
+        startModule(new CentralCoordinatorModule(executor));
     }
 
     public void startProcessingModules() {

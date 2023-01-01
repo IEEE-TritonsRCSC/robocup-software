@@ -10,11 +10,11 @@ import java.util.concurrent.TimeoutException;
 public class GKTreeModule extends Module {
 
     // TODO
-    private GoalkeeperTree tree;
+    private final GoalkeeperTree tree;
 
-    public GKTreeModule(ScheduledThreadPoolExecutor executor, GoalkeeperTree tree) {
+    public GKTreeModule(ScheduledThreadPoolExecutor executor) {
         super(executor);
-        this.tree = tree;
+        this.tree = new GoalkeeperTree();
     }
 
     @Override
