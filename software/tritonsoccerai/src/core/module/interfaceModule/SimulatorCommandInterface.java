@@ -1,11 +1,15 @@
 package core.module.interfaceModule;
 
+//TODO Can't find these two files even in the old repo
 import com.google.protobuf.Any;
 import com.rabbitmq.client.Delivery;
+
 import core.constants.ProgramConstants;
 import core.fieldObjects.robot.Team;
 import core.module.Module;
-import com.triton.networking.UDP_Client;
+import core.networking.UDP_Client;
+
+//TODO Not recognizing proto?
 import proto.simulation.SslSimulationConfig;
 import proto.simulation.SslSimulationConfig.SimulatorConfig;
 
@@ -46,6 +50,13 @@ public class SimulatorCommandInterface extends Module {
         declareConsume(AI_SIMULATOR_CONFIG, this::callbackSimulatorConfig);
     }
 
+    /**
+     * Called when a message is received.
+     * Creates the simulator_control from a delivery and adds it to a sendQueue of a client.
+     * 
+     * @param s
+     * @param delivery
+     */
     private void callbackSimulatorControl(String s, Delivery delivery) {
         SimulatorControl simulatorControl = (SimulatorControl) simpleDeserialize(delivery.getBody());
 
@@ -54,6 +65,13 @@ public class SimulatorCommandInterface extends Module {
         client.addSend(simulatorCommand.build().toByteArray());
     }
 
+    /**
+     * Called when a message is received.
+     * Creates the simulator_config from a delivery and adds it to a sendQueue of a client.
+     * 
+     * @param s
+     * @param delivery
+     */  
     private void callbackSimulatorConfig(String s, Delivery delivery) {
         SimulatorConfig simulatorConfig = (SimulatorConfig) simpleDeserialize(delivery.getBody());
 
@@ -68,13 +86,25 @@ public class SimulatorCommandInterface extends Module {
         clientFuture.cancel(false);
     }
 
+    /**
+     * Setup the udp client
+     * 
+     * @throws IOException
+     */
     private void setupClient() throws IOException {
+        //Setup a udp client
         client = new UDP_Client(ProgramConstants.networkConfig.simulationCommandAddress,
                 ProgramConstants.networkConfig.simulationCommandPort,
                 this::callbackSimulatorResponse,
                 10);
     }
 
+    /**
+     * Called when a response of the simulator to the connected client is received. 
+     * Parses the response and displays it.
+     *
+     * @param bytes the bytes of the response received
+     */
     private void callbackSimulatorResponse(byte[] bytes) {
         try {
             SimulatorResponse simulatorResponse = SimulatorResponse.parseFrom(bytes);
@@ -91,9 +121,14 @@ public class SimulatorCommandInterface extends Module {
         clientFuture = executor.submit(client);
     }
 
+    /**
+     * Setup the robots in the simulator
+     * 
+     */    
     private void setupSimulator() {
         SimulatorControl.Builder simulatorControl = SimulatorControl.newBuilder();
 
+        //Setup blue team robots
         for (int id = 6; id < 12; id++) {
             TeleportRobot.Builder teleportRobot = TeleportRobot.newBuilder();
             RobotId.Builder robotId = RobotId.newBuilder();
@@ -104,6 +139,7 @@ public class SimulatorCommandInterface extends Module {
             simulatorControl.addTeleportRobot(teleportRobot);
         }
 
+        //Setup yellow team robots
         for (int id = 6; id < 12; id++) {
             TeleportRobot.Builder teleportRobot = TeleportRobot.newBuilder();
             RobotId.Builder robotId = RobotId.newBuilder();
@@ -127,6 +163,13 @@ public class SimulatorCommandInterface extends Module {
         publish(AI_SIMULATOR_CONFIG, simulatorConfig.build());
     }
 
+    /**
+     * Setup the specs of the robots in the simulator
+     * 
+     * @param team
+     * @param id the robot id
+     * @param specs 
+     */
     private void addSpecs(Team team, int id, SslSimulationConfig.RobotSpecs.Builder specs) {
         RobotId.Builder robotId = RobotId.newBuilder();
         if (team == Team.YELLOW)
@@ -135,6 +178,7 @@ public class SimulatorCommandInterface extends Module {
             robotId.setTeam(BLUE);
         robotId.setId(id);
 
+        //Setup the robot specs
         specs.setId(robotId);
         specs.setRadius(ProgramConstants.objectConfig.robotRadius);
         specs.setHeight(ProgramConstants.objectConfig.robotHeight);

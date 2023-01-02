@@ -1,7 +1,7 @@
 syntax = "proto2";
 package proto.vision;
 
-import "messages_robocup_ssl_detection.proto";
+import "proto.vision/messages_robocup_ssl_detection.proto";
 
 message Log_Frame
 {

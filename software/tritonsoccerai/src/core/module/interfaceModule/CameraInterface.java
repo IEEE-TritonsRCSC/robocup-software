@@ -1,6 +1,6 @@
 package core.module.interfaceModule;
 
-import com.triton.networking.UDP_MulticastReceiver;
+import core.networking.UDP_MulticastReceiver;
 import core.constants.ProgramConstants;
 import core.module.Module;
 
@@ -10,6 +10,8 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
 import static core.messaging.Exchange.AI_VISION_WRAPPER;
+
+//TODO Not recognizing proto?
 import static proto.vision.MessagesRobocupSslWrapper.SSL_WrapperPacket;
 
 public class CameraInterface extends Module {
