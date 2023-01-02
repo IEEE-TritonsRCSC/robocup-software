@@ -5,7 +5,6 @@ import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
 import core.fieldObjects.robot.Ally;
-import core.fieldObjects.robot.Foe;
 
 
 /**
@@ -13,21 +12,21 @@ import core.fieldObjects.robot.Foe;
  */
 public class MakePlayNode extends CompositeNode {
     private final DribbleBallNode dribble;
-    private final CoordinatedPassNode coordinatedpass;
+    private final CoordinatedPassNode coordinatedPass;
 
     public MakePlayNode(Ally ally) {
         // TODO
         super("Make Play");
         this.dribble = new DribbleBallNode(ally);
-        this.coordinatedpass = new CoordinatedPassNode(ally);
+        this.coordinatedPass = new CoordinatedPassNode(ally);
     }
     
     @Override
     public NodeState execute() {
-        //TODO
-        //Determine if pass or dribble using available coordinate info
+        // TODO
+        // Determine if pass or dribble using available coordinate info
         this.dribble.execute();
-        this.coordinatedpass.execute();
+        this.coordinatedPass.execute();
 
         return NodeState.SUCCESS;
     }

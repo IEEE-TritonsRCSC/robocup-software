@@ -132,4 +132,5 @@ public class TritonBotMessageInterface extends Module {
         }
         clientMap.forEach((id, client) -> clientFutures.add(executor.submit(client)));
     }
+
 }

@@ -1,8 +1,8 @@
 package core.module.interfaceModule;
 
-import core.networking.UDP_MulticastReceiver;
 import core.constants.ProgramConstants;
 import core.module.Module;
+import core.networking.UDP_MulticastReceiver;
 
 import java.io.IOException;
 import java.util.concurrent.Future;
@@ -72,4 +72,5 @@ public class CameraInterface extends Module {
         super.run();
         receiverFuture = executor.submit(receiver);
     }
+
 }
