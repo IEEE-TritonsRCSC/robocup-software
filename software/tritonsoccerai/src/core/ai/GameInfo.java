@@ -20,7 +20,11 @@ public class GameInfo {
     private static ArrayList<Ally> fielders;
     private static Ally keeper;
     private static ArrayList<Ally> allies;
+
+    // last foe in list should be opposing goalkeeper
     private static ArrayList<Foe> foes;
+    private static ArrayList<Foe> foeFielders;
+    private static Foe foeKeeper;
     private static Boolean possessBall;
     private static Ally allyClosestToBall;
     private static GameState currState;
@@ -38,6 +42,8 @@ public class GameInfo {
         GameInfo.allies = new ArrayList<>(fielders);
         GameInfo.allies.add(keeper);
         GameInfo.foes = foes;
+        GameInfo.foeFielders = (ArrayList<Foe>) foes.subList(0, foes.size() - 1);
+        GameInfo.foeKeeper = foes.get(foes.size() - 1);
         GameInfo.currState = currState;
         GameInfo.ball = ball;
     }
@@ -64,6 +70,14 @@ public class GameInfo {
 
     public static ArrayList<Foe> getFoes() {
         return foes;
+    }
+
+    public static ArrayList<Foe> getFoeFielders() {
+        return foeFielders;
+    }
+
+    public static Foe getFoeKeeper() {
+        return foeKeeper;
     }
 
     public static Boolean getPossessBall() {
