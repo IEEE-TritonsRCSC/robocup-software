@@ -1,6 +1,7 @@
 package core.fieldObjects.ball;
 
 import core.fieldObjects.FieldObject;
+import core.fieldObjects.robot.Robot;
 
 /**
  * Utilized to track attributes of the game ball
@@ -8,15 +9,18 @@ import core.fieldObjects.FieldObject;
 public class Ball extends FieldObject {
 
     private boolean inAir;
+    private Robot possessedBy;
 
     public Ball() {
         super();
         this.inAir = false;
+        this.possessedBy = null;
     }
 
     public Ball(int xPos, int yPos) {
         super(xPos, yPos);
         this.inAir = false;
+        this.possessedBy = null;
     }
 
     public boolean isInAir() {
@@ -25,6 +29,14 @@ public class Ball extends FieldObject {
 
     public void setInAir(boolean inAir) {
         this.inAir = inAir;
+    }
+
+    public Robot getPossessedBy() {
+        return this.possessedBy;
+    }
+
+    public void setPossessedBy(Robot ballholder) {
+        this.possessedBy = ballholder;
     }
 
 }
