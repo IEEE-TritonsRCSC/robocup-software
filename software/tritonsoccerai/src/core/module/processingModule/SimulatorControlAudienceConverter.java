@@ -1,17 +1,17 @@
-package com.triton.module.processing_module;
+package core.module.processingModule;
 
 import com.rabbitmq.client.Delivery;
-import com.triton.module.Module;
-import com.triton.util.ConvertCoordinate;
-import com.triton.util.Vector2d;
+import core.module.Module;
+import core.util.ConvertCoordinate;
+import core.util.Vector2d;
 
 import java.io.IOException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
-import static com.triton.messaging.Exchange.AI_BIASED_SIMULATOR_CONTROL;
-import static com.triton.messaging.Exchange.AI_SIMULATOR_CONTROL;
-import static com.triton.messaging.SimpleSerialize.simpleDeserialize;
+import static core.messaging.Exchange.AI_BIASED_SIMULATOR_CONTROL;
+import static core.messaging.Exchange.AI_SIMULATOR_CONTROL;
+import static core.messaging.SimpleSerialize.simpleDeserialize;
 import static proto.simulation.SslSimulationControl.*;
 
 

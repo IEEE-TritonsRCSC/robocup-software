@@ -1,9 +1,9 @@
-package com.triton.module.processing_module;
+package core.module.processingModule;
 
 import com.rabbitmq.client.Delivery;
-import com.triton.module.Module;
-import com.triton.util.ConvertCoordinate;
-import com.triton.util.Vector2d;
+import core.module.Module;
+import core.util.ConvertCoordinate;
+import core.util.Vector2d;
 import proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame;
 
 import java.io.IOException;
@@ -12,9 +12,9 @@ import java.util.List;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
-import static com.triton.messaging.Exchange.AI_BIASED_VISION_WRAPPER;
-import static com.triton.messaging.Exchange.AI_VISION_WRAPPER;
-import static com.triton.messaging.SimpleSerialize.simpleDeserialize;
+import static core.messaging.Exchange.AI_BIASED_VISION_WRAPPER;
+import static core.messaging.Exchange.AI_VISION_WRAPPER;
+import static core.messaging.SimpleSerialize.simpleDeserialize;
 import static proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall;
 import static proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot;
 import static proto.vision.MessagesRobocupSslGeometry.*;
