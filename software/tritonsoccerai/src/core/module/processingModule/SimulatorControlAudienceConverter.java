@@ -14,26 +14,54 @@ import static com.triton.messaging.Exchange.AI_SIMULATOR_CONTROL;
 import static com.triton.messaging.SimpleSerialize.simpleDeserialize;
 import static proto.simulation.SslSimulationControl.*;
 
+
+/*
+ * Class for changing a robot biased simulator control to a audience biased simulator control
+ */
 public class SimulatorControlAudienceConverter extends Module {
+
+    /**
+     * Constructor for this class
+     * @param executor executor to be used in parent constructor
+     */
     public SimulatorControlAudienceConverter(ScheduledThreadPoolExecutor executor) {
         super(executor);
     }
 
+    /**
+     * Meet requirement for object that extends module
+     */
     @Override
     protected void prepare() {
     }
 
+    /**
+     * Consumes from AI_BIASED_ROBOT_COMMAND and runs callBackBiasedRobotCommand
+     * @throws IOException
+     * @throws TimeoutException
+     */
     @Override
     protected void declareConsumes() throws IOException, TimeoutException {
         declareConsume(AI_BIASED_SIMULATOR_CONTROL, this::callbackBiasedSimulatorControl);
     }
 
+    /**
+     * Takes a message containing a biased robot command and publishes 
+     * audience biased command to the AI_ROBOT_COMMAND exchange.
+     * @param s - param not used
+     * @param delivery - Message containing biased command for robot
+     */
     private void callbackBiasedSimulatorControl(String s, Delivery delivery) {
         SimulatorControl biasedSimulatorControl = (SimulatorControl) simpleDeserialize(delivery.getBody());
         SimulatorControl simulatorControl = controlBiasedToAudience(biasedSimulatorControl);
         publish(AI_SIMULATOR_CONTROL, simulatorControl);
     }
 
+    /**
+     * Converts biased control to audience control
+     * @param control The original control from the biased perspective
+     * @return A control with the audience perspective
+     */
     private static SimulatorControl controlBiasedToAudience(SimulatorControl control) {
         SimulatorControl.Builder audienceControl = control.toBuilder();
         audienceControl.setTeleportBall(teleportBallBiasedToAudience(control.getTeleportBall()));
@@ -46,6 +74,11 @@ public class SimulatorControlAudienceConverter extends Module {
         return audienceControl.build();
     }
 
+    /**
+     * Converts a ball from the biased perspective to audience perspective
+     * @param teleportBall The ball from the biased perspective
+     * @return The ball from the audience perspective
+     */
     private static TeleportBall teleportBallBiasedToAudience(TeleportBall teleportBall) {
         TeleportBall.Builder audienceTeleportBall = teleportBall.toBuilder();
 
@@ -60,6 +93,11 @@ public class SimulatorControlAudienceConverter extends Module {
         return audienceTeleportBall.build();
     }
 
+    /**
+     * Converts a robot from the biased perspective to audience perspective
+     * @param teleportRobot The robot from the biased perspective
+     * @return The robot from the audience perspective
+     */
     private static TeleportRobot teleportRobotBiasedToAudience(TeleportRobot teleportRobot) {
         TeleportRobot.Builder audienceTeleportRobot = teleportRobot.toBuilder();
 

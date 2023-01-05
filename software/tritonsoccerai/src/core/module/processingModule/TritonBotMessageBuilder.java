@@ -22,6 +22,10 @@ import static proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame;
 import static proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot;
 import static proto.vision.MessagesRobocupSslWrapper.SSL_WrapperPacket;
 
+
+/**
+ * Class for building TritonBotMessages from SSL_WrapperPackets
+ */
 public class TritonBotMessageBuilder extends Module {
     private static final long PUBLISH_INTERVAL = 20;
     private static final long ROBOT_COMMAND_TIMEOUT = 100;
@@ -31,16 +35,27 @@ public class TritonBotMessageBuilder extends Module {
 
     private Future publishFuture;
 
+    /**
+     * Constructor
+     *
+     * @param executor - Executor for scheduling tasks
+     */
     public TritonBotMessageBuilder(ScheduledThreadPoolExecutor executor) {
         super(executor);
     }
 
+    /**
+     * Sets the publishFuture to an executor that publishes messages every PUBLISH_INTERVAL milliseconds
+     */
     @Override
     public void run() {
         super.run();
         publishFuture = executor.scheduleAtFixedRate(this::publishMessages, 0, PUBLISH_INTERVAL, TimeUnit.MILLISECONDS);
     }
 
+    /**
+     * publishes a TritonBotMessage to each bot, according to the bot's id
+     */
     private void publishMessages() {
         long timestamp = System.currentTimeMillis();
 
@@ -57,6 +72,9 @@ public class TritonBotMessageBuilder extends Module {
         }
     }
 
+    /**
+     * 
+     */
     @Override
     protected void prepare() {
         aggregateVisions = new HashMap<>();
@@ -70,6 +88,11 @@ public class TritonBotMessageBuilder extends Module {
         }
     }
 
+    /**
+     * Initializes the parameters of a default ally robot
+     * @param id The id of the robot
+     * @return An ally robot with default parameters
+     */
     private SSL_DetectionRobot initDefaultVision(int id) {
         SSL_DetectionRobot.Builder ally = SSL_DetectionRobot.newBuilder();
         ally.setConfidence(0);
@@ -83,6 +106,11 @@ public class TritonBotMessageBuilder extends Module {
         return ally.build();
     }
 
+    /**
+     * Initializes the parameters of a default robot command
+     * @param id The id of the robot to be commanded 
+     * @return A robot command with its parameters intialized to 0
+     */
     private RobotCommand initDefaultCommand(int id) {
         RobotCommand.Builder robotCommand = RobotCommand.newBuilder();
         robotCommand.setId(id);
@@ -99,12 +127,22 @@ public class TritonBotMessageBuilder extends Module {
         return robotCommand.build();
     }
 
+    /**
+     * Declares consumes for the AI_VISION_WRAPPER and AI_ROBOT_COMMAND exchanges
+     * @throws IOException
+     * @throws TimeoutException
+     */
     @Override
     protected void declareConsumes() throws IOException, TimeoutException {
         declareConsume(AI_VISION_WRAPPER, this::callbackWrapper);
         declareConsume(AI_ROBOT_COMMAND, this::callbackRobotCommand);
     }
 
+    /**
+     * Wraps the callback, puts each ally robot into the aggregateVisions map
+     * @param s
+     * @param delivery
+     */
     private void callbackWrapper(String s, Delivery delivery) {
         SSL_WrapperPacket wrapperPacket = (SSL_WrapperPacket) simpleDeserialize(delivery.getBody());
         SSL_DetectionFrame frame = wrapperPacket.getDetection();
@@ -120,7 +158,11 @@ public class TritonBotMessageBuilder extends Module {
             aggregateVisions.put(ally.getRobotId(), ally);
         });
     }
-
+    /**
+     *  Callback for the robot command, builds an aggregated command, and puts that command to the target robot's id
+     * @param s 
+     * @param delivery 
+     */
     private void callbackRobotCommand(String s, Delivery delivery) {
         RobotCommand robotCommand = (RobotCommand) simpleDeserialize(delivery.getBody());
 
@@ -138,6 +180,9 @@ public class TritonBotMessageBuilder extends Module {
         robotCommandUpdateTimestamps.put(robotCommand.getId(), System.currentTimeMillis());
     }
 
+    /**
+     *  Cancels the publishFuture when the thread is interrupted
+     */
     @Override
     public void interrupt() {
         super.interrupt();
