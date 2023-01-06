@@ -14,7 +14,7 @@ public class GKTreeModule extends Module {
 
     public GKTreeModule(ScheduledThreadPoolExecutor executor) {
         super(executor);
-        this.tree = new GoalkeeperTree();
+        this.tree = new GoalkeeperTree(executor);
     }
 
     @Override

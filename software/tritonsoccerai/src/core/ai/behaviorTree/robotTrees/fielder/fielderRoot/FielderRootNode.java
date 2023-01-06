@@ -1,4 +1,4 @@
-package core.ai.behaviorTree.robotTrees.fielder;
+package core.ai.behaviorTree.robotTrees.fielder.fielderRoot;
 
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;

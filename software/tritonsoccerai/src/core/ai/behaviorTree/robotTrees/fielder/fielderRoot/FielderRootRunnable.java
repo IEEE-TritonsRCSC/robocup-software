@@ -1,11 +1,11 @@
-package core.ai.behaviorTree.robotTrees.fielder;
+package core.ai.behaviorTree.robotTrees.fielder.fielderRoot;
 
 import core.ai.GameInfo;
 import core.ai.GameState;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
-import core.ai.behaviorTree.robotTrees.fielder.defense.DefenseRootNode;
+import core.ai.behaviorTree.robotTrees.fielder.defense.playDefense.PlayDefenseNode;
 import core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot.OffenseRootNode;
 import core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.*;
 import core.fieldObjects.robot.Ally;
@@ -21,7 +21,7 @@ public class FielderRootRunnable implements Runnable {
 
     private final ConditionalNode haveBall;
     private final OffenseRootNode offense;
-    private final DefenseRootNode defense;
+    private final PlayDefenseNode defense;
 
     private final HaltNode haltNode;
     private final StopNode stopNode;
@@ -49,7 +49,7 @@ public class FielderRootRunnable implements Runnable {
             }
         };
         this.offense = new OffenseRootNode(ally, executor);
-        this.defense = new DefenseRootNode(ally, executor);
+        this.defense = new PlayDefenseNode(ally, executor);
 
         this.haltNode = new HaltNode(ally);
         this.stopNode = new StopNode(ally);
