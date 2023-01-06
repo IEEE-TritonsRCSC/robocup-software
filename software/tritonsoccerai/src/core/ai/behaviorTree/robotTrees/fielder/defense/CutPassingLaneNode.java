@@ -3,7 +3,7 @@ package core.ai.behaviorTree.robotTrees.fielder.defense;
 import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToObjectNode;
 import core.fieldObjects.robot.Ally;
 import core.fieldObjects.robot.Foe;
 
@@ -14,13 +14,11 @@ import java.util.ArrayList;
  */
 public class CutPassingLaneNode extends TaskNode {
 
-    private final Ally ally;
-    private final MoveToPositionNode moveToPositionNode;
+        private final MoveToObjectNode moveToObjectNode;
 
     public CutPassingLaneNode(Ally ally) {
-        super();
-        this.ally = ally;
-        this.moveToPositionNode = new MoveToPositionNode(ally);
+        super("Cut Passing Lane Node: " + ally.toString(), ally);
+        this.moveToObjectNode = new MoveToObjectNode(ally);
     }
 
     /**
@@ -69,7 +67,7 @@ public class CutPassingLaneNode extends TaskNode {
      * Moves ally toward a given foe
      */
     private void moveTowardFoe(Foe foe) {
-        this.moveToPositionNode.execute(foe.getPos());
+        this.moveToObjectNode.execute(foe);
     }
 
 }

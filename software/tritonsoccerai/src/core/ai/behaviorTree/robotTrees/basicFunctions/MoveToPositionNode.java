@@ -7,10 +7,9 @@ import core.util.Vector2d;
 
 public class MoveToPositionNode extends TaskNode {
 
-    private final Ally ally;
 
     public MoveToPositionNode(Ally ally) {
-        this.ally = ally;
+        super("Move To Position Node: " + ally.toString(), ally);
     }
 
     @Override

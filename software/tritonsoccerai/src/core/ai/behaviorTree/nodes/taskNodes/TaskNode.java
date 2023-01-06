@@ -2,6 +2,7 @@ package core.ai.behaviorTree.nodes.taskNodes;
 
 import core.ai.behaviorTree.nodes.BTNode;
 import core.ai.behaviorTree.nodes.NodeState;
+import core.fieldObjects.robot.Ally;
 
 // leaves of tree; actionable things to do
 /**
@@ -11,12 +12,16 @@ import core.ai.behaviorTree.nodes.NodeState;
  */
 public abstract class TaskNode extends BTNode {
 
-    public TaskNode() {
+    protected final Ally ally;
+
+    public TaskNode(Ally ally) {
         super("Task Node");
+        this.ally = ally;
     }
 
-    public TaskNode(String name) {
+    public TaskNode(String name, Ally ally) {
         super(name);
+        this.ally = ally;
     }
 
     /**

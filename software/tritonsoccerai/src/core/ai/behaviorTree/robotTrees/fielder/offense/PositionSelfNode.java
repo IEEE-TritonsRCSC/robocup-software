@@ -10,11 +10,8 @@ import core.util.Vector2d;
  */
 public class PositionSelfNode extends TaskNode {
 
-    private final Ally ally;
-
     public PositionSelfNode(Ally ally) {
-        super("Position Self Node: " + ally.toString());
-        this.ally = ally;
+        super("Position Self Node: " + ally.toString(), ally);
     }
 
     /**
