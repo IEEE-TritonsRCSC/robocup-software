@@ -1,25 +1,30 @@
 package core.ai.behaviorTree.robotTrees.basicFunctions;
 
 import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.fieldObjects.robot.Ally;
 
 /**
- * Defines sequence of tasks to be performed to dribble ball
+ * Defines tasks to be performed to dribble ball
  */
-public class DribbleBallNode extends SequenceNode {
+public class DribbleBallNode extends TaskNode {
 
     private final Ally ally;
 
+    // TODO Pathfinding algorithms needed
     public DribbleBallNode(Ally ally) {
         // TODO
-        super("Dribble Ball Node: " + ally.toString());
+        super("Dribble Ball Node: " + ally.toString(), ally);
         this.ally = ally;
     }
 
+    /**
+     * Move into ball at a speed that keeps the ball close to robot
+     */
     @Override
     public NodeState execute() {
-        // TODO
+        // TODO Pathfinding algorithms needed
+
         return null;
     }
 

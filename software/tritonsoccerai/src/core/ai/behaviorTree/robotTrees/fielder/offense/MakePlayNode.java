@@ -8,7 +8,7 @@ import core.fieldObjects.robot.Ally;
 
 
 /**
- * Dribbles or passes the ball based on the location of foes
+ * Define wheter to dribble or pass the ball 
  */
 public class MakePlayNode extends CompositeNode {
     private final DribbleBallNode dribble;
@@ -23,12 +23,25 @@ public class MakePlayNode extends CompositeNode {
     
     @Override
     public NodeState execute() {
-        // TODO
-        // Determine if pass or dribble using available coordinate info
+        // TODO If there is a space between robot and ball, dribble
+        // otherwise, pass the ball to the other robots
+       if(hasSpace() == true) {
         this.dribble.execute();
+       }
+       else{
         this.coordinatedPass.execute();
+       }
 
         return NodeState.SUCCESS;
+    }
+
+    //TODO Space in front of ball holder
+    private boolean hasSpace(){
+        boolean hasspace;
+
+        hasspace = true;
+
+        return hasspace;
     }
 
 }
