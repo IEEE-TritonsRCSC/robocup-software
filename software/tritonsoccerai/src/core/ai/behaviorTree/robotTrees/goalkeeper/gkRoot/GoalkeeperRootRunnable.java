@@ -1,13 +1,14 @@
-package core.ai.behaviorTree.robotTrees.goalkeeper;
+package core.ai.behaviorTree.robotTrees.goalkeeper.gkRoot;
 
 import core.ai.GameInfo;
 import core.ai.GameState;
 import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
-import core.ai.behaviorTree.robotTrees.goalkeeper.defense.GKDefenseRootNode;
-import core.ai.behaviorTree.robotTrees.goalkeeper.offense.GKOffenseRootNode;
+import core.ai.behaviorTree.robotTrees.goalkeeper.defense.defenseRoot.GKDefenseRootNode;
+import core.ai.behaviorTree.robotTrees.goalkeeper.offense.offenseRoot.GKOffenseRootNode;
 import core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions.*;
+
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 /**
  * root node of goalkeeper tree
@@ -17,7 +18,7 @@ import core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions.*;
  * if game status different, kills current branch execution
  * and starts execution of correct branch
  */
-public class GoalkeeperRootNode extends CompositeNode {
+public class GoalkeeperRootRunnable implements Runnable {
 
     private final ConditionalNode haveBall;
     private final GKOffenseRootNode offense;
@@ -38,16 +39,15 @@ public class GoalkeeperRootNode extends CompositeNode {
 
     private Thread branchThread;
 
-    public GoalkeeperRootNode() {
-        super("Goalkeeper Root");
+    public GoalkeeperRootRunnable(ScheduledThreadPoolExecutor executor) {
         this.haveBall = new ConditionalNode() {
             @Override
             public boolean conditionSatisfied() {
                 return GameInfo.getPossessBall();
             }
         };
-        this.offense = new GKOffenseRootNode();
-        this.defense = new GKDefenseRootNode();
+        this.offense = new GKOffenseRootNode(executor);
+        this.defense = new GKDefenseRootNode(executor);
 
         this.haltNode = new GKHaltNode();
         this.stopNode = new GKStopNode();
@@ -67,32 +67,11 @@ public class GoalkeeperRootNode extends CompositeNode {
     }
 
     /**
-     * At a desired frequency, check if game state and ball possession has changed
-     * If so, switch branch
-     */
-    @Override
-    public NodeState execute() {
-        // TODO
-        // at a desired frequency, check if game state and ball possession has changed
-        // if so, switch branch
-        if (this.stateCurrentlyRunning != GameInfo.getCurrState()) {
-            switchBranch();
-        }
-        else if (stateCurrentlyRunning == GameState.OPEN_PLAY) {
-            if (NodeState.isSuccess(this.haveBall.execute()) != this.onOffense) {
-                switchBranch();
-            }
-        }
-        return NodeState.RUNNING;
-    }
-
-    /**
      * Kill execution of currently-executing branch
      * Execute the correct branch
      */
     private void switchBranch() {
         // kill current thread
-        // TODO interrupt() doesn't actually stop execution of the target
         this.branchThread.interrupt();
         // start new thread with executeCorrectBranch()
         executeCorrectBranch();
@@ -143,6 +122,22 @@ public class GoalkeeperRootNode extends CompositeNode {
         }
         this.branchThread.setDaemon(true);
         this.branchThread.start();
+    }
+
+    /**
+     * At a desired frequency, check if game state and ball possession has changed
+     * If so, switch branch
+     */
+    @Override
+    public void run() {
+        if (this.stateCurrentlyRunning != GameInfo.getCurrState()) {
+            switchBranch();
+        }
+        else if (stateCurrentlyRunning == GameState.OPEN_PLAY) {
+            if (NodeState.isSuccess(this.haveBall.execute()) != this.onOffense) {
+                switchBranch();
+            }
+        }
     }
 
 }

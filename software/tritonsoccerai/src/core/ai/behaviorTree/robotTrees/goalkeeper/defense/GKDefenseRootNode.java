@@ -4,6 +4,7 @@ import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.fieldObjects.ball.Ball;
+import core.fieldObjects.robot.Ally;
 
 /**
  * Defined behavior for goalkeeper when on defense
@@ -13,9 +14,9 @@ public class GKDefenseRootNode extends CompositeNode {
 
     private final TaskNode blockBall;
 
-    public GKDefenseRootNode(Ball ball) {
+    public GKDefenseRootNode(Ally ally, Ball ball) {
         super("GK Defense Node");
-        this.blockBall = new BlockBallNode(ball);
+        this.blockBall = new BlockBallNode(ally, ball);
     }
 
     @Override

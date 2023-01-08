@@ -1,5 +1,6 @@
 package core.ai.behaviorTree.robotTrees.basicFunctions;
 
+import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.fieldObjects.robot.Ally;
@@ -9,19 +10,19 @@ import core.fieldObjects.robot.Ally;
  */
 public class ChaseBallNode extends TaskNode {
 
-    private final Ally ally;
+    private final MoveToObjectNode moveToObjectNode;
 
     public ChaseBallNode(Ally ally) {
-        super();
-        this.ally = ally;
+        super("Chase Ball Node: " + ally.toString(), ally);
+        this.moveToObjectNode = new MoveToObjectNode(ally);
     }
 
     /**
-     * Finds optimal path to ball and sends command to robot to move in that direction
+     * Moves robot to move in direction of ball
      */
     @Override
     public NodeState execute() {
-        // send command to move toward ball
+        this.moveToObjectNode.execute(GameInfo.getBall());
         return NodeState.SUCCESS;
     }
 

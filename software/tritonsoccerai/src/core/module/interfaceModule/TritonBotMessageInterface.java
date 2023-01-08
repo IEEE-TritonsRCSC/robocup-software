@@ -1,10 +1,14 @@
 package core.module.interfaceModule;
 
+//TODO Can't find this file even in the old repo
 import com.rabbitmq.client.Delivery;
+
 import core.ai.GameInfo;
 import core.constants.ProgramConstants;
 import core.module.Module;
-import com.triton.networking.UDP_Client;
+import core.networking.UDP_Client;
+
+//TODO Not recognizing proto?
 import proto.triton.TritonBotCommunication.TritonBotMessage;
 
 import java.io.IOException;
@@ -21,6 +25,8 @@ import java.util.concurrent.TimeoutException;
 import static core.messaging.Exchange.AI_ROBOT_FEEDBACKS;
 import static core.messaging.Exchange.AI_TRITON_BOT_MESSAGE;
 import static core.messaging.SimpleSerialize.simpleDeserialize;
+
+//TODO Not recognizing proto?
 import static proto.simulation.SslSimulationRobotFeedback.RobotFeedback;
 
 public class TritonBotMessageInterface extends Module {
@@ -50,6 +56,13 @@ public class TritonBotMessageInterface extends Module {
         declareConsume(AI_TRITON_BOT_MESSAGE, this::callbackTritonBotMessage);
     }
 
+    /**
+     * Called when a delivery is received.
+     * Creates the TritonBotMessage from a delivery and adds it to a sendQueue of a clientMap.
+     * 
+     * @param s
+     * @param delivery
+     */
     private void callbackTritonBotMessage(String s, Delivery delivery) {
         TritonBotMessage message = (TritonBotMessage) simpleDeserialize(delivery.getBody());
         if (clientMap.containsKey(message.getId()))
@@ -62,6 +75,13 @@ public class TritonBotMessageInterface extends Module {
         clientFutures.forEach(clientFuture -> clientFuture.cancel(false));
     }
 
+    /**
+     * Using tritonBotAddress and tritonBotPort, setup the udp client. 
+     * 
+     * @throws IOException
+     * @throws SocketException
+     * @throws UnknownHostException
+     */
     private void setupClients() throws SocketException, UnknownHostException {
         for (int id = 0; id < ProgramConstants.gameConfig.numBots; id++) {
             String serverAddress;
@@ -78,11 +98,18 @@ public class TritonBotMessageInterface extends Module {
                 default -> throw new IllegalStateException("Unexpected value: " + GameInfo.getTeamColor());
             }
 
+            //Setup a udp client
             UDP_Client client = new UDP_Client(serverAddress, serverPort, this::callbackTritonBotFeedback, 10);
             clientMap.put(id, client);
         }
     }
 
+    /**
+     * Called when a feedback from a robot is received. 
+     * Parses the feedback and publishes it to an exchange
+     * 
+     * @param bytes the bytes of the feedback received
+     */
     private void callbackTritonBotFeedback(byte[] bytes) {
         RobotFeedback feedback = null;
         try {
@@ -105,4 +132,5 @@ public class TritonBotMessageInterface extends Module {
         }
         clientMap.forEach((id, client) -> clientFutures.add(executor.submit(client)));
     }
+
 }

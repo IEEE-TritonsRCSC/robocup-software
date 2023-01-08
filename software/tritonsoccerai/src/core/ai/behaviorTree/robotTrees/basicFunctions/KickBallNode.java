@@ -10,12 +10,9 @@ import core.util.Vector2d;
  */
 public class KickBallNode extends TaskNode {
 
-    private final Ally ally;
-
     public KickBallNode(Ally ally) {
         // TODO
-        super("Kick Ball Node: " + ally.toString());
-        this.ally = ally;
+        super("Kick Ball Node: " + ally.toString(), ally);
     }
 
     @Override

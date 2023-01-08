@@ -1,6 +1,7 @@
 syntax = "proto2";
 package proto.vision;
 
+//Not recognizing these files? 
 import "messages_robocup_ssl_detection.proto";
 import "messages_robocup_ssl_geometry.proto";
 

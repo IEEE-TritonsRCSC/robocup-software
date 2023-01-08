@@ -1,13 +1,20 @@
 package core.module.interfaceModule;
 
+//TODO Can't find this file even in the old repo
 import com.rabbitmq.client.Delivery;
+
 import core.ai.GameInfo;
 import core.fieldObjects.ball.Ball;
 import core.module.Module;
-import com.triton.search.implementation.PathfindGrid;
-import com.triton.search.node2d.Node2d;
+
+import core.search.implementation.PathfindGrid;
+import core.search.node2d.Node2d;
 import core.util.Vector2d;
+
+//TODO Can't find this file even in the old repo
 import org.apache.commons.math3.analysis.function.Sigmoid;
+
+//TODO Not recognizing proto?
 import proto.triton.FilteredObject;
 import proto.vision.MessagesRobocupSslGeometry.SSL_FieldCircularArc;
 import proto.vision.MessagesRobocupSslGeometry.SSL_FieldLineSegment;
@@ -37,6 +44,8 @@ import static java.awt.BorderLayout.*;
 import static java.awt.Color.*;
 import static javax.swing.BoxLayout.Y_AXIS;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
+
+//TODO Not recognizing proto?
 import static proto.triton.AiDebugInfo.*;
 import static proto.triton.FilteredObject.Ball;
 import static proto.triton.FilteredObject.FilteredWrapperPacket;
@@ -60,6 +69,10 @@ public class UserInterface extends Module {
         prepareGUI();
     }
 
+    /**
+     * Set up the GUI of the simulator
+     * 
+     */
     private void prepareGUI() {
         frame = new JFrame(MAIN_FRAME_TITLE);
         frame.setSize(800, 600);
@@ -102,17 +115,32 @@ public class UserInterface extends Module {
         declareConsume(AI_DEBUG, this::callbackDebug);
     }
 
+    /**
+     * Called when a delivery is received.
+     * Creates the FilteredWrapperPacket from the delivery and set a filedPanel wrapper.
+     * 
+     * @param s
+     * @param delivery
+     */
     private void callbackWrapper(String s, Delivery delivery) {
         FilteredWrapperPacket wrapper = (FilteredWrapperPacket) simpleDeserialize(delivery.getBody());
         fieldPanel.setWrapper(wrapper);
         fieldPanel.repaint();
     }
 
+    /**
+     * Called when a delivery is received.
+     * Creates the Debug object from the delivery and add Debug to a filedPanel.
+     * 
+     * @param s
+     * @param delivery
+     */
     private void callbackDebug(String s, Delivery delivery) {
         Debug debug = (Debug) simpleDeserialize(delivery.getBody());
         fieldPanel.addDebug(debug);
         fieldPanel.repaint();
     }
+
 
     private class FieldPanel extends JPanel {
         private final ReadWriteLock wrapperLock;
@@ -151,6 +179,12 @@ public class UserInterface extends Module {
             }
         }
 
+        /**
+         * Translates graphics by half of the total width and length of the field, 
+         * so that the field is centered in the component.
+         * 
+         * @param graphics2D
+         */
         private void transformGraphics(Graphics2D graphics2D) {
             SSL_GeometryFieldSize field = wrapper.getField();
 
@@ -175,6 +209,12 @@ public class UserInterface extends Module {
             graphics2D.translate(totalFieldDisplayWidth / 2, -totalFieldDisplayLength / 2);
         }
 
+
+        /**
+         * Paint the field in the simulator
+         * 
+         * @param graphics2D
+         */
         private void paintField(Graphics2D graphics2D) {
             SSL_GeometryFieldSize field = wrapper.getField();
 
@@ -231,6 +271,11 @@ public class UserInterface extends Module {
                     field.getGoalDepth());
         }
 
+        /**
+         * Paint a ball in the simulator
+         * 
+         * @param graphics2D
+         */
         private void paintBall(Graphics2D graphics2D) {
             Ball ball = GameInfo.getBall();
 
@@ -266,6 +311,11 @@ public class UserInterface extends Module {
             }
         }
 
+        /**
+         * Paint Allies in the simulator
+         * 
+         * @param graphics2D
+         */
         private void paintAllies(Graphics2D graphics2D) {
             Map<Integer, FilteredObject.Robot> allies = wrapper.getAlliesMap();
 
@@ -280,6 +330,11 @@ public class UserInterface extends Module {
             }
         }
 
+        /**
+         * Paint Foes in the simulator
+         * 
+         * @param graphics2D
+         */
         private void paintFoes(Graphics2D graphics2D) {
             Map<Integer, FilteredObject.Robot> foes = wrapper.getFoesMap();
 
@@ -294,6 +349,11 @@ public class UserInterface extends Module {
             }
         }
 
+        /**
+         * Paint debug information and path lines in the simulator
+         * 
+         * @param graphics2D
+         */
         private void paintDebug(Graphics2D graphics2D) {
             SSL_GeometryFieldSize field = wrapper.getField();
             Map<Integer, FilteredObject.Robot> allies = wrapper.getAlliesMap();
@@ -318,6 +378,7 @@ public class UserInterface extends Module {
                 }
             }
 
+            //Draw path line
             alliesPaths.forEach((id, path) -> {
                 if (displayConfig.showRoute) {
                     List<DebugVector> nodes = path.getNodesList();
@@ -354,6 +415,14 @@ public class UserInterface extends Module {
             });
         }
 
+        /**
+         * Paint a robot in the simulator
+         * 
+         * @param graphics2D
+         * @param robot
+         * @param fillColor
+         * @param outlineColor
+         */
         private void paintRobot(Graphics2D graphics2D, FilteredObject.Robot robot, Color fillColor, Color outlineColor) {
             float radius = objectConfig.objectToCameraFactor * objectConfig.robotRadius;
 
@@ -406,6 +475,13 @@ public class UserInterface extends Module {
             graphics2D.setTransform(orgi);
         }
 
+
+        /**
+         * Paint nodes in the simulator
+         * 
+         * @param graphics2D
+         * @param node
+         */
         private void paintNode(Graphics2D graphics2D, Node2d node) {
             Sigmoid sigmoid = new Sigmoid();
             float scaled = (float) sigmoid.value(node.getPenalty() / aiConfig.penaltyScale);
@@ -423,6 +499,11 @@ public class UserInterface extends Module {
                     360);
         }
 
+        /**
+         * Add debug information to the component
+         * 
+         * @param debug
+         */
         public void addDebug(Debug debug) {
             debugLock.writeLock().lock();
             try {

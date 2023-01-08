@@ -1,32 +1,25 @@
-package core.ai.behaviorTree.robotTrees.fielder.offense;
+package core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot;
 
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.RobotHasPossessionNode;
+import core.ai.behaviorTree.robotTrees.fielder.offense.MakePlayNode;
+import core.ai.behaviorTree.robotTrees.fielder.offense.PositionSelfNode;
+import core.ai.behaviorTree.robotTrees.fielder.offense.ShootBallNode;
 import core.fieldObjects.robot.Ally;
 
-/**
- * Defines behavior for playing offense as a fielder
- * If ally has possession of ball, shoots or makes play
- * If ally doesn't have possession of ball, positions ally optimally
- */
-public class OffenseRootNode extends CompositeNode {
+public class OffenseRootRunnable implements Runnable {
 
-    private final ConditionalNode havePossession;
+    private final RobotHasPossessionNode havePossession;
     private final ConditionalNode haveOpenShot;
     private final TaskNode shootBall;
     private final CompositeNode makePlay;
     private final PositionSelfNode positionSelf;
 
-    public OffenseRootNode(Ally ally) {
-        super("Offense Root");
-        this.havePossession = new ConditionalNode() {
-            @Override
-            public boolean conditionSatisfied() {
-                return ally.getHasPossession();
-            }
-        };
+    public OffenseRootRunnable(Ally ally) {
+        this.havePossession = new RobotHasPossessionNode(ally);
         this.haveOpenShot = new ConditionalNode() {
             @Override
             public boolean conditionSatisfied() {
@@ -45,7 +38,7 @@ public class OffenseRootNode extends CompositeNode {
      * If ally doesn't have possession of ball, positions ally optimally
      */
     @Override
-    public NodeState execute() {
+    public void run() {
         if (NodeState.isSuccess(this.havePossession.execute())) {
             if (NodeState.isSuccess(this.haveOpenShot.execute())) {
                 this.shootBall.execute();
@@ -56,7 +49,6 @@ public class OffenseRootNode extends CompositeNode {
         else {
             this.positionSelf.execute();
         }
-        return NodeState.SUCCESS;
     }
 
 }

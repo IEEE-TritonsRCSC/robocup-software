@@ -15,7 +15,7 @@ public class ShootBallNode extends TaskNode {
     private final KickBallNode kickBall;
 
     public ShootBallNode(Ally ally) {
-        super("Shoot Ball Node: " + ally.toString());
+        super("Shoot Ball Node: " + ally.toString(), ally);
         this.kickBall = new KickBallNode(ally);
     }
 
