@@ -27,4 +27,12 @@ public class CoordinatedPassNode extends SequenceNode {
         return null;
     }
 
+    public NodeState execute(boolean chip) {
+
+        return NodeState.SUCCESS;
+
+    }
+
+
+
 }
