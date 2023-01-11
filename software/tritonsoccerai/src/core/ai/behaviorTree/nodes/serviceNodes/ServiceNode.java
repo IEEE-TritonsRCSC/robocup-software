@@ -17,10 +17,4 @@ public abstract class ServiceNode extends BTNode {
         super(name);
     }
 
-    @Override
-    public NodeState execute() {
-        // TODO
-        return NodeState.SUCCESS;
-    }
-
 }
