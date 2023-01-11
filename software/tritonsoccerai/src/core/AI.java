@@ -1,8 +1,6 @@
 package core;
 
 import core.ai.GameInfo;
-import core.ai.behaviorTree.robotTrees.fielder.FielderTree;
-import core.ai.behaviorTree.robotTrees.goalkeeper.GoalkeeperTree;
 import core.config.*;
 import core.constants.ProgramConstants;
 import core.fieldObjects.robot.Ally;

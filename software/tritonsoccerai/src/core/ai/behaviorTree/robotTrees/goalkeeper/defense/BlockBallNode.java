@@ -1,10 +1,10 @@
 package core.ai.behaviorTree.robotTrees.goalkeeper.defense;
 
+import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import core.fieldObjects.ball.Ball;
+import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
 import core.fieldObjects.robot.Ally;
-import core.util.Vector2d;
 import core.util.Vector2d;
 
 /**
@@ -12,21 +12,24 @@ import core.util.Vector2d;
  */
 public class BlockBallNode extends TaskNode {
 
-    private Vector2d centerArc;
-    private int radius;
-    private Ball ball;
+    private final Vector2d centerArc;
+    private final int radius;
+    private final MoveToPositionNode moveToPositionNode;
 
-    public BlockBallNode(Ally ally, Ball ball) {
+    public BlockBallNode(Ally ally) {
         super(ally);
         this.centerArc = new Vector2d(0, 0); // arbitrary center arc
         this.radius = 2;
-        this.ball = ball;
+        this.moveToPositionNode = new MoveToPositionNode(ally);
     }
 
+    /**
+     * Gets optimal position and moves robot to that location
+     */
     @Override
     public NodeState execute() {
-        // make it so execute moves robot to the location
-        return null;
+        this.moveToPositionNode.execute(findPositioningLocation());
+        return NodeState.SUCCESS;
     }
 
     /**
@@ -34,10 +37,11 @@ public class BlockBallNode extends TaskNode {
      */
     public Vector2d findPositioningLocation() {
         // finds optimal vector on the arc
-        float mag = centerArc.dist(new Vector2d(ball.getX(), ball.getY()));
+        float mag = centerArc.dist(GameInfo.getBall().getPos());
         Vector2d optimalLocation = new Vector2d(
-            ((this.ball.getX() - this.centerArc.x)/mag) * radius, 
-            ((this.ball.getY() - this.centerArc.y)/mag) * radius);
+                this.centerArc.x + (((GameInfo.getBall().getX() - this.centerArc.x)/mag) * radius),
+                this.centerArc.y + (((GameInfo.getBall().getY() - this.centerArc.y)/mag) * radius));
         return optimalLocation; 
     }
+
 }

@@ -1,5 +1,6 @@
 package core.ai.behaviorTree.robotTrees.goalkeeper.defense.defenseRoot;
 
+import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.ai.behaviorTree.robotTrees.goalkeeper.defense.BlockBallNode;
 
@@ -9,10 +10,10 @@ import core.ai.behaviorTree.robotTrees.goalkeeper.defense.BlockBallNode;
  */
 public class GKDefenseRootRunnable implements Runnable {
 
-    private final TaskNode blockBall;
+    private final BlockBallNode blockBall;
 
     public GKDefenseRootRunnable() {
-        this.blockBall = new BlockBallNode(null, null);
+        this.blockBall = new BlockBallNode(GameInfo.getKeeper());
     }
 
     /**

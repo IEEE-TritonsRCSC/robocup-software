@@ -2,7 +2,6 @@ package core.ai.behaviorTree.robotTrees.goalkeeper.offense.offenseRoot;
 
 import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.RobotHasPossessionNode;
 import core.ai.behaviorTree.robotTrees.goalkeeper.offense.GKPositionSelfNode;
