@@ -10,17 +10,17 @@ import java.util.concurrent.TimeUnit;
 public class GKDefenseRootNode extends CompositeNode {
 
     private final ScheduledThreadPoolExecutor executor;
-    private final GKDefenseRootRunnable gkDefenseRootRunnable;
+    private final GKDefenseRootService gkDefenseRootService;
 
     public GKDefenseRootNode(ScheduledThreadPoolExecutor executor) {
         super();
         this.executor = executor;
-        this.gkDefenseRootRunnable = new GKDefenseRootRunnable();
+        this.gkDefenseRootService = new GKDefenseRootService();
     }
 
     @Override
     public NodeState execute() {
-        this.executor.scheduleAtFixedRate(this.gkDefenseRootRunnable, ProgramConstants.INITIAL_DELAY,
+        this.executor.scheduleAtFixedRate(this.gkDefenseRootService, ProgramConstants.INITIAL_DELAY,
                                         ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
         return NodeState.RUNNING;
     }

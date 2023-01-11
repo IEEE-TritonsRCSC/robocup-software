@@ -1,46 +1,46 @@
-package core.ai.behaviorTree.robotTrees.fielder.fielderRoot;
+package core.ai.behaviorTree.robotTrees.goalkeeper.gkRoot;
 
 import core.ai.GameInfo;
 import core.ai.GameState;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
-import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
-import core.ai.behaviorTree.robotTrees.fielder.defense.playDefense.PlayDefenseNode;
-import core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot.OffenseRootNode;
-import core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.*;
-import core.fieldObjects.robot.Ally;
+import core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
+import core.ai.behaviorTree.robotTrees.goalkeeper.defense.defenseRoot.GKDefenseRootNode;
+import core.ai.behaviorTree.robotTrees.goalkeeper.offense.offenseRoot.GKOffenseRootNode;
+import core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions.*;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 /**
- * Checks for change in game status
- * If game status different, kills current branch execution
+ * root node of goalkeeper tree
+ * if game is in open play, takes offensive or defensive action
+ * if referee command, takes appropriate action
+ * checks for change in game status at defined frequency
+ * if game status different, kills current branch execution
  * and starts execution of correct branch
  */
-public class FielderRootRunnable implements Runnable {
+public class GoalkeeperRootService extends ServiceNode {
 
     private final ConditionalNode haveBall;
-    private final OffenseRootNode offense;
-    private final PlayDefenseNode defense;
+    private final GKOffenseRootNode offense;
+    private final GKDefenseRootNode defense;
 
-    private final HaltNode haltNode;
-    private final StopNode stopNode;
-    private final DirectFreeNode prepareDirectFreeNode;
-    private final IndirectFreeNode prepareIndirectFreeNode;
-    private final KickoffNode prepareKickoffNode;
-    private final PenaltyNode preparePenaltyNode;
-    private final NormalStartNode normalStartNode;
-    private final BallPlacementNode ballPlacementNode;
-
-    private final ClosestToBallNode closestToBallNode;
+    private final GKHaltNode haltNode;
+    private final GKStopNode stopNode;
+    private final GKDirectFreeNode prepareDirectFreeNode;
+    private final GKIndirectFreeNode prepareIndirectFreeNode;
+    private final GKKickoffNode prepareKickoffNode;
+    private final GKPenaltyNode preparePenaltyNode;
+    private final GKNormalStartNode normalStartNode;
+    private final GKBallPlacementNode ballPlacementNode;
 
     private GameState stateCurrentlyRunning;
     private boolean onOffense;
 
     private Thread branchThread;
 
-    public FielderRootRunnable(Ally ally, ScheduledThreadPoolExecutor executor) {
-        this.closestToBallNode = new ClosestToBallNode(ally);
+    public GoalkeeperRootService(ScheduledThreadPoolExecutor executor) {
+        super("GK Root Service");
 
         this.haveBall = new ConditionalNode() {
             @Override
@@ -48,40 +48,23 @@ public class FielderRootRunnable implements Runnable {
                 return GameInfo.getPossessBall();
             }
         };
-        this.offense = new OffenseRootNode(ally, executor);
-        this.defense = new PlayDefenseNode(ally, executor);
+        this.offense = new GKOffenseRootNode(executor);
+        this.defense = new GKDefenseRootNode(executor);
 
-        this.haltNode = new HaltNode(ally);
-        this.stopNode = new StopNode(ally);
-        this.prepareDirectFreeNode = new DirectFreeNode(ally, this.closestToBallNode);
-        this.prepareIndirectFreeNode = new IndirectFreeNode(ally, this.closestToBallNode);
-        this.prepareKickoffNode = new KickoffNode(ally, this.closestToBallNode);
-        this.preparePenaltyNode = new PenaltyNode(ally, this.closestToBallNode);
-        this.normalStartNode = new NormalStartNode(ally, this.closestToBallNode);
-        this.ballPlacementNode = new BallPlacementNode(ally, this.closestToBallNode);
+        this.haltNode = new GKHaltNode();
+        this.stopNode = new GKStopNode();
+        this.prepareDirectFreeNode = new GKDirectFreeNode();
+        this.prepareIndirectFreeNode = new GKIndirectFreeNode();
+        this.prepareKickoffNode = new GKKickoffNode();
+        this.preparePenaltyNode = new GKPenaltyNode();
+        this.normalStartNode = new GKNormalStartNode();
+        this.ballPlacementNode = new GKBallPlacementNode();
 
         this.stateCurrentlyRunning = GameInfo.getCurrState();
         this.onOffense = false;
 
         this.branchThread = new Thread();
         this.branchThread.setDaemon(true);
-    }
-
-    /**
-     * Check if game state and ball possession has changed
-     * If so, switch branch
-     */
-    @Override
-    public void run() {
-        if (this.stateCurrentlyRunning != GameInfo.getCurrState()) {
-            switchBranch();
-        }
-        else if (stateCurrentlyRunning == GameState.OPEN_PLAY) {
-            if (NodeState.isSuccess(this.haveBall.execute()) != this.onOffense) {
-                this.onOffense = !this.onOffense;
-                switchBranch();
-            }
-        }
     }
 
     /**
@@ -114,6 +97,24 @@ public class FielderRootRunnable implements Runnable {
         }
         this.branchThread.setDaemon(true);
         this.branchThread.start();
+    }
+
+    /**
+     * Check if game state and ball possession has changed
+     * If so, switch branch
+     */
+    @Override
+    public NodeState execute() {
+        if (this.stateCurrentlyRunning != GameInfo.getCurrState()) {
+            switchBranch();
+        }
+        else if (stateCurrentlyRunning == GameState.OPEN_PLAY) {
+            if (NodeState.isSuccess(this.haveBall.execute()) != this.onOffense) {
+                this.onOffense = !this.onOffense;
+                switchBranch();
+            }
+        }
+        return NodeState.SUCCESS;
     }
 
     /**

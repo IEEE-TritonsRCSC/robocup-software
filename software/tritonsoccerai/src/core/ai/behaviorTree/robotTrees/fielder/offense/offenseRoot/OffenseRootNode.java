@@ -16,11 +16,11 @@ import java.util.concurrent.TimeUnit;
 public class OffenseRootNode extends CompositeNode {
 
     private final ScheduledThreadPoolExecutor executor;
-    private final OffenseRootRunnable offenseRootRunnable;
+    private final OffenseRootService offenseRootService;
 
     public OffenseRootNode(Ally ally, ScheduledThreadPoolExecutor executor) {
         super("Offense Root");
-        this.offenseRootRunnable = new OffenseRootRunnable(ally);
+        this.offenseRootService = new OffenseRootService(ally);
         this.executor = executor;
     }
 
@@ -30,7 +30,7 @@ public class OffenseRootNode extends CompositeNode {
      */
     @Override
     public NodeState execute() {
-        this.executor.scheduleAtFixedRate(this.offenseRootRunnable, ProgramConstants.INITIAL_DELAY, ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
+        this.executor.scheduleAtFixedRate(this.offenseRootService, ProgramConstants.INITIAL_DELAY, ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
         return NodeState.SUCCESS;
     }
 
