@@ -10,20 +10,20 @@ import java.util.concurrent.TimeUnit;
 public class GoalkeeperRootNode extends CompositeNode {
 
     private final ScheduledThreadPoolExecutor executor;
-    private final GoalkeeperRootRunnable gkRootRunnable;
+    private final GoalkeeperRootService gkRootService;
 
     public GoalkeeperRootNode(ScheduledThreadPoolExecutor executor) {
         super("Goalkeeper Root Node");
         this.executor = executor;
-        this.gkRootRunnable = new GoalkeeperRootRunnable(executor);
+        this.gkRootService = new GoalkeeperRootService(executor);
     }
 
     /**
-     * At a desired frequency, run gkRootRunnable
+     * At a desired frequency, run gkRootService
      */
     @Override
     public NodeState execute() {
-        executor.scheduleAtFixedRate(this.gkRootRunnable, ProgramConstants.INITIAL_DELAY,
+        executor.scheduleAtFixedRate(this.gkRootService, ProgramConstants.INITIAL_DELAY,
                                     ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
         return NodeState.RUNNING;
     }

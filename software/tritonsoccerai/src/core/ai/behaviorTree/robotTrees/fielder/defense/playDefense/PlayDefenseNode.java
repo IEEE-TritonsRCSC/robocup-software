@@ -14,12 +14,12 @@ import java.util.concurrent.TimeUnit;
 public class PlayDefenseNode extends CompositeNode {
 
     private final ScheduledThreadPoolExecutor executor;
-    private final PlayDefenseRunnable playDefenseRunnable;
+    private final PlayDefenseService playDefenseService;
 
     public PlayDefenseNode(Ally ally, ScheduledThreadPoolExecutor executor) {
         super("Play Defense Node: " + ally.toString());
         this.executor = executor;
-        this.playDefenseRunnable = new PlayDefenseRunnable(ally);
+        this.playDefenseService = new PlayDefenseService(ally);
     }
 
     /**
@@ -27,7 +27,7 @@ public class PlayDefenseNode extends CompositeNode {
      */
     @Override
     public NodeState execute() {
-        this.executor.scheduleAtFixedRate(this.playDefenseRunnable, ProgramConstants.INITIAL_DELAY,
+        this.executor.scheduleAtFixedRate(this.playDefenseService, ProgramConstants.INITIAL_DELAY,
                                         ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
         return NodeState.SUCCESS;
     }

@@ -4,6 +4,7 @@ import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.fieldObjects.FieldObject;
 import core.fieldObjects.robot.Ally;
+import core.util.Vector2d;
 
 /**
  * Moves ally towards a particular field object, taking into account where it is moving towards
@@ -23,13 +24,13 @@ public class MoveToObjectNode extends TaskNode {
     }
 
     /**
-     * Calculates a position to move towards based on location
-     * and movement of object
+     * Calculates a position to move towards based on position
+     * and velocity of object
      */
     public NodeState execute(FieldObject object) {
-        // TODO
-        // calculate position to move to and pass this location as a parameter below
-        this.moveToPositionNode.execute();
+        float TIME_CONSTANT = 0.5f;
+        Vector2d position = object.getPos().add(object.getVel().scale(TIME_CONSTANT));
+        this.moveToPositionNode.execute(position);
         return NodeState.SUCCESS;
     }
 
