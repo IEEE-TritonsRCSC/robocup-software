@@ -1,0 +1,6 @@
+[submodule "framework"]
+	path = framework
+	url = https://github.com/robotics-erlangen/framework
+[submodule "ssl-simulation-protocol"]
+	path = ssl-simulation-protocol
+	url = https://github.com/RoboCup-SSL/ssl-simulation-protocol
