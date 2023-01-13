@@ -5,7 +5,6 @@ import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.fieldObjects.ball.Ball;
 import core.fieldObjects.robot.Ally;
 import core.util.Vector2d;
-import core.util.Vector2d;
 
 /**
  * Moves goalkeeper to optimal position to block ball
