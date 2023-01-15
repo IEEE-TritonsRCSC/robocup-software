@@ -1,11 +1,19 @@
 package core.ai.behaviorTree.robotTrees.fielder.offense;
 
+import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
+import core.util.Vector2d;
+
+//Task Nodes
 import core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
+
 import core.fieldObjects.robot.Ally;
 
+import static core.constants.ProgramConstants.objectConfig;
+
+import java.lang.Math;
 
 /**
  * Define wheter to dribble or pass the ball 
@@ -15,7 +23,6 @@ public class MakePlayNode extends CompositeNode {
     private final CoordinatedPassNode coordinatedPass;
 
     public MakePlayNode(Ally ally) {
-        // TODO
         super("Make Play");
         this.dribble = new DribbleBallNode(ally);
         this.coordinatedPass = new CoordinatedPassNode(ally);
@@ -23,9 +30,10 @@ public class MakePlayNode extends CompositeNode {
     
     @Override
     public NodeState execute() {
-        // TODO If there is a space between robot and ball, dribble
-        // otherwise, pass the ball to the other robots
-       if(hasSpace() == true) {
+
+        //If there is a big space between robot and ball, dribble
+        //otherwise, pass the ball to the other robots
+       if(Math.sqrt((calcSpace().x*calcSpace().x)+(calcSpace().y*calcSpace().y)) > Float.MAX_VALUE) {
         this.dribble.execute();
        }
        else{
@@ -35,13 +43,26 @@ public class MakePlayNode extends CompositeNode {
         return NodeState.SUCCESS;
     }
 
-    //TODO Space in front of ball holder
-    private boolean hasSpace(){
-        boolean hasspace;
+    /**
+     * Calculate the sapce between the ball and the ball holder.
+     * Also check if the robot is facing the ball.
+     */
+    private Vector2d calcSpace(){
+        Vector2d offset; // offset 2Dvector between the robot and the ball
 
-        hasspace = true;
+        // TODO Not sure how to check if the robot is facing the ball(Compute the facePos)
 
-        return hasspace;
+        if (facePos == null)
+        // TODO Not sure how to get the robot orientation
+            offset = new Vector2d((float) Math.cos(orientation), (float) Math.sin(orientation));
+        else
+            offset = facePos.sub(GameInfo.getAllyClosestToBall().getPose()).norm();
+
+        //scale the offset
+        offset = offset.scale(objectConfig.objectToCameraFactor * objectConfig.ballRadius
+                + objectConfig.objectToCameraFactor * objectConfig.robotRadius);
+
+        return offset;
     }
 
 }

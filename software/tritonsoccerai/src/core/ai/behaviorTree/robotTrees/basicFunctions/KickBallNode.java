@@ -53,7 +53,7 @@ public class KickBallNode extends TaskNode {
         // TODO Not sure how to publish robotcommand
 
         }else{
-            // TODO
+            // TODO if robot is not facing the right direction, rotate 
         }
 
         return null;
