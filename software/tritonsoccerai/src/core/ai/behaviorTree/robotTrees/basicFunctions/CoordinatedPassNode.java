@@ -8,6 +8,7 @@ import core.fieldObjects.robot.Ally;
 import core.fieldObjects.robot.Foe;
 import core.constants.RobotConstants;
 import static core.constants.ProgramConstants.aiConfig;
+import static proto.triton.FilteredObject.Robot;
 
 import core.util.Vector2d;
 
@@ -58,6 +59,7 @@ public class CoordinatedPassNode extends SequenceNode {
         //remove the passer
         allysList.remove(passer);
 
+        //add allys to the target list
         List<Vector2d> kickTos = new ArrayList<>();
         for(int i=0;i<allysList.size();i++) {
 			kickTos.add(allysList.get(i).getPos());
@@ -66,8 +68,25 @@ public class CoordinatedPassNode extends SequenceNode {
         //add foes to the obstacles list
         obstacles.addAll(foesList);
 
-        // TODO Chose best pass receiver from allys
+        //best kick direction
+        Vector2d bestKickTo = null;
 
+        float maxScore = -Float.MAX_VALUE;
+
+        // Choose the best pass receiver from allysList
+        for (Vector2d kickTo : kickTos) {
+            float distToObstacles = distToPath(passer, kickTo, obstacles);
+
+            // TODO Maybe have to change how to calculate the score
+            float score = aiConfig.passDistToObstaclesScoreFactor * distToObstacles;
+
+            if (score > maxScore) {
+                bestKickTo = kickTo;
+                maxScore = score;
+            }
+        }
+
+    return bestKickTo;
     }
 
 
