@@ -6,7 +6,6 @@ import core.fieldObjects.robot.Ally;
 
 import proto.simulation.SslSimulationRobotControl;
 
-
 /**
  * Defines tasks to be performed to dribble ball
  */
@@ -16,7 +15,6 @@ public class DribbleBallNode extends TaskNode {
 
     // TODO Pathfinding algorithms needed
     public DribbleBallNode(Ally ally) {
-        // TODO
         super("Dribble Ball Node: " + ally.toString(), ally);
         this.ally = ally;
     }
@@ -32,8 +30,7 @@ public class DribbleBallNode extends TaskNode {
         // Set dribbler speed
         SslSimulationRobotControl.RobotCommand.Builder robotCommand = SslSimulationRobotControl.RobotCommand.newBuilder();
 
-        // TODO Not sure how to get the robot id
-        robotCommand.setId(actor.getId());
+        robotCommand.setId(ally.getId());
         robotCommand.setDribblerSpeed(1);
         robotCommand.setKickSpeed(0);
 

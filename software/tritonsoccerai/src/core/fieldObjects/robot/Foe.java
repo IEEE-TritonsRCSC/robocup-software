@@ -1,5 +1,7 @@
 package core.fieldObjects.robot;
 
+import core.fieldObjects.robot.Robot;
+
 /**
  * Used to track attributes of each foe robot
  */
