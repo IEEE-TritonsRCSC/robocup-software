@@ -4,6 +4,7 @@ import core.fieldObjects.ball.Ball;
 import core.fieldObjects.robot.Ally;
 import core.fieldObjects.robot.Foe;
 import core.fieldObjects.robot.Team;
+import core.util.Vector2d;
 
 import java.util.ArrayList;
 
@@ -28,6 +29,7 @@ public class GameInfo {
     private static Boolean possessBall;
     private static Ally allyClosestToBall;
     private static GameState currState;
+    private static Vector2d ballPlacementLocation;
     private static Ball ball;
 
     /**
@@ -92,6 +94,10 @@ public class GameInfo {
         return currState;
     }
 
+    public static Vector2d getBallPlacementLocation() {
+        return ballPlacementLocation;
+    }
+
     public static Ball getBall() {
         return ball;
     }
@@ -114,6 +120,10 @@ public class GameInfo {
 
     public static void setCurrState(GameState currState) {
         GameInfo.currState = currState;
+    }
+
+    public static void setBallPlacementLocation(Vector2d placementLocation) {
+        GameInfo.ballPlacementLocation = placementLocation;
     }
 
 }

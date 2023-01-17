@@ -4,6 +4,7 @@ import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.fieldObjects.robot.Ally;
 
+import core.util.Vector2d;
 import proto.simulation.SslSimulationRobotControl;
 
 /**
@@ -39,6 +40,12 @@ public class DribbleBallNode extends TaskNode {
         return null;
     }
 
-
+    /**
+     * Dribbles ball toward a specific location
+     */
+    public NodeState execute(Vector2d position) {
+        // TODO
+        return NodeState.SUCCESS;
+    }
 
 }

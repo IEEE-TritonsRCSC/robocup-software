@@ -8,8 +8,10 @@ import core.fieldObjects.robot.Ally;
 import core.fieldObjects.robot.Foe;
 import core.constants.RobotConstants;
 import static core.constants.ProgramConstants.aiConfig;
+import static core.util.ObjectHelper.distToPath;
 import static proto.triton.FilteredObject.Robot;
 
+import core.fieldObjects.robot.Robot;
 import core.util.Vector2d;
 
 import java.util.ArrayList;
@@ -41,7 +43,7 @@ public class CoordinatedPassNode extends SequenceNode {
     }
 
     public NodeState execute(boolean chip) {
-        // TODO Send message to central coorinator with pass details
+        // TODO Send message to central coordinator with pass details
 
         //kicks the ball to the pass receiver
         this.kickBall.execute(findPassShot(), RobotConstants.MAX_KICK_VELOCITY, false);
@@ -75,7 +77,7 @@ public class CoordinatedPassNode extends SequenceNode {
 
         // Choose the best pass receiver from allysList
         for (Vector2d kickTo : kickTos) {
-            float distToObstacles = distToPath(passer, kickTo, obstacles);
+            float distToObstacles = distToPath(passer.getPos(), kickTo, obstacles);
 
             // TODO Maybe have to change how to calculate the score
             float score = aiConfig.passDistToObstaclesScoreFactor * distToObstacles;

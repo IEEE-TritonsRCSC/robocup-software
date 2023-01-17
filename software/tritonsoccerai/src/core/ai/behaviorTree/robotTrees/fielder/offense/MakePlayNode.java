@@ -16,7 +16,7 @@ import static core.constants.ProgramConstants.objectConfig;
 import java.lang.Math;
 
 /**
- * Define wheter to dribble or pass the ball 
+ * Define whether to dribble or pass the ball
  */
 public class MakePlayNode extends CompositeNode {
     private final DribbleBallNode dribble;
