@@ -5,6 +5,8 @@ import core.ai.GameState;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
+import core.ai.behaviorTree.robotTrees.fielder.offense.ShootBallNode;
 import core.fieldObjects.robot.Ally;
 
 /**
@@ -16,11 +18,15 @@ public class NormalStartNode extends CompositeNode {
 
     private final Ally ally;
     private final ClosestToBallNode closestToBallNode;
+    private final CoordinatedPassNode coordinatedPassNode;
+    private final ShootBallNode shootBallNode;
 
     public NormalStartNode(Ally ally, ClosestToBallNode closestToBallNode) {
         super("Normal Start Node: " + ally.toString());
         this.ally = ally;
         this.closestToBallNode = closestToBallNode;
+        this.coordinatedPassNode = new CoordinatedPassNode(ally);
+        this.shootBallNode = new ShootBallNode(ally);
     }
 
     @Override
@@ -32,21 +38,8 @@ public class NormalStartNode extends CompositeNode {
         // TODO
         if (GameInfo.getPossessBall() && NodeState.isSuccess(this.closestToBallNode.execute())) {
             switch (prevState) {
-                case PREPARE_KICKOFF:
-                case PREPARE_INDIRECT_FREE:
-                    // execute coordinated pass
-                    break;
-                case PREPARE_DIRECT_FREE:
-                    // execute offense root node
-                    break;
-                case PREPARE_PENALTY:
-                    // execute shoot ball node
-                    break;
-            }
-        }
-        else {
-            while (true) {
-                // do nothing, just wait for game state change
+                case PREPARE_KICKOFF, PREPARE_INDIRECT_FREE, PREPARE_DIRECT_FREE -> this.coordinatedPassNode.execute();
+                case PREPARE_PENALTY -> this.shootBallNode.execute();
             }
         }
         return NodeState.SUCCESS;

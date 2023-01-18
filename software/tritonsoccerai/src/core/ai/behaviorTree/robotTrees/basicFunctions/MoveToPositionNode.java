@@ -29,7 +29,7 @@ public class MoveToPositionNode extends TaskNode {
 
         //TODO: Can't get ally ID, no ID field
         LinkedList<Node2d> route = pathfindGridGroup.findRoute(ally.getId(), allyPos, endLoc);
-        Vector2d next = pathfindGridGroup.findNext(actor.getId(), route);
+        Vector2d next = pathfindGridGroup.findNext(ally.getId(), route);
 
         //TODO: Need to publish command for movement
         

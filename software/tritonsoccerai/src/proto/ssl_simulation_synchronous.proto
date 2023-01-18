@@ -3,10 +3,10 @@ package proto.simulation;
 
 option go_package = "github.com/RoboCup-SSL/ssl-simulation-protocol/pkg/sim";
 
-import "ssl_vision_detection.proto";
-import "ssl_simulation_robot_feedback.proto";
-import "ssl_simulation_robot_control.proto";
-import "ssl_simulation_control.proto";
+import "proto/ssl_vision_detection.proto";
+import "proto/ssl_simulation_robot_feedback.proto";
+import "proto/ssl_simulation_robot_control.proto";
+import "proto/ssl_simulation_control.proto";
 
 // Request from the team to the simulator
 message SimulationSyncRequest {

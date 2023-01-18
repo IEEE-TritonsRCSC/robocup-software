@@ -8,6 +8,7 @@ import core.constants.RobotConstants;
 import core.fieldObjects.robot.Ally;
 import core.fieldObjects.robot.Foe;
 
+import core.fieldObjects.robot.Robot;
 import core.util.Vector2d;
 
 import java.util.ArrayList;
@@ -55,7 +56,7 @@ public class ShootBallNode extends SequenceNode {
         // TODO Get the field parameter
         SSL_GeometryFieldSize field = wrapper.getField();
 
-        ArrayList<Foe> foesList = new ArrayList<>(GameInfo.getFoeFielders());
+        ArrayList<Foe> foesList = new ArrayList<>(GameInfo.getFoes());
         ArrayList<Ally> allysList = new ArrayList<>(GameInfo.getFielders());
         List<Robot> obstacles = new ArrayList<>();
 
@@ -63,7 +64,7 @@ public class ShootBallNode extends SequenceNode {
         allysList.remove(GameInfo.getAllyClosestToBall());
 
         //add the other allys and foes to the obstacles list
-        obstacles.add(allysList);
+        obstacles.addAll(allysList);
         obstacles.addAll(foesList);
 
         //get the goal parameters
