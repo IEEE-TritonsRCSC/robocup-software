@@ -16,6 +16,7 @@ import java.util.List;
 import static core.constants.ProgramConstants.aiConfig;
 
 //import protofiles
+import static core.util.ObjectHelper.distToPath;
 import static proto.triton.FilteredObject.FilteredWrapperPacket;
 import static proto.triton.FilteredObject.Robot;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
@@ -27,10 +28,14 @@ import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
 public class ShootBallNode extends SequenceNode {
 
     private final KickBallNode kickBall;
+    private final FilteredWrapperPacket wrapper;
 
     public ShootBallNode(Ally ally) {
         super("Shoot Ball Node: " + ally.toString());
         this.kickBall = new KickBallNode(ally);
+
+        //Not sure how to get the goal parameter
+        this.wrapper = wrapper;
     }
 
     /**

@@ -10,6 +10,7 @@ import core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
 
 import core.fieldObjects.robot.Ally;
+import core.fieldObjects.robot.Foe;
 
 import static core.constants.ProgramConstants.objectConfig;
 
@@ -31,9 +32,9 @@ public class MakePlayNode extends CompositeNode {
     @Override
     public NodeState execute() {
 
-        //If there is a big space between robot and ball, dribble
+        //If there is a space between robot and goal, dribble
         //otherwise, pass the ball to the other robots
-       if(Math.sqrt((calcSpace().x*calcSpace().x)+(calcSpace().y*calcSpace().y)) > Float.MAX_VALUE) {
+       if(checkDribble()) {
         this.dribble.execute();
        }
        else{
@@ -44,25 +45,13 @@ public class MakePlayNode extends CompositeNode {
     }
 
     /**
-     * Calculate the sapce between the ball and the ball holder.
-     * Also check if the robot is facing the ball.
+     * Check if there is a space towards the goal
      */
-    private Vector2d calcSpace(){
-        Vector2d offset; // offset 2Dvector between the robot and the ball
+    private boolean checkDribble(){
+        boolean hasSpace = true;
 
-        // TODO Not sure how to check if the robot is facing the ball(Compute the facePos)
-
-        if (facePos == null)
-        // TODO Not sure how to get the robot orientation
-            offset = new Vector2d((float) Math.cos(orientation), (float) Math.sin(orientation));
-        else
-            offset = facePos.sub(GameInfo.getAllyClosestToBall().getPose()).norm();
-
-        //scale the offset
-        offset = offset.scale(objectConfig.objectToCameraFactor * objectConfig.ballRadius
-                + objectConfig.objectToCameraFactor * objectConfig.robotRadius);
-
-        return offset;
+        return hasSpace;
     }
 
 }
+

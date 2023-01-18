@@ -4,6 +4,10 @@ import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.fieldObjects.robot.Ally;
 
+import core.search.implementation.PathfindGridGroup;
+
+import core.util.Vector2d;
+
 import proto.simulation.SslSimulationRobotControl;
 
 /**
