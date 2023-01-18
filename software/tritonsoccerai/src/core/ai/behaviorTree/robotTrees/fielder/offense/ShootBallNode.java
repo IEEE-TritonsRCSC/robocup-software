@@ -7,7 +7,6 @@ import core.ai.behaviorTree.robotTrees.basicFunctions.KickBallNode;
 import core.constants.RobotConstants;
 import core.fieldObjects.robot.Ally;
 import core.fieldObjects.robot.Foe;
-
 import core.fieldObjects.robot.Robot;
 import core.util.Vector2d;
 
