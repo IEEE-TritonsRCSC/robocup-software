@@ -49,7 +49,7 @@ public class KickBallNode extends TaskNode {
         robotCommand.setKickAngle(0);
         robotCommand.setDribblerSpeed(0);
 
-        // TODO Not sure how to publish robotcommand
+        publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
 
         }else{
             // TODO if robot is not facing the right direction, rotate 
