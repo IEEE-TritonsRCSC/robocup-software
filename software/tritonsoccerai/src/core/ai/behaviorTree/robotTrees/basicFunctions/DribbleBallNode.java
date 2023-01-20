@@ -5,9 +5,10 @@ import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.fieldObjects.robot.Ally;
 
 import core.search.implementation.PathfindGridGroup;
+import core.search.node2d.Node2d;
 
 import core.util.Vector2d;
-
+import java.util.LinkedList;
 import static core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
 
 import proto.simulation.SslSimulationRobotControl;
@@ -18,6 +19,7 @@ import proto.simulation.SslSimulationRobotControl;
 public class DribbleBallNode extends TaskNode {
 
     private final Ally ally;
+    PathfindGridGroup pathfindGridGroup;
 
     // TODO Pathfinding algorithms needed
     public DribbleBallNode(Ally ally) {
@@ -32,13 +34,10 @@ public class DribbleBallNode extends TaskNode {
       */
     @Override
     public NodeState execute() {
-
-
-        // TODO find path to the ball
+        
         findPath(null);
 
-
-        return NodeState.SUCCESS;
+        return null;
     }
 
     /**
@@ -46,9 +45,17 @@ public class DribbleBallNode extends TaskNode {
      * Finds path to the target.
      */
     //TODO Have to define the PathToTarget class
-    public PathToTarget findPath(Vector2d position) {
-        // TODO
-        return null;
+    public void findPath(Vector2d ballPosition) {
+        // TODO Check whether the robot is facing to the ball or not.
+
+        // find path to the ball
+        Vector2d allyPos = super.ally.getPos();
+
+        // Pathfinding to ballPosition
+        LinkedList<Node2d> route = pathfindGridGroup.findRoute(ally.getId(), allyPos, ballPosition);
+        Vector2d next = pathfindGridGroup.findNext(ally.getId(), route);
+        
+        publish_dribble();
     }
 
     /*
