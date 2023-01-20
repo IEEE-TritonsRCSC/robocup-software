@@ -6,8 +6,13 @@ import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
+import core.constants.RobotConstants;
 import core.fieldObjects.robot.Ally;
+import core.fieldObjects.robot.Robot;
 import core.util.Vector2d;
+
+import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  * Handles Prepare Penalty game state
@@ -45,9 +50,43 @@ public class PenaltyNode extends TaskNode {
             }
         }
         else {
-            // TODO - move to a point with lineYValue
+            while ((this.ally.getY() - lineYValue) > DISTANCE_CONSTANT) {
+                this.moveToPositionNode.execute(findOptimalPositionSpot(lineYValue));
+            }
         }
         return NodeState.SUCCESS;
+    }
+
+    private Vector2d findOptimalPositionSpot(float lineYValue) {
+        float DISTANCE_CONSTANT = 1;
+        float SPACE_CONSTANT = (float) (1.5 * RobotConstants.ROBOT_WIDTH);
+        ArrayList<Double> xVals = new ArrayList<>();
+        for (Robot robot : GameInfo.getFielders()) {
+            if (Math.abs(robot.getY() - lineYValue) < DISTANCE_CONSTANT) {
+                xVals.add((double) robot.getX());
+            }
+        }
+        for (Robot robot : GameInfo.getFoeFielders()) {
+            if (Math.abs(robot.getY() - lineYValue) < DISTANCE_CONSTANT) {
+                xVals.add((double) robot.getX());
+            }
+        }
+        xVals.sort(new Comparator<Double>() {
+            @Override
+            public int compare(Double o1, Double o2) {
+                return (int) (o1 - o2);
+            }
+        });
+        float bestX = 10;
+        for (int i = 1; i < xVals.size(); i++) {
+            if (xVals.get(i) - xVals.get(i - 1) > SPACE_CONSTANT) {
+                float spotCenter = (float) (xVals.get(i) - ((xVals.get(i) - xVals.get(i - 1)) / 2));
+                if (Math.abs(spotCenter) < Math.abs(bestX)) {
+                    bestX = spotCenter;
+                }
+            }
+        }
+        return new Vector2d(bestX, lineYValue);
     }
 
 }

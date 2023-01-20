@@ -1,6 +1,8 @@
 package core.util;
 
 import core.ai.GameInfo;
+import core.fieldObjects.robot.Ally;
+import core.fieldObjects.robot.Foe;
 import core.fieldObjects.robot.Robot;
 
 import java.util.ArrayList;
@@ -179,6 +181,40 @@ public class ObjectHelper {
             }
         }
         return nearRobots;
+    }
+
+    /**
+     * Identifies a foe for ally to guard based on positions of all allies and foes
+     * Refer to figure 8 for detailed explanation
+     */
+    public static Foe identifyFoeToGuard(Ally ally, ArrayList<Foe> foes) {
+        // make copy of GameInfo.getFoeFielders() and sort it
+        ArrayList<Foe> foesInOrderOfDistance = new ArrayList<>(foes);
+        foesInOrderOfDistance.remove(GameInfo.getFoeClosestToBall());
+        foesInOrderOfDistance.sort((o1, o2) -> (int) (o1.getPos().dist(ally.getPos()) - o2.getPos().dist(ally.getPos())));
+        // make copy of GameInfo.getFielders() and remove the ally closest to ball
+        ArrayList<Ally> allyGuarders = new ArrayList<>(GameInfo.getFielders());
+        allyGuarders.remove(GameInfo.getAllyClosestToBall());
+        // For each foe, find n if ally is the nth farthest allyGuarder from foe
+        // place sum will be n + foe's index in foesInOrderOfDistance
+        int minPlaceSum = Integer.MAX_VALUE;
+        int minPlaceSumIndex = 0;
+        for (int i = 0; i < foesInOrderOfDistance.size(); i++) {
+            Foe foe = foesInOrderOfDistance.get(i);
+            float distToFoe = foe.getPos().dist(ally.getPos());
+            int place = 0;
+            for (Ally guarder : allyGuarders) {
+                if (foe.getPos().dist(guarder.getPos()) <= distToFoe) {
+                    place++;
+                }
+            }
+            if ((i + place) < minPlaceSum) {
+                minPlaceSum = i + place;
+                minPlaceSumIndex = i;
+            }
+        }
+        // return the foe with the lowest place sum
+        return foesInOrderOfDistance.get(minPlaceSumIndex);
     }
     
 }

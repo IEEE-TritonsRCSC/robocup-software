@@ -28,6 +28,7 @@ public class GameInfo {
     private static Foe foeKeeper;
     private static Boolean possessBall;
     private static Ally allyClosestToBall;
+    private static Foe foeClosestToBall;
     private static GameState currState;
     private static Vector2d ballPlacementLocation;
     private static Ball ball;
@@ -90,6 +91,10 @@ public class GameInfo {
         return allyClosestToBall;
     }
 
+    public static Foe getFoeClosestToBall() {
+        return foeClosestToBall;
+    }
+
     public static GameState getCurrState() {
         return currState;
     }
@@ -116,6 +121,10 @@ public class GameInfo {
 
     public static void setAllyClosestToBall(Ally ally) {
         GameInfo.allyClosestToBall = ally;
+    }
+
+    public static void setFoeClosestToBall(Foe foeClosestToBall) {
+        GameInfo.foeClosestToBall = foeClosestToBall;
     }
 
     public static void setCurrState(GameState currState) {
