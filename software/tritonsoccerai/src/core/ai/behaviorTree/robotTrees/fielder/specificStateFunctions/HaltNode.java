@@ -1,5 +1,6 @@
 package core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions;
 
+import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
 import core.fieldObjects.robot.Ally;
 
@@ -16,6 +17,10 @@ public class HaltNode extends SequenceNode {
         this.ally = ally;
     }
 
-    // TODO
+    @Override
+    public NodeState execute() {
+        // TODO stop the robot's motion
+        return NodeState.SUCCESS;
+    }
 
 }

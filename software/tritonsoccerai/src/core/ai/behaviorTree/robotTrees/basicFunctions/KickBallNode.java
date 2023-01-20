@@ -36,8 +36,7 @@ public class KickBallNode extends TaskNode {
         if (ObjectHelper.hasOrientation(ally, direction, aiConfig.kickToPointAngleTolerance)) {
         SslSimulationRobotControl.RobotCommand.Builder robotCommand = SslSimulationRobotControl.RobotCommand.newBuilder();
 
-        // TODO Not sure how to get the robot id
-        robotCommand.setId(.getId());
+        robotCommand.setId(ally.getId());
 
         SslSimulationRobotControl.RobotMoveCommand.Builder moveCommand = SslSimulationRobotControl.RobotMoveCommand.newBuilder();
         SslSimulationRobotControl.MoveLocalVelocity.Builder localCommand = SslSimulationRobotControl.MoveLocalVelocity.newBuilder();
@@ -53,7 +52,7 @@ public class KickBallNode extends TaskNode {
         // TODO Not sure how to publish robotcommand
 
         }else{
-            // TODO
+            // TODO if robot is not facing the right direction, rotate 
         }
 
         return null;
