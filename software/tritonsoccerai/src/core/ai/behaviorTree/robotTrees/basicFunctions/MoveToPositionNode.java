@@ -24,16 +24,25 @@ public class MoveToPositionNode extends TaskNode {
     }
 
     public NodeState execute(Vector2d endLoc) {
-
         Vector2d allyPos = super.ally.getPos();
 
-        //TODO: Can't get ally ID, no ID field
+        // Pathfinding to endLoc
         LinkedList<Node2d> route = pathfindGridGroup.findRoute(ally.getId(), allyPos, endLoc);
         Vector2d next = pathfindGridGroup.findNext(ally.getId(), route);
 
-        //TODO: Need to publish command for movement
-        
+        // Build robot command to be published
+        SslSimulationRobotControl.RobotCommand.Builder robotCommand = SslSimulationRobotControl.RobotCommand.newBuilder();
+        robotCommand.setId(ally.getId());
+        SslSimulationRobotControl.RobotMoveCommand.Builder moveCommand = SslSimulationRobotControl.RobotMoveCommand.newBuilder();
+        SslSimulationRobotControl.MoveGlobalVelocity.Builder globalVelocity = SslSimulationRobotControl.MoveGlobalVelocity.newBuilder();
+        globalVelocity.setX(vel.x);
+        globalVelocity.setY(vel.y);
+        globalVelocity.setAngular(angular);
+        moveCommand.setGlobalVelocity(globalVelocity);
+        robotCommand.setMoveCommand(moveCommand);
 
+        // Publish command to robot
+        publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
         return NodeState.SUCCESS;
     }
 
