@@ -25,5 +25,4 @@ public class ChaseBallNode extends TaskNode {
         this.moveToObjectNode.execute(GameInfo.getBall());
         return NodeState.SUCCESS;
     }
-
 }

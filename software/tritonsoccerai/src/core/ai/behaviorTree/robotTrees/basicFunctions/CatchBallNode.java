@@ -17,6 +17,7 @@ public class CatchBallNode extends TaskNode {
 
     @Override
     public NodeState execute() {
+        /* 
         // Calculating path from robot to ball
         Ball ball = GameInfo.getBall();
         Vector2d ballPos = getPos(ball);
@@ -32,6 +33,7 @@ public class CatchBallNode extends TaskNode {
         // Dribble It
         Dribble dribbleBall = new Dribble(ally);
         dribbleBall.execute();
+        */
 
         return NodeState.SUCCESS;
     }

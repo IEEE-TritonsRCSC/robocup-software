@@ -45,5 +45,4 @@ public class MoveToPositionNode extends TaskNode {
         publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
         return NodeState.SUCCESS;
     }
-
 }
