@@ -10,8 +10,8 @@ public class Ally extends Robot {
         super();
     }
 
-    public Ally(int xPos, int yPos) {
-        super(xPos, yPos);
+    public Ally(int xPos, int yPos, int id) {
+        super(xPos, yPos, id);
     }
 
 }
