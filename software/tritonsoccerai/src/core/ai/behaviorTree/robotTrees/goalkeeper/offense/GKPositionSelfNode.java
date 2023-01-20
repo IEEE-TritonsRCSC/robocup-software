@@ -1,5 +1,6 @@
 package core.ai.behaviorTree.robotTrees.goalkeeper.offense;
 
+import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
@@ -38,8 +39,9 @@ public class GKPositionSelfNode extends TaskNode {
         SSL_GeometryFieldSize field = this.wrapper.getField();
         float y = (-3/8)*(field.getFieldLength());
         // not sure how to get field width
-        float x = (field.getGoalWidth())/4; 
-        
+        float ballXPos = GameInfo.getBall().getX();
+        // if ballxPos is negative do multiply by -1 else multiple by 1
+        float x = (ballXPos < 0 ? -1 : 1)*(field.getGoalWidth())/4; 
         return new Vector2d(x,y);
     }
     
