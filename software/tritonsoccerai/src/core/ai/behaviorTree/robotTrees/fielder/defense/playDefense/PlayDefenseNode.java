@@ -5,6 +5,7 @@ import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.constants.ProgramConstants;
 import core.fieldObjects.robot.Ally;
 
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -15,6 +16,7 @@ public class PlayDefenseNode extends CompositeNode {
 
     private final ScheduledThreadPoolExecutor executor;
     private final PlayDefenseService playDefenseService;
+    private Future playDefenseFuture;
 
     public PlayDefenseNode(Ally ally, ScheduledThreadPoolExecutor executor) {
         super("Play Defense Node: " + ally.toString());
@@ -27,9 +29,13 @@ public class PlayDefenseNode extends CompositeNode {
      */
     @Override
     public NodeState execute() {
-        this.executor.scheduleAtFixedRate(this.playDefenseService, ProgramConstants.INITIAL_DELAY,
+        this.playDefenseFuture = this.executor.scheduleAtFixedRate(this.playDefenseService, ProgramConstants.INITIAL_DELAY,
                                         ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
         return NodeState.SUCCESS;
+    }
+
+    public void stopExecution() {
+        this.playDefenseFuture.cancel(true);
     }
 
 }

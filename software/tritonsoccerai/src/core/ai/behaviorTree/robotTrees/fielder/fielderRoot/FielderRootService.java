@@ -2,6 +2,7 @@ package core.ai.behaviorTree.robotTrees.fielder.fielderRoot;
 
 import core.ai.GameInfo;
 import core.ai.GameState;
+import core.ai.behaviorTree.nodes.BTNode;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
 import core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
@@ -11,6 +12,7 @@ import core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot.OffenseRootNo
 import core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.*;
 import core.fieldObjects.robot.Ally;
 
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 /**
@@ -19,6 +21,8 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
  * and starts execution of correct branch
  */
 public class FielderRootService extends ServiceNode {
+
+    private final ScheduledThreadPoolExecutor executor;
 
     private final ConditionalNode haveBall;
     private final OffenseRootNode offense;
@@ -38,10 +42,13 @@ public class FielderRootService extends ServiceNode {
     private GameState stateCurrentlyRunning;
     private boolean onOffense;
 
-    private Thread branchThread;
+    private Future<?> branchFuture;
+    private BTNode currentlyExecutingNode;
 
     public FielderRootService(Ally ally, ScheduledThreadPoolExecutor executor) {
         super("Fielder Root Service: " + ally);
+
+        this.executor = executor;
 
         this.closestToBallNode = new ClosestToBallNode(ally);
 
@@ -55,7 +62,7 @@ public class FielderRootService extends ServiceNode {
         this.defense = new PlayDefenseNode(ally, executor);
 
         this.haltNode = new HaltNode(ally);
-        this.stopNode = new StopNode(ally);
+        this.stopNode = new StopNode(ally, this.haltNode);
         this.prepareDirectFreeNode = new DirectFreeNode(ally, this.closestToBallNode);
         this.prepareIndirectFreeNode = new IndirectFreeNode(ally, this.closestToBallNode);
         this.prepareKickoffNode = new KickoffNode(ally, this.closestToBallNode);
@@ -63,11 +70,9 @@ public class FielderRootService extends ServiceNode {
         this.normalStartNode = new NormalStartNode(ally, this.closestToBallNode);
         this.ballPlacementNode = new BallPlacementNode(ally, this.closestToBallNode);
 
-        this.stateCurrentlyRunning = GameInfo.getCurrState();
+        this.stateCurrentlyRunning = GameState.OPEN_PLAY;
         this.onOffense = false;
-
-        this.branchThread = new Thread();
-        this.branchThread.setDaemon(true);
+        runOpenPlay();
     }
 
     /**
@@ -94,7 +99,8 @@ public class FielderRootService extends ServiceNode {
      */
     private void switchBranch() {
         // kill current thread
-        this.branchThread.interrupt();
+        this.currentlyExecutingNode.stopExecution();
+        this.branchFuture.cancel(true);
         // start new thread with executeCorrectBranch()
         executeCorrectBranch();
         this.stateCurrentlyRunning = GameInfo.getCurrState();
@@ -106,18 +112,33 @@ public class FielderRootService extends ServiceNode {
      */
     private void executeCorrectBranch() {
         switch (GameInfo.getCurrState()) {
-            case HALT -> this.branchThread = new Thread(this.haltNode);
-            case STOP -> this.branchThread = new Thread(this.stopNode);
-            case PREPARE_DIRECT_FREE -> this.branchThread = new Thread(this.prepareDirectFreeNode);
-            case PREPARE_INDIRECT_FREE -> this.branchThread = new Thread(this.prepareIndirectFreeNode);
-            case PREPARE_KICKOFF -> this.branchThread = new Thread(this.prepareKickoffNode);
-            case PREPARE_PENALTY -> this.branchThread = new Thread(this.preparePenaltyNode);
-            case NORMAL_START -> this.branchThread = new Thread(this.normalStartNode);
-            case BALL_PLACEMENT -> this.branchThread = new Thread(this.ballPlacementNode);
-            case FORCE_START, OPEN_PLAY -> runOpenPlay();
+            case HALT:
+                this.branchFuture = this.executor.submit(this.haltNode);
+                this.currentlyExecutingNode = this.haltNode;
+            case STOP:
+                this.branchFuture = this.executor.submit(this.stopNode);
+                this.currentlyExecutingNode = this.stopNode;
+            case PREPARE_DIRECT_FREE:
+                this.branchFuture = this.executor.submit(this.prepareDirectFreeNode);
+                this.currentlyExecutingNode = this.prepareDirectFreeNode;
+            case PREPARE_INDIRECT_FREE:
+                this.branchFuture = this.executor.submit(this.prepareIndirectFreeNode);
+                this.currentlyExecutingNode = this.prepareIndirectFreeNode;
+            case PREPARE_KICKOFF:
+                this.branchFuture = this.executor.submit(this.prepareKickoffNode);
+                this.currentlyExecutingNode = this.prepareKickoffNode;
+            case PREPARE_PENALTY:
+                this.branchFuture = this.executor.submit(this.preparePenaltyNode);
+                this.currentlyExecutingNode = this.preparePenaltyNode;
+            case NORMAL_START:
+                this.branchFuture = this.executor.submit(this.normalStartNode);
+                this.currentlyExecutingNode = this.normalStartNode;
+            case BALL_PLACEMENT:
+                this.branchFuture = this.executor.submit(this.ballPlacementNode);
+                this.currentlyExecutingNode = this.ballPlacementNode;
+            case FORCE_START, OPEN_PLAY:
+                runOpenPlay();
         }
-        this.branchThread.setDaemon(true);
-        this.branchThread.start();
     }
 
     /**
@@ -125,10 +146,12 @@ public class FielderRootService extends ServiceNode {
      */
     private void runOpenPlay() {
         if (onOffense) {
-            this.branchThread = new Thread(this.offense);
+            this.branchFuture = this.executor.submit(this.offense);
+            this.currentlyExecutingNode = this.offense;
         }
         else {
-            this.branchThread = new Thread(this.defense);
+            this.branchFuture = this.executor.submit(this.defense);
+            this.currentlyExecutingNode = this.defense;
         }
     }
 

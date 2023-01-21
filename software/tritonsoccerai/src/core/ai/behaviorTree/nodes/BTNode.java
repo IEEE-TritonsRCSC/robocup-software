@@ -18,6 +18,8 @@ public abstract class BTNode implements Runnable {
 
     public abstract NodeState execute();
 
+    public void stopExecution() {}
+
     /**
      * Default implementation of run() method,
      * used for running nodes in separate threads if needed
