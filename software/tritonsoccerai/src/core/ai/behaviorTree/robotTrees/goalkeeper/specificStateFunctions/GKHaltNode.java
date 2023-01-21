@@ -1,23 +1,19 @@
 package core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions;
 
-import core.ai.behaviorTree.nodes.BTNode;
+import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
-import core.fieldObjects.robot.Ally;
-import core.util.Vector2d;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 
-public class GKHaltNode extends BTNode {
+public class GKHaltNode extends TaskNode {
 
-    private final Ally ally;
-
-
-    public GKHaltNode(Ally ally) {
-        super("GK Halt Node: " + ally.toString());
-        this.ally = ally;
+    public GKHaltNode() {
+        super("GK Halt Node: " + GameInfo.getKeeper().toString(), GameInfo.getKeeper());
     }
 
     @Override
     public NodeState execute() {
-        ally.setVel(new Vector2d(0, 0)); // set velocity to 0 to stop? 
+        // TODO send a command to stop the robot
+        // No need to update the velocity
         return NodeState.SUCCESS;
     }
 

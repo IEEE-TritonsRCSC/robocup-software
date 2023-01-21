@@ -1,29 +1,30 @@
 package core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions;
 
 import core.ai.GameInfo;
-import core.ai.GameState;
 import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
-import core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
-import core.fieldObjects.robot.Ally;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.ai.behaviorTree.robotTrees.fielder.offense.PositionSelfNode;
+import core.ai.behaviorTree.robotTrees.goalkeeper.defense.BlockBallNode;
 
-public class GKNormalStartNode extends SequenceNode {
+public class GKNormalStartNode extends TaskNode {
 
-    private final Ally ally;
-    private final CoordinatedPassNode coordinatedPassNode;
+    private final PositionSelfNode positionSelfNode;
+    private final BlockBallNode blockBallNode;
     
-    public GKNormalStartNode(Ally ally) {
-        super("GK Normal Start Node: " + ally.toString());
-        this.ally = ally;
-        this.coordinatedPassNode = new CoordinatedPassNode(ally);
+    public GKNormalStartNode() {
+        super("GK Normal Start Node: " + GameInfo.getKeeper().toString(), GameInfo.getKeeper());
+        this.positionSelfNode = new PositionSelfNode(GameInfo.getKeeper());
+        this.blockBallNode = new BlockBallNode(GameInfo.getKeeper());
     }
 
     public NodeState execute() {
-        // safe to assume GK will always be passing?
-        if(GameInfo.getPossessBall()) {
-            this.coordinatedPassNode.execute();
+        while (true) {
+            if (GameInfo.getPossessBall()) {
+                this.positionSelfNode.execute();
+            } else {
+                this.blockBallNode.execute();
+            }
         }
-        return NodeState.SUCCESS;
     }
 
 }
