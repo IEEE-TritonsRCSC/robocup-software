@@ -3,7 +3,7 @@ package core.ai.behaviorTree.robotTrees.basicFunctions;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.fieldObjects.robot.Ally;
-import core.fieldObjects.ball;
+import core.fieldObjects.ball.Ball;
 import core.ai.GameInfo;
 
 /**

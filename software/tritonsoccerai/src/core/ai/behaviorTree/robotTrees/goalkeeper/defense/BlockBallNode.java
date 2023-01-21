@@ -18,8 +18,8 @@ public class BlockBallNode extends TaskNode {
 
     public BlockBallNode(Ally ally) {
         super(ally);
-        this.centerArc = new Vector2d(0, 0); // arbitrary center arc
-        this.radius = 2;
+        this.centerArc = new Vector2d(0, -1 * (SSL_GeometryFieldSize.field_length / 2)); // arbitrary center arc
+        this.radius = SSLGeometryFieldSize.goal_width / 2;
         this.moveToPositionNode = new MoveToPositionNode(ally);
     }
 
