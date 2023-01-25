@@ -2,7 +2,7 @@ package core.ai.behaviorTree.robotTrees.basicFunctions;
 
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import core.fieldObjects.robot.Ally;
+//import core.fieldObjects.robot.Ally;
 
 import core.search.implementation.PathfindGridGroup;
 import core.search.node2d.Node2d;
@@ -12,16 +12,16 @@ import java.util.LinkedList;
 import static core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
 
 import proto.simulation.SslSimulationRobotControl;
-
+import proto.filtered_object.Robot;
 /**
  * Defines tasks to be performed to dribble ball
  */
 public class DribbleBallNode extends TaskNode {
 
-    private final Ally ally;
+    private final Robot ally;
     PathfindGridGroup pathfindGridGroup;
 
-    public DribbleBallNode(Ally ally) {
+    public DribbleBallNode(Robot ally) {
         super("Dribble Ball Node: " + ally.toString(), ally);
         this.ally = ally;
     }

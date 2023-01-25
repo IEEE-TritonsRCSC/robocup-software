@@ -4,18 +4,20 @@ import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.KickBallNode;
-import core.fieldObjects.robot.Ally;
-import core.fieldObjects.robot.Foe;
+//import core.fieldObjects.robot.Ally;
+//import core.fieldObjects.robot.Foe;
 import core.constants.RobotConstants;
 import static core.constants.ProgramConstants.aiConfig;
 import static core.util.ObjectHelper.distToPath;
 import static proto.triton.FilteredObject.Robot;
 
-import core.fieldObjects.robot.Robot;
+//import core.fieldObjects.robot.Robot;
 import core.util.Vector2d;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import proto.filtered_object.Robot;
 
  /**
  * Defines the sequence of tasks needed to successfully perform a coordinated pass between two allies.
@@ -23,10 +25,10 @@ import java.util.List;
  */
 public class CoordinatedPassNode extends SequenceNode {
 
-    private final Ally passer;
+    private final Robot passer;
     private final KickBallNode kickBall;
 
-    public CoordinatedPassNode(Ally passer) {
+    public CoordinatedPassNode(Robot passer) {
         super("Coordinated Pass Node: " + passer.toString());
         this.passer = passer;
         this.kickBall = new KickBallNode(passer);
@@ -54,6 +56,7 @@ public class CoordinatedPassNode extends SequenceNode {
      * Identifies the best pass receiver
      */
     private Vector2d findPassShot() {
+        // Might need to edit later to work with Proto Robots
         ArrayList<Foe> foesList = new ArrayList<>(GameInfo.getFoeFielders());
         ArrayList<Ally> allysList = new ArrayList<>(GameInfo.getFielders());
         List<Robot> obstacles = new ArrayList<>();

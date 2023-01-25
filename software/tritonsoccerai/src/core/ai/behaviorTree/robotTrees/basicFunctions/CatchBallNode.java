@@ -4,20 +4,22 @@ import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.fieldObjects.ball.Ball;
-import core.fieldObjects.robot.Ally;
+// comment out, using proto files
+// import core.fieldObjects.robot.Ally;
 <<<<<<< HEAD
 import core.util.Vector2d;
 =======
-import core.fieldObjects.ball.Ball;
+// import core.fieldObjects.ball.Ball;
 import core.ai.GameInfo;
->>>>>>> 34b958773a2b2fabc3e4ea3fd8b8b03d3ab4b7f8
+
+import proto.filtered_object.Robot;
 
 /**
  * Defines task of catching ball in motion
  */
 public class CatchBallNode extends TaskNode {
 
-    public CatchBallNode(Ally ally) {
+    public CatchBallNode(Robot ally) {
         super("Catch Ball Node: " + ally.toString(), ally);
     }
 

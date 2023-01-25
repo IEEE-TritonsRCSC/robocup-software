@@ -5,10 +5,12 @@ import java.util.LinkedList;
 import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import core.fieldObjects.robot.Ally;
+//import core.fieldObjects.robot.Ally;
 import core.util.Vector2d;
 import core.search.implementation.*;
 import core.search.node2d.Node2d;
+
+import proto.filtered_object.Robot;
 
 import static core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
 
@@ -16,7 +18,7 @@ public class MoveToPositionNode extends TaskNode {
 
     PathfindGridGroup pathfindGridGroup;
     
-    public MoveToPositionNode(Ally ally) {
+    public MoveToPositionNode(Robot ally) {
         super("Move To Position Node: " + ally.toString(), ally);
     }
 
