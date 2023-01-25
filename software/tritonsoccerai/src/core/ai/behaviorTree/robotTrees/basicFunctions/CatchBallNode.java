@@ -6,9 +6,7 @@ import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.fieldObjects.ball.Ball;
 // comment out, using proto files
 // import core.fieldObjects.robot.Ally;
-<<<<<<< HEAD
 import core.util.Vector2d;
-=======
 // import core.fieldObjects.ball.Ball;
 import core.ai.GameInfo;
 
