@@ -1,10 +1,11 @@
 package core.ai.behaviorTree.robotTrees.basicFunctions;
 
+import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.fieldObjects.ball.Ball;
 import core.fieldObjects.robot.Ally;
-import core.fieldObjects.ball;
-import core.ai.GameInfo;
+import core.util.Vector2d;
 
 /**
  * Defines task of catching ball in motion

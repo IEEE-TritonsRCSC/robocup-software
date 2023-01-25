@@ -24,11 +24,12 @@ public class GKKickoffNode extends SequenceNode {
 
     @Override
     public NodeState execute() {
-        if(GameInfo.getPossessBall()) {
-            this.positionSelfNode.execute();
-        }
-        else {
-            this.blockBallNode.execute();
+        if (GameInfo.getPossessBall()) {
+            this.positionSelfNode.execute(); // set up GK on offense
+        } else {
+            while(true) {
+                this.blockBallNode.execute(); // set up GK on defense
+            }    
         }
         return NodeState.SUCCESS;
     }
