@@ -10,6 +10,8 @@ import core.util.Vector2d;
 import core.search.implementation.*;
 import core.search.node2d.Node2d;
 
+import static core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
+
 public class MoveToPositionNode extends TaskNode {
 
     PathfindGridGroup pathfindGridGroup;
@@ -45,5 +47,4 @@ public class MoveToPositionNode extends TaskNode {
         publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
         return NodeState.SUCCESS;
     }
-
 }

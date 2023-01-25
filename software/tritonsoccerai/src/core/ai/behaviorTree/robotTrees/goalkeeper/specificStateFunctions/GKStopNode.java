@@ -1,18 +1,15 @@
 package core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions;
 
+import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
-import core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.HaltNode;
-import core.fieldObjects.robot.Ally;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 
-public class GKStopNode extends SequenceNode {
+public class GKStopNode extends TaskNode {
 
-    private final Ally ally;
-    private final HaltNode haltNode;
+    private final GKHaltNode haltNode;
 
-    public GKStopNode(Ally ally, HaltNode haltNode) {
-        super("GK Stop Node: " + ally.toString());
-        this.ally = ally;
+    public GKStopNode(GKHaltNode haltNode) {
+        super("GK Stop Node: " + GameInfo.getKeeper().toString(), GameInfo.getKeeper());
         this.haltNode = haltNode;
     }
 

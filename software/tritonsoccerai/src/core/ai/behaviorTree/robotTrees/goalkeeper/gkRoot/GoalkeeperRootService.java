@@ -2,6 +2,7 @@ package core.ai.behaviorTree.robotTrees.goalkeeper.gkRoot;
 
 import core.ai.GameInfo;
 import core.ai.GameState;
+import core.ai.behaviorTree.nodes.BTNode;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
 import core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
@@ -9,6 +10,7 @@ import core.ai.behaviorTree.robotTrees.goalkeeper.defense.defenseRoot.GKDefenseR
 import core.ai.behaviorTree.robotTrees.goalkeeper.offense.offenseRoot.GKOffenseRootNode;
 import core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions.*;
 
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 /**
@@ -20,6 +22,8 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
  * and starts execution of correct branch
  */
 public class GoalkeeperRootService extends ServiceNode {
+
+    private final ScheduledThreadPoolExecutor executor;
 
     private final ConditionalNode haveBall;
     private final GKOffenseRootNode offense;
@@ -37,10 +41,13 @@ public class GoalkeeperRootService extends ServiceNode {
     private GameState stateCurrentlyRunning;
     private boolean onOffense;
 
-    private Thread branchThread;
+    private Future<?> branchFuture;
+    private BTNode currentlyExecutingNode;
 
     public GoalkeeperRootService(ScheduledThreadPoolExecutor executor) {
         super("GK Root Service");
+
+        this.executor = executor;
 
         this.haveBall = new ConditionalNode() {
             @Override
@@ -52,7 +59,7 @@ public class GoalkeeperRootService extends ServiceNode {
         this.defense = new GKDefenseRootNode(executor);
 
         this.haltNode = new GKHaltNode();
-        this.stopNode = new GKStopNode();
+        this.stopNode = new GKStopNode(this.haltNode);
         this.prepareDirectFreeNode = new GKDirectFreeNode();
         this.prepareIndirectFreeNode = new GKIndirectFreeNode();
         this.prepareKickoffNode = new GKKickoffNode();
@@ -60,11 +67,9 @@ public class GoalkeeperRootService extends ServiceNode {
         this.normalStartNode = new GKNormalStartNode();
         this.ballPlacementNode = new GKBallPlacementNode();
 
-        this.stateCurrentlyRunning = GameInfo.getCurrState();
+        this.stateCurrentlyRunning = GameState.OPEN_PLAY;
         this.onOffense = false;
-
-        this.branchThread = new Thread();
-        this.branchThread.setDaemon(true);
+        runOpenPlay();
     }
 
     /**
@@ -72,9 +77,10 @@ public class GoalkeeperRootService extends ServiceNode {
      * Execute the correct branch
      */
     private void switchBranch() {
-        // kill current thread
-        this.branchThread.interrupt();
-        // start new thread with executeCorrectBranch()
+        // stop current branch execution
+        this.currentlyExecutingNode.stopExecution();
+        this.branchFuture.cancel(true);
+        // submit new branch with executeCorrectBranch()
         executeCorrectBranch();
         this.stateCurrentlyRunning = GameInfo.getCurrState();
     }
@@ -85,18 +91,33 @@ public class GoalkeeperRootService extends ServiceNode {
      */
     private void executeCorrectBranch() {
         switch (GameInfo.getCurrState()) {
-            case HALT -> this.branchThread = new Thread(this.haltNode);
-            case STOP -> this.branchThread = new Thread(this.stopNode);
-            case PREPARE_DIRECT_FREE -> this.branchThread = new Thread(this.prepareDirectFreeNode);
-            case PREPARE_INDIRECT_FREE -> this.branchThread = new Thread(this.prepareIndirectFreeNode);
-            case PREPARE_KICKOFF -> this.branchThread = new Thread(this.prepareKickoffNode);
-            case PREPARE_PENALTY -> this.branchThread = new Thread(this.preparePenaltyNode);
-            case NORMAL_START -> this.branchThread = new Thread(this.normalStartNode);
-            case BALL_PLACEMENT -> this.branchThread = new Thread(this.ballPlacementNode);
-            case FORCE_START, OPEN_PLAY -> runOpenPlay();
+            case HALT:
+                this.branchFuture = this.executor.submit(this.haltNode);
+                this.currentlyExecutingNode = this.haltNode;
+            case STOP:
+                this.branchFuture = this.executor.submit(this.stopNode);
+                this.currentlyExecutingNode = this.stopNode;
+            case PREPARE_DIRECT_FREE:
+                this.branchFuture = this.executor.submit(this.prepareDirectFreeNode);
+                this.currentlyExecutingNode = this.prepareDirectFreeNode;
+            case PREPARE_INDIRECT_FREE:
+                this.branchFuture = this.executor.submit(this.prepareIndirectFreeNode);
+                this.currentlyExecutingNode = this.prepareIndirectFreeNode;
+            case PREPARE_KICKOFF:
+                this.branchFuture = this.executor.submit(this.prepareKickoffNode);
+                this.currentlyExecutingNode = this.prepareKickoffNode;
+            case PREPARE_PENALTY:
+                this.branchFuture = this.executor.submit(this.preparePenaltyNode);
+                this.currentlyExecutingNode = this.preparePenaltyNode;
+            case NORMAL_START:
+                this.branchFuture = this.executor.submit(this.normalStartNode);
+                this.currentlyExecutingNode = this.normalStartNode;
+            case BALL_PLACEMENT:
+                this.branchFuture = this.executor.submit(this.ballPlacementNode);
+                this.currentlyExecutingNode = this.ballPlacementNode;
+            case FORCE_START, OPEN_PLAY:
+                runOpenPlay();
         }
-        this.branchThread.setDaemon(true);
-        this.branchThread.start();
     }
 
     /**
@@ -118,14 +139,16 @@ public class GoalkeeperRootService extends ServiceNode {
     }
 
     /**
-     * Run correct open play node in branch thread
+     * Run correct open play node concurrently
      */
     private void runOpenPlay() {
         if (onOffense) {
-            this.branchThread = new Thread(this.offense);
+            this.branchFuture = this.executor.submit(this.offense);
+            this.currentlyExecutingNode = this.offense;
         }
         else {
-            this.branchThread = new Thread(this.defense);
+            this.branchFuture = this.executor.submit(this.defense);
+            this.currentlyExecutingNode = this.defense;
         }
     }
 

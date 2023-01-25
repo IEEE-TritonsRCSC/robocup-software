@@ -1,17 +1,27 @@
 package core.ai.behaviorTree.robotTrees.fielder.offense;
 
+import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
+
 import core.fieldObjects.robot.Ally;
+import core.fieldObjects.robot.Foe;
 import core.util.Vector2d;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Positions ally at optimal position
  */
 public class PositionSelfNode extends TaskNode {
 
+    private final MoveToPositionNode moveToPositionNode;
+
     public PositionSelfNode(Ally ally) {
         super("Position Self Node: " + ally.toString(), ally);
+        this.moveToPositionNode = new MoveToPositionNode(ally);
     }
 
     /**
@@ -19,16 +29,56 @@ public class PositionSelfNode extends TaskNode {
      */
     @Override
     public NodeState execute() {
-        // TODO
-        return null;
+        this.moveToPositionNode.execute(findPositioningLocation());
+        return NodeState.SUCCESS;
     }
 
     /**
      * Finds optimal location to position self
      */
     private Vector2d findPositioningLocation() {
-        // TODO
-        return null;
+
+        // TODO We have to change how to calculate the optimal position (Maybe we have to use Numerical Optimization Algorithm)
+        // This is just a temporary implementation
+
+        ArrayList<Foe> foesList = new ArrayList<>(GameInfo.getFoes());
+        ArrayList<Ally> allysList = new ArrayList<>(GameInfo.getFielders());
+        List<Vector2d> obstaclePositions = new ArrayList<>();
+
+        // remove self
+        allysList.remove(this.ally);
+
+        // add the other ally positions and foe positions to the obstaclesPositions list
+        for(int i=0;i<allysList.size();i++) {
+			obstaclePositions.add(allysList.get(i).getPos());
+            obstaclePositions.add(foesList.get(i).getPos());
+		}
+
+        // add ballposition to the obstaclesPositions list
+        obstaclePositions.add(GameInfo.getBall().getPos());
+
+
+        // distance from the nearest of several obstacles
+        Vector2d nearestObstacle = null;
+        float distance = 5;
+        float minDistance = Float.MAX_VALUE;
+
+        for (Vector2d obstacle : obstaclePositions) {
+            float currentdist = this.ally.getPos().dist(obstacle);
+
+            if (currentdist < minDistance) {
+                minDistance = currentdist;
+                nearestObstacle = obstacle;
+            }
+        }
+
+         // end position
+         float newX = nearestObstacle.x + (this.ally.getX() - nearestObstacle.x) * distance / minDistance;
+         float newY = nearestObstacle.y + (this.ally.getY() - nearestObstacle.y) * distance / minDistance;
+ 
+         Vector2d endLoc = new Vector2d(newX, newY);
+
+        return endLoc;
     }
 
 }

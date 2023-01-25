@@ -7,6 +7,10 @@ import core.util.Vector2d;
 
 public class CentralCoordinatorRoot implements Runnable {
 
+    // used to track starting position of ball
+    // to determine if ball kicked into play
+    private Vector2d ballStartPos = null;
+
     /**
      * Sends appropriate messages to robot trees based on provided pass details
      * Instructs receiver to expect ball at a given pass location
@@ -31,10 +35,16 @@ public class CentralCoordinatorRoot implements Runnable {
      */
     @Override
     public void run() {
-        // TODO
+        float DISTANCE_CONSTANT = (float) 0.2;
         if (GameInfo.getCurrState() == GameState.NORMAL_START) {
-            // check if ball has been hit by a robot
-            // if so, switch current game state to OPEN_PLAY
+            if (this.ballStartPos == null) {
+                this.ballStartPos = new Vector2d(GameInfo.getBall().getPos());
+            }
+            // check if ball kicked
+            if (GameInfo.getBall().getPos().dist(ballStartPos) > DISTANCE_CONSTANT) {
+                // if so, switch current game state to OPEN_PLAY
+                GameInfo.setCurrState(GameState.OPEN_PLAY);
+            }
         }
         // else check for new message to act upon
     }

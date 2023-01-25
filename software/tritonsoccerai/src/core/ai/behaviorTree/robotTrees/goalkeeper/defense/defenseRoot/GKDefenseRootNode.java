@@ -4,6 +4,7 @@ import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.constants.ProgramConstants;
 
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -11,6 +12,7 @@ public class GKDefenseRootNode extends CompositeNode {
 
     private final ScheduledThreadPoolExecutor executor;
     private final GKDefenseRootService gkDefenseRootService;
+    private Future gkDefenseRootFuture;
 
     public GKDefenseRootNode(ScheduledThreadPoolExecutor executor) {
         super();
@@ -20,9 +22,13 @@ public class GKDefenseRootNode extends CompositeNode {
 
     @Override
     public NodeState execute() {
-        this.executor.scheduleAtFixedRate(this.gkDefenseRootService, ProgramConstants.INITIAL_DELAY,
+        this.gkDefenseRootFuture = this.executor.scheduleAtFixedRate(this.gkDefenseRootService, ProgramConstants.INITIAL_DELAY,
                                         ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
         return NodeState.RUNNING;
+    }
+
+    public void stopExecution() {
+        this.gkDefenseRootFuture.cancel(true);
     }
 
 }

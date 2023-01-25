@@ -20,9 +20,9 @@ public class GKPositionSelfNode extends TaskNode {
     private final MoveToPositionNode moveToPositionNode;
     private FilteredWrapperPacket wrapper;
 
-    public GKPositionSelfNode(Ally ally, FilteredWrapperPacket wrapper) {
-        super("GKPositionSelfNode", ally);
-        this.moveToPositionNode = new MoveToPositionNode(ally);
+    public GKPositionSelfNode(FilteredWrapperPacket wrapper) {
+        super("GKPositionSelfNode", GameInfo.getKeeper());
+        this.moveToPositionNode = new MoveToPositionNode(GameInfo.getKeeper());
         this.wrapper = wrapper;
     }
 
