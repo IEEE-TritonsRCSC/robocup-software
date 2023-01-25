@@ -1,7 +1,17 @@
 from math import degrees
+# This import is not being used. We are probably missing some sort of
+# instructions for how the tritonbot recieves information from the 
+# ai to move the motors a certain amount
+
 from re import L
-from config.config_path import ConfigPath
+# Not sure what exactly this import does, but something about 
+# it being similar to Perl extensions?
+
+from config.config_path import ConfigPath 
 from config.config_reader import read_config
+# The above two imports here are used to read the .proto files.
+# Pretty much it (these files are very short)
+
 from constant.runtime_constants import RuntimeConstants
 from constant.team import Team
 from generated_sources.proto.triton_bot_communication_pb2 import \
