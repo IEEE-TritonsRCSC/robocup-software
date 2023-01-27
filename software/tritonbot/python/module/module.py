@@ -53,6 +53,10 @@ class Module(Thread):
         self.consume_channel.basic_consume(
             queue=queue_name, on_message_callback=callback, auto_ack=True)
 
+    # Publishes to an exchange
+    # @param self
+    # @param exchange   the exchange to publish to
+    # @param object     the object to send
     def publish(self, exchange, object):
         if (isinstance(object, Message)):
             body = object.SerializeToString()
