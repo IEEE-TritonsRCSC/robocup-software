@@ -1,8 +1,8 @@
 package core.module.processingModule;
 
 import com.rabbitmq.client.Delivery;
-import core.constant.ProgramConstants;
-import core.constant.Team;
+import core.constants.ProgramConstants;
+import core.fieldObjects.robot.Team;
 import core.module.Module;
 import proto.simulation.SslSimulationRobotControl;
 

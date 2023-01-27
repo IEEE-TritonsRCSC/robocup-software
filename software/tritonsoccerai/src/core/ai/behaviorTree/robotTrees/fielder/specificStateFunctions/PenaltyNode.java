@@ -2,17 +2,17 @@ package core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions;
 
 import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
 import core.constants.RobotConstants;
-import core.fieldObjects.robot.Ally;
-import core.fieldObjects.robot.Robot;
+import proto.filtered_object.Robot;
 import core.util.Vector2d;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+
+import static core.util.ProtobufUtils.getPos;
 
 /**
  * Handles Prepare Penalty game state
@@ -22,12 +22,12 @@ import java.util.Comparator;
  */
 public class PenaltyNode extends TaskNode {
 
-    private final Ally ally;
+    private final Robot ally;
     private final ClosestToBallNode closestToBallNode;
     private final MoveToPositionNode moveToPositionNode;
 
-    public PenaltyNode(Ally ally, ClosestToBallNode closestToBallNode) {
-        super("Prepare Penalty Node: " + ally.toString(), ally);
+    public PenaltyNode(Robot ally, ClosestToBallNode closestToBallNode) {
+        super("Prepare Penalty Node: " + ally, ally);
         this.ally = ally;
         this.closestToBallNode = closestToBallNode;
         this.moveToPositionNode = new MoveToPositionNode(ally);
@@ -45,8 +45,8 @@ public class PenaltyNode extends TaskNode {
         }
         if (GameInfo.getPossessBall() && NodeState.isSuccess(this.closestToBallNode.execute())) {
             Vector2d desiredLocation = new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - 2);
-            while (this.ally.getPos().dist(desiredLocation) > DISTANCE_CONSTANT) {
-                this.moveToPositionNode.execute(new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - 2));
+            while (getPos(this.ally).dist(desiredLocation) > DISTANCE_CONSTANT) {
+                this.moveToPositionNode.execute(desiredLocation);
             }
         }
         else {

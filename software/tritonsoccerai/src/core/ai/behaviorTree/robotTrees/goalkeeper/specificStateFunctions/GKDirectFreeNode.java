@@ -11,7 +11,7 @@ public class GKDirectFreeNode extends TaskNode {
     private final GKPositionSelfNode positionSelfNode;
 
     public GKDirectFreeNode() {
-            super("Ball Placement Node: " + GameInfo.getKeeper().toString(), GameInfo.getKeeper());
+            super("Ball Placement Node: " + GameInfo.getKeeper(), GameInfo.getKeeper());
             this.blockBallNode = new BlockBallNode(GameInfo.getKeeper());
             this.positionSelfNode = new GKPositionSelfNode(null);
         }

@@ -1,7 +1,7 @@
 package core.module.aiModule;
 
 import core.ai.behaviorTree.robotTrees.fielder.FielderTree;
-import core.fieldObjects.robot.Ally;
+import proto.filtered_object.Robot;
 import core.module.Module;
 
 import java.io.IOException;
@@ -14,7 +14,7 @@ public class FielderTreeModule extends Module {
 
     private final FielderTree tree;
 
-    public FielderTreeModule(ScheduledThreadPoolExecutor executor, Ally fielder) {
+    public FielderTreeModule(ScheduledThreadPoolExecutor executor, Robot fielder) {
         super(executor);
         this.tree = new FielderTree(fielder, executor);
     }

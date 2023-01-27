@@ -3,7 +3,7 @@ package core;
 import core.ai.GameInfo;
 import core.config.*;
 import core.constants.ProgramConstants;
-import core.fieldObjects.robot.Ally;
+import proto.filtered_object.Robot;
 import core.fieldObjects.robot.Team;
 import core.module.Module;
 import core.module.aiModule.AIModule;
@@ -145,7 +145,7 @@ public class AI {
     public void startAI() {
         // core ai modules
         startModule(new AIModule(executor));
-        for (Ally fielder : GameInfo.getFielders()) {
+        for (Robot fielder : GameInfo.getFielders()) {
             startModule(new FielderTreeModule(executor, fielder));
         }
         startModule(new GKTreeModule(executor));

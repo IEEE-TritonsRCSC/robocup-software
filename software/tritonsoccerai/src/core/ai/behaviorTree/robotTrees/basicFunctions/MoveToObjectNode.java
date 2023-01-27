@@ -3,7 +3,7 @@ package core.ai.behaviorTree.robotTrees.basicFunctions;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 //import core.fieldObjects.FieldObject;
-//import core.fieldObjects.robot.Ally;
+//import proto.filtered_object.Robot;
 import core.util.Vector2d;
 
 import proto.filtered_object.*;
@@ -16,7 +16,7 @@ public class MoveToObjectNode extends TaskNode {
     private final MoveToPositionNode moveToPositionNode;
 
     public MoveToObjectNode(Robot ally) {
-        super("Move To Object Node: " + ally.toString(), ally);
+        super("Move To Object Node: " + ally, ally);
         this.moveToPositionNode = new MoveToPositionNode(ally);
     }
 
@@ -31,7 +31,7 @@ public class MoveToObjectNode extends TaskNode {
      */
     public NodeState execute(FilteredObject object) {
         float TIME_CONSTANT = 0.5f;
-        Vector2d position = object.getPos().add(object.getVel().scale(TIME_CONSTANT));
+        Vector2d position = getPos(object).add(object.getVel().scale(TIME_CONSTANT));
         this.moveToPositionNode.execute(position);
         return NodeState.SUCCESS;
     }

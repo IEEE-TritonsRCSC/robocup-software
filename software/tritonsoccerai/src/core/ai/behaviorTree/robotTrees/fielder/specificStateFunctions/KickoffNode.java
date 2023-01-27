@@ -6,8 +6,10 @@ import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
-import core.fieldObjects.robot.Ally;
+import proto.filtered_object.Robot;
 import core.util.Vector2d;
+
+import static core.util.ProtobufUtils.getPos;
 
 /**
  * Handles Prepare Kickoff game state
@@ -16,12 +18,12 @@ import core.util.Vector2d;
  */
 public class KickoffNode extends TaskNode {
 
-    private final Ally ally;
+    private final Robot ally;
     private final ClosestToBallNode closestToBallNode;
     private final MoveToPositionNode moveToPositionNode;
 
-    public KickoffNode(Ally ally, ClosestToBallNode closestToBallNode) {
-        super("Prepare Kickoff Node: " + ally.toString(), ally);
+    public KickoffNode(Robot ally, ClosestToBallNode closestToBallNode) {
+        super("Prepare Kickoff Node: " + ally, ally);
         this.ally = ally;
         this.closestToBallNode = closestToBallNode;
         this.moveToPositionNode = new MoveToPositionNode(ally);
@@ -32,8 +34,8 @@ public class KickoffNode extends TaskNode {
         float DISTANCE_CONSTANT = 1;
         if (GameInfo.getPossessBall() && NodeState.isSuccess(this.closestToBallNode.execute())) {
             Vector2d desiredLocation = new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - 2);
-            while (this.ally.getPos().dist(desiredLocation) > DISTANCE_CONSTANT) {
-                this.moveToPositionNode.execute(new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - 2));
+            while (getPos(this.ally).dist(desiredLocation) > DISTANCE_CONSTANT) {
+                this.moveToPositionNode.execute(desiredLocation);
             }
         }
         else {

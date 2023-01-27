@@ -5,7 +5,7 @@ import core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.ChaseBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
 import core.ai.behaviorTree.robotTrees.fielder.defense.CutPassingLaneNode;
-import core.fieldObjects.robot.Ally;
+import proto.filtered_object.Robot;
 
 public class PlayDefenseService extends ServiceNode {
 
@@ -13,7 +13,7 @@ public class PlayDefenseService extends ServiceNode {
     private final ChaseBallNode chaseBallNode;
     private final CutPassingLaneNode cutPassingLaneNode;
 
-    public PlayDefenseService(Ally ally) {
+    public PlayDefenseService(Robot ally) {
         super("Play Defense Service: " + ally);
         this.closestToBallNode = new ClosestToBallNode(ally);
         this.chaseBallNode = new ChaseBallNode(ally);

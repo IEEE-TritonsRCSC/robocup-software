@@ -2,8 +2,10 @@ package core.ai.behaviorTree.robotTrees.central;
 
 import core.ai.GameInfo;
 import core.ai.GameState;
-import core.fieldObjects.robot.Ally;
+import proto.filtered_object.Robot;
 import core.util.Vector2d;
+
+import static core.util.ProtobufUtils.getPos;
 
 public class CentralCoordinatorRoot implements Runnable {
 
@@ -16,9 +18,9 @@ public class CentralCoordinatorRoot implements Runnable {
      * Instructs receiver to expect ball at a given pass location
      * Instructs all other robot trees to position based on pass location
      */
-    private static void coordinatedPass(Ally receiver, Vector2d passLoc) {
+    private static void coordinatedPass(Robot receiver, Vector2d passLoc) {
         // TODO
-        for (Ally ally : GameInfo.getAllies()) {
+        for (Robot ally : GameInfo.getAllies()) {
             if (ally == receiver) {
                 // send message to receiver to expect ball at passLoc
             }
@@ -38,10 +40,10 @@ public class CentralCoordinatorRoot implements Runnable {
         float DISTANCE_CONSTANT = (float) 0.2;
         if (GameInfo.getCurrState() == GameState.NORMAL_START) {
             if (this.ballStartPos == null) {
-                this.ballStartPos = new Vector2d(GameInfo.getBall().getPos());
+                this.ballStartPos = getPos(GameInfo.getBall());
             }
             // check if ball kicked
-            if (GameInfo.getBall().getPos().dist(ballStartPos) > DISTANCE_CONSTANT) {
+            if (getPos(GameInfo.getBall()).dist(ballStartPos) > DISTANCE_CONSTANT) {
                 // if so, switch current game state to OPEN_PLAY
                 GameInfo.setCurrState(GameState.OPEN_PLAY);
             }

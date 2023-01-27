@@ -1,14 +1,12 @@
 package core.util;
 
 import core.ai.GameInfo;
-import core.fieldObjects.robot.Ally;
-import core.fieldObjects.robot.Foe;
-import core.fieldObjects.robot.Robot;
+import proto.filtered_object.Robot;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static core.util.ProtobufUtils.*;
+import static core.util.ProtobufUtils.getPos;
 import static proto.triton.FilteredObject.Ball;
 import static proto.triton.FilteredObject.Robot;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
@@ -187,24 +185,24 @@ public class ObjectHelper {
      * Identifies a foe for ally to guard based on positions of all allies and foes
      * Refer to figure 8 for detailed explanation
      */
-    public static Foe identifyFoeToGuard(Ally ally, ArrayList<Foe> foes) {
+    public static Robot identifyFoeToGuard(Robot ally, ArrayList<Robot> foes) {
         // make copy of GameInfo.getFoeFielders() and sort it
-        ArrayList<Foe> foesInOrderOfDistance = new ArrayList<>(foes);
+        ArrayList<Robot> foesInOrderOfDistance = new ArrayList<>(foes);
         foesInOrderOfDistance.remove(GameInfo.getFoeClosestToBall());
-        foesInOrderOfDistance.sort((o1, o2) -> (int) (o1.getPos().dist(ally.getPos()) - o2.getPos().dist(ally.getPos())));
+        foesInOrderOfDistance.sort((o1, o2) -> (int) (getPos(o1).dist(getPos(ally)) - getPos(o2).dist(getPos(ally))));
         // make copy of GameInfo.getFielders() and remove the ally closest to ball
-        ArrayList<Ally> allyGuarders = new ArrayList<>(GameInfo.getFielders());
+        ArrayList<Robot> allyGuarders = new ArrayList<>(GameInfo.getFielders());
         allyGuarders.remove(GameInfo.getAllyClosestToBall());
         // For each foe, find n if ally is the nth farthest allyGuarder from foe
         // place sum will be n + foe's index in foesInOrderOfDistance
         int minPlaceSum = Integer.MAX_VALUE;
         int minPlaceSumIndex = 0;
         for (int i = 0; i < foesInOrderOfDistance.size(); i++) {
-            Foe foe = foesInOrderOfDistance.get(i);
-            float distToFoe = foe.getPos().dist(ally.getPos());
+            Robot foe = foesInOrderOfDistance.get(i);
+            float distToFoe = getPos(foe).dist(getPos(ally));
             int place = 0;
-            for (Ally guarder : allyGuarders) {
-                if (foe.getPos().dist(guarder.getPos()) <= distToFoe) {
+            for (Robot guarder : allyGuarders) {
+                if (getPos(foe).dist(getPos(guarder)) <= distToFoe) {
                     place++;
                 }
             }

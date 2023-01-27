@@ -4,8 +4,7 @@ import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToObjectNode;
-import core.fieldObjects.robot.Ally;
-import core.fieldObjects.robot.Foe;
+import proto.filtered_object.Robot;
 import core.util.ObjectHelper;
 
 /**
@@ -15,8 +14,8 @@ public class CutPassingLaneNode extends TaskNode {
 
     private final MoveToObjectNode moveToObjectNode;
 
-    public CutPassingLaneNode(Ally ally) {
-        super("Cut Passing Lane Node: " + ally.toString(), ally);
+    public CutPassingLaneNode(Robot ally) {
+        super("Cut Passing Lane Node: " + ally, ally);
         this.moveToObjectNode = new MoveToObjectNode(ally);
     }
 
@@ -32,7 +31,7 @@ public class CutPassingLaneNode extends TaskNode {
     /**
      * Moves ally toward a given foe
      */
-    private void moveTowardFoe(Foe foe) {
+    private void moveTowardFoe(Robot foe) {
         this.moveToObjectNode.execute(foe);
     }
 

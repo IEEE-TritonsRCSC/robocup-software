@@ -6,7 +6,7 @@ import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import proto.filtered_object.Robot;
 
 // comment out, using robot from proto files
-// import core.fieldObjects.robot.Ally;
+// import proto.filtered_object.Robot;
 
 /**
  * Defines task of chasing ball
@@ -16,7 +16,7 @@ public class ChaseBallNode extends TaskNode {
     private final MoveToObjectNode moveToObjectNode;
 
     public ChaseBallNode(Robot ally) {
-        super("Chase Ball Node: " + ally.toString(), ally);
+        super("Chase Ball Node: " + ally, ally);
         this.moveToObjectNode = new MoveToObjectNode(ally);
     }
 

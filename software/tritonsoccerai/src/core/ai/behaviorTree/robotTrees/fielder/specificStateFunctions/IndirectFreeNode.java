@@ -2,32 +2,32 @@ package core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions;
 
 import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToObjectNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
 import core.ai.behaviorTree.robotTrees.fielder.offense.PositionSelfNode;
-import core.fieldObjects.robot.Ally;
-import core.fieldObjects.robot.Foe;
+import proto.filtered_object.Robot;
 import core.util.ObjectHelper;
 import core.util.Vector2d;
 
 import java.util.ArrayList;
+
+import static core.util.ProtobufUtils.getPos;
 
 /**
  * Handles Prepare Indirect Free game state
  */
 public class IndirectFreeNode extends TaskNode {
 
-    private final Ally ally;
+    private final Robot ally;
     private final ClosestToBallNode closestToBallNode;
     private final MoveToPositionNode moveToPositionNode;
     private final MoveToObjectNode moveToObjectNode;
     private final PositionSelfNode positionSelfNode;
 
-    public IndirectFreeNode(Ally ally, ClosestToBallNode closestToBallNode) {
-        super("Prepare Indirect Free Node: " + ally.toString(), ally);
+    public IndirectFreeNode(Robot ally, ClosestToBallNode closestToBallNode) {
+        super("Prepare Indirect Free Node: " + ally, ally);
         this.ally = ally;
         this.closestToBallNode = closestToBallNode;
         this.moveToPositionNode = new MoveToPositionNode(ally);
@@ -42,8 +42,8 @@ public class IndirectFreeNode extends TaskNode {
             if (NodeState.isSuccess(this.closestToBallNode.execute())) {
                 Vector2d desiredLocation = new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - 2);
                 DISTANCE_CONSTANT = 1;
-                while (this.ally.getPos().dist(desiredLocation) > DISTANCE_CONSTANT) {
-                    this.moveToPositionNode.execute(new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - 2));
+                while (getPos(this.ally).dist(desiredLocation) > DISTANCE_CONSTANT) {
+                    this.moveToPositionNode.execute(desiredLocation);
                 }
             }
             else {
@@ -53,12 +53,12 @@ public class IndirectFreeNode extends TaskNode {
             }
         }
         else {
-            ArrayList<Foe> opponents;
+            ArrayList<Robot> opponents;
             DISTANCE_CONSTANT = 7;
             while (true) {
-                opponents = new ArrayList<Foe>(GameInfo.getFoeFielders());
-                for (Foe foe : opponents) {
-                    if (foe.getPos().dist(GameInfo.getBall().getPos()) < DISTANCE_CONSTANT) {
+                opponents = new ArrayList<Robot>(GameInfo.getFoeFielders());
+                for (Robot foe : opponents) {
+                    if (getPos(foe).dist(getPos(GameInfo.getBall())) < DISTANCE_CONSTANT) {
                         opponents.remove(foe);
                     }
                 }

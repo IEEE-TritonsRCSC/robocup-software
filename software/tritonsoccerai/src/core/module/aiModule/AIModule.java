@@ -3,7 +3,7 @@ package core.module.aiModule;
 import core.ai.GameInfo;
 import core.ai.behaviorTree.robotTrees.fielder.FielderTree;
 import core.ai.behaviorTree.robotTrees.goalkeeper.GoalkeeperTree;
-import core.fieldObjects.robot.Ally;
+import proto.filtered_object.Robot;
 import core.module.Module;
 
 import java.io.IOException;

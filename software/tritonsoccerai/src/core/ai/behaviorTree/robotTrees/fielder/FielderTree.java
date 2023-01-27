@@ -2,7 +2,7 @@ package core.ai.behaviorTree.robotTrees.fielder;
 
 import core.ai.behaviorTree.BehaviorTree;
 import core.ai.behaviorTree.robotTrees.fielder.fielderRoot.FielderRootNode;
-import core.fieldObjects.robot.Ally;
+import proto.filtered_object.Robot;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
@@ -12,9 +12,9 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
  */
 public class FielderTree extends BehaviorTree {
 
-    private final Ally fielder;
+    private final Robot fielder;
 
-    public FielderTree(Ally fielder, ScheduledThreadPoolExecutor executor) {
+    public FielderTree(Robot fielder, ScheduledThreadPoolExecutor executor) {
         super();
         this.root = new FielderRootNode(fielder, executor);
         this.fielder = fielder;

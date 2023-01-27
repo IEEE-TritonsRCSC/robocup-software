@@ -2,7 +2,6 @@ package core.ai.behaviorTree.nodes.taskNodes;
 
 import core.ai.behaviorTree.nodes.BTNode;
 import core.ai.behaviorTree.nodes.NodeState;
-//import core.fieldObjects.robot.Ally;
 import proto.filtered_object.Robot;
 
 // leaves of tree; actionable things to do

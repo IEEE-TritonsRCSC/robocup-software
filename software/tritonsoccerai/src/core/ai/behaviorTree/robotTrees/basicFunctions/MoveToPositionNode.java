@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-//import core.fieldObjects.robot.Ally;
+//import proto.filtered_object.Robot;
 import core.util.Vector2d;
 import core.search.implementation.*;
 import core.search.node2d.Node2d;
@@ -13,13 +13,14 @@ import core.search.node2d.Node2d;
 import proto.filtered_object.Robot;
 
 import static core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
+import static core.util.ProtobufUtils.getPos;
 
 public class MoveToPositionNode extends TaskNode {
 
     PathfindGridGroup pathfindGridGroup;
     
     public MoveToPositionNode(Robot ally) {
-        super("Move To Position Node: " + ally.toString(), ally);
+        super("Move To Position Node: " + ally, ally);
     }
 
     @Override
@@ -28,7 +29,7 @@ public class MoveToPositionNode extends TaskNode {
     }
 
     public NodeState execute(Vector2d endLoc) {
-        Vector2d allyPos = super.ally.getPos();
+        Vector2d allyPos = getPos(super.ally);
 
         // Pathfinding to endLoc
         LinkedList<Node2d> route = pathfindGridGroup.findRoute(ally.getId(), allyPos, endLoc);

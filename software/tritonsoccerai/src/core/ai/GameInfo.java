@@ -1,12 +1,13 @@
 package core.ai;
 
 import core.fieldObjects.ball.Ball;
-import core.fieldObjects.robot.Ally;
-import core.fieldObjects.robot.Foe;
+import proto.FilteredObject.Robot;
 import core.fieldObjects.robot.Team;
 import core.util.Vector2d;
 
 import java.util.ArrayList;
+
+import static core.util.ProtobufUtils.getPos;
 
 /**
  * central hub to find all info related to game
@@ -15,40 +16,22 @@ import java.util.ArrayList;
  */
 public class GameInfo {
 
+    public static FilteredWrapperPacket wrapper;
+
     private static Team TEAM_COLOR;
     private static Team FOE_TEAM_COLOR;
-
-    private static ArrayList<Ally> fielders;
-    private static Ally keeper;
-    private static ArrayList<Ally> allies;
-
-    // last foe in list should be opposing goalkeeper
-    private static ArrayList<Foe> foes;
-    private static ArrayList<Foe> foeFielders;
-    private static Foe foeKeeper;
-    private static Boolean possessBall;
-    private static Ally allyClosestToBall;
-    private static Foe foeClosestToBall;
     private static GameState currState;
+    private static GameState prevState;
     private static Vector2d ballPlacementLocation;
-    private static Ball ball;
 
     /**
      * Initialize game information
      */
-    public void initialize(Team teamColor, Team foeTeamColor, ArrayList<Ally> fielders, Ally keeper,
-                           ArrayList<Foe> foes, GameState currState, Ball ball) {
+    public void initialize(FilteredWrapperPacket wrapper, Team teamColor, Team foeTeamColor, GameState currState) {
+        GameInfo.wrapper = wrapper;
         GameInfo.TEAM_COLOR = teamColor;
         GameInfo.FOE_TEAM_COLOR = foeTeamColor;
-        GameInfo.fielders = fielders;
-        GameInfo.keeper = keeper;
-        GameInfo.allies = new ArrayList<>(fielders);
-        GameInfo.allies.add(keeper);
-        GameInfo.foes = foes;
-        GameInfo.foeFielders = (ArrayList<Foe>) foes.subList(0, foes.size() - 1);
-        GameInfo.foeKeeper = foes.get(foes.size() - 1);
         GameInfo.currState = currState;
-        GameInfo.ball = ball;
     }
 
     public static Team getTeamColor() {
@@ -59,44 +42,80 @@ public class GameInfo {
         return FOE_TEAM_COLOR;
     }
 
-    public static ArrayList<Ally> getFielders() {
-        return fielders;
-    }
-
-    public static Ally getKeeper() {
-        return keeper;
-    }
-
-    public static ArrayList<Ally> getAllies() {
+    public static ArrayList<Robot> getFielders() {
+        ArrayList<Robot> allies = getAllies();
+        allies.remove(0);
         return allies;
     }
 
-    public static ArrayList<Foe> getFoes() {
+    public static Robot getKeeper() {
+        return getAllies().get(0);
+    }
+
+    public static ArrayList<Robot> getAllies() {
+        ArrayList<Robot> allies = new ArrayList<Robot>();
+        allies.addAll(wrapper.getAlliesMap());
+        return allies;
+    }
+
+    public static ArrayList<Robot> getFoes() {
+        ArrayList<Robot> foes = new ArrayList<Robot>();
+        foes.addAll(wrapper.getFoesMap());
         return foes;
     }
 
-    public static ArrayList<Foe> getFoeFielders() {
-        return foeFielders;
+    public static ArrayList<Robot> getFoeFielders() {
+        ArrayList<Robot> foes = getFoes();
+        foes.remove(0);
+        return foes;
     }
 
-    public static Foe getFoeKeeper() {
-        return foeKeeper;
+    public static Robot getFoeKeeper() {
+        return getFoes().get(0);
     }
 
     public static Boolean getPossessBall() {
-        return possessBall;
+        return wrapper.getBall().getCaptureState().type() == AllyCapture;
     }
 
-    public static Ally getAllyClosestToBall() {
-        return allyClosestToBall;
+    public static Robot getAllyClosestToBall() {
+        ArrayList<Robot> allies = getAllies();
+        Vector2d ballPos = getPos(wrapper.getBall());
+        Robot closest = allies.get(0);
+        float minDist = getPos(closest).dist(ballPos);
+        float distToBall;
+        for (int i = 1; i < allies.size(); i++) {
+            distToBall = getPos(allies.get(i)).dist(ballPos);
+            if (distToBall < minDist) {
+                closest = allies.get(i);
+                minDist = distToBall;
+            }
+        }
+        return closest;
     }
 
-    public static Foe getFoeClosestToBall() {
-        return foeClosestToBall;
+    public static Robot getFoeClosestToBall() {
+        ArrayList<Robot> foes = getFoes();
+        Vector2d ballPos = getPos(wrapper.getBall());
+        Robot closest = foes.get(0);
+        float minDist = getPos(closest).dist(ballPos);
+        float distToBall;
+        for (int i = 1; i < foes.size(); i++) {
+            distToBall = getPos(foes.get(i)).dist(ballPos);
+            if (distToBall < minDist) {
+                closest = foes.get(i);
+                minDist = distToBall;
+            }
+        }
+        return closest;
     }
 
     public static GameState getCurrState() {
         return currState;
+    }
+
+    public static GameState getPrevState() {
+        return prevState;
     }
 
     public static Vector2d getBallPlacementLocation() {
@@ -104,7 +123,11 @@ public class GameInfo {
     }
 
     public static Ball getBall() {
-        return ball;
+        return wrapper.getBall();
+    }
+
+    public static SSL_GeometryFieldSize getField() {
+        return wrapper.getField();
     }
 
     public static void setTeamColor(Team teamColor) {
@@ -113,18 +136,6 @@ public class GameInfo {
 
     public static void setFoeTeamColor(Team teamColor) {
         GameInfo.FOE_TEAM_COLOR = teamColor;
-    }
-
-    public static void setPossessBall(Boolean possessBall) {
-        GameInfo.possessBall = possessBall;
-    }
-
-    public static void setAllyClosestToBall(Ally ally) {
-        GameInfo.allyClosestToBall = ally;
-    }
-
-    public static void setFoeClosestToBall(Foe foeClosestToBall) {
-        GameInfo.foeClosestToBall = foeClosestToBall;
     }
 
     public static void setCurrState(GameState currState) {

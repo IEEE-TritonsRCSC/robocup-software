@@ -10,7 +10,7 @@ import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
 import core.ai.behaviorTree.robotTrees.fielder.defense.playDefense.PlayDefenseNode;
 import core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot.OffenseRootNode;
 import core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.*;
-import core.fieldObjects.robot.Ally;
+import proto.filtered_object.Robot;
 
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -45,7 +45,7 @@ public class FielderRootService extends ServiceNode {
     private Future<?> branchFuture;
     private BTNode currentlyExecutingNode;
 
-    public FielderRootService(Ally ally, ScheduledThreadPoolExecutor executor) {
+    public FielderRootService(Robot ally, ScheduledThreadPoolExecutor executor) {
         super("Fielder Root Service: " + ally);
 
         this.executor = executor;

@@ -4,11 +4,12 @@ import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.KickBallNode;
-//import core.fieldObjects.robot.Ally;
-//import core.fieldObjects.robot.Foe;
+//import proto.filtered_object.Robot;
+//import proto.filtered_object.Robot;
 import core.constants.RobotConstants;
 import static core.constants.ProgramConstants.aiConfig;
 import static core.util.ObjectHelper.distToPath;
+import static core.util.ProtobufUtils.getPos;
 import static proto.triton.FilteredObject.Robot;
 
 //import core.fieldObjects.robot.Robot;
@@ -29,7 +30,7 @@ public class CoordinatedPassNode extends SequenceNode {
     private final KickBallNode kickBall;
 
     public CoordinatedPassNode(Robot passer) {
-        super("Coordinated Pass Node: " + passer.toString());
+        super("Coordinated Pass Node: " + passer);
         this.passer = passer;
         this.kickBall = new KickBallNode(passer);
     }
@@ -57,8 +58,8 @@ public class CoordinatedPassNode extends SequenceNode {
      */
     private Vector2d findPassShot() {
         // Might need to edit later to work with Proto Robots
-        ArrayList<Foe> foesList = new ArrayList<>(GameInfo.getFoeFielders());
-        ArrayList<Ally> allysList = new ArrayList<>(GameInfo.getFielders());
+        ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoeFielders());
+        ArrayList<Robot> allysList = new ArrayList<>(GameInfo.getFielders());
         List<Robot> obstacles = new ArrayList<>();
 
         //remove the passer
@@ -67,7 +68,7 @@ public class CoordinatedPassNode extends SequenceNode {
         //add allys to the target list
         List<Vector2d> kickTos = new ArrayList<>();
         for(int i=0;i<allysList.size();i++) {
-			kickTos.add(allysList.get(i).getPos());
+			kickTos.add(getPos(allysList.get(i)));
 		}
 
         //add foes to the obstacles list
@@ -80,7 +81,7 @@ public class CoordinatedPassNode extends SequenceNode {
 
         // Choose the best pass receiver from allysList
         for (Vector2d kickTo : kickTos) {
-            float distToObstacles = distToPath(passer.getPos(), kickTo, obstacles);
+            float distToObstacles = distToPath(getPos(passer), kickTo, obstacles);
 
             // TODO Maybe have to change how to calculate the score
             float score = aiConfig.passDistToObstaclesScoreFactor * distToObstacles;

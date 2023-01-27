@@ -1,10 +1,13 @@
 package core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions;
 
+import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
-import core.fieldObjects.robot.Ally;
+import proto.filtered_object.Robot;
 import core.util.Vector2d;
+
+import static core.util.ProtobufUtils.getPos;
 
 /**
  * Handles Halt game state
@@ -12,19 +15,22 @@ import core.util.Vector2d;
  */
 public class HaltNode extends SequenceNode {
 
-    private final Ally ally;
+    private final Robot ally;
     private final MoveToPositionNode moveToPositionNode;
 
-    public HaltNode(Ally ally) {
-        super("Halt Node: " + ally.toString());
+    public HaltNode(Robot ally) {
+        super("Halt Node: " + ally);
         this.ally = ally;
         this.moveToPositionNode = new MoveToPositionNode(ally);
     }
 
     @Override
     public NodeState execute() {
-        // TODO stop the robot's motion
-        this.moveToPositionNode.execute(new Vector2d(ally.getX(), ally.getY()));
+        // move to current location until moving slow enough
+        float MAX_VEL_CONSTANT = 2.0f;
+        while(new Vector2d(ally.getVx(), ally.getVy()).mag() < MAX_VEL_CONSTANT) {
+            this.moveToPositionNode.execute(getPos(ally));
+        }
         return NodeState.SUCCESS;
     }
 

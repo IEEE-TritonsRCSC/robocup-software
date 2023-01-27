@@ -3,7 +3,7 @@ package core.ai.behaviorTree.robotTrees.fielder.defense.playDefense;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.constants.ProgramConstants;
-import core.fieldObjects.robot.Ally;
+import proto.filtered_object.Robot;
 
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -18,8 +18,8 @@ public class PlayDefenseNode extends CompositeNode {
     private final PlayDefenseService playDefenseService;
     private Future playDefenseFuture;
 
-    public PlayDefenseNode(Ally ally, ScheduledThreadPoolExecutor executor) {
-        super("Play Defense Node: " + ally.toString());
+    public PlayDefenseNode(Robot ally, ScheduledThreadPoolExecutor executor) {
+        super("Play Defense Node: " + ally);
         this.executor = executor;
         this.playDefenseService = new PlayDefenseService(ally);
     }

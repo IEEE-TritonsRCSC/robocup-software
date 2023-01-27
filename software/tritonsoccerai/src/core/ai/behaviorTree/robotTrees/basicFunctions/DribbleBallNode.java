@@ -2,7 +2,7 @@ package core.ai.behaviorTree.robotTrees.basicFunctions;
 
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-//import core.fieldObjects.robot.Ally;
+//import proto.filtered_object.Robot;
 
 import core.search.implementation.PathfindGridGroup;
 import core.search.node2d.Node2d;
@@ -22,7 +22,7 @@ public class DribbleBallNode extends TaskNode {
     PathfindGridGroup pathfindGridGroup;
 
     public DribbleBallNode(Robot ally) {
-        super("Dribble Ball Node: " + ally.toString(), ally);
+        super("Dribble Ball Node: " + ally, ally);
         this.ally = ally;
     }
 

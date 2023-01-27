@@ -5,9 +5,7 @@ import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.KickBallNode;
 import core.constants.RobotConstants;
-import core.fieldObjects.robot.Ally;
-import core.fieldObjects.robot.Foe;
-import core.fieldObjects.robot.Robot;
+import proto.filtered_object.Robot;
 import core.util.Vector2d;
 
 import java.util.ArrayList;
@@ -17,6 +15,7 @@ import static core.constants.ProgramConstants.aiConfig;
 
 //import protofiles
 import static core.util.ObjectHelper.distToPath;
+import static core.util.ProtobufUtils.getPos;
 import static proto.triton.FilteredObject.FilteredWrapperPacket;
 import static proto.triton.FilteredObject.Robot;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
@@ -28,14 +27,10 @@ import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
 public class ShootBallNode extends SequenceNode {
 
     private final KickBallNode kickBall;
-    private final FilteredWrapperPacket wrapper;
 
-    public ShootBallNode(Ally ally) {
-        super("Shoot Ball Node: " + ally.toString());
+    public ShootBallNode(Robot ally) {
+        super("Shoot Ball Node: " + ally);
         this.kickBall = new KickBallNode(ally);
-
-        //Not sure how to get the goal parameter
-        this.wrapper = wrapper;
     }
 
     /**
@@ -53,10 +48,10 @@ public class ShootBallNode extends SequenceNode {
     private Vector2d findShot() {
 
         // TODO Get the field parameter
-        SSL_GeometryFieldSize field = wrapper.getField();
+        SSL_GeometryFieldSize field = GameInfo.getField();
 
-        ArrayList<Foe> foesList = new ArrayList<>(GameInfo.getFoes());
-        ArrayList<Ally> allysList = new ArrayList<>(GameInfo.getFielders());
+        ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoes());
+        ArrayList<Robot> allysList = new ArrayList<>(GameInfo.getFielders());
         List<Robot> obstacles = new ArrayList<>();
 
         //remove the ally closest to ball
@@ -83,7 +78,7 @@ public class ShootBallNode extends SequenceNode {
 
         //defines the best kick direction based on the position of the obstacles
         for (Vector2d kickTo : kickTos) {
-            float distToObstacles = distToPath(GameInfo.getAllyClosestToBall().getPos(), kickTo, obstacles);
+            float distToObstacles = distToPath(getPos(GameInfo.getAllyClosestToBall()), kickTo, obstacles);
 
             // TODO Maybe have to change how to calculate the score
             float score = aiConfig.goalShootDistToObstaclesScoreFactor * distToObstacles;

@@ -5,21 +5,22 @@ import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
-import core.fieldObjects.robot.Ally;
+import core.util.Vector2d;
+import proto.filtered_object.Robot;
+
+import static core.util.ProtobufUtils.getPos;
 
 /**
  * Handles Ball Placement game state
  * If our possession, place ball at designated location
  */
 public class BallPlacementNode extends TaskNode {
-
-    private final Ally ally;
+    
     private final ClosestToBallNode closestToBallNode;
     private final DribbleBallNode dribbleBallNode;
 
-    public BallPlacementNode(Ally ally, ClosestToBallNode closestToBallNode) {
-        super("Ball Placement Node: " + ally.toString(), ally);
-        this.ally = ally;
+    public BallPlacementNode(Robot ally, ClosestToBallNode closestToBallNode) {
+        super("Ball Placement Node: " + ally, ally);
         this.closestToBallNode = closestToBallNode;
         this.dribbleBallNode = new DribbleBallNode(ally);
     }
@@ -32,7 +33,7 @@ public class BallPlacementNode extends TaskNode {
     public NodeState execute() {
         float DISTANCE_CONSTANT = 1;
         if (GameInfo.getPossessBall() && NodeState.isSuccess(this.closestToBallNode.execute())) {
-            while (GameInfo.getBall().getPos().dist(GameInfo.getBallPlacementLocation()) > DISTANCE_CONSTANT) {
+            while (getPos(GameInfo.getBall()).dist(GameInfo.getBallPlacementLocation()) > DISTANCE_CONSTANT) {
                 this.dribbleBallNode.execute(GameInfo.getBallPlacementLocation());
             }
         }

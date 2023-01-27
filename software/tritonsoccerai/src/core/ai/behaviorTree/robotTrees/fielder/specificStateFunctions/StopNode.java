@@ -2,7 +2,7 @@ package core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions;
 
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
-import core.fieldObjects.robot.Ally;
+import proto.filtered_object.Robot;
 
 /**
  * Handles Stop game state
@@ -11,11 +11,11 @@ import core.fieldObjects.robot.Ally;
  */
 public class StopNode extends SequenceNode {
 
-    private final Ally ally;
+    private final Robot ally;
     private final HaltNode haltNode;
 
-    public StopNode(Ally ally, HaltNode haltNode) {
-        super("Stop Node: " + ally.toString());
+    public StopNode(Robot ally, HaltNode haltNode) {
+        super("Stop Node: " + ally);
         this.ally = ally;
         this.haltNode = haltNode;
     }

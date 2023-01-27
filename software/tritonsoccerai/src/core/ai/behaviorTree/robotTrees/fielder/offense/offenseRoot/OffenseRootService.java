@@ -8,7 +8,7 @@ import core.ai.behaviorTree.robotTrees.basicFunctions.RobotHasPossessionNode;
 import core.ai.behaviorTree.robotTrees.fielder.offense.MakePlayNode;
 import core.ai.behaviorTree.robotTrees.fielder.offense.PositionSelfNode;
 import core.ai.behaviorTree.robotTrees.fielder.offense.ShootBallNode;
-import core.fieldObjects.robot.Ally;
+import proto.filtered_object.Robot;
 
 public class OffenseRootService extends ServiceNode {
 
@@ -18,7 +18,7 @@ public class OffenseRootService extends ServiceNode {
     private final CompositeNode makePlay;
     private final PositionSelfNode positionSelf;
 
-    public OffenseRootService(Ally ally) {
+    public OffenseRootService(Robot ally) {
         super("Offense Root Service " + ally);
         this.havePossession = new RobotHasPossessionNode(ally);
         this.haveOpenShot = new ConditionalNode() {

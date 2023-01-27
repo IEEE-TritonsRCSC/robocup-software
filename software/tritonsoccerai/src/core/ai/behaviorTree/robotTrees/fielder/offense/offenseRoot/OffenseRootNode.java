@@ -3,7 +3,7 @@ package core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.constants.ProgramConstants;
-import core.fieldObjects.robot.Ally;
+import proto.filtered_object.Robot;
 
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -20,7 +20,7 @@ public class OffenseRootNode extends CompositeNode {
     private final OffenseRootService offenseRootService;
     private Future offenseRootFuture;
 
-    public OffenseRootNode(Ally ally, ScheduledThreadPoolExecutor executor) {
+    public OffenseRootNode(Robot ally, ScheduledThreadPoolExecutor executor) {
         super("Offense Root");
         this.offenseRootService = new OffenseRootService(ally);
         this.executor = executor;

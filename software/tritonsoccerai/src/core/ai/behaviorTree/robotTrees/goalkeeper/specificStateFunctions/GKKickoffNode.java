@@ -12,7 +12,7 @@ public class GKKickoffNode extends TaskNode {
     private final BlockBallNode blockBallNode;
 
     public GKKickoffNode() {
-        super("Prepare Kickoff Node : " + GameInfo.getKeeper().toString(), GameInfo.getKeeper());
+        super("Prepare Kickoff Node : " + GameInfo.getKeeper(), GameInfo.getKeeper());
         this.positionSelfNode = new GKPositionSelfNode(null);
         this.blockBallNode = new BlockBallNode(GameInfo.getKeeper());
     }

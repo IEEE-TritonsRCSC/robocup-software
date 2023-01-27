@@ -5,7 +5,7 @@ import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.fieldObjects.ball.Ball;
 // comment out, using proto files
-// import core.fieldObjects.robot.Ally;
+// import proto.filtered_object.Robot;
 import core.util.Vector2d;
 // import core.fieldObjects.ball.Ball;
 import core.ai.GameInfo;
@@ -18,7 +18,7 @@ import proto.filtered_object.Robot;
 public class CatchBallNode extends TaskNode {
 
     public CatchBallNode(Robot ally) {
-        super("Catch Ball Node: " + ally.toString(), ally);
+        super("Catch Ball Node: " + ally, ally);
     }
 
     @Override

@@ -9,13 +9,10 @@ import core.util.Vector2d;
 import core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
 
-import core.fieldObjects.robot.Ally;
-import core.fieldObjects.robot.Foe;
-import core.fieldObjects.robot.Robot;
-import static core.constants.ProgramConstants.objectConfig;
+import proto.filtered_object.Robot;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.lang.Math;
 
 
 /**
@@ -25,14 +22,10 @@ public class MakePlayNode extends CompositeNode {
     private final DribbleBallNode dribble;
     private final CoordinatedPassNode coordinatedPass;
 
-    private final FilteredWrapperPacket wrapper;
-
-    public MakePlayNode(Ally ally) {
+    public MakePlayNode(Robot ally) {
         super("Make Play");
         this.dribble = new DribbleBallNode(ally);
         this.coordinatedPass = new CoordinatedPassNode(ally);
-
-        this.wrapper = wrapper;
     }
     
     @Override
@@ -57,7 +50,7 @@ public class MakePlayNode extends CompositeNode {
         boolean hasSpace = true;
 
         // TODO Get the field parameter
-        SSL_GeometryFieldSize field = wrapper.getField();
+        SSL_GeometryFieldSize field = GameInfo.getField();
 
         // Get the goal parameters
         float goalX = field.getGoalWidth() / 2f;
@@ -70,8 +63,8 @@ public class MakePlayNode extends CompositeNode {
 
         // Check if there is a space towards the objective point
 
-        ArrayList<Foe> foesList = new ArrayList<>(GameInfo.getFoes());
-        ArrayList<Ally> allysList = new ArrayList<>(GameInfo.getFielders());
+        ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoes());
+        ArrayList<Robot> allysList = new ArrayList<>(GameInfo.getFielders());
         List<Vector2d> obstaclePositions = new ArrayList<>();
 
         //remove the ally closest to the ball
@@ -79,8 +72,8 @@ public class MakePlayNode extends CompositeNode {
 
         //add the other ally positions and foe positions to the obstaclesPositions list
         for(int i=0;i<allysList.size();i++) {
-			obstaclePositions.add(allysList.get(i).getPos());
-            obstaclePositions.add(foesList.get(i).getPos());
+			obstaclePositions.add(getPos(allysList.get(i)));
+            obstaclePositions.add(getPos(foesList.get(i)));
 		}
     
         double slope = (objectPoint.y - GameInfo.getAllyClosestToBall().getY())

@@ -5,12 +5,13 @@ import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
 
-import core.fieldObjects.robot.Ally;
-import core.fieldObjects.robot.Foe;
+import proto.filtered_object.Robot;
 import core.util.Vector2d;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static core.util.ProtobufUtils.getPos;
 
 /**
  * Positions ally at optimal position
@@ -19,8 +20,8 @@ public class PositionSelfNode extends TaskNode {
 
     private final MoveToPositionNode moveToPositionNode;
 
-    public PositionSelfNode(Ally ally) {
-        super("Position Self Node: " + ally.toString(), ally);
+    public PositionSelfNode(Robot ally) {
+        super("Position Self Node: " + ally, ally);
         this.moveToPositionNode = new MoveToPositionNode(ally);
     }
 
@@ -41,8 +42,8 @@ public class PositionSelfNode extends TaskNode {
         // TODO We have to change how to calculate the optimal position (Maybe we have to use Numerical Optimization Algorithm)
         // This is just a temporary implementation
 
-        ArrayList<Foe> foesList = new ArrayList<>(GameInfo.getFoes());
-        ArrayList<Ally> allysList = new ArrayList<>(GameInfo.getFielders());
+        ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoes());
+        ArrayList<Robot> allysList = new ArrayList<>(GameInfo.getFielders());
         List<Vector2d> obstaclePositions = new ArrayList<>();
 
         // remove self
@@ -50,12 +51,12 @@ public class PositionSelfNode extends TaskNode {
 
         // add the other ally positions and foe positions to the obstaclesPositions list
         for(int i=0;i<allysList.size();i++) {
-			obstaclePositions.add(allysList.get(i).getPos());
-            obstaclePositions.add(foesList.get(i).getPos());
+			obstaclePositions.add(getPos(allysList.get(i)));
+            obstaclePositions.add(getPos(foesList.get(i)));
 		}
 
         // add ballposition to the obstaclesPositions list
-        obstaclePositions.add(GameInfo.getBall().getPos());
+        obstaclePositions.add(getPos(GameInfo.getBall()));
 
 
         // distance from the nearest of several obstacles
@@ -64,7 +65,7 @@ public class PositionSelfNode extends TaskNode {
         float minDistance = Float.MAX_VALUE;
 
         for (Vector2d obstacle : obstaclePositions) {
-            float currentdist = this.ally.getPos().dist(obstacle);
+            float currentdist = getPos(this.ally).dist(obstacle);
 
             if (currentdist < minDistance) {
                 minDistance = currentdist;

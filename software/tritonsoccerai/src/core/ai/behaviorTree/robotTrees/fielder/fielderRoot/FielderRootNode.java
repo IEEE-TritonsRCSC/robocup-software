@@ -3,7 +3,7 @@ package core.ai.behaviorTree.robotTrees.fielder.fielderRoot;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.constants.ProgramConstants;
-import core.fieldObjects.robot.Ally;
+import proto.filtered_object.Robot;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -19,7 +19,7 @@ public class FielderRootNode extends CompositeNode {
     private final FielderRootService fielderRootService;
     private final ScheduledThreadPoolExecutor executor;
 
-    public FielderRootNode(Ally ally, ScheduledThreadPoolExecutor executor) {
+    public FielderRootNode(Robot ally, ScheduledThreadPoolExecutor executor) {
         super("Fielder Root");
 
         this.fielderRootService = new FielderRootService(ally, executor);
