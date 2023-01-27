@@ -7,7 +7,7 @@ from generated_sources.proto.triton_bot_communication_pb2 import TritonBotMessag
 
 # Imports Exchange file, which contains all RabbitMQ exchanges
 from messaging.exchange import Exchange
-# Imports Module file
+# Imports Module file, which contains all RabbitMQ related functions
 from module.module import Module
 
 
