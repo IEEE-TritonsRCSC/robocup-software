@@ -1,7 +1,7 @@
 from enum import Enum
 import enum
 
-
+# Creates RabbitMQ exchanges
 class Exchange(Enum):
     TB_MESSAGE = enum.auto()
     TB_RAW_VISION = enum.auto()
