@@ -12,7 +12,7 @@ import yaml  # library to read the proto files and relay them to the rest of the
 
 # returns data in config file
 def read_config(config):
-    #relative path to config then joined with absolute path
+    # relative path to config then joined with absolute path
     rel_path = config.value
     abs_file_path = os.path.join("../../../config", rel_path)
 

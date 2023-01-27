@@ -1,7 +1,9 @@
 from enum import Enum
 import enum
 
-
+'''
+set up of the channel for rabbitmq listener
+'''
 class Exchange(Enum):
     TB_MESSAGE = enum.auto()
     TB_RAW_VISION = enum.auto()

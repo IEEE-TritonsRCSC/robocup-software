@@ -8,6 +8,7 @@ from module.module import Module
 
 
 class RobotCommandLocalToWheelProcessor(Module):
+    # set up
     def __init__(self):
         super().__init__()
 
@@ -17,6 +18,7 @@ class RobotCommandLocalToWheelProcessor(Module):
     def prepare(self):
         super().prepare()
 
+     # start subcribes to rabbitmq publisher and consumer (send and receive)
     def declare_publishes(self):
         super().declare_publishes()
         self.declare_publish(exchange=Exchange.TB_WHEEL_COMMAND)
@@ -25,10 +27,13 @@ class RobotCommandLocalToWheelProcessor(Module):
         super().declare_consumes()
         self.declare_consume(exchange=Exchange.TB_LOCAL_COMMAND, callback=self.callback_local_command)
 
+    #listen to the channel constantly
     def run(self):
         super().run()
         self.consume()
 
+    # actually command the wheel (specifically) to move 
+    #do we have concern about those math (?) -> talk with mech about this
     def callback_local_command(self, ch, method, properties, body):
         local_command = RobotCommand()
         local_command.ParseFromString(body)

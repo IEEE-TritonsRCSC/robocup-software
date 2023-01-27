@@ -5,10 +5,13 @@ from google.protobuf.message import Message
 from constant.runtime_constants import RuntimeConstants
 import pika
 
+'''
+'''
 class Module(Thread):
     CONNECTION_FACTORY_HOST = 'localhost'
     FANOUT = 'fanout'
 
+    # set up
     def __init__(self):
         super().__init__()
         self.setup_channels()
@@ -26,6 +29,7 @@ class Module(Thread):
             pika.ConnectionParameters(Module.CONNECTION_FACTORY_HOST))
         self.publish_channel = self.publish_channel.channel()
 
+    #pass due to inheritance function (?)
     def load_config(self):
         pass
 
@@ -38,6 +42,8 @@ class Module(Thread):
     def declare_consumes(self):
         pass
 
+    #main for declare and consume (?)
+    #to declare a general publish and consume (?)
     def declare_publish(self, exchange):
         self.publish_channel.exchange_declare(
             exchange=exchange.name + str(RuntimeConstants.team) + str(RuntimeConstants.id), exchange_type=Module.FANOUT)

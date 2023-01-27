@@ -6,8 +6,12 @@ from generated_sources.proto.triton_bot_communication_pb2 import TritonBotMessag
 from messaging.exchange import Exchange
 from module.module import Module
 
-
+'''
+message system to communicate with the AI
+Process AI message 
+'''
 class TritonBotMessageProcessor(Module):
+    # set up
     def __init__(self):
         super().__init__()
 
@@ -19,6 +23,7 @@ class TritonBotMessageProcessor(Module):
     def prepare(self):
         super().prepare()
 
+    # start subcribes to rabbitmq publisher and consumer (send and receive)
     def declare_publishes(self):
         super().declare_publishes()
         self.declare_publish(Exchange.TB_RAW_VISION)
@@ -30,16 +35,21 @@ class TritonBotMessageProcessor(Module):
         super().declare_consumes()
         self.declare_consume(Exchange.TB_MESSAGE, self.callback_message)
 
+    # listen to the channel constantly
     def run(self):
         super().run()
         self.consume()
 
+    # take info from the raw vision then submit command/message to the chanel
     def callback_message(self, ch, method, properties, body):
         message = TritonBotMessage()
         message.ParseFromString(body)
         
+        #how is this different from vision filter (?)
         self.publish(exchange=Exchange.TB_RAW_VISION, object=message.vision)
         
+        # check for move command then send the message to the chanel 
+        # to command the robot to move accordingly
         if (message.HasField('command')):
             exchange = Exchange.TB_WHEEL_COMMAND
             if (message.command.HasField('move_command')):

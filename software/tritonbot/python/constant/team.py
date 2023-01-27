@@ -2,7 +2,7 @@
 # we start adding identifiers to the robots.
 from enum import Enum
 
-#Teams
+# Teams
 class Team(Enum):
     YELLOW = "yellow"
     BLUE = "blue"

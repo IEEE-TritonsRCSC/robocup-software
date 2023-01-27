@@ -3,10 +3,15 @@ import socket
 from threading import Thread
 from queue import Empty, Queue
 
+'''
+The UDP Client in each robot to subcribe to the UDP server
+For message and communicaton between robot
+'''
 class UDP_Client(Thread):
     BUF_SIZE = 9999
     QUEUE_CAPACITY = 5
 
+    # set up address and port/host of the individual robot
     def __init__(self, server_address, server_port, callback, timeout=0):
         super().__init__()
         self.server_address = server_address
@@ -22,6 +27,7 @@ class UDP_Client(Thread):
         while (True):
             self.recieve(self.send())
 
+    #set up the sender of the client
     def send(self):
         try:
             bytes = self.send_queue.get()
@@ -31,6 +37,7 @@ class UDP_Client(Thread):
         self.socket.sendto(bytes, (self.server_address, self.server_port))
         return True
     
+    #set up the receiver of the client
     def receive(self, receive):
         if (not receive or self.callback == None):
             return
