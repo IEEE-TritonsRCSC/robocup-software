@@ -1,9 +1,13 @@
+
 from imp import source_from_cache
 from pickle import loads
 from config.config_path import ConfigPath
 from config.config_reader import read_config
 from generated_sources.proto.triton_bot_communication_pb2 import TritonBotMessage
+
+# Imports Exchange file, which contains all RabbitMQ exchanges
 from messaging.exchange import Exchange
+# Imports Module file, which contains all RabbitMQ related functions
 from module.module import Module
 
 '''
@@ -31,6 +35,7 @@ class TritonBotMessageProcessor(Module):
         self.declare_publish(Exchange.TB_LOCAL_COMMAND)
         self.declare_publish(Exchange.TB_WHEEL_COMMAND)
 
+    # Subscribes as consumer to exchange TB_MESSAGE
     def declare_consumes(self):
         super().declare_consumes()
         self.declare_consume(Exchange.TB_MESSAGE, self.callback_message)
