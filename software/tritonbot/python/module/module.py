@@ -38,10 +38,15 @@ class Module(Thread):
     def declare_consumes(self):
         pass
 
+    # Declares an exchange to publish to
+    # @param exchange   the exchange
     def declare_publish(self, exchange):
         self.publish_channel.exchange_declare(
             exchange=exchange.name + str(RuntimeConstants.team) + str(RuntimeConstants.id), exchange_type=Module.FANOUT)
 
+    # Declares an exchange to consume from
+    # @param exchange   the exchange
+    # @param callback   the function to call once the message is received
     def declare_consume(self, exchange, callback):
         self.consume_channel.exchange_declare(
             exchange=exchange.name + str(RuntimeConstants.team) + str(RuntimeConstants.id), exchange_type=Module.FANOUT)
@@ -54,7 +59,6 @@ class Module(Thread):
             queue=queue_name, on_message_callback=callback, auto_ack=True)
 
     # Publishes to an exchange
-    # @param self
     # @param exchange   the exchange to publish to
     # @param object     the object to send
     def publish(self, exchange, object):
