@@ -5,8 +5,7 @@ import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
-import core.util.Vector2d;
-import proto.filtered_object.Robot;
+import static proto.triton.FilteredObject.Robot;
 
 import static core.util.ProtobufUtils.getPos;
 

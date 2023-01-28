@@ -10,7 +10,7 @@ import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
 import core.ai.behaviorTree.robotTrees.fielder.defense.playDefense.PlayDefenseNode;
 import core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot.OffenseRootNode;
 import core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.*;
-import proto.filtered_object.Robot;
+import static proto.triton.FilteredObject.Robot;
 
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;

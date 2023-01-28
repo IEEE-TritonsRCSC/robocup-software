@@ -5,6 +5,7 @@ import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.ai.behaviorTree.robotTrees.goalkeeper.defense.BlockBallNode;
 import core.ai.behaviorTree.robotTrees.goalkeeper.offense.GKPositionSelfNode;
+
 public class GKDirectFreeNode extends TaskNode {
 
     private final BlockBallNode blockBallNode;

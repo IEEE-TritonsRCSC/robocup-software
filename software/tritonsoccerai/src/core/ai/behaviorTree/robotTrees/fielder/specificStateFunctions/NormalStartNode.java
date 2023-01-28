@@ -7,9 +7,7 @@ import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
 import core.ai.behaviorTree.robotTrees.fielder.offense.ShootBallNode;
-import proto.filtered_object.Robot;
-
-import static core.ai.GameInfo.prevState;
+import static proto.triton.FilteredObject.Robot;
 
 /**
  * Handles Normal Start game state

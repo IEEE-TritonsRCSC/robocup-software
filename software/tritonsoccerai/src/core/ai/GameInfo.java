@@ -1,7 +1,7 @@
 package core.ai;
 
 import core.fieldObjects.ball.Ball;
-import proto.FilteredObject.Robot;
+import static proto.triton.FilteredObject.*;
 import core.fieldObjects.robot.Team;
 import core.util.Vector2d;
 

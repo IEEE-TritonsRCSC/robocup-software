@@ -8,8 +8,6 @@ import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
 import core.util.Vector2d;
 
-import static core.util.ProtobufUtils.
-
 public class GKHaltNode extends TaskNode {
 
     private final MoveToPositionNode moveToPositionNode;

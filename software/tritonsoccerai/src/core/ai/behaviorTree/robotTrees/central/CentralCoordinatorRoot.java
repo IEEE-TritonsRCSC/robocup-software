@@ -2,7 +2,7 @@ package core.ai.behaviorTree.robotTrees.central;
 
 import core.ai.GameInfo;
 import core.ai.GameState;
-import proto.filtered_object.Robot;
+import static proto.triton.FilteredObject.Robot;
 import core.util.Vector2d;
 
 import static core.util.ProtobufUtils.getPos;

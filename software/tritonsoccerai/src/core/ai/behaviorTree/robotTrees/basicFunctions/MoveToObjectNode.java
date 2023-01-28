@@ -2,11 +2,8 @@ package core.ai.behaviorTree.robotTrees.basicFunctions;
 
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-//import core.fieldObjects.FieldObject;
-//import proto.filtered_object.Robot;
+import static proto.triton.FilteredObject.Robot;
 import core.util.Vector2d;
-
-import proto.filtered_object.*;
 
 /**
  * Moves ally towards a particular field object, taking into account where it is moving towards

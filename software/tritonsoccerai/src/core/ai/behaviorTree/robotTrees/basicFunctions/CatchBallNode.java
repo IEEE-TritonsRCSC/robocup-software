@@ -1,16 +1,9 @@
 package core.ai.behaviorTree.robotTrees.basicFunctions;
 
-import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import core.fieldObjects.ball.Ball;
-// comment out, using proto files
-// import proto.filtered_object.Robot;
-import core.util.Vector2d;
-// import core.fieldObjects.ball.Ball;
-import core.ai.GameInfo;
 
-import proto.filtered_object.Robot;
+import static proto.triton.FilteredObject.Robot;
 
 /**
  * Defines task of catching ball in motion

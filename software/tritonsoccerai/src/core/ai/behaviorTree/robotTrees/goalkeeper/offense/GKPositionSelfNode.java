@@ -4,14 +4,11 @@ import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
-import proto.filtered_object.Robot;
 import core.util.Vector2d;
-import static core.constants.ProgramConstants.aiConfig;
 
-import static core.util.ObjectHelper.distToPath;
-import static proto.triton.FilteredObject.FilteredWrapperPacket;
-import static proto.triton.FilteredObject.Robot;
+import static proto.triton.FilteredObject.*;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
+
 /**
  * Moves goalkeeper to optimal position to pass ball
  */

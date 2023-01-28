@@ -6,7 +6,7 @@ import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
 import core.constants.RobotConstants;
-import proto.filtered_object.Robot;
+import static proto.triton.FilteredObject.Robot;
 import core.util.Vector2d;
 
 import java.util.ArrayList;

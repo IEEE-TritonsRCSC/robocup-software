@@ -5,7 +5,7 @@ import core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.ChaseBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
 import core.ai.behaviorTree.robotTrees.fielder.defense.CutPassingLaneNode;
-import proto.filtered_object.Robot;
+import static proto.triton.FilteredObject.Robot;
 
 public class PlayDefenseService extends ServiceNode {
 
