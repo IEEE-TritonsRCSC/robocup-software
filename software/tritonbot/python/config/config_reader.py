@@ -14,7 +14,7 @@ import yaml  # library to read the proto files and relay them to the rest of the
 def read_config(config):
     # relative path to config then joined with absolute path
     rel_path = config.value
-    abs_file_path = os.path.join("../../../config", rel_path)
+    abs_file_path = os.path.join("../config", rel_path)
 
     with open(abs_file_path, 'r') as file:
         data = yaml.safe_load(file)

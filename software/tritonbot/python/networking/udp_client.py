@@ -25,7 +25,7 @@ class UDP_Client(Thread):
     def run(self):
         super().run()
         while (True):
-            self.recieve(self.send())
+            self.receive(self.send())
 
     #set up the sender of the client
     def send(self):

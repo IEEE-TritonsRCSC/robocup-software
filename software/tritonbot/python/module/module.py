@@ -18,7 +18,7 @@ class Module(Thread):
         self.load_config()
         self.prepare()
         self.declare_publishes()
-        self.declare_consumers()
+        self.declare_consumes()
 
     def setup_channels(self):
         self.consume_connection = pika.BlockingConnection(
