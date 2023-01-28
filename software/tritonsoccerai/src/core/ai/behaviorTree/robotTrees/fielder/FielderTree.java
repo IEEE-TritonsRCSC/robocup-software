@@ -2,7 +2,7 @@ package core.ai.behaviorTree.robotTrees.fielder;
 
 import core.ai.behaviorTree.BehaviorTree;
 import core.ai.behaviorTree.robotTrees.fielder.fielderRoot.FielderRootNode;
-import proto.filtered_object.Robot;
+import static proto.triton.FilteredObject.Robot;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 

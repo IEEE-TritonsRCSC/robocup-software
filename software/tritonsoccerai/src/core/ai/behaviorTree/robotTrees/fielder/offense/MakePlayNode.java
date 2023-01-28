@@ -5,15 +5,13 @@ import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.util.Vector2d;
 
-//Task Nodes
 import core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
 
-import proto.filtered_object.Robot;
+import static proto.triton.FilteredObject.Robot;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 /**
  * Define whether to dribble or pass the ball

@@ -3,7 +3,7 @@ package core;
 import core.ai.GameInfo;
 import core.config.*;
 import core.constants.ProgramConstants;
-import proto.filtered_object.Robot;
+import static proto.triton.FilteredObject.Robot;
 import core.fieldObjects.robot.Team;
 import core.module.Module;
 import core.module.aiModule.AIModule;

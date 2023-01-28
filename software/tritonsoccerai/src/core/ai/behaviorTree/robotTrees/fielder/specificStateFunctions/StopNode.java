@@ -2,7 +2,7 @@ package core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions;
 
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
-import proto.filtered_object.Robot;
+import static proto.triton.FilteredObject.Robot;
 
 /**
  * Handles Stop game state

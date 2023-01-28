@@ -5,7 +5,6 @@ import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.KickBallNode;
 import core.constants.RobotConstants;
-import proto.filtered_object.Robot;
 import core.util.Vector2d;
 
 import java.util.ArrayList;
@@ -13,7 +12,6 @@ import java.util.List;
 
 import static core.constants.ProgramConstants.aiConfig;
 
-//import protofiles
 import static core.util.ObjectHelper.distToPath;
 import static core.util.ProtobufUtils.getPos;
 import static proto.triton.FilteredObject.FilteredWrapperPacket;

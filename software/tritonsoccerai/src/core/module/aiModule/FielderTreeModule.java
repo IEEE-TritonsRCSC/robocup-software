@@ -1,7 +1,7 @@
 package core.module.aiModule;
 
 import core.ai.behaviorTree.robotTrees.fielder.FielderTree;
-import proto.filtered_object.Robot;
+import static proto.triton.FilteredObject.Robot;
 import core.module.Module;
 
 import java.io.IOException;

@@ -3,7 +3,7 @@ package core.ai.behaviorTree.robotTrees.fielder.defense.playDefense;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import core.constants.ProgramConstants;
-import proto.filtered_object.Robot;
+import static proto.triton.FilteredObject.Robot;
 
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
