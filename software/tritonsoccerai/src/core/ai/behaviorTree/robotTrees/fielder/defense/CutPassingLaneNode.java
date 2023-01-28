@@ -4,7 +4,7 @@ import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToObjectNode;
-import proto.triton.*;
+import proto.filtered_object.Robot;
 import core.util.ObjectHelper;
 
 /**

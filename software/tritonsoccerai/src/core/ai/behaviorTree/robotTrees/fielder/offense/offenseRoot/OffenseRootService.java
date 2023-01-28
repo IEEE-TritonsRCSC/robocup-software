@@ -8,7 +8,7 @@ import core.ai.behaviorTree.robotTrees.basicFunctions.RobotHasPossessionNode;
 import core.ai.behaviorTree.robotTrees.fielder.offense.MakePlayNode;
 import core.ai.behaviorTree.robotTrees.fielder.offense.PositionSelfNode;
 import core.ai.behaviorTree.robotTrees.fielder.offense.ShootBallNode;
-import proto.triton.*;
+import proto.filtered_object.Robot;
 
 public class OffenseRootService extends ServiceNode {
 

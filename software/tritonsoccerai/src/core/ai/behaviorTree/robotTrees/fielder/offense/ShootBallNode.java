@@ -5,7 +5,7 @@ import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.KickBallNode;
 import core.constants.RobotConstants;
-import proto.triton.*;
+import proto.filtered_object.Robot;
 import core.util.Vector2d;
 
 import java.util.ArrayList;

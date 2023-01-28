@@ -2,8 +2,8 @@ package core.ai.behaviorTree.robotTrees.basicFunctions;
 
 import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
-// import proto.triton.*;
-import proto.triton.*;
+// import proto.filtered_object.Robot;
+import proto.filtered_object.Robot;
 
 /**
  * Utilized to check if a given robot is the closest ally to the ball

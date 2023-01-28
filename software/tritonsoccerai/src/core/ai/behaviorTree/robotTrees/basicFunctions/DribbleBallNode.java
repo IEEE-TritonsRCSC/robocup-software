@@ -2,7 +2,7 @@ package core.ai.behaviorTree.robotTrees.basicFunctions;
 
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-//import proto.triton.*;
+//import proto.filtered_object.Robot;
 
 import core.search.implementation.PathfindGridGroup;
 import core.search.node2d.Node2d;
@@ -12,7 +12,7 @@ import java.util.LinkedList;
 import static core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
 
 import proto.simulation.SslSimulationRobotControl;
-import proto.triton.*;
+import proto.filtered_object.Robot;
 /**
  * Defines tasks to be performed to dribble ball
  */

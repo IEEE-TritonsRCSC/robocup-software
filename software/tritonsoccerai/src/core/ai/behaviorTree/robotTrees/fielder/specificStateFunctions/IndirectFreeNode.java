@@ -7,7 +7,7 @@ import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToObjectNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
 import core.ai.behaviorTree.robotTrees.fielder.offense.PositionSelfNode;
-import proto.triton.*;
+import proto.filtered_object.Robot;
 import core.util.ObjectHelper;
 import core.util.Vector2d;
 
