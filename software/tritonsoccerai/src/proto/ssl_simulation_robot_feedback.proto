@@ -3,7 +3,7 @@ package proto.simulation;
 
 option go_package = "github.com/RoboCup-SSL/ssl-simulation-protocol/pkg/sim";
 
-import "proto/ssl_simulation_error.proto";
+import "ssl_simulation_error.proto";
 import "google/protobuf/any.proto";
 
 // Feedback from a robot

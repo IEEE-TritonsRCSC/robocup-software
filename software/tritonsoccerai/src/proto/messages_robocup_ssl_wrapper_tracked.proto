@@ -1,7 +1,7 @@
 syntax = "proto2";
 package proto.vision;
 
-import "proto/messages_robocup_ssl_detection_tracked.proto";
+import "messages_robocup_ssl_detection_tracked.proto";
 
 // A wrapper packet containing meta data of the source
 // Also serves for the possibility to extend the protocol later

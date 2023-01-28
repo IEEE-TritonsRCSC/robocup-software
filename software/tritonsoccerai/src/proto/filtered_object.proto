@@ -1,7 +1,7 @@
 syntax = "proto3";
 package proto.triton;
 
-import "proto/messages_robocup_ssl_geometry.proto";
+import "messages_robocup_ssl_geometry.proto";
 
 message Ball {
   int64 timestamp = 1;
