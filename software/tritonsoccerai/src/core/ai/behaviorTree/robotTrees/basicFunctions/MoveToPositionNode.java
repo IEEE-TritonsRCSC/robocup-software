@@ -5,12 +5,12 @@ import java.util.LinkedList;
 import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-//import proto.filtered_object.Robot;
+//import proto.triton.*;
 import core.util.Vector2d;
 import core.search.implementation.*;
 import core.search.node2d.Node2d;
 
-import proto.filtered_object.Robot;
+import proto.triton.*;
 
 import static core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
 import static core.util.ProtobufUtils.getPos;

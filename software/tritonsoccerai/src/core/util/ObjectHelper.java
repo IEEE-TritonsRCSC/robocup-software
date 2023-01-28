@@ -1,7 +1,7 @@
 package core.util;
 
 import core.ai.GameInfo;
-import proto.filtered_object.Robot;
+import proto.triton.*;
 
 import java.util.ArrayList;
 import java.util.List;

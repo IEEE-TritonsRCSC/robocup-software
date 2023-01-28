@@ -2,7 +2,7 @@ package core.ai.behaviorTree.nodes.taskNodes;
 
 import core.ai.behaviorTree.nodes.BTNode;
 import core.ai.behaviorTree.nodes.NodeState;
-import proto.filtered_object.Robot;
+import proto.triton.*;
 
 // leaves of tree; actionable things to do
 /**

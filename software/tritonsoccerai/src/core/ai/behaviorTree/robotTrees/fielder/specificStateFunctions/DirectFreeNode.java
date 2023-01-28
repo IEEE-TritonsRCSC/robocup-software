@@ -6,7 +6,7 @@ import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
 import core.ai.behaviorTree.robotTrees.fielder.offense.PositionSelfNode;
-import proto.filtered_object.Robot;
+import proto.triton.*;
 import core.util.Vector2d;
 
 import static core.util.ProtobufUtils.getPos;

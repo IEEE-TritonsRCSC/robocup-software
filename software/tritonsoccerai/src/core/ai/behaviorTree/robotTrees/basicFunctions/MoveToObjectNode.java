@@ -3,7 +3,7 @@ package core.ai.behaviorTree.robotTrees.basicFunctions;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 //import core.fieldObjects.FieldObject;
-//import proto.filtered_object.Robot;
+//import proto.triton.*;
 import core.util.Vector2d;
 
 import proto.filtered_object.*;

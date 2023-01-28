@@ -4,8 +4,8 @@ import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.KickBallNode;
-//import proto.filtered_object.Robot;
-//import proto.filtered_object.Robot;
+//import proto.triton.*;
+//import proto.triton.*;
 import core.constants.RobotConstants;
 import static core.constants.ProgramConstants.aiConfig;
 import static core.util.ObjectHelper.distToPath;
@@ -18,7 +18,7 @@ import core.util.Vector2d;
 import java.util.ArrayList;
 import java.util.List;
 
-import proto.filtered_object.Robot;
+import proto.triton.*;
 
  /**
  * Defines the sequence of tasks needed to successfully perform a coordinated pass between two allies.

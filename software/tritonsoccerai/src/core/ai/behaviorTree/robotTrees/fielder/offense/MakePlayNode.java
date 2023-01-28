@@ -9,7 +9,7 @@ import core.util.Vector2d;
 import core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
 import core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
 
-import proto.filtered_object.Robot;
+import proto.triton.*;
 
 import java.util.ArrayList;
 import java.util.List;

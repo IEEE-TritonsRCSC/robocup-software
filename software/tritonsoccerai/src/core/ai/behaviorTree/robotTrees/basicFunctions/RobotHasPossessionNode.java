@@ -2,9 +2,9 @@ package core.ai.behaviorTree.robotTrees.basicFunctions;
 
 import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
-//import proto.filtered_object.Robot;
+//import proto.triton.*;
 
-import proto.filtered_object.Robot;
+import proto.triton.*;
 
 public class RobotHasPossessionNode extends ConditionalNode {
 

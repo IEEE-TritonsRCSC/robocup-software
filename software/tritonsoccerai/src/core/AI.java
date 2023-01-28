@@ -3,17 +3,14 @@ package core;
 import core.ai.GameInfo;
 import core.config.*;
 import core.constants.ProgramConstants;
-import proto.filtered_object.Robot;
+import core.module.interfaceModule.*;
+import proto.triton.*;
 import core.fieldObjects.robot.Team;
 import core.module.Module;
 import core.module.aiModule.AIModule;
 import core.module.aiModule.CentralCoordinatorModule;
 import core.module.aiModule.FielderTreeModule;
 import core.module.aiModule.GKTreeModule;
-import core.module.interfaceModule.CameraInterface;
-import core.module.interfaceModule.SimulatorCommandInterface;
-import core.module.interfaceModule.TritonBotMessageInterface;
-import core.module.interfaceModule.UserInterface;
 import core.module.processingModule.*;
 
 import java.text.ParseException;
@@ -163,7 +160,7 @@ public class AI {
     public void startInterfaceModules() {
         startModule(new CameraInterface(executor));
         startModule(new SimulatorCommandInterface(executor));
-//        startModule(new SimulatorRobotCommandInterface(executor));
+        startModule(new SimulatorRobotCommandInterface(executor));
         startModule(new TritonBotMessageInterface(executor));
         startModule(new UserInterface(executor));
     }
