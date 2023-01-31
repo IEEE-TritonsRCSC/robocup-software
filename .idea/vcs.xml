@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/framework" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/grSim" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ssl-simulation-protocol" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ssl-vision" vcs="Git" />
+  </component>
+</project>
