@@ -1,5 +1,6 @@
 {
     "java.project.sourcePaths": [
-        "."
+        ".",
+        "software/tritonsoccerai/src"
     ]
 }

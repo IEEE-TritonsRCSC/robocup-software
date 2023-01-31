@@ -1,4 +1,4 @@
-package core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions;
+package software.tritonsoccerai.src.core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions;
 
 import java.util.Vector;
 
