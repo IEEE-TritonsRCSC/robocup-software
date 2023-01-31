@@ -2,6 +2,7 @@ package core;
 
 import core.ai.GameInfo;
 import core.config.*;
+import core.constants.AITest;
 import core.constants.ProgramConstants;
 import static proto.triton.FilteredObject.Robot;
 import core.fieldObjects.robot.Team;
@@ -26,6 +27,9 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 import static core.config.ConfigPath.*;
 import static core.config.ConfigReader.readConfig;
+
+import core.module.testModule.TestModule;
+import org.apache.commons.cli.*;
 
 public class AI {
 
