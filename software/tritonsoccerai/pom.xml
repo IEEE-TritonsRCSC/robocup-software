@@ -7,9 +7,6 @@
   <groupId>core</groupId>
   <artifactId>triton-soccer-ai</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <configuration>
-    <mainClass>src.core.AI</mainClass>
-  </configuration>
 
   <name>triton-soccer-ai</name>
 

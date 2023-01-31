@@ -1,5 +1,6 @@
 package core;
 
+/* 
 import core.ai.GameInfo;
 import core.config.*;
 import core.constants.AITest;
@@ -15,7 +16,10 @@ import core.module.interfaceModule.CameraInterface;
 import core.module.interfaceModule.SimulatorCommandInterface;
 import core.module.interfaceModule.TritonBotMessageInterface;
 import core.module.interfaceModule.UserInterface;
-import core.module.processingModule.*;
+import core.module.processingModule.*;*/
+
+import core.module.*;
+import static proto.triton.FilteredObject.*;
 
 import java.text.ParseException;
 import java.util.ArrayList;
