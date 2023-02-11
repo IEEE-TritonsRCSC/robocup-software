@@ -240,6 +240,10 @@ void Error_Handler(void)
   __disable_irq();
   while (1)
   {
+	  HAL_GPIO_TogglePin(Motor_Port, Motor1_Pin);
+	  HAL_GPIO_TogglePin(Motor_Port, Motor2_Pin);
+	  HAL_GPIO_TogglePin(Motor_Port, Motor2_Pin);
+	  HAL_GPIO_TogglePin(Motor_Port, Motor1_Pin);
   }
   /* USER CODE END Error_Handler_Debug */
 }
