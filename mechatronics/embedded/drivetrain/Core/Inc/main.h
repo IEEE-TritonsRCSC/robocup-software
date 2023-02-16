@@ -61,7 +61,7 @@ void Error_Handler(void);
 #define KEY_GPIO_Port GPIOD
 #define LED1_Pin GPIO_PIN_14
 #define LED1_GPIO_Port GPIOF
-#define LED2_Pin GPIO_PIN_7
+#define LED2_Pin GPIO_PIN_11
 #define LED2_GPIO_Port GPIOE
 
 #define Motor1_Pin GPIO_PIN_2

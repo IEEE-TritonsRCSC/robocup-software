@@ -36,7 +36,6 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-//CAN_HandleTypeDef hcan1;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -47,7 +46,6 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
 CAN_TxHeaderTypeDef TxHeader;
 CAN_RxHeaderTypeDef RxHeader;
 
@@ -57,7 +55,6 @@ uint8_t TxData[8];
 uint8_t RxData[8];
 
 int datacheck = 0;
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -69,13 +66,16 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+void HAL_CAN_TxMailbox0CompleteCallback(CAN_HandleTypeDef *hcan){
+
+}
+
 void HAL_CAN_RxFifoMsgPendingCallback(CAN_HandleTypeDef *hcan){
 	HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader, RxData);
 	if (RxHeader.DLC == 8){
 		datacheck = 1;
 	}
 }
-
 /* USER CODE END 0 */
 
 /**
@@ -112,48 +112,78 @@ int main(void)
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
   //can_filter_init(&hcan1);
-  HAL_CAN_Start(&hcan1); // initializes CAN ????
+  if (HAL_CAN_Start(&hcan1) != HAL_OK)
+  {
+     Error_Handler();
+  }
 
-  HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING);
+  if (HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING | CAN_IT_TX_MAILBOX_EMPTY)!= HAL_OK){
+	  Error_Handler();
+  }
 
   TxHeader.DLC = 8; // length of the message
   TxHeader.IDE = CAN_ID_STD; //Standard (STD) or Extended (EXT)
   TxHeader.RTR = CAN_RTR_DATA; // specifices if we are sending data or remote frame. idk what that is.
-  //TxHeader.ExtId = 0; // the message I think???
-  TxHeader.StdId = 0x150; // can be 11bit wide, serves as the id for the can bus device
+  //TxHeader.ExtId = 0x01; // the message I think???
+  TxHeader.StdId = 0x200; // can be 11bit wide, serves as the id for the can bus device
   TxHeader.TransmitGlobalTime = DISABLE; // *shrug*, disabled
 
 
-   // ------------ MESSAGE TWO -----------------------------//
- //
- //  TxHeader.DLC = 1; // length of the message
- //  TxHeader.ExtId = 0; // the message I think???
- //  TxHeader.IDE = CAN_ID_STD; //Standard (STD) or Extended (EXT)
- //  TxHeader.RTR = CAN_RTR_DATA; // specifices if we are sending data or remote frame. idk what that is.
- //  TxHeader.StdId = 0x1FF; // can be 11bit wide, serves as the id for the can bus device
- //  TxHeader.TransmitGlobalTime = DISABLE; // *shrug*, disabled
- //  TxData[0] = 0xf3;
- //  HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailbox);
-  /* USER CODE END 2 */
+     // ------------ MESSAGE TWO -----------------------------//
+   //
+   //  TxHeader.DLC = 1; // length of the message
+   //  TxHeader.ExtId = 0; // the message I think???
+   //  TxHeader.IDE = CAN_ID_STD; //Standard (STD) or Extended (EXT)
+   //  TxHeader.RTR = CAN_RTR_DATA; // specifices if we are sending data or remote frame. idk what that is.
+   //  TxHeader.StdId = 0x1FF; // can be 11bit wide, serves as the id for the can bus device
+   //  TxHeader.TransmitGlobalTime = DISABLE; // *shrug*, disabled
+   //  TxData[0] = 0xf3;
+   //  HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailbox);
+    /* USER CODE END 2 */
 
-  //TxData[0] = 200;	 // 8 bits?
-  //HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailbox);
+    //TxData[0] = 200;	 // 8 bits?
+    //HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailbox);
 
-  /* Infinite loop */
+
+   TxData[0] = 0b0001111101000000 >> 8;	 // 8 bits?
+   TxData[1] = 0b0001111101000000;
+   TxData[2] = 0b0001111101000000 >> 8;
+   TxData[3] = 0b0001111101000000;  //to avoid the compiler putting in garbage bits
+   TxData[4] = 0b0001111101000000 >> 8;
+   TxData[5] = 0b0001111101000000;
+   TxData[6] = 0b0001111101000000 >> 8;
+   TxData[7] = 0b0001111101000000;
+
+   HAL_GPIO_TogglePin(Motor_Port, Motor1_Pin);
+   HAL_GPIO_TogglePin(Motor_Port, Motor2_Pin);
+   HAL_GPIO_TogglePin(Motor_Port, Motor3_Pin);
+   HAL_GPIO_TogglePin(Motor_Port, Motor4_Pin);
+
+   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  TxData[0] = 31;	 // 8 bits?
-  TxData[1] = 64;
-  TxData[2] = 31;
-  TxData[3] = 64;
-  TxData[4] = 31;
-  TxData[5] = 64;
-  TxData[6] = 31;
-  TxData[7] = 64;
-  HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailbox);
   while (1)
   {
+	if(HAL_CAN_GetTxMailboxesFreeLevel(&hcan1) > 0){
+		if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailbox) != HAL_OK)
+	  	{
+			Error_Handler ();
+	  		HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
+	  	}
+	  	else{
+	  		HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
+	  	}
+	  }
+	  else{
+	  	HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
+	}
+	HAL_Delay(500);
     /* USER CODE END WHILE */
-
+	//HAL_GPIO_TogglePin(Motor_Port, Motor1_Pin);
+	//HAL_GPIO_TogglePin(Motor_Port, Motor2_Pin);
+	//HAL_GPIO_TogglePin(Motor_Port, Motor3_Pin);
+	//HAL_GPIO_TogglePin(Motor_Port, Motor4_Pin);
+	//HAL_GPIO_TogglePin(CAN_Port, CAN1_Pin1);
+	//HAL_GPIO_TogglePin(CAN_Port, CAN1_Pin2);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -240,10 +270,6 @@ void Error_Handler(void)
   __disable_irq();
   while (1)
   {
-	  HAL_GPIO_TogglePin(Motor_Port, Motor1_Pin);
-	  HAL_GPIO_TogglePin(Motor_Port, Motor2_Pin);
-	  HAL_GPIO_TogglePin(Motor_Port, Motor2_Pin);
-	  HAL_GPIO_TogglePin(Motor_Port, Motor1_Pin);
   }
   /* USER CODE END Error_Handler_Debug */
 }

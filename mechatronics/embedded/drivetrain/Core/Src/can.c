@@ -34,37 +34,39 @@ void MX_CAN1_Init(void)
 
   /* USER CODE END CAN1_Init 0 */
 
-  /* USER CODE BEGIN CAN1_Init 1 */
+	/* USER CODE BEGIN CAN1_Init 1 */
 	hcan1.Instance = CAN1;
-	hcan1.Init.Prescaler = 18;
+	hcan1.Init.Prescaler = 3;
 	hcan1.Init.Mode = CAN_MODE_NORMAL;
 	hcan1.Init.SyncJumpWidth = CAN_SJW_1TQ;
 	hcan1.Init.TimeSeg1 = CAN_BS1_9TQ;
 	hcan1.Init.TimeSeg2 = CAN_BS2_4TQ;
 	hcan1.Init.TimeTriggeredMode = DISABLE;
-	hcan1.Init.AutoBusOff = DISABLE;
+	hcan1.Init.AutoBusOff = ENABLE;
 	hcan1.Init.AutoWakeUp = DISABLE;
 	hcan1.Init.AutoRetransmission = DISABLE;
 	hcan1.Init.ReceiveFifoLocked = DISABLE;
 	hcan1.Init.TransmitFifoPriority = DISABLE;
 	if (HAL_CAN_Init(&hcan1) != HAL_OK)
 	{
-	  Error_Handler();
+		Error_Handler();
 	}
-  /* USER CODE END CAN1_Init 1 */
+	 /* USER CODE END CAN1_Init 1 */
+	 /* USER CODE BEGIN CAN1_Init 2 */
+
+	 CAN_FilterTypeDef canfilterconfig;
+	 canfilterconfig.FilterActivation = CAN_FILTER_ENABLE;
+	 canfilterconfig.FilterBank = 0;
+	 canfilterconfig.FilterFIFOAssignment = CAN_RX_FIFO0;
+	 canfilterconfig.FilterIdHigh = 0x0000;
+	 canfilterconfig.FilterIdLow = 0x0000;
+	 canfilterconfig.FilterMaskIdHigh = 0x0000;
+	 canfilterconfig.FilterMaskIdLow = 0x0000;
+	 canfilterconfig.FilterMode = CAN_FILTERMODE_IDMASK;
+	 canfilterconfig.FilterScale = CAN_FILTERSCALE_32BIT;
+	 canfilterconfig.SlaveStartFilterBank = 14;
   /* USER CODE BEGIN CAN1_Init 2 */
 
-  CAN_FilterTypeDef canfilterconfig;
-  canfilterconfig.FilterActivation = CAN_FILTER_ENABLE;
-  canfilterconfig.FilterBank = 18;
-  canfilterconfig.FilterFIFOAssignment = CAN_FILTER_FIFO0;
-  canfilterconfig.FilterIdHigh = 0x201<<5;
-  canfilterconfig.FilterIdLow = 0;
-  canfilterconfig.FilterMaskIdHigh = 0x201<<5;
-  canfilterconfig.FilterMaskIdLow = 0x0000;
-  canfilterconfig.FilterMode = CAN_FILTERMODE_IDMASK;
-  canfilterconfig.FilterScale = CAN_FILTERSCALE_32BIT;
-  canfilterconfig.SlaveStartFilterBank = 20;
 
   /* USER CODE END CAN1_Init 2 */
 
@@ -130,6 +132,11 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
   /* USER CODE END CAN1_MspDeInit 1 */
   }
 }
+
+/*
+void HAL_CAN_ErrorCallback(CAN_HandleTypeDef *hcan){
+	__HAL_CAN_ENABLE_IT(&hcan, CAN_IT_RQCP0);
+}*/
 
 /* USER CODE BEGIN 1 */
 
