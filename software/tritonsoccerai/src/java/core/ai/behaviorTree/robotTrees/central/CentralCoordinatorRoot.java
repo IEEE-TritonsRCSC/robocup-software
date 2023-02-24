@@ -1,11 +1,11 @@
-package core.ai.behaviorTree.robotTrees.central;
+package java.core.ai.behaviorTree.robotTrees.central;
 
-import core.ai.GameInfo;
-import core.ai.GameState;
+import java.core.ai.GameInfo;
+import java.core.ai.GameState;
 import static proto.triton.FilteredObject.Robot;
-import core.util.Vector2d;
+import java.core.util.Vector2d;
 
-import static core.util.ProtobufUtils.getPos;
+import static java.core.util.ProtobufUtils.getPos;
 
 public class CentralCoordinatorRoot implements Runnable {
 

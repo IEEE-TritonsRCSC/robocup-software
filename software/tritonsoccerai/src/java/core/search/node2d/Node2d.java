@@ -1,7 +1,7 @@
-package core.search.node2d;
+package java.core.search.node2d;
 
-import core.search.base.GraphNode;
-import core.util.Vector2d;
+import java.core.search.base.GraphNode;
+import java.core.util.Vector2d;
 
 public class Node2d implements GraphNode {
 

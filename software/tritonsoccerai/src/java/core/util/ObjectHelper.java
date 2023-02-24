@@ -1,12 +1,12 @@
-package core.util;
+package java.core.util;
 
-import core.ai.GameInfo;
+import java.core.ai.GameInfo;
 import static proto.triton.FilteredObject.Robot;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static core.util.ProtobufUtils.getPos;
+import static java.core.util.ProtobufUtils.getPos;
 import static proto.triton.FilteredObject.Ball;
 import static proto.triton.FilteredObject.Robot;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;

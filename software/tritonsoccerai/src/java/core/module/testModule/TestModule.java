@@ -1,7 +1,7 @@
-package core.module.testModule;
+package java.core.module.testModule;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
-import core.module.Module;
+import java.core.module.Module;
 
 public abstract class TestModule extends Module {
     public TestModule(ScheduledThreadPoolExecutor executor) {

@@ -1,15 +1,15 @@
-package core.module.interfaceModule;
+package java.core.module.interfaceModule;
 
 //TODO Can't find this file even in the old repo
 import com.rabbitmq.client.Delivery;
 
-import core.ai.GameInfo;
-import core.fieldObjects.ball.Ball;
-import core.module.Module;
+import java.core.ai.GameInfo;
+import java.core.fieldObjects.ball.Ball;
+import java.core.module.Module;
 
-import core.search.implementation.PathfindGrid;
-import core.search.node2d.Node2d;
-import core.util.Vector2d;
+import java.core.search.implementation.PathfindGrid;
+import java.core.search.node2d.Node2d;
+import java.core.util.Vector2d;
 
 //TODO Can't find this file even in the old repo
 import org.apache.commons.math3.analysis.function.Sigmoid;
@@ -34,12 +34,12 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-import static core.constants.ProgramConstants.*;
-import static core.messaging.Exchange.AI_DEBUG;
-import static core.messaging.Exchange.AI_FILTERED_VISION_WRAPPER;
-import static core.messaging.SimpleSerialize.simpleDeserialize;
-import static core.util.ObjectHelper.predictOrientation;
-import static core.util.ObjectHelper.predictPos;
+import static java.core.constants.ProgramConstants.*;
+import static java.core.messaging.Exchange.AI_DEBUG;
+import static java.core.messaging.Exchange.AI_FILTERED_VISION_WRAPPER;
+import static java.core.messaging.SimpleSerialize.simpleDeserialize;
+import static java.core.util.ObjectHelper.predictOrientation;
+import static java.core.util.ObjectHelper.predictPos;
 import static java.awt.BorderLayout.*;
 import static java.awt.Color.*;
 import static javax.swing.BoxLayout.Y_AXIS;

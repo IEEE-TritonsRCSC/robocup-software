@@ -1,9 +1,9 @@
-package core.module.processingModule;
+package java.core.module.processingModule;
 
 import com.rabbitmq.client.Delivery;
-import core.constants.ProgramConstants;
-import core.fieldObjects.robot.Team;
-import core.module.Module;
+import java.core.constants.ProgramConstants;
+import java.core.fieldObjects.robot.Team;
+import java.core.module.Module;
 import proto.simulation.SslSimulationRobotControl;
 
 import java.io.IOException;
@@ -14,8 +14,8 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import static core.messaging.Exchange.*;
-import static core.messaging.SimpleSerialize.simpleDeserialize;
+import static java.core.messaging.Exchange.*;
+import static java.core.messaging.SimpleSerialize.simpleDeserialize;
 import static proto.simulation.SslSimulationRobotControl.RobotCommand;
 import static proto.triton.TritonBotCommunication.TritonBotMessage;
 import static proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame;

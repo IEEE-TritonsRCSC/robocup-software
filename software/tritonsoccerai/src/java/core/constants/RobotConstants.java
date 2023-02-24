@@ -1,4 +1,4 @@
-package core.constants;
+package java.core.constants;
 
 /**
  * Contains robot constants including constraints

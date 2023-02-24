@@ -1,6 +1,6 @@
-package core.ai.behaviorTree.robotTrees.basicFunctions;
+package java.core.ai.behaviorTree.robotTrees.basicFunctions;
 
-import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
+import java.core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
 
 import static proto.triton.FilteredObject.Robot;
 

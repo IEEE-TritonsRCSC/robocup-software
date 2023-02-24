@@ -1,13 +1,13 @@
-package core.ai.behaviorTree.robotTrees.basicFunctions;
+package java.core.ai.behaviorTree.robotTrees.basicFunctions;
 
-import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import core.util.Vector2d;
-import static core.constants.ProgramConstants.objectConfig;
+import java.core.ai.behaviorTree.nodes.NodeState;
+import java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import java.core.util.Vector2d;
+import static java.core.constants.ProgramConstants.objectConfig;
 import proto.simulation.SslSimulationRobotControl;
-import static core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
-import core.util.ObjectHelper;
-import static core.constants.ProgramConstants.aiConfig;
+import static java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
+import java.core.util.ObjectHelper;
+import static java.core.constants.ProgramConstants.aiConfig;
 
 import static proto.simulation.SslGcCommon.RobotId;
 import static proto.triton.FilteredObject.Robot;

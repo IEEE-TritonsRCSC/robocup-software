@@ -1,4 +1,4 @@
-package core.fieldObjects.robot;
+package java.core.fieldObjects.robot;
 
 /**
  * Defines the possible team colors to be assigned

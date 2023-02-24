@@ -1,4 +1,4 @@
-package core.ai.behaviorTree.nodes;
+package java.core.ai.behaviorTree.nodes;
 
 /**
  * Defines every possible state that can be returned by a node

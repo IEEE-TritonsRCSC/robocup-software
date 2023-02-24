@@ -1,6 +1,6 @@
-package core.search.node1d;
+package java.core.search.node1d;
 
-import core.search.base.Scorer;
+import java.core.search.base.Scorer;
 
 public class Value1dScorer implements Scorer<Node1d> {
     @Override

@@ -1,4 +1,4 @@
-package core.search.base;
+package java.core.search.base;
 
 import java.util.Map;
 import java.util.Set;

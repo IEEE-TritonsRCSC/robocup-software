@@ -1,10 +1,10 @@
-package core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions;
+package java.core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions;
 
-import core.ai.GameInfo;
-import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import core.ai.behaviorTree.robotTrees.goalkeeper.defense.BlockBallNode;
-import core.ai.behaviorTree.robotTrees.goalkeeper.offense.GKPositionSelfNode;
+import java.core.ai.GameInfo;
+import java.core.ai.behaviorTree.nodes.NodeState;
+import java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import java.core.ai.behaviorTree.robotTrees.goalkeeper.defense.BlockBallNode;
+import java.core.ai.behaviorTree.robotTrees.goalkeeper.offense.GKPositionSelfNode;
 
 public class GKBallPlacementNode extends TaskNode {
 

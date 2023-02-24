@@ -1,10 +1,10 @@
-package core.ai.behaviorTree.robotTrees.goalkeeper.offense;
+package java.core.ai.behaviorTree.robotTrees.goalkeeper.offense;
 
-import core.ai.GameInfo;
-import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
-import core.util.Vector2d;
+import java.core.ai.GameInfo;
+import java.core.ai.behaviorTree.nodes.NodeState;
+import java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
+import java.core.util.Vector2d;
 
 import static proto.triton.FilteredObject.*;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;

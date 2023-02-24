@@ -1,6 +1,6 @@
-package core.fieldObjects;
+package java.core.fieldObjects;
 
-import core.util.Vector2d;
+import java.core.util.Vector2d;
 
 /**
  * Root class for all on-field objects

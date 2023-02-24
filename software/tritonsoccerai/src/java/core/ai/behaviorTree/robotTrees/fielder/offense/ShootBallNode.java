@@ -1,19 +1,19 @@
-package core.ai.behaviorTree.robotTrees.fielder.offense;
+package java.core.ai.behaviorTree.robotTrees.fielder.offense;
 
-import core.ai.GameInfo;
-import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
-import core.ai.behaviorTree.robotTrees.basicFunctions.KickBallNode;
-import core.constants.RobotConstants;
-import core.util.Vector2d;
+import java.core.ai.GameInfo;
+import java.core.ai.behaviorTree.nodes.NodeState;
+import java.core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
+import java.core.ai.behaviorTree.robotTrees.basicFunctions.KickBallNode;
+import java.core.constants.RobotConstants;
+import java.core.util.Vector2d;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static core.constants.ProgramConstants.aiConfig;
+import static java.core.constants.ProgramConstants.aiConfig;
 
-import static core.util.ObjectHelper.distToPath;
-import static core.util.ProtobufUtils.getPos;
+import static java.core.util.ObjectHelper.distToPath;
+import static java.core.util.ProtobufUtils.getPos;
 import static proto.triton.FilteredObject.FilteredWrapperPacket;
 import static proto.triton.FilteredObject.Robot;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;

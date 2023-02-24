@@ -1,6 +1,6 @@
-package core.search.node2d;
+package java.core.search.node2d;
 
-import core.search.base.Scorer;
+import java.core.search.base.Scorer;
 
 public class Manhattan2dScorer implements Scorer<Node2d> {
     @Override

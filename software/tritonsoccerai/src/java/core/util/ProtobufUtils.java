@@ -1,9 +1,9 @@
-package core.util;
+package java.core.util;
 
-import core.fieldObjects.robot.Team;
+import java.core.fieldObjects.robot.Team;
 import proto.simulation.SslGcCommon;
 
-import static core.constants.ProgramConstants.objectConfig;
+import static java.core.constants.ProgramConstants.objectConfig;
 import static proto.simulation.SslSimulationControl.TeleportBall;
 import static proto.simulation.SslSimulationControl.TeleportRobot;
 import static proto.triton.FilteredObject.Ball;

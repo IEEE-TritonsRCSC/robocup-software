@@ -1,9 +1,9 @@
-package core.ai.behaviorTree.robotTrees.goalkeeper.defense.defenseRoot;
+package java.core.ai.behaviorTree.robotTrees.goalkeeper.defense.defenseRoot;
 
-import core.ai.GameInfo;
-import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
-import core.ai.behaviorTree.robotTrees.goalkeeper.defense.BlockBallNode;
+import java.core.ai.GameInfo;
+import java.core.ai.behaviorTree.nodes.NodeState;
+import java.core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
+import java.core.ai.behaviorTree.robotTrees.goalkeeper.defense.BlockBallNode;
 
 /**
  * Defined behavior for goalkeeper when on defense

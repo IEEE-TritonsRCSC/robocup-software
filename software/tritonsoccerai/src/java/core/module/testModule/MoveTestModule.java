@@ -1,4 +1,4 @@
-package core.module.testModule;
+package java.core.module.testModule;
 
 import java.io.IOException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;

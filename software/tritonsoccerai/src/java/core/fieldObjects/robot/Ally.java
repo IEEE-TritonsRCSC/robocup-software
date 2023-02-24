@@ -1,6 +1,6 @@
-package core.fieldObjects.robot;
+package java.core.fieldObjects.robot;
 
-import core.fieldObjects.robot.Robot;
+import java.core.fieldObjects.robot.Robot;
 /**
  * Used to track attributes of each ally robot
  */

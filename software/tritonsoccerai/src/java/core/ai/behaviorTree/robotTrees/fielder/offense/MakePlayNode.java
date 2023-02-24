@@ -1,12 +1,12 @@
-package core.ai.behaviorTree.robotTrees.fielder.offense;
+package java.core.ai.behaviorTree.robotTrees.fielder.offense;
 
-import core.ai.GameInfo;
-import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
-import core.util.Vector2d;
+import java.core.ai.GameInfo;
+import java.core.ai.behaviorTree.nodes.NodeState;
+import java.core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
+import java.core.util.Vector2d;
 
-import core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
-import core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
+import java.core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
+import java.core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
 
 import static proto.triton.FilteredObject.Robot;
 

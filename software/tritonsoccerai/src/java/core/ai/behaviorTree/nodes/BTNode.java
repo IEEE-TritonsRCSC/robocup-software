@@ -1,4 +1,4 @@
-package core.ai.behaviorTree.nodes;
+package java.core.ai.behaviorTree.nodes;
 
 /**
  * Superclass for all types of nodes in a behavior tree

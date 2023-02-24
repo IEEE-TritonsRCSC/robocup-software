@@ -1,6 +1,6 @@
-package core.ai.behaviorTree.nodes.compositeNodes;
+package java.core.ai.behaviorTree.nodes.compositeNodes;
 
-import core.ai.behaviorTree.nodes.BTNode;
+import java.core.ai.behaviorTree.nodes.BTNode;
 
 /**
  * Defines the root of a branch and the rules for how the branch is executed

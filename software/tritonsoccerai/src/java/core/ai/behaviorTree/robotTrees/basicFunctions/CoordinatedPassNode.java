@@ -1,13 +1,13 @@
-package core.ai.behaviorTree.robotTrees.basicFunctions;
+package java.core.ai.behaviorTree.robotTrees.basicFunctions;
 
-import core.ai.GameInfo;
-import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
-import core.constants.RobotConstants;
-import static core.constants.ProgramConstants.aiConfig;
-import static core.util.ObjectHelper.distToPath;
-import static core.util.ProtobufUtils.getPos;
-import core.util.Vector2d;
+import java.core.ai.GameInfo;
+import java.core.ai.behaviorTree.nodes.NodeState;
+import java.core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
+import java.core.constants.RobotConstants;
+import static java.core.constants.ProgramConstants.aiConfig;
+import static java.core.util.ObjectHelper.distToPath;
+import static java.core.util.ProtobufUtils.getPos;
+import java.core.util.Vector2d;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
-package core.search.node2d;
+package java.core.search.node2d;
 
-import core.search.base.Scorer;
+import java.core.search.base.Scorer;
 
 public class Euclidean2dWithPenaltyScorer implements Scorer<Node2d> {
     @Override

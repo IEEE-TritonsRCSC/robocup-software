@@ -1,12 +1,12 @@
-package core.module.interfaceModule;
+package java.core.module.interfaceModule;
 
 //TODO Can't find this file even in the old repo
 import com.rabbitmq.client.Delivery;
 
-import core.ai.GameInfo;
-import core.constants.ProgramConstants;
-import core.module.Module;
-import core.networking.UDP_Client;
+import java.core.ai.GameInfo;
+import java.core.constants.ProgramConstants;
+import java.core.module.Module;
+import java.core.networking.UDP_Client;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -15,9 +15,9 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
-import static core.messaging.Exchange.AI_ROBOT_COMMAND;
-import static core.messaging.Exchange.AI_ROBOT_FEEDBACKS;
-import static core.messaging.SimpleSerialize.simpleDeserialize;
+import static java.core.messaging.Exchange.AI_ROBOT_COMMAND;
+import static java.core.messaging.Exchange.AI_ROBOT_FEEDBACKS;
+import static java.core.messaging.SimpleSerialize.simpleDeserialize;
 
 //TODO Not recognizing proto?
 import static proto.simulation.SslSimulationRobotControl.RobotCommand;

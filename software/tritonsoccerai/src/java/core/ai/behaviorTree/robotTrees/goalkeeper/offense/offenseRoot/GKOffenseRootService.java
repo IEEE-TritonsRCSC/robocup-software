@@ -1,11 +1,11 @@
-package core.ai.behaviorTree.robotTrees.goalkeeper.offense.offenseRoot;
+package java.core.ai.behaviorTree.robotTrees.goalkeeper.offense.offenseRoot;
 
-import core.ai.GameInfo;
-import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
-import core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
-import core.ai.behaviorTree.robotTrees.basicFunctions.RobotHasPossessionNode;
-import core.ai.behaviorTree.robotTrees.goalkeeper.offense.GKPositionSelfNode;
+import java.core.ai.GameInfo;
+import java.core.ai.behaviorTree.nodes.NodeState;
+import java.core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
+import java.core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
+import java.core.ai.behaviorTree.robotTrees.basicFunctions.RobotHasPossessionNode;
+import java.core.ai.behaviorTree.robotTrees.goalkeeper.offense.GKPositionSelfNode;
 
 /**
  * Defines behavior for goalkeeper when on offense

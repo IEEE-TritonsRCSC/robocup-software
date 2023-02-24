@@ -1,7 +1,7 @@
-package core.ai.behaviorTree.nodes.compositeNodes;
+package java.core.ai.behaviorTree.nodes.compositeNodes;
 
-import core.ai.behaviorTree.nodes.BTNode;
-import core.ai.behaviorTree.nodes.NodeState;
+import java.core.ai.behaviorTree.nodes.BTNode;
+import java.core.ai.behaviorTree.nodes.NodeState;
 
 /**
  * Utilized to choose the appropriate task to perform

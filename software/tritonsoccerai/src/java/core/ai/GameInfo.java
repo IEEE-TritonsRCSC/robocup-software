@@ -1,13 +1,13 @@
-package core.ai;
+package java.core.ai;
 
-import core.fieldObjects.ball.Ball;
+import java.core.fieldObjects.ball.Ball;
 import static proto.triton.FilteredObject.*;
-import core.fieldObjects.robot.Team;
-import core.util.Vector2d;
+import java.core.fieldObjects.robot.Team;
+import java.core.util.Vector2d;
 
 import java.util.ArrayList;
 
-import static core.util.ProtobufUtils.getPos;
+import static java.core.util.ProtobufUtils.getPos;
 
 /**
  * central hub to find all info related to game

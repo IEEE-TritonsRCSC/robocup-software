@@ -1,7 +1,7 @@
-package core.util;
+package java.core.util;
 
-import core.ai.GameInfo;
-import core.fieldObjects.robot.Team;
+import java.core.ai.GameInfo;
+import java.core.fieldObjects.robot.Team;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
-package core.constants;
+package java.core.constants;
 
-import core.config.*;
+import java.core.config.*;
 
 public class ProgramConstants {
 

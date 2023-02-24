@@ -1,7 +1,7 @@
-package core.constants;
+package java.core.constants;
 
-import core.module.testModule.TestModule;
-import core.module.testModule.MoveTestModule;
+import java.core.module.testModule.TestModule;
+import java.core.module.testModule.MoveTestModule;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;

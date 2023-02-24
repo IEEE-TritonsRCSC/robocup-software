@@ -1,20 +1,20 @@
-package core.search.implementation;
+package java.core.search.implementation;
 
-import core.search.base.Graph;
-import core.search.base.RouteFinder;
-import core.search.base.Scorer;
-import core.search.node2d.Euclidean2dWithPenaltyScorer;
-import core.search.node2d.Node2d;
-import core.util.Vector2d;
+import java.core.search.base.Graph;
+import java.core.search.base.RouteFinder;
+import java.core.search.base.Scorer;
+import java.core.search.node2d.Euclidean2dWithPenaltyScorer;
+import java.core.search.node2d.Node2d;
+import java.core.util.Vector2d;
 
 import org.apache.commons.collections4.iterators.ReverseListIterator;
 
 import java.util.*;
 
-import static core.constants.ProgramConstants.aiConfig;
-import static core.util.ObjectHelper.predictPos;
-import static core.util.ProtobufUtils.getVel;
-import static core.FilteredObject.Robot;
+import static java.core.constants.ProgramConstants.aiConfig;
+import static java.core.util.ObjectHelper.predictPos;
+import static java.core.util.ProtobufUtils.getVel;
+import static proto.triton.FilteredObject.Robot;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
 
 public class PathfindGrid {

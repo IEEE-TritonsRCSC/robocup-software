@@ -1,7 +1,7 @@
-package core.fieldObjects.ball;
+package java.core.fieldObjects.ball;
 
-import core.fieldObjects.FieldObject;
-import core.fieldObjects.robot.Robot;
+import java.core.fieldObjects.FieldObject;
+import java.core.fieldObjects.robot.Robot;
 
 /**
  * Utilized to track attributes of the game ball

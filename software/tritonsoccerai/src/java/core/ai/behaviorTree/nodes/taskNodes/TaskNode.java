@@ -1,7 +1,7 @@
-package core.ai.behaviorTree.nodes.taskNodes;
+package java.core.ai.behaviorTree.nodes.taskNodes;
 
-import core.ai.behaviorTree.nodes.BTNode;
-import core.ai.behaviorTree.nodes.NodeState;
+import java.core.ai.behaviorTree.nodes.BTNode;
+import java.core.ai.behaviorTree.nodes.NodeState;
 import static proto.triton.FilteredObject.Robot;
 
 // leaves of tree; actionable things to do

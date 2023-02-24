@@ -2,11 +2,12 @@ package software.tritonsoccerai.src.core.ai.behaviorTree.robotTrees.goalkeeper.s
 
 import java.util.Vector;
 
-import core.ai.GameInfo;
-import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
-import core.util.Vector2d;
+import java.core.ai.GameInfo;
+import java.core.ai.behaviorTree.nodes.NodeState;
+import java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
+import java.core.util.Vector2d;
+import static java.core.util.ProtobufUtils.getPos;
 
 public class GKHaltNode extends TaskNode {
 

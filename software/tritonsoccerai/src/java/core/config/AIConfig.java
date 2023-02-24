@@ -1,7 +1,7 @@
-package core.config;
+package java.core.config;
 
-import static core.constants.ProgramConstants.aiConfig;
-import static core.constants.ProgramConstants.objectConfig;
+import static java.core.constants.ProgramConstants.aiConfig;
+import static java.core.constants.ProgramConstants.objectConfig;
 
 public class AIConfig {
 

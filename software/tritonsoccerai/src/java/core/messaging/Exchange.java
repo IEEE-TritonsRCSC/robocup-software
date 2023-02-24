@@ -1,4 +1,4 @@
-package core.messaging;
+package java.core.messaging;
 
 public enum Exchange {
     // Received from the camera

@@ -1,21 +1,21 @@
 package core;
 
-import core.ai.GameInfo;
-import core.config.*;
-import core.constants.AITest;
-import core.constants.ProgramConstants;
+import java.core.ai.GameInfo;
+import java.core.config.*;
+import java.core.constants.AITest;
+import java.core.constants.ProgramConstants;
 import static proto.triton.FilteredObject.Robot;
-import core.fieldObjects.robot.Team;
-import core.module.Module;
-import core.module.aiModule.AIModule;
-import core.module.aiModule.CentralCoordinatorModule;
-import core.module.aiModule.FielderTreeModule;
-import core.module.aiModule.GKTreeModule;
-import core.module.interfaceModule.CameraInterface;
-import core.module.interfaceModule.SimulatorCommandInterface;
-import core.module.interfaceModule.TritonBotMessageInterface;
-import core.module.interfaceModule.UserInterface;
-import core.module.processingModule.*;
+import java.core.fieldObjects.robot.Team;
+import java.core.module.Module;
+import java.core.module.aiModule.AIModule;
+import java.core.module.aiModule.CentralCoordinatorModule;
+import java.core.module.aiModule.FielderTreeModule;
+import java.core.module.aiModule.GKTreeModule;
+import java.core.module.interfaceModule.CameraInterface;
+import java.core.module.interfaceModule.SimulatorCommandInterface;
+import java.core.module.interfaceModule.TritonBotMessageInterface;
+import java.core.module.interfaceModule.UserInterface;
+import java.core.module.processingModule.*;
 
 import static proto.triton.FilteredObject.*;
 
@@ -27,10 +27,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
-import static core.config.ConfigPath.*;
-import static core.config.ConfigReader.readConfig;
+import static java.core.config.ConfigPath.*;
+import static java.core.config.ConfigReader.readConfig;
 
-import core.module.testModule.TestModule;
+import java.core.module.testModule.TestModule;
 import org.apache.commons.cli.*;
 
 public class AI {

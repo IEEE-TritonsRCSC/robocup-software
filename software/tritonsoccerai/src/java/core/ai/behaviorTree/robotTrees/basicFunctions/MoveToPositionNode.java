@@ -1,18 +1,19 @@
-package core.ai.behaviorTree.robotTrees.basicFunctions;
+package java.core.ai.behaviorTree.robotTrees.basicFunctions;
 
 import java.util.LinkedList;
 
-import core.ai.GameInfo;
-import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import core.util.Vector2d;
-import core.search.implementation.*;
-import core.search.node2d.Node2d;
+import java.core.ai.GameInfo;
+import java.core.ai.behaviorTree.nodes.NodeState;
+import java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import java.core.util.Vector2d;
+import java.core.search.implementation.*;
+import java.core.search.node2d.Node2d;
 
 import static proto.triton.FilteredObject.Robot;
+import static proto.simulation.SslSimulationRobotControl;
 
-import static core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
-import static core.util.ProtobufUtils.getPos;
+import static java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
+import static java.core.util.ProtobufUtils.getPos;
 
 public class MoveToPositionNode extends TaskNode {
 

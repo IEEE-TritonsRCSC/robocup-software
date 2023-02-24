@@ -1,8 +1,8 @@
-package core.ai.behaviorTree.robotTrees.goalkeeper.offense.offenseRoot;
+package java.core.ai.behaviorTree.robotTrees.goalkeeper.offense.offenseRoot;
 
-import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
-import core.constants.ProgramConstants;
+import java.core.ai.behaviorTree.nodes.NodeState;
+import java.core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
+import java.core.constants.ProgramConstants;
 
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;

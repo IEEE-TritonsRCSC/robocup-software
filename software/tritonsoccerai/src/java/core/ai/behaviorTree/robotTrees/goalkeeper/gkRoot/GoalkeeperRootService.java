@@ -1,14 +1,14 @@
-package core.ai.behaviorTree.robotTrees.goalkeeper.gkRoot;
+package java.core.ai.behaviorTree.robotTrees.goalkeeper.gkRoot;
 
-import core.ai.GameInfo;
-import core.ai.GameState;
-import core.ai.behaviorTree.nodes.BTNode;
-import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
-import core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
-import core.ai.behaviorTree.robotTrees.goalkeeper.defense.defenseRoot.GKDefenseRootNode;
-import core.ai.behaviorTree.robotTrees.goalkeeper.offense.offenseRoot.GKOffenseRootNode;
-import core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions.*;
+import java.core.ai.GameInfo;
+import java.core.ai.GameState;
+import java.core.ai.behaviorTree.nodes.BTNode;
+import java.core.ai.behaviorTree.nodes.NodeState;
+import java.core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
+import java.core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
+import java.core.ai.behaviorTree.robotTrees.goalkeeper.defense.defenseRoot.GKDefenseRootNode;
+import java.core.ai.behaviorTree.robotTrees.goalkeeper.offense.offenseRoot.GKOffenseRootNode;
+import java.core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions.*;
 
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;

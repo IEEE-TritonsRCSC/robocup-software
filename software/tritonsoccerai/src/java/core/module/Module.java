@@ -1,8 +1,8 @@
-package core.module;
+package java.core.module;
 
 import com.rabbitmq.client.*;
-import core.constants.ProgramConstants;
-import core.messaging.Exchange;
+import java.core.constants.ProgramConstants;
+import java.core.messaging.Exchange;
 
 import java.io.IOException;
 import java.util.Date;
@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
-import static core.messaging.SimpleSerialize.simpleSerialize;
+import static java.core.messaging.SimpleSerialize.simpleSerialize;
 
 public abstract class Module extends Thread {
 

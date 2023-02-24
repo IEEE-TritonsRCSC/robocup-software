@@ -1,9 +1,9 @@
-package core.module.processingModule;
+package java.core.module.processingModule;
 
 import com.rabbitmq.client.Delivery;
-import core.module.Module;
-import core.util.ConvertCoordinate;
-import core.util.Vector2d;
+import java.core.module.Module;
+import java.core.util.ConvertCoordinate;
+import java.core.util.Vector2d;
 import proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame;
 
 import java.io.IOException;
@@ -12,9 +12,9 @@ import java.util.List;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
-import static core.messaging.Exchange.AI_BIASED_VISION_WRAPPER;
-import static core.messaging.Exchange.AI_VISION_WRAPPER;
-import static core.messaging.SimpleSerialize.simpleDeserialize;
+import static java.core.messaging.Exchange.AI_BIASED_VISION_WRAPPER;
+import static java.core.messaging.Exchange.AI_VISION_WRAPPER;
+import static java.core.messaging.SimpleSerialize.simpleDeserialize;
 import static proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall;
 import static proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot;
 import static proto.vision.MessagesRobocupSslGeometry.*;

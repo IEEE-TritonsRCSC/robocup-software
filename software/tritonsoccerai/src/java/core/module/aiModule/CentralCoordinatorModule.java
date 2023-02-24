@@ -1,8 +1,8 @@
-package core.module.aiModule;
+package java.core.module.aiModule;
 
-import core.ai.behaviorTree.robotTrees.central.CentralCoordinatorRoot;
-import core.constants.ProgramConstants;
-import core.module.Module;
+import java.core.ai.behaviorTree.robotTrees.central.CentralCoordinatorRoot;
+import java.core.constants.ProgramConstants;
+import java.core.module.Module;
 
 import java.io.IOException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;

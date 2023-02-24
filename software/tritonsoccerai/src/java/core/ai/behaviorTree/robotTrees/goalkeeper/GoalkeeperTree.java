@@ -1,7 +1,7 @@
-package core.ai.behaviorTree.robotTrees.goalkeeper;
+package java.core.ai.behaviorTree.robotTrees.goalkeeper;
 
-import core.ai.behaviorTree.BehaviorTree;
-import core.ai.behaviorTree.robotTrees.goalkeeper.gkRoot.GoalkeeperRootNode;
+import java.core.ai.behaviorTree.BehaviorTree;
+import java.core.ai.behaviorTree.robotTrees.goalkeeper.gkRoot.GoalkeeperRootNode;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 

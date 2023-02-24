@@ -1,8 +1,8 @@
-package core.ai.behaviorTree.robotTrees.basicFunctions;
+package java.core.ai.behaviorTree.robotTrees.basicFunctions;
 
-import core.ai.GameInfo;
-import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import java.core.ai.GameInfo;
+import java.core.ai.behaviorTree.nodes.NodeState;
+import java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import static proto.triton.FilteredObject.Robot;
 
 /**

@@ -1,9 +1,9 @@
-package core.ai.behaviorTree.robotTrees.basicFunctions;
+package java.core.ai.behaviorTree.robotTrees.basicFunctions;
 
-import core.ai.behaviorTree.nodes.NodeState;
-import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import core.search.implementation.PathfindGridGroup;
-import static core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
+import java.core.ai.behaviorTree.nodes.NodeState;
+import java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import java.core.search.implementation.PathfindGridGroup;
+import static java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
 
 import proto.simulation.SslSimulationRobotControl;
 import static proto.triton.FilteredObject.Robot;

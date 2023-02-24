@@ -1,13 +1,13 @@
-package core.module.interfaceModule;
+package java.core.module.interfaceModule;
 
 //TODO Can't find these two files even in the old repo
 import com.google.protobuf.Any;
 import com.rabbitmq.client.Delivery;
 
-import core.constants.ProgramConstants;
-import core.fieldObjects.robot.Team;
-import core.module.Module;
-import core.networking.UDP_Client;
+import java.core.constants.ProgramConstants;
+import java.core.fieldObjects.robot.Team;
+import java.core.module.Module;
+import java.core.networking.UDP_Client;
 
 //TODO Not recognizing proto?
 import proto.simulation.SslSimulationConfig;
@@ -18,9 +18,9 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
-import static core.messaging.Exchange.AI_SIMULATOR_CONFIG;
-import static core.messaging.Exchange.AI_SIMULATOR_CONTROL;
-import static core.messaging.SimpleSerialize.simpleDeserialize;
+import static java.core.messaging.Exchange.AI_SIMULATOR_CONFIG;
+import static java.core.messaging.Exchange.AI_SIMULATOR_CONTROL;
+import static java.core.messaging.SimpleSerialize.simpleDeserialize;
 import static proto.simulation.SslGcCommon.RobotId;
 import static proto.simulation.SslGcCommon.Team.BLUE;
 import static proto.simulation.SslGcCommon.Team.YELLOW;

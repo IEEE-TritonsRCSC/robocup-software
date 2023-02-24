@@ -1,6 +1,6 @@
-package core.fieldObjects.robot;
+package java.core.fieldObjects.robot;
 
-import core.fieldObjects.FieldObject;
+import java.core.fieldObjects.FieldObject;
 
 /**
  * Superclass for all types of robots

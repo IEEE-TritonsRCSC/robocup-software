@@ -1,15 +1,15 @@
-package core.module.interfaceModule;
+package java.core.module.interfaceModule;
 
-import core.constants.ProgramConstants;
-import core.module.Module;
-import core.networking.UDP_MulticastReceiver;
+import java.core.constants.ProgramConstants;
+import java.core.module.Module;
+import java.core.networking.UDP_MulticastReceiver;
 
 import java.io.IOException;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
-import static core.messaging.Exchange.AI_VISION_WRAPPER;
+import static java.core.messaging.Exchange.AI_VISION_WRAPPER;
 
 //TODO Not recognizing proto?
 import static proto.vision.MessagesRobocupSslWrapper.SSL_WrapperPacket;

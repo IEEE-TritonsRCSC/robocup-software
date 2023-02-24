@@ -1,4 +1,4 @@
-package core.config;
+package java.core.config;
 
 public enum ConfigPath {
 
