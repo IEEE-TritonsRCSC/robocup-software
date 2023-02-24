@@ -81,6 +81,74 @@ public final class TritonBotCommunication {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private TritonBotMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot.Builder subBuilder = null;
+              if (vision_ != null) {
+                subBuilder = vision_.toBuilder();
+              }
+              vision_ = input.readMessage(proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(vision_);
+                vision_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              proto.simulation.SslSimulationRobotControl.RobotCommand.Builder subBuilder = null;
+              if (command_ != null) {
+                subBuilder = command_.toBuilder();
+              }
+              command_ = input.readMessage(proto.simulation.SslSimulationRobotControl.RobotCommand.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(command_);
+                command_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.triton.TritonBotCommunication.internal_static_proto_triton_TritonBotMessage_descriptor;
@@ -95,7 +163,7 @@ public final class TritonBotCommunication {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private int id_ = 0;
+    private int id_;
     /**
      * <code>int32 id = 1;</code>
      * @return The id.
@@ -128,7 +196,7 @@ public final class TritonBotCommunication {
      */
     @java.lang.Override
     public proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobotOrBuilder getVisionOrBuilder() {
-      return vision_ == null ? proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot.getDefaultInstance() : vision_;
+      return getVision();
     }
 
     public static final int COMMAND_FIELD_NUMBER = 3;
@@ -154,7 +222,7 @@ public final class TritonBotCommunication {
      */
     @java.lang.Override
     public proto.simulation.SslSimulationRobotControl.RobotCommandOrBuilder getCommandOrBuilder() {
-      return command_ == null ? proto.simulation.SslSimulationRobotControl.RobotCommand.getDefaultInstance() : command_;
+      return getCommand();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -192,7 +260,7 @@ public final class TritonBotCommunication {
       if (command_ != null) {
         output.writeMessage(3, getCommand());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -213,7 +281,7 @@ public final class TritonBotCommunication {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getCommand());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -240,7 +308,7 @@ public final class TritonBotCommunication {
         if (!getCommand()
             .equals(other.getCommand())) return false;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -261,7 +329,7 @@ public final class TritonBotCommunication {
         hash = (37 * hash) + COMMAND_FIELD_NUMBER;
         hash = (53 * hash) + getCommand().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -378,27 +446,34 @@ public final class TritonBotCommunication {
 
       // Construct using proto.triton.TritonBotCommunication.TritonBotMessage.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = 0;
-        vision_ = null;
-        if (visionBuilder_ != null) {
-          visionBuilder_.dispose();
+
+        if (visionBuilder_ == null) {
+          vision_ = null;
+        } else {
+          vision_ = null;
           visionBuilder_ = null;
         }
-        command_ = null;
-        if (commandBuilder_ != null) {
-          commandBuilder_.dispose();
+        if (commandBuilder_ == null) {
+          command_ = null;
+        } else {
+          command_ = null;
           commandBuilder_ = null;
         }
         return this;
@@ -427,26 +502,19 @@ public final class TritonBotCommunication {
       @java.lang.Override
       public proto.triton.TritonBotCommunication.TritonBotMessage buildPartial() {
         proto.triton.TritonBotCommunication.TritonBotMessage result = new proto.triton.TritonBotCommunication.TritonBotMessage(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.id_ = id_;
+        if (visionBuilder_ == null) {
+          result.vision_ = vision_;
+        } else {
+          result.vision_ = visionBuilder_.build();
+        }
+        if (commandBuilder_ == null) {
+          result.command_ = command_;
+        } else {
+          result.command_ = commandBuilder_.build();
+        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(proto.triton.TritonBotCommunication.TritonBotMessage result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.vision_ = visionBuilder_ == null
-              ? vision_
-              : visionBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.command_ = commandBuilder_ == null
-              ? command_
-              : commandBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -502,7 +570,7 @@ public final class TritonBotCommunication {
         if (other.hasCommand()) {
           mergeCommand(other.getCommand());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -527,52 +595,19 @@ public final class TritonBotCommunication {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.triton.TritonBotCommunication.TritonBotMessage parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                id_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 18: {
-                input.readMessage(
-                    getVisionFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getCommandFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.triton.TritonBotCommunication.TritonBotMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int id_ ;
       /**
@@ -591,7 +626,6 @@ public final class TritonBotCommunication {
       public Builder setId(int value) {
         
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -600,7 +634,7 @@ public final class TritonBotCommunication {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         id_ = 0;
         onChanged();
         return this;
@@ -614,7 +648,7 @@ public final class TritonBotCommunication {
        * @return Whether the vision field is set.
        */
       public boolean hasVision() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return visionBuilder_ != null || vision_ != null;
       }
       /**
        * <code>.proto.vision.SSL_DetectionRobot vision = 2;</code>
@@ -636,11 +670,11 @@ public final class TritonBotCommunication {
             throw new NullPointerException();
           }
           vision_ = value;
+          onChanged();
         } else {
           visionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -650,11 +684,11 @@ public final class TritonBotCommunication {
           proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot.Builder builderForValue) {
         if (visionBuilder_ == null) {
           vision_ = builderForValue.build();
+          onChanged();
         } else {
           visionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -662,38 +696,38 @@ public final class TritonBotCommunication {
        */
       public Builder mergeVision(proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot value) {
         if (visionBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            vision_ != null &&
-            vision_ != proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot.getDefaultInstance()) {
-            getVisionBuilder().mergeFrom(value);
+          if (vision_ != null) {
+            vision_ =
+              proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot.newBuilder(vision_).mergeFrom(value).buildPartial();
           } else {
             vision_ = value;
           }
+          onChanged();
         } else {
           visionBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.proto.vision.SSL_DetectionRobot vision = 2;</code>
        */
       public Builder clearVision() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        vision_ = null;
-        if (visionBuilder_ != null) {
-          visionBuilder_.dispose();
+        if (visionBuilder_ == null) {
+          vision_ = null;
+          onChanged();
+        } else {
+          vision_ = null;
           visionBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.proto.vision.SSL_DetectionRobot vision = 2;</code>
        */
       public proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot.Builder getVisionBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getVisionFieldBuilder().getBuilder();
       }
@@ -733,7 +767,7 @@ public final class TritonBotCommunication {
        * @return Whether the command field is set.
        */
       public boolean hasCommand() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return commandBuilder_ != null || command_ != null;
       }
       /**
        * <code>.proto.simulation.RobotCommand command = 3;</code>
@@ -755,11 +789,11 @@ public final class TritonBotCommunication {
             throw new NullPointerException();
           }
           command_ = value;
+          onChanged();
         } else {
           commandBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -769,11 +803,11 @@ public final class TritonBotCommunication {
           proto.simulation.SslSimulationRobotControl.RobotCommand.Builder builderForValue) {
         if (commandBuilder_ == null) {
           command_ = builderForValue.build();
+          onChanged();
         } else {
           commandBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -781,38 +815,38 @@ public final class TritonBotCommunication {
        */
       public Builder mergeCommand(proto.simulation.SslSimulationRobotControl.RobotCommand value) {
         if (commandBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            command_ != null &&
-            command_ != proto.simulation.SslSimulationRobotControl.RobotCommand.getDefaultInstance()) {
-            getCommandBuilder().mergeFrom(value);
+          if (command_ != null) {
+            command_ =
+              proto.simulation.SslSimulationRobotControl.RobotCommand.newBuilder(command_).mergeFrom(value).buildPartial();
           } else {
             command_ = value;
           }
+          onChanged();
         } else {
           commandBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.proto.simulation.RobotCommand command = 3;</code>
        */
       public Builder clearCommand() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        command_ = null;
-        if (commandBuilder_ != null) {
-          commandBuilder_.dispose();
+        if (commandBuilder_ == null) {
+          command_ = null;
+          onChanged();
+        } else {
+          command_ = null;
           commandBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.proto.simulation.RobotCommand command = 3;</code>
        */
       public proto.simulation.SslSimulationRobotControl.RobotCommand.Builder getCommandBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getCommandFieldBuilder().getBuilder();
       }
@@ -876,18 +910,7 @@ public final class TritonBotCommunication {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TritonBotMessage(input, extensionRegistry);
       }
     };
 

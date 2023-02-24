@@ -158,6 +158,140 @@ public final class FilteredObject {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private Ball(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              timestamp_ = input.readInt64();
+              break;
+            }
+            case 21: {
+
+              confidence_ = input.readFloat();
+              break;
+            }
+            case 29: {
+
+              x_ = input.readFloat();
+              break;
+            }
+            case 37: {
+
+              y_ = input.readFloat();
+              break;
+            }
+            case 45: {
+
+              z_ = input.readFloat();
+              break;
+            }
+            case 53: {
+
+              vx_ = input.readFloat();
+              break;
+            }
+            case 61: {
+
+              vy_ = input.readFloat();
+              break;
+            }
+            case 69: {
+
+              vz_ = input.readFloat();
+              break;
+            }
+            case 77: {
+
+              accX_ = input.readFloat();
+              break;
+            }
+            case 85: {
+
+              accY_ = input.readFloat();
+              break;
+            }
+            case 93: {
+
+              accZ_ = input.readFloat();
+              break;
+            }
+            case 98: {
+              proto.triton.FilteredObject.Free.Builder subBuilder = null;
+              if (captureStateCase_ == 12) {
+                subBuilder = ((proto.triton.FilteredObject.Free) captureState_).toBuilder();
+              }
+              captureState_ =
+                  input.readMessage(proto.triton.FilteredObject.Free.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((proto.triton.FilteredObject.Free) captureState_);
+                captureState_ = subBuilder.buildPartial();
+              }
+              captureStateCase_ = 12;
+              break;
+            }
+            case 106: {
+              proto.triton.FilteredObject.AllyCapture.Builder subBuilder = null;
+              if (captureStateCase_ == 13) {
+                subBuilder = ((proto.triton.FilteredObject.AllyCapture) captureState_).toBuilder();
+              }
+              captureState_ =
+                  input.readMessage(proto.triton.FilteredObject.AllyCapture.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((proto.triton.FilteredObject.AllyCapture) captureState_);
+                captureState_ = subBuilder.buildPartial();
+              }
+              captureStateCase_ = 13;
+              break;
+            }
+            case 114: {
+              proto.triton.FilteredObject.FoeCapture.Builder subBuilder = null;
+              if (captureStateCase_ == 14) {
+                subBuilder = ((proto.triton.FilteredObject.FoeCapture) captureState_).toBuilder();
+              }
+              captureState_ =
+                  input.readMessage(proto.triton.FilteredObject.FoeCapture.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((proto.triton.FilteredObject.FoeCapture) captureState_);
+                captureState_ = subBuilder.buildPartial();
+              }
+              captureStateCase_ = 14;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.triton.FilteredObject.internal_static_proto_triton_Ball_descriptor;
@@ -215,7 +349,7 @@ public final class FilteredObject {
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 1;
-    private long timestamp_ = 0L;
+    private long timestamp_;
     /**
      * <code>int64 timestamp = 1;</code>
      * @return The timestamp.
@@ -226,7 +360,7 @@ public final class FilteredObject {
     }
 
     public static final int CONFIDENCE_FIELD_NUMBER = 2;
-    private float confidence_ = 0F;
+    private float confidence_;
     /**
      * <code>float confidence = 2;</code>
      * @return The confidence.
@@ -237,7 +371,7 @@ public final class FilteredObject {
     }
 
     public static final int X_FIELD_NUMBER = 3;
-    private float x_ = 0F;
+    private float x_;
     /**
      * <code>float x = 3;</code>
      * @return The x.
@@ -248,7 +382,7 @@ public final class FilteredObject {
     }
 
     public static final int Y_FIELD_NUMBER = 4;
-    private float y_ = 0F;
+    private float y_;
     /**
      * <code>float y = 4;</code>
      * @return The y.
@@ -259,7 +393,7 @@ public final class FilteredObject {
     }
 
     public static final int Z_FIELD_NUMBER = 5;
-    private float z_ = 0F;
+    private float z_;
     /**
      * <code>float z = 5;</code>
      * @return The z.
@@ -270,7 +404,7 @@ public final class FilteredObject {
     }
 
     public static final int VX_FIELD_NUMBER = 6;
-    private float vx_ = 0F;
+    private float vx_;
     /**
      * <code>float vx = 6;</code>
      * @return The vx.
@@ -281,7 +415,7 @@ public final class FilteredObject {
     }
 
     public static final int VY_FIELD_NUMBER = 7;
-    private float vy_ = 0F;
+    private float vy_;
     /**
      * <code>float vy = 7;</code>
      * @return The vy.
@@ -292,7 +426,7 @@ public final class FilteredObject {
     }
 
     public static final int VZ_FIELD_NUMBER = 8;
-    private float vz_ = 0F;
+    private float vz_;
     /**
      * <code>float vz = 8;</code>
      * @return The vz.
@@ -303,7 +437,7 @@ public final class FilteredObject {
     }
 
     public static final int ACC_X_FIELD_NUMBER = 9;
-    private float accX_ = 0F;
+    private float accX_;
     /**
      * <code>float acc_x = 9;</code>
      * @return The accX.
@@ -314,7 +448,7 @@ public final class FilteredObject {
     }
 
     public static final int ACC_Y_FIELD_NUMBER = 10;
-    private float accY_ = 0F;
+    private float accY_;
     /**
      * <code>float acc_y = 10;</code>
      * @return The accY.
@@ -325,7 +459,7 @@ public final class FilteredObject {
     }
 
     public static final int ACC_Z_FIELD_NUMBER = 11;
-    private float accZ_ = 0F;
+    private float accZ_;
     /**
      * <code>float acc_z = 11;</code>
      * @return The accZ.
@@ -445,34 +579,34 @@ public final class FilteredObject {
       if (timestamp_ != 0L) {
         output.writeInt64(1, timestamp_);
       }
-      if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
+      if (confidence_ != 0F) {
         output.writeFloat(2, confidence_);
       }
-      if (java.lang.Float.floatToRawIntBits(x_) != 0) {
+      if (x_ != 0F) {
         output.writeFloat(3, x_);
       }
-      if (java.lang.Float.floatToRawIntBits(y_) != 0) {
+      if (y_ != 0F) {
         output.writeFloat(4, y_);
       }
-      if (java.lang.Float.floatToRawIntBits(z_) != 0) {
+      if (z_ != 0F) {
         output.writeFloat(5, z_);
       }
-      if (java.lang.Float.floatToRawIntBits(vx_) != 0) {
+      if (vx_ != 0F) {
         output.writeFloat(6, vx_);
       }
-      if (java.lang.Float.floatToRawIntBits(vy_) != 0) {
+      if (vy_ != 0F) {
         output.writeFloat(7, vy_);
       }
-      if (java.lang.Float.floatToRawIntBits(vz_) != 0) {
+      if (vz_ != 0F) {
         output.writeFloat(8, vz_);
       }
-      if (java.lang.Float.floatToRawIntBits(accX_) != 0) {
+      if (accX_ != 0F) {
         output.writeFloat(9, accX_);
       }
-      if (java.lang.Float.floatToRawIntBits(accY_) != 0) {
+      if (accY_ != 0F) {
         output.writeFloat(10, accY_);
       }
-      if (java.lang.Float.floatToRawIntBits(accZ_) != 0) {
+      if (accZ_ != 0F) {
         output.writeFloat(11, accZ_);
       }
       if (captureStateCase_ == 12) {
@@ -484,7 +618,7 @@ public final class FilteredObject {
       if (captureStateCase_ == 14) {
         output.writeMessage(14, (proto.triton.FilteredObject.FoeCapture) captureState_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -497,43 +631,43 @@ public final class FilteredObject {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, timestamp_);
       }
-      if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
+      if (confidence_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, confidence_);
       }
-      if (java.lang.Float.floatToRawIntBits(x_) != 0) {
+      if (x_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, x_);
       }
-      if (java.lang.Float.floatToRawIntBits(y_) != 0) {
+      if (y_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, y_);
       }
-      if (java.lang.Float.floatToRawIntBits(z_) != 0) {
+      if (z_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(5, z_);
       }
-      if (java.lang.Float.floatToRawIntBits(vx_) != 0) {
+      if (vx_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(6, vx_);
       }
-      if (java.lang.Float.floatToRawIntBits(vy_) != 0) {
+      if (vy_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(7, vy_);
       }
-      if (java.lang.Float.floatToRawIntBits(vz_) != 0) {
+      if (vz_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(8, vz_);
       }
-      if (java.lang.Float.floatToRawIntBits(accX_) != 0) {
+      if (accX_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(9, accX_);
       }
-      if (java.lang.Float.floatToRawIntBits(accY_) != 0) {
+      if (accY_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(10, accY_);
       }
-      if (java.lang.Float.floatToRawIntBits(accZ_) != 0) {
+      if (accZ_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(11, accZ_);
       }
@@ -549,7 +683,7 @@ public final class FilteredObject {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, (proto.triton.FilteredObject.FoeCapture) captureState_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -613,7 +747,7 @@ public final class FilteredObject {
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -673,7 +807,7 @@ public final class FilteredObject {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -790,38 +924,44 @@ public final class FilteredObject {
 
       // Construct using proto.triton.FilteredObject.Ball.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         timestamp_ = 0L;
+
         confidence_ = 0F;
+
         x_ = 0F;
+
         y_ = 0F;
+
         z_ = 0F;
+
         vx_ = 0F;
+
         vy_ = 0F;
+
         vz_ = 0F;
+
         accX_ = 0F;
+
         accY_ = 0F;
+
         accZ_ = 0F;
-        if (freeBuilder_ != null) {
-          freeBuilder_.clear();
-        }
-        if (allyCaptureBuilder_ != null) {
-          allyCaptureBuilder_.clear();
-        }
-        if (foeCaptureBuilder_ != null) {
-          foeCaptureBuilder_.clear();
-        }
+
         captureStateCase_ = 0;
         captureState_ = null;
         return this;
@@ -850,64 +990,41 @@ public final class FilteredObject {
       @java.lang.Override
       public proto.triton.FilteredObject.Ball buildPartial() {
         proto.triton.FilteredObject.Ball result = new proto.triton.FilteredObject.Ball(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        result.timestamp_ = timestamp_;
+        result.confidence_ = confidence_;
+        result.x_ = x_;
+        result.y_ = y_;
+        result.z_ = z_;
+        result.vx_ = vx_;
+        result.vy_ = vy_;
+        result.vz_ = vz_;
+        result.accX_ = accX_;
+        result.accY_ = accY_;
+        result.accZ_ = accZ_;
+        if (captureStateCase_ == 12) {
+          if (freeBuilder_ == null) {
+            result.captureState_ = captureState_;
+          } else {
+            result.captureState_ = freeBuilder_.build();
+          }
+        }
+        if (captureStateCase_ == 13) {
+          if (allyCaptureBuilder_ == null) {
+            result.captureState_ = captureState_;
+          } else {
+            result.captureState_ = allyCaptureBuilder_.build();
+          }
+        }
+        if (captureStateCase_ == 14) {
+          if (foeCaptureBuilder_ == null) {
+            result.captureState_ = captureState_;
+          } else {
+            result.captureState_ = foeCaptureBuilder_.build();
+          }
+        }
+        result.captureStateCase_ = captureStateCase_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(proto.triton.FilteredObject.Ball result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.timestamp_ = timestamp_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.confidence_ = confidence_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.x_ = x_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.y_ = y_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.z_ = z_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.vx_ = vx_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.vy_ = vy_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.vz_ = vz_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.accX_ = accX_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.accY_ = accY_;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.accZ_ = accZ_;
-        }
-      }
-
-      private void buildPartialOneofs(proto.triton.FilteredObject.Ball result) {
-        result.captureStateCase_ = captureStateCase_;
-        result.captureState_ = this.captureState_;
-        if (captureStateCase_ == 12 &&
-            freeBuilder_ != null) {
-          result.captureState_ = freeBuilder_.build();
-        }
-        if (captureStateCase_ == 13 &&
-            allyCaptureBuilder_ != null) {
-          result.captureState_ = allyCaptureBuilder_.build();
-        }
-        if (captureStateCase_ == 14 &&
-            foeCaptureBuilder_ != null) {
-          result.captureState_ = foeCaptureBuilder_.build();
-        }
       }
 
       @java.lang.Override
@@ -1004,7 +1121,7 @@ public final class FilteredObject {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1019,106 +1136,17 @@ public final class FilteredObject {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.triton.FilteredObject.Ball parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                timestamp_ = input.readInt64();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 21: {
-                confidence_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 21
-              case 29: {
-                x_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 29
-              case 37: {
-                y_ = input.readFloat();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 37
-              case 45: {
-                z_ = input.readFloat();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 45
-              case 53: {
-                vx_ = input.readFloat();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 53
-              case 61: {
-                vy_ = input.readFloat();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 61
-              case 69: {
-                vz_ = input.readFloat();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 69
-              case 77: {
-                accX_ = input.readFloat();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 77
-              case 85: {
-                accY_ = input.readFloat();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 85
-              case 93: {
-                accZ_ = input.readFloat();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 93
-              case 98: {
-                input.readMessage(
-                    getFreeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                captureStateCase_ = 12;
-                break;
-              } // case 98
-              case 106: {
-                input.readMessage(
-                    getAllyCaptureFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                captureStateCase_ = 13;
-                break;
-              } // case 106
-              case 114: {
-                input.readMessage(
-                    getFoeCaptureFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                captureStateCase_ = 14;
-                break;
-              } // case 114
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.triton.FilteredObject.Ball) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int captureStateCase_ = 0;
@@ -1136,7 +1164,6 @@ public final class FilteredObject {
         return this;
       }
 
-      private int bitField0_;
 
       private long timestamp_ ;
       /**
@@ -1155,7 +1182,6 @@ public final class FilteredObject {
       public Builder setTimestamp(long value) {
         
         timestamp_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1164,7 +1190,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         timestamp_ = 0L;
         onChanged();
         return this;
@@ -1187,7 +1213,6 @@ public final class FilteredObject {
       public Builder setConfidence(float value) {
         
         confidence_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1196,7 +1221,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearConfidence() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         confidence_ = 0F;
         onChanged();
         return this;
@@ -1219,7 +1244,6 @@ public final class FilteredObject {
       public Builder setX(float value) {
         
         x_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1228,7 +1252,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearX() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         x_ = 0F;
         onChanged();
         return this;
@@ -1251,7 +1275,6 @@ public final class FilteredObject {
       public Builder setY(float value) {
         
         y_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1260,7 +1283,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearY() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         y_ = 0F;
         onChanged();
         return this;
@@ -1283,7 +1306,6 @@ public final class FilteredObject {
       public Builder setZ(float value) {
         
         z_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1292,7 +1314,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearZ() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         z_ = 0F;
         onChanged();
         return this;
@@ -1315,7 +1337,6 @@ public final class FilteredObject {
       public Builder setVx(float value) {
         
         vx_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1324,7 +1345,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearVx() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         vx_ = 0F;
         onChanged();
         return this;
@@ -1347,7 +1368,6 @@ public final class FilteredObject {
       public Builder setVy(float value) {
         
         vy_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1356,7 +1376,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearVy() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         vy_ = 0F;
         onChanged();
         return this;
@@ -1379,7 +1399,6 @@ public final class FilteredObject {
       public Builder setVz(float value) {
         
         vz_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1388,7 +1407,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearVz() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         vz_ = 0F;
         onChanged();
         return this;
@@ -1411,7 +1430,6 @@ public final class FilteredObject {
       public Builder setAccX(float value) {
         
         accX_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1420,7 +1438,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearAccX() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         accX_ = 0F;
         onChanged();
         return this;
@@ -1443,7 +1461,6 @@ public final class FilteredObject {
       public Builder setAccY(float value) {
         
         accY_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1452,7 +1469,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearAccY() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         accY_ = 0F;
         onChanged();
         return this;
@@ -1475,7 +1492,6 @@ public final class FilteredObject {
       public Builder setAccZ(float value) {
         
         accZ_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -1484,7 +1500,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearAccZ() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        
         accZ_ = 0F;
         onChanged();
         return this;
@@ -1564,9 +1580,8 @@ public final class FilteredObject {
         } else {
           if (captureStateCase_ == 12) {
             freeBuilder_.mergeFrom(value);
-          } else {
-            freeBuilder_.setMessage(value);
           }
+          freeBuilder_.setMessage(value);
         }
         captureStateCase_ = 12;
         return this;
@@ -1628,7 +1643,7 @@ public final class FilteredObject {
           captureState_ = null;
         }
         captureStateCase_ = 12;
-        onChanged();
+        onChanged();;
         return freeBuilder_;
       }
 
@@ -1706,9 +1721,8 @@ public final class FilteredObject {
         } else {
           if (captureStateCase_ == 13) {
             allyCaptureBuilder_.mergeFrom(value);
-          } else {
-            allyCaptureBuilder_.setMessage(value);
           }
+          allyCaptureBuilder_.setMessage(value);
         }
         captureStateCase_ = 13;
         return this;
@@ -1770,7 +1784,7 @@ public final class FilteredObject {
           captureState_ = null;
         }
         captureStateCase_ = 13;
-        onChanged();
+        onChanged();;
         return allyCaptureBuilder_;
       }
 
@@ -1848,9 +1862,8 @@ public final class FilteredObject {
         } else {
           if (captureStateCase_ == 14) {
             foeCaptureBuilder_.mergeFrom(value);
-          } else {
-            foeCaptureBuilder_.setMessage(value);
           }
+          foeCaptureBuilder_.setMessage(value);
         }
         captureStateCase_ = 14;
         return this;
@@ -1912,7 +1925,7 @@ public final class FilteredObject {
           captureState_ = null;
         }
         captureStateCase_ = 14;
-        onChanged();
+        onChanged();;
         return foeCaptureBuilder_;
       }
       @java.lang.Override
@@ -1948,18 +1961,7 @@ public final class FilteredObject {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Ball(input, extensionRegistry);
       }
     };
 
@@ -2010,6 +2012,43 @@ public final class FilteredObject {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private Free(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.triton.FilteredObject.internal_static_proto_triton_Free_descriptor;
@@ -2037,7 +2076,7 @@ public final class FilteredObject {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2046,7 +2085,7 @@ public final class FilteredObject {
       if (size != -1) return size;
 
       size = 0;
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2061,7 +2100,7 @@ public final class FilteredObject {
       }
       proto.triton.FilteredObject.Free other = (proto.triton.FilteredObject.Free) obj;
 
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -2072,7 +2111,7 @@ public final class FilteredObject {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2189,13 +2228,18 @@ public final class FilteredObject {
 
       // Construct using proto.triton.FilteredObject.Free.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -2274,7 +2318,7 @@ public final class FilteredObject {
 
       public Builder mergeFrom(proto.triton.FilteredObject.Free other) {
         if (other == proto.triton.FilteredObject.Free.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2289,30 +2333,17 @@ public final class FilteredObject {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.triton.FilteredObject.Free parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.triton.FilteredObject.Free) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       @java.lang.Override
@@ -2348,18 +2379,7 @@ public final class FilteredObject {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Free(input, extensionRegistry);
       }
     };
 
@@ -2416,6 +2436,48 @@ public final class FilteredObject {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private AllyCapture(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.triton.FilteredObject.internal_static_proto_triton_AllyCapture_descriptor;
@@ -2430,7 +2492,7 @@ public final class FilteredObject {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private int id_ = 0;
+    private int id_;
     /**
      * <code>int32 id = 1;</code>
      * @return The id.
@@ -2457,7 +2519,7 @@ public final class FilteredObject {
       if (id_ != 0) {
         output.writeInt32(1, id_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2470,7 +2532,7 @@ public final class FilteredObject {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, id_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2487,7 +2549,7 @@ public final class FilteredObject {
 
       if (getId()
           != other.getId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -2500,7 +2562,7 @@ public final class FilteredObject {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2617,19 +2679,24 @@ public final class FilteredObject {
 
       // Construct using proto.triton.FilteredObject.AllyCapture.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = 0;
+
         return this;
       }
 
@@ -2656,16 +2723,9 @@ public final class FilteredObject {
       @java.lang.Override
       public proto.triton.FilteredObject.AllyCapture buildPartial() {
         proto.triton.FilteredObject.AllyCapture result = new proto.triton.FilteredObject.AllyCapture(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.id_ = id_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(proto.triton.FilteredObject.AllyCapture result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
       }
 
       @java.lang.Override
@@ -2715,7 +2775,7 @@ public final class FilteredObject {
         if (other.getId() != 0) {
           setId(other.getId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2730,38 +2790,19 @@ public final class FilteredObject {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.triton.FilteredObject.AllyCapture parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                id_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.triton.FilteredObject.AllyCapture) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int id_ ;
       /**
@@ -2780,7 +2821,6 @@ public final class FilteredObject {
       public Builder setId(int value) {
         
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2789,7 +2829,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         id_ = 0;
         onChanged();
         return this;
@@ -2827,18 +2867,7 @@ public final class FilteredObject {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AllyCapture(input, extensionRegistry);
       }
     };
 
@@ -2895,6 +2924,48 @@ public final class FilteredObject {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FoeCapture(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.triton.FilteredObject.internal_static_proto_triton_FoeCapture_descriptor;
@@ -2909,7 +2980,7 @@ public final class FilteredObject {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private int id_ = 0;
+    private int id_;
     /**
      * <code>int32 id = 1;</code>
      * @return The id.
@@ -2936,7 +3007,7 @@ public final class FilteredObject {
       if (id_ != 0) {
         output.writeInt32(1, id_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2949,7 +3020,7 @@ public final class FilteredObject {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, id_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2966,7 +3037,7 @@ public final class FilteredObject {
 
       if (getId()
           != other.getId()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -2979,7 +3050,7 @@ public final class FilteredObject {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId();
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3096,19 +3167,24 @@ public final class FilteredObject {
 
       // Construct using proto.triton.FilteredObject.FoeCapture.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = 0;
+
         return this;
       }
 
@@ -3135,16 +3211,9 @@ public final class FilteredObject {
       @java.lang.Override
       public proto.triton.FilteredObject.FoeCapture buildPartial() {
         proto.triton.FilteredObject.FoeCapture result = new proto.triton.FilteredObject.FoeCapture(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.id_ = id_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(proto.triton.FilteredObject.FoeCapture result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
       }
 
       @java.lang.Override
@@ -3194,7 +3263,7 @@ public final class FilteredObject {
         if (other.getId() != 0) {
           setId(other.getId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3209,38 +3278,19 @@ public final class FilteredObject {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.triton.FilteredObject.FoeCapture parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                id_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.triton.FilteredObject.FoeCapture) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int id_ ;
       /**
@@ -3259,7 +3309,6 @@ public final class FilteredObject {
       public Builder setId(int value) {
         
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3268,7 +3317,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         id_ = 0;
         onChanged();
         return this;
@@ -3306,18 +3355,7 @@ public final class FilteredObject {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FoeCapture(input, extensionRegistry);
       }
     };
 
@@ -3452,6 +3490,113 @@ public final class FilteredObject {
     getUnknownFields() {
       return this.unknownFields;
     }
+    private Robot(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              timestamp_ = input.readInt64();
+              break;
+            }
+            case 16: {
+
+              id_ = input.readInt32();
+              break;
+            }
+            case 29: {
+
+              x_ = input.readFloat();
+              break;
+            }
+            case 37: {
+
+              y_ = input.readFloat();
+              break;
+            }
+            case 45: {
+
+              orientation_ = input.readFloat();
+              break;
+            }
+            case 53: {
+
+              vx_ = input.readFloat();
+              break;
+            }
+            case 61: {
+
+              vy_ = input.readFloat();
+              break;
+            }
+            case 69: {
+
+              angular_ = input.readFloat();
+              break;
+            }
+            case 77: {
+
+              accX_ = input.readFloat();
+              break;
+            }
+            case 85: {
+
+              accY_ = input.readFloat();
+              break;
+            }
+            case 93: {
+
+              accAngular_ = input.readFloat();
+              break;
+            }
+            case 96: {
+
+              hasBall_ = input.readBool();
+              break;
+            }
+            case 109: {
+
+              dribbleStartX_ = input.readFloat();
+              break;
+            }
+            case 117: {
+
+              dribbleStartY_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.triton.FilteredObject.internal_static_proto_triton_Robot_descriptor;
@@ -3466,7 +3611,7 @@ public final class FilteredObject {
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 1;
-    private long timestamp_ = 0L;
+    private long timestamp_;
     /**
      * <code>int64 timestamp = 1;</code>
      * @return The timestamp.
@@ -3477,7 +3622,7 @@ public final class FilteredObject {
     }
 
     public static final int ID_FIELD_NUMBER = 2;
-    private int id_ = 0;
+    private int id_;
     /**
      * <code>int32 id = 2;</code>
      * @return The id.
@@ -3488,7 +3633,7 @@ public final class FilteredObject {
     }
 
     public static final int X_FIELD_NUMBER = 3;
-    private float x_ = 0F;
+    private float x_;
     /**
      * <code>float x = 3;</code>
      * @return The x.
@@ -3499,7 +3644,7 @@ public final class FilteredObject {
     }
 
     public static final int Y_FIELD_NUMBER = 4;
-    private float y_ = 0F;
+    private float y_;
     /**
      * <code>float y = 4;</code>
      * @return The y.
@@ -3510,7 +3655,7 @@ public final class FilteredObject {
     }
 
     public static final int ORIENTATION_FIELD_NUMBER = 5;
-    private float orientation_ = 0F;
+    private float orientation_;
     /**
      * <code>float orientation = 5;</code>
      * @return The orientation.
@@ -3521,7 +3666,7 @@ public final class FilteredObject {
     }
 
     public static final int VX_FIELD_NUMBER = 6;
-    private float vx_ = 0F;
+    private float vx_;
     /**
      * <code>float vx = 6;</code>
      * @return The vx.
@@ -3532,7 +3677,7 @@ public final class FilteredObject {
     }
 
     public static final int VY_FIELD_NUMBER = 7;
-    private float vy_ = 0F;
+    private float vy_;
     /**
      * <code>float vy = 7;</code>
      * @return The vy.
@@ -3543,7 +3688,7 @@ public final class FilteredObject {
     }
 
     public static final int ANGULAR_FIELD_NUMBER = 8;
-    private float angular_ = 0F;
+    private float angular_;
     /**
      * <code>float angular = 8;</code>
      * @return The angular.
@@ -3554,7 +3699,7 @@ public final class FilteredObject {
     }
 
     public static final int ACC_X_FIELD_NUMBER = 9;
-    private float accX_ = 0F;
+    private float accX_;
     /**
      * <code>float acc_x = 9;</code>
      * @return The accX.
@@ -3565,7 +3710,7 @@ public final class FilteredObject {
     }
 
     public static final int ACC_Y_FIELD_NUMBER = 10;
-    private float accY_ = 0F;
+    private float accY_;
     /**
      * <code>float acc_y = 10;</code>
      * @return The accY.
@@ -3576,7 +3721,7 @@ public final class FilteredObject {
     }
 
     public static final int ACC_ANGULAR_FIELD_NUMBER = 11;
-    private float accAngular_ = 0F;
+    private float accAngular_;
     /**
      * <code>float acc_angular = 11;</code>
      * @return The accAngular.
@@ -3587,7 +3732,7 @@ public final class FilteredObject {
     }
 
     public static final int HAS_BALL_FIELD_NUMBER = 12;
-    private boolean hasBall_ = false;
+    private boolean hasBall_;
     /**
      * <code>bool has_ball = 12;</code>
      * @return The hasBall.
@@ -3598,7 +3743,7 @@ public final class FilteredObject {
     }
 
     public static final int DRIBBLE_START_X_FIELD_NUMBER = 13;
-    private float dribbleStartX_ = 0F;
+    private float dribbleStartX_;
     /**
      * <code>float dribble_start_x = 13;</code>
      * @return The dribbleStartX.
@@ -3609,7 +3754,7 @@ public final class FilteredObject {
     }
 
     public static final int DRIBBLE_START_Y_FIELD_NUMBER = 14;
-    private float dribbleStartY_ = 0F;
+    private float dribbleStartY_;
     /**
      * <code>float dribble_start_y = 14;</code>
      * @return The dribbleStartY.
@@ -3639,43 +3784,43 @@ public final class FilteredObject {
       if (id_ != 0) {
         output.writeInt32(2, id_);
       }
-      if (java.lang.Float.floatToRawIntBits(x_) != 0) {
+      if (x_ != 0F) {
         output.writeFloat(3, x_);
       }
-      if (java.lang.Float.floatToRawIntBits(y_) != 0) {
+      if (y_ != 0F) {
         output.writeFloat(4, y_);
       }
-      if (java.lang.Float.floatToRawIntBits(orientation_) != 0) {
+      if (orientation_ != 0F) {
         output.writeFloat(5, orientation_);
       }
-      if (java.lang.Float.floatToRawIntBits(vx_) != 0) {
+      if (vx_ != 0F) {
         output.writeFloat(6, vx_);
       }
-      if (java.lang.Float.floatToRawIntBits(vy_) != 0) {
+      if (vy_ != 0F) {
         output.writeFloat(7, vy_);
       }
-      if (java.lang.Float.floatToRawIntBits(angular_) != 0) {
+      if (angular_ != 0F) {
         output.writeFloat(8, angular_);
       }
-      if (java.lang.Float.floatToRawIntBits(accX_) != 0) {
+      if (accX_ != 0F) {
         output.writeFloat(9, accX_);
       }
-      if (java.lang.Float.floatToRawIntBits(accY_) != 0) {
+      if (accY_ != 0F) {
         output.writeFloat(10, accY_);
       }
-      if (java.lang.Float.floatToRawIntBits(accAngular_) != 0) {
+      if (accAngular_ != 0F) {
         output.writeFloat(11, accAngular_);
       }
       if (hasBall_ != false) {
         output.writeBool(12, hasBall_);
       }
-      if (java.lang.Float.floatToRawIntBits(dribbleStartX_) != 0) {
+      if (dribbleStartX_ != 0F) {
         output.writeFloat(13, dribbleStartX_);
       }
-      if (java.lang.Float.floatToRawIntBits(dribbleStartY_) != 0) {
+      if (dribbleStartY_ != 0F) {
         output.writeFloat(14, dribbleStartY_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -3692,39 +3837,39 @@ public final class FilteredObject {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, id_);
       }
-      if (java.lang.Float.floatToRawIntBits(x_) != 0) {
+      if (x_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, x_);
       }
-      if (java.lang.Float.floatToRawIntBits(y_) != 0) {
+      if (y_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, y_);
       }
-      if (java.lang.Float.floatToRawIntBits(orientation_) != 0) {
+      if (orientation_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(5, orientation_);
       }
-      if (java.lang.Float.floatToRawIntBits(vx_) != 0) {
+      if (vx_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(6, vx_);
       }
-      if (java.lang.Float.floatToRawIntBits(vy_) != 0) {
+      if (vy_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(7, vy_);
       }
-      if (java.lang.Float.floatToRawIntBits(angular_) != 0) {
+      if (angular_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(8, angular_);
       }
-      if (java.lang.Float.floatToRawIntBits(accX_) != 0) {
+      if (accX_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(9, accX_);
       }
-      if (java.lang.Float.floatToRawIntBits(accY_) != 0) {
+      if (accY_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(10, accY_);
       }
-      if (java.lang.Float.floatToRawIntBits(accAngular_) != 0) {
+      if (accAngular_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(11, accAngular_);
       }
@@ -3732,15 +3877,15 @@ public final class FilteredObject {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(12, hasBall_);
       }
-      if (java.lang.Float.floatToRawIntBits(dribbleStartX_) != 0) {
+      if (dribbleStartX_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(13, dribbleStartX_);
       }
-      if (java.lang.Float.floatToRawIntBits(dribbleStartY_) != 0) {
+      if (dribbleStartY_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(14, dribbleStartY_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3794,7 +3939,7 @@ public final class FilteredObject {
       if (java.lang.Float.floatToIntBits(getDribbleStartY())
           != java.lang.Float.floatToIntBits(
               other.getDribbleStartY())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -3846,7 +3991,7 @@ public final class FilteredObject {
       hash = (37 * hash) + DRIBBLE_START_Y_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getDribbleStartY());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3963,32 +4108,50 @@ public final class FilteredObject {
 
       // Construct using proto.triton.FilteredObject.Robot.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         timestamp_ = 0L;
+
         id_ = 0;
+
         x_ = 0F;
+
         y_ = 0F;
+
         orientation_ = 0F;
+
         vx_ = 0F;
+
         vy_ = 0F;
+
         angular_ = 0F;
+
         accX_ = 0F;
+
         accY_ = 0F;
+
         accAngular_ = 0F;
+
         hasBall_ = false;
+
         dribbleStartX_ = 0F;
+
         dribbleStartY_ = 0F;
+
         return this;
       }
 
@@ -4015,55 +4178,22 @@ public final class FilteredObject {
       @java.lang.Override
       public proto.triton.FilteredObject.Robot buildPartial() {
         proto.triton.FilteredObject.Robot result = new proto.triton.FilteredObject.Robot(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.timestamp_ = timestamp_;
+        result.id_ = id_;
+        result.x_ = x_;
+        result.y_ = y_;
+        result.orientation_ = orientation_;
+        result.vx_ = vx_;
+        result.vy_ = vy_;
+        result.angular_ = angular_;
+        result.accX_ = accX_;
+        result.accY_ = accY_;
+        result.accAngular_ = accAngular_;
+        result.hasBall_ = hasBall_;
+        result.dribbleStartX_ = dribbleStartX_;
+        result.dribbleStartY_ = dribbleStartY_;
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(proto.triton.FilteredObject.Robot result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.timestamp_ = timestamp_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.x_ = x_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.y_ = y_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.orientation_ = orientation_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.vx_ = vx_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.vy_ = vy_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.angular_ = angular_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.accX_ = accX_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.accY_ = accY_;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.accAngular_ = accAngular_;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.hasBall_ = hasBall_;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.dribbleStartX_ = dribbleStartX_;
-        }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.dribbleStartY_ = dribbleStartY_;
-        }
       }
 
       @java.lang.Override
@@ -4152,7 +4282,7 @@ public final class FilteredObject {
         if (other.getDribbleStartY() != 0F) {
           setDribbleStartY(other.getDribbleStartY());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -4167,103 +4297,19 @@ public final class FilteredObject {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.triton.FilteredObject.Robot parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                timestamp_ = input.readInt64();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                id_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 29: {
-                x_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 29
-              case 37: {
-                y_ = input.readFloat();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 37
-              case 45: {
-                orientation_ = input.readFloat();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 45
-              case 53: {
-                vx_ = input.readFloat();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 53
-              case 61: {
-                vy_ = input.readFloat();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 61
-              case 69: {
-                angular_ = input.readFloat();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 69
-              case 77: {
-                accX_ = input.readFloat();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 77
-              case 85: {
-                accY_ = input.readFloat();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 85
-              case 93: {
-                accAngular_ = input.readFloat();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 93
-              case 96: {
-                hasBall_ = input.readBool();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 96
-              case 109: {
-                dribbleStartX_ = input.readFloat();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 109
-              case 117: {
-                dribbleStartY_ = input.readFloat();
-                bitField0_ |= 0x00002000;
-                break;
-              } // case 117
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.triton.FilteredObject.Robot) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private long timestamp_ ;
       /**
@@ -4282,7 +4328,6 @@ public final class FilteredObject {
       public Builder setTimestamp(long value) {
         
         timestamp_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4291,7 +4336,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         timestamp_ = 0L;
         onChanged();
         return this;
@@ -4314,7 +4359,6 @@ public final class FilteredObject {
       public Builder setId(int value) {
         
         id_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4323,7 +4367,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         id_ = 0;
         onChanged();
         return this;
@@ -4346,7 +4390,6 @@ public final class FilteredObject {
       public Builder setX(float value) {
         
         x_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4355,7 +4398,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearX() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         x_ = 0F;
         onChanged();
         return this;
@@ -4378,7 +4421,6 @@ public final class FilteredObject {
       public Builder setY(float value) {
         
         y_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -4387,7 +4429,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearY() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         y_ = 0F;
         onChanged();
         return this;
@@ -4410,7 +4452,6 @@ public final class FilteredObject {
       public Builder setOrientation(float value) {
         
         orientation_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -4419,7 +4460,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearOrientation() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         orientation_ = 0F;
         onChanged();
         return this;
@@ -4442,7 +4483,6 @@ public final class FilteredObject {
       public Builder setVx(float value) {
         
         vx_ = value;
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -4451,7 +4491,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearVx() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         vx_ = 0F;
         onChanged();
         return this;
@@ -4474,7 +4514,6 @@ public final class FilteredObject {
       public Builder setVy(float value) {
         
         vy_ = value;
-        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -4483,7 +4522,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearVy() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         vy_ = 0F;
         onChanged();
         return this;
@@ -4506,7 +4545,6 @@ public final class FilteredObject {
       public Builder setAngular(float value) {
         
         angular_ = value;
-        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -4515,7 +4553,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearAngular() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         angular_ = 0F;
         onChanged();
         return this;
@@ -4538,7 +4576,6 @@ public final class FilteredObject {
       public Builder setAccX(float value) {
         
         accX_ = value;
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -4547,7 +4584,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearAccX() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         accX_ = 0F;
         onChanged();
         return this;
@@ -4570,7 +4607,6 @@ public final class FilteredObject {
       public Builder setAccY(float value) {
         
         accY_ = value;
-        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -4579,7 +4615,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearAccY() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         accY_ = 0F;
         onChanged();
         return this;
@@ -4602,7 +4638,6 @@ public final class FilteredObject {
       public Builder setAccAngular(float value) {
         
         accAngular_ = value;
-        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -4611,7 +4646,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearAccAngular() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        
         accAngular_ = 0F;
         onChanged();
         return this;
@@ -4634,7 +4669,6 @@ public final class FilteredObject {
       public Builder setHasBall(boolean value) {
         
         hasBall_ = value;
-        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -4643,7 +4677,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearHasBall() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        
         hasBall_ = false;
         onChanged();
         return this;
@@ -4666,7 +4700,6 @@ public final class FilteredObject {
       public Builder setDribbleStartX(float value) {
         
         dribbleStartX_ = value;
-        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -4675,7 +4708,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearDribbleStartX() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        
         dribbleStartX_ = 0F;
         onChanged();
         return this;
@@ -4698,7 +4731,6 @@ public final class FilteredObject {
       public Builder setDribbleStartY(float value) {
         
         dribbleStartY_ = value;
-        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -4707,7 +4739,7 @@ public final class FilteredObject {
        * @return This builder for chaining.
        */
       public Builder clearDribbleStartY() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        
         dribbleStartY_ = 0F;
         onChanged();
         return this;
@@ -4745,18 +4777,7 @@ public final class FilteredObject {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Robot(input, extensionRegistry);
       }
     };
 
@@ -4839,14 +4860,14 @@ public final class FilteredObject {
     /**
      * <code>map&lt;int32, .proto.triton.Robot&gt; allies = 4;</code>
      */
-    /* nullable */
-proto.triton.FilteredObject.Robot getAlliesOrDefault(
+
+    proto.triton.FilteredObject.Robot getAlliesOrDefault(
         int key,
-        /* nullable */
-proto.triton.FilteredObject.Robot defaultValue);
+        proto.triton.FilteredObject.Robot defaultValue);
     /**
      * <code>map&lt;int32, .proto.triton.Robot&gt; allies = 4;</code>
      */
+
     proto.triton.FilteredObject.Robot getAlliesOrThrow(
         int key);
 
@@ -4873,14 +4894,14 @@ proto.triton.FilteredObject.Robot defaultValue);
     /**
      * <code>map&lt;int32, .proto.triton.Robot&gt; foes = 5;</code>
      */
-    /* nullable */
-proto.triton.FilteredObject.Robot getFoesOrDefault(
+
+    proto.triton.FilteredObject.Robot getFoesOrDefault(
         int key,
-        /* nullable */
-proto.triton.FilteredObject.Robot defaultValue);
+        proto.triton.FilteredObject.Robot defaultValue);
     /**
      * <code>map&lt;int32, .proto.triton.Robot&gt; foes = 5;</code>
      */
+
     proto.triton.FilteredObject.Robot getFoesOrThrow(
         int key);
   }
@@ -4911,6 +4932,101 @@ proto.triton.FilteredObject.Robot defaultValue);
     getUnknownFields() {
       return this.unknownFields;
     }
+    private FilteredWrapperPacket(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              timestamp_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize.Builder subBuilder = null;
+              if (field_ != null) {
+                subBuilder = field_.toBuilder();
+              }
+              field_ = input.readMessage(proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(field_);
+                field_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              proto.triton.FilteredObject.Ball.Builder subBuilder = null;
+              if (ball_ != null) {
+                subBuilder = ball_.toBuilder();
+              }
+              ball_ = input.readMessage(proto.triton.FilteredObject.Ball.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(ball_);
+                ball_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                allies_ = com.google.protobuf.MapField.newMapField(
+                    AlliesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, proto.triton.FilteredObject.Robot>
+              allies__ = input.readMessage(
+                  AlliesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              allies_.getMutableMap().put(
+                  allies__.getKey(), allies__.getValue());
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                foes_ = com.google.protobuf.MapField.newMapField(
+                    FoesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, proto.triton.FilteredObject.Robot>
+              foes__ = input.readMessage(
+                  FoesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              foes_.getMutableMap().put(
+                  foes__.getKey(), foes__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.triton.FilteredObject.internal_static_proto_triton_FilteredWrapperPacket_descriptor;
@@ -4939,7 +5055,7 @@ proto.triton.FilteredObject.Robot defaultValue);
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 1;
-    private long timestamp_ = 0L;
+    private long timestamp_;
     /**
      * <code>int64 timestamp = 1;</code>
      * @return The timestamp.
@@ -4972,7 +5088,7 @@ proto.triton.FilteredObject.Robot defaultValue);
      */
     @java.lang.Override
     public proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSizeOrBuilder getFieldOrBuilder() {
-      return field_ == null ? proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize.getDefaultInstance() : field_;
+      return getField();
     }
 
     public static final int BALL_FIELD_NUMBER = 3;
@@ -4998,7 +5114,7 @@ proto.triton.FilteredObject.Robot defaultValue);
      */
     @java.lang.Override
     public proto.triton.FilteredObject.BallOrBuilder getBallOrBuilder() {
-      return ball_ == null ? proto.triton.FilteredObject.Ball.getDefaultInstance() : ball_;
+      return getBall();
     }
 
     public static final int ALLIES_FIELD_NUMBER = 4;
@@ -5013,7 +5129,6 @@ proto.triton.FilteredObject.Robot defaultValue);
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   proto.triton.FilteredObject.Robot.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, proto.triton.FilteredObject.Robot> allies_;
     private com.google.protobuf.MapField<java.lang.Integer, proto.triton.FilteredObject.Robot>
@@ -5024,12 +5139,14 @@ proto.triton.FilteredObject.Robot defaultValue);
       }
       return allies_;
     }
+
     public int getAlliesCount() {
       return internalGetAllies().getMap().size();
     }
     /**
      * <code>map&lt;int32, .proto.triton.Robot&gt; allies = 4;</code>
      */
+
     @java.lang.Override
     public boolean containsAllies(
         int key) {
@@ -5048,6 +5165,7 @@ proto.triton.FilteredObject.Robot defaultValue);
      * <code>map&lt;int32, .proto.triton.Robot&gt; allies = 4;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, proto.triton.FilteredObject.Robot> getAlliesMap() {
       return internalGetAllies().getMap();
     }
@@ -5055,11 +5173,10 @@ proto.triton.FilteredObject.Robot defaultValue);
      * <code>map&lt;int32, .proto.triton.Robot&gt; allies = 4;</code>
      */
     @java.lang.Override
-    public /* nullable */
-proto.triton.FilteredObject.Robot getAlliesOrDefault(
+
+    public proto.triton.FilteredObject.Robot getAlliesOrDefault(
         int key,
-        /* nullable */
-proto.triton.FilteredObject.Robot defaultValue) {
+        proto.triton.FilteredObject.Robot defaultValue) {
       
       java.util.Map<java.lang.Integer, proto.triton.FilteredObject.Robot> map =
           internalGetAllies().getMap();
@@ -5069,6 +5186,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
      * <code>map&lt;int32, .proto.triton.Robot&gt; allies = 4;</code>
      */
     @java.lang.Override
+
     public proto.triton.FilteredObject.Robot getAlliesOrThrow(
         int key) {
       
@@ -5092,7 +5210,6 @@ proto.triton.FilteredObject.Robot defaultValue) {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   proto.triton.FilteredObject.Robot.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, proto.triton.FilteredObject.Robot> foes_;
     private com.google.protobuf.MapField<java.lang.Integer, proto.triton.FilteredObject.Robot>
@@ -5103,12 +5220,14 @@ proto.triton.FilteredObject.Robot defaultValue) {
       }
       return foes_;
     }
+
     public int getFoesCount() {
       return internalGetFoes().getMap().size();
     }
     /**
      * <code>map&lt;int32, .proto.triton.Robot&gt; foes = 5;</code>
      */
+
     @java.lang.Override
     public boolean containsFoes(
         int key) {
@@ -5127,6 +5246,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
      * <code>map&lt;int32, .proto.triton.Robot&gt; foes = 5;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.Integer, proto.triton.FilteredObject.Robot> getFoesMap() {
       return internalGetFoes().getMap();
     }
@@ -5134,11 +5254,10 @@ proto.triton.FilteredObject.Robot defaultValue) {
      * <code>map&lt;int32, .proto.triton.Robot&gt; foes = 5;</code>
      */
     @java.lang.Override
-    public /* nullable */
-proto.triton.FilteredObject.Robot getFoesOrDefault(
+
+    public proto.triton.FilteredObject.Robot getFoesOrDefault(
         int key,
-        /* nullable */
-proto.triton.FilteredObject.Robot defaultValue) {
+        proto.triton.FilteredObject.Robot defaultValue) {
       
       java.util.Map<java.lang.Integer, proto.triton.FilteredObject.Robot> map =
           internalGetFoes().getMap();
@@ -5148,6 +5267,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
      * <code>map&lt;int32, .proto.triton.Robot&gt; foes = 5;</code>
      */
     @java.lang.Override
+
     public proto.triton.FilteredObject.Robot getFoesOrThrow(
         int key) {
       
@@ -5200,7 +5320,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
           internalGetFoes(),
           FoesDefaultEntryHolder.defaultEntry,
           5);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -5241,7 +5361,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(5, foes__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5272,7 +5392,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
           other.internalGetAllies())) return false;
       if (!internalGetFoes().equals(
           other.internalGetFoes())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -5302,7 +5422,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
         hash = (37 * hash) + FOES_FIELD_NUMBER;
         hash = (53 * hash) + internalGetFoes().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5445,27 +5565,34 @@ proto.triton.FilteredObject.Robot defaultValue) {
 
       // Construct using proto.triton.FilteredObject.FilteredWrapperPacket.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         timestamp_ = 0L;
-        field_ = null;
-        if (fieldBuilder_ != null) {
-          fieldBuilder_.dispose();
+
+        if (fieldBuilder_ == null) {
+          field_ = null;
+        } else {
+          field_ = null;
           fieldBuilder_ = null;
         }
-        ball_ = null;
-        if (ballBuilder_ != null) {
-          ballBuilder_.dispose();
+        if (ballBuilder_ == null) {
+          ball_ = null;
+        } else {
+          ball_ = null;
           ballBuilder_ = null;
         }
         internalGetMutableAllies().clear();
@@ -5496,34 +5623,24 @@ proto.triton.FilteredObject.Robot defaultValue) {
       @java.lang.Override
       public proto.triton.FilteredObject.FilteredWrapperPacket buildPartial() {
         proto.triton.FilteredObject.FilteredWrapperPacket result = new proto.triton.FilteredObject.FilteredWrapperPacket(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.timestamp_ = timestamp_;
+        if (fieldBuilder_ == null) {
+          result.field_ = field_;
+        } else {
+          result.field_ = fieldBuilder_.build();
+        }
+        if (ballBuilder_ == null) {
+          result.ball_ = ball_;
+        } else {
+          result.ball_ = ballBuilder_.build();
+        }
+        result.allies_ = internalGetAllies();
+        result.allies_.makeImmutable();
+        result.foes_ = internalGetFoes();
+        result.foes_.makeImmutable();
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(proto.triton.FilteredObject.FilteredWrapperPacket result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.timestamp_ = timestamp_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.field_ = fieldBuilder_ == null
-              ? field_
-              : fieldBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.ball_ = ballBuilder_ == null
-              ? ball_
-              : ballBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.allies_ = internalGetAllies();
-          result.allies_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.foes_ = internalGetFoes();
-          result.foes_.makeImmutable();
-        }
       }
 
       @java.lang.Override
@@ -5581,11 +5698,9 @@ proto.triton.FilteredObject.Robot defaultValue) {
         }
         internalGetMutableAllies().mergeFrom(
             other.internalGetAllies());
-        bitField0_ |= 0x00000008;
         internalGetMutableFoes().mergeFrom(
             other.internalGetFoes());
-        bitField0_ |= 0x00000010;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -5605,67 +5720,17 @@ proto.triton.FilteredObject.Robot defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.triton.FilteredObject.FilteredWrapperPacket parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                timestamp_ = input.readInt64();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 18: {
-                input.readMessage(
-                    getFieldFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getBallFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 34: {
-                com.google.protobuf.MapEntry<java.lang.Integer, proto.triton.FilteredObject.Robot>
-                allies__ = input.readMessage(
-                    AlliesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableAllies().getMutableMap().put(
-                    allies__.getKey(), allies__.getValue());
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              case 42: {
-                com.google.protobuf.MapEntry<java.lang.Integer, proto.triton.FilteredObject.Robot>
-                foes__ = input.readMessage(
-                    FoesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableFoes().getMutableMap().put(
-                    foes__.getKey(), foes__.getValue());
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.triton.FilteredObject.FilteredWrapperPacket) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -5687,7 +5752,6 @@ proto.triton.FilteredObject.Robot defaultValue) {
       public Builder setTimestamp(long value) {
         
         timestamp_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5696,7 +5760,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         timestamp_ = 0L;
         onChanged();
         return this;
@@ -5710,7 +5774,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
        * @return Whether the field field is set.
        */
       public boolean hasField() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return fieldBuilder_ != null || field_ != null;
       }
       /**
        * <code>.proto.vision.SSL_GeometryFieldSize field = 2;</code>
@@ -5732,11 +5796,11 @@ proto.triton.FilteredObject.Robot defaultValue) {
             throw new NullPointerException();
           }
           field_ = value;
+          onChanged();
         } else {
           fieldBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -5746,11 +5810,11 @@ proto.triton.FilteredObject.Robot defaultValue) {
           proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize.Builder builderForValue) {
         if (fieldBuilder_ == null) {
           field_ = builderForValue.build();
+          onChanged();
         } else {
           fieldBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
@@ -5758,38 +5822,38 @@ proto.triton.FilteredObject.Robot defaultValue) {
        */
       public Builder mergeField(proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize value) {
         if (fieldBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            field_ != null &&
-            field_ != proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize.getDefaultInstance()) {
-            getFieldBuilder().mergeFrom(value);
+          if (field_ != null) {
+            field_ =
+              proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize.newBuilder(field_).mergeFrom(value).buildPartial();
           } else {
             field_ = value;
           }
+          onChanged();
         } else {
           fieldBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.proto.vision.SSL_GeometryFieldSize field = 2;</code>
        */
       public Builder clearField() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        field_ = null;
-        if (fieldBuilder_ != null) {
-          fieldBuilder_.dispose();
+        if (fieldBuilder_ == null) {
+          field_ = null;
+          onChanged();
+        } else {
+          field_ = null;
           fieldBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.proto.vision.SSL_GeometryFieldSize field = 2;</code>
        */
       public proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize.Builder getFieldBuilder() {
-        bitField0_ |= 0x00000002;
+        
         onChanged();
         return getFieldFieldBuilder().getBuilder();
       }
@@ -5829,7 +5893,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
        * @return Whether the ball field is set.
        */
       public boolean hasBall() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ballBuilder_ != null || ball_ != null;
       }
       /**
        * <code>.proto.triton.Ball ball = 3;</code>
@@ -5851,11 +5915,11 @@ proto.triton.FilteredObject.Robot defaultValue) {
             throw new NullPointerException();
           }
           ball_ = value;
+          onChanged();
         } else {
           ballBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -5865,11 +5929,11 @@ proto.triton.FilteredObject.Robot defaultValue) {
           proto.triton.FilteredObject.Ball.Builder builderForValue) {
         if (ballBuilder_ == null) {
           ball_ = builderForValue.build();
+          onChanged();
         } else {
           ballBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
@@ -5877,38 +5941,38 @@ proto.triton.FilteredObject.Robot defaultValue) {
        */
       public Builder mergeBall(proto.triton.FilteredObject.Ball value) {
         if (ballBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            ball_ != null &&
-            ball_ != proto.triton.FilteredObject.Ball.getDefaultInstance()) {
-            getBallBuilder().mergeFrom(value);
+          if (ball_ != null) {
+            ball_ =
+              proto.triton.FilteredObject.Ball.newBuilder(ball_).mergeFrom(value).buildPartial();
           } else {
             ball_ = value;
           }
+          onChanged();
         } else {
           ballBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
+
         return this;
       }
       /**
        * <code>.proto.triton.Ball ball = 3;</code>
        */
       public Builder clearBall() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        ball_ = null;
-        if (ballBuilder_ != null) {
-          ballBuilder_.dispose();
+        if (ballBuilder_ == null) {
+          ball_ = null;
+          onChanged();
+        } else {
+          ball_ = null;
           ballBuilder_ = null;
         }
-        onChanged();
+
         return this;
       }
       /**
        * <code>.proto.triton.Ball ball = 3;</code>
        */
       public proto.triton.FilteredObject.Ball.Builder getBallBuilder() {
-        bitField0_ |= 0x00000004;
+        
         onChanged();
         return getBallFieldBuilder().getBuilder();
       }
@@ -5943,7 +6007,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
       private com.google.protobuf.MapField<
           java.lang.Integer, proto.triton.FilteredObject.Robot> allies_;
       private com.google.protobuf.MapField<java.lang.Integer, proto.triton.FilteredObject.Robot>
-          internalGetAllies() {
+      internalGetAllies() {
         if (allies_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               AlliesDefaultEntryHolder.defaultEntry);
@@ -5951,7 +6015,8 @@ proto.triton.FilteredObject.Robot defaultValue) {
         return allies_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, proto.triton.FilteredObject.Robot>
-          internalGetMutableAllies() {
+      internalGetMutableAllies() {
+        onChanged();;
         if (allies_ == null) {
           allies_ = com.google.protobuf.MapField.newMapField(
               AlliesDefaultEntryHolder.defaultEntry);
@@ -5959,16 +6024,16 @@ proto.triton.FilteredObject.Robot defaultValue) {
         if (!allies_.isMutable()) {
           allies_ = allies_.copy();
         }
-        bitField0_ |= 0x00000008;
-        onChanged();
         return allies_;
       }
+
       public int getAlliesCount() {
         return internalGetAllies().getMap().size();
       }
       /**
        * <code>map&lt;int32, .proto.triton.Robot&gt; allies = 4;</code>
        */
+
       @java.lang.Override
       public boolean containsAllies(
           int key) {
@@ -5987,6 +6052,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
        * <code>map&lt;int32, .proto.triton.Robot&gt; allies = 4;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, proto.triton.FilteredObject.Robot> getAlliesMap() {
         return internalGetAllies().getMap();
       }
@@ -5994,11 +6060,10 @@ proto.triton.FilteredObject.Robot defaultValue) {
        * <code>map&lt;int32, .proto.triton.Robot&gt; allies = 4;</code>
        */
       @java.lang.Override
-      public /* nullable */
-proto.triton.FilteredObject.Robot getAlliesOrDefault(
+
+      public proto.triton.FilteredObject.Robot getAlliesOrDefault(
           int key,
-          /* nullable */
-proto.triton.FilteredObject.Robot defaultValue) {
+          proto.triton.FilteredObject.Robot defaultValue) {
         
         java.util.Map<java.lang.Integer, proto.triton.FilteredObject.Robot> map =
             internalGetAllies().getMap();
@@ -6008,6 +6073,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
        * <code>map&lt;int32, .proto.triton.Robot&gt; allies = 4;</code>
        */
       @java.lang.Override
+
       public proto.triton.FilteredObject.Robot getAlliesOrThrow(
           int key) {
         
@@ -6018,8 +6084,8 @@ proto.triton.FilteredObject.Robot defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearAllies() {
-        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutableAllies().getMutableMap()
             .clear();
         return this;
@@ -6027,6 +6093,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
       /**
        * <code>map&lt;int32, .proto.triton.Robot&gt; allies = 4;</code>
        */
+
       public Builder removeAllies(
           int key) {
         
@@ -6039,8 +6106,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, proto.triton.FilteredObject.Robot>
-          getMutableAllies() {
-        bitField0_ |= 0x00000008;
+      getMutableAllies() {
         return internalGetMutableAllies().getMutableMap();
       }
       /**
@@ -6050,27 +6116,26 @@ proto.triton.FilteredObject.Robot defaultValue) {
           int key,
           proto.triton.FilteredObject.Robot value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableAllies().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000008;
         return this;
       }
       /**
        * <code>map&lt;int32, .proto.triton.Robot&gt; allies = 4;</code>
        */
+
       public Builder putAllAllies(
           java.util.Map<java.lang.Integer, proto.triton.FilteredObject.Robot> values) {
         internalGetMutableAllies().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000008;
         return this;
       }
 
       private com.google.protobuf.MapField<
           java.lang.Integer, proto.triton.FilteredObject.Robot> foes_;
       private com.google.protobuf.MapField<java.lang.Integer, proto.triton.FilteredObject.Robot>
-          internalGetFoes() {
+      internalGetFoes() {
         if (foes_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               FoesDefaultEntryHolder.defaultEntry);
@@ -6078,7 +6143,8 @@ proto.triton.FilteredObject.Robot defaultValue) {
         return foes_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, proto.triton.FilteredObject.Robot>
-          internalGetMutableFoes() {
+      internalGetMutableFoes() {
+        onChanged();;
         if (foes_ == null) {
           foes_ = com.google.protobuf.MapField.newMapField(
               FoesDefaultEntryHolder.defaultEntry);
@@ -6086,16 +6152,16 @@ proto.triton.FilteredObject.Robot defaultValue) {
         if (!foes_.isMutable()) {
           foes_ = foes_.copy();
         }
-        bitField0_ |= 0x00000010;
-        onChanged();
         return foes_;
       }
+
       public int getFoesCount() {
         return internalGetFoes().getMap().size();
       }
       /**
        * <code>map&lt;int32, .proto.triton.Robot&gt; foes = 5;</code>
        */
+
       @java.lang.Override
       public boolean containsFoes(
           int key) {
@@ -6114,6 +6180,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
        * <code>map&lt;int32, .proto.triton.Robot&gt; foes = 5;</code>
        */
       @java.lang.Override
+
       public java.util.Map<java.lang.Integer, proto.triton.FilteredObject.Robot> getFoesMap() {
         return internalGetFoes().getMap();
       }
@@ -6121,11 +6188,10 @@ proto.triton.FilteredObject.Robot defaultValue) {
        * <code>map&lt;int32, .proto.triton.Robot&gt; foes = 5;</code>
        */
       @java.lang.Override
-      public /* nullable */
-proto.triton.FilteredObject.Robot getFoesOrDefault(
+
+      public proto.triton.FilteredObject.Robot getFoesOrDefault(
           int key,
-          /* nullable */
-proto.triton.FilteredObject.Robot defaultValue) {
+          proto.triton.FilteredObject.Robot defaultValue) {
         
         java.util.Map<java.lang.Integer, proto.triton.FilteredObject.Robot> map =
             internalGetFoes().getMap();
@@ -6135,6 +6201,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
        * <code>map&lt;int32, .proto.triton.Robot&gt; foes = 5;</code>
        */
       @java.lang.Override
+
       public proto.triton.FilteredObject.Robot getFoesOrThrow(
           int key) {
         
@@ -6145,8 +6212,8 @@ proto.triton.FilteredObject.Robot defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearFoes() {
-        bitField0_ = (bitField0_ & ~0x00000010);
         internalGetMutableFoes().getMutableMap()
             .clear();
         return this;
@@ -6154,6 +6221,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
       /**
        * <code>map&lt;int32, .proto.triton.Robot&gt; foes = 5;</code>
        */
+
       public Builder removeFoes(
           int key) {
         
@@ -6166,8 +6234,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, proto.triton.FilteredObject.Robot>
-          getMutableFoes() {
-        bitField0_ |= 0x00000010;
+      getMutableFoes() {
         return internalGetMutableFoes().getMutableMap();
       }
       /**
@@ -6177,20 +6244,19 @@ proto.triton.FilteredObject.Robot defaultValue) {
           int key,
           proto.triton.FilteredObject.Robot value) {
         
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableFoes().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000010;
         return this;
       }
       /**
        * <code>map&lt;int32, .proto.triton.Robot&gt; foes = 5;</code>
        */
+
       public Builder putAllFoes(
           java.util.Map<java.lang.Integer, proto.triton.FilteredObject.Robot> values) {
         internalGetMutableFoes().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000010;
         return this;
       }
       @java.lang.Override
@@ -6226,18 +6292,7 @@ proto.triton.FilteredObject.Robot defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new FilteredWrapperPacket(input, extensionRegistry);
       }
     };
 
