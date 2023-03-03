@@ -74,7 +74,7 @@ public class GameInfo {
     }
 
     public static Boolean getPossessBall() {
-        return wrapper.getBall().getCaptureState().type() == AllyCapture;
+        return wrapper.getBall().hasAllyCapture();
     }
 
     public static Robot getAllyClosestToBall() {

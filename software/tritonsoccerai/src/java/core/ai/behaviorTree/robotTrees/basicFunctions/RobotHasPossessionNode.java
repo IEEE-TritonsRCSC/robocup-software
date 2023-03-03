@@ -15,7 +15,7 @@ public class RobotHasPossessionNode extends ConditionalNode {
 
     @Override
     public boolean conditionSatisfied() {
-        return ally.hasBall();
+        return ally.getHasBall();
     }
 
 }

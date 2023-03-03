@@ -5,6 +5,9 @@ import java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import static proto.triton.FilteredObject.*;
 import java.core.util.Vector2d;
 
+import static java.core.util.ProtobufUtils.getPos;
+import static java.core.util.ProtobufUtils.getVel;
+
 /**
  * Moves ally towards a particular field object, taking into account where it is moving towards
  */
@@ -24,11 +27,22 @@ public class MoveToObjectNode extends TaskNode {
 
     /**
      * Calculates a position to move towards based on position
-     * and velocity of object
+     * and velocity of ball
      */
-    public NodeState execute(FilteredObject object) {
+    public NodeState execute(Ball ball) {
         float TIME_CONSTANT = 0.5f;
-        Vector2d position = getPos(object).add(object.getVel().scale(TIME_CONSTANT));
+        Vector2d position = getPos(ball).add(getVel(ball).scale(TIME_CONSTANT));
+        this.moveToPositionNode.execute(position);
+        return NodeState.SUCCESS;
+    }
+
+    /**
+     * Calculates a position to move towards based on position
+     * and velocity of robot
+     */
+    public NodeState execute(Robot robot) {
+        float TIME_CONSTANT = 0.5f;
+        Vector2d position = getPos(robot).add(getVel(robot).scale(TIME_CONSTANT));
         this.moveToPositionNode.execute(position);
         return NodeState.SUCCESS;
     }

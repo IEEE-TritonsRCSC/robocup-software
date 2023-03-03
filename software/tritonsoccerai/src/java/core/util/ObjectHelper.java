@@ -44,6 +44,10 @@ public class ObjectHelper {
         return pos.add(vel.scale(delta));
     }
 
+    public static Vector2d predictPos(Ball ball, float delta) {
+        return predictPos(getPos(ball), getVel(ball), getAcc(ball), delta);
+    }
+
     public static boolean willArriveAtTarget(Robot robot, Vector2d target, float delta, float distanceTolerance) {
         return willArriveAtTarget(getPos(robot), getVel(robot), getAcc(robot), target, delta, distanceTolerance);
     }

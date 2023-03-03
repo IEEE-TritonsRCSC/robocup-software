@@ -13,6 +13,8 @@ import java.core.util.Vector2d;
 
 import static java.core.util.ProtobufUtils.getPos;
 
+import java.util.ArrayList;
+
 /**
  * Handles Prepare Indirect Free game state
  */

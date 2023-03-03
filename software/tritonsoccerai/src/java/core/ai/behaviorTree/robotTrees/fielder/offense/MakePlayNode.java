@@ -9,6 +9,9 @@ import java.core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
 import java.core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
 
 import static proto.triton.FilteredObject.Robot;
+import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
+
+import static java.core.util.ProtobufUtils.getPos;
 
 import java.util.ArrayList;
 import java.util.List;
