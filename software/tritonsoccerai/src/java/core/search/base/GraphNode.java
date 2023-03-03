@@ -1,6 +1,6 @@
 package java.core.search.base;
 
-public class GraphNode {
+public interface GraphNode {
     
 }
 

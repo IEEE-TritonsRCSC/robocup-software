@@ -1,12 +1,13 @@
 package java.core.util;
 
 import java.core.ai.GameInfo;
-import static proto.triton.FilteredObject.Robot;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static java.core.util.ProtobufUtils.getPos;
+import static java.core.util.ProtobufUtils.getVel;
+import static java.core.util.ProtobufUtils.getAcc;
 import static proto.triton.FilteredObject.Ball;
 import static proto.triton.FilteredObject.Robot;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
@@ -29,7 +30,7 @@ public class ObjectHelper {
     }
 
     public static boolean ballWillArriveAtTarget(Vector2d pos, float delta, float distanceTolerance) {
-        return willArriveAtTarget(GameInfo.getBall().getPos(), GameInfo.getBall().getVel(), GameInfo.getBall().getAcc(), pos, delta, distanceTolerance);
+        return willArriveAtTarget(getPos(GameInfo.getBall()), getVel(GameInfo.getBall()), getAcc(GameInfo.getBall()), pos, delta, distanceTolerance);
     }
 
     public static boolean willArriveAtTarget(Vector2d pos, Vector2d vel, Vector2d acc, Vector2d target, float delta,
@@ -44,11 +45,11 @@ public class ObjectHelper {
     }
 
     public static boolean willArriveAtTarget(Robot robot, Vector2d target, float delta, float distanceTolerance) {
-        return willArriveAtTarget(robot.getPos(), robot.getVel(), robot.getAcc(), target, delta, distanceTolerance);
+        return willArriveAtTarget(getPos(robot), getVel(robot), getAcc(robot), target, delta, distanceTolerance);
     }
 
     public static boolean ballIsMovingTowardTarget(Vector2d pos, float angleTolerance) {
-        return isMovingTowardTarget(GameInfo.getBall().getPos(), GameInfo.getBall().getVel(), pos, angleTolerance);
+        return isMovingTowardTarget(getPos(GameInfo.getBall()), getVel(GameInfo.getBall()), pos, angleTolerance);
     }
 
     public static boolean isMovingTowardTarget(Vector2d pos, Vector2d vel, Vector2d target, float angleTolerance) {
@@ -57,7 +58,7 @@ public class ObjectHelper {
     }
 
     public static boolean isMovingTowardTarget(Vector2d target, float speedThreshold, float angleTolerance) {
-        return isMovingTowardTarget(GameInfo.getBall().getPos(), GameInfo.getBall().getVel(), target, speedThreshold, angleTolerance);
+        return isMovingTowardTarget(getPos(GameInfo.getBall()), getVel(GameInfo.getBall()), target, speedThreshold, angleTolerance);
     }
 
     public static boolean isMovingTowardTarget(Vector2d pos, Vector2d vel, Vector2d target,
@@ -67,19 +68,19 @@ public class ObjectHelper {
     }
 
     public static boolean isMovingTowardTarget(Robot robot, Vector2d pos, float angleTolerance) {
-        return isMovingTowardTarget(robot.getPos(), robot.getVel(), pos, angleTolerance);
+        return isMovingTowardTarget(getPos(robot), getVel(robot), pos, angleTolerance);
     }
 
     public static boolean isMovingTowardTarget(Robot robot, Vector2d pos, float speedThreshold, float angleTolerance) {
-        return isMovingTowardTarget(robot.getPos(), robot.getVel(), pos, speedThreshold, angleTolerance);
+        return isMovingTowardTarget(getPos(robot), getVel(robot), pos, speedThreshold, angleTolerance);
     }
 
     public static Vector2d predictRobotPos(Robot robot, float delta) {
-        return predictPos(robot.getPos(), robot.getVel(), robot.getAcc(), delta);
+        return predictPos(getPos(robot), getVel(robot), getAcc(robot), delta);
     }
 
     public static Vector2d predictBallPos(float delta) {
-        return predictPos(GameInfo.getBall().getPos(), GameInfo.getBall().getVel(), GameInfo.getBall().getAcc(), delta);
+        return predictPos(getPos(GameInfo.getBall()), getVel(GameInfo.getBall()), getAcc(GameInfo.getBall()), delta);
     }
 
     public static float predictOrientation(Robot robot, float delta) {
@@ -105,7 +106,7 @@ public class ObjectHelper {
         float goalY = -field.getFieldLength() / 2f - field.getGoalDepth();
         float goalWidth = field.getGoalWidth();
         float goalHeight = field.getGoalDepth();
-        return GameInfo.getBall().getPos().isInRect(goalX, goalY, goalWidth, goalHeight);
+        return getPos(GameInfo.getBall()).isInRect(goalX, goalY, goalWidth, goalHeight);
     }
 
     public static boolean ballIsInFoeGoal(SSL_GeometryFieldSize field) {
@@ -113,11 +114,11 @@ public class ObjectHelper {
         float goalY = field.getFieldLength() / 2f;
         float goalWidth = field.getGoalWidth();
         float goalHeight = field.getGoalDepth();
-        return GameInfo.getBall().getPos().isInRect(goalX, goalY, goalWidth, goalHeight);
+        return getPos(GameInfo.getBall()).isInRect(goalX, goalY, goalWidth, goalHeight);
     }
 
     public static boolean ballIsInBounds(SSL_GeometryFieldSize field) {
-        return isInBounds(GameInfo.getBall().getPos(), field);
+        return isInBounds(getPos(GameInfo.getBall()), field);
     }
 
     public static boolean isInBounds(Vector2d pos, SSL_GeometryFieldSize field) {
@@ -128,24 +129,24 @@ public class ObjectHelper {
     }
 
     public static boolean isInBounds(Robot robot, SSL_GeometryFieldSize field) {
-        return isInBounds(robot.getPos(), field);
+        return isInBounds(getPos(robot), field);
     }
 
     public static float distToPath(Vector2d from, Vector2d to, List<Robot> robots) {
         List<Vector2d> points = new ArrayList<>();
-        robots.forEach(robot -> points.add(robot.getPos()));
+        robots.forEach(robot -> points.add(getPos(robot)));
         return Vector2d.distToPath(from, to, points);
     }
 
     public static boolean checkDistToPath(Vector2d from, Vector2d to, List<Robot> robots, float dist) {
         List<Vector2d> points = new ArrayList<>();
-        robots.forEach(robot -> points.add(robot.getPos()));
+        robots.forEach(robot -> points.add(getPos(robot)));
         return Vector2d.checkDistToPath(from, to, points, dist);
     }
 
     public static boolean isWithinDist(Vector2d target, List<Robot> robots, float dist) {
         for (Robot robot : robots)
-            if (target.dist(robot.getPos()) < dist)
+            if (target.dist(getPos(robot)) < dist)
                 return true;
         return false;
     }
@@ -153,7 +154,7 @@ public class ObjectHelper {
     public static float getMinDist(Vector2d target, List<Robot> robots) {
         float minDist = Float.MAX_VALUE;
         for (Robot robot : robots)
-            minDist = Math.min(minDist, target.dist(robot.getPos()));
+            minDist = Math.min(minDist, target.dist(getPos(robot)));
         return minDist;
     }
 
@@ -161,7 +162,7 @@ public class ObjectHelper {
         Robot closestRobot = null;
         float minDist = Float.MAX_VALUE;
         for (Robot robot : robots) {
-            float dist = target.dist(robot.getPos());
+            float dist = target.dist(getPos(robot));
             if (dist < minDist) {
                 closestRobot = robot;
                 minDist = dist;
@@ -173,7 +174,7 @@ public class ObjectHelper {
     public static List<Robot> getNearRobots(Vector2d target, List<Robot> robots, float distThreshold) {
         List<Robot> nearRobots = new ArrayList<>();
         for (Robot robot : robots) {
-            float dist = target.dist(robot.getPos());
+            float dist = target.dist(getPos(robot));
             if (dist < distThreshold) {
                 nearRobots.add(robot);
             }

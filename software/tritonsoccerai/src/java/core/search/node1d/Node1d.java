@@ -2,7 +2,7 @@ package java.core.search.node1d;
 
 import java.core.search.base.GraphNode;
 
-public class Node1d implements GraphNode{
+public class Node1d implements GraphNode {
     
     private final float value;
 

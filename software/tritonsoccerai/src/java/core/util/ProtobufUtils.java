@@ -2,6 +2,8 @@ package java.core.util;
 
 import proto.simulation.SslGcCommon;
 
+import java.core.constants.Team;
+
 import static java.core.constants.ProgramConstants.objectConfig;
 import static proto.simulation.SslSimulationControl.TeleportBall;
 import static proto.simulation.SslSimulationControl.TeleportRobot;
@@ -44,12 +46,36 @@ public class ProtobufUtils {
         return teleportBall.build();
     }
 
+    public static Vector2d getPos(Robot robot) {
+        return new Vector2d(robot.getX(), robot.getY());
+    }
+
+    public static Vector2d getPos(Ball ball) {
+        return new Vector2d(ball.getX(), ball.getY());
+    }
+
     public static Vector2d getPos(SSL_DetectionRobot robot) {
         return new Vector2d(robot.getX(), robot.getY());
     }
 
     public static Vector2d getPos(SSL_DetectionBall ball) {
         return new Vector2d(ball.getX(), ball.getY());
+    }
+
+    public static Vector2d getVel(Robot robot) {
+        return new Vector2d(robot.getVx(), robot.getVy());
+    }
+
+    public static Vector2d getVel(Ball ball) {
+        return new Vector2d(ball.getVx(), ball.getVy());
+    }
+
+    public static Vector2d getAcc(Robot robot) {
+        return new Vector2d(robot.getAccX(), robot.getAccX());
+    }
+
+    public static Vector2d getAcc(Ball ball) {
+        return new Vector2d(ball.getAccX(), ball.getAccX());
     }
 
     public static Vector2d getDribbleStartPos(Robot robot) {
