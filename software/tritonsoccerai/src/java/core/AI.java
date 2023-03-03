@@ -4,8 +4,6 @@ import java.core.ai.GameInfo;
 import java.core.config.*;
 import java.core.constants.AITest;
 import java.core.constants.ProgramConstants;
-import static proto.triton.FilteredObject.Robot;
-import java.core.fieldObjects.robot.Team;
 import java.core.module.Module;
 import java.core.module.aiModule.AIModule;
 import java.core.module.aiModule.CentralCoordinatorModule;

@@ -5,6 +5,7 @@ import java.core.ai.behaviorTree.nodes.NodeState;
 import java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
 import static proto.triton.FilteredObject.Robot;
+import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
 import java.core.util.Vector2d;
 
 import static java.core.util.ProtobufUtils.getPos;
@@ -20,8 +21,8 @@ public class BlockBallNode extends TaskNode {
 
     public BlockBallNode(Robot ally) {
         super(ally);
-        this.centerArc = new Vector2d(0, -1 * (SSL_GeometryFieldSize.field_length / 2)); // arbitrary center arc
-        this.radius = SSLGeometryFieldSize.goal_width / 2;
+        this.centerArc = new Vector2d(0, -1 * (SSL_GeometryFieldSize.getFieldLength() / 2)); // arbitrary center arc
+        this.radius = SSLGeometryFieldSize.getGoalWidth() / 2;
         this.moveToPositionNode = new MoveToPositionNode(ally);
     }
 

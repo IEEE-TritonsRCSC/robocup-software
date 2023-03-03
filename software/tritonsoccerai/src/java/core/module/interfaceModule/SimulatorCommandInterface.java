@@ -5,7 +5,6 @@ import com.google.protobuf.Any;
 import com.rabbitmq.client.Delivery;
 
 import java.core.constants.ProgramConstants;
-import java.core.fieldObjects.robot.Team;
 import java.core.module.Module;
 import java.core.networking.UDP_Client;
 

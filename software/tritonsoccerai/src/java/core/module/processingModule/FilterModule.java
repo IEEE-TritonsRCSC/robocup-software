@@ -2,7 +2,6 @@ package java.core.module.processingModule;
 
 import com.rabbitmq.client.Delivery; // Class that encapsulates a message
 import java.core.constants.ProgramConstants;
-import java.core.fieldObjects.robot.Team;
 import java.core.module.Module;
 import java.core.util.Vector2d;
 import proto.vision.MessagesRobocupSslWrapper.SSL_WrapperPacket;

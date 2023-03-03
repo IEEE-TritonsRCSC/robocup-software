@@ -1,8 +1,7 @@
 package java.core.ai;
 
-import java.core.fieldObjects.ball.Ball;
 import static proto.triton.FilteredObject.*;
-import java.core.fieldObjects.robot.Team;
+import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
 import java.core.util.Vector2d;
 
 import java.util.ArrayList;

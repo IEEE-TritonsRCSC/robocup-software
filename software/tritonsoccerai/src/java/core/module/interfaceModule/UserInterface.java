@@ -4,7 +4,6 @@ package java.core.module.interfaceModule;
 import com.rabbitmq.client.Delivery;
 
 import java.core.ai.GameInfo;
-import java.core.fieldObjects.ball.Ball;
 import java.core.module.Module;
 
 import java.core.search.implementation.PathfindGrid;

@@ -2,7 +2,7 @@ package java.core.ai.behaviorTree.robotTrees.basicFunctions;
 
 import java.core.ai.behaviorTree.nodes.NodeState;
 import java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import static proto.triton.FilteredObject.Robot;
+import static proto.triton.FilteredObject.*;
 import java.core.util.Vector2d;
 
 /**

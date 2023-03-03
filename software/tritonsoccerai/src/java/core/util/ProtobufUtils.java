@@ -1,6 +1,5 @@
 package java.core.util;
 
-import java.core.fieldObjects.robot.Team;
 import proto.simulation.SslGcCommon;
 
 import static java.core.constants.ProgramConstants.objectConfig;

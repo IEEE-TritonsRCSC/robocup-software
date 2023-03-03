@@ -2,7 +2,6 @@ package java.core.module.processingModule;
 
 import com.rabbitmq.client.Delivery;
 import java.core.constants.ProgramConstants;
-import java.core.fieldObjects.robot.Team;
 import java.core.module.Module;
 import proto.simulation.SslSimulationRobotControl;
 

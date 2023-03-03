@@ -7,6 +7,8 @@ import java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
 import java.core.ai.behaviorTree.robotTrees.goalkeeper.defense.BlockBallNode;
 import java.core.util.Vector2d;
 
+import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
+
 public class GKPenaltyNode extends TaskNode {
 
     private final BlockBallNode blockBallNode;
@@ -29,7 +31,7 @@ public class GKPenaltyNode extends TaskNode {
             }
         }
         else {
-            Vector2d centerOfGoal = new Vector2d(0, -1 * (SSL_GeometryFieldSize.fieldLength / 2));
+            Vector2d centerOfGoal = new Vector2d(0, -1 * (SSL_GeometryFieldSize.getFieldLength() / 2));
             while (true) {
                 this.moveToPositionNode.execute(centerOfGoal);
             }

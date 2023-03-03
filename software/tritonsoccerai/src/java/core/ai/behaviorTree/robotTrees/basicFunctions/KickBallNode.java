@@ -45,7 +45,7 @@ public class KickBallNode extends TaskNode {
             localCommand.setAngular(0);
             moveCommand.setLocalVelocity(localCommand);
             robotCommand.setMoveCommand(moveCommand);
-            robotCommand.setKickSpeed(objectConfig.cameraToObjectFactor * velocity);
+            robotCommand.setKickSpeed((float) (objectConfig.cameraToObjectFactor * velocity));
             robotCommand.setKickAngle(0);
             robotCommand.setDribblerSpeed(0);
 
@@ -65,7 +65,7 @@ public class KickBallNode extends TaskNode {
             localCommand.setAngular(0);
             moveCommand.setLocalVelocity(localCommand);
             robotCommand.setMoveCommand(moveCommand);
-            robotCommand.setKickSpeed(objectConfig.cameraToObjectFactor * velocity);
+            robotCommand.setKickSpeed((float) (objectConfig.cameraToObjectFactor * velocity));
             robotCommand.setKickAngle(0);
             robotCommand.setDribblerSpeed(0);
 

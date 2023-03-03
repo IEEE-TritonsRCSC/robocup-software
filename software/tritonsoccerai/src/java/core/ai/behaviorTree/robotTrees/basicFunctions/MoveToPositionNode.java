@@ -10,7 +10,9 @@ import java.core.search.implementation.*;
 import java.core.search.node2d.Node2d;
 
 import static proto.triton.FilteredObject.Robot;
-import static proto.simulation.SslSimulationRobotControl;
+import static proto.simulation.SslSimulationRobotControl.RobotCommand;
+import static proto.simulation.SslSimulationRobotControl.RobotMoveCommand;
+import static proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity;
 
 import static java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
 import static java.core.util.ProtobufUtils.getPos;
