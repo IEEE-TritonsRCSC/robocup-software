@@ -78,7 +78,7 @@
   </dependencies>
 
   <build>
-    <sourceDirectory>src/java</sourceDirectory>
+    <sourceDirectory>src/main/java</sourceDirectory>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
@@ -122,7 +122,7 @@
         <version>0.6.1</version>
         <configuration>
           <protocExecutable>/usr/local/bin/protoc</protocExecutable>
-          <protoSourceRoot>src/proto</protoSourceRoot>
+          <protoSourceRoot>src/main/proto</protoSourceRoot>
           <!--
           <outputDirectory>src/target/generated-sources</outputDirectory>
           -->
