@@ -149,11 +149,12 @@
             <goals>
               <goal>java</goal>
             </goals>
-            <configuration>
-              <mainClass>core.AI</mainClass>
-            </configuration>
           </execution>
         </executions>
+        <configuration>
+          <mainClass>core.AI</mainClass>
+          <classpathScope>compile</classpathScope>
+        </configuration>
       </plugin>
     </plugins>
   </build>
