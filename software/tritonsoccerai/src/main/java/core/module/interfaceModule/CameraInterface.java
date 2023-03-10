@@ -11,7 +11,6 @@ import java.util.concurrent.TimeoutException;
 
 import static main.java.core.messaging.Exchange.AI_VISION_WRAPPER;
 
-//TODO Not recognizing proto?
 import static proto.vision.MessagesRobocupSslWrapper.SSL_WrapperPacket;
 
 public class CameraInterface extends Module {

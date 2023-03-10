@@ -50,7 +50,6 @@ public class MakePlayNode extends CompositeNode {
     private boolean checkDribble(){
         boolean hasSpace = true;
 
-        // TODO Get the field parameter
         SSL_GeometryFieldSize field = GameInfo.getField();
 
         // Get the goal parameters

@@ -9,7 +9,6 @@ import java.util.concurrent.TimeoutException;
 
 public class GKTreeModule extends Module {
 
-    // TODO
     private final GoalkeeperTree tree;
 
     public GKTreeModule(ScheduledThreadPoolExecutor executor) {
@@ -19,12 +18,10 @@ public class GKTreeModule extends Module {
 
     @Override
     protected void prepare() {
-
     }
 
     @Override
     protected void declareConsumes() throws IOException, TimeoutException {
-
     }
 
 }

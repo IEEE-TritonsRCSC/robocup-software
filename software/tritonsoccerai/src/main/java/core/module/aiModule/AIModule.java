@@ -18,12 +18,10 @@ public class AIModule extends Module {
 
     @Override
     protected void prepare() {
-        // TODO
     }
 
     @Override
     protected void declareConsumes() throws IOException, TimeoutException {
-        // TODO
     }
 
 }

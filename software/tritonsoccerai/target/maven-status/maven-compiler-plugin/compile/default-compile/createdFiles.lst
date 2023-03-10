@@ -309,6 +309,7 @@ main/java/core/module/processingModule/FilterModule$1.class
 proto/vision/MessagesRobocupSslGeometry$SSL_FieldCircularArc$Builder.class
 sslsim/SslSimulationCustomErforceRobotSpec$RobotSpecErForce$1.class
 main/java/core/search/node2d/Node2d.class
+main/java/core/ai/behaviorTree/robotTrees/fielder/offense/HaveOpenShotNode.class
 proto/vision/MessagesRobocupSslGeometry$Vector2fOrBuilder.class
 proto/simulation/SslSimulationRobotFeedback$RobotControlResponseOrBuilder.class
 main/java/core/config/ConfigReader.class
@@ -324,7 +325,6 @@ main/java/core/module/interfaceModule/UserInterface$1.class
 main/java/core/search/base/RouteFinder.class
 proto/simulation/SslVisionGeometry$SSL_FieldShapeType.class
 proto/simulation/SslSimulationSynchronous$SimulationSyncRequest$Builder.class
-main/java/core/ai/behaviorTree/robotTrees/fielder/offense/offenseRoot/OffenseRootService$1.class
 proto/triton/AiDebugInfo$DebugVector$Builder.class
 proto/vision/MessagesRobocupSslDetectionTracked$KickedBall$1.class
 proto/triton/FilteredObject$BallOrBuilder.class

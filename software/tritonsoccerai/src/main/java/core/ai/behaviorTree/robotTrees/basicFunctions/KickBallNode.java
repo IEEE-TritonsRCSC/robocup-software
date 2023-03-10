@@ -24,7 +24,6 @@ import static proto.triton.FilteredObject.Robot;
 public class KickBallNode extends TaskNode {
 
     public KickBallNode(Robot ally) {
-        // TODO
         super("Kick Ball Node: " + ally, ally);
     }
 

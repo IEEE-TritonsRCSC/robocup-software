@@ -19,7 +19,6 @@ public class ClosestToBallNode extends ConditionalNode {
 
     @Override
     public boolean conditionSatisfied() {
-        
         return ally == GameInfo.getAllyClosestToBall();
     }
 

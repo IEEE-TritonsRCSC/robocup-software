@@ -1,6 +1,5 @@
 package main.java.core.module.interfaceModule;
 
-//TODO Can't find this file even in the old repo
 import com.rabbitmq.client.Delivery;
 
 import main.java.core.ai.GameInfo;
@@ -20,7 +19,6 @@ import static main.java.core.messaging.Exchange.AI_ROBOT_COMMAND;
 import static main.java.core.messaging.Exchange.AI_ROBOT_FEEDBACKS;
 import static main.java.core.messaging.SimpleSerialize.simpleDeserialize;
 
-//TODO Not recognizing proto?
 import static proto.simulation.SslSimulationRobotControl.RobotCommand;
 import static proto.simulation.SslSimulationRobotControl.RobotControl;
 import static proto.simulation.SslSimulationRobotFeedback.RobotControlResponse;

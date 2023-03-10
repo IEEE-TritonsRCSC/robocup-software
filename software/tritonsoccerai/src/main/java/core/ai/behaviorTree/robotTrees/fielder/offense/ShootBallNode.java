@@ -45,7 +45,7 @@ public class ShootBallNode extends SequenceNode {
      */
     private Vector2d findShot() {
 
-        // TODO Get the field parameter
+        // Get the field parameter
         SSL_GeometryFieldSize field = GameInfo.getField();
 
         ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoes());

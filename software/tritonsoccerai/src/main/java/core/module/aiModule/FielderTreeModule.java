@@ -10,8 +10,6 @@ import java.util.concurrent.TimeoutException;
 
 public class FielderTreeModule extends Module {
 
-    // TODO
-
     private final FielderTree tree;
 
     public FielderTreeModule(ScheduledThreadPoolExecutor executor, Robot fielder) {
@@ -21,12 +19,10 @@ public class FielderTreeModule extends Module {
 
     @Override
     protected void prepare() {
-
     }
 
     @Override
     protected void declareConsumes() throws IOException, TimeoutException {
-
     }
 
     @Override

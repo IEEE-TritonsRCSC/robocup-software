@@ -6,6 +6,7 @@ import main.java.core.constants.ProgramConstants;
 import main.java.core.util.Vector2d;
 import main.java.core.search.implementation.PathfindGridGroup;
 import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
+import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
 
 import proto.simulation.SslSimulationRobotControl;
 import static proto.triton.FilteredObject.Robot;
@@ -17,10 +18,12 @@ public class DribbleBallNode extends TaskNode {
 
     private final Robot ally;
     PathfindGridGroup pathfindGridGroup;
+    private final MoveToPositionNode moveToPositionNode;
 
     public DribbleBallNode(Robot ally) {
         super("Dribble Ball Node: " + ally, ally);
         this.ally = ally;
+        this.moveToPositionNode = new MoveToPositionNode(ally);
     }
 
      /**
@@ -42,11 +45,18 @@ public class DribbleBallNode extends TaskNode {
     }
 
     public NodeState execute(Vector2d location) {
-        // TODO
-        // dribble toward location provided
+        // Set dribbler speed and publish the command
+        SslSimulationRobotControl.RobotCommand.Builder robotCommand = SslSimulationRobotControl.RobotCommand.newBuilder();
+
+        robotCommand.setId(ally.getId());
+        robotCommand.setDribblerSpeed(1);
+        robotCommand.setKickSpeed(0);
+
+        ProgramConstants.aiModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
+
+        this.moveToPositionNode.execute(location);
         
         return NodeState.SUCCESS;
     }
-
 
 }

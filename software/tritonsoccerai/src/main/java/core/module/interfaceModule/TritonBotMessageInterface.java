@@ -1,6 +1,5 @@
 package main.java.core.module.interfaceModule;
 
-//TODO Can't find this file even in the old repo
 import com.rabbitmq.client.Delivery;
 
 import main.java.core.ai.GameInfo;
@@ -9,7 +8,6 @@ import main.java.core.constants.Team;
 import main.java.core.module.Module;
 import main.java.core.networking.UDP_Client;
 
-//TODO Not recognizing proto?
 import proto.triton.TritonBotCommunication.TritonBotMessage;
 
 import java.io.IOException;
@@ -27,7 +25,6 @@ import static main.java.core.messaging.Exchange.AI_ROBOT_FEEDBACKS;
 import static main.java.core.messaging.Exchange.AI_TRITON_BOT_MESSAGE;
 import static main.java.core.messaging.SimpleSerialize.simpleDeserialize;
 
-//TODO Not recognizing proto?
 import static proto.simulation.SslSimulationRobotFeedback.RobotFeedback;
 
 public class TritonBotMessageInterface extends Module {

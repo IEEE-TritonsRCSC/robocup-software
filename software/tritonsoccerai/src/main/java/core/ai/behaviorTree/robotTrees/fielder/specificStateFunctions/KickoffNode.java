@@ -20,6 +20,8 @@ public class KickoffNode extends TaskNode {
     private final Robot ally;
     private final ClosestToBallNode closestToBallNode;
     private final MoveToPositionNode moveToPositionNode;
+    private static final Vector2d defaultPosition = new Vector2d(
+        0, GameInfo.getField().getFieldLength() / 4);
 
     public KickoffNode(Robot ally, ClosestToBallNode closestToBallNode) {
         super("Prepare Kickoff Node: " + ally, ally);
@@ -38,7 +40,7 @@ public class KickoffNode extends TaskNode {
             }
         }
         else {
-            // TODO - move to our side of field
+            this.moveToPositionNode.execute();
         }
         return NodeState.SUCCESS;
     }

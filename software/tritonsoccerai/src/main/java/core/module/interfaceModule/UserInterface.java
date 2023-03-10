@@ -1,6 +1,5 @@
 package main.java.core.module.interfaceModule;
 
-//TODO Can't find this file even in the old repo
 import com.rabbitmq.client.Delivery;
 
 import main.java.core.ai.GameInfo;
@@ -11,10 +10,8 @@ import main.java.core.search.node2d.Node2d;
 import main.java.core.util.Vector2d;
 import main.java.core.constants.Team;
 
-//TODO Can't find this file even in the old repo
 import org.apache.commons.math3.analysis.function.Sigmoid;
 
-//TODO Not recognizing proto?
 import proto.triton.FilteredObject;
 import proto.vision.MessagesRobocupSslGeometry.SSL_FieldCircularArc;
 import proto.vision.MessagesRobocupSslGeometry.SSL_FieldLineSegment;
@@ -46,7 +43,6 @@ import static java.awt.Color.*;
 import static javax.swing.BoxLayout.Y_AXIS;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
-//TODO Not recognizing proto?
 import static proto.triton.AiDebugInfo.*;
 import static proto.triton.FilteredObject.Ball;
 import static proto.triton.FilteredObject.FilteredWrapperPacket;

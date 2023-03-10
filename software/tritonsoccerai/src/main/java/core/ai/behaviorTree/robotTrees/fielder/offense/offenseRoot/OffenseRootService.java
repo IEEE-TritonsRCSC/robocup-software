@@ -8,12 +8,13 @@ import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.RobotHasPossessi
 import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.MakePlayNode;
 import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.PositionSelfNode;
 import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.ShootBallNode;
+import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.HaveOpenShotNode;
 import static proto.triton.FilteredObject.Robot;
 
 public class OffenseRootService extends ServiceNode {
 
     private final RobotHasPossessionNode havePossession;
-    private final ConditionalNode haveOpenShot;
+    private final HaveOpenShotNode haveOpenShot;
     private final ShootBallNode shootBall;
     private final CompositeNode makePlay;
     private final PositionSelfNode positionSelf;
@@ -21,14 +22,7 @@ public class OffenseRootService extends ServiceNode {
     public OffenseRootService(Robot ally) {
         super("Offense Root Service " + ally);
         this.havePossession = new RobotHasPossessionNode(ally);
-        this.haveOpenShot = new ConditionalNode() {
-            @Override
-            public boolean conditionSatisfied() {
-                // TODO
-                // determine if there is an open shot using available coordinate info
-                return true;
-            }
-        };
+        this.haveOpenShot = new HaveOpenShotNode(ally);
         this.shootBall = new ShootBallNode(ally);
         this.makePlay = new MakePlayNode(ally);
         this.positionSelf = new PositionSelfNode(ally);

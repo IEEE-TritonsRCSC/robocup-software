@@ -61,6 +61,7 @@
 /home/rohil/robocup-2023/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/fielder/offense/offenseRoot/OffenseRootNode.java
 /home/rohil/robocup-2023/software/tritonsoccerai/src/main/java/core/module/interfaceModule/CameraInterface.java
 /home/rohil/robocup-2023/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/goalkeeper/specificStateFunctions/GKHaltNode.java
+/home/rohil/robocup-2023/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/fielder/offense/HaveOpenShotNode.java
 /home/rohil/robocup-2023/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/basicFunctions/KickBallNode.java
 /home/rohil/robocup-2023/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/goalkeeper/specificStateFunctions/GKStopNode.java
 /home/rohil/robocup-2023/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/goalkeeper/specificStateFunctions/GKPenaltyNode.java

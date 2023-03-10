@@ -1,6 +1,5 @@
 package main.java.core.module.interfaceModule;
 
-//TODO Can't find these two files even in the old repo
 import com.google.protobuf.Any;
 import com.rabbitmq.client.Delivery;
 
@@ -9,7 +8,6 @@ import main.java.core.constants.Team;
 import main.java.core.module.Module;
 import main.java.core.networking.UDP_Client;
 
-//TODO Not recognizing proto?
 import proto.simulation.SslSimulationConfig;
 import proto.simulation.SslSimulationConfig.SimulatorConfig;
 
