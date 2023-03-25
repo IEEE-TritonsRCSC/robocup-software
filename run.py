@@ -37,7 +37,7 @@ ssl_vision_client_path = dir_path + "/ssl-vision-client"
 ssl_vision_client = "./ssl-vision-client_v1.6.0_linux_amd64"
 
 triton_soccer_ai_jar_path = dir_path + "/software/tritonsoccerai/target/"
-triton_soccer_ai_jar = "triton-soccer-ai-1.0-SNAPSHOT.jar"
+triton_soccer_ai_jar = "triton-soccer-ai-1.0-SNAPSHOT-jar-with-dependencies.jar"
 
 triton_soccer_ai_py_path = dir_path + "/triton-soccer-ai/src/main/python"
 triton_soccer_ai_py = ""
