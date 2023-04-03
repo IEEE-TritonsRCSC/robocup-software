@@ -92,6 +92,7 @@ public class FilterModule extends Module {
      */
     private void publishFilteredWrapper() {
         super.publish(AI_FILTERED_VISION_WRAPPER, filteredWrapper);
+        GameInfo.setWrapper(filteredWrapper);
     }
 
     /**

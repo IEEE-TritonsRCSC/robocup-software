@@ -128,6 +128,10 @@ public class GameInfo {
         return wrapper.getField();
     }
 
+    public static void setWrapper(FilteredWrapperPacket wrapper) {
+        GameInfo.wrapper = wrapper;
+    }
+
     public static void setTeamColor(Team teamColor) {
         GameInfo.TEAM_COLOR = teamColor;
     }

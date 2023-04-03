@@ -1,6 +1,7 @@
 package core;
 
 import main.java.core.ai.GameInfo;
+import main.java.core.ai.GameState;
 import main.java.core.config.*;
 import main.java.core.constants.AITest;
 import main.java.core.constants.ProgramConstants;
@@ -152,6 +153,7 @@ public class AI {
         AIModule aiModule = new AIModule(executor);
         ProgramConstants.aiModule = aiModule;
         startModule(aiModule);
+        GameInfo.setCurrState(GameState.PREPARE_KICKOFF);
         for (Robot fielder : GameInfo.getFielders()) {
             startModule(new FielderTreeModule(executor, fielder));
         }
