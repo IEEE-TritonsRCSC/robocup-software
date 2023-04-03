@@ -9,6 +9,8 @@ import static main.java.core.util.ProtobufUtils.getPos;
 
 public class CentralCoordinatorRoot implements Runnable {
 
+    private final CentralCoordinatorService centralRootService;
+
     // used to track starting position of ball
     // to determine if ball kicked into play
     private Vector2d ballStartPos = null;
