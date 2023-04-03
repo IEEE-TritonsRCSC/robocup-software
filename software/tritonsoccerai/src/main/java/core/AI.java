@@ -1,5 +1,7 @@
 package core;
 
+import java.lang.Thread;
+
 import main.java.core.ai.GameInfo;
 import main.java.core.ai.GameState;
 import main.java.core.config.*;
@@ -47,12 +49,13 @@ public class AI {
         executor.setRemoveOnCancelPolicy(true);
     }
 
-    public static void main(String[] args) throws org.apache.commons.cli.ParseException {
+    public static void main(String[] args) throws org.apache.commons.cli.ParseException, java.lang.InterruptedException {
         if (parseArgs(args)) return;
         loadConfigs();
 
         AI ai = new AI();
         ai.startSupportModules();
+        Thread.sleep(1000);
         if (ProgramConstants.test) {
             ai.runTests();
         } else {
