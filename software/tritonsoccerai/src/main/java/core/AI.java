@@ -55,7 +55,7 @@ public class AI {
 
         AI ai = new AI();
         ai.startSupportModules();
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         if (ProgramConstants.test) {
             ai.runTests();
         } else {

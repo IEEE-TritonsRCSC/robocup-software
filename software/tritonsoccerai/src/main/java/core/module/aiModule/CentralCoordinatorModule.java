@@ -14,12 +14,10 @@ import java.util.concurrent.TimeoutException;
  */
 public class CentralCoordinatorModule extends Module {
 
-    private final ScheduledThreadPoolExecutor executor;
     private final CentralCoordinatorRoot centralCoordinatorRoot;
 
     public CentralCoordinatorModule(ScheduledThreadPoolExecutor executor) {
         super(executor);
-        this.executor = executor;
         this.centralCoordinatorRoot = new CentralCoordinatorRoot();
     }
 
