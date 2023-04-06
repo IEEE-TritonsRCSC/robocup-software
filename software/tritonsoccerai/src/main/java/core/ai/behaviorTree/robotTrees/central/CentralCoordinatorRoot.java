@@ -15,6 +15,13 @@ public class CentralCoordinatorRoot implements Runnable {
     // to determine if ball kicked into play
     private Vector2d ballStartPos = null;
 
+    public CentralCoordinatorRoot(){
+        super("Central Coordinator Root");
+
+        this.centralRootService = new CentralCoordinatorService();
+
+    }
+
     /**
      * Sends appropriate messages to robot trees based on provided pass details
      * Instructs receiver to expect ball at a given pass location
