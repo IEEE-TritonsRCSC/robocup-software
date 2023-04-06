@@ -4,7 +4,13 @@ Robocup Soccer Robot AI software
 
 The RoboCup SSL project involves running an AI software on a **remote station** (usually a computer near the game field) that remotely controls 6~8 soccer robots on the field.
 
+## Run all Build Steps at Once
 
+In order to complete all required build steps outlined below, run the following:
+
+```
+bash build-ai.sh
+```
 
 ## Install dependency
 

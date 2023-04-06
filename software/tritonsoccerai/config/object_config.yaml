@@ -1,0 +1,52 @@
+# Factor to multiply objects by to convert objects to camera coordinates
+cameraToObjectFactor : 0.001
+objectToCameraFactor : 1000
+
+# Ball radius [m]
+ballRadius : 0.042672
+
+# Robot radius [m]
+robotRadius : 0.09
+# Robot height [m]
+robotHeight : 0.143
+# Robot mass [kg]
+robotMass : 2.7
+# Max linear kick speed [m/s]
+robotMaxLinearKickSpeed : 8
+# Max chip kick speed [m/s]
+robotMaxChipKickSpeed : 8
+# Distance from robot center to dribbler [m] (implicitly defines the opening angle and dribbler width)
+robotCenterToDribbler : 0.078
+
+# Max absolute speed-up acceleration [m/s^2]
+robotAccSpeedupAbsoluteMax: 4.7
+# Max angular speed-up acceleration [rad/s^2]
+robotAccSpeedupAngularMax : 50.8
+# Max absolute brake acceleration [m/s^2]
+robotAccBrakeAbsoluteMax : 5.9
+# Max angular brake acceleration [rad/s^2]
+robotAccBrakeAngularMax : 51.6
+# Max absolute velocity [m/s]
+robotVelAbsoluteMax : 3.7
+# Max angular velocity [rad/s]
+robotVelAngularMax : 26.2
+
+# Robot wheel angle configuration
+# all angles are relative to looking forward,
+# all wheels / angles are clockwise
+# Angle front right [rad]
+robotFrontRight : 0.785398
+# Angle back right [rad]
+robotBackRight : 2.35619
+# Angle front left [rad]
+robotBackLeft: 3.92699
+# Angle back left [rad]
+robotFrontLeft : 5.49779
+
+# The distance [m] from the robot center to the ball, when the ball is as close as possible to the robot.
+# The ball may be a little bit inside the roboter when looking from top, due to the dimensions of the dribbler.
+shootRadius: 0.0715
+# The height of the dribbling bar from the ground [m]
+dribblerHeight: 0.05
+# The width of the dribbler itself (where the ball can be controlled), without the mechanical frame [m].
+dribblerWidth: 0.065

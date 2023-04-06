@@ -83,6 +83,7 @@ public class FilterModule extends Module {
         filteredWrapper.putAllAllies(initDefaultAllies(timestamp));
         filteredWrapper.putAllFoes(initDefaultFoes(timestamp));
         this.filteredWrapper = filteredWrapper.build();
+        GameInfo.setWrapper(this.filteredWrapper);
     }
 
     /**
@@ -92,6 +93,7 @@ public class FilterModule extends Module {
      */
     private void publishFilteredWrapper() {
         super.publish(AI_FILTERED_VISION_WRAPPER, filteredWrapper);
+        GameInfo.setWrapper(filteredWrapper);
     }
 
     /**
