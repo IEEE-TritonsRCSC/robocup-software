@@ -99,6 +99,7 @@
 /home/rohil/robocup-2023/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/simulation/SslSimulationRobotControl.java
 /home/rohil/robocup-2023/software/tritonsoccerai/src/main/java/core/search/node1d/Node1d.java
 /home/rohil/robocup-2023/software/tritonsoccerai/src/main/java/core/util/PIDControl.java
+/home/rohil/robocup-2023/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/central/CentralCoordinatorService.java
 /home/rohil/robocup-2023/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/basicFunctions/MoveToPositionNode.java
 /home/rohil/robocup-2023/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/simulation/SslSimulationSynchronous.java
 /home/rohil/robocup-2023/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/vision/MessagesRobocupSslDetection.java

@@ -50,6 +50,7 @@ main/java/core/config/AIConfig.class
 main/java/core/module/interfaceModule/UserInterface.class
 main/java/core/ai/behaviorTree/nodes/conditionalNodes/ConditionalNode.class
 proto/simulation/SslSimulationConfig$RealismConfig$Builder.class
+main/java/core/ai/behaviorTree/robotTrees/central/CentralCoordinatorService.class
 proto/simulation/SslVisionGeometry$SSL_GeometryDataOrBuilder.class
 proto/vision/MessagesRobocupSslGeometry$SSL_GeometryCameraCalibrationOrBuilder.class
 main/java/core/constants/AITest.class

@@ -18,15 +18,14 @@ public class CentralCoordinatorModule extends Module {
 
     public CentralCoordinatorModule(ScheduledThreadPoolExecutor executor) {
         super(executor);
-        this.centralCoordinatorRoot = new CentralCoordinatorRoot();
+        this.centralCoordinatorRoot = new CentralCoordinatorRoot(executor);
     }
 
     /**
      * At defined frequency, run Central Coordinator Root
      */
     public void execute() {
-        this.executor.scheduleAtFixedRate(this.centralCoordinatorRoot, ProgramConstants.INITIAL_DELAY,
-                                        ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
+        this.centralCoordinatorRoot.execute();
     }
 
     @Override
