@@ -51,6 +51,8 @@ public class AI {
 
     public static void main(String[] args) throws org.apache.commons.cli.ParseException, java.lang.InterruptedException {
         if (parseArgs(args)) return;
+        String currentDir = System.getProperty("user.dir");
+        System.out.println(currentDir);
         loadConfigs();
 
         AI ai = new AI();

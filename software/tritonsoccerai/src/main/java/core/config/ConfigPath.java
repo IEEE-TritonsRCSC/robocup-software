@@ -13,7 +13,7 @@ public enum ConfigPath {
     private final Class configClass;
 
     ConfigPath(String configPath, Class configClass) {
-        this.configPath = "./config/" + configPath;
+        this.configPath = "../config/" + configPath;
         this.configClass = configClass;
     }
 
