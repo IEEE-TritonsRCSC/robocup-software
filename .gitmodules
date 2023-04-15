@@ -4,6 +4,9 @@
 [submodule "ssl-simulation-protocol"]
 	path = ssl-simulation-protocol
 	url = https://github.com/RoboCup-SSL/ssl-simulation-protocol
+[submodule "ssl-vision"]
+	path = ssl-vision
+	url = https://github.com/RoboCup-SSL/ssl-vision
 [submodule "grSim"]
 	path = grSim
 	url = https://github.com/RoboCup-SSL/grSim.git
