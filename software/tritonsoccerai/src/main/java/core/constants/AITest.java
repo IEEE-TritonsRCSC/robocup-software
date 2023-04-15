@@ -7,7 +7,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 public enum AITest {
-    MOVE(MoveTestModule.class, "Test the ability of robots to match a target velocity."),
+    MOVE(MoveTestModule.class, "Test the ability of robots to move a target location."),
     ;
 
     private final Class<? extends TestModule> testClass;
@@ -28,10 +28,12 @@ public enum AITest {
 
     public TestModule createNewTestModule(ScheduledThreadPoolExecutor executor) {
         try {
+            System.out.println(executor);
             return testClass.getConstructor(ScheduledThreadPoolExecutor.class).newInstance(executor);
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
             e.printStackTrace();
         }
         throw new IllegalStateException();
     }
+    
 }

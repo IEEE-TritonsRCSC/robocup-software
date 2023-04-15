@@ -123,7 +123,7 @@ public class SimulatorRobotCommandInterface extends Module {
     @Override
     public void run() {
         super.run();
-        clientFuture = executor.submit(client);
+        clientFuture = executor.submit(client); 
     }
 
 }

@@ -54,4 +54,13 @@ public class MoveToPositionNode extends TaskNode {
         ProgramConstants.aiModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
         return NodeState.SUCCESS;
     }
+
+    /**
+     * Execute with target location set to (0, 0)
+     */
+    @Override
+    public void run() {
+        execute(new Vector2d(0, 0));
+    }
+
 }

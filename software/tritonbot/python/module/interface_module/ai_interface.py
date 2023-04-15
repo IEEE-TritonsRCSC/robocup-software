@@ -23,8 +23,7 @@ from constant.team import Team
 # the message, on which the Rabbit MQ server learns of this and then
 # returns it to the AI. Like a feedback loop essentially.
 # -KT
-from generated_sources.proto.triton_bot_communication_pb2 import \
-    TritonBotMessage
+from generated_sources.proto.triton_bot_communication_pb2 import TritonBotMessage
 from generated_sources.proto.ssl_simulation_robot_feedback_pb2 import RobotFeedback
 from messaging.exchange import Exchange
 
