@@ -61,27 +61,27 @@ num_bots = 6
 if (args.team == 'yellow' or args.team == 'both'):
     for i in range(num_bots):
         id = str(i)
-        run_cmd(["python3", triton_bot, "--team", "yellow", "--id", id], triton_bot_path, "tab")
+        run_cmd(["python3", triton_bot, "--team=yellow", "--id", id], triton_bot_path, "tab")
         time.sleep(0.1)
 
 if (args.team == 'blue' or args.team == 'both'):
     for i in range(num_bots):
         id = str(i)
-        run_cmd(["python3", triton_bot, "--team", "blue", "--id", id], triton_bot_path, "tab")
+        run_cmd(["python3", triton_bot, "--team=blue", "--id", id], triton_bot_path, "tab")
         time.sleep(0.1)
 
 if (args.team == 'yellow' or args.team == 'both'):
     if (args.test == 'true'):
-        run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team", "yellow", "--test"], triton_soccer_ai_jar_path, "tab")
+        run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team=yellow", "--test"], triton_soccer_ai_jar_path, "tab")
         time.sleep(0.1)
     else:
-        run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team", "yellow"], triton_soccer_ai_jar_path, "tab")
+        run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team=yellow"], triton_soccer_ai_jar_path, "tab")
         time.sleep(0.1)
 
 if (args.team == 'blue' or args.team == 'both'):
     if (args.test == 'true'):
-        run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team", "blue", "--test"], triton_soccer_ai_jar_path, "tab")
+        run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team=blue", "--test"], triton_soccer_ai_jar_path, "tab")
         time.sleep(0.1)
     else:
-        run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team", "blue"], triton_soccer_ai_jar_path, "tab")
+        run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team=blue"], triton_soccer_ai_jar_path, "tab")
         time.sleep(0.1)

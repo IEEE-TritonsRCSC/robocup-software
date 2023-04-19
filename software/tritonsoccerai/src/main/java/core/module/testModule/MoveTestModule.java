@@ -13,20 +13,21 @@ import main.java.core.constants.ProgramConstants;
 public class MoveTestModule extends TestModule {
     private final int TEST_ALLY_ID;
 
-    private final MoveToPositionNode moveToPositionNode = new MoveToPositionNode(GameInfo.getAllyClosestToBall());
+    private MoveToPositionNode moveToPositionNode;
     private Future<?> future;
 
     public MoveTestModule(ScheduledThreadPoolExecutor executor) {
         super(executor);
-        System.out.println("In MoveTestModule: " + executor);
         this.TEST_ALLY_ID = GameInfo.getAllyClosestToBall().getId();
     }
 
     @Override
     protected void prepare() {
         Vector2d point = new Vector2d(0, 0);
-        
-        this.future = this.executor.scheduleAtFixedRate(moveToPositionNode, ProgramConstants.INITIAL_DELAY,
+        this.moveToPositionNode = new MoveToPositionNode(GameInfo.getAllyClosestToBall());
+        System.out.println("MTPN");
+        System.out.println(this.moveToPositionNode);
+        this.future = this.executor.scheduleAtFixedRate(this.moveToPositionNode, ProgramConstants.INITIAL_DELAY,
                                     ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
     }
 
