@@ -12,7 +12,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import ssl_simulation_error_pb2 as ssl__simulation__error__pb2
+import generated_sources.proto.ssl_simulation_error_pb2 as ssl__simulation__error__pb2
 from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
 
 

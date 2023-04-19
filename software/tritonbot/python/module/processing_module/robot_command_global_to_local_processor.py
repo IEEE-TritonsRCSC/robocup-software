@@ -4,7 +4,7 @@ import time
 from generated_sources.proto.messages_robocup_ssl_detection_pb2 import SSL_DetectionRobot
 from generated_sources.proto.ssl_simulation_robot_control_pb2 import MoveLocalVelocity, RobotCommand, RobotMoveCommand
 from generated_sources.proto.ssl_simulation_robot_feedback_pb2 import RobotFeedback
-from generated_sources.proto.object_with_metadata_pb2 import Robot
+from generated_sources.proto.filtered_object_pb2 import Robot
 from messaging.exchange import Exchange
 from module.module import Module
 
