@@ -2,6 +2,9 @@ package main.java.core.constants;
 
 import main.java.core.config.*;
 import main.java.core.module.aiModule.AIModule;
+import main.java.core.messaging.Exchange;
+import static main.java.core.messaging.Exchange.AI_ROBOT_COMMAND;
+import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
 
 public class ProgramConstants {
 
@@ -14,6 +17,9 @@ public class ProgramConstants {
     public static ObjectConfig objectConfig = null;
 
     public static AIModule aiModule;
+    // either AI_BIASED_ROBOT_COMMAND or AI_ROBOT_COMMAND based on whether simulator is being used
+    // AI_BIASED_ROBOT_COMMAND = simulator NOT in use
+    public static Exchange moduleToPublishAICommands = AI_ROBOT_COMMAND; 
 
     public static final int INITIAL_DELAY = 0; // initial loop delay in milliseconds
     public static final int LOOP_FREQUENCY = 20; // loops per second

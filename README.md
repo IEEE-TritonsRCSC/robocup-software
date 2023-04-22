@@ -12,7 +12,7 @@ cd ../..
 
 Start RabbitMQ server: `sudo service rabbitmq-server start`
 
-Run run.py in test mode: `python3 run.py --test=true --team=both`
+Run run.py in test mode: `python3 run.py --test=true --team=blue`
 
 Run run.py in non-test mode: `python3 run.py --test=false --team=blue`
 

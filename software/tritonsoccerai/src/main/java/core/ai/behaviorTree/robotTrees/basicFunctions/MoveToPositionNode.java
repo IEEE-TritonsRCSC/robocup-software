@@ -15,7 +15,6 @@ import static proto.simulation.SslSimulationRobotControl.RobotCommand;
 import static proto.simulation.SslSimulationRobotControl.RobotMoveCommand;
 import static proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity;
 
-import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
 import static main.java.core.util.ProtobufUtils.getPos;
 
 public class MoveToPositionNode extends TaskNode {
@@ -51,7 +50,7 @@ public class MoveToPositionNode extends TaskNode {
         robotCommand.setMoveCommand(moveCommand);
 
         // Publish command to robot
-        ProgramConstants.aiModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
+        ProgramConstants.aiModule.publish(ProgramConstants.moduleToPublishAICommands, robotCommand.build());
         return NodeState.SUCCESS;
     }
 

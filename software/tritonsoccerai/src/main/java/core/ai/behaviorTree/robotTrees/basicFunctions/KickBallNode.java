@@ -8,8 +8,6 @@ import main.java.core.constants.ProgramConstants;
 
 import proto.simulation.SslSimulationRobotControl;
 
-import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
-
 import main.java.core.util.ObjectHelper;
 
 import static main.java.core.constants.ProgramConstants.aiConfig;
@@ -53,7 +51,7 @@ public class KickBallNode extends TaskNode {
             robotCommand.setKickAngle(0);
             robotCommand.setDribblerSpeed(0);
 
-            ProgramConstants.aiModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
+            ProgramConstants.aiModule.publish(ProgramConstants.moduleToPublishAICommands, robotCommand.build());
 
         }
         // TODO if robot is not facing the right direction, rotate 
@@ -73,7 +71,7 @@ public class KickBallNode extends TaskNode {
             robotCommand.setKickAngle(0);
             robotCommand.setDribblerSpeed(0);
 
-            ProgramConstants.aiModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
+            ProgramConstants.aiModule.publish(ProgramConstants.moduleToPublishAICommands, robotCommand.build());
 
         }
 

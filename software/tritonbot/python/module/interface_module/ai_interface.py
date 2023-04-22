@@ -37,6 +37,8 @@ from networking.udp_server import UDP_Server
 interface to communicate with AI
 '''
 class AI_Interface(Module):
+    message_sent_count = 1
+    
     # Send Commands to triton bot
     def __init__(self):
         super().__init__()
@@ -93,6 +95,8 @@ class AI_Interface(Module):
 
     # send message to channel
     def callback_message(self, bytes):
+        print("Sending message " + str(self.message_sent_count) + " from TB AI interface")
+        self.message_sent_count += 1
         message = TritonBotMessage()
         message.ParseFromString(bytes)
         self.publish(exchange=Exchange.TB_MESSAGE, object=message)
