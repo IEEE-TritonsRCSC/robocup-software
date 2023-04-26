@@ -2,6 +2,11 @@ package main.java.core.ai.behaviorTree.robotTrees.fielder.offense;
 
 import main.java.core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
 import static proto.triton.FilteredObject.Robot;
+import main.java.core.util.Vector2d;
+import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HaveOpenShotNode extends ConditionalNode {
 
@@ -13,8 +18,39 @@ public class HaveOpenShotNode extends ConditionalNode {
 
     @Override
     public boolean conditionSatisfied() {
-        // TODO
-        return false;
+        boolean hasOpenShot = true;
+
+        SSL_GeometryFieldSize field = GameInfo.getField();
+
+        // Get the goal parameters
+        float goalX = field.getGoalWidth() / 2f;
+        float goalY = field.getFieldLength() / 2f;
+
+        // Check if there is open shot
+        ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoes());
+        ArrayList<Robot> allysList = new ArrayList<>(GameInfo.getFielders());
+        List<Vector2d> obstaclePositions = new ArrayList<>();
+
+        //remove the ally closest to the ball
+        allysList.remove(GameInfo.getAllyClosestToBall());
+
+        //add the other ally positions and foe positions to the obstaclesPositions list
+        for(int i=0;i<allysList.size();i++) {
+			obstaclePositions.add(getPos(allysList.get(i)));
+            obstaclePositions.add(getPos(foesList.get(i)));
+		}
+
+        double slope = (goalY - GameInfo.getAllyClosestToBall().getY())
+                         / (goalX - GameInfo.getAllyClosestToBall().getX());
+        double yIntercept = goalY - slope * goalX;
+        
+        for (Vector2d obstacle : obstaclePositions) {
+            if (obstacle.y == slope * obstacle.x + yIntercept) {
+                hasOpenShot = false;
+            }
+        }
+
+        return hasOpenShot;
     }
 
 }
