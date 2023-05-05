@@ -46,15 +46,17 @@ public class CentralCoordinatorService extends ServiceNode {
     public NodeState execute() {
         float DISTANCE_CONSTANT = (float) 0.2;
         if (GameInfo.getCurrState() == GameState.NORMAL_START) {
-            if (this.ballStartPos == null) {
+            /*if (this.ballStartPos == null) {
                 this.ballStartPos = getPos(GameInfo.getBall());
             }
             // check if ball kicked
             if (getPos(GameInfo.getBall()).dist(ballStartPos) > DISTANCE_CONSTANT) {
                 // if so, switch current game state to OPEN_PLAY
                 GameInfo.setCurrState(GameState.OPEN_PLAY);
-            }
+            }*/
+            GameInfo.setCurrState(GameState.OPEN_PLAY);
         }
+        // System.out.println(String.valueOf(GameInfo.getBall().getX()) + " " + String.valueOf(GameInfo.getBall().getY()));
         // else check for new message to act upon
         return NodeState.SUCCESS;
     }

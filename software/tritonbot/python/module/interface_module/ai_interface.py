@@ -85,6 +85,7 @@ class AI_Interface(Module):
 
         self.server = UDP_Server(
             server_port=server_port, callback=self.callback_message)
+        print("UDP server started")
         self.server.start() 
 
     # receive feedback from robot (why is it in AI interface then?)
@@ -95,7 +96,7 @@ class AI_Interface(Module):
 
     # send message to channel
     def callback_message(self, bytes):
-        print("Sending message " + str(self.message_sent_count) + " from TB AI interface")
+        #print("Sending message " + str(self.message_sent_count) + " from TB AI interface")
         self.message_sent_count += 1
         message = TritonBotMessage()
         message.ParseFromString(bytes)

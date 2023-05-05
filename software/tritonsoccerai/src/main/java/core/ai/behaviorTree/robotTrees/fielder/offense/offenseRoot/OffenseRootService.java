@@ -47,4 +47,9 @@ public class OffenseRootService extends ServiceNode {
         return NodeState.SUCCESS;
     }
 
+    @Override
+    public void run() {
+        execute();
+    }
+
 }

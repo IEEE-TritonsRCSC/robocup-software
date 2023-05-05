@@ -59,6 +59,7 @@ public class SimulatorRobotCommandInterface extends Module {
      * @param delivery
      */
     private void callbackRobotCommand(String s, Delivery delivery) {
+        System.out.println("simRobComInt recieved command");
         RobotCommand robotCommand = (RobotCommand) simpleDeserialize(delivery.getBody());
 
         RobotControl.Builder robotControl = RobotControl.newBuilder();

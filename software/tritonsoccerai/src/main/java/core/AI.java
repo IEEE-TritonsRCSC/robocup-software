@@ -13,10 +13,7 @@ import main.java.core.module.aiModule.AIModule;
 import main.java.core.module.aiModule.CentralCoordinatorModule;
 import main.java.core.module.aiModule.FielderTreeModule;
 import main.java.core.module.aiModule.GKTreeModule;
-import main.java.core.module.interfaceModule.CameraInterface;
-import main.java.core.module.interfaceModule.SimulatorCommandInterface;
-import main.java.core.module.interfaceModule.TritonBotMessageInterface;
-import main.java.core.module.interfaceModule.UserInterface;
+import main.java.core.module.interfaceModule.*;
 import main.java.core.module.processingModule.*;
 
 import static proto.triton.FilteredObject.*;
@@ -158,12 +155,15 @@ public class AI {
         AIModule aiModule = new AIModule(executor);
         ProgramConstants.aiModule = aiModule;
         startModule(aiModule);
-        GameInfo.setCurrState(GameState.PREPARE_KICKOFF);
+        GameInfo.setCurrState(GameState.OPEN_PLAY);
         for (Robot fielder : GameInfo.getFielders()) {
             startModule(new FielderTreeModule(executor, fielder));
+            System.out.println("Fielder module started for robot " + fielder.getId());
         }
         startModule(new GKTreeModule(executor));
+        System.out.println("GK module started");
         startModule(new CentralCoordinatorModule(executor));
+        System.out.println("Central module started");
     }
 
     public void startProcessingModules() {
@@ -172,14 +172,16 @@ public class AI {
         startModule(new SimulatorControlAudienceConverter(executor));
         startModule(new RobotCommandAudienceConverter(executor));
         startModule(new TritonBotMessageBuilder(executor));
+        System.out.println("Processing modules started");
     }
 
     public void startInterfaceModules() {
         startModule(new CameraInterface(executor));
         startModule(new SimulatorCommandInterface(executor));
-//        startModule(new SimulatorRobotCommandInterface(executor));
+        startModule(new SimulatorRobotCommandInterface(executor));
         startModule(new TritonBotMessageInterface(executor));
         startModule(new UserInterface(executor));
+        System.out.println("Interface modules started");
     }
 
     private AITest parseTest(String line) {

@@ -24,7 +24,7 @@ public class CentralCoordinatorModule extends Module {
     /**
      * At defined frequency, run Central Coordinator Root
      */
-    public void execute() {
+    public void run() {
         this.centralCoordinatorRoot.execute();
     }
 

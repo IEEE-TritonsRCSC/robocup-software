@@ -45,11 +45,13 @@ public class FielderRootService extends ServiceNode {
     private Future<?> branchFuture;
     private BTNode currentlyExecutingNode;
 
+    private Robot ally;
+
     public FielderRootService(Robot ally, ScheduledThreadPoolExecutor executor) {
         super("Fielder Root Service: " + ally);
 
         this.executor = executor;
-
+        this.ally = ally;
         this.closestToBallNode = new ClosestToBallNode(ally);
 
         this.haveBall = new ConditionalNode() {
@@ -104,6 +106,7 @@ public class FielderRootService extends ServiceNode {
         // start new thread with executeCorrectBranch()
         executeCorrectBranch();
         this.stateCurrentlyRunning = GameInfo.getCurrState();
+        System.out.println("Ally " + this.ally.getId() + " switched branches");
     }
 
     /**
@@ -145,11 +148,14 @@ public class FielderRootService extends ServiceNode {
      * Run correct open play node in branch thread
      */
     private void runOpenPlay() {
+        System.out.println("running open play");
         if (onOffense) {
+            System.out.println("running offense");
             this.branchFuture = this.executor.submit(this.offense);
             this.currentlyExecutingNode = this.offense;
         }
         else {
+            System.out.println("running defense");
             this.branchFuture = this.executor.submit(this.defense);
             this.currentlyExecutingNode = this.defense;
         }

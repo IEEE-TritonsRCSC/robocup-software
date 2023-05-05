@@ -35,4 +35,9 @@ public class PlayDefenseService extends ServiceNode {
         return NodeState.SUCCESS;
     }
 
+    @Override
+    public void run() {
+        execute();
+    }
+
 }

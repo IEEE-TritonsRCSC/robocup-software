@@ -141,6 +141,7 @@ public class GameInfo {
     }
 
     public static void setCurrState(GameState currState) {
+        GameInfo.prevState = GameInfo.currState;
         GameInfo.currState = currState;
     }
 

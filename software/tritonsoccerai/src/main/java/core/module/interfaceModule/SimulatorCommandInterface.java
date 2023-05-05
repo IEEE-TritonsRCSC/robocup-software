@@ -106,6 +106,7 @@ public class SimulatorCommandInterface extends Module {
     private void callbackSimulatorResponse(byte[] bytes) {
         try {
             SimulatorResponse simulatorResponse = SimulatorResponse.parseFrom(bytes);
+            System.out.println("Sim response:");
             System.out.println(simulatorResponse);
         } catch (IOException e) {
             e.printStackTrace();
@@ -148,6 +149,7 @@ public class SimulatorCommandInterface extends Module {
             simulatorControl.addTeleportRobot(teleportRobot);
         }
 
+        System.out.println("SimCommandInt published to AI_SIMULATOR_CONTROL");
         publish(AI_SIMULATOR_CONTROL, simulatorControl.build());
 
         SimulatorConfig.Builder simulatorConfig = SimulatorConfig.newBuilder();
@@ -158,6 +160,7 @@ public class SimulatorCommandInterface extends Module {
             simulatorConfig.addRobotSpecs(specs);
         }
 
+        System.out.println("SimCommandInt published to AI_SIMULATOR_CONFIG");
         publish(AI_SIMULATOR_CONFIG, simulatorConfig.build());
     }
 
