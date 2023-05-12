@@ -339,7 +339,12 @@ public class FilterModule extends Module {
             // For each ally robot, calculates the lastAlly, hasBall to define the filteredAlly
             if (ally.getRobotId() < ProgramConstants.gameConfig.numBots) {
                 Robot lastAlly = lastAllies.get(ally.getRobotId());
-                boolean hasBall = feedbacks != null && feedbacks.get(ally.getRobotId()).getDribblerBallContact();
+                boolean hasBall = false;
+                if (feedbacks != null) {
+                    System.out.println("feedbacks " + feedbacks);
+                    System.out.println("return val " + feedbacks.get(ally.getRobotId()));
+                    hasBall = feedbacks.get(ally.getRobotId()).getDribblerBallContact();
+                }
                 Robot filteredAlly = filterRobot(timestamp, ally, lastAlly, hasBall);
                 filteredAllies.put(ally.getRobotId(), filteredAlly);
             }

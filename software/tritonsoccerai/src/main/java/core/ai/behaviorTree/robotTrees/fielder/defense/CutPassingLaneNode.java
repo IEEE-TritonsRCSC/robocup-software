@@ -24,6 +24,7 @@ public class CutPassingLaneNode extends TaskNode {
      */
     @Override
     public NodeState execute() {
+        System.out.println("Running cut passing lane node");
         moveTowardFoe(ObjectHelper.identifyFoeToGuard(ally, GameInfo.getFoeFielders()));
         return NodeState.SUCCESS;
     }

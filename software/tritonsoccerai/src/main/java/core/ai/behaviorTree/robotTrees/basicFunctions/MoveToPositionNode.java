@@ -23,6 +23,7 @@ public class MoveToPositionNode extends TaskNode {
     
     public MoveToPositionNode(Robot ally) {
         super("Move To Position Node: " + ally, ally);
+        this.pathfindGridGroup = new PathfindGridGroup(ProgramConstants.gameConfig.numBots, GameInfo.getField());
     }
 
     @Override
@@ -31,6 +32,10 @@ public class MoveToPositionNode extends TaskNode {
     }
 
     public NodeState execute(Vector2d endLoc) {
+        System.out.println("running move to position node");
+        
+        try {
+
         Vector2d allyPos = getPos(super.ally);
 
         // Pathfinding to endLoc
@@ -46,11 +51,17 @@ public class MoveToPositionNode extends TaskNode {
         globalVelocity.setX(vel.x);
         globalVelocity.setY(vel.y);
         //globalVelocity.setAngular(angular);
+        globalVelocity.setAngular(3.0f);
         moveCommand.setGlobalVelocity(globalVelocity);
         robotCommand.setMoveCommand(moveCommand);
 
         // Publish command to robot
         ProgramConstants.aiModule.publish(ProgramConstants.moduleToPublishAICommands, robotCommand.build());
+        }
+
+        catch (Exception e) {
+            System.out.println(e);
+        }
         return NodeState.SUCCESS;
     }
 

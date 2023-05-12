@@ -29,6 +29,7 @@ public class PlayDefenseNode extends CompositeNode {
      */
     @Override
     public NodeState execute() {
+        System.out.println("Running playDefense service");
         this.playDefenseFuture = this.executor.scheduleAtFixedRate(this.playDefenseService, ProgramConstants.INITIAL_DELAY,
                                         ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
         return NodeState.SUCCESS;
