@@ -32,10 +32,6 @@ public class MoveToPositionNode extends TaskNode {
     }
 
     public NodeState execute(Vector2d endLoc) {
-        System.out.println("running move to position node");
-        
-        try {
-
         Vector2d allyPos = getPos(super.ally);
 
         // Pathfinding to endLoc
@@ -57,11 +53,7 @@ public class MoveToPositionNode extends TaskNode {
 
         // Publish command to robot
         ProgramConstants.aiModule.publish(ProgramConstants.moduleToPublishAICommands, robotCommand.build());
-        }
 
-        catch (Exception e) {
-            System.out.println(e);
-        }
         return NodeState.SUCCESS;
     }
 

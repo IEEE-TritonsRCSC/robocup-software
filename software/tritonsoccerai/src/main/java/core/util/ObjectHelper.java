@@ -198,6 +198,11 @@ public class ObjectHelper {
         // make copy of GameInfo.getFielders() and remove the ally closest to ball
         ArrayList<Robot> allyGuarders = new ArrayList<>(GameInfo.getFielders());
         allyGuarders.remove(GameInfo.getAllyClosestToBall());
+
+        if ((foesInOrderOfDistance.size() == 0) || (allyGuarders.size() == 0)) {
+            return null;
+        }
+
         // For each foe, find n if ally is the nth farthest allyGuarder from foe
         // place sum will be n + foe's index in foesInOrderOfDistance
         int minPlaceSum = Integer.MAX_VALUE;

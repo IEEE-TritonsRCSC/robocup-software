@@ -6,6 +6,7 @@ import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToObjectNode;
 import static proto.triton.FilteredObject.Robot;
 import main.java.core.util.ObjectHelper;
+import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.ChaseBallNode;
 
 /**
  * Cuts passing lane between ball and a foe
@@ -13,10 +14,12 @@ import main.java.core.util.ObjectHelper;
 public class CutPassingLaneNode extends TaskNode {
 
     private final MoveToObjectNode moveToObjectNode;
+    private final ChaseBallNode chaseBallNode;
 
     public CutPassingLaneNode(Robot ally) {
         super("Cut Passing Lane Node: " + ally, ally);
         this.moveToObjectNode = new MoveToObjectNode(ally);
+        this.chaseBallNode = new ChaseBallNode(ally);
     }
 
     /**
@@ -24,8 +27,14 @@ public class CutPassingLaneNode extends TaskNode {
      */
     @Override
     public NodeState execute() {
-        System.out.println("Running cut passing lane node");
-        moveTowardFoe(ObjectHelper.identifyFoeToGuard(ally, GameInfo.getFoeFielders()));
+        // System.out.println("Running cut passing lane node");
+        Robot foeToGuard = ObjectHelper.identifyFoeToGuard(ally, GameInfo.getFoeFielders());
+        if (foeToGuard != null) {
+            moveTowardFoe(foeToGuard);
+        }
+        else {
+            chaseBallNode.execute();
+        }
         return NodeState.SUCCESS;
     }
 

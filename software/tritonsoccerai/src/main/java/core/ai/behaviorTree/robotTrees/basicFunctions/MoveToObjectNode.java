@@ -41,7 +41,6 @@ public class MoveToObjectNode extends TaskNode {
      * and velocity of robot
      */
     public NodeState execute(Robot robot) {
-        System.out.println("Running move to object node");
         float TIME_CONSTANT = 0.5f;
         Vector2d position = getPos(robot).add(getVel(robot).scale(TIME_CONSTANT));
         this.moveToPositionNode.execute(position);

@@ -47,7 +47,7 @@ public class RobotCommandAudienceConverter extends Module {
     private void callbackBiasedRobotCommand(String s, Delivery delivery) {
         RobotCommand biasedRobotCommand = (RobotCommand) simpleDeserialize(delivery.getBody());
         RobotCommand robotCommand = commandBiasedToAudience(biasedRobotCommand);
-        System.out.println("RobComInt published to AI_ROBOT_COMMAND");
+        // System.out.println("RobComInt published to AI_ROBOT_COMMAND");
         publish(AI_ROBOT_COMMAND, robotCommand);
     }
 

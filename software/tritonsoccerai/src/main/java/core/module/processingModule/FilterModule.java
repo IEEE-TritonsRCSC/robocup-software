@@ -340,9 +340,8 @@ public class FilterModule extends Module {
             if (ally.getRobotId() < ProgramConstants.gameConfig.numBots) {
                 Robot lastAlly = lastAllies.get(ally.getRobotId());
                 boolean hasBall = false;
-                if (feedbacks != null) {
-                    System.out.println("feedbacks " + feedbacks);
-                    System.out.println("return val " + feedbacks.get(ally.getRobotId()));
+                // System.out.println("feedbacks is null");
+                if ((feedbacks != null) && (feedbacks.size() == ProgramConstants.gameConfig.numBots)){
                     hasBall = feedbacks.get(ally.getRobotId()).getDribblerBallContact();
                 }
                 Robot filteredAlly = filterRobot(timestamp, ally, lastAlly, hasBall);

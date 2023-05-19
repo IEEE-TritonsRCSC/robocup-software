@@ -31,6 +31,7 @@ public class BlockBallNode extends TaskNode {
      */
     @Override
     public NodeState execute() {
+        // System.out.println("running block ball node");
         this.moveToPositionNode.execute(findPositioningLocation());
         return NodeState.SUCCESS;
     }

@@ -22,9 +22,9 @@ public class ChaseBallNode extends TaskNode {
      */
     @Override
     public NodeState execute() {
-        System.out.println("Ally " + ally.getId() + " chasing ball");
+        // System.out.println("Ally " + ally.getId() + " chasing ball");
         this.moveToObjectNode.execute(GameInfo.getBall());
-        System.out.println("Running chase ball node");
+        // System.out.println("Running chase ball node");
         return NodeState.SUCCESS;
     }
 }
