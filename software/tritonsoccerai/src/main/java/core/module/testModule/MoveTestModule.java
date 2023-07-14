@@ -21,6 +21,9 @@ public class MoveTestModule extends TestModule {
         this.TEST_ALLY_ID = GameInfo.getAllyClosestToBall().getId();
     }
 
+    /**
+     * Begins repeated periodic execution of MoveToPositionNode
+     */
     @Override
     protected void prepare() {
         Vector2d point = new Vector2d(0, 0);
@@ -35,6 +38,9 @@ public class MoveTestModule extends TestModule {
     protected void declareConsumes() throws IOException, TimeoutException {
     }
 
+    /**
+     * Stops execution of MoveTestModule
+     */
     @Override
     public void interrupt() {
         super.interrupt();

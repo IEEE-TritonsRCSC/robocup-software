@@ -18,6 +18,11 @@ public class HaveOpenShotNode extends ConditionalNode {
         this.ally = ally;
     }
 
+    /**
+     * Determines whether open shot exists for current ally ballholder
+     * 
+     * @return whether open shot exists
+     */
     @Override
     public boolean conditionSatisfied() {
         boolean hasOpenShot = true;

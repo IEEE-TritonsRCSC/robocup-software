@@ -56,7 +56,7 @@ time.sleep(0.1)
 run_cmd([ssl_vision_client], ssl_vision_client_path, "tab")
 time.sleep(0.1)
 
-num_bots = 3
+num_bots = 6
 
 if (args.team == 'yellow' or args.team == 'both'):
     for i in range(num_bots):

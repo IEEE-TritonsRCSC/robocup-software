@@ -7,6 +7,8 @@ import main.java.core.util.Vector2d;
 import main.java.core.search.implementation.PathfindGridGroup;
 import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
 
+import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
+
 import proto.simulation.SslSimulationRobotControl;
 import static proto.triton.FilteredObject.Robot;
 
@@ -38,7 +40,7 @@ public class DribbleBallNode extends TaskNode {
         robotCommand.setDribblerSpeed(1);
         robotCommand.setKickSpeed(0);
 
-        ProgramConstants.aiModule.publish(ProgramConstants.moduleToPublishAICommands, robotCommand.build());
+        ProgramConstants.aiModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
 
         return NodeState.SUCCESS;
     }
@@ -51,7 +53,7 @@ public class DribbleBallNode extends TaskNode {
         robotCommand.setDribblerSpeed(1);
         robotCommand.setKickSpeed(0);
 
-        ProgramConstants.aiModule.publish(ProgramConstants.moduleToPublishAICommands, robotCommand.build());
+        ProgramConstants.aiModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
 
         this.moveToPositionNode.execute(location);
         

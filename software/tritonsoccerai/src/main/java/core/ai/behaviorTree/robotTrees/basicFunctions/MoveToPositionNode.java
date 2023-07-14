@@ -10,10 +10,12 @@ import main.java.core.search.implementation.*;
 import main.java.core.search.node2d.Node2d;
 import main.java.core.constants.ProgramConstants;
 
+import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
+
 import static proto.triton.FilteredObject.Robot;
 import static proto.simulation.SslSimulationRobotControl.RobotCommand;
 import static proto.simulation.SslSimulationRobotControl.RobotMoveCommand;
-import static proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity;
+import static proto.simulation.SslSimulationRobotControl.MoveLocalVelocity;
 
 import static main.java.core.util.ProtobufUtils.getPos;
 
@@ -31,6 +33,11 @@ public class MoveToPositionNode extends TaskNode {
         return null;
     }
 
+    // TODO: Fix this method
+    // Use global velocities to calculate local velocities
+    // Either pass the command to TritonBotMessageBuilder or
+    // SimulatorRobotCommandInterface based on if in competition
+    // vs. simulator setup respectively
     public NodeState execute(Vector2d endLoc) {
         Vector2d allyPos = getPos(super.ally);
 
@@ -42,17 +49,17 @@ public class MoveToPositionNode extends TaskNode {
         RobotCommand.Builder robotCommand = RobotCommand.newBuilder();
         robotCommand.setId(ally.getId());
         RobotMoveCommand.Builder moveCommand = RobotMoveCommand.newBuilder();
-        MoveGlobalVelocity.Builder globalVelocity = MoveGlobalVelocity.newBuilder();
+        MoveLocalVelocity.Builder localVelocity = MoveLocalVelocity.newBuilder();
         Vector2d vel = endLoc.sub(allyPos).scale((float) 0.1);
-        globalVelocity.setX(vel.x);
-        globalVelocity.setY(vel.y);
+        localVelocity.setForward(vel.x);
+        localVelocity.setLeft(vel.y);
         //globalVelocity.setAngular(angular);
-        globalVelocity.setAngular(3.0f);
-        moveCommand.setGlobalVelocity(globalVelocity);
+        localVelocity.setAngular(3.0f);
+        moveCommand.setLocalVelocity(localVelocity);
         robotCommand.setMoveCommand(moveCommand);
 
         // Publish command to robot
-        ProgramConstants.aiModule.publish(ProgramConstants.moduleToPublishAICommands, robotCommand.build());
+        ProgramConstants.aiModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
 
         return NodeState.SUCCESS;
     }

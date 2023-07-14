@@ -162,6 +162,13 @@ public class ObjectHelper {
         return minDist;
     }
 
+    /**
+     * Gets closest robot to a given point on field
+     * 
+     * @param target Target location on field
+     * @param robots List of robots to consider
+     * @return c\Closest robot
+     */
     public static Robot getNearestRobot(Vector2d target, List<Robot> robots) {
         Robot closestRobot = null;
         float minDist = Float.MAX_VALUE;
@@ -175,6 +182,15 @@ public class ObjectHelper {
         return closestRobot;
     }
 
+    /**
+     * Returns set of robots within a distance threshold of a specific
+     * point on field
+     * 
+     * @param target Target location on field
+     * @param robots Set of robots to consider
+     * @param distThreshold Distance threshold
+     * @return List of robots within threshold
+     */
     public static List<Robot> getNearRobots(Vector2d target, List<Robot> robots, float distThreshold) {
         List<Robot> nearRobots = new ArrayList<>();
         for (Robot robot : robots) {
@@ -189,6 +205,10 @@ public class ObjectHelper {
     /**
      * Identifies a foe for ally to guard based on positions of all allies and foes
      * Refer to figure 8 for detailed explanation
+     * 
+     * @param ally Ally for which to identify foe to guard
+     * @param foes List of foes to consider as possible assignment
+     * @return Foe for ally to guard
      */
     public static Robot identifyFoeToGuard(Robot ally, ArrayList<Robot> foes) {
         // make copy of GameInfo.getFoeFielders() and sort it

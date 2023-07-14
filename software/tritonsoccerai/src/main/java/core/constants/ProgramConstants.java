@@ -17,9 +17,6 @@ public class ProgramConstants {
     public static ObjectConfig objectConfig = null;
 
     public static AIModule aiModule;
-    // either AI_BIASED_ROBOT_COMMAND or AI_ROBOT_COMMAND based on whether simulator is being used
-    // AI_BIASED_ROBOT_COMMAND = simulator NOT in use
-    public static Exchange moduleToPublishAICommands = AI_BIASED_ROBOT_COMMAND; 
 
     public static final int INITIAL_DELAY = 0; // initial loop delay in milliseconds
     public static final int LOOP_FREQUENCY = 2; // loops per second

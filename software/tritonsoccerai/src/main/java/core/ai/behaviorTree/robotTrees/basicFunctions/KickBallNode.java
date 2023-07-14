@@ -4,6 +4,8 @@ import main.java.core.ai.behaviorTree.nodes.NodeState;
 import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import main.java.core.util.Vector2d;
 
+import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
+
 import main.java.core.constants.ProgramConstants;
 
 import proto.simulation.SslSimulationRobotControl;
@@ -51,7 +53,7 @@ public class KickBallNode extends TaskNode {
             robotCommand.setKickAngle(0);
             robotCommand.setDribblerSpeed(0);
 
-            ProgramConstants.aiModule.publish(ProgramConstants.moduleToPublishAICommands, robotCommand.build());
+            ProgramConstants.aiModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
 
         }
         // TODO if robot is not facing the right direction, rotate 
@@ -71,7 +73,7 @@ public class KickBallNode extends TaskNode {
             robotCommand.setKickAngle(0);
             robotCommand.setDribblerSpeed(0);
 
-            ProgramConstants.aiModule.publish(ProgramConstants.moduleToPublishAICommands, robotCommand.build());
+            ProgramConstants.aiModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
 
         }
 

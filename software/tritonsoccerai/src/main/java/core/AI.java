@@ -46,6 +46,11 @@ public class AI {
         executor.setRemoveOnCancelPolicy(true);
     }
 
+    /**
+     * Starts modules and runs program in appropriate mode
+     * 
+     * @param args Arguments to program
+     */
     public static void main(String[] args) throws org.apache.commons.cli.ParseException, java.lang.InterruptedException {
         if (parseArgs(args)) return;
         String currentDir = System.getProperty("user.dir");
@@ -62,6 +67,12 @@ public class AI {
         }
     }
 
+    /**
+     * Parses command line options
+     * 
+     * @param args Arguments to be parsed
+     * @return whether ParseException occurred
+     */
     private static boolean parseArgs(String[] args) throws org.apache.commons.cli.ParseException {
         Options options = new Options();
         Option teamOption = Option.builder("team")
@@ -104,6 +115,9 @@ public class AI {
         return false;
     }
 
+    /**
+     * Loads configs into ProgramConstants from config.yaml file
+     */
     private static void loadConfigs() {
         ProgramConstants.aiConfig = (AIConfig) readConfig(AI_CONFIG);
         ProgramConstants.displayConfig = (DisplayConfig) readConfig(DISPLAY_CONFIG);
@@ -112,11 +126,17 @@ public class AI {
         ProgramConstants.objectConfig = (ObjectConfig) readConfig(OBJECT_CONFIG);
     }
 
+    /**
+     * Starts support (non-AI) modules
+     */
     public void startSupportModules() {
         startProcessingModules();
         startInterfaceModules();
     }
 
+    /**
+     * Runs test mode by repeatedly prompting user for test to run and running that test
+     */
     private void runTests() {
         List<Module> testModules = new ArrayList<>();
         List<Future<?>> testFutures = new ArrayList<>();
@@ -136,6 +156,7 @@ public class AI {
             }
 
             TestModule testModule = test.createNewTestModule(executor);
+            System.out.println("In between");
             startModule(testModule, testModules, testFutures);
 
             while (!testModules.isEmpty()) {
@@ -150,6 +171,9 @@ public class AI {
         }
     }
 
+    /**
+     * Starts AIModule, FielderTreeModule (x5), GKTreeModule, and CentralCoordinatorModule
+     */
     public void startAI() {
         // core ai modules
         AIModule aiModule = new AIModule(executor);
@@ -166,6 +190,10 @@ public class AI {
         System.out.println("Central module started");
     }
 
+    /**
+     * Starts processing modules (refer to software diagram for info on the roles
+     * of these modules)
+     */
     public void startProcessingModules() {
         startModule(new VisionBiasedConverter(executor));
         startModule(new FilterModule(executor));
@@ -175,6 +203,10 @@ public class AI {
         System.out.println("Processing modules started");
     }
 
+    /**
+     * Starts interface modules (refer to software diagram for info on the roles
+     * of these modules)
+     */
     public void startInterfaceModules() {
         startModule(new CameraInterface(executor));
         startModule(new SimulatorCommandInterface(executor));
@@ -184,6 +216,13 @@ public class AI {
         System.out.println("Interface modules started");
     }
 
+    /**
+     * Parses user input on test to be run and returns appropriate test
+     * if valid test exists
+     * 
+     * @param line user input
+     * @return applicable test if valid test exists
+     */
     private AITest parseTest(String line) {
         for (AITest test : AITest.values())
             if (line.equals(test.name()) || line.equals(String.valueOf(test.ordinal())))
@@ -191,12 +230,26 @@ public class AI {
         return null;
     }
 
+    /**
+     * Submits module runnable to executor to be run as a thread
+     * and adds module and its future to appropriate lists
+     * 
+     * @param module Module (must be runnable) to be executed
+     */
     public void startModule(Module module) {
         Future<?> future = this.executor.submit(module);
         this.modules.add(module);
         this.futures.add(future);
     }
 
+    /**
+     * Submits module runnable to executor to be run as a thread
+     * and adds module and its future to appropriate lists
+     * 
+     * @param module Module (must be runnable) to be executed
+     * @param modules List of modules to add module to
+     * @param futures List of futures to add module's future to
+     */
     public void startModule(Module module, List<Module> modules, List<Future<?>> futures) {
         Future<?> future = this.executor.submit(module);
         modules.add(module);
