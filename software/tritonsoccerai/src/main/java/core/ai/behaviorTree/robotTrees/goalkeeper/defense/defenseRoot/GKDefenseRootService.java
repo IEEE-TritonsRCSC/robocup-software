@@ -15,7 +15,7 @@ public class GKDefenseRootService extends ServiceNode {
 
     public GKDefenseRootService() {
         super("GK Defense Root Service");
-        this.blockBall = new BlockBallNode(GameInfo.getKeeper());
+        this.blockBall = new BlockBallNode(0);
     }
 
     /**

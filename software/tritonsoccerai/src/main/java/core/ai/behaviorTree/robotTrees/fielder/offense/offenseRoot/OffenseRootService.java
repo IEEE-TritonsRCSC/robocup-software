@@ -19,13 +19,13 @@ public class OffenseRootService extends ServiceNode {
     private final CompositeNode makePlay;
     private final PositionSelfNode positionSelf;
 
-    public OffenseRootService(Robot ally) {
-        super("Offense Root Service " + ally);
-        this.havePossession = new RobotHasPossessionNode(ally);
-        this.haveOpenShot = new HaveOpenShotNode(ally);
-        this.shootBall = new ShootBallNode(ally);
-        this.makePlay = new MakePlayNode(ally);
-        this.positionSelf = new PositionSelfNode(ally);
+    public OffenseRootService(int allyID) {
+        super("Offense Root Service " + allyID);
+        this.havePossession = new RobotHasPossessionNode(allyID);
+        this.haveOpenShot = new HaveOpenShotNode(allyID);
+        this.shootBall = new ShootBallNode(allyID);
+        this.makePlay = new MakePlayNode(allyID);
+        this.positionSelf = new PositionSelfNode(allyID);
     }
 
     /**

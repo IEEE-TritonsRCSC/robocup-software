@@ -1,21 +1,22 @@
 package main.java.core.ai.behaviorTree.robotTrees.basicFunctions;
 
 import main.java.core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
+import main.java.core.ai.GameInfo;
 
 import static proto.triton.FilteredObject.Robot;
 
 public class RobotHasPossessionNode extends ConditionalNode {
 
-    private final Robot ally;
+    private final int allyID;
 
-    public RobotHasPossessionNode(Robot ally) {
-        super("Robot Has Possession Node: " + ally);
-        this.ally = ally;
+    public RobotHasPossessionNode(int allyID) {
+        super("Robot Has Possession Node: " + allyID);
+        this.allyID = allyID;
     }
 
     @Override
     public boolean conditionSatisfied() {
-        return ally.getHasBall();
+        return GameInfo.getAlly(allyID).getHasBall();
     }
 
 }

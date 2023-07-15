@@ -149,6 +149,7 @@ public class AI {
 
             System.out.print("Choose a test:\t");
             AITest test = parseTest(scanner.nextLine());
+            System.out.println(test);
 
             if (test == null) {
                 System.out.println("Test not found. Try again.");
@@ -156,7 +157,7 @@ public class AI {
             }
 
             TestModule testModule = test.createNewTestModule(executor);
-            System.out.println("In between");
+            ProgramConstants.commandPublishingModule = testModule;
             startModule(testModule, testModules, testFutures);
 
             while (!testModules.isEmpty()) {
@@ -177,12 +178,12 @@ public class AI {
     public void startAI() {
         // core ai modules
         AIModule aiModule = new AIModule(executor);
-        ProgramConstants.aiModule = aiModule;
+        ProgramConstants.commandPublishingModule = aiModule;
         startModule(aiModule);
         GameInfo.setCurrState(GameState.OPEN_PLAY);
-        for (Robot fielder : GameInfo.getFielders()) {
-            startModule(new FielderTreeModule(executor, fielder));
-            System.out.println("Fielder module started for robot " + fielder.getId());
+        for (int id = 1; id <= GameInfo.getFielders().size(); id++) {
+            startModule(new FielderTreeModule(executor, id));
+            System.out.println("Fielder module started for robot " + id);
         }
         startModule(new GKTreeModule(executor));
         System.out.println("GK module started");

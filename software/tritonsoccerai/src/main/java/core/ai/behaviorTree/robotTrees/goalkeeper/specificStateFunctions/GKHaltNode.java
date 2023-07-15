@@ -14,8 +14,8 @@ public class GKHaltNode extends TaskNode {
     private final MoveToPositionNode moveToPositionNode;
 
     public GKHaltNode() {
-        super("GK Halt Node: " + GameInfo.getKeeper(), GameInfo.getKeeper());
-        moveToPositionNode = new MoveToPositionNode(GameInfo.getKeeper());
+        super("GK Halt Node: " + 0, 0);
+        moveToPositionNode = new MoveToPositionNode(0);
     }
 
     @Override

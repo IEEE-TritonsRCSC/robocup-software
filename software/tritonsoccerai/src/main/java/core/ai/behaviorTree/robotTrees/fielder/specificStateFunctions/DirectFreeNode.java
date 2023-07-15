@@ -16,17 +16,15 @@ import static main.java.core.util.ProtobufUtils.getPos;
  */
 public class DirectFreeNode extends TaskNode {
 
-    private final Robot ally;
     private final ClosestToBallNode closestToBallNode;
     private final MoveToPositionNode moveToPositionNode;
     private final PositionSelfNode positionSelfNode;
 
-    public DirectFreeNode(Robot ally, ClosestToBallNode closestToBallNode) {
-        super("Ball Placement Node: " + ally, ally);
-        this.ally = ally;
+    public DirectFreeNode(int allyID, ClosestToBallNode closestToBallNode) {
+        super("Ball Placement Node: " + allyID, allyID);
         this.closestToBallNode = closestToBallNode;
-        this.moveToPositionNode = new MoveToPositionNode(ally);
-        this.positionSelfNode = new PositionSelfNode(ally);
+        this.moveToPositionNode = new MoveToPositionNode(allyID);
+        this.positionSelfNode = new PositionSelfNode(allyID);
     }
 
     @Override
@@ -35,7 +33,7 @@ public class DirectFreeNode extends TaskNode {
         if (GameInfo.getPossessBall()) {
             if (NodeState.isSuccess(this.closestToBallNode.execute())) {
                 Vector2d desiredLocation = new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - 2);
-                while (getPos(this.ally).dist(desiredLocation) > DISTANCE_CONSTANT) {
+                while (getPos(GameInfo.getAlly(allyID)).dist(desiredLocation) > DISTANCE_CONSTANT) {
                     this.moveToPositionNode.execute(desiredLocation);
                 }
             }

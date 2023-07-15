@@ -12,9 +12,9 @@ public class ChaseBallNode extends TaskNode {
 
     private final MoveToObjectNode moveToObjectNode;
 
-    public ChaseBallNode(Robot ally) {
-        super("Chase Ball Node: " + ally, ally);
-        this.moveToObjectNode = new MoveToObjectNode(ally);
+    public ChaseBallNode(int allyID) {
+        super("Chase Ball Node: " + allyID, allyID);
+        this.moveToObjectNode = new MoveToObjectNode(allyID);
     }
 
     /**

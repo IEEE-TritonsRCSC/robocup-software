@@ -12,9 +12,9 @@ public class FielderTreeModule extends Module {
 
     private final FielderTree tree;
 
-    public FielderTreeModule(ScheduledThreadPoolExecutor executor, Robot fielder) {
+    public FielderTreeModule(ScheduledThreadPoolExecutor executor, int fielderID) {
         super(executor);
-        this.tree = new FielderTree(fielder, executor);
+        this.tree = new FielderTree(fielderID, executor);
     }
 
     @Override

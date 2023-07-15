@@ -12,12 +12,12 @@ import static proto.triton.FilteredObject.Robot;
  */
 public class StopNode extends SequenceNode {
 
-    private final Robot ally;
+    private final int allyID;
     private final HaltNode haltNode;
 
-    public StopNode(Robot ally, HaltNode haltNode) {
-        super("Stop Node: " + ally);
-        this.ally = ally;
+    public StopNode(int allyID, HaltNode haltNode) {
+        super("Stop Node: " + allyID);
+        this.allyID = allyID;
         this.haltNode = haltNode;
     }
 

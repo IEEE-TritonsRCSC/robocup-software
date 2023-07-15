@@ -10,7 +10,7 @@ public class GKStopNode extends TaskNode {
     private final GKHaltNode haltNode;
 
     public GKStopNode(GKHaltNode haltNode) {
-        super("GK Stop Node: " + GameInfo.getKeeper(), GameInfo.getKeeper());
+        super("GK Stop Node: " + 0, 0);
         this.haltNode = haltNode;
     }
 

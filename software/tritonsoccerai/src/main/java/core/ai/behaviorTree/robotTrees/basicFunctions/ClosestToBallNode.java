@@ -10,16 +10,16 @@ import static proto.triton.FilteredObject.Robot;
 public class ClosestToBallNode extends ConditionalNode {
 
     //private final Ally ally;
-    private final Robot ally;
+    private final int allyID;
 
-    public ClosestToBallNode(Robot ally) {
-        super("Closest To Ball Node: " + ally);
-        this.ally = ally;
+    public ClosestToBallNode(int allyID) {
+        super("Closest To Ball Node: " + allyID);
+        this.allyID = allyID;
     }
 
     @Override
     public boolean conditionSatisfied() {
-        return ally == GameInfo.getAllyClosestToBall();
+        return allyID == GameInfo.getAllyClosestToBall().getId();
     }
 
 }

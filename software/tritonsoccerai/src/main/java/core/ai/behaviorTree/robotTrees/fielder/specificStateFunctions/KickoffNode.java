@@ -17,17 +17,15 @@ import static main.java.core.util.ProtobufUtils.getPos;
  */
 public class KickoffNode extends TaskNode {
 
-    private final Robot ally;
     private final ClosestToBallNode closestToBallNode;
     private final MoveToPositionNode moveToPositionNode;
     private static final Vector2d defaultPosition = new Vector2d(
         0, GameInfo.getField().getFieldLength() / 4);
 
-    public KickoffNode(Robot ally, ClosestToBallNode closestToBallNode) {
-        super("Prepare Kickoff Node: " + ally, ally);
-        this.ally = ally;
+    public KickoffNode(int allyID, ClosestToBallNode closestToBallNode) {
+        super("Prepare Kickoff Node: " + allyID, allyID);
         this.closestToBallNode = closestToBallNode;
-        this.moveToPositionNode = new MoveToPositionNode(ally);
+        this.moveToPositionNode = new MoveToPositionNode(allyID);
     }
 
     @Override
@@ -35,7 +33,7 @@ public class KickoffNode extends TaskNode {
         float DISTANCE_CONSTANT = 1;
         if (GameInfo.getPossessBall() && NodeState.isSuccess(this.closestToBallNode.execute())) {
             Vector2d desiredLocation = new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - 2);
-            while (getPos(this.ally).dist(desiredLocation) > DISTANCE_CONSTANT) {
+            while (getPos(GameInfo.getAlly(allyID)).dist(desiredLocation) > DISTANCE_CONSTANT) {
                 this.moveToPositionNode.execute(desiredLocation);
             }
         }

@@ -12,9 +12,9 @@ public class GKBallPlacementNode extends TaskNode {
     private final BlockBallNode blockBallNode;
 
     public GKBallPlacementNode() {
-        super("GK Ball Placement: " + GameInfo.getKeeper(), GameInfo.getKeeper());
+        super("GK Ball Placement: " + 0, 0);
         this.positionSelfNode = new GKPositionSelfNode(null);
-        this.blockBallNode = new BlockBallNode(GameInfo.getKeeper());
+        this.blockBallNode = new BlockBallNode(0);
     }
 
     @Override

@@ -18,13 +18,14 @@ import static proto.simulation.SslSimulationRobotControl.RobotMoveCommand;
 import static proto.simulation.SslSimulationRobotControl.MoveLocalVelocity;
 
 import static main.java.core.util.ProtobufUtils.getPos;
+import static main.java.core.util.ObjectHelper.generateLocalMoveCommand;
 
 public class MoveToPositionNode extends TaskNode {
 
     PathfindGridGroup pathfindGridGroup;
     
-    public MoveToPositionNode(Robot ally) {
-        super("Move To Position Node: " + ally, ally);
+    public MoveToPositionNode(int allyID) {
+        super("Move To Position Node: " + allyID, allyID);
         this.pathfindGridGroup = new PathfindGridGroup(ProgramConstants.gameConfig.numBots, GameInfo.getField());
     }
 
@@ -33,33 +34,22 @@ public class MoveToPositionNode extends TaskNode {
         return null;
     }
 
-    // TODO: Fix this method
-    // Use global velocities to calculate local velocities
-    // Either pass the command to TritonBotMessageBuilder or
-    // SimulatorRobotCommandInterface based on if in competition
-    // vs. simulator setup respectively
     public NodeState execute(Vector2d endLoc) {
-        Vector2d allyPos = getPos(super.ally);
+        Vector2d allyPos = getPos(GameInfo.getAlly(allyID));
+        System.out.println(allyPos);
+        System.out.println(getPos(GameInfo.getAllies().get(0)));
 
         // Pathfinding to endLoc
-        LinkedList<Node2d> route = pathfindGridGroup.findRoute(ally.getId(), allyPos, endLoc);
-        Vector2d next = pathfindGridGroup.findNext(ally.getId(), route);
+        LinkedList<Node2d> route = pathfindGridGroup.findRoute(allyID, allyPos, endLoc);
+        Vector2d next = pathfindGridGroup.findNext(allyID, route);
 
         // Build robot command to be published
-        RobotCommand.Builder robotCommand = RobotCommand.newBuilder();
-        robotCommand.setId(ally.getId());
-        RobotMoveCommand.Builder moveCommand = RobotMoveCommand.newBuilder();
-        MoveLocalVelocity.Builder localVelocity = MoveLocalVelocity.newBuilder();
         Vector2d vel = endLoc.sub(allyPos).scale((float) 0.1);
-        localVelocity.setForward(vel.x);
-        localVelocity.setLeft(vel.y);
-        //globalVelocity.setAngular(angular);
-        localVelocity.setAngular(3.0f);
-        moveCommand.setLocalVelocity(localVelocity);
-        robotCommand.setMoveCommand(moveCommand);
+        RobotCommand localCommand = generateLocalMoveCommand(vel.x, vel.y, 3.0f, 
+                                                            GameInfo.getAlly(allyID).getOrientation(), allyID);
 
         // Publish command to robot
-        ProgramConstants.aiModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
+        ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, localCommand);
 
         return NodeState.SUCCESS;
     }

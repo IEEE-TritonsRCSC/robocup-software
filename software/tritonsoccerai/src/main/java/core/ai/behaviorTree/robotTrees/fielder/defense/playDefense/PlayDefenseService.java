@@ -13,11 +13,11 @@ public class PlayDefenseService extends ServiceNode {
     private final ChaseBallNode chaseBallNode;
     private final CutPassingLaneNode cutPassingLaneNode;
 
-    public PlayDefenseService(Robot ally) {
-        super("Play Defense Service: " + ally);
-        this.closestToBallNode = new ClosestToBallNode(ally);
-        this.chaseBallNode = new ChaseBallNode(ally);
-        this.cutPassingLaneNode = new CutPassingLaneNode(ally);
+    public PlayDefenseService(int allyID) {
+        super("Play Defense Service: " + allyID);
+        this.closestToBallNode = new ClosestToBallNode(allyID);
+        this.chaseBallNode = new ChaseBallNode(allyID);
+        this.cutPassingLaneNode = new CutPassingLaneNode(allyID);
     }
 
     /**

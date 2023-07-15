@@ -12,10 +12,10 @@ import java.util.List;
 
 public class HaveOpenShotNode extends ConditionalNode {
 
-    private final Robot ally;
+    private final int allyID;
 
-    public HaveOpenShotNode(Robot ally) {
-        this.ally = ally;
+    public HaveOpenShotNode(int allyID) {
+        this.allyID = allyID;
     }
 
     /**
@@ -35,15 +35,15 @@ public class HaveOpenShotNode extends ConditionalNode {
 
         // Check if there is open shot
         ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoes());
-        ArrayList<Robot> allysList = new ArrayList<>(GameInfo.getFielders());
+        ArrayList<Robot> alliesList = new ArrayList<>(GameInfo.getFielders());
         List<Vector2d> obstaclePositions = new ArrayList<>();
 
         //remove the ally closest to the ball
-        allysList.remove(GameInfo.getAllyClosestToBall());
+        alliesList.remove(GameInfo.getAllyClosestToBall());
 
         //add the other ally positions and foe positions to the obstaclesPositions list
-        for(int i=0;i<allysList.size();i++) {
-			obstaclePositions.add(getPos(allysList.get(i)));
+        for(int i=0;i<alliesList.size();i++) {
+			obstaclePositions.add(getPos(alliesList.get(i)));
             obstaclePositions.add(getPos(foesList.get(i)));
 		}
 

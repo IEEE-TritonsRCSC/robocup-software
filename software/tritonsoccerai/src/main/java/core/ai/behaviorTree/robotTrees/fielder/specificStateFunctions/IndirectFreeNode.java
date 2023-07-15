@@ -20,19 +20,17 @@ import java.util.ArrayList;
  */
 public class IndirectFreeNode extends TaskNode {
 
-    private final Robot ally;
     private final ClosestToBallNode closestToBallNode;
     private final MoveToPositionNode moveToPositionNode;
     private final MoveToObjectNode moveToObjectNode;
     private final PositionSelfNode positionSelfNode;
 
-    public IndirectFreeNode(Robot ally, ClosestToBallNode closestToBallNode) {
-        super("Prepare Indirect Free Node: " + ally, ally);
-        this.ally = ally;
+    public IndirectFreeNode(int allyID, ClosestToBallNode closestToBallNode) {
+        super("Prepare Indirect Free Node: " + allyID, allyID);
         this.closestToBallNode = closestToBallNode;
-        this.moveToPositionNode = new MoveToPositionNode(ally);
-        this.moveToObjectNode = new MoveToObjectNode(ally);
-        this.positionSelfNode = new PositionSelfNode(ally);
+        this.moveToPositionNode = new MoveToPositionNode(allyID);
+        this.moveToObjectNode = new MoveToObjectNode(allyID);
+        this.positionSelfNode = new PositionSelfNode(allyID);
     }
 
     @Override
@@ -42,7 +40,7 @@ public class IndirectFreeNode extends TaskNode {
             if (NodeState.isSuccess(this.closestToBallNode.execute())) {
                 Vector2d desiredLocation = new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - 2);
                 DISTANCE_CONSTANT = 1;
-                while (getPos(this.ally).dist(desiredLocation) > DISTANCE_CONSTANT) {
+                while (getPos(GameInfo.getAlly(allyID)).dist(desiredLocation) > DISTANCE_CONSTANT) {
                     this.moveToPositionNode.execute(desiredLocation);
                 }
             }
@@ -62,7 +60,7 @@ public class IndirectFreeNode extends TaskNode {
                         opponents.remove(foe);
                     }
                 }
-                this.moveToObjectNode.execute(ObjectHelper.identifyFoeToGuard(this.ally, opponents));
+                this.moveToObjectNode.execute(ObjectHelper.identifyFoeToGuard(GameInfo.getAlly(allyID), opponents));
             }
         }
         return NodeState.SUCCESS;

@@ -26,9 +26,9 @@ public class ShootBallNode extends SequenceNode {
 
     private final KickBallNode kickBall;
 
-    public ShootBallNode(Robot ally) {
-        super("Shoot Ball Node: " + ally);
-        this.kickBall = new KickBallNode(ally);
+    public ShootBallNode(int allyID) {
+        super("Shoot Ball Node: " + allyID);
+        this.kickBall = new KickBallNode(allyID);
     }
 
     /**
@@ -49,14 +49,14 @@ public class ShootBallNode extends SequenceNode {
         SSL_GeometryFieldSize field = GameInfo.getField();
 
         ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoes());
-        ArrayList<Robot> allysList = new ArrayList<>(GameInfo.getFielders());
+        ArrayList<Robot> alliesList = new ArrayList<>(GameInfo.getFielders());
         List<Robot> obstacles = new ArrayList<>();
 
         //remove the ally closest to ball
-        allysList.remove(GameInfo.getAllyClosestToBall());
+        alliesList.remove(GameInfo.getAllyClosestToBall());
 
         //add the other allys and foes to the obstacles list
-        obstacles.addAll(allysList);
+        obstacles.addAll(alliesList);
         obstacles.addAll(foesList);
 
         //get the goal parameters

@@ -16,17 +16,17 @@ import static proto.triton.FilteredObject.Robot;
  */
 public class NormalStartNode extends CompositeNode {
 
-    private final Robot ally;
+    private final int allyID;
     private final ClosestToBallNode closestToBallNode;
     private final CoordinatedPassNode coordinatedPassNode;
     private final ShootBallNode shootBallNode;
 
-    public NormalStartNode(Robot ally, ClosestToBallNode closestToBallNode) {
-        super("Normal Start Node: " + ally);
-        this.ally = ally;
+    public NormalStartNode(int allyID, ClosestToBallNode closestToBallNode) {
+        super("Normal Start Node: " + allyID);
+        this.allyID = allyID;
         this.closestToBallNode = closestToBallNode;
-        this.coordinatedPassNode = new CoordinatedPassNode(ally);
-        this.shootBallNode = new ShootBallNode(ally);
+        this.coordinatedPassNode = new CoordinatedPassNode(allyID);
+        this.shootBallNode = new ShootBallNode(allyID);
     }
 
     @Override

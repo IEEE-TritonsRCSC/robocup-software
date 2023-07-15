@@ -20,9 +20,9 @@ public class PositionSelfNode extends TaskNode {
 
     private final MoveToPositionNode moveToPositionNode;
 
-    public PositionSelfNode(Robot ally) {
-        super("Position Self Node: " + ally, ally);
-        this.moveToPositionNode = new MoveToPositionNode(ally);
+    public PositionSelfNode(int allyID) {
+        super("Position Self Node: " + allyID, allyID);
+        this.moveToPositionNode = new MoveToPositionNode(allyID);
     }
 
     /**
@@ -43,15 +43,15 @@ public class PositionSelfNode extends TaskNode {
         // This is just a temporary implementation
 
         ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoes());
-        ArrayList<Robot> allysList = new ArrayList<>(GameInfo.getFielders());
+        ArrayList<Robot> alliesList = new ArrayList<>(GameInfo.getFielders());
         List<Vector2d> obstaclePositions = new ArrayList<>();
 
         // remove self
-        allysList.remove(this.ally);
+        alliesList.remove(allyID);
 
         // add the other ally positions and foe positions to the obstaclesPositions list
-        for(int i=0;i<allysList.size();i++) {
-			obstaclePositions.add(getPos(allysList.get(i)));
+        for(int i=0;i<alliesList.size();i++) {
+			obstaclePositions.add(getPos(alliesList.get(i)));
             obstaclePositions.add(getPos(foesList.get(i)));
 		}
 
@@ -65,7 +65,7 @@ public class PositionSelfNode extends TaskNode {
         float minDistance = Float.MAX_VALUE;
 
         for (Vector2d obstacle : obstaclePositions) {
-            float currentdist = getPos(this.ally).dist(obstacle);
+            float currentdist = getPos(GameInfo.getAlly(allyID)).dist(obstacle);
 
             if (currentdist < minDistance) {
                 minDistance = currentdist;
@@ -74,8 +74,8 @@ public class PositionSelfNode extends TaskNode {
         }
 
          // end position
-         float newX = nearestObstacle.x + (this.ally.getX() - nearestObstacle.x) * distance / minDistance;
-         float newY = nearestObstacle.y + (this.ally.getY() - nearestObstacle.y) * distance / minDistance;
+         float newX = nearestObstacle.x + (GameInfo.getAlly(allyID).getX() - nearestObstacle.x) * distance / minDistance;
+         float newY = nearestObstacle.y + (GameInfo.getAlly(allyID).getY() - nearestObstacle.y) * distance / minDistance;
  
          Vector2d endLoc = new Vector2d(newX, newY);
 

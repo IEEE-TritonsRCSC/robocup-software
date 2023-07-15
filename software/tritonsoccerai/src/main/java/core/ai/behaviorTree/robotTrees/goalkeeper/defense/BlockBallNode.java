@@ -19,11 +19,11 @@ public class BlockBallNode extends TaskNode {
     private final int radius;
     private final MoveToPositionNode moveToPositionNode;
 
-    public BlockBallNode(Robot ally) {
-        super(ally);
+    public BlockBallNode(int allyID) {
+        super(allyID);
         this.centerArc = new Vector2d(0, -1 * (GameInfo.getField().getFieldLength() / 2)); // arbitrary center arc
         this.radius = GameInfo.getField().getGoalWidth() / 2;
-        this.moveToPositionNode = new MoveToPositionNode(ally);
+        this.moveToPositionNode = new MoveToPositionNode(allyID);
     }
 
     /**

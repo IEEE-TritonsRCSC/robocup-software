@@ -12,9 +12,9 @@ public class GKNormalStartNode extends TaskNode {
     private final BlockBallNode blockBallNode;
     
     public GKNormalStartNode() {
-        super("GK Normal Start Node: " + GameInfo.getKeeper(), GameInfo.getKeeper());
-        this.positionSelfNode = new PositionSelfNode(GameInfo.getKeeper());
-        this.blockBallNode = new BlockBallNode(GameInfo.getKeeper());
+        super("GK Normal Start Node: " + 0, 0);
+        this.positionSelfNode = new PositionSelfNode(0);
+        this.blockBallNode = new BlockBallNode(0);
     }
 
     public NodeState execute() {

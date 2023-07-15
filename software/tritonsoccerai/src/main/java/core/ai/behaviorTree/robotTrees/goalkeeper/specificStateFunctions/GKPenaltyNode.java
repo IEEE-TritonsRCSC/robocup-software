@@ -15,9 +15,9 @@ public class GKPenaltyNode extends TaskNode {
     private final MoveToPositionNode moveToPositionNode;
 
     public GKPenaltyNode() {
-        super("Prepare Penalty Node : " + GameInfo.getKeeper(), GameInfo.getKeeper());
-        this.blockBallNode = new BlockBallNode(GameInfo.getKeeper());
-        this.moveToPositionNode = new MoveToPositionNode(GameInfo.getKeeper());
+        super("Prepare Penalty Node : " + 0, 0);
+        this.blockBallNode = new BlockBallNode(0);
+        this.moveToPositionNode = new MoveToPositionNode(0);
     }
 
     @Override

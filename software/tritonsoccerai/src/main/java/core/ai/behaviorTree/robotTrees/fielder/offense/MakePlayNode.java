@@ -23,10 +23,10 @@ public class MakePlayNode extends CompositeNode {
     private final DribbleBallNode dribble;
     private final CoordinatedPassNode coordinatedPass;
 
-    public MakePlayNode(Robot ally) {
-        super("Make Play");
-        this.dribble = new DribbleBallNode(ally);
-        this.coordinatedPass = new CoordinatedPassNode(ally);
+    public MakePlayNode(int allyID) {
+        super("Make Play Node " + allyID);
+        this.dribble = new DribbleBallNode(allyID);
+        this.coordinatedPass = new CoordinatedPassNode(allyID);
     }
     
     @Override
@@ -64,15 +64,15 @@ public class MakePlayNode extends CompositeNode {
         // Check if there is a space towards the objective point
 
         ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoes());
-        ArrayList<Robot> allysList = new ArrayList<>(GameInfo.getFielders());
+        ArrayList<Robot> alliesList = new ArrayList<>(GameInfo.getFielders());
         List<Vector2d> obstaclePositions = new ArrayList<>();
 
         //remove the ally closest to the ball
-        allysList.remove(GameInfo.getAllyClosestToBall());
+        alliesList.remove(GameInfo.getAllyClosestToBall());
 
         //add the other ally positions and foe positions to the obstaclesPositions list
-        for(int i=0;i<allysList.size();i++) {
-			obstaclePositions.add(getPos(allysList.get(i)));
+        for(int i=0;i<alliesList.size();i++) {
+			obstaclePositions.add(getPos(alliesList.get(i)));
             obstaclePositions.add(getPos(foesList.get(i)));
 		}
     

@@ -10,8 +10,8 @@ import static proto.triton.FilteredObject.Robot;
  */
 public class CatchBallNode extends TaskNode {
 
-    public CatchBallNode(Robot ally) {
-        super("Catch Ball Node: " + ally, ally);
+    public CatchBallNode(int allyID) {
+        super("Catch Ball Node: " + allyID, allyID);
     }
 
     @Override

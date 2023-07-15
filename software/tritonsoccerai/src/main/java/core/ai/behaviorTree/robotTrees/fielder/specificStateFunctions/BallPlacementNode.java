@@ -18,10 +18,10 @@ public class BallPlacementNode extends TaskNode {
     private final ClosestToBallNode closestToBallNode;
     private final DribbleBallNode dribbleBallNode;
 
-    public BallPlacementNode(Robot ally, ClosestToBallNode closestToBallNode) {
-        super("Ball Placement Node: " + ally, ally);
+    public BallPlacementNode(int allyID, ClosestToBallNode closestToBallNode) {
+        super("Ball Placement Node: " + allyID, allyID);
         this.closestToBallNode = closestToBallNode;
-        this.dribbleBallNode = new DribbleBallNode(ally);
+        this.dribbleBallNode = new DribbleBallNode(allyID);
     }
 
     /**

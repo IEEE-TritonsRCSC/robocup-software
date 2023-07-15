@@ -45,14 +45,14 @@ public class FielderRootService extends ServiceNode {
     private Future<?> branchFuture;
     private BTNode currentlyExecutingNode;
 
-    private Robot ally;
+    private int allyID;
 
-    public FielderRootService(Robot ally, ScheduledThreadPoolExecutor executor) {
-        super("Fielder Root Service: " + ally);
+    public FielderRootService(int allyID, ScheduledThreadPoolExecutor executor) {
+        super("Fielder Root Service: " + allyID);
 
         this.executor = executor;
-        this.ally = ally;
-        this.closestToBallNode = new ClosestToBallNode(ally);
+        this.allyID = allyID;
+        this.closestToBallNode = new ClosestToBallNode(allyID);
 
         this.haveBall = new ConditionalNode() {
             @Override
@@ -60,17 +60,17 @@ public class FielderRootService extends ServiceNode {
                 return GameInfo.getPossessBall();
             }
         };
-        this.offense = new OffenseRootNode(ally, executor);
-        this.defense = new PlayDefenseNode(ally, executor);
+        this.offense = new OffenseRootNode(allyID, executor);
+        this.defense = new PlayDefenseNode(allyID, executor);
 
-        this.haltNode = new HaltNode(ally);
-        this.stopNode = new StopNode(ally, this.haltNode);
-        this.prepareDirectFreeNode = new DirectFreeNode(ally, this.closestToBallNode);
-        this.prepareIndirectFreeNode = new IndirectFreeNode(ally, this.closestToBallNode);
-        this.prepareKickoffNode = new KickoffNode(ally, this.closestToBallNode);
-        this.preparePenaltyNode = new PenaltyNode(ally, this.closestToBallNode);
-        this.normalStartNode = new NormalStartNode(ally, this.closestToBallNode);
-        this.ballPlacementNode = new BallPlacementNode(ally, this.closestToBallNode);
+        this.haltNode = new HaltNode(allyID);
+        this.stopNode = new StopNode(allyID, this.haltNode);
+        this.prepareDirectFreeNode = new DirectFreeNode(allyID, this.closestToBallNode);
+        this.prepareIndirectFreeNode = new IndirectFreeNode(allyID, this.closestToBallNode);
+        this.prepareKickoffNode = new KickoffNode(allyID, this.closestToBallNode);
+        this.preparePenaltyNode = new PenaltyNode(allyID, this.closestToBallNode);
+        this.normalStartNode = new NormalStartNode(allyID, this.closestToBallNode);
+        this.ballPlacementNode = new BallPlacementNode(allyID, this.closestToBallNode);
 
         this.stateCurrentlyRunning = GameState.OPEN_PLAY;
         this.onOffense = false;
@@ -106,7 +106,7 @@ public class FielderRootService extends ServiceNode {
         // start new thread with executeCorrectBranch()
         executeCorrectBranch();
         this.stateCurrentlyRunning = GameInfo.getCurrState();
-        System.out.println("Ally " + this.ally.getId() + " switched branches");
+        System.out.println("Ally " + allyID + " switched branches");
     }
 
     /**

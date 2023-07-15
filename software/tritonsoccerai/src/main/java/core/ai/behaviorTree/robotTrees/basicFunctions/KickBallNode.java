@@ -7,6 +7,7 @@ import main.java.core.util.Vector2d;
 import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
 
 import main.java.core.constants.ProgramConstants;
+import main.java.core.ai.GameInfo;
 
 import proto.simulation.SslSimulationRobotControl;
 
@@ -23,8 +24,8 @@ import static proto.triton.FilteredObject.Robot;
  */
 public class KickBallNode extends TaskNode {
 
-    public KickBallNode(Robot ally) {
-        super("Kick Ball Node: " + ally, ally);
+    public KickBallNode(int allyID) {
+        super("Kick Ball Node: " + allyID, allyID);
     }
 
     @Override
@@ -37,10 +38,10 @@ public class KickBallNode extends TaskNode {
      */
     public NodeState execute(Vector2d direction, double velocity, boolean chip) {
         //if robot is facing the right direction, kick ball quickly
-        if (ObjectHelper.hasOrientation(ally, direction, aiConfig.kickToPointAngleTolerance)) {
+        if (ObjectHelper.hasOrientation(GameInfo.getAlly(allyID), direction, aiConfig.kickToPointAngleTolerance)) {
             SslSimulationRobotControl.RobotCommand.Builder robotCommand = SslSimulationRobotControl.RobotCommand.newBuilder();
 
-            robotCommand.setId(ally.getId());
+            robotCommand.setId(allyID);
 
             SslSimulationRobotControl.RobotMoveCommand.Builder moveCommand = SslSimulationRobotControl.RobotMoveCommand.newBuilder();
             SslSimulationRobotControl.MoveLocalVelocity.Builder localCommand = SslSimulationRobotControl.MoveLocalVelocity.newBuilder();
@@ -53,14 +54,14 @@ public class KickBallNode extends TaskNode {
             robotCommand.setKickAngle(0);
             robotCommand.setDribblerSpeed(0);
 
-            ProgramConstants.aiModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
+            ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
 
         }
         // TODO if robot is not facing the right direction, rotate 
         else{
             SslSimulationRobotControl.RobotCommand.Builder robotCommand = SslSimulationRobotControl.RobotCommand.newBuilder();
 
-            robotCommand.setId(ally.getId());
+            robotCommand.setId(allyID);
 
             SslSimulationRobotControl.RobotMoveCommand.Builder moveCommand = SslSimulationRobotControl.RobotMoveCommand.newBuilder();
             SslSimulationRobotControl.MoveLocalVelocity.Builder localCommand = SslSimulationRobotControl.MoveLocalVelocity.newBuilder();
@@ -73,7 +74,7 @@ public class KickBallNode extends TaskNode {
             robotCommand.setKickAngle(0);
             robotCommand.setDribblerSpeed(0);
 
-            ProgramConstants.aiModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
+            ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
 
         }
 

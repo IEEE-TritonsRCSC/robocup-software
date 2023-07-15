@@ -15,9 +15,9 @@ public class MoveToObjectNode extends TaskNode {
 
     private final MoveToPositionNode moveToPositionNode;
 
-    public MoveToObjectNode(Robot ally) {
-        super("Move To Object Node: " + ally, ally);
-        this.moveToPositionNode = new MoveToPositionNode(ally);
+    public MoveToObjectNode(int allyID) {
+        super("Move To Object Node: " + allyID, allyID);
+        this.moveToPositionNode = new MoveToPositionNode(allyID);
     }
 
     @Override

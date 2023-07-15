@@ -20,8 +20,8 @@ public class GKOffenseRootService extends ServiceNode {
 
     public GKOffenseRootService() {
         super("GK Offense Root Service");
-        this.havePossession = new RobotHasPossessionNode(GameInfo.getKeeper());
-        this.passBall = new CoordinatedPassNode(GameInfo.getKeeper());
+        this.havePossession = new RobotHasPossessionNode(0);
+        this.passBall = new CoordinatedPassNode(0);
         this.gkPositionSelfNode = new GKPositionSelfNode(null);
     }
 

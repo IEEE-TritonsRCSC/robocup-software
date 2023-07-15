@@ -22,15 +22,13 @@ import static main.java.core.util.ProtobufUtils.getPos;
  */
 public class PenaltyNode extends TaskNode {
 
-    private final Robot ally;
     private final ClosestToBallNode closestToBallNode;
     private final MoveToPositionNode moveToPositionNode;
 
-    public PenaltyNode(Robot ally, ClosestToBallNode closestToBallNode) {
-        super("Prepare Penalty Node: " + ally, ally);
-        this.ally = ally;
+    public PenaltyNode(int allyID, ClosestToBallNode closestToBallNode) {
+        super("Prepare Penalty Node: " + allyID, allyID);
         this.closestToBallNode = closestToBallNode;
-        this.moveToPositionNode = new MoveToPositionNode(ally);
+        this.moveToPositionNode = new MoveToPositionNode(allyID);
     }
 
     @Override
@@ -45,12 +43,12 @@ public class PenaltyNode extends TaskNode {
         }
         if (GameInfo.getPossessBall() && NodeState.isSuccess(this.closestToBallNode.execute())) {
             Vector2d desiredLocation = new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - 2);
-            while (getPos(this.ally).dist(desiredLocation) > DISTANCE_CONSTANT) {
+            while (getPos(GameInfo.getAlly(allyID)).dist(desiredLocation) > DISTANCE_CONSTANT) {
                 this.moveToPositionNode.execute(desiredLocation);
             }
         }
         else {
-            while ((this.ally.getY() - lineYValue) > DISTANCE_CONSTANT) {
+            while ((GameInfo.getAlly(allyID).getY() - lineYValue) > DISTANCE_CONSTANT) {
                 this.moveToPositionNode.execute(findOptimalPositionSpot(lineYValue));
             }
         }

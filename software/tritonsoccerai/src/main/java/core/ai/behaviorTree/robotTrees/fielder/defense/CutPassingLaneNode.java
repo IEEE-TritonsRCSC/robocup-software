@@ -16,10 +16,10 @@ public class CutPassingLaneNode extends TaskNode {
     private final MoveToObjectNode moveToObjectNode;
     private final ChaseBallNode chaseBallNode;
 
-    public CutPassingLaneNode(Robot ally) {
-        super("Cut Passing Lane Node: " + ally, ally);
-        this.moveToObjectNode = new MoveToObjectNode(ally);
-        this.chaseBallNode = new ChaseBallNode(ally);
+    public CutPassingLaneNode(int allyID) {
+        super("Cut Passing Lane Node: " + allyID, allyID);
+        this.moveToObjectNode = new MoveToObjectNode(allyID);
+        this.chaseBallNode = new ChaseBallNode(allyID);
     }
 
     /**
@@ -28,7 +28,7 @@ public class CutPassingLaneNode extends TaskNode {
     @Override
     public NodeState execute() {
         // System.out.println("Running cut passing lane node");
-        Robot foeToGuard = ObjectHelper.identifyFoeToGuard(ally, GameInfo.getFoeFielders());
+        Robot foeToGuard = ObjectHelper.identifyFoeToGuard(GameInfo.getAlly(allyID), GameInfo.getFoeFielders());
         if (foeToGuard != null) {
             moveTowardFoe(foeToGuard);
         }

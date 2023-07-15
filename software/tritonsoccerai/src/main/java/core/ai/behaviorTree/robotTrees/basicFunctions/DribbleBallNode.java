@@ -17,14 +17,12 @@ import static proto.triton.FilteredObject.Robot;
  */
 public class DribbleBallNode extends TaskNode {
 
-    private final Robot ally;
     PathfindGridGroup pathfindGridGroup;
     private final MoveToPositionNode moveToPositionNode;
 
-    public DribbleBallNode(Robot ally) {
-        super("Dribble Ball Node: " + ally, ally);
-        this.ally = ally;
-        this.moveToPositionNode = new MoveToPositionNode(ally);
+    public DribbleBallNode(int allyID) {
+        super("Dribble Ball Node: " + allyID, allyID);
+        this.moveToPositionNode = new MoveToPositionNode(allyID);
     }
 
      /**
@@ -36,11 +34,11 @@ public class DribbleBallNode extends TaskNode {
         // Set dribbler speed and publish the command
         SslSimulationRobotControl.RobotCommand.Builder robotCommand = SslSimulationRobotControl.RobotCommand.newBuilder();
 
-        robotCommand.setId(ally.getId());
+        robotCommand.setId(allyID);
         robotCommand.setDribblerSpeed(1);
         robotCommand.setKickSpeed(0);
 
-        ProgramConstants.aiModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
+        ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
 
         return NodeState.SUCCESS;
     }
@@ -49,11 +47,11 @@ public class DribbleBallNode extends TaskNode {
         // Set dribbler speed and publish the command
         SslSimulationRobotControl.RobotCommand.Builder robotCommand = SslSimulationRobotControl.RobotCommand.newBuilder();
 
-        robotCommand.setId(ally.getId());
+        robotCommand.setId(allyID);
         robotCommand.setDribblerSpeed(1);
         robotCommand.setKickSpeed(0);
 
-        ProgramConstants.aiModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
+        ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
 
         this.moveToPositionNode.execute(location);
         

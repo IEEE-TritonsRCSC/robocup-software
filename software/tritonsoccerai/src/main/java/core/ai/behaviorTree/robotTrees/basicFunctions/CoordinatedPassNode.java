@@ -20,13 +20,13 @@ import static proto.triton.FilteredObject.Robot;
  */
 public class CoordinatedPassNode extends SequenceNode {
 
-    private final Robot passer;
+    private final int passerID;
     private final KickBallNode kickBall;
 
-    public CoordinatedPassNode(Robot passer) {
-        super("Coordinated Pass Node: " + passer);
-        this.passer = passer;
-        this.kickBall = new KickBallNode(passer);
+    public CoordinatedPassNode(int passerID) {
+        super("Coordinated Pass Node: " + passerID);
+        this.passerID = passerID;
+        this.kickBall = new KickBallNode(passerID);
     }
 
     /**
@@ -53,16 +53,16 @@ public class CoordinatedPassNode extends SequenceNode {
     private Vector2d findPassShot() {
         // Might need to edit later to work with Proto Robots
         ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoeFielders());
-        ArrayList<Robot> allysList = new ArrayList<>(GameInfo.getFielders());
+        ArrayList<Robot> alliesList = new ArrayList<>(GameInfo.getFielders());
         List<Robot> obstacles = new ArrayList<>();
 
         //remove the passer
-        allysList.remove(passer);
+        alliesList.remove(GameInfo.getAlly(passerID));
 
         //add allys to the target list
         List<Vector2d> kickTos = new ArrayList<>();
-        for(int i=0;i<allysList.size();i++) {
-			kickTos.add(getPos(allysList.get(i)));
+        for(int i=0;i<alliesList.size();i++) {
+			kickTos.add(getPos(alliesList.get(i)));
 		}
 
         //add foes to the obstacles list
@@ -75,7 +75,7 @@ public class CoordinatedPassNode extends SequenceNode {
 
         // Choose the best pass receiver from allysList
         for (Vector2d kickTo : kickTos) {
-            float distToObstacles = distToPath(getPos(passer), kickTo, obstacles);
+            float distToObstacles = distToPath(getPos(GameInfo.getAlly(passerID)), kickTo, obstacles);
 
             // TODO Maybe have to change how to calculate the score
             float score = aiConfig.passDistToObstaclesScoreFactor * distToObstacles;

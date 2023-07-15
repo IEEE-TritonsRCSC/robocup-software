@@ -72,6 +72,14 @@ public class GameInfo {
         return getFoes().get(0);
     }
 
+    public static Robot getAlly(int id) {
+        return getAllies().get(id);
+    }
+
+    public static Robot getFoe(int id) {
+        return getFoes().get(id);
+    }
+
     public static Boolean getPossessBall() {
         return wrapper.getBall().hasAllyCapture();
     }

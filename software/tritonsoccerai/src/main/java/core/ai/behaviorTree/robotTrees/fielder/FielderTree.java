@@ -12,12 +12,12 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
  */
 public class FielderTree extends BehaviorTree {
 
-    private final Robot fielder;
+    private final int fielderID;
 
-    public FielderTree(Robot fielder, ScheduledThreadPoolExecutor executor) {
+    public FielderTree(int fielderID, ScheduledThreadPoolExecutor executor) {
         super();
-        this.root = new FielderRootNode(fielder, executor);
-        this.fielder = fielder;
+        this.root = new FielderRootNode(fielderID, executor);
+        this.fielderID = fielderID;
     }
 
 }

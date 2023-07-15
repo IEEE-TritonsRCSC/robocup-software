@@ -20,9 +20,9 @@ public class OffenseRootNode extends CompositeNode {
     private final OffenseRootService offenseRootService;
     private Future offenseRootFuture;
 
-    public OffenseRootNode(Robot ally, ScheduledThreadPoolExecutor executor) {
-        super("Offense Root");
-        this.offenseRootService = new OffenseRootService(ally);
+    public OffenseRootNode(int allyID, ScheduledThreadPoolExecutor executor) {
+        super("Offense Root Node: " + allyID);
+        this.offenseRootService = new OffenseRootService(allyID);
         this.executor = executor;
     }
 
@@ -32,7 +32,8 @@ public class OffenseRootNode extends CompositeNode {
      */
     @Override
     public NodeState execute() {
-        this.offenseRootFuture = this.executor.scheduleAtFixedRate(this.offenseRootService, ProgramConstants.INITIAL_DELAY, ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
+        this.offenseRootFuture = this.executor.scheduleAtFixedRate(this.offenseRootService, ProgramConstants.INITIAL_DELAY,
+                                                                     ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
         return NodeState.SUCCESS;
     }
 

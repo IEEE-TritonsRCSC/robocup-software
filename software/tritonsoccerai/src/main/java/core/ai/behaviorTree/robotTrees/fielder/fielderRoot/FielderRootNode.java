@@ -19,10 +19,10 @@ public class FielderRootNode extends CompositeNode {
     private final FielderRootService fielderRootService;
     private final ScheduledThreadPoolExecutor executor;
 
-    public FielderRootNode(Robot ally, ScheduledThreadPoolExecutor executor) {
-        super("Fielder Root");
+    public FielderRootNode(int allyID, ScheduledThreadPoolExecutor executor) {
+        super("Fielder Root Node: " + allyID);
 
-        this.fielderRootService = new FielderRootService(ally, executor);
+        this.fielderRootService = new FielderRootService(allyID, executor);
         this.executor = executor;
     }
 

@@ -12,6 +12,10 @@ import static proto.triton.FilteredObject.Ball;
 import static proto.triton.FilteredObject.Robot;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
 
+import static proto.simulation.SslSimulationRobotControl.RobotCommand;
+import static proto.simulation.SslSimulationRobotControl.RobotMoveCommand;
+import static proto.simulation.SslSimulationRobotControl.MoveLocalVelocity;
+
 public class ObjectHelper {
     
     public static boolean hasOrientation(Robot robot, Vector2d facePos, float angleTolerance) {
@@ -243,6 +247,49 @@ public class ObjectHelper {
         }
         // return the foe with the lowest place sum
         return foesInOrderOfDistance.get(minPlaceSumIndex);
+    }
+
+    /**
+     * Generates a move command from the local perspective given the attributes
+     * of the move command from the global perspective
+     * 
+     * @param vx global velocity in x direction (m/s)
+     * @param vy global velocity in the y direction (m/s)
+     * @param angular global angular velocity (rad/s)
+     * @param orientation orientation of robot expressed in radians
+     * @param id robot id
+     * @return Built RobotCommand with local move command
+     */
+    public static RobotCommand generateLocalMoveCommand(float vx, float vy, float angular, float orientation, int id) {
+        // TODO: Fix this method 
+
+        float angular_correction = 0.135f;
+        float rotation = (float) (-(orientation + angular * angular_correction) + (Math.PI / 2));
+
+        // set up local attribute of robot
+        // what is those number represent (?)
+        // what is the difference between global and local numbers(?)
+        float local_vx = (float) (vx * Math.cos(rotation) - vy * Math.sin(rotation));
+        float local_vy = (float) (vx * Math.sin(rotation) + vy * Math.cos(rotation));
+        float local_angular = angular;
+
+        System.out.println("Orientation is " + orientation);
+        System.out.println("Local vx is " + local_vx);
+        System.out.println("Local vy is " + local_vy);
+
+        // actually move the robot / run potential motors
+        // dont need to connected to the motor(?)
+        RobotCommand.Builder robotCommand = RobotCommand.newBuilder();
+        robotCommand.setId(id);
+        RobotMoveCommand.Builder moveCommand = RobotMoveCommand.newBuilder();
+        MoveLocalVelocity.Builder localVel = MoveLocalVelocity.newBuilder();
+        localVel.setLeft(-local_vx);
+        localVel.setForward(local_vy);
+        localVel.setAngular(local_angular);
+        moveCommand.setLocalVelocity(localVel);
+        robotCommand.setMoveCommand(moveCommand);
+
+        return robotCommand.build();
     }
     
 }

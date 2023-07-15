@@ -18,10 +18,10 @@ public class PlayDefenseNode extends CompositeNode {
     private final PlayDefenseService playDefenseService;
     private Future playDefenseFuture;
 
-    public PlayDefenseNode(Robot ally, ScheduledThreadPoolExecutor executor) {
-        super("Play Defense Node: " + ally);
+    public PlayDefenseNode(int allyID, ScheduledThreadPoolExecutor executor) {
+        super("Play Defense Node: " + allyID);
         this.executor = executor;
-        this.playDefenseService = new PlayDefenseService(ally);
+        this.playDefenseService = new PlayDefenseService(allyID);
     }
 
     /**

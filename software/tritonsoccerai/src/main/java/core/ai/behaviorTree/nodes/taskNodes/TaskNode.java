@@ -12,16 +12,16 @@ import static proto.triton.FilteredObject.Robot;
  */
 public abstract class TaskNode extends BTNode {
 
-    protected final Robot ally;
+    protected final int allyID;
 
-    public TaskNode(Robot ally) {
+    public TaskNode(int allyID) {
         super("Task Node");
-        this.ally = ally;
+        this.allyID = allyID;
     }
 
-    public TaskNode(String name, Robot ally) {
+    public TaskNode(String name, int allyID) {
         super(name);
-        this.ally = ally;
+        this.allyID = allyID;
     }
 
     /**
