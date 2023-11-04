@@ -19,6 +19,49 @@ Linux is not the only setup you will need. Here is the full recommended setup se
 10) Our RoboCup code! https://github.com/IEEE-TritonsRCSC/robocup-2023
 11) ER-Force Simulator https://github.com/robotics-erlangen/framework/tree/b342652846464c4dc789079f5ddb468d8ba3595f
 
+# A Few Pointers on Issues You May Face (courtesy of Huaming)
+
+1. The first error you might encounter is: 
+```
+FileNotFoundError: [Error 2] No such file or directory: '/home/{Your User}/Desktop/robocup-2023/framework/build/bin'
+In order to fix this, you have to make sure that you create the build directory in framework.
+```
+
+```cd``` into the framework directory 
+
+(The download will take a long time) 
+
+```
+mkdir build
+cd build
+cmake ..
+make
+```
+
+2. The second error might be 
+```Error constructing proxy for org.gnome.Terminal:/org/gnome/Terminal/Factory0: Could not connect: No such file or directory```
+Use 
+```sudo python3 run.py --test=false --team=both```
+
+
+3. If you are able to actually open up the terminals and you don't see the actual robot things and the soccer field, you might be getting a 
+```java.lang.UnsatisfiedLinkError```
+ in one of the terminals.
+
+Check if 
+```libawt_xawt.so```
+ exists where it should be using
+```ls /usr/lib/jvm/java-17-openjdk-amd64/lib/libawt_xawt.so```
+
+
+If it doesnt, try: 
+```
+sudo apt-get update
+sudo apt-get install openjdk-17-jdk
+```
+
+There might be a mismatch in the library path due to different versions of Java.
+
 # More Onboarding Information
 
 https://docs.google.com/presentation/d/1VAli_Ta1lNODmwKvDTK2hvJAlG427KbK8hj_T-ndtEQ/edit?usp=sharing
