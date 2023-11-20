@@ -25,6 +25,7 @@ For 11, make sure you download the required packages: https://github.com/robotic
 
 E.g. for Ubuntu:
 sudo apt-get update
+
 sudo apt-get install cmake protobuf-compiler libprotobuf-dev qtbase5-dev libqt5opengl5-dev g++ libusb-1.0-0-dev libsdl2-dev libqt5svg5-dev libssl-dev
 
 Also don't forget to make the build directory (Check below)
