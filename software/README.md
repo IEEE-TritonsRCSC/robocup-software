@@ -31,7 +31,7 @@ sudo apt-get install cmake protobuf-compiler libprotobuf-dev qtbase5-dev libqt5o
 
 Also don't forget to make the build directory (Check below)
 
-# A Few Pointers on Issues You May Face (courtesy of Huaming)
+# A Few Pointers on Issues You May Face
 
 1. The first error you might encounter is: 
 ```
