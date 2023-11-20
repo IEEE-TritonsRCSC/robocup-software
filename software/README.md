@@ -6,7 +6,9 @@ Ubuntu: https://ubuntu.com/
 Instructional articles on how to dual boot: 
 https://opensource.com/article/18/5/dual-boot-linux https://www.howtogeek.com/214571/how-to-dual-boot-linux-on-your-pc/ 
 
-Linux is not the only setup you will need. Here is the full recommended setup sequence: 
+General Setup Instructions: https://docs.google.com/presentation/d/1tQH7DabZe_yh0HxkCa0rP3AuYi7znsym1NE0sY958sw/edit#slide=id.p
+
+Linux is not the only setup you will need. Here is the full recommended setup sequence (in the slides above): 
 1) Linux 
 2) Java 17 (Must be 17!!!) 
 3) Python 
@@ -19,24 +21,32 @@ Linux is not the only setup you will need. Here is the full recommended setup se
 10) Our RoboCup code! https://github.com/IEEE-TritonsRCSC/robocup-2023
 11) ER-Force Simulator https://github.com/robotics-erlangen/framework/tree/b342652846464c4dc789079f5ddb468d8ba3595f
 
+For 11, make sure you download the required packages: https://github.com/robotics-erlangen/framework/blob/b342652846464c4dc789079f5ddb468d8ba3595f/COMPILE.md
+
+E.g. for Ubuntu:
+sudo apt-get update
+sudo apt-get install cmake protobuf-compiler libprotobuf-dev qtbase5-dev libqt5opengl5-dev g++ libusb-1.0-0-dev libsdl2-dev libqt5svg5-dev libssl-dev
+
+Also don't forget to make the build directory (Check below)
+
 # A Few Pointers on Issues You May Face (courtesy of Huaming)
 
 1. The first error you might encounter is: 
 ```
 FileNotFoundError: [Error 2] No such file or directory: '/home/{Your User}/Desktop/robocup-2023/framework/build/bin'
-In order to fix this, you have to make sure that you create the build directory in framework.
+In order to fix this, you have to make sure that you create the build directory in framework. 
 ```
 
 ```cd``` into the framework directory 
-
-(The download will take a long time) 
 
 ```
 mkdir build
 cd build
 cmake ..
-make
+make simulator-cli
 ```
+
+Note: You could also just use make instead of make simulator-cli, but it is not necessary
 
 2. The second error might be 
 ```Error constructing proxy for org.gnome.Terminal:/org/gnome/Terminal/Factory0: Could not connect: No such file or directory```
@@ -44,7 +54,7 @@ Use
 ```sudo python3 run.py --test=false --team=both```
 
 
-3. If you are able to actually open up the terminals and you don't see the actual robot things and the soccer field, you might be getting a 
+3. If you are able to actually open up the terminals and you don't see the actual robots and the soccer field, you might be getting a 
 ```java.lang.UnsatisfiedLinkError```
  in one of the terminals.
 
