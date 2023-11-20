@@ -24,10 +24,10 @@ Linux is not the only setup you will need. Here is the full recommended setup se
 For 11, make sure you download the required packages: https://github.com/robotics-erlangen/framework/blob/b342652846464c4dc789079f5ddb468d8ba3595f/COMPILE.md
 
 E.g. for Ubuntu:
-
+```
 sudo apt-get update
-
 sudo apt-get install cmake protobuf-compiler libprotobuf-dev qtbase5-dev libqt5opengl5-dev g++ libusb-1.0-0-dev libsdl2-dev libqt5svg5-dev libssl-dev
+```
 
 Also don't forget to make the build directory (Check below)
 
