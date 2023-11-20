@@ -74,6 +74,16 @@ sudo apt-get install openjdk-17-jdk
 
 There might be a mismatch in the library path due to different versions of Java.
 
+4. For build-ai.sh you might receive this error: ```java.io.IOException: Cannot run program "/usr/local/bin/protoc": error=2, No such file or directory```, your protoc might not be located at that specific path.
+
+Check where it is located using ```which protoc```
+
+If it is in a different path, create a symbolic link ```sudo ln -s {Your Path Here} /usr/local/bin/protoc```
+   
+You can check again to make sure that it is the right path
+   
+(also remember to CTRL - C after u finish running the file since it keeps running)
+
 # More Onboarding Information
 
 https://docs.google.com/presentation/d/1VAli_Ta1lNODmwKvDTK2hvJAlG427KbK8hj_T-ndtEQ/edit?usp=sharing
