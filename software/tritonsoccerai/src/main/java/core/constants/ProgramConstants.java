@@ -17,7 +17,7 @@ public class ProgramConstants {
     public static Module commandPublishingModule;
 
     public static final int INITIAL_DELAY = 0; // initial loop delay in milliseconds
-    public static final int LOOP_FREQUENCY = 1; // loops per second
+    public static final int LOOP_FREQUENCY = 20; // loops per second
     public static final long LOOP_DELAY = 1000 / LOOP_FREQUENCY; // milliseconds / loop
 
 }
