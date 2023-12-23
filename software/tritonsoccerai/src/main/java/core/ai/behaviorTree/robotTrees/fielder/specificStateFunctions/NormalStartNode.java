@@ -32,9 +32,9 @@ public class NormalStartNode extends CompositeNode {
     @Override
     public NodeState execute() {
         if (GameInfo.getPossessBall() && NodeState.isSuccess(this.closestToBallNode.execute())) {
-            switch (GameInfo.getPrevState()) {
-                case PREPARE_KICKOFF, PREPARE_INDIRECT_FREE, PREPARE_DIRECT_FREE -> this.coordinatedPassNode.execute();
-                case PREPARE_PENALTY -> this.shootBallNode.execute();
+            switch (GameInfo.getPrevCommand()) {
+                case PREPARE_KICKOFF_YELLOW, PREPARE_KICKOFF_BLUE, INDIRECT_FREE_YELLOW, INDIRECT_FREE_BLUE, DIRECT_FREE_YELLOW, DIRECT_FREE_BLUE -> this.coordinatedPassNode.execute();
+                case PREPARE_PENALTY_YELLOW, PREPARE_PENALTY_BLUE -> this.shootBallNode.execute();
             }
         }
         return NodeState.SUCCESS;

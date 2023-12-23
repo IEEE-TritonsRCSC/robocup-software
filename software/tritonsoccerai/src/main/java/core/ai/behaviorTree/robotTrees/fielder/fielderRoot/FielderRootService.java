@@ -1,7 +1,7 @@
 package main.java.core.ai.behaviorTree.robotTrees.fielder.fielderRoot;
 
 import main.java.core.ai.GameInfo;
-import main.java.core.ai.GameState;
+// import main.java.core.ai.GameState;
 import main.java.core.ai.behaviorTree.nodes.BTNode;
 import main.java.core.ai.behaviorTree.nodes.NodeState;
 import main.java.core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
@@ -11,6 +11,7 @@ import main.java.core.ai.behaviorTree.robotTrees.fielder.defense.playDefense.Pla
 import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot.OffenseRootNode;
 import main.java.core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.*;
 import static proto.triton.FilteredObject.Robot;
+import static proto.gc.SslGcRefereeMessage.Referee;
 
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -39,7 +40,7 @@ public class FielderRootService extends ServiceNode {
 
     private final ClosestToBallNode closestToBallNode;
 
-    private GameState stateCurrentlyRunning;
+    private Referee.Command commandCurrentlyRunning;
     private boolean onOffense;
 
     private Future<?> branchFuture;
@@ -72,7 +73,7 @@ public class FielderRootService extends ServiceNode {
         this.normalStartNode = new NormalStartNode(allyID, this.closestToBallNode);
         this.ballPlacementNode = new BallPlacementNode(allyID, this.closestToBallNode);
 
-        this.stateCurrentlyRunning = GameState.OPEN_PLAY;
+        // this.stateCurrentlyRunning = GameState.OPEN_PLAY;
         this.onOffense = false;
         runOpenPlay();
     }
@@ -83,10 +84,10 @@ public class FielderRootService extends ServiceNode {
      */
     @Override
     public NodeState execute() {
-        if (this.stateCurrentlyRunning != GameInfo.getCurrState()) {
+        if (this.commandCurrentlyRunning != GameInfo.getCurrCommand()) {
             switchBranch();
         }
-        else if (stateCurrentlyRunning == GameState.OPEN_PLAY) {
+        else if (GameInfo.inOpenPlay()) {
             if (NodeState.isSuccess(this.haveBall.execute()) != this.onOffense) {
                 this.onOffense = !this.onOffense;
                 switchBranch();
@@ -100,12 +101,14 @@ public class FielderRootService extends ServiceNode {
      * Execute the correct branch
      */
     private void switchBranch() {
-        // kill current thread
-        this.currentlyExecutingNode.stopExecution();
-        this.branchFuture.cancel(true);
+        if (this.currentlyExecutingNode != null) {
+            // kill current thread
+            this.currentlyExecutingNode.stopExecution();
+            this.branchFuture.cancel(true);
+        }
         // start new thread with executeCorrectBranch()
         executeCorrectBranch();
-        this.stateCurrentlyRunning = GameInfo.getCurrState();
+        this.commandCurrentlyRunning = GameInfo.getCurrCommand();
         System.out.println("Ally " + allyID + " switched branches");
     }
 
@@ -114,33 +117,36 @@ public class FielderRootService extends ServiceNode {
      * and execute it in a new thread
      */
     private void executeCorrectBranch() {
-        switch (GameInfo.getCurrState()) {
+        switch (GameInfo.getCurrCommand()) {
             case HALT:
                 this.branchFuture = this.executor.submit(this.haltNode);
                 this.currentlyExecutingNode = this.haltNode;
             case STOP:
                 this.branchFuture = this.executor.submit(this.stopNode);
                 this.currentlyExecutingNode = this.stopNode;
-            case PREPARE_DIRECT_FREE:
+            case DIRECT_FREE_YELLOW, DIRECT_FREE_BLUE:
                 this.branchFuture = this.executor.submit(this.prepareDirectFreeNode);
                 this.currentlyExecutingNode = this.prepareDirectFreeNode;
-            case PREPARE_INDIRECT_FREE:
+            case INDIRECT_FREE_YELLOW, INDIRECT_FREE_BLUE:
                 this.branchFuture = this.executor.submit(this.prepareIndirectFreeNode);
                 this.currentlyExecutingNode = this.prepareIndirectFreeNode;
-            case PREPARE_KICKOFF:
+            case PREPARE_KICKOFF_YELLOW, PREPARE_KICKOFF_BLUE:
                 this.branchFuture = this.executor.submit(this.prepareKickoffNode);
                 this.currentlyExecutingNode = this.prepareKickoffNode;
-            case PREPARE_PENALTY:
+            case PREPARE_PENALTY_YELLOW, PREPARE_PENALTY_BLUE:
                 this.branchFuture = this.executor.submit(this.preparePenaltyNode);
                 this.currentlyExecutingNode = this.preparePenaltyNode;
             case NORMAL_START:
                 this.branchFuture = this.executor.submit(this.normalStartNode);
                 this.currentlyExecutingNode = this.normalStartNode;
-            case BALL_PLACEMENT:
+            case BALL_PLACEMENT_YELLOW, BALL_PLACEMENT_BLUE:
                 this.branchFuture = this.executor.submit(this.ballPlacementNode);
                 this.currentlyExecutingNode = this.ballPlacementNode;
-            case FORCE_START, OPEN_PLAY:
+            case FORCE_START:
                 runOpenPlay();
+            case TIMEOUT_YELLOW, TIMEOUT_BLUE:
+                this.branchFuture = null;
+                this.currentlyExecutingNode = null;
         }
     }
 

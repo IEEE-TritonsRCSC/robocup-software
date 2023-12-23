@@ -180,7 +180,7 @@ public class AI {
         AIModule aiModule = new AIModule(executor);
         ProgramConstants.commandPublishingModule = aiModule;
         startModule(aiModule);
-        GameInfo.setCurrState(GameState.OPEN_PLAY);
+        GameInfo.setInOpenPlay(false);
         for (int id = 1; id <= GameInfo.getFielders().size(); id++) {
             startModule(new FielderTreeModule(executor, id));
             System.out.println("Fielder module started for robot " + id);
@@ -210,6 +210,7 @@ public class AI {
      */
     public void startInterfaceModules() {
         startModule(new CameraInterface(executor));
+        startModule(new GameControllerInterface(executor));
         startModule(new SimulatorCommandInterface(executor));
         startModule(new SimulatorRobotCommandInterface(executor));
         startModule(new TritonBotMessageInterface(executor));

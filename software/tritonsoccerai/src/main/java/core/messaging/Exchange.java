@@ -4,6 +4,9 @@ public enum Exchange {
     // Received from the camera
     AI_VISION_WRAPPER,
 
+    // Received from the game controller
+    AI_GAME_CONTROLLER_WRAPPER,
+
     // Feedback sent back after sending a command, tells whether the robot is in contact with the ball
     AI_ROBOT_FEEDBACKS,
 

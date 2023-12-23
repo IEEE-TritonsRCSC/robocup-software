@@ -2,6 +2,7 @@ syntax = "proto2";
 package proto.simulation;
 
 option go_package = "github.com/RoboCup-SSL/ssl-simulation-protocol/pkg/sim";
+// option go_package = "github.com/RoboCup-SSL/ssl-game-controller/internal/app/state";
 
 // Team is either blue or yellow
 enum Team {

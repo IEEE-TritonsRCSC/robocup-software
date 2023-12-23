@@ -37,8 +37,8 @@ public class MoveToPositionNode extends TaskNode {
 
     public NodeState execute(Vector2d endLoc) {
         Vector2d allyPos = getPos(GameInfo.getAlly(allyID));
-        System.out.println(allyPos);
-        System.out.println(getPos(GameInfo.getAllies().get(0)));
+        // System.out.println(allyPos);
+        // System.out.println(getPos(GameInfo.getAllies().get(0)));
 
         // Pathfinding to endLoc
         LinkedList<Node2d> route = pathfindGridGroup.findRoute(allyID, allyPos, endLoc);
