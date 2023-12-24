@@ -2,6 +2,9 @@ package main.java.core.config;
 
 public class NetworkConfig {
 
+    public String gameControllerAddress;
+    public int gameControllerDetectionPort;
+
     public String visionAddress;
     public int visionDetectionPort;
 

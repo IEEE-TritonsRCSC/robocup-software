@@ -9,6 +9,7 @@ import main.java.core.util.Vector2d;
 import main.java.core.search.implementation.*;
 import main.java.core.search.node2d.Node2d;
 import main.java.core.constants.ProgramConstants;
+import main.java.core.constants.RobotConstants;
 
 import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
 
@@ -36,15 +37,15 @@ public class MoveToPositionNode extends TaskNode {
 
     public NodeState execute(Vector2d endLoc) {
         Vector2d allyPos = getPos(GameInfo.getAlly(allyID));
-        System.out.println(allyPos);
-        System.out.println(getPos(GameInfo.getAllies().get(0)));
+        // System.out.println(allyPos);
+        // System.out.println(getPos(GameInfo.getAllies().get(0)));
 
         // Pathfinding to endLoc
         LinkedList<Node2d> route = pathfindGridGroup.findRoute(allyID, allyPos, endLoc);
         Vector2d next = pathfindGridGroup.findNext(allyID, route);
 
         // Build robot command to be published
-        Vector2d vel = endLoc.sub(allyPos).scale((float) 0.1);
+        Vector2d vel = endLoc.sub(allyPos).scale(RobotConstants.MOVE_VELOCITY_DAMPENER);
         RobotCommand localCommand = generateLocalMoveCommand(vel.x, vel.y, 3.0f, 
                                                             GameInfo.getAlly(allyID).getOrientation(), allyID);
 

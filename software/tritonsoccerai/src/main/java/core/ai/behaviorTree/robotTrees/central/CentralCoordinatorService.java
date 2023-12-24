@@ -7,6 +7,8 @@ import static proto.triton.FilteredObject.Robot;
 import main.java.core.util.Vector2d;
 import main.java.core.ai.behaviorTree.nodes.NodeState;
 
+import static proto.gc.SslGcRefereeMessage.Referee;
+
 import static main.java.core.util.ProtobufUtils.getPos;
 
 // TODO : Not sure how to send pass details and process them
@@ -45,7 +47,7 @@ public class CentralCoordinatorService extends ServiceNode {
     @Override
     public NodeState execute() {
         float DISTANCE_CONSTANT = (float) 0.2;
-        if (GameInfo.getCurrState() == GameState.NORMAL_START) {
+        if (GameInfo.getCurrCommand() == Referee.Command.NORMAL_START) {
             /*if (this.ballStartPos == null) {
                 this.ballStartPos = getPos(GameInfo.getBall());
             }
@@ -54,7 +56,7 @@ public class CentralCoordinatorService extends ServiceNode {
                 // if so, switch current game state to OPEN_PLAY
                 GameInfo.setCurrState(GameState.OPEN_PLAY);
             }*/
-            GameInfo.setCurrState(GameState.OPEN_PLAY);
+            GameInfo.setInOpenPlay(true);
         }
         // System.out.println(String.valueOf(GameInfo.getBall().getX()) + " " + String.valueOf(GameInfo.getBall().getY()));
         // else check for new message to act upon

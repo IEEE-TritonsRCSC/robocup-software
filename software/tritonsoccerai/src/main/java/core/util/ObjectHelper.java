@@ -273,9 +273,9 @@ public class ObjectHelper {
         float local_vy = (float) (vx * Math.sin(rotation) + vy * Math.cos(rotation));
         float local_angular = angular;
 
-        System.out.println("Orientation is " + orientation);
-        System.out.println("Local vx is " + local_vx);
-        System.out.println("Local vy is " + local_vy);
+        // System.out.println("Orientation is " + orientation);
+        // System.out.println("Local vx is " + local_vx);
+        // System.out.println("Local vy is " + local_vy);
 
         // actually move the robot / run potential motors
         // dont need to connected to the motor(?)
