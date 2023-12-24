@@ -90,7 +90,9 @@ You may set up Linux in any way that works for you! Whether that be a virtual ma
 * Instructional articles on how to dual boot: 
 https://opensource.com/article/18/5/dual-boot-linux, https://www.howtogeek.com/214571/how-to-dual-boot-linux-on-your-pc/ 
 
-Linux is not the only setup you will need. Here is the full recommended setup sequence: 
+General Setup Instructions: https://docs.google.com/presentation/d/1tQH7DabZe_yh0HxkCa0rP3AuYi7znsym1NE0sY958sw/edit#slide=id.p
+
+Linux is not the only setup you will need. Here is the full recommended setup sequence (in the slides above): 
 1) Linux (Ubuntu 20.04 recommended)
 2) Java 17 (Must be 17!!!) 
 3) Python 
@@ -103,26 +105,36 @@ Linux is not the only setup you will need. Here is the full recommended setup se
 10) Our RoboCup code! https://github.com/IEEE-TritonsRCSC/robocup-2023
 11) ER-Force Simulator https://github.com/robotics-erlangen/framework/tree/b342652846464c4dc789079f5ddb468d8ba3595f
 
-## A Few Pointers on Issues You May Face (courtesy of Huaming)
+For 11, make sure you download the required packages: https://github.com/robotics-erlangen/framework/blob/b342652846464c4dc789079f5ddb468d8ba3595f/COMPILE.md
+
+E.g. for Ubuntu:
+```
+sudo apt-get update
+sudo apt-get install cmake protobuf-compiler libprotobuf-dev qtbase5-dev libqt5opengl5-dev g++ libusb-1.0-0-dev libsdl2-dev libqt5svg5-dev libssl-dev
+```
+
+Also don't forget to make the build directory (Check below)
+
+# A Few Pointers on Issues You May Face
 
 ### Error 1
 
 The first error you might encounter is: 
 ```
 FileNotFoundError: [Error 2] No such file or directory: '/home/{Your User}/Desktop/robocup-2023/framework/build/bin'
-In order to fix this, you have to make sure that you create the build directory in framework.
+In order to fix this, you have to make sure that you create the build directory in framework. 
 ```
 
 ```cd``` into the framework directory 
-
-(The download will take a long time) 
 
 ```
 mkdir build
 cd build
 cmake ..
-make
+make simulator-cli
 ```
+
+Note: You could also just use make instead of make simulator-cli, but it is not necessary
 
 ### Error 2
 
@@ -130,7 +142,6 @@ The second error might be
 ```Error constructing proxy for org.gnome.Terminal:/org/gnome/Terminal/Factory0: Could not connect: No such file or directory```
 Use 
 ```sudo python3 run.py --test=false --team=both```
-
 
 ### Error 3
 
@@ -154,12 +165,15 @@ There might be a mismatch in the library path due to different versions of Java.
 
 ### Error 4
 
-If you are having trouble with running build-ai.sh and receive this error: ```java.io.IOException: Cannot run program "/usr/local/bin/protoc": error=2, No such file or directory```, your protoc might not be located at that specific path. 
-Check where it is located using ```which protoc```.
-If it is in a different path, create a symbolic link 
-```sudo ln -s {Your Path Here} /usr/local/bin/protoc```
+For build-ai.sh you might receive this error: ```java.io.IOException: Cannot run program "/usr/local/bin/protoc": error=2, No such file or directory```, your protoc might not be located at that specific path.
+
+Check where it is located using ```which protoc```
+
+If it is in a different path, create a symbolic link ```sudo ln -s {Your Path Here} /usr/local/bin/protoc```
+   
 You can check again to make sure that it is the right path
-Also remember to CTRL - C after you finish running the file since it keeps running.
+   
+(also remember to CTRL - C after u finish running the file since it keeps running)
 
 # More Onboarding Information
 
