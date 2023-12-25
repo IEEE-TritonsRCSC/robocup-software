@@ -73,9 +73,7 @@ public class FielderRootService extends ServiceNode {
         this.normalStartNode = new NormalStartNode(allyID, this.closestToBallNode);
         this.ballPlacementNode = new BallPlacementNode(allyID, this.closestToBallNode);
 
-        // this.stateCurrentlyRunning = GameState.OPEN_PLAY;
         this.onOffense = false;
-        runOpenPlay();
     }
 
     /**
@@ -107,9 +105,13 @@ public class FielderRootService extends ServiceNode {
             this.branchFuture.cancel(true);
         }
         // start new thread with executeCorrectBranch()
-        executeCorrectBranch();
-        this.commandCurrentlyRunning = GameInfo.getCurrCommand();
-        System.out.println("Ally " + allyID + " switched branches");
+        if (this.commandCurrentlyRunning != GameInfo.getCurrCommand()) {
+            executeCorrectBranch();
+            this.commandCurrentlyRunning = GameInfo.getCurrCommand();
+        }
+        else {
+            runOpenPlay();
+        }
     }
 
     /**
@@ -121,32 +123,43 @@ public class FielderRootService extends ServiceNode {
             case HALT:
                 this.branchFuture = this.executor.submit(this.haltNode);
                 this.currentlyExecutingNode = this.haltNode;
+                System.out.println("Ally " + allyID + " is running halt node");
+                break;
             case STOP:
                 this.branchFuture = this.executor.submit(this.stopNode);
                 this.currentlyExecutingNode = this.stopNode;
+                break;
             case DIRECT_FREE_YELLOW, DIRECT_FREE_BLUE:
                 this.branchFuture = this.executor.submit(this.prepareDirectFreeNode);
                 this.currentlyExecutingNode = this.prepareDirectFreeNode;
+                break;
             case INDIRECT_FREE_YELLOW, INDIRECT_FREE_BLUE:
                 this.branchFuture = this.executor.submit(this.prepareIndirectFreeNode);
                 this.currentlyExecutingNode = this.prepareIndirectFreeNode;
+                break;
             case PREPARE_KICKOFF_YELLOW, PREPARE_KICKOFF_BLUE:
                 this.branchFuture = this.executor.submit(this.prepareKickoffNode);
                 this.currentlyExecutingNode = this.prepareKickoffNode;
+                break;
             case PREPARE_PENALTY_YELLOW, PREPARE_PENALTY_BLUE:
                 this.branchFuture = this.executor.submit(this.preparePenaltyNode);
                 this.currentlyExecutingNode = this.preparePenaltyNode;
+                break;
             case NORMAL_START:
                 this.branchFuture = this.executor.submit(this.normalStartNode);
                 this.currentlyExecutingNode = this.normalStartNode;
+                break;
             case BALL_PLACEMENT_YELLOW, BALL_PLACEMENT_BLUE:
                 this.branchFuture = this.executor.submit(this.ballPlacementNode);
                 this.currentlyExecutingNode = this.ballPlacementNode;
+                break;
             case FORCE_START:
                 runOpenPlay();
+                break;
             case TIMEOUT_YELLOW, TIMEOUT_BLUE:
                 this.branchFuture = null;
                 this.currentlyExecutingNode = null;
+                break;
         }
     }
 
@@ -154,14 +167,11 @@ public class FielderRootService extends ServiceNode {
      * Run correct open play node in branch thread
      */
     private void runOpenPlay() {
-        System.out.println("running open play");
         if (onOffense) {
-            System.out.println("running offense");
             this.branchFuture = this.executor.submit(this.offense);
             this.currentlyExecutingNode = this.offense;
         }
         else {
-            System.out.println("running defense");
             this.branchFuture = this.executor.submit(this.defense);
             this.currentlyExecutingNode = this.defense;
         }

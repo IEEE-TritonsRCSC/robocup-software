@@ -70,7 +70,6 @@ public class GoalkeeperRootService extends ServiceNode {
         this.ballPlacementNode = new GKBallPlacementNode();
 
         this.onOffense = false;
-        runOpenPlay();
     }
 
     /**
@@ -84,8 +83,13 @@ public class GoalkeeperRootService extends ServiceNode {
             this.branchFuture.cancel(true);
         }
         // start new thread with executeCorrectBranch()
-        executeCorrectBranch();
-        this.commandCurrentlyRunning = GameInfo.getCurrCommand();
+        if (this.commandCurrentlyRunning != GameInfo.getCurrCommand()) {
+            executeCorrectBranch();
+            this.commandCurrentlyRunning = GameInfo.getCurrCommand();
+        }
+        else {
+            runOpenPlay();
+        }
     }
 
     /**
@@ -97,32 +101,42 @@ public class GoalkeeperRootService extends ServiceNode {
             case HALT:
                 this.branchFuture = this.executor.submit(this.haltNode);
                 this.currentlyExecutingNode = this.haltNode;
+                break;
             case STOP:
                 this.branchFuture = this.executor.submit(this.stopNode);
                 this.currentlyExecutingNode = this.stopNode;
+                break;
             case DIRECT_FREE_YELLOW, DIRECT_FREE_BLUE:
                 this.branchFuture = this.executor.submit(this.prepareDirectFreeNode);
                 this.currentlyExecutingNode = this.prepareDirectFreeNode;
+                break;
             case INDIRECT_FREE_YELLOW, INDIRECT_FREE_BLUE:
                 this.branchFuture = this.executor.submit(this.prepareIndirectFreeNode);
                 this.currentlyExecutingNode = this.prepareIndirectFreeNode;
+                break;
             case PREPARE_KICKOFF_YELLOW, PREPARE_KICKOFF_BLUE:
                 this.branchFuture = this.executor.submit(this.prepareKickoffNode);
                 this.currentlyExecutingNode = this.prepareKickoffNode;
+                break;
             case PREPARE_PENALTY_YELLOW, PREPARE_PENALTY_BLUE:
                 this.branchFuture = this.executor.submit(this.preparePenaltyNode);
                 this.currentlyExecutingNode = this.preparePenaltyNode;
+                break;
             case NORMAL_START:
                 this.branchFuture = this.executor.submit(this.normalStartNode);
                 this.currentlyExecutingNode = this.normalStartNode;
+                break;
             case BALL_PLACEMENT_YELLOW, BALL_PLACEMENT_BLUE:
                 this.branchFuture = this.executor.submit(this.ballPlacementNode);
                 this.currentlyExecutingNode = this.ballPlacementNode;
+                break;
             case FORCE_START:
                 runOpenPlay();
+                break;
             case TIMEOUT_YELLOW, TIMEOUT_BLUE:
                 this.branchFuture = null;
                 this.currentlyExecutingNode = null;
+                break;
         }
     }
 

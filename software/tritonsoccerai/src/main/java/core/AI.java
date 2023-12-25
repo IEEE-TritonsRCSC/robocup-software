@@ -181,14 +181,14 @@ public class AI {
         ProgramConstants.commandPublishingModule = aiModule;
         startModule(aiModule);
         GameInfo.setInOpenPlay(false);
+        startModule(new CentralCoordinatorModule(executor));
+        System.out.println("Central module started");
+        startModule(new GKTreeModule(executor));
+        System.out.println("GK module started");
         for (int id = 1; id <= GameInfo.getFielders().size(); id++) {
             startModule(new FielderTreeModule(executor, id));
             System.out.println("Fielder module started for robot " + id);
         }
-        startModule(new GKTreeModule(executor));
-        System.out.println("GK module started");
-        startModule(new CentralCoordinatorModule(executor));
-        System.out.println("Central module started");
     }
 
     /**
