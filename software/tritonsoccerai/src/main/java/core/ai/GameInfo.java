@@ -37,6 +37,14 @@ public class GameInfo {
         GameInfo.FOE_TEAM_COLOR = foeTeamColor;
     }
 
+    public static FilteredWrapperPacket getWrapper() {
+        return wrapper;
+    }
+
+    public static Referee getReferee() {
+        return ref;
+    }
+
     public static Team getTeamColor() {
         return TEAM_COLOR;
     }
@@ -90,10 +98,10 @@ public class GameInfo {
     public static Robot getAllyClosestToBall() {
         ArrayList<Robot> allies = getAllies();
         Vector2d ballPos = getPos(wrapper.getBall());
-        Robot closest = allies.get(0);
+        Robot closest = allies.get(1);
         float minDist = getPos(closest).dist(ballPos);
         float distToBall;
-        for (int i = 1; i < allies.size(); i++) {
+        for (int i = 2; i < allies.size(); i++) {
             distToBall = getPos(allies.get(i)).dist(ballPos);
             if (distToBall < minDist) {
                 closest = allies.get(i);

@@ -59,10 +59,11 @@ public class AI {
 
         AI ai = new AI();
         ai.startSupportModules();
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         if (ProgramConstants.test) {
             ai.runTests();
         } else {
+            System.out.println(GameInfo.getTeamColor());
             ai.startAI();
         }
     }
@@ -180,14 +181,15 @@ public class AI {
         AIModule aiModule = new AIModule(executor);
         ProgramConstants.commandPublishingModule = aiModule;
         startModule(aiModule);
+        
         GameInfo.setInOpenPlay(false);
+        
         startModule(new CentralCoordinatorModule(executor));
-        System.out.println("Central module started");
+
         startModule(new GKTreeModule(executor));
-        System.out.println("GK module started");
+        
         for (int id = 1; id <= GameInfo.getFielders().size(); id++) {
             startModule(new FielderTreeModule(executor, id));
-            System.out.println("Fielder module started for robot " + id);
         }
     }
 
@@ -201,7 +203,6 @@ public class AI {
         startModule(new SimulatorControlAudienceConverter(executor));
         startModule(new RobotCommandAudienceConverter(executor));
         startModule(new TritonBotMessageBuilder(executor));
-        System.out.println("Processing modules started");
     }
 
     /**
@@ -215,7 +216,6 @@ public class AI {
         startModule(new SimulatorRobotCommandInterface(executor));
         startModule(new TritonBotMessageInterface(executor));
         startModule(new UserInterface(executor));
-        System.out.println("Interface modules started");
     }
 
     /**

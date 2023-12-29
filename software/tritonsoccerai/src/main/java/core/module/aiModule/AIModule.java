@@ -54,8 +54,10 @@ public class AIModule extends Module {
         else if (wrapper.getCommand() != Referee.Command.NORMAL_START) {
             GameInfo.setInOpenPlay(false);
         }
+        if ((GameInfo.getReferee() != null) && (wrapper.getCommand() != GameInfo.getCurrCommand())) {
+            System.out.println(wrapper.getCommand());
+        }
         GameInfo.setReferee(wrapper);
-        System.out.println(wrapper.getCommand());
     }
 
     @Override

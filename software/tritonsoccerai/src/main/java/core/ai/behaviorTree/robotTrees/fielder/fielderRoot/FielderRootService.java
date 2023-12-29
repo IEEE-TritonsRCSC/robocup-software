@@ -1,6 +1,7 @@
 package main.java.core.ai.behaviorTree.robotTrees.fielder.fielderRoot;
 
 import main.java.core.ai.GameInfo;
+import main.java.core.constants.ProgramConstants;
 // import main.java.core.ai.GameState;
 import main.java.core.ai.behaviorTree.nodes.BTNode;
 import main.java.core.ai.behaviorTree.nodes.NodeState;
@@ -15,6 +16,7 @@ import static proto.gc.SslGcRefereeMessage.Referee;
 
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Checks for change in game status
@@ -121,12 +123,14 @@ public class FielderRootService extends ServiceNode {
     private void executeCorrectBranch() {
         switch (GameInfo.getCurrCommand()) {
             case HALT:
-                this.branchFuture = this.executor.submit(this.haltNode);
+                this.branchFuture = this.executor.scheduleAtFixedRate(this.haltNode, ProgramConstants.INITIAL_DELAY,
+                                                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
                 this.currentlyExecutingNode = this.haltNode;
-                System.out.println("Ally " + allyID + " is running halt node");
+                // System.out.println("Ally " + allyID + " is running halt node");
                 break;
             case STOP:
-                this.branchFuture = this.executor.submit(this.stopNode);
+                this.branchFuture = this.executor.scheduleAtFixedRate(this.stopNode, ProgramConstants.INITIAL_DELAY,
+                                                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
                 this.currentlyExecutingNode = this.stopNode;
                 break;
             case DIRECT_FREE_YELLOW, DIRECT_FREE_BLUE:
@@ -157,8 +161,9 @@ public class FielderRootService extends ServiceNode {
                 runOpenPlay();
                 break;
             case TIMEOUT_YELLOW, TIMEOUT_BLUE:
-                this.branchFuture = null;
-                this.currentlyExecutingNode = null;
+                this.branchFuture = this.executor.scheduleAtFixedRate(this.haltNode, ProgramConstants.INITIAL_DELAY,
+                                                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
+                this.currentlyExecutingNode = this.haltNode;
                 break;
         }
     }

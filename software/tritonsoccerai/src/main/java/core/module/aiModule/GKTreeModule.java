@@ -24,4 +24,10 @@ public class GKTreeModule extends Module {
     protected void declareConsumes() throws IOException, TimeoutException {
     }
 
+    @Override
+    public void run() {
+        super.run();
+        this.tree.execute();
+    }
+
 }

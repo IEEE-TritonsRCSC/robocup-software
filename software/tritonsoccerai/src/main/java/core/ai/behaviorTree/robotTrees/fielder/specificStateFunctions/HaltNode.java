@@ -39,7 +39,7 @@ public class HaltNode extends SequenceNode {
         /*while(new Vector2d(GameInfo.getAlly(allyID).getVx(), GameInfo.getAlly(allyID).getVy()).mag() < MAX_VEL_CONSTANT) {
             this.moveToPositionNode.execute(getPos(GameInfo.getAlly(allyID)));
         }*/
-        RobotCommand localCommand = generateLocalMoveCommand(0, 0, 3.0f, 
+        RobotCommand localCommand = generateLocalMoveCommand(0, 0, 0.0f, 
                                                     GameInfo.getAlly(allyID).getOrientation(), allyID);
         ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, localCommand);
         return NodeState.SUCCESS;

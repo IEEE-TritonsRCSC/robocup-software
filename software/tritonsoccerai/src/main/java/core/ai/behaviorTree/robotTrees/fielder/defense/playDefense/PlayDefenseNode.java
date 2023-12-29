@@ -17,9 +17,11 @@ public class PlayDefenseNode extends CompositeNode {
     private final ScheduledThreadPoolExecutor executor;
     private final PlayDefenseService playDefenseService;
     private Future playDefenseFuture;
+    private int allyID;
 
     public PlayDefenseNode(int allyID, ScheduledThreadPoolExecutor executor) {
         super("Play Defense Node: " + allyID);
+        this.allyID = allyID;
         this.executor = executor;
         this.playDefenseService = new PlayDefenseService(allyID);
     }
@@ -29,7 +31,7 @@ public class PlayDefenseNode extends CompositeNode {
      */
     @Override
     public NodeState execute() {
-        System.out.println("Running playDefense service");
+        System.out.println("Ally " + allyID + " is running playDefense service");
         this.playDefenseFuture = this.executor.scheduleAtFixedRate(this.playDefenseService, ProgramConstants.INITIAL_DELAY,
                                         ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
         return NodeState.SUCCESS;
