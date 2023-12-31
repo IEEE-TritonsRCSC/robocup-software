@@ -19,13 +19,12 @@ public class GKIndirectFreeNode extends TaskNode {
 
     @Override
     public NodeState execute() {
-        while (true) {
-            if (GameInfo.getPossessBall()) {
-                this.positionSelfNode.execute(); // set up GK on offense
-            } else {
-                this.blockBallNode.execute(); // set up GK on defense
-            }
+        if (GameInfo.getPossessBall()) {
+            this.positionSelfNode.execute(); // set up GK on offense
+        } else {
+            this.blockBallNode.execute(); // set up GK on defense
         }
+        return NodeState.SUCCESS;
     }
 
 }

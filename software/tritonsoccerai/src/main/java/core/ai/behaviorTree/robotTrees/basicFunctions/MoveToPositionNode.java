@@ -51,9 +51,13 @@ public class MoveToPositionNode extends TaskNode {
         LinkedList<Node2d> route = pathfindGridGroup.findRoute(allyID, allyPos, endLoc);
         Vector2d next = pathfindGridGroup.findNext(allyID, route);
 
+        if (next == null) {
+            return NodeState.FAILURE;
+        }
+
         // Build robot command to be published
-        Vector2d vel = next.sub(allyPos).scale(aiConfig.kpPos);
-        float angular = aiConfig.kpOrientation * (Vector2d.angleDifference(GameInfo.getAlly(allyID).getOrientation(), targetOrientation));
+        Vector2d vel = next.sub(allyPos).scale(RobotConstants.MOVE_VELOCITY_DAMPENER);
+        float angular = 3.0f * (Vector2d.angleDifference(GameInfo.getAlly(allyID).getOrientation(), targetOrientation));
         RobotCommand localCommand = generateLocalMoveCommand(vel.x, vel.y, angular, 
                                                             GameInfo.getAlly(allyID).getOrientation(), allyID);
 

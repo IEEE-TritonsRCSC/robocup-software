@@ -38,9 +38,7 @@ public class DirectFreeNode extends TaskNode {
                 }
             }
             else {
-                while (true) {
-                    this.positionSelfNode.execute();
-                }
+                this.positionSelfNode.execute();
             }
         }
         else {

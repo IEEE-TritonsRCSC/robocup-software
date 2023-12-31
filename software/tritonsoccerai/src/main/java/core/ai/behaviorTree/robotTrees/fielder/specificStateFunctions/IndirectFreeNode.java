@@ -45,23 +45,19 @@ public class IndirectFreeNode extends TaskNode {
                 }
             }
             else {
-                while (true) {
-                    this.positionSelfNode.execute();
-                }
+                this.positionSelfNode.execute();
             }
         }
         else {
             ArrayList<Robot> opponents;
             DISTANCE_CONSTANT = 7;
-            while (true) {
-                opponents = new ArrayList<Robot>(GameInfo.getFoeFielders());
-                for (Robot foe : opponents) {
-                    if (getPos(foe).dist(getPos(GameInfo.getBall())) < DISTANCE_CONSTANT) {
-                        opponents.remove(foe);
-                    }
+            opponents = new ArrayList<Robot>(GameInfo.getFoeFielders());
+            for (Robot foe : opponents) {
+                if (getPos(foe).dist(getPos(GameInfo.getBall())) < DISTANCE_CONSTANT) {
+                    opponents.remove(foe);
                 }
-                this.moveToObjectNode.execute(ObjectHelper.identifyFoeToGuard(GameInfo.getAlly(allyID), opponents));
             }
+            this.moveToObjectNode.execute(ObjectHelper.identifyFoeToGuard(GameInfo.getAlly(allyID), opponents));
         }
         return NodeState.SUCCESS;
     }

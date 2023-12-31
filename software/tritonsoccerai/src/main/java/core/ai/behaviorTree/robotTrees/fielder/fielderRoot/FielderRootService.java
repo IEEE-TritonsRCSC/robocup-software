@@ -8,8 +8,8 @@ import main.java.core.ai.behaviorTree.nodes.NodeState;
 import main.java.core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
 import main.java.core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
 import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
-import main.java.core.ai.behaviorTree.robotTrees.fielder.defense.playDefense.PlayDefenseNode;
-import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot.OffenseRootNode;
+import main.java.core.ai.behaviorTree.robotTrees.fielder.defense.playDefense.PlayDefenseService;
+import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot.OffenseRootService;
 import main.java.core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.*;
 import static proto.triton.FilteredObject.Robot;
 import static proto.gc.SslGcRefereeMessage.Referee;
@@ -28,8 +28,8 @@ public class FielderRootService extends ServiceNode {
     private final ScheduledThreadPoolExecutor executor;
 
     private final ConditionalNode haveBall;
-    private final OffenseRootNode offense;
-    private final PlayDefenseNode defense;
+    private final OffenseRootService offense;
+    private final PlayDefenseService defense;
 
     private final HaltNode haltNode;
     private final StopNode stopNode;
@@ -63,8 +63,8 @@ public class FielderRootService extends ServiceNode {
                 return GameInfo.getPossessBall();
             }
         };
-        this.offense = new OffenseRootNode(allyID, executor);
-        this.defense = new PlayDefenseNode(allyID, executor);
+        this.offense = new OffenseRootService(allyID);
+        this.defense = new PlayDefenseService(allyID);
 
         this.haltNode = new HaltNode(allyID);
         this.stopNode = new StopNode(allyID, this.haltNode);
@@ -134,15 +134,18 @@ public class FielderRootService extends ServiceNode {
                 this.currentlyExecutingNode = this.stopNode;
                 break;
             case DIRECT_FREE_YELLOW, DIRECT_FREE_BLUE:
-                this.branchFuture = this.executor.submit(this.prepareDirectFreeNode);
+                this.branchFuture = this.executor.scheduleAtFixedRate(this.prepareDirectFreeNode, ProgramConstants.INITIAL_DELAY,
+                                                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
                 this.currentlyExecutingNode = this.prepareDirectFreeNode;
                 break;
             case INDIRECT_FREE_YELLOW, INDIRECT_FREE_BLUE:
-                this.branchFuture = this.executor.submit(this.prepareIndirectFreeNode);
+                this.branchFuture = this.executor.scheduleAtFixedRate(this.prepareIndirectFreeNode, ProgramConstants.INITIAL_DELAY,
+                                                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);;
                 this.currentlyExecutingNode = this.prepareIndirectFreeNode;
                 break;
             case PREPARE_KICKOFF_YELLOW, PREPARE_KICKOFF_BLUE:
-                this.branchFuture = this.executor.submit(this.prepareKickoffNode);
+                this.branchFuture = this.executor.scheduleAtFixedRate(this.prepareKickoffNode, ProgramConstants.INITIAL_DELAY,
+                                                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
                 this.currentlyExecutingNode = this.prepareKickoffNode;
                 break;
             case PREPARE_PENALTY_YELLOW, PREPARE_PENALTY_BLUE:
@@ -173,11 +176,13 @@ public class FielderRootService extends ServiceNode {
      */
     private void runOpenPlay() {
         if (onOffense) {
-            this.branchFuture = this.executor.submit(this.offense);
+            this.branchFuture = this.executor.scheduleAtFixedRate(this.offense, ProgramConstants.INITIAL_DELAY,
+                                                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
             this.currentlyExecutingNode = this.offense;
         }
         else {
-            this.branchFuture = this.executor.submit(this.defense);
+            this.branchFuture = this.executor.scheduleAtFixedRate(this.defense, ProgramConstants.INITIAL_DELAY,
+                                                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
             this.currentlyExecutingNode = this.defense;
         }
     }

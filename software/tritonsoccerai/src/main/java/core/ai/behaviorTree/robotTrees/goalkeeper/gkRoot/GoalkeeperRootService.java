@@ -7,8 +7,8 @@ import main.java.core.ai.behaviorTree.nodes.BTNode;
 import main.java.core.ai.behaviorTree.nodes.NodeState;
 import main.java.core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
 import main.java.core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
-import main.java.core.ai.behaviorTree.robotTrees.goalkeeper.defense.defenseRoot.GKDefenseRootNode;
-import main.java.core.ai.behaviorTree.robotTrees.goalkeeper.offense.offenseRoot.GKOffenseRootNode;
+import main.java.core.ai.behaviorTree.robotTrees.goalkeeper.defense.defenseRoot.GKDefenseRootService;
+import main.java.core.ai.behaviorTree.robotTrees.goalkeeper.offense.offenseRoot.GKOffenseRootService;
 import main.java.core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions.*;
 
 import static proto.gc.SslGcRefereeMessage.Referee;
@@ -30,8 +30,8 @@ public class GoalkeeperRootService extends ServiceNode {
     private final ScheduledThreadPoolExecutor executor;
 
     private final ConditionalNode haveBall;
-    private final GKOffenseRootNode offense;
-    private final GKDefenseRootNode defense;
+    private final GKOffenseRootService offense;
+    private final GKDefenseRootService defense;
 
     private final GKHaltNode haltNode;
     private final GKStopNode stopNode;
@@ -59,8 +59,8 @@ public class GoalkeeperRootService extends ServiceNode {
                 return GameInfo.getPossessBall();
             }
         };
-        this.offense = new GKOffenseRootNode(executor);
-        this.defense = new GKDefenseRootNode(executor);
+        this.offense = new GKOffenseRootService();
+        this.defense = new GKDefenseRootService();
 
         this.haltNode = new GKHaltNode();
         this.stopNode = new GKStopNode(this.haltNode);
@@ -111,15 +111,18 @@ public class GoalkeeperRootService extends ServiceNode {
                 this.currentlyExecutingNode = this.stopNode;
                 break;
             case DIRECT_FREE_YELLOW, DIRECT_FREE_BLUE:
-                this.branchFuture = this.executor.submit(this.prepareDirectFreeNode);
+                this.branchFuture = this.executor.scheduleAtFixedRate(this.prepareDirectFreeNode, ProgramConstants.INITIAL_DELAY,
+                                                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
                 this.currentlyExecutingNode = this.prepareDirectFreeNode;
                 break;
             case INDIRECT_FREE_YELLOW, INDIRECT_FREE_BLUE:
-                this.branchFuture = this.executor.submit(this.prepareIndirectFreeNode);
+                this.branchFuture = this.executor.scheduleAtFixedRate(this.prepareIndirectFreeNode, ProgramConstants.INITIAL_DELAY,
+                                                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
                 this.currentlyExecutingNode = this.prepareIndirectFreeNode;
                 break;
             case PREPARE_KICKOFF_YELLOW, PREPARE_KICKOFF_BLUE:
-                this.branchFuture = this.executor.submit(this.prepareKickoffNode);
+                this.branchFuture = this.executor.scheduleAtFixedRate(this.prepareKickoffNode, ProgramConstants.INITIAL_DELAY,
+                                                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
                 this.currentlyExecutingNode = this.prepareKickoffNode;
                 break;
             case PREPARE_PENALTY_YELLOW, PREPARE_PENALTY_BLUE:
@@ -168,11 +171,13 @@ public class GoalkeeperRootService extends ServiceNode {
      */
     private void runOpenPlay() {
         if (onOffense) {
-            this.branchFuture = this.executor.submit(this.offense);
+            this.branchFuture = this.executor.scheduleAtFixedRate(this.offense, ProgramConstants.INITIAL_DELAY,
+                                                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
             this.currentlyExecutingNode = this.offense;
         }
         else {
-            this.branchFuture = this.executor.submit(this.defense);
+            this.branchFuture = this.executor.scheduleAtFixedRate(this.defense, ProgramConstants.INITIAL_DELAY,
+                                                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
             this.currentlyExecutingNode = this.defense;
         }
     }

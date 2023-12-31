@@ -19,13 +19,8 @@ public class GKKickoffNode extends TaskNode {
 
     @Override
     public NodeState execute() {
-        while (true) {
-            if (GameInfo.getPossessBall()) {
-                this.positionSelfNode.execute();
-            } else {
-                this.blockBallNode.execute();
-            }
-        }
+        this.blockBallNode.execute();
+        return NodeState.SUCCESS;
     }
 
 }
