@@ -60,7 +60,6 @@ public class MakePlayNode extends CompositeNode {
         Vector2d objectPoint = new Vector2d((GameInfo.getAllyClosestToBall().getX() + goalX) / 2, 
                                             (GameInfo.getAllyClosestToBall().getY() + goalY) / 2); 
 
-
         // Check if there is a space towards the objective point
 
         ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoes());
