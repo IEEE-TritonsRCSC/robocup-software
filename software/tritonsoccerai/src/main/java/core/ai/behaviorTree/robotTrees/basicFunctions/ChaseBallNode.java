@@ -5,6 +5,10 @@ import main.java.core.ai.behaviorTree.nodes.NodeState;
 import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import static proto.triton.FilteredObject.Robot;
 
+import static proto.triton.FilteredObject.Ball;
+import static main.java.core.util.ProtobufUtils.*;
+import main.java.core.util.*;
+
 /**
  * Defines task of chasing ball
  */
@@ -25,6 +29,32 @@ public class ChaseBallNode extends TaskNode {
         // System.out.println("Ally " + ally.getId() + " chasing ball");
         this.moveToObjectNode.execute(GameInfo.getBall());
         // System.out.println("Running chase ball node");
+
+        // Calculating path from robot to ball
+        Ball ball = GameInfo.getBall();
+        Robot ally = GameInfo.getAlly(allyID);
+        Vector2d allyPos = getPos(ally);
+        Vector2d ballPos = getPos(ball);
+        float distanceFromAllyToBall = allyPos.dist(ballPos);
+        Vector2d ballToActor = getPos(ally).sub(ballPos);
+        Vector2d offset = ballToActor.project(getVel(ball));
+        Vector2d targetPos = ballPos.add(offset);
+
+
+        // Move to ball
+        MoveToPositionNode MoveToPosition = new MoveToPositionNode(allyID);
+        MoveToPosition.execute(targetPos);
+        DribbleBallNode dribbleBall = new DribbleBallNode(allyID);
+        
+        // Dribble It
+        if (distanceFromAllyToBall <= 100){
+            dribbleBall.execute();
+            System.out.println("Dribbling ---------------------------------------------------------------");
+        } else {
+            dribbleBall.terminate();
+            System.out.println("Stopped Dribbling ---------------------------------------------------------------");
+        }
+
         return NodeState.SUCCESS;
     }
 }
