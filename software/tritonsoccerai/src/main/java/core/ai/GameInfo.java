@@ -2,6 +2,7 @@ package main.java.core.ai;
 
 import static proto.triton.FilteredObject.*;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
+import static proto.gc.SslGcRefereeMessage.Referee;
 import main.java.core.util.Vector2d;
 import main.java.core.constants.Team;
 
@@ -17,21 +18,31 @@ import static main.java.core.util.ProtobufUtils.getPos;
 public class GameInfo {
 
     public static FilteredWrapperPacket wrapper;
+    public static Referee ref;
+    public static Referee.Command prevCommand;
+
+    public static boolean inOpenPlay = false;
 
     private static Team TEAM_COLOR;
     private static Team FOE_TEAM_COLOR;
-    private static GameState currState;
-    private static GameState prevState;
-    private static Vector2d ballPlacementLocation;
+
+    // private static Vector2d ballPlacementLocation;
 
     /**
      * Initialize game information
      */
-    public void initialize(FilteredWrapperPacket wrapper, Team teamColor, Team foeTeamColor, GameState currState) {
+    public void initialize(FilteredWrapperPacket wrapper, Team teamColor, Team foeTeamColor) {
         GameInfo.wrapper = wrapper;
         GameInfo.TEAM_COLOR = teamColor;
         GameInfo.FOE_TEAM_COLOR = foeTeamColor;
-        GameInfo.currState = currState;
+    }
+
+    public static FilteredWrapperPacket getWrapper() {
+        return wrapper;
+    }
+
+    public static Referee getReferee() {
+        return ref;
     }
 
     public static Team getTeamColor() {
@@ -87,10 +98,10 @@ public class GameInfo {
     public static Robot getAllyClosestToBall() {
         ArrayList<Robot> allies = getAllies();
         Vector2d ballPos = getPos(wrapper.getBall());
-        Robot closest = allies.get(0);
+        Robot closest = allies.get(1);
         float minDist = getPos(closest).dist(ballPos);
         float distToBall;
-        for (int i = 1; i < allies.size(); i++) {
+        for (int i = 2; i < allies.size(); i++) {
             distToBall = getPos(allies.get(i)).dist(ballPos);
             if (distToBall < minDist) {
                 closest = allies.get(i);
@@ -116,16 +127,21 @@ public class GameInfo {
         return closest;
     }
 
-    public static GameState getCurrState() {
-        return currState;
+    public static Referee.Command getCurrCommand() {
+        return ref.getCommand();
     }
 
-    public static GameState getPrevState() {
-        return prevState;
+    public static Referee.Command getNextCommand() {
+        return ref.getNextCommand();
+    }
+
+    public static Referee.Command getPrevCommand() {
+        return prevCommand;
     }
 
     public static Vector2d getBallPlacementLocation() {
-        return ballPlacementLocation;
+        Referee.Point placementLocation = ref.getDesignatedPosition();
+        return new Vector2d(placementLocation.getX(), placementLocation.getY());
     }
 
     public static Ball getBall() {
@@ -136,8 +152,20 @@ public class GameInfo {
         return wrapper.getField();
     }
 
+    public static boolean inOpenPlay() {
+        return inOpenPlay;
+    }
+
     public static void setWrapper(FilteredWrapperPacket wrapper) {
         GameInfo.wrapper = wrapper;
+    }
+
+    public static void setReferee(Referee ref) {
+        GameInfo.ref = ref;
+    }
+
+    public static void setPrevCommand(Referee.Command command) {
+        GameInfo.prevCommand = command;
     }
 
     public static void setTeamColor(Team teamColor) {
@@ -148,13 +176,8 @@ public class GameInfo {
         GameInfo.FOE_TEAM_COLOR = teamColor;
     }
 
-    public static void setCurrState(GameState currState) {
-        GameInfo.prevState = GameInfo.currState;
-        GameInfo.currState = currState;
-    }
-
-    public static void setBallPlacementLocation(Vector2d placementLocation) {
-        GameInfo.ballPlacementLocation = placementLocation;
+    public static void setInOpenPlay(boolean inOpenPlay) {
+        GameInfo.inOpenPlay = inOpenPlay;
     }
 
 }

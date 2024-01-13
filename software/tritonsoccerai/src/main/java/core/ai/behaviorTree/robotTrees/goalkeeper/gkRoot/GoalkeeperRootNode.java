@@ -23,6 +23,7 @@ public class GoalkeeperRootNode extends CompositeNode {
      */
     @Override
     public NodeState execute() {
+        System.out.println("GKRoot running");
         executor.scheduleAtFixedRate(this.gkRootService, ProgramConstants.INITIAL_DELAY,
                                     ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
         return NodeState.RUNNING;

@@ -11,4 +11,6 @@ public class RobotConstants {
     public static final double DRIBBLE_VELOCITY = 10.0; // change this
     public static final double ROBOT_WIDTH = 2.0; // change this
 
+    public static final float MOVE_VELOCITY_DAMPENER = 0.0011f;
+
 }

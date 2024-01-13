@@ -10,3 +10,6 @@
 [submodule "grSim"]
 	path = grSim
 	url = https://github.com/RoboCup-SSL/grSim.git
+[submodule "ssl-game-controller"]
+	path = ssl-game-controller
+	url = https://github.com/RoboCup-SSL/ssl-game-controller/

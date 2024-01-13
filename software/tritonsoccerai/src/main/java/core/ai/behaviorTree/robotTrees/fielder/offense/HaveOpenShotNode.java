@@ -42,8 +42,10 @@ public class HaveOpenShotNode extends ConditionalNode {
         alliesList.remove(GameInfo.getAllyClosestToBall());
 
         //add the other ally positions and foe positions to the obstaclesPositions list
-        for(int i=0;i<alliesList.size();i++) {
+        for (int i = 0; i < alliesList.size(); i++) {
 			obstaclePositions.add(getPos(alliesList.get(i)));
+		}
+        for (int i = 0; i < foesList.size(); i++) {
             obstaclePositions.add(getPos(foesList.get(i)));
 		}
 

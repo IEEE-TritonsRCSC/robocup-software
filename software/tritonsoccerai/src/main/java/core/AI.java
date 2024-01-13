@@ -63,6 +63,7 @@ public class AI {
         if (ProgramConstants.test) {
             ai.runTests();
         } else {
+            System.out.println(GameInfo.getTeamColor());
             ai.startAI();
         }
     }
@@ -180,15 +181,16 @@ public class AI {
         AIModule aiModule = new AIModule(executor);
         ProgramConstants.commandPublishingModule = aiModule;
         startModule(aiModule);
-        GameInfo.setCurrState(GameState.OPEN_PLAY);
+        
+        GameInfo.setInOpenPlay(false);
+        
+        startModule(new CentralCoordinatorModule(executor));
+
+        startModule(new GKTreeModule(executor));
+        
         for (int id = 1; id <= GameInfo.getFielders().size(); id++) {
             startModule(new FielderTreeModule(executor, id));
-            System.out.println("Fielder module started for robot " + id);
         }
-        startModule(new GKTreeModule(executor));
-        System.out.println("GK module started");
-        startModule(new CentralCoordinatorModule(executor));
-        System.out.println("Central module started");
     }
 
     /**
@@ -201,7 +203,6 @@ public class AI {
         startModule(new SimulatorControlAudienceConverter(executor));
         startModule(new RobotCommandAudienceConverter(executor));
         startModule(new TritonBotMessageBuilder(executor));
-        System.out.println("Processing modules started");
     }
 
     /**
@@ -210,11 +211,11 @@ public class AI {
      */
     public void startInterfaceModules() {
         startModule(new CameraInterface(executor));
+        startModule(new GameControllerInterface(executor));
         startModule(new SimulatorCommandInterface(executor));
         startModule(new SimulatorRobotCommandInterface(executor));
         startModule(new TritonBotMessageInterface(executor));
         startModule(new UserInterface(executor));
-        System.out.println("Interface modules started");
     }
 
     /**

@@ -9,10 +9,12 @@ import main.java.core.util.Vector2d;
 import main.java.core.search.implementation.*;
 import main.java.core.search.node2d.Node2d;
 import main.java.core.constants.ProgramConstants;
+import static main.java.core.constants.ProgramConstants.aiConfig;
+import main.java.core.constants.RobotConstants;
 
 import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
 
-import static proto.triton.FilteredObject.Robot;
+import static proto.triton.FilteredObject.*;
 import static proto.simulation.SslSimulationRobotControl.RobotCommand;
 import static proto.simulation.SslSimulationRobotControl.RobotMoveCommand;
 import static proto.simulation.SslSimulationRobotControl.MoveLocalVelocity;
@@ -35,17 +37,28 @@ public class MoveToPositionNode extends TaskNode {
     }
 
     public NodeState execute(Vector2d endLoc) {
+        Robot ally = GameInfo.getAlly(allyID);
+        Ball ball = GameInfo.getBall();
+        float targetOrientation = (float) Math.atan2(ball.getY() - ally.getY(), ball.getX() - ally.getX());
+        return execute(endLoc, targetOrientation);
+    }
+
+    public NodeState execute(Vector2d endLoc, float targetOrientation) {
         Vector2d allyPos = getPos(GameInfo.getAlly(allyID));
-        System.out.println(allyPos);
-        System.out.println(getPos(GameInfo.getAllies().get(0)));
 
         // Pathfinding to endLoc
+        pathfindGridGroup.updateObstacles(GameInfo.getWrapper());
         LinkedList<Node2d> route = pathfindGridGroup.findRoute(allyID, allyPos, endLoc);
         Vector2d next = pathfindGridGroup.findNext(allyID, route);
 
+        if (next == null) {
+            return NodeState.FAILURE;
+        }
+
         // Build robot command to be published
-        Vector2d vel = endLoc.sub(allyPos).scale((float) 0.1);
-        RobotCommand localCommand = generateLocalMoveCommand(vel.x, vel.y, 3.0f, 
+        Vector2d vel = next.sub(allyPos).scale(RobotConstants.MOVE_VELOCITY_DAMPENER);
+        float angular = 3.0f * (Vector2d.angleDifference(GameInfo.getAlly(allyID).getOrientation(), targetOrientation));
+        RobotCommand localCommand = generateLocalMoveCommand(vel.x, vel.y, angular, 
                                                             GameInfo.getAlly(allyID).getOrientation(), allyID);
 
         // Publish command to robot
