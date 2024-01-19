@@ -26,7 +26,18 @@ jobs:
         distribution: 'temurin'
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
-    
+    - name: Set up Protobuf
+      run: |
+           git clone https://github.com/protocolbuffers/protobuf.git
+           cd protobuf
+           git submodule update --init --recursive
+           ./autogen.sh
+           ./autogen.sh
+           ./configure
+           make
+           make check
+           sudo make install
+           sudo ldconfig
     - name: Clean Install w/ Maven
       run: 
         cd software/tritonsoccerai ; mvn clean install
