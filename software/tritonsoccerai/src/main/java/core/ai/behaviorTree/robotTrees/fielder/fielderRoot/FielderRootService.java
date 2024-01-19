@@ -14,6 +14,8 @@ import main.java.core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.
 import static proto.triton.FilteredObject.Robot;
 import static proto.gc.SslGcRefereeMessage.Referee;
 
+import static main.java.core.util.ProtobufUtils.getPos;
+
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -93,6 +95,7 @@ public class FielderRootService extends ServiceNode {
                 switchBranch();
             }
         }
+        // System.out.println(getPos(GameInfo.getAlly(allyID)).dist(getPos(GameInfo.getBall())));
         return NodeState.SUCCESS;
     }
 
