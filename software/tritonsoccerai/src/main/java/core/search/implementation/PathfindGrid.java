@@ -102,9 +102,12 @@ public class PathfindGrid {
                 node.setPenalty(aiConfig.calculateBoundPenalty(dist));
         });
 
+        float minPenaltyFactor = 0.5f;
+
         allies.forEach((id, ally) -> {
             if (ally == excludeAlly) return;
             Vector2d allyVel = getVel(ally);
+            Vector2d allyVelNorm = allyVel.norm();
             Vector2d pos = predictRobotPos(ally, aiConfig.collisionExtrapolation);
 
             float collisionExtension = aiConfig.collisionSpeedScale * allyVel.mag();
@@ -112,13 +115,16 @@ public class PathfindGrid {
             List<Node2d> nearestNodes = getNearestNodes(pos, collisionDist);
             nearestNodes.forEach(node -> {
                 float dist = node.getPos().dist(pos);
-                node.updatePenalty(aiConfig.calculateRobotPenalty(dist, collisionExtension));
+                Vector2d distToNode = node.getPos().sub(pos).norm();
+                float penaltyFactor = Math.max(Math.abs(allyVelNorm.dot(distToNode)), minPenaltyFactor);
+                node.updatePenalty(penaltyFactor * aiConfig.calculateRobotPenalty(dist, collisionExtension));
                 obstacles.add(node);
             });
         });
 
         foes.forEach((id, foe) -> {
             Vector2d foeVel = getVel(foe);
+            Vector2d foeVelNorm = foeVel.norm();
             Vector2d pos = predictRobotPos(foe, aiConfig.collisionExtrapolation);
 
             float collisionExtension = aiConfig.collisionSpeedScale * foeVel.mag();
@@ -126,7 +132,9 @@ public class PathfindGrid {
             List<Node2d> nearestNodes = getNearestNodes(pos, collisionDist);
             nearestNodes.forEach(node -> {
                 float dist = node.getPos().dist(pos);
-                node.updatePenalty(aiConfig.calculateRobotPenalty(dist, collisionExtension));
+                Vector2d distToNode = node.getPos().sub(pos).norm();
+                float penaltyFactor = Math.max(Math.abs(foeVelNorm.dot(distToNode)), minPenaltyFactor);
+                node.updatePenalty(penaltyFactor * aiConfig.calculateRobotPenalty(dist, collisionExtension));
                 obstacles.add(node);
             });
         });
