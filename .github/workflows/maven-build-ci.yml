@@ -29,6 +29,7 @@ jobs:
    
     - name: Set up Protobuf
       run: |
+           sudo pip install protobuf
            protoc --version
            mvn test
            mvn install
