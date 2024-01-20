@@ -58,16 +58,4 @@ public class DribbleBallNode extends TaskNode {
         return NodeState.SUCCESS;
     }
 
-    public NodeState terminate() {
-        // Set dribbler speed and publish the command
-        SslSimulationRobotControl.RobotCommand.Builder robotCommand = SslSimulationRobotControl.RobotCommand.newBuilder();
-
-        robotCommand.setId(allyID);
-        robotCommand.setDribblerSpeed(0);
-        robotCommand.setKickSpeed(1);
-
-        ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
-
-        return NodeState.SUCCESS;
-    }
 }
