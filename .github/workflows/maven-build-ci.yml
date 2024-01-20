@@ -29,10 +29,8 @@ jobs:
    
     - name: Set up Protobuf
       run: |
-           sudo pip install protobuf
+           sudo apt install protobuf-compiler
            protoc --version
-           mvn test
-           mvn install
            
     - name: Clean Install w/ Maven
       run: 
