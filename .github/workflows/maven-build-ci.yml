@@ -29,8 +29,10 @@ jobs:
    
     - name: Set up Protobuf
       run: |
-           sudo apt install protobuf-compiler
+           # sudo apt install protobuf-compiler
+           choco --install -y protoc
            protoc --version
+           which protoc
            
     - name: Clean Install w/ Maven
       run: 
