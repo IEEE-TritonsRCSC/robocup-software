@@ -2,6 +2,7 @@
 /home/rohil/robocup-2023/software/tritonsoccerai/src/main/java/core/module/interfaceModule/GameControllerInterface.java
 /home/rohil/robocup-2023/software/tritonsoccerai/src/main/java/core/messaging/SimpleSerialize.java
 /home/rohil/robocup-2023/software/tritonsoccerai/src/main/java/core/module/testModule/MoveTestModule.java
+/home/rohil/robocup-2023/software/tritonsoccerai/src/main/java/core/module/testModule/ObstacleTestModule.java
 /home/rohil/robocup-2023/software/tritonsoccerai/src/main/java/core/module/testModule/TestModule.java
 /home/rohil/robocup-2023/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/simulation/SslGcCommon.java
 /home/rohil/robocup-2023/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/gc/SslAutorefCi.java

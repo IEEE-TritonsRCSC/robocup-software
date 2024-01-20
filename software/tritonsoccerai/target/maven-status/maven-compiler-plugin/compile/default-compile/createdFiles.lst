@@ -405,6 +405,7 @@ proto/vision/MessagesRobocupSslDetectionTracked$TrackedRobot$1.class
 proto/gc/SslGcGameEvent$GameEvent$PenaltyKickFailed.class
 proto/gc/SslAutorefCi$AutoRefCiOutput$1.class
 main/java/core/module/testModule/MoveTestModule.class
+main/java/core/module/testModule/ObstacleTestModule.class
 proto/gc/SslGcGameEvent$GameEvent$AimlessKick$1.class
 proto/gc/SslGcChange$Change$AddGameEvent.class
 proto/vision/MessagesRobocupSslWrapper$SSL_WrapperPacket$Builder.class
