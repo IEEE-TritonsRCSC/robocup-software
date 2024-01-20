@@ -32,6 +32,7 @@ jobs:
            sudo apt install protobuf-compiler
            protoc --version
            which protoc
+           sudo ln -s /usr/bin/protoc /usr/local/bin/protoc
            
     - name: Clean Install w/ Maven
       run: 
