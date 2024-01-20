@@ -48,7 +48,7 @@ public class ChaseBallNode extends TaskNode {
         float distanceFromAllyToBall = allyPos.dist(ballPos);
         
         // Dribble It
-        if (distanceFromAllyToBall <= 500){
+        if (distanceFromAllyToBall <= 500f){
             dribbleBall = new DribbleBallNode(allyID);
             dribbleBall.execute(); 
             System.out.println("Dribbling ---------------------------------------------------------------");
