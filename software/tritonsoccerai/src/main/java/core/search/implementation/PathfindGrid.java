@@ -117,7 +117,7 @@ public class PathfindGrid {
                 float dist = node.getPos().dist(pos);
                 Vector2d distToNode = node.getPos().sub(pos).norm();
                 float penaltyFactor = Math.max(Math.abs(allyVelNorm.dot(distToNode)), minPenaltyFactor);
-                node.updatePenalty(penaltyFactor * aiConfig.calculateRobotPenalty(dist, collisionExtension));
+                node.updatePenalty(aiConfig.calculateRobotPenalty(dist, collisionExtension));
                 obstacles.add(node);
             });
         });
@@ -134,7 +134,7 @@ public class PathfindGrid {
                 float dist = node.getPos().dist(pos);
                 Vector2d distToNode = node.getPos().sub(pos).norm();
                 float penaltyFactor = Math.max(Math.abs(foeVelNorm.dot(distToNode)), minPenaltyFactor);
-                node.updatePenalty(penaltyFactor * aiConfig.calculateRobotPenalty(dist, collisionExtension));
+                node.updatePenalty(aiConfig.calculateRobotPenalty(dist, collisionExtension));
                 obstacles.add(node);
             });
         });
