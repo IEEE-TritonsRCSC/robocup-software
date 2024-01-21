@@ -1,5 +1,6 @@
 package main.java.core.search.implementation;
 
+import main.java.core.ai.GameInfo;
 import main.java.core.search.base.Graph;
 import main.java.core.search.base.RouteFinder;
 import main.java.core.search.base.Scorer;
@@ -103,6 +104,7 @@ public class PathfindGrid {
         });
 
         float minPenaltyFactor = 0.5f;
+        float maxRobotRadius = GameInfo.getField().getMaxRobotRadius();
 
         allies.forEach((id, ally) -> {
             if (ally == excludeAlly) return;
@@ -117,7 +119,7 @@ public class PathfindGrid {
                 float dist = node.getPos().dist(pos);
                 Vector2d distToNode = node.getPos().sub(pos).norm();
                 float penaltyFactor = Math.max(Math.abs(allyVelNorm.dot(distToNode)), minPenaltyFactor);
-                node.updatePenalty(aiConfig.calculateRobotPenalty(dist, collisionExtension));
+                node.updatePenalty(penaltyFactor * allyVel.mag() * aiConfig.calculateRobotPenalty(dist + maxRobotRadius, collisionExtension));
                 obstacles.add(node);
             });
         });
@@ -134,7 +136,7 @@ public class PathfindGrid {
                 float dist = node.getPos().dist(pos);
                 Vector2d distToNode = node.getPos().sub(pos).norm();
                 float penaltyFactor = Math.max(Math.abs(foeVelNorm.dot(distToNode)), minPenaltyFactor);
-                node.updatePenalty(aiConfig.calculateRobotPenalty(dist, collisionExtension));
+                node.updatePenalty(penaltyFactor * foeVel.mag() * aiConfig.calculateRobotPenalty(dist + maxRobotRadius, collisionExtension));
                 obstacles.add(node);
             });
         });
