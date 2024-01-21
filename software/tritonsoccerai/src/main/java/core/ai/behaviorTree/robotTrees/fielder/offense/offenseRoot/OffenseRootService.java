@@ -18,7 +18,7 @@ public class OffenseRootService extends ServiceNode {
     private final ShootBallNode shootBall;
     private final CompositeNode makePlay;
     private final PositionSelfNode positionSelf;
-    private int curr;
+    // private int curr;
 
     public OffenseRootService(int allyID) {
         super("Offense Root Service " + allyID);
@@ -28,7 +28,7 @@ public class OffenseRootService extends ServiceNode {
         this.makePlay = new MakePlayNode(allyID);
         this.positionSelf = new PositionSelfNode(allyID);
 
-        this.curr = 1;
+        // this.curr = 1;
     }
 
     /**
@@ -40,17 +40,17 @@ public class OffenseRootService extends ServiceNode {
         if (NodeState.isSuccess(this.havePossession.execute())) {
             if (NodeState.isSuccess(this.haveOpenShot.execute())) {
                 this.shootBall.execute();
-                System.out.println("Shoot ball executed " + curr);
+                // System.out.println("Shoot ball executed " + curr);
             } else {
                 this.makePlay.execute();
-                System.out.println("Make play executed " + curr);
+                // System.out.println("Make play executed " + curr);
             }
         }
         else {
             this.positionSelf.execute();
-            System.out.println("Position self executed " + curr);
+            // System.out.println("Position self executed " + curr);
         }
-        curr++;
+        // curr++;
         return NodeState.SUCCESS;
     }
 

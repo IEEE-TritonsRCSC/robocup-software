@@ -46,6 +46,7 @@ public class MakePlayNode extends CompositeNode {
 
     /**
      * Check if there is a space towards the goal
+     * @return whether dribble is possible
      */
     private boolean checkDribble(){
         boolean hasSpace = true;
