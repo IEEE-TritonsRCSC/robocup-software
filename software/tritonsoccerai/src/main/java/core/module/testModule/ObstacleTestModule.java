@@ -45,12 +45,26 @@ public class ObstacleTestModule extends TestModule {
     @Override
     public void run() {
         super.run();
-        Vector2d point = new Vector2d(0, 0);
         this.moveToPositionNode1 = new MoveToPositionNode(0);
         this.moveToPositionNode2 = new MoveToPositionNode(1);
-        this.future1 = this.executor.scheduleAtFixedRate(this.moveToPositionNode1, ProgramConstants.INITIAL_DELAY,
-                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
-        this.future2 = this.executor.scheduleAtFixedRate(this.moveToPositionNode2, ProgramConstants.INITIAL_DELAY,
-                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
+
+        Vector2d[] points = {new Vector2d(-2000, -2000), new Vector2d(-2000, 2000), 
+            new Vector2d(2000, 2000), new Vector2d(2000, -2000)};
+        
+        while (true) {
+            for (Vector2d point : points) {
+                this.moveToPositionNode1.setTargetLocation(point);
+                this.moveToPositionNode2.setTargetLocation(point);
+
+                this.future1 = this.executor.scheduleAtFixedRate(this.moveToPositionNode1, ProgramConstants.INITIAL_DELAY,
+                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
+                this.future2 = this.executor.scheduleAtFixedRate(this.moveToPositionNode2, ProgramConstants.INITIAL_DELAY,
+                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
+                    
+                try {
+                    TimeUnit.SECONDS.sleep(3);
+                } catch (Exception e) {}
+            }
+        }
     }
 }
