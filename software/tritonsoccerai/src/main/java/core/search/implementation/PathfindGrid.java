@@ -7,6 +7,8 @@ import main.java.core.search.base.Scorer;
 import main.java.core.search.node2d.Euclidean2dWithPenaltyScorer;
 import main.java.core.search.node2d.Node2d;
 import main.java.core.util.Vector2d;
+import proto.triton.FilteredObject.Robot;
+import proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
 
 import org.apache.commons.collections4.iterators.ReverseListIterator;
 
@@ -44,12 +46,50 @@ public class PathfindGrid {
         float gridMaxY = field.getFieldLength() / 2f
                 + 2 * aiConfig.gridExtend;
 
+        //Foe Defense Area Coordinates: (-1000, 3500), (-1000, 4500), (1000, 4500), (1000, 3500)
+
+        Vector2d foeDefenseAreaLeftUpper = new Vector2d(-1000, 4500);
+        Vector2d foeDefenseAreaLeftLower = new Vector2d(-1000, 3500);
+        Vector2d foeDefenseAreaRightUpper = new Vector2d(1000, 4500);
+        Vector2d foeDefenseAreaRightLower = new Vector2d(1000, 3500);
+
+        //Outer Bounds Coordinates: (-3000, -4810), (-3000, 4810), (3000, 4810), (3000, -4810)
+        Vector2d outerBoundsLeftUpper = new Vector2d(-3000, 4810);
+        Vector2d outerBoundsLeftLower = new Vector2d(-3000, -4810);
+        Vector2d outerBoundsRightUpper = new Vector2d(3000, 4810);
+        Vector2d outerBoundsRightLower = new Vector2d(3000, -4810);
+
         for (float x = 0; x < gridMaxX; x += aiConfig.getNodeSpacing()) {
             for (float y = 0; y < gridMaxY; y += aiConfig.getNodeSpacing()) {
                 for (int xMul = -1; xMul < 2; xMul += 2) {
                     for (int yMul = -1; yMul < 2; yMul += 2) {
                         Vector2d pos = new Vector2d(xMul * x, yMul * y);
                         Node2d node = new Node2d(pos);
+
+                        // stay out of foe defense area
+                        // upper bound
+                        if (pos.x >= foeDefenseAreaLeftLower.x && pos.x <= foeDefenseAreaRightUpper.x && pos.y >= foeDefenseAreaLeftLower.y && pos.y <= foeDefenseAreaRightUpper.y) {
+                            node.updatePenalty(1000);
+                        }
+
+                        // stay out of outer bounds
+                        // upper bound
+                        if (pos.x >= outerBoundsLeftUpper.x && pos.x <= outerBoundsRightUpper.x && pos.y == outerBoundsLeftUpper.y) {
+                            node.updatePenalty(1000);
+                        }
+                        // lower bound
+                        if (pos.x >= outerBoundsLeftUpper.x && pos.x <= outerBoundsRightUpper.x && pos.y == outerBoundsLeftLower.y) {
+                            node.updatePenalty(1000);
+                        }
+                        // left bound
+                        if (pos.y >= outerBoundsLeftLower.y && pos.y <= outerBoundsLeftUpper.y && pos.x == outerBoundsLeftUpper.x) {
+                            node.updatePenalty(1000);
+                        }
+                        // right bound
+                        if (pos.y >= outerBoundsRightLower.y && pos.y <= outerBoundsRightUpper.y && pos.x == outerBoundsRightUpper.x) {
+                            node.updatePenalty(1000);
+                        }
+
                         nodeMap.put(pos, node);
                     }
                 }
