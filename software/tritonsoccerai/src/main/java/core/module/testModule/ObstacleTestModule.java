@@ -48,8 +48,8 @@ public class ObstacleTestModule extends TestModule {
         this.moveToPositionNode1 = new MoveToPositionNode(0);
         this.moveToPositionNode2 = new MoveToPositionNode(1);
 
-        Vector2d[] points = {new Vector2d(-2000, -2000), new Vector2d(-2000, 2000), 
-            new Vector2d(2000, 2000), new Vector2d(2000, -2000)};
+        Vector2d[] points = {new Vector2d(-2000, 4000), new Vector2d(2000, 4000),
+            new Vector2d(-2000, -4000), new Vector2d(2000, -4000)};
         
         while (true) {
             for (Vector2d point : points) {
