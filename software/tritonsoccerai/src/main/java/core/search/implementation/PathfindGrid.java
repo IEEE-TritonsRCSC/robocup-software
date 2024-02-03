@@ -75,6 +75,7 @@ public class PathfindGrid {
                         // stay out of outer bounds
                         // upper bound
                         if (pos.x >= outerBoundsLeftUpper.x && pos.x <= outerBoundsRightUpper.x && pos.y == outerBoundsLeftUpper.y) {
+<<<<<<< HEAD
                             node.updatePenalty(100000);
                         }
                         // lower bound
@@ -88,6 +89,21 @@ public class PathfindGrid {
                         // right bound
                         if (pos.y >= outerBoundsRightLower.y && pos.y <= outerBoundsRightUpper.y && pos.x == outerBoundsRightUpper.x) {
                             node.updatePenalty(100000);
+=======
+                            node.updatePenalty(1000);
+                        }
+                        // lower bound
+                        if (pos.x >= outerBoundsLeftUpper.x && pos.x <= outerBoundsRightUpper.x && pos.y == outerBoundsLeftLower.y) {
+                            node.updatePenalty(1000);
+                        }
+                        // left bound
+                        if (pos.y >= outerBoundsLeftLower.y && pos.y <= outerBoundsLeftUpper.y && pos.x == outerBoundsLeftUpper.x) {
+                            node.updatePenalty(1000);
+                        }
+                        // right bound
+                        if (pos.y >= outerBoundsRightLower.y && pos.y <= outerBoundsRightUpper.y && pos.x == outerBoundsRightUpper.x) {
+                            node.updatePenalty(1000);
+>>>>>>> 0f1b5ec64a6729291af9524b11b93c4fde7222df
                         }
 
                         nodeMap.put(pos, node);
