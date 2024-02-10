@@ -46,14 +46,13 @@ public class PathfindGrid {
         float gridMaxY = field.getFieldLength() / 2f
                 + 2 * aiConfig.gridExtend;
 
-        //Foe Defense Area Coordinates: (-1000, 3500), (-1000, 4500), (1000, 4500), (1000, 3500)
-
+        // Foe Defense Area Coordinates (Division B): (-1000, 3500), (-1000, 4500), (1000, 4500), (1000, 3500)
         Vector2d foeDefenseAreaLeftUpper = new Vector2d(-1000, 4500);
         Vector2d foeDefenseAreaLeftLower = new Vector2d(-1000, 3500);
         Vector2d foeDefenseAreaRightUpper = new Vector2d(1000, 4500);
         Vector2d foeDefenseAreaRightLower = new Vector2d(1000, 3500);
 
-        //Outer Bounds Coordinates: (-3000, -4810), (-3000, 4810), (3000, 4810), (3000, -4810)
+        // Outer Bounds Coordinates (Division B): (-3000, -4810), (-3000, 4810), (3000, 4810), (3000, -4810)
         Vector2d outerBoundsLeftUpper = new Vector2d(-3000, 4810);
         Vector2d outerBoundsLeftLower = new Vector2d(-3000, -4810);
         Vector2d outerBoundsRightUpper = new Vector2d(3000, 4810);
@@ -66,44 +65,27 @@ public class PathfindGrid {
                         Vector2d pos = new Vector2d(xMul * x, yMul * y);
                         Node2d node = new Node2d(pos);
 
-                        // stay out of foe defense area
-                        // upper bound
+                        // Stay out of foe defense area
                         if (pos.x >= foeDefenseAreaLeftLower.x && pos.x <= foeDefenseAreaRightUpper.x && pos.y >= foeDefenseAreaLeftLower.y && pos.y <= foeDefenseAreaRightUpper.y) {
                             node.updatePenalty(1000);
                         }
 
-                        // stay out of outer bounds
-                        // upper bound
+                        // Stay out of outer bounds
+                        // Upper bound
                         if (pos.x >= outerBoundsLeftUpper.x && pos.x <= outerBoundsRightUpper.x && pos.y == outerBoundsLeftUpper.y) {
-<<<<<<< HEAD
                             node.updatePenalty(100000);
                         }
-                        // lower bound
+                        // Lower bound
                         if (pos.x >= outerBoundsLeftUpper.x && pos.x <= outerBoundsRightUpper.x && pos.y == outerBoundsLeftLower.y) {
                             node.updatePenalty(100000);
                         }
-                        // left bound
+                        // Left bound
                         if (pos.y >= outerBoundsLeftLower.y && pos.y <= outerBoundsLeftUpper.y && pos.x == outerBoundsLeftUpper.x) {
                             node.updatePenalty(100000);
                         }
-                        // right bound
+                        // Right bound
                         if (pos.y >= outerBoundsRightLower.y && pos.y <= outerBoundsRightUpper.y && pos.x == outerBoundsRightUpper.x) {
                             node.updatePenalty(100000);
-=======
-                            node.updatePenalty(1000);
-                        }
-                        // lower bound
-                        if (pos.x >= outerBoundsLeftUpper.x && pos.x <= outerBoundsRightUpper.x && pos.y == outerBoundsLeftLower.y) {
-                            node.updatePenalty(1000);
-                        }
-                        // left bound
-                        if (pos.y >= outerBoundsLeftLower.y && pos.y <= outerBoundsLeftUpper.y && pos.x == outerBoundsLeftUpper.x) {
-                            node.updatePenalty(1000);
-                        }
-                        // right bound
-                        if (pos.y >= outerBoundsRightLower.y && pos.y <= outerBoundsRightUpper.y && pos.x == outerBoundsRightUpper.x) {
-                            node.updatePenalty(1000);
->>>>>>> 0f1b5ec64a6729291af9524b11b93c4fde7222df
                         }
 
                         nodeMap.put(pos, node);

@@ -80,6 +80,10 @@ public class MoveToPositionNode extends TaskNode {
         }
     }
 
+    /**
+     * Sets the target location of the MoveToPositionNode (otherwise (0, 0) by default)
+     * @param targetLocation the new target location
+     */
     public void setTargetLocation(Vector2d targetLocation) {
         this.targetLocation = targetLocation;
     }

@@ -42,6 +42,9 @@ public class ObstacleTestModule extends TestModule {
         this.future2.cancel(true);
     }
 
+    /**
+     * Runs the obstacle avoidance test
+     */
     @Override
     public void run() {
         super.run();
@@ -51,6 +54,7 @@ public class ObstacleTestModule extends TestModule {
         Vector2d[] points = {new Vector2d(-2000, 4000), new Vector2d(2000, 4000),
             new Vector2d(-2000, -4000), new Vector2d(2000, -4000)};
         
+        // Loop infinitely, going to each of the coordinates in the points array
         while (true) {
             for (Vector2d point : points) {
                 this.moveToPositionNode1.setTargetLocation(point);
