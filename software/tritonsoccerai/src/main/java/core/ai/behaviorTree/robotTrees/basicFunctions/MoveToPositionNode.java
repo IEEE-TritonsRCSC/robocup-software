@@ -25,6 +25,7 @@ import static main.java.core.util.ObjectHelper.generateLocalMoveCommand;
 public class MoveToPositionNode extends TaskNode {
 
     PathfindGridGroup pathfindGridGroup;
+    Vector2d targetLocation;
     
     public MoveToPositionNode(int allyID) {
         super("Move To Position Node: " + allyID, allyID);
@@ -72,7 +73,19 @@ public class MoveToPositionNode extends TaskNode {
      */
     @Override
     public void run() {
-        execute(new Vector2d(0, 0));
+        if (this.targetLocation != null) {
+            execute(this.targetLocation);
+        } else {
+            execute(new Vector2d(0, 0));
+        }
+    }
+
+    /**
+     * Sets the target location of the MoveToPositionNode (otherwise (0, 0) by default)
+     * @param targetLocation the new target location
+     */
+    public void setTargetLocation(Vector2d targetLocation) {
+        this.targetLocation = targetLocation;
     }
 
 }

@@ -1,11 +1,14 @@
 package main.java.core.search.implementation;
 
+import main.java.core.ai.GameInfo;
 import main.java.core.search.base.Graph;
 import main.java.core.search.base.RouteFinder;
 import main.java.core.search.base.Scorer;
 import main.java.core.search.node2d.Euclidean2dWithPenaltyScorer;
 import main.java.core.search.node2d.Node2d;
 import main.java.core.util.Vector2d;
+import proto.triton.FilteredObject.Robot;
+import proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
 
 import org.apache.commons.collections4.iterators.ReverseListIterator;
 
@@ -43,12 +46,48 @@ public class PathfindGrid {
         float gridMaxY = field.getFieldLength() / 2f
                 + 2 * aiConfig.gridExtend;
 
+        // Foe Defense Area Coordinates (Division B): (-1000, 3500), (-1000, 4500), (1000, 4500), (1000, 3500)
+        Vector2d foeDefenseAreaLeftUpper = new Vector2d(-1000, 4500);
+        Vector2d foeDefenseAreaLeftLower = new Vector2d(-1000, 3500);
+        Vector2d foeDefenseAreaRightUpper = new Vector2d(1000, 4500);
+        Vector2d foeDefenseAreaRightLower = new Vector2d(1000, 3500);
+
+        // Outer Bounds Coordinates (Division B): (-3000, -4810), (-3000, 4810), (3000, 4810), (3000, -4810)
+        Vector2d outerBoundsLeftUpper = new Vector2d(-3000, 4810);
+        Vector2d outerBoundsLeftLower = new Vector2d(-3000, -4810);
+        Vector2d outerBoundsRightUpper = new Vector2d(3000, 4810);
+        Vector2d outerBoundsRightLower = new Vector2d(3000, -4810);
+
         for (float x = 0; x < gridMaxX; x += aiConfig.getNodeSpacing()) {
             for (float y = 0; y < gridMaxY; y += aiConfig.getNodeSpacing()) {
                 for (int xMul = -1; xMul < 2; xMul += 2) {
                     for (int yMul = -1; yMul < 2; yMul += 2) {
                         Vector2d pos = new Vector2d(xMul * x, yMul * y);
                         Node2d node = new Node2d(pos);
+
+                        // Stay out of foe defense area
+                        if (pos.x >= foeDefenseAreaLeftLower.x && pos.x <= foeDefenseAreaRightUpper.x && pos.y >= foeDefenseAreaLeftLower.y && pos.y <= foeDefenseAreaRightUpper.y) {
+                            node.updatePenalty(1000);
+                        }
+
+                        // Stay out of outer bounds
+                        // Upper bound
+                        if (pos.x >= outerBoundsLeftUpper.x && pos.x <= outerBoundsRightUpper.x && pos.y == outerBoundsLeftUpper.y) {
+                            node.updatePenalty(100000);
+                        }
+                        // Lower bound
+                        if (pos.x >= outerBoundsLeftUpper.x && pos.x <= outerBoundsRightUpper.x && pos.y == outerBoundsLeftLower.y) {
+                            node.updatePenalty(100000);
+                        }
+                        // Left bound
+                        if (pos.y >= outerBoundsLeftLower.y && pos.y <= outerBoundsLeftUpper.y && pos.x == outerBoundsLeftUpper.x) {
+                            node.updatePenalty(100000);
+                        }
+                        // Right bound
+                        if (pos.y >= outerBoundsRightLower.y && pos.y <= outerBoundsRightUpper.y && pos.x == outerBoundsRightUpper.x) {
+                            node.updatePenalty(100000);
+                        }
+
                         nodeMap.put(pos, node);
                     }
                 }
@@ -102,6 +141,9 @@ public class PathfindGrid {
                 node.setPenalty(aiConfig.calculateBoundPenalty(dist));
         });
 
+        float minPenaltyFactor = 1f;
+        float maxRobotRadius = GameInfo.getField().getMaxRobotRadius();
+
         allies.forEach((id, ally) -> {
             if (ally == excludeAlly) return;
             Vector2d allyVel = getVel(ally);
@@ -112,7 +154,9 @@ public class PathfindGrid {
             List<Node2d> nearestNodes = getNearestNodes(pos, collisionDist);
             nearestNodes.forEach(node -> {
                 float dist = node.getPos().dist(pos);
-                node.updatePenalty(aiConfig.calculateRobotPenalty(dist, collisionExtension));
+                Vector2d distToNode = node.getPos().sub(pos).norm();
+                float penaltyFactor = Math.max(Math.abs(allyVel.dot(distToNode)), minPenaltyFactor);
+                node.updatePenalty(penaltyFactor * aiConfig.calculateRobotPenalty(dist + maxRobotRadius, collisionExtension));
                 obstacles.add(node);
             });
         });
@@ -126,7 +170,9 @@ public class PathfindGrid {
             List<Node2d> nearestNodes = getNearestNodes(pos, collisionDist);
             nearestNodes.forEach(node -> {
                 float dist = node.getPos().dist(pos);
-                node.updatePenalty(aiConfig.calculateRobotPenalty(dist, collisionExtension));
+                Vector2d distToNode = node.getPos().sub(pos).norm();
+                float penaltyFactor = Math.max(Math.abs(foeVel.dot(distToNode)), minPenaltyFactor);
+                node.updatePenalty(penaltyFactor * aiConfig.calculateRobotPenalty(dist + maxRobotRadius, collisionExtension));
                 obstacles.add(node);
             });
         });

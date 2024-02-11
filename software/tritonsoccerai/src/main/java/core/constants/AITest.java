@@ -6,8 +6,11 @@ import main.java.core.module.testModule.MoveTestModule;
 import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
+import main.java.core.module.testModule.ObstacleTestModule;
+
 public enum AITest {
     MOVE(MoveTestModule.class, "Test the ability of robots to move a target location."),
+    OBSTACLE(ObstacleTestModule.class, "Test robot obstacle avoidance.")
     ;
 
     private final Class<? extends TestModule> testClass;
