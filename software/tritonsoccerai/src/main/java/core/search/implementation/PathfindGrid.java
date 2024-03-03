@@ -47,16 +47,16 @@ public class PathfindGrid {
                 + 2 * aiConfig.gridExtend;
 
         // Foe Defense Area Coordinates (Division B): (-1000, 3500), (-1000, 4500), (1000, 4500), (1000, 3500)
-        Vector2d foeDefenseAreaLeftUpper = new Vector2d(-1000, 4500);
-        Vector2d foeDefenseAreaLeftLower = new Vector2d(-1000, 3500);
-        Vector2d foeDefenseAreaRightUpper = new Vector2d(1000, 4500);
-        Vector2d foeDefenseAreaRightLower = new Vector2d(1000, 3500);
+        Vector2d foeDefenseAreaLeftUpper = new Vector2d(-1800, 6000);
+        Vector2d foeDefenseAreaLeftLower = new Vector2d(-1800, 4200);
+        Vector2d foeDefenseAreaRightUpper = new Vector2d(1800, 6000);
+        Vector2d foeDefenseAreaRightLower = new Vector2d(1800, 4200);
 
         // Outer Bounds Coordinates (Division B): (-3000, -4810), (-3000, 4810), (3000, 4810), (3000, -4810)
-        Vector2d outerBoundsLeftUpper = new Vector2d(-3000, 4810);
-        Vector2d outerBoundsLeftLower = new Vector2d(-3000, -4810);
-        Vector2d outerBoundsRightUpper = new Vector2d(3000, 4810);
-        Vector2d outerBoundsRightLower = new Vector2d(3000, -4810);
+        Vector2d outerBoundsLeftUpper = new Vector2d(-4810, 6310);
+        Vector2d outerBoundsLeftLower = new Vector2d(-4810, -6310);
+        Vector2d outerBoundsRightUpper = new Vector2d(4810, 6310);
+        Vector2d outerBoundsRightLower = new Vector2d(4810, -6310);
 
         for (float x = 0; x < gridMaxX; x += aiConfig.getNodeSpacing()) {
             for (float y = 0; y < gridMaxY; y += aiConfig.getNodeSpacing()) {
@@ -67,7 +67,7 @@ public class PathfindGrid {
 
                         // Stay out of foe defense area
                         if (pos.x >= foeDefenseAreaLeftLower.x && pos.x <= foeDefenseAreaRightUpper.x && pos.y >= foeDefenseAreaLeftLower.y && pos.y <= foeDefenseAreaRightUpper.y) {
-                            node.updatePenalty(1000);
+                            node.updatePenalty(100000);
                         }
 
                         // Stay out of outer bounds

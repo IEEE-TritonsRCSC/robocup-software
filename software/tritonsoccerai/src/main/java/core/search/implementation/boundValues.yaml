@@ -1,0 +1,23 @@
+# Div A Outside Bounds
+ABoundsLeftUpper: (-4810, 6310)
+ABoundsRightUpper: (4810, 6310)
+ABoundsLeftLower: (-4810, -6310)
+ABoundsRightLower: (4810, -6310)
+
+# Div A Foe Defense Area
+AFoeLeftUpper: (-1800, 6000)
+AFoeRightUpper: (1800, 6000)
+AFoeLeftLower: (-1800, 4200)
+AFoeRightLower: (1800, 4200)
+
+# Div B Outside Bounds 
+BBoundsLeftUpper: (-3310, 4810)
+BBoundsRightUpper: (3310, 4810)
+BBoundsLeftLower: (-3310, -4810)
+BBoundsRightLower: (3310, -4810)
+
+# Div B Foe Defense Area
+BFoeLeftUpper: (-1000, 4500)
+BFoeRightUpper: (1000, 4500)
+BFoeLeftLower: (-1000, 3500)
+BFoeRightLower: (1000, 3500)
