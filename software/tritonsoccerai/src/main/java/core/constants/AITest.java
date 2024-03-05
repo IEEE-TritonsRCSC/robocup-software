@@ -1,16 +1,14 @@
 package main.java.core.constants;
 
-import main.java.core.module.testModule.TestModule;
-import main.java.core.module.testModule.MoveTestModule;
+import main.java.core.module.testModule.*;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
-import main.java.core.module.testModule.ObstacleTestModule;
-
 public enum AITest {
     MOVE(MoveTestModule.class, "Test the ability of robots to move a target location."),
-    OBSTACLE(ObstacleTestModule.class, "Test robot obstacle avoidance.")
+    OBSTACLE(ObstacleTestModule.class, "Test robot obstacle avoidance."),
+    DRIBBLE(DribbleTestModule.class, "Test ability of robot to dribble with the ball.")
     ;
 
     private final Class<? extends TestModule> testClass;
