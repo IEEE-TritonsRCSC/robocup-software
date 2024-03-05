@@ -12,8 +12,8 @@ simulationRobotControlPortBlue: 10301
 simulationRobotControlAddressYellow: "localhost"
 simulationRobotControlPortYellow: 10302
 
-tritonBotAddressBlue: "localhost"
+tritonBotAddressBlue: "192.168.22.74"
 tritonBotPortBaseBlue: 10500
-tritonBotAddressYellow: "localhost"
+tritonBotAddressYellow: "192.168.22.74"
 tritonBotPortBaseYellow: 10600
 tritonBotPortIncr: 10
