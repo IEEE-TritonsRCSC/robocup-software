@@ -5,10 +5,13 @@ import main.java.core.module.testModule.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
+
 public enum AITest {
     MOVE(MoveTestModule.class, "Test the ability of robots to move a target location."),
     OBSTACLE(ObstacleTestModule.class, "Test robot obstacle avoidance."),
-    DRIBBLE(DribbleTestModule.class, "Test ability of robot to dribble with the ball.")
+    DRIBBLE(DribbleTestModule.class, "Test ability of robot to dribble with the ball."),
+    ROTATE(RotateBotTestModule.class, "Test the ability for the robot to rotate to a particular orientation."),
+    COORDINATEDPASS(CoordinatePassTestModule.class, "Test the ability to perform a coordinated pass.")
     ;
 
     private final Class<? extends TestModule> testClass;
