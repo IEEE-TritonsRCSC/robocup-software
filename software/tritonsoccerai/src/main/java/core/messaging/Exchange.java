@@ -29,5 +29,13 @@ public enum Exchange {
     // Commands sent to triton bot
     AI_TRITON_BOT_MESSAGE,  // A combined message sent to a triton bot containing vision and commands for that triton bot
 
+    CENTRAL_COORDINATOR_PASSING,
+
     AI_DEBUG,
+    AI_ROBOT_0,
+    AI_ROBOT_1,
+    AI_ROBOT_2,
+    AI_ROBOT_3,
+    AI_ROBOT_4,
+    AI_ROBOT_5,
 }
