@@ -19,7 +19,7 @@ public class UDP_MulticastClient extends Thread {
     private final MulticastSocket socket;
     private final BlockingQueue<byte[]> sendQueue;
 
-    public UDP_MulticastClient(String serverAddress, int serverPort, Consumer<byte[]> callbackPacket) throws UnknownHostException, SocketException {
+    public UDP_MulticastClient(String serverAddress, int serverPort, Consumer<byte[]> callbackPacket) throws IOException {
         this(serverAddress, serverPort, callbackPacket, 100);
     
 }
