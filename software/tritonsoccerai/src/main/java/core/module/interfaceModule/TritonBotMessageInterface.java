@@ -44,7 +44,7 @@ public class TritonBotMessageInterface extends Module {
 
         try {
             setupClients();
-        } catch (SocketException | UnknownHostException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -80,7 +80,7 @@ public class TritonBotMessageInterface extends Module {
      * @throws SocketException
      * @throws UnknownHostException
      */
-    private void setupClients() throws SocketException, UnknownHostException {
+    private void setupClients() throws IOException {
         for (int id = 0; id < ProgramConstants.gameConfig.numBots; id++) {
             String serverAddress;
             int serverPort;
