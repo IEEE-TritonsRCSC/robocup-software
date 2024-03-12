@@ -6,7 +6,7 @@ import main.java.core.ai.GameInfo;
 import main.java.core.constants.ProgramConstants;
 import main.java.core.constants.Team;
 import main.java.core.module.Module;
-import main.java.core.networking.UDP_Client;
+import main.java.core.networking.UDP_MulticastClient;
 
 import proto.triton.TritonBotCommunication.TritonBotMessage;
 
@@ -28,7 +28,7 @@ import static main.java.core.messaging.SimpleSerialize.simpleDeserialize;
 import static proto.simulation.SslSimulationRobotFeedback.RobotFeedback;
 
 public class TritonBotMessageInterface extends Module {
-    private Map<Integer, UDP_Client> clientMap;
+    private Map<Integer, UDP_MulticastClient> clientMap;
     private List<Future<?>> clientFutures;
     private Map<Integer, RobotFeedback> feedbacks;
 
@@ -97,7 +97,7 @@ public class TritonBotMessageInterface extends Module {
             }
 
             //Setup a udp client
-            UDP_Client client = new UDP_Client(serverAddress, serverPort, this::callbackTritonBotFeedback, 10);
+            UDP_MulticastClient client = new UDP_MulticastClient(serverAddress, serverPort, this::callbackTritonBotFeedback, 10);
             clientMap.put(id, client);
         }
     }
