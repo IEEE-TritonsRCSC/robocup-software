@@ -24,7 +24,7 @@ public class UDP_MulticastClient extends Thread {
     
 }
 
-public UDP_MulticastClient(String serverAddress, int serverPort, Consumer<byte[]> callbackPacket, int timeout) throws UnknownHostException, SocketException {
+public UDP_MulticastClient(String serverAddress, int serverPort, Consumer<byte[]> callbackPacket, int timeout) throws IOException {
     super();
     this.serverAddress = InetAddress.getByName(serverAddress);
     this.serverPort = serverPort;
