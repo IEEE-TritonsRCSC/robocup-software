@@ -7,7 +7,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.function.Consumer;
 
-public class UDP_Client extends Thread {
+public class UDP_MulticastClient extends Thread {
     private static final String NETWORK_INTERFACE = "bge0";
     private static final int BUF_SIZE = 9999;
     private static final int QUEUE_CAPACITY = 5;
