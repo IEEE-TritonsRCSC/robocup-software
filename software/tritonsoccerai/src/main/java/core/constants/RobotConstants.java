@@ -8,8 +8,10 @@ public class RobotConstants {
     // TODO
     public static final int GOALKEEPER_ID = 0;
     public static final double MAX_KICK_VELOCITY = 40.0; // change this
-    public static final double DRIBBLE_VELOCITY = 10.0; // change this
+    public static final float DRIBBLE_RPM = 1200f; // change this
     public static final double ROBOT_WIDTH = 2.0; // change this
+
+    public static final float MAX_DRIBBLE_MOVE_VELOCITY = 500.0f;
 
     public static final float MOVE_VELOCITY_DAMPENER = 0.0011f;
 
