@@ -68,6 +68,7 @@ main/java/core/module/interfaceModule/SimulatorCommandInterface.class
 proto/gc/SslGcRefereeMessage$GameEventProposalGroupOrBuilder.class
 proto/gc/SslGcGameEvent$GameEvent$AttackerTooCloseToDefenseArea.class
 proto/vision/MessagesRobocupSslGeometry$SSL_GeometryModels.class
+main/java/core/module/testModule/DribbleTestModule.class
 proto/gc/SslGcGeometry$Vector3OrBuilder.class
 proto/gc/SslGcEngine$TeamAdvantageChoice$AdvantageChoice.class
 main/java/core/util/Vector2d.class
