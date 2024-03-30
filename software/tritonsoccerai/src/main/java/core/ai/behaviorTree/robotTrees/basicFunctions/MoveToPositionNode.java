@@ -26,10 +26,12 @@ public class MoveToPositionNode extends TaskNode {
 
     PathfindGridGroup pathfindGridGroup;
     Vector2d targetLocation;
+    boolean dribbleOn;
     
     public MoveToPositionNode(int allyID) {
         super("Move To Position Node: " + allyID, allyID);
         this.pathfindGridGroup = new PathfindGridGroup(ProgramConstants.gameConfig.numBots, GameInfo.getField());
+        this.dribbleOn = false;
     }
 
     @Override
@@ -37,14 +39,17 @@ public class MoveToPositionNode extends TaskNode {
         return null;
     }
 
-    public NodeState execute(Vector2d endLoc) {
+    /*public NodeState execute(Vector2d endLoc) {
         Robot ally = GameInfo.getAlly(allyID);
         Ball ball = GameInfo.getBall();
         float targetOrientation = (float) Math.atan2(ball.getY() - ally.getY(), ball.getX() - ally.getX());
         return execute(endLoc, targetOrientation);
-    }
+    }*/
 
-    public NodeState execute(Vector2d endLoc, float targetOrientation) {
+    public NodeState execute(Vector2d endLoc) {
+        Robot ally = GameInfo.getAlly(allyID);
+        Ball ball = GameInfo.getBall();
+        
         Vector2d allyPos = getPos(GameInfo.getAlly(allyID));
 
         // Pathfinding to endLoc
@@ -57,10 +62,25 @@ public class MoveToPositionNode extends TaskNode {
         }
 
         // Build robot command to be published
-        Vector2d vel = next.sub(allyPos).scale(RobotConstants.MOVE_VELOCITY_DAMPENER);
+        Vector2d direction = next.sub(allyPos);
+        Vector2d vel = direction;
+        
+        if (this.dribbleOn) {
+            float mag = direction.mag();
+            vel = direction.norm().scale(Math.min(mag, RobotConstants.MAX_DRIBBLE_MOVE_VELOCITY));
+        }
+        vel = vel.scale(RobotConstants.MOVE_VELOCITY_DAMPENER);
+
+        float targetOrientation;
+        if (this.dribbleOn) {targetOrientation = (float) Math.atan2(next.y - ally.getY(), next.x - ally.getX());}
+        else {targetOrientation = (float) Math.atan2(ball.getY() - ally.getY(), ball.getX() - ally.getX());}
+
         float angular = 3.0f * (Vector2d.angleDifference(GameInfo.getAlly(allyID).getOrientation(), targetOrientation));
         RobotCommand localCommand = generateLocalMoveCommand(vel.x, vel.y, angular, 
                                                             GameInfo.getAlly(allyID).getOrientation(), allyID);
+        if (this.dribbleOn) {
+            localCommand = localCommand.toBuilder().setDribblerSpeed(RobotConstants.DRIBBLE_RPM).build();
+        }
 
         // Publish command to robot
         ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, localCommand);
@@ -86,6 +106,14 @@ public class MoveToPositionNode extends TaskNode {
      */
     public void setTargetLocation(Vector2d targetLocation) {
         this.targetLocation = targetLocation;
+    }
+
+    /**
+     * Sets the dribble setting
+     * @param dribbleOn whether robot velocity should be restricted to max dribbling speed
+     */
+    public void setDribbleOn(boolean dribbleOn) {
+        this.dribbleOn = dribbleOn;
     }
 
 }
