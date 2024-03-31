@@ -6,12 +6,17 @@ import main.java.core.constants.ProgramConstants;
 import main.java.core.util.Vector2d;
 import main.java.core.search.implementation.PathfindGridGroup;
 import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
+import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.ChaseBallNode;
+
+import main.java.core.ai.GameInfo;
 
 import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
-import static main.java.core.constants.RobotConstants.DRIBBLE_RPM;
+import static main.java.core.constants.RobotConstants.*;
 
 import proto.simulation.SslSimulationRobotControl;
 import static proto.triton.FilteredObject.Robot;
+
+import static main.java.core.util.ProtobufUtils.getPos;
 
 /**
  * Defines tasks to be performed to dribble ball
@@ -20,11 +25,16 @@ public class DribbleBallNode extends TaskNode {
 
     PathfindGridGroup pathfindGridGroup;
     private final MoveToPositionNode moveToPositionNode;
+    private final RotateInPlaceNode rotateNode;
+    private final ChaseBallNode chaseBallNode;
 
     public DribbleBallNode(int allyID) {
         super("Dribble Ball Node: " + allyID, allyID);
         this.moveToPositionNode = new MoveToPositionNode(allyID);
         this.moveToPositionNode.setDribbleOn(true);
+        this.rotateNode = new RotateInPlaceNode(allyID);
+        this.rotateNode.setDribbleOn(true);
+        this.chaseBallNode = new ChaseBallNode(allyID);
     }
 
      /**
@@ -46,8 +56,16 @@ public class DribbleBallNode extends TaskNode {
     }
 
     public NodeState execute(Vector2d location) {
-        this.execute();
-        this.moveToPositionNode.execute(location);
+        if (getPos(GameInfo.getAlly(allyID)).dist(getPos(GameInfo.getBall())) > (1.0 * DRIBBLE_THRESHOLD)) {
+            this.chaseBallNode.execute();
+        }
+        else {
+            this.execute();
+            float orientation = this.moveToPositionNode.execute(location);
+            if (orientation != 0.0f) {
+                this.rotateNode.execute(orientation, true);
+            }
+        }
         
         return NodeState.SUCCESS;
     }

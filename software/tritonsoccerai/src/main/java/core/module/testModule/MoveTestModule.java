@@ -43,7 +43,6 @@ public class MoveTestModule extends TestModule {
     @Override
     public void run() {
         super.run();
-        Vector2d point = new Vector2d(0, 0);
         this.moveToPositionNode = new MoveToPositionNode(GameInfo.getAllyClosestToBall().getId());
         this.future = this.executor.scheduleAtFixedRate(this.moveToPositionNode, ProgramConstants.INITIAL_DELAY,
                                     ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);

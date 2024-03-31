@@ -9,6 +9,8 @@ import static proto.triton.FilteredObject.Ball;
 import static main.java.core.util.ProtobufUtils.*;
 import main.java.core.util.*;
 
+import static main.java.core.constants.RobotConstants.DRIBBLE_THRESHOLD;
+
 import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot.OffenseRootNode;
 /**
  * Defines task of chasing ball
@@ -21,6 +23,7 @@ public class ChaseBallNode extends TaskNode {
     public ChaseBallNode(int allyID) {
         super("Chase Ball Node: " + allyID, allyID);
         this.moveToObjectNode = new MoveToObjectNode(allyID);
+        // this.moveToObjectNode.setDribbleOn(true);
     }
 
     /**
@@ -30,10 +33,11 @@ public class ChaseBallNode extends TaskNode {
     public NodeState execute() {
         // System.out.println("Ally " + ally.getId() + " chasing ball");
         this.moveToObjectNode.execute(GameInfo.getBall());
+        // System.out.println("Move to pos executed");
         // System.out.println("Running chase ball node");
 
         // Calculating path from robot to ball
-        Ball ball = GameInfo.getBall();
+        /*Ball ball = GameInfo.getBall();
         Robot ally = GameInfo.getAlly(allyID);
         Vector2d allyPos = getPos(ally);
         Vector2d ballPos = getPos(ball);
@@ -43,16 +47,15 @@ public class ChaseBallNode extends TaskNode {
 
         // Move to ball
         MoveToPositionNode MoveToPosition = new MoveToPositionNode(allyID);
-        MoveToPosition.execute(targetPos);  
+        MoveToPosition.setDribbleOn(true);
+        MoveToPosition.execute(targetPos);  */
 
         DribbleBallNode dribbleBall = new DribbleBallNode(allyID);
-        float distanceFromAllyToBall = allyPos.dist(ballPos);
+        // float distanceFromAllyToBall = allyPos.dist(ballPos);
         
         // Dribble It
-        if (distanceFromAllyToBall <= minDistToDribble){
-            // dribbleBall = new DribbleBallNode(allyID);
+        if (getPos(GameInfo.getAlly(allyID)).dist(getPos(GameInfo.getBall())) > DRIBBLE_THRESHOLD){
             dribbleBall.execute();
-            // System.out.println("Dribbling ---------------------------------------------------------------");
         }
         return NodeState.SUCCESS; 
     }
