@@ -9,8 +9,7 @@ import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNo
 import main.java.core.ai.GameInfo;
 import main.java.core.util.Vector2d;
 import main.java.core.constants.ProgramConstants;
-
-import static main.java.core.constants.RobotConstants.DRIBBLE_THRESHOLD;
+import static main.java.core.constants.RobotConstants.*;
 
 import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.ChaseBallNode;
 import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
@@ -23,6 +22,7 @@ public class DribbleTestModule extends TestModule {
     private ChaseBallNode chaseBallNode;
     private DribbleBallNode dribbleBallNode;
     private boolean running;
+    // private Future<?> future;
 
     public DribbleTestModule(ScheduledThreadPoolExecutor executor) {
         super(executor);
@@ -45,6 +45,7 @@ public class DribbleTestModule extends TestModule {
     @Override
     public void interrupt() {
         super.interrupt();
+        // this.future.cancel(true);
         this.running = false;
     }
 
@@ -57,7 +58,19 @@ public class DribbleTestModule extends TestModule {
 
         this.running = true;
 
+        goToBall();
         testDribbling();
+    }
+
+    private void goToBall() {
+        while (!GameInfo.getPossessBall(TEST_ALLY_ID) && this.running) {
+            
+            this.chaseBallNode.execute();       
+                            
+            try {
+                TimeUnit.MILLISECONDS.sleep(ProgramConstants.LOOP_DELAY);
+            } catch (Exception e) {}
+        }
     }
 
     private void testDribbling() {
@@ -78,7 +91,6 @@ public class DribbleTestModule extends TestModule {
                 if (ctr >= (12000 / ProgramConstants.LOOP_DELAY)) {
                     ctr = 0;
                     i = (i + 1) % points.length;
-                    // System.out.println("switched direction");
                 }
             } catch (Exception e) {}
         }

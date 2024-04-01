@@ -18,11 +18,13 @@ import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot.Off
 public class ChaseBallNode extends TaskNode {
 
     private final MoveToObjectNode moveToObjectNode;
-    private final double minDistToDribble = 100f; // Change this depending on how close you want the robot before it can dribble
+    private final DribbleBallNode dribbleBallNode;
+    // private final double minDistToDribble = 100f; // Change this depending on how close you want the robot before it can dribble
 
     public ChaseBallNode(int allyID) {
         super("Chase Ball Node: " + allyID, allyID);
         this.moveToObjectNode = new MoveToObjectNode(allyID);
+        this.dribbleBallNode = new DribbleBallNode(allyID);
         // this.moveToObjectNode.setDribbleOn(true);
     }
 
@@ -50,12 +52,12 @@ public class ChaseBallNode extends TaskNode {
         MoveToPosition.setDribbleOn(true);
         MoveToPosition.execute(targetPos);  */
 
-        DribbleBallNode dribbleBall = new DribbleBallNode(allyID);
+        // DribbleBallNode dribbleBall = new DribbleBallNode(allyID);
         // float distanceFromAllyToBall = allyPos.dist(ballPos);
         
         // Dribble It
         if (getPos(GameInfo.getAlly(allyID)).dist(getPos(GameInfo.getBall())) > DRIBBLE_THRESHOLD){
-            dribbleBall.execute();
+            dribbleBallNode.execute();
         }
         return NodeState.SUCCESS; 
     }

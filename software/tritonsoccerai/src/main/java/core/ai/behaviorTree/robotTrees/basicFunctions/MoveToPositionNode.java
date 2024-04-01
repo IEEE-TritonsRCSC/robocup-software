@@ -39,7 +39,7 @@ public class MoveToPositionNode extends TaskNode {
         return null;
     }
 
-    public float execute(Vector2d endLoc) {
+    public NodeState execute(Vector2d endLoc) {
         Robot ally = GameInfo.getAlly(allyID);
         Ball ball = GameInfo.getBall();
         
@@ -51,24 +51,12 @@ public class MoveToPositionNode extends TaskNode {
         Vector2d next = pathfindGridGroup.findNext(allyID, route);
 
         if (next == null) {
-            return -1.0f;
+            return NodeState.FAILURE;
         }
 
         // Build robot command to be published
         Vector2d direction = next.sub(allyPos);
         Vector2d vel = direction;
-
-        float targetOrientation;
-        if (this.dribbleOn) {
-            targetOrientation = (float) Math.atan2(next.y - ally.getY(), next.x - ally.getX());
-            if (Math.abs(targetOrientation - GameInfo.getAlly(allyID).getOrientation()) > (Math.PI / 8)) {
-                // System.out.println(Math.abs(targetOrientation - GameInfo.getAlly(allyID).getOrientation()));
-                return targetOrientation;
-            }
-        }
-        else {targetOrientation = (float) Math.atan2(ball.getY() - ally.getY(), ball.getX() - ally.getX());}
-
-        float angular = RotateInPlaceNode.getAngular(targetOrientation, allyID, dribbleOn);
         
         if (this.dribbleOn) {
             float mag = direction.mag();
@@ -76,6 +64,11 @@ public class MoveToPositionNode extends TaskNode {
         }
         vel = vel.scale(RobotConstants.MOVE_VELOCITY_DAMPENER);
 
+        float targetOrientation;
+        if (this.dribbleOn) {targetOrientation = (float) Math.atan2(next.y - ally.getY(), next.x - ally.getX());}
+        else {targetOrientation = (float) Math.atan2(ball.getY() - ally.getY(), ball.getX() - ally.getX());}
+
+        float angular = 3.0f * (Vector2d.angleDifference(GameInfo.getAlly(allyID).getOrientation(), targetOrientation));
         RobotCommand localCommand = generateLocalMoveCommand(vel.x, vel.y, angular, 
                                                             GameInfo.getAlly(allyID).getOrientation(), allyID);
         if (this.dribbleOn) {
@@ -85,7 +78,7 @@ public class MoveToPositionNode extends TaskNode {
         // Publish command to robot
         ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, localCommand);
 
-        return 0.0f;
+        return NodeState.SUCCESS;
     }
 
     /**
