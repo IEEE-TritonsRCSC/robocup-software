@@ -6,7 +6,7 @@ package main.java.core.constants;
 public class RobotConstants {
 
     public static final int GOALKEEPER_ID = 0;
-    public static final double MAX_KICK_VELOCITY = 40.0; // change this
+    public static final double MAX_KICK_VELOCITY = 3200.0; // change this
     public static final float DRIBBLE_RPM = 1200.0f;
     public static final double ROBOT_WIDTH = 2.0; // change this
 
