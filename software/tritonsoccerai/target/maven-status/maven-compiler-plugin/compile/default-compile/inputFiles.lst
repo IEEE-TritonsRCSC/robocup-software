@@ -12,6 +12,7 @@
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/basicFunctions/ChaseBallNode.java
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/util/ObjectHelper.java
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/module/interfaceModule/SimulatorRobotCommandInterface.java
+/home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/module/testModule/SpinWOBallTestModule.java
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/fielder/specificStateFunctions/NormalStartNode.java
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/nodes/NodeState.java
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/nodes/compositeNodes/SequenceNode.java
@@ -43,10 +44,7 @@
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/module/processingModule/VisionBiasedConverter.java
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/goalkeeper/GoalkeeperTree.java
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/search/base/Graph.java
-<<<<<<< HEAD
-=======
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/module/testModule/DribbleTestModule.java
->>>>>>> main
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/util/ConvertCoordinate.java
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/messaging/Exchange.java
 /home/rohil/robocup-software/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/vision/MessagesRobocupSslDetection.java
@@ -58,6 +56,7 @@
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/goalkeeper/specificStateFunctions/GKBallPlacementNode.java
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/fielder/FielderTree.java
 /home/rohil/robocup-software/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/vision/MessagesRobocupSslGeometry.java
+/home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/module/testModule/SpinWBallTestModule.java
 /home/rohil/robocup-software/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/gc/SslGcState.java
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/module/aiModule/AIModule.java
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/goalkeeper/specificStateFunctions/GKHaltNode.java
@@ -127,6 +126,7 @@
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/nodes/conditionalNodes/ConditionalNode.java
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/basicFunctions/MoveToObjectNode.java
 /home/rohil/robocup-software/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/simulation/SslSimulationSynchronous.java
+/home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/basicFunctions/RotateInPlaceNode.java
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/module/aiModule/CentralCoordinatorModule.java
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/central/CentralCoordinatorRoot.java
 /home/rohil/robocup-software/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/goalkeeper/gkRoot/GoalkeeperRootService.java

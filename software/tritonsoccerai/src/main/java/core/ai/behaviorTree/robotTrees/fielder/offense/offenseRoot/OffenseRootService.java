@@ -9,6 +9,7 @@ import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.MakePlayNode;
 import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.PositionSelfNode;
 import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.ShootBallNode;
 import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.HaveOpenShotNode;
+import main.java.core.util.Vector2d;
 import static proto.triton.FilteredObject.Robot;
 
 public class OffenseRootService extends ServiceNode {
@@ -38,8 +39,9 @@ public class OffenseRootService extends ServiceNode {
     @Override
     public NodeState execute() {
         if (NodeState.isSuccess(this.havePossession.execute())) {
-            if (NodeState.isSuccess(this.haveOpenShot.execute())) {
-                this.shootBall.execute();
+            Vector2d shotTo = this.shootBall.findShot();
+            if (shotTo != null) {
+                this.shootBall.execute(shotTo);
                 // System.out.println("Shoot ball executed " + curr);
             } else {
                 this.makePlay.execute();

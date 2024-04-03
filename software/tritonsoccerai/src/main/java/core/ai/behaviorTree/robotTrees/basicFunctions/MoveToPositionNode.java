@@ -39,13 +39,6 @@ public class MoveToPositionNode extends TaskNode {
         return null;
     }
 
-    /*public NodeState execute(Vector2d endLoc) {
-        Robot ally = GameInfo.getAlly(allyID);
-        Ball ball = GameInfo.getBall();
-        float targetOrientation = (float) Math.atan2(ball.getY() - ally.getY(), ball.getX() - ally.getX());
-        return execute(endLoc, targetOrientation);
-    }*/
-
     public NodeState execute(Vector2d endLoc) {
         Robot ally = GameInfo.getAlly(allyID);
         Ball ball = GameInfo.getBall();

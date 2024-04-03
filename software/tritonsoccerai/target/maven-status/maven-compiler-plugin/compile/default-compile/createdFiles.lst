@@ -308,6 +308,7 @@ proto/triton/TritonBotCommunication.class
 proto/simulation/SslSimulationConfig$SimulatorConfig$Builder.class
 proto/triton/AiDebugInfo.class
 proto/gc/SslGcGameEvent$GameEvent$BotInterferedPlacementOrBuilder.class
+main/java/core/module/testModule/SpinWBallTestModule.class
 proto/gc/SslGcGameEvent$GameEvent$AimlessKickOrBuilder.class
 main/java/core/messaging/SimpleSerialize.class
 proto/gc/SslGcEngine$GcState$AutoRefStateDefaultEntryHolder.class
@@ -344,6 +345,7 @@ proto/gc/SslGcChange$Change$NewGameStateOrBuilder.class
 proto/gc/SslGcGameEvent$GameEvent$BotKickedBallTooFast$1.class
 proto/gc/SslGcChange$Change$NewCommand.class
 proto/gc/SslGcGameEvent$GameEvent$BotHeldBallDeliberatelyOrBuilder.class
+main/java/core/module/testModule/SpinWOBallTestModule.class
 proto/gc/SslGcChange$Change$RevertOrBuilder.class
 proto/gc/SslGcGameEvent$GameEvent$BotTippedOver$Builder.class
 proto/gc/SslGcChange$Change$AddRedCard$Builder.class
@@ -533,6 +535,7 @@ proto/gc/SslGcGameEvent$GameEvent$IndirectGoal$1.class
 proto/gc/SslGcChange$Change$AcceptProposalGroup$1.class
 main/java/core/util/ProtobufUtils.class
 main/java/core/ai/behaviorTree/robotTrees/fielder/fielderRoot/FielderRootService$2.class
+main/java/core/ai/behaviorTree/robotTrees/basicFunctions/RotateInPlaceNode.class
 proto/gc/SslGcRefereeMessage$Referee$Stage$1.class
 proto/gc/SslGcGeometry$Vector3$1.class
 proto/vision/MessagesRobocupSslDetectionTracked$TrackedRobot$Builder.class

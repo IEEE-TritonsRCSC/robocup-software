@@ -16,7 +16,7 @@ public class RobotHasPossessionNode extends ConditionalNode {
 
     @Override
     public boolean conditionSatisfied() {
-        return GameInfo.getAlly(allyID).getHasBall();
+        return GameInfo.getPossessBall(allyID);
     }
 
 }

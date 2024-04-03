@@ -6,6 +6,8 @@ import static proto.gc.SslGcRefereeMessage.Referee;
 import main.java.core.util.Vector2d;
 import main.java.core.constants.Team;
 
+import static main.java.core.constants.RobotConstants.DRIBBLE_THRESHOLD;
+
 import java.util.ArrayList;
 
 import static main.java.core.util.ProtobufUtils.getPos;
@@ -92,7 +94,14 @@ public class GameInfo {
     }
 
     public static Boolean getPossessBall() {
-        return wrapper.getBall().hasAllyCapture();
+        for (Robot ally : getAllies()) {
+            if (getPossessBall(ally.getId())) {return true;}
+        }
+        return false;
+    }
+
+    public static Boolean getPossessBall(int allyID) {
+        return getPos(GameInfo.getAlly(allyID)).dist(getPos(GameInfo.getBall())) <= DRIBBLE_THRESHOLD;
     }
 
     public static Robot getAllyClosestToBall() {

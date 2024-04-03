@@ -9,6 +9,7 @@ import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNo
 import main.java.core.ai.GameInfo;
 import main.java.core.util.Vector2d;
 import main.java.core.constants.ProgramConstants;
+import static main.java.core.constants.RobotConstants.*;
 
 import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.ChaseBallNode;
 import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
@@ -20,7 +21,8 @@ public class DribbleTestModule extends TestModule {
 
     private ChaseBallNode chaseBallNode;
     private DribbleBallNode dribbleBallNode;
-    private Future<?> future;
+    private boolean running;
+    // private Future<?> future;
 
     public DribbleTestModule(ScheduledThreadPoolExecutor executor) {
         super(executor);
@@ -43,7 +45,8 @@ public class DribbleTestModule extends TestModule {
     @Override
     public void interrupt() {
         super.interrupt();
-        this.future.cancel(true);
+        // this.future.cancel(true);
+        this.running = false;
     }
 
     @Override
@@ -53,12 +56,14 @@ public class DribbleTestModule extends TestModule {
         this.chaseBallNode = new ChaseBallNode(TEST_ALLY_ID);
         this.dribbleBallNode = new DribbleBallNode(TEST_ALLY_ID);
 
+        this.running = true;
+
         goToBall();
         testDribbling();
     }
 
     private void goToBall() {
-        while (getPos(GameInfo.getAlly(TEST_ALLY_ID)).dist(getPos(GameInfo.getBall())) > 100) {
+        while (!GameInfo.getPossessBall(TEST_ALLY_ID) && this.running) {
             
             this.chaseBallNode.execute();       
                             
@@ -76,14 +81,14 @@ public class DribbleTestModule extends TestModule {
         int ctr = 0;
 
         // Loop infinitely, going to each of the coordinates in the points array
-        while (true) {
+        while (this.running) {
 
             this.dribbleBallNode.execute(points[i]);
                 
             try {
                 TimeUnit.MILLISECONDS.sleep(ProgramConstants.LOOP_DELAY);
                 ctr++;
-                if (ctr >= (6000 / ProgramConstants.LOOP_DELAY)) {
+                if (ctr >= (12000 / ProgramConstants.LOOP_DELAY)) {
                     ctr = 0;
                     i = (i + 1) % points.length;
                 }
