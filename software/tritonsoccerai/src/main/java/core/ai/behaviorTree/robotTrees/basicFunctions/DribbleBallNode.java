@@ -62,10 +62,11 @@ public class DribbleBallNode extends TaskNode {
     public Vector2d findDribblingDirection() {
         ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoeFielders());
         ArrayList<Robot> alliesList = new ArrayList<>(GameInfo.getFielders());
-        List<Robot> obstacles = new ArrayList<>();
+        ArrayList<Robot> obstacles = new ArrayList<>();
 
         //remove the dribbler
-        alliesList.remove(GameInfo.getAlly(allyID));
+        Robot robot = GameInfo.getAlly(allyID);
+        alliesList.remove(robot);
 
         //add all foes and allies to obstacles
         obstacles.addAll(foesList);
@@ -81,9 +82,10 @@ public class DribbleBallNode extends TaskNode {
 
         //if there are directions in which there are no obstacles
         for(int i = 0; i < obstacles.size(); i++) {
-            for(double j = 0; j < Math.PI; j+= Math.PI/6) {
+            for(double j = 0; j <= Math.PI; j+= Math.PI/18) {
                 //if there is a direction in which an obstacle exists, return direction vector
-                if(!Math.abs(Math.atan2(obstacle.y - curr.y, obstacle.x, curr.x) - j) < 0.001) {
+                Robot obstacle = obstacles.get(i);
+                if(!(Math.abs(Math.atan2(obstacle.getY() - robot.getY(), obstacle.getX(), robot.getX()) - j) < 0.001)) {
                     return new Vector2d(10, 10*tan(j));
                 }
             }
@@ -102,7 +104,7 @@ public class DribbleBallNode extends TaskNode {
                 maxScore = score;
             }
         }
-        return maxScore;
+        return bestDirection;
     }
 
 }
