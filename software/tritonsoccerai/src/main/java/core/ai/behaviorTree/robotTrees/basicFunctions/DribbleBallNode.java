@@ -8,7 +8,7 @@ import main.java.core.search.implementation.PathfindGridGroup;
 import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
 
 import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
-import static main.java.core.constants.RobotConstants.DRIBBLE_VELOCITY;
+import static main.java.core.constants.RobotConstants.DRIBBLE_RPM;
 
 import proto.simulation.SslSimulationRobotControl;
 import static proto.triton.FilteredObject.Robot;
@@ -24,6 +24,7 @@ public class DribbleBallNode extends TaskNode {
     public DribbleBallNode(int allyID) {
         super("Dribble Ball Node: " + allyID, allyID);
         this.moveToPositionNode = new MoveToPositionNode(allyID);
+        this.moveToPositionNode.setDribbleOn(true);
     }
 
      /**
@@ -36,7 +37,7 @@ public class DribbleBallNode extends TaskNode {
         SslSimulationRobotControl.RobotCommand.Builder robotCommand = SslSimulationRobotControl.RobotCommand.newBuilder();
 
         robotCommand.setId(allyID);
-        robotCommand.setDribblerSpeed(DRIBBLE_VELOCITY);
+        robotCommand.setDribblerSpeed(DRIBBLE_RPM);
         robotCommand.setKickSpeed(0);
 
         ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
@@ -45,15 +46,7 @@ public class DribbleBallNode extends TaskNode {
     }
 
     public NodeState execute(Vector2d location) {
-        // Set dribbler speed and publish the command
-        SslSimulationRobotControl.RobotCommand.Builder robotCommand = SslSimulationRobotControl.RobotCommand.newBuilder();
-
-        robotCommand.setId(allyID);
-        robotCommand.setDribblerSpeed(DRIBBLE_VELOCITY);
-        robotCommand.setKickSpeed(0);
-
-        ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
-
+        this.execute();
         this.moveToPositionNode.execute(location);
         
         return NodeState.SUCCESS;

@@ -32,6 +32,7 @@ public class MoveToObjectNode extends TaskNode {
     public NodeState execute(Ball ball) {
         float TIME_CONSTANT = 0.5f;
         Vector2d position = getPos(ball).add(getVel(ball).scale(TIME_CONSTANT));
+        // System.out.println(position);
         this.moveToPositionNode.execute(position);
         return NodeState.SUCCESS;
     }
@@ -45,6 +46,14 @@ public class MoveToObjectNode extends TaskNode {
         Vector2d position = getPos(robot).add(getVel(robot).scale(TIME_CONSTANT));
         this.moveToPositionNode.execute(position);
         return NodeState.SUCCESS;
+    }
+
+    /**
+     * Sets the dribble setting
+     * @param dribbleOn whether robot velocity should be restricted to max dribbling speed
+     */
+    public void setDribbleOn(boolean dribbleOn) {
+        this.moveToPositionNode.setDribbleOn(dribbleOn);
     }
 
 }
