@@ -37,7 +37,6 @@
 /home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/module/processingModule/FilterModule.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/gc/SslGcRefereeMessage.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/nodes/BTNode.java
-/home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/module/testModule/ObstacleTestModule.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/module/testModule/MoveTestModule.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/fielder/offense/HaveOpenShotNode.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/goalkeeper/specificStateFunctions/GKPenaltyNode.java
@@ -77,7 +76,6 @@
 /home/kailanluo/robocup-2023/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/gc/SslGcEngineConfig.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/module/aiModule/AIModule.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/module/processingModule/VisionBiasedConverter.java
-/home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/module/testModule/DribbleTestModule.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/vision/MessagesRobocupSslWrapper.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/module/processingModule/TritonBotMessageBuilder.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/fielder/fielderRoot/FielderRootNode.java
@@ -127,14 +125,10 @@
 /home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/fielder/specificStateFunctions/KickoffNode.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/gc/SslGcRcon.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/basicFunctions/ChaseBallNode.java
-/home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/basicFunctions/RotateInPlaceNode.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/search/base/Scorer.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/gc/SslGcState.java
-/home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/module/testModule/SpinWOBallTestModule.java
-/home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/module/testModule/SpinWBallTestModule.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/triton/AiDebugInfo.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/simulation/SslSimulationSynchronous.java
-/home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/networking/UDP_MulticastClient.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/gc/SslGcRconRemotecontrol.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/vision/MessagesRobocupSslWrapperTracked.java
 /home/kailanluo/robocup-2023/software/tritonsoccerai/src/main/java/core/constants/ProgramConstants.java
