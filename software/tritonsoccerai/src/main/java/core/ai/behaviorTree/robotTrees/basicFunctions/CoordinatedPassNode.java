@@ -4,6 +4,8 @@ package main.java.core.ai.behaviorTree.robotTrees.basicFunctions;
 import main.java.core.ai.GameInfo;
 import main.java.core.ai.behaviorTree.nodes.NodeState;
 import main.java.core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
+import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.RotateBotNode;
+import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.RotateInPlaceNode;
 import main.java.core.constants.RobotConstants;
 import main.java.core.messaging.Exchange;
 
@@ -36,12 +38,16 @@ public class CoordinatedPassNode extends SequenceNode {
 
     public final int passerID;
     private final KickBallNode kickBall;
+    private final RotateInPlaceNode spinBall;
+    private final RotateBotNode RotateBot;
 
 
     public CoordinatedPassNode(int passerID) {
         super("Coordinated Pass Node: " + passerID);
         this.passerID = passerID;
         this.kickBall = new KickBallNode(passerID);
+        this.spinBall = new RotateInPlaceNode(passerID);
+        this.RotateBot = new RotateBotNode(passerID);
     }
 
 
@@ -71,6 +77,47 @@ public class CoordinatedPassNode extends SequenceNode {
         CoordinatedPassInfo.CoordinatedPass message = getPassInfo();
         Vector2d direction = new Vector2d(message.getPassLocX(), message.getPassLocY());
         ProgramConstants.commandPublishingModule.publish(Exchange.CENTRAL_COORDINATOR_PASSING, message);
+        this.spinBall.execute();
+        double dy = (double) GameInfo.getBall().getY() - direction.y;
+        double dx = (double) GameInfo.getBall().getX() - direction.x;
+        
+        // Set a fixed final orientation for demonstration purposes
+        float kP = 0.6f;
+        float final_orientation = (float) (Math.atan2(dy,dx));
+        
+        // Log the calculated dx, dy, and final orientation
+        System.out.println("dx: " + dx);
+        System.out.println("dy: " + dy);
+        System.out.println("final: " + final_orientation);
+        
+        // Retrieve the current orientation of the ally
+        float orientation = GameInfo.getAlly(this.passerID).getOrientation();
+        // Normalize orientation to be within [0, 2*PI]
+        if (orientation < 0) {
+            orientation += 2 * Math.PI;
+        }
+        
+        // Calculate the initial difference in orientation
+        float diff = final_orientation - orientation;
+        
+        // Adjust orientation until the difference is within a threshold
+        while (Math.abs(diff) > 0.5) {
+            // Execute rotation command with proportional control (kP is assumed to be defined elsewhere)
+            this.RotateBot.execute(diff * kP);
+            this.spinBall.execute();
+            
+            // Update the orientation and difference for the next iteration
+            orientation = GameInfo.getAlly(this.passerID).getOrientation();
+            if (orientation < 0) {
+                orientation += 2 * Math.PI;
+            }
+            diff = final_orientation - orientation;
+            
+            // Log the current orientation and difference
+            System.out.println("orientation: " + orientation);
+            System.out.println("diff: " + diff);
+        }
+        
         this.kickBall.execute(direction, RobotConstants.MAX_KICK_VELOCITY, false);
         return NodeState.SUCCESS;
     }

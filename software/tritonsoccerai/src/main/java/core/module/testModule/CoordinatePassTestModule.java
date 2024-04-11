@@ -69,7 +69,7 @@ public class CoordinatePassTestModule extends TestModule{
         this.coordinatedPassNode = new CoordinatedPassNode(GameInfo.getAllyClosestToBall().getId());
         
 
-        while(distance(robot_x, robot_y, ball_x, ball_y) > 500){
+        while(distance(robot_x, robot_y, ball_x, ball_y) > 100){
             robot_x = GameInfo.getAllyClosestToBall().getX();
             robot_y = GameInfo.getAllyClosestToBall().getY();
             ball_x = GameInfo.getBall().getX();

@@ -341,6 +341,7 @@ proto/gc/SslGcRconRemotecontrol$RemoteControlToController$Request$1.class
 proto/gc/SslAutorefCi$AutoRefCiInput.class
 proto/vision/MessagesRobocupSslDetectionTracked$Vector2$1.class
 proto/triton/FilteredObject$FilteredWrapperPacket$AlliesDefaultEntryHolder.class
+main/java/core/networking/UDP_MulticastClient.class
 proto/gc/SslGcGameEvent$GameEvent$KickTimeout.class
 proto/gc/SslGcState$GameState$Type.class
 proto/gc/SslGcGameEvent$GameEvent$PlacementSucceeded.class
