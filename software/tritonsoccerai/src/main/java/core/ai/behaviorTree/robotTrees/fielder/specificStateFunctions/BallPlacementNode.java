@@ -5,11 +5,14 @@ import main.java.core.ai.behaviorTree.nodes.NodeState;
 import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
 import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode; //use moveToPositionNode to ask the closest bot to move?
+import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
+import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.ChaseBallNode;
 import static proto.triton.FilteredObject.Robot;
+import static proto.gc.SslGcRefereeMessage.Referee;
 
 import static main.java.core.util.ProtobufUtils.getPos;
 import main.java.core.util.Vector2d;
+import main.java.core.constants.Team;
 
 /**
  * Handles Ball Placement game state
@@ -26,6 +29,7 @@ public class BallPlacementNode extends TaskNode {
         this.closestToBallNode = closestToBallNode;
         this.dribbleBallNode = new DribbleBallNode(allyID);
         this.moveToPositionNode = new MoveToPositionNode(allyID); //
+        this.ChaseBallNode = new ChaseBallNode(allyID);
     }
 
     /**
@@ -35,11 +39,20 @@ public class BallPlacementNode extends TaskNode {
     @Override
     public NodeState execute() {
         float DISTANCE_CONSTANT = 1;
-        if (GameInfo.getPossessBall() && NodeState.isSuccess(this.closestToBallNode.execute())) {
-            while (getPos(GameInfo.getBall()).dist(GameInfo.getBallPlacementLocation()) > DISTANCE_CONSTANT) {
-                this.dribbleBallNode.execute(GameInfo.getBallPlacementLocation());
+        if((GameInfo.getCurrCommand() == Referee.Command.BALL_PLACEMENT_YELLOW && GameInfo.getTeamColor() == Team.YELLOW 
+        ||GameInfo.getCurrCommand() == Referee.Command.BALL_PLACEMENT_BLUE && GameInfo.getTeamColor() == Team.BLUE) 
+        && closestToBallNode.execute() == NodeState.SUCCESS){
+                while (getPos(GameInfo.getBall()).dist(GameInfo.getBallPlacementLocation()) > DISTANCE_CONSTANT) {
+                    if(!GameInfo.getPossessBall(allyID)){
+                        this.ChaseBallNode.execute();
+                    }
+                    else{
+                        this.dribbleBallNode.execute(GameInfo.getBallPlacementLocation());
+                    }
             }
         }
+    
+
         else {
             // TODO - move away from placement location if close to it
             Robot ally = GameInfo.getAlly(allyID);
