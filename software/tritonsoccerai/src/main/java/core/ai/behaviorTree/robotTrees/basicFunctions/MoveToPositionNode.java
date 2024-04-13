@@ -74,6 +74,7 @@ public class MoveToPositionNode extends TaskNode {
         if (this.dribbleOn) {
             localCommand = localCommand.toBuilder().setDribblerSpeed(RobotConstants.DRIBBLE_RPM).build();
         }
+        localCommand.toBuilder().setKickSpeed(0f);
 
         // Publish command to robot
         ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, localCommand);
