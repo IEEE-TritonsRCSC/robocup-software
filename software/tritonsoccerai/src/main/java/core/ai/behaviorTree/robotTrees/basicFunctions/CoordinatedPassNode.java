@@ -51,11 +51,11 @@ public class CoordinatedPassNode extends SequenceNode {
     }
 
 
-    @Override
+    /*@Override
     public void run(){
-        System.out.println("CoordinatedPassNode.run()");
+        // System.out.println("CoordinatedPassNode.run()");
         this.execute(false);
-    }
+    }*/
 
 
     /**
@@ -65,7 +65,7 @@ public class CoordinatedPassNode extends SequenceNode {
      */
     @Override
     public NodeState execute() {
-        return null;
+        return execute(false);
     }
 
 
@@ -77,7 +77,7 @@ public class CoordinatedPassNode extends SequenceNode {
         CoordinatedPassInfo.CoordinatedPass message = getPassInfo();
         Vector2d direction = new Vector2d(message.getPassLocX(), message.getPassLocY());
         ProgramConstants.commandPublishingModule.publish(Exchange.CENTRAL_COORDINATOR_PASSING, message);
-        this.spinBall.execute();
+        // this.spinBall.execute();
         double dy = (double) GameInfo.getBall().getY() - direction.y;
         double dx = (double) GameInfo.getBall().getX() - direction.x;
         
@@ -86,9 +86,9 @@ public class CoordinatedPassNode extends SequenceNode {
         float final_orientation = (float) (Math.atan2(dy,dx));
         
         // Log the calculated dx, dy, and final orientation
-        System.out.println("dx: " + dx);
-        System.out.println("dy: " + dy);
-        System.out.println("final: " + final_orientation);
+        // System.out.println("dx: " + dx);
+        // System.out.println("dy: " + dy);
+        // System.out.println("final: " + final_orientation);
         
         // Retrieve the current orientation of the ally
         float orientation = GameInfo.getAlly(this.passerID).getOrientation();
@@ -101,24 +101,25 @@ public class CoordinatedPassNode extends SequenceNode {
         float diff = final_orientation - orientation;
         
         // Adjust orientation until the difference is within a threshold
-        while (Math.abs(diff) > 0.5) {
+        //if (Math.abs(diff) > 0.5) {
             // Execute rotation command with proportional control (kP is assumed to be defined elsewhere)
-            this.RotateBot.execute(diff * kP);
-            this.spinBall.execute();
+            // this.RotateBot.execute(diff * kP);
+            // this.spinBall.execute();
             
             // Update the orientation and difference for the next iteration
-            orientation = GameInfo.getAlly(this.passerID).getOrientation();
+            /* orientation = GameInfo.getAlly(this.passerID).getOrientation();
             if (orientation < 0) {
                 orientation += 2 * Math.PI;
             }
-            diff = final_orientation - orientation;
+            diff = final_orientation - orientation;*/
             
             // Log the current orientation and difference
-            System.out.println("orientation: " + orientation);
-            System.out.println("diff: " + diff);
-        }
-        
-        this.kickBall.execute(direction, RobotConstants.MAX_KICK_VELOCITY, false);
+            // System.out.println("orientation: " + orientation);
+            // System.out.println("diff: " + diff);
+        //} 
+        //else {
+            this.kickBall.execute(direction, RobotConstants.MAX_KICK_VELOCITY, false);
+        //}
         return NodeState.SUCCESS;
     }
 
@@ -187,6 +188,7 @@ public class CoordinatedPassNode extends SequenceNode {
         passInfo.setPassLocX(passLocs.get(bestLocIndex).x);
         passInfo.setPassLocY(passLocs.get(bestLocIndex).y);
 
+        System.out.println(passInfo.getReceiverID());
 
         return passInfo.build();
     }

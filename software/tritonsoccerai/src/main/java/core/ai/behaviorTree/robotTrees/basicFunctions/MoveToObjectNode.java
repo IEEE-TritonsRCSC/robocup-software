@@ -4,9 +4,12 @@ import main.java.core.ai.behaviorTree.nodes.NodeState;
 import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import static proto.triton.FilteredObject.*;
 import main.java.core.util.Vector2d;
+import main.java.core.ai.GameInfo;
 
 import static main.java.core.util.ProtobufUtils.getPos;
 import static main.java.core.util.ProtobufUtils.getVel;
+
+import static main.java.core.constants.ProgramConstants.objectConfig;
 
 /**
  * Moves ally towards a particular field object, taking into account where it is moving towards
@@ -43,7 +46,9 @@ public class MoveToObjectNode extends TaskNode {
      */
     public NodeState execute(Robot robot) {
         float TIME_CONSTANT = 0.5f;
-        Vector2d position = getPos(robot).add(getVel(robot).scale(TIME_CONSTANT));
+        Vector2d direction = new Vector2d(0.0f, -1.0f * GameInfo.getField().getFieldLength());
+        direction = direction.sub(getPos(robot));
+        Vector2d position = getPos(robot).add(getVel(robot).scale(TIME_CONSTANT)).add(direction.norm().scale(1.5 * objectConfig.robotRadius));
         this.moveToPositionNode.execute(position);
         return NodeState.SUCCESS;
     }
