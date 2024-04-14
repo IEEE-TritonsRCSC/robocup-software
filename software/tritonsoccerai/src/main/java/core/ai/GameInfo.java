@@ -154,6 +154,7 @@ public class GameInfo {
 
     public static Vector2d getBallPlacementLocation() {
         Referee.Point placementLocation = ref.getDesignatedPosition();
+        //  System.out.println("Placement location: " + placementLocation.getX() + ", " + placementLocation.getY());
         return new Vector2d(placementLocation.getX(), placementLocation.getY());
     }
 
