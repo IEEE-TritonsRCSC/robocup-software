@@ -33,12 +33,13 @@ public class MakePlayNode extends CompositeNode {
     public NodeState execute() {
         //If there is a space between robot and goal, dribble
         //otherwise, pass the ball to the other robots
-        if (checkDribble()) {
-            this.dribble.execute(new Vector2d(0, GameInfo.getField().getFieldLength() / 2));
-        }
-        else {
-            this.coordinatedPass.execute();
-        }
+        // if (checkDribble()) {
+        //     this.dribble.execute(new Vector2d(0, GameInfo.getField().getFieldLength() / 2));
+        // }
+        // else {
+        //     this.coordinatedPass.execute();
+        // }
+        this.coordinatedPass.execute();
 
         return NodeState.SUCCESS;
     }

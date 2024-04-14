@@ -291,6 +291,7 @@ public class ObjectHelper {
         localVel.setAngular(local_angular);
         moveCommand.setLocalVelocity(localVel);
         robotCommand.setMoveCommand(moveCommand);
+        robotCommand.setKickSpeed(0.0f);
 
         return robotCommand.build();
     }

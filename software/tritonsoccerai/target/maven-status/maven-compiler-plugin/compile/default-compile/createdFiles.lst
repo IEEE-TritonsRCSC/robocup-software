@@ -1,3 +1,4 @@
+proto/triton/CoordinatedPassInfo$MoveRobot$Builder.class
 proto/gc/SslGcEngine$GcStateTracker$1.class
 proto/simulation/SslSimulationRobotControl$MoveLocalVelocity$1.class
 proto/gc/SslGcChange$Change$UpdateConfigOrBuilder.class
@@ -127,6 +128,8 @@ proto/gc/SslGcState$GameState.class
 proto/gc/SslGcGameEvent$GameEvent$KeeperHeldBallOrBuilder.class
 proto/gc/SslGcRefereeMessage$Referee$Command$1.class
 proto/gc/SslGcGameEvent$GameEvent$MultipleFouls$1.class
+proto/triton/CoordinatedPassInfo$MoveRobotOrBuilder.class
+proto/triton/CoordinatedPassInfo$CoordinatedPass$1.class
 proto/simulation/SslSimulationConfig$RobotSpecs$Builder.class
 proto/simulation/SslVisionDetection$SSL_DetectionRobot$Builder.class
 proto/gc/SslGcChange$Change$AddPassiveGameEvent.class
@@ -236,6 +239,7 @@ proto/gc/SslGcEngine$ContinueHint$Builder.class
 proto/gc/SslGcChange$Change$AddGameEvent$1.class
 proto/gc/SslGcRconRemotecontrol$RemoteControlToController.class
 proto/gc/SslGcEngine$Ball.class
+proto/triton/CoordinatedPassInfo$MoveRobot$1.class
 proto/gc/SslGcGameEvent$GameEvent$AttackerDoubleTouchedBallOrBuilder.class
 proto/gc/SslGcRconTeam$TeamToController.class
 main/java/core/ai/behaviorTree/robotTrees/goalkeeper/defense/BlockBallNode.class
@@ -262,6 +266,7 @@ proto/gc/SslGcEngine$Robot$1.class
 main/java/core/module/aiModule/GKTreeModule.class
 proto/vision/MessagesRobocupSslRefboxLog$Refbox_Log.class
 proto/gc/SslGcEngine$ContinueAction.class
+main/java/core/module/testModule/RotateBotTestModule.class
 main/java/core/ai/behaviorTree/robotTrees/fielder/specificStateFunctions/NormalStartNode$1.class
 proto/simulation/SslVisionGeometry$SSL_BallModelStraightTwoPhaseOrBuilder.class
 proto/gc/SslGcApi$Output$Builder.class
@@ -285,6 +290,7 @@ proto/gc/SslGcRconRemotecontrol$RemoteControlToControllerOrBuilder.class
 proto/simulation/SslVisionGeometry$SSL_GeometryFieldSize$1.class
 proto/gc/SslGcRconRemotecontrol$RemoteControlRequestType$1.class
 main/java/core/ai/behaviorTree/robotTrees/fielder/specificStateFunctions/HaltNode.class
+proto/triton/CoordinatedPassInfo$CoordinatedPassOrBuilder.class
 proto/vision/MessagesRobocupSslGeometry$SSL_FieldLineSegment$1.class
 proto/simulation/SslVisionGeometry$SSL_GeometryCameraCalibration$1.class
 proto/gc/SslGcChange$Change$YellowCardOverOrBuilder.class
@@ -381,6 +387,7 @@ proto/gc/SslGcGameEvent$GameEvent$AttackerTouchedOpponentInDefenseArea$Builder.c
 proto/vision/MessagesRobocupSslDetectionTracked$TrackedBallOrBuilder.class
 main/java/core/ai/behaviorTree/robotTrees/basicFunctions/CoordinatedPassNode.class
 proto/vision/MessagesRobocupSslDetection$SSL_DetectionFrame$1.class
+main/java/core/module/testModule/CoordinatePassTestModule.class
 proto/gc/SslGcRefereeMessage$GameEventProposalGroup$Builder.class
 proto/simulation/SslVisionGeometry$SSL_FieldShapeType$1.class
 proto/gc/SslGcRconTeam$ControllerToTeam$1.class
@@ -405,6 +412,7 @@ proto/gc/SslGcGameEvent$GameEvent$MultiplePlacementFailures$1.class
 proto/gc/SslGcRefereeMessage$Referee$Stage.class
 proto/gc/SslGcChange$Change$SetBallPlacementPosOrBuilder.class
 proto/gc/SslGcGameEvent$GameEvent$TooManyRobots.class
+proto/triton/CoordinatedPassInfo.class
 proto/vision/MessagesRobocupSslDetectionTracked$TrackedRobot$1.class
 proto/gc/SslGcGameEvent$GameEvent$PenaltyKickFailed.class
 proto/gc/SslAutorefCi$AutoRefCiOutput$1.class
@@ -458,6 +466,7 @@ proto/gc/SslGcState$Proposal$Builder.class
 proto/simulation/SslSimulationRobotControl$RobotMoveCommand$1.class
 proto/gc/SslGcState$RedCard$Builder.class
 proto/vision/MessagesRobocupSslDetectionTracked$KickedBall$Builder.class
+proto/triton/CoordinatedPassInfo$CoordinatedPass$Builder.class
 proto/gc/SslGcEngine$ContinueHint.class
 proto/gc/SslGcGameEvent$GameEvent$BotPushedBot$Builder.class
 proto/gc/SslGcGameEvent$GameEvent$BotSubstitutionOrBuilder.class
@@ -550,6 +559,7 @@ proto/gc/SslGcGameEvent$GameEvent$ChallengeFlag.class
 proto/gc/SslGcGameEvent$GameEvent$UnsportingBehaviorMinor.class
 main/java/core/module/aiModule/AIModule.class
 main/java/core/ai/GameInfo.class
+proto/triton/CoordinatedPassInfo$CoordinatedPass.class
 proto/simulation/SslSimulationRobotFeedback$RobotControlResponse$Builder.class
 main/java/core/search/base/RouteNode.class
 proto/gc/SslGcGameEvent.class
@@ -710,6 +720,7 @@ main/java/core/ai/behaviorTree/robotTrees/goalkeeper/specificStateFunctions/GKSt
 proto/gc/SslGcGameEvent$GameEvent$BotCrashDrawn$1.class
 proto/gc/SslGcState$TeamInfo.class
 proto/vision/MessagesRobocupSslGeometry$SSL_BallModelStraightTwoPhase$Builder.class
+proto/triton/CoordinatedPassInfo$MoveRobot.class
 proto/gc/SslGcGameEvent$GameEvent$AttackerDoubleTouchedBall$1.class
 proto/gc/SslGcGameEvent$GameEvent$Goal.class
 main/java/core/ai/behaviorTree/robotTrees/fielder/defense/CutPassingLaneNode.class
@@ -831,6 +842,7 @@ proto/vision/MessagesRobocupSslRefboxLog$Log_FrameOrBuilder.class
 proto/simulation/SslVisionDetection$SSL_DetectionBall$Builder.class
 proto/gc/SslGcGameEvent$GameEvent$MultipleFouls.class
 main/java/core/ai/behaviorTree/robotTrees/goalkeeper/offense/GKPositionSelfNode.class
+main/java/core/ai/behaviorTree/robotTrees/basicFunctions/RotateBotNode.class
 proto/simulation/SslSimulationControl$SimulatorControl$1.class
 main/java/core/ai/behaviorTree/robotTrees/basicFunctions/ChaseBallNode.class
 proto/gc/SslGcCi$CiOutput.class

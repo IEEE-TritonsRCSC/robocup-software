@@ -48,7 +48,7 @@ public class ShootBallNode extends SequenceNode {
     public NodeState execute(Vector2d shotTo) {
         // kicks the ball
         this.kickBall.execute(shotTo.sub(getPos(GameInfo.getAlly(allyID))), RobotConstants.MAX_KICK_VELOCITY, false);
-        System.out.println("Executed shot: " + shotTo);
+        // System.out.println("Executed shot: " + shotTo);
         return NodeState.SUCCESS;
     }
 
@@ -107,7 +107,7 @@ public class ShootBallNode extends SequenceNode {
             }
         }
 
-        System.out.println(maxScore);
+        // System.out.println(maxScore);
 
         if (maxScore < 100) {return null;}
         else {return bestKickTo;}

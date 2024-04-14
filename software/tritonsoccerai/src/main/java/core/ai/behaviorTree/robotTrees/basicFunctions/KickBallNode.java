@@ -42,7 +42,7 @@ public class KickBallNode extends TaskNode {
      */
     public NodeState execute(Vector2d direction, double velocity, boolean chip) {
         //if robot is facing the right direction, kick ball quickly
-        System.out.println("Kick Direction: " + direction);
+        // System.out.println("Kick Direction: " + direction);
         if (ObjectHelper.hasOrientation(GameInfo.getAlly(allyID), direction, aiConfig.kickToPointAngleTolerance / 2)) {
             SslSimulationRobotControl.RobotCommand.Builder robotCommand = SslSimulationRobotControl.RobotCommand.newBuilder();
 
@@ -50,7 +50,7 @@ public class KickBallNode extends TaskNode {
 
             SslSimulationRobotControl.RobotMoveCommand.Builder moveCommand = SslSimulationRobotControl.RobotMoveCommand.newBuilder();
             SslSimulationRobotControl.MoveLocalVelocity.Builder localCommand = SslSimulationRobotControl.MoveLocalVelocity.newBuilder();
-            localCommand.setForward(2.0f);
+            localCommand.setForward(1.6f);
             localCommand.setLeft(0);
             localCommand.setAngular(0);
             moveCommand.setLocalVelocity(localCommand);
@@ -71,17 +71,17 @@ public class KickBallNode extends TaskNode {
 
             SslSimulationRobotControl.RobotMoveCommand.Builder moveCommand = SslSimulationRobotControl.RobotMoveCommand.newBuilder();
             SslSimulationRobotControl.MoveLocalVelocity.Builder localCommand = SslSimulationRobotControl.MoveLocalVelocity.newBuilder();
-            localCommand.setForward(0);
+            localCommand.setForward(0.03f);
             localCommand.setLeft(0);
             localCommand.setAngular(RotateInPlaceNode.getAngular(direction.angle(), allyID, true) / 2);
             moveCommand.setLocalVelocity(localCommand);
             robotCommand.setMoveCommand(moveCommand);
-            // robotCommand.setKickSpeed((float) (ProgramConstants.objectConfig.cameraToObjectFactor * velocity));
+            robotCommand.setKickSpeed(0.0f);
             // robotCommand.setKickAngle(0);
             robotCommand.setDribblerSpeed(RobotConstants.DRIBBLE_RPM);
 
             ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
-            System.out.println("Orientation INCORRECT for kick");
+            // System.out.println("Orientation INCORRECT for kick");
         }
 
         return NodeState.SUCCESS;
