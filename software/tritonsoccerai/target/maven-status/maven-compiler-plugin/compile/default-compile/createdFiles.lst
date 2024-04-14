@@ -647,6 +647,7 @@ proto/simulation/SslSimulationControl.class
 proto/gc/SslGcEngine$ContinueAction$Type.class
 proto/gc/SslGcChange$Change$AddRedCard$1.class
 proto/gc/SslGcEngineConfig$AutoRefConfig.class
+main/java/core/util/ObjectHelper$1.class
 proto/gc/SslGcChange$Change$UpdateTeamState$1.class
 proto/gc/SslGcGameEvent$GameEvent$BotHeldBallDeliberately$1.class
 main/java/core/module/Module.class
