@@ -28,6 +28,8 @@ public class GameInfo {
     private static Team TEAM_COLOR;
     private static Team FOE_TEAM_COLOR;
 
+    private static CoordinatedPass currentPass;
+
     // private static Vector2d ballPlacementLocation;
 
     /**
@@ -192,6 +194,14 @@ public class GameInfo {
 
     public static void setInOpenPlay(boolean inOpenPlay) {
         GameInfo.inOpenPlay = inOpenPlay;
+    }
+
+    public static void setCoordinatedPass(CoordinatedPass pass) {
+        this.pass = pass;
+    }
+
+    public static CoordinatedPass getCoordinatedPass() {
+        return this.pass;
     }
 
 }
