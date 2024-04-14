@@ -53,6 +53,10 @@ public class RotateInPlaceNode extends TaskNode {
         if (calcAngular) {
             angular = RotateInPlaceNode.getAngular(input, allyID, dribbleOn);
         }
+        // float forward = 0.0f;
+        // if (this.dribbleOn) {
+        //     forward = 0.02f;
+        // }
         
         RobotCommand localCommand = generateLocalMoveCommand(0.0f, 0.0f, angular, 
                                                             GameInfo.getAlly(allyID).getOrientation(), allyID);
