@@ -48,7 +48,7 @@ public class MoveToObjectNode extends TaskNode {
         float TIME_CONSTANT = 0.5f;
         Vector2d direction = new Vector2d(0.0f, -1.0f * GameInfo.getField().getFieldLength());
         direction = direction.sub(getPos(robot));
-        Vector2d position = getPos(robot).add(getVel(robot).scale(TIME_CONSTANT)).add(direction.norm().scale(1.5 * objectConfig.robotRadius));
+        Vector2d position = getPos(robot).add(getVel(robot).scale(TIME_CONSTANT)).add(direction.norm().scale(1.5f * objectConfig.robotRadius));
         this.moveToPositionNode.execute(position);
         return NodeState.SUCCESS;
     }
