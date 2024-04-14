@@ -39,15 +39,14 @@ public class OffenseRootService extends ServiceNode {
     @Override
     public NodeState execute() {
         if (NodeState.isSuccess(this.havePossession.execute())) {
-            // Vector2d shotTo = this.shootBall.findShot();
-            // if (shotTo != null) {
-            //     this.shootBall.execute(shotTo);
-            //     // System.out.println("Shoot ball executed " + curr);
-            // } else {
-            //     this.makePlay.execute();
-            //     // System.out.println("Make play executed " + curr);
-            // }
-            this.makePlay.execute();
+            Vector2d shotTo = this.shootBall.findShot();
+            if (shotTo != null) {
+                this.shootBall.execute(shotTo);
+                // System.out.println("Shoot ball executed " + curr);
+            } else {
+                this.makePlay.execute();
+                // System.out.println("Make play executed " + curr);
+            }
         }
         else {
             this.positionSelf.execute();

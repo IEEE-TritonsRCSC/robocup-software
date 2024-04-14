@@ -104,6 +104,10 @@ public class GameInfo {
         return getPos(GameInfo.getAlly(allyID)).dist(getPos(GameInfo.getBall())) <= DRIBBLE_THRESHOLD;
     }
 
+    public static Boolean getFoePossessBall(int foeID) {
+        return getPos(GameInfo.getFoe(foeID)).dist(getPos(GameInfo.getBall())) <= DRIBBLE_THRESHOLD;
+    }
+
     public static Robot getAllyClosestToBall() {
         ArrayList<Robot> allies = getAllies();
         Vector2d ballPos = getPos(wrapper.getBall());

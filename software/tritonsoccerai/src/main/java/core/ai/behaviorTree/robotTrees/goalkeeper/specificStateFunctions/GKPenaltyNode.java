@@ -26,16 +26,14 @@ public class GKPenaltyNode extends TaskNode {
         // figure out in which direction shooting robot is facing
         // and move to corresponding location along goal line
         if (GameInfo.getPossessBall()) {
-            while (true) {
-                this.blockBallNode.execute();
-            }
+            this.blockBallNode.setOnLine(false);
+            this.blockBallNode.execute();
         }
         else {
-            Vector2d centerOfGoal = new Vector2d(0, -1 * (GameInfo.getField().getFieldLength() / 2));
-            while (true) {
-                this.moveToPositionNode.execute(centerOfGoal);
-            }
+            this.blockBallNode.setOnLine(true);
+            this.blockBallNode.execute();
         }
+        return NodeState.SUCCESS;
     }
 
 }
