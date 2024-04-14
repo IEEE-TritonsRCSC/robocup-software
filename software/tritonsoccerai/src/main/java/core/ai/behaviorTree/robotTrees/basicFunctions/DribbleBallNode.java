@@ -82,11 +82,11 @@ public class DribbleBallNode extends TaskNode {
 
         //if there are directions in which there are no obstacles
         for(int i = 0; i < obstacles.size(); i++) {
+            Robot obstacle = obstacles.get(i);
             for(double j = 0; j <= Math.PI; j+= Math.PI/18) {
                 //if there is a direction in which an obstacle exists, return direction vector
-                Robot obstacle = obstacles.get(i);
-                if(!(Math.abs(Math.atan2(obstacle.getY() - robot.getY(), obstacle.getX(), robot.getX()) - j) < 0.001)) {
-                    return new Vector2d(10, 10*tan(j));
+                if(!(Math.abs(Math.atan2(obstacle.getY() - robot.getY(), obstacle.getX() - robot.getX())) - j < 0.001)) {
+                    return new Vector2d(10, 10*Math.tan(j));
                 }
             }
         }
