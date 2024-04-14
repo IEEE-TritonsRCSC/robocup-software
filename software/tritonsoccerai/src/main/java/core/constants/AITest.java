@@ -5,10 +5,15 @@ import main.java.core.module.testModule.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
+
 public enum AITest {
     MOVE(MoveTestModule.class, "Test the ability of robots to move a target location."),
     OBSTACLE(ObstacleTestModule.class, "Test robot obstacle avoidance."),
-    DRIBBLE(DribbleTestModule.class, "Test ability of robot to dribble with the ball.")
+    DRIBBLE(DribbleTestModule.class, "Test ability of robot to dribble with the ball."),
+    SPIN_WITH_BALL(SpinWBallTestModule.class, "Test ability of robot to spin in place with the ball."),
+    SPIN_WITHOUT_BALL(SpinWOBallTestModule.class, "Test ability of robot to spin in place without the ball."),
+    ROTATE(RotateBotTestModule.class, "Test the ability for the robot to rotate to a particular orientation."),
+    COORDINATEDPASS(CoordinatePassTestModule.class, "Test the ability to perform a coordinated pass.")
     ;
 
     private final Class<? extends TestModule> testClass;
@@ -29,7 +34,6 @@ public enum AITest {
 
     public TestModule createNewTestModule(ScheduledThreadPoolExecutor executor) {
         try {
-            System.out.println(executor);
             return testClass.getConstructor(ScheduledThreadPoolExecutor.class).newInstance(executor);
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
             e.printStackTrace();

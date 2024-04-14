@@ -41,6 +41,10 @@ public class HaltNode extends SequenceNode {
         }*/
         RobotCommand localCommand = generateLocalMoveCommand(0, 0, 0.0f, 
                                                     GameInfo.getAlly(allyID).getOrientation(), allyID);
+        localCommand = localCommand.toBuilder()
+                                    .setDribblerSpeed(0f)
+                                    .setKickSpeed(0f)
+                                    .build();
         ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, localCommand);
         return NodeState.SUCCESS;
     }

@@ -11,6 +11,9 @@ import static main.java.core.util.ProtobufUtils.getAcc;
 import static proto.triton.FilteredObject.Ball;
 import static proto.triton.FilteredObject.Robot;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
+import static proto.gc.SslGcRefereeMessage.Referee.Command;
+
+import main.java.core.constants.Team;
 
 import static proto.simulation.SslSimulationRobotControl.RobotCommand;
 import static proto.simulation.SslSimulationRobotControl.RobotMoveCommand;
@@ -288,8 +291,29 @@ public class ObjectHelper {
         localVel.setAngular(local_angular);
         moveCommand.setLocalVelocity(localVel);
         robotCommand.setMoveCommand(moveCommand);
+        robotCommand.setKickSpeed(0.0f);
 
         return robotCommand.build();
+    }
+
+    public static Boolean awardedBall() {
+        Command command = GameInfo.getCurrCommand();
+        switch (GameInfo.getTeamColor()) {
+            case YELLOW:
+                return (command == Command.BALL_PLACEMENT_YELLOW) 
+                        || (command == Command.DIRECT_FREE_YELLOW) 
+                        || (command == Command.INDIRECT_FREE_YELLOW) 
+                        || (command == Command.PREPARE_KICKOFF_YELLOW) 
+                        || (command == Command.PREPARE_PENALTY_YELLOW);
+            case BLUE:
+                return (command == Command.BALL_PLACEMENT_BLUE) 
+                        || (command == Command.DIRECT_FREE_BLUE) 
+                        || (command == Command.INDIRECT_FREE_BLUE) 
+                        || (command == Command.PREPARE_KICKOFF_BLUE) 
+                        || (command == Command.PREPARE_PENALTY_BLUE);
+            default:
+                return false;
+        }
     }
     
 }

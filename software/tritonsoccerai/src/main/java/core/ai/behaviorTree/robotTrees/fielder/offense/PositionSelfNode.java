@@ -30,7 +30,7 @@ public class PositionSelfNode extends TaskNode {
      */
     @Override
     public NodeState execute() {
-        this.moveToPositionNode.execute(findPositioningLocation());
+        // this.moveToPositionNode.execute(findPositioningLocation());
         return NodeState.SUCCESS;
     }
 

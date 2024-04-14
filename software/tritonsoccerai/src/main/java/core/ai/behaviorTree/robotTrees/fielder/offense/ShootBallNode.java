@@ -10,7 +10,7 @@ import main.java.core.util.Vector2d;
 import java.util.ArrayList;
 import java.util.List;
 
-import static main.java.core.constants.ProgramConstants.aiConfig;
+import static main.java.core.constants.ProgramConstants.*;
 
 import static main.java.core.util.ObjectHelper.distToPath;
 import static main.java.core.util.ProtobufUtils.getPos;
@@ -25,10 +25,12 @@ import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
 public class ShootBallNode extends SequenceNode {
 
     private final KickBallNode kickBall;
+    private final int allyID;
 
     public ShootBallNode(int allyID) {
         super("Shoot Ball Node: " + allyID);
         this.kickBall = new KickBallNode(allyID);
+        this.allyID = allyID;
     }
 
     /**
@@ -36,14 +38,26 @@ public class ShootBallNode extends SequenceNode {
      */
     public NodeState execute() {
         // kicks the ball
-        this.kickBall.execute(findShot(), RobotConstants.MAX_KICK_VELOCITY, false);
+        execute(new Vector2d(0, GameInfo.getField().getFieldLength() / 2.0f));
         return NodeState.SUCCESS;
     }
 
     /**
-     * Finds the direction of the optimal shot
+     * Kicks ball as fast as possible in the optimal direction
      */
-    private Vector2d findShot() {
+    public NodeState execute(Vector2d shotTo) {
+        // kicks the ball
+        this.kickBall.execute(shotTo.sub(getPos(GameInfo.getAlly(allyID))), RobotConstants.MAX_KICK_VELOCITY, false);
+        // System.out.println("Executed shot: " + shotTo);
+        return NodeState.SUCCESS;
+    }
+
+    /**
+     * Finds the direction of the optimal shot, 
+     * returns null if robot is too far from goal 
+     * or shot path is blocked
+     */
+    public Vector2d findShot() {
 
         // Get the field parameter
         SSL_GeometryFieldSize field = GameInfo.getField();
@@ -53,7 +67,7 @@ public class ShootBallNode extends SequenceNode {
         List<Robot> obstacles = new ArrayList<>();
 
         //remove the ally closest to ball
-        alliesList.remove(GameInfo.getAllyClosestToBall());
+        alliesList.remove(GameInfo.getAlly(allyID));
 
         //add the other allys and foes to the obstacles list
         obstacles.addAll(alliesList);
@@ -63,20 +77,26 @@ public class ShootBallNode extends SequenceNode {
         float goalMinX = -field.getGoalWidth() / 2f + 300f;
         float goalMaxX = field.getGoalWidth() / 2f - 300f;
         float goalY = field.getFieldLength() / 2f;
+        float ballWidth = objectConfig.ballRadius * objectConfig.objectToCameraFactor;
 
-        
+        if (getPos(GameInfo.getAlly(allyID)).dist(new Vector2d(0, goalY)) > 4000) {
+            return null;
+        }
+
         List<Vector2d> kickTos = new ArrayList<>();
-        for (float goalX = goalMinX; goalX < goalMaxX; goalX += aiConfig.goalShootKickToSearchSpacing)
-            kickTos.add(new Vector2d(goalX, goalY));
+        kickTos.add(new Vector2d(goalMinX + (2 * ballWidth), goalY));
+        kickTos.add(new Vector2d(goalMaxX - (2 * ballWidth), goalY));
+        // for (float goalX = goalMinX; goalX < goalMaxX; goalX += aiConfig.goalShootKickToSearchSpacing)
+        //     kickTos.add(new Vector2d(goalX, goalY));
 
         //best kick direction
         Vector2d bestKickTo = null;
 
-        float maxScore = -Float.MAX_VALUE;
+        float maxScore = Float.MIN_VALUE;
 
         //defines the best kick direction based on the position of the obstacles
         for (Vector2d kickTo : kickTos) {
-            float distToObstacles = distToPath(getPos(GameInfo.getAllyClosestToBall()), kickTo, obstacles);
+            float distToObstacles = distToPath(getPos(GameInfo.getAlly(allyID)), kickTo, obstacles);
 
             // TODO Maybe have to change how to calculate the score
             float score = aiConfig.goalShootDistToObstaclesScoreFactor * distToObstacles;
@@ -87,7 +107,10 @@ public class ShootBallNode extends SequenceNode {
             }
         }
 
-        return bestKickTo;
+        // System.out.println(maxScore);
+
+        if (maxScore < 100) {return null;}
+        else {return bestKickTo;}
     }
 
 }

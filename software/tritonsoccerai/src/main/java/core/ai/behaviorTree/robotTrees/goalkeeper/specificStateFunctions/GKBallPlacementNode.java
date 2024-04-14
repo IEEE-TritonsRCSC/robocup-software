@@ -6,6 +6,8 @@ import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import main.java.core.ai.behaviorTree.robotTrees.goalkeeper.defense.BlockBallNode;
 import main.java.core.ai.behaviorTree.robotTrees.goalkeeper.offense.GKPositionSelfNode;
 
+import static main.java.core.util.ObjectHelper.awardedBall;
+
 public class GKBallPlacementNode extends TaskNode {
 
     private final GKPositionSelfNode positionSelfNode;
@@ -20,7 +22,7 @@ public class GKBallPlacementNode extends TaskNode {
     @Override
     public NodeState execute() {
         while (true) {
-            if (GameInfo.getPossessBall()) {
+            if (awardedBall()) {
                 this.positionSelfNode.execute();
             } else {
                 this.blockBallNode.execute();

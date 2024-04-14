@@ -62,6 +62,8 @@ public class SimulatorRobotCommandInterface extends Module {
         // System.out.println("simRobComInt recieved command");
         RobotCommand robotCommand = (RobotCommand) simpleDeserialize(delivery.getBody());
 
+        // System.out.println(robotCommand.getId() + ": " + robotCommand.getDribblerSpeed());
+
         RobotControl.Builder robotControl = RobotControl.newBuilder();
         robotControl.addRobotCommands(robotCommand);
 
