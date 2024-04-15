@@ -88,7 +88,7 @@ public class DribbleBallNode extends TaskNode {
         }
 
         //if there are directions in which there are no obstacles
-        for (double j = 0; j < Math.PI/2; j += Math.PI/32) {
+        for (double j = 0; j <= Math.PI/2; j += Math.PI/32) {
             boolean leftSideValid = true;
             boolean rightSideValid = true;
 
