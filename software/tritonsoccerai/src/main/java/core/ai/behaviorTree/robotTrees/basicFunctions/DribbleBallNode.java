@@ -86,7 +86,7 @@ public class DribbleBallNode extends TaskNode {
         List<Vector2d> directions = new ArrayList<>();
         //add all directions with obstacles into list of directions
         for(int i = 0; i < obstacles.size(); i++) {
-            if(distToPath(getPos(GameInfo.getAlly(allyID)), getPos(obstacles.get(i), obstacles)) <= 10) {
+            if(distToPath(getPos(GameInfo.getAlly(allyID)), getPos(obstacles.get(i)), obstacles) <= 10) {
                 directions.add(getPos(obstacles.get(i)));
             }
         }
