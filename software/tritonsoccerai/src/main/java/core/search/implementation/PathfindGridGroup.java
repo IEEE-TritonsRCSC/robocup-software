@@ -22,14 +22,14 @@ public class PathfindGridGroup {
             pathfindGrids.put(i, new PathfindGrid(field));
     }
 
-    public void updateObstacles(FilteredWrapperPacket wrapper) {
-        updateObstacles(wrapper.getAlliesMap(), wrapper.getFoesMap());
+    public void updateObstacles(FilteredWrapperPacket wrapper, boolean avoidBall) {
+        updateObstacles(wrapper.getAlliesMap(), wrapper.getFoesMap(), avoidBall);
     }
 
-    private void updateObstacles(Map<Integer, Robot> allies, Map<Integer, Robot> foes) {
+    private void updateObstacles(Map<Integer, Robot> allies, Map<Integer, Robot> foes, boolean avoidBall) {
         pathfindGrids.forEach((id, pathfindGrid) -> {
             Robot excludeAlly = allies.get(id);
-            pathfindGrid.updateObstacles(allies, foes, excludeAlly);
+            pathfindGrid.updateObstacles(allies, foes, excludeAlly, avoidBall);
         });
     }
 
