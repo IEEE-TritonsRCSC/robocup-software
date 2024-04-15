@@ -126,7 +126,8 @@ public class GoalkeeperRootService extends ServiceNode {
                 this.currentlyExecutingNode = this.prepareKickoffNode;
                 break;
             case PREPARE_PENALTY_YELLOW, PREPARE_PENALTY_BLUE:
-                this.branchFuture = this.executor.submit(this.preparePenaltyNode);
+                this.branchFuture = this.executor.scheduleAtFixedRate(this.preparePenaltyNode, ProgramConstants.INITIAL_DELAY,
+                                                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
                 this.currentlyExecutingNode = this.preparePenaltyNode;
                 break;
             case NORMAL_START:

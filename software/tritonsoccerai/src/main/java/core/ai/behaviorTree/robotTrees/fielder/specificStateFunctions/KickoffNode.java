@@ -7,11 +7,14 @@ import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNod
 import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
 import static proto.triton.FilteredObject.Robot;
 import main.java.core.util.Vector2d;
-import main.java.core.constants.Team;
 
-import static proto.gc.SslGcRefereeMessage.Referee;
+import static main.java.core.constants.ProgramConstants.objectConfig;
+import static main.java.core.constants.RobotConstants.DRIBBLE_THRESHOLD;
+
+import static main.java.core.constants.ProgramConstants.gameConfig;
 
 import static main.java.core.util.ProtobufUtils.getPos;
+import static main.java.core.util.ObjectHelper.awardedBall;
 
 /**
  * Handles Prepare Kickoff game state
@@ -33,14 +36,13 @@ public class KickoffNode extends TaskNode {
 
     @Override
     public NodeState execute() {
-        float DISTANCE_CONSTANT = 1;
+        // float DISTANCE_CONSTANT = 100;
         // our team was awarded kickoff
-        if (((GameInfo.getCurrCommand() == Referee.Command.PREPARE_KICKOFF_BLUE) && (GameInfo.getTeamColor() == Team.BLUE))
-            || ((GameInfo.getCurrCommand() == Referee.Command.PREPARE_KICKOFF_YELLOW) && (GameInfo.getTeamColor() == Team.YELLOW))) {
+        if (awardedBall()) {
             // robot is closest to ball
             if (NodeState.isSuccess(this.closestToBallNode.execute())) {
-                Vector2d desiredLocation = new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - 2);
-                while (getPos(GameInfo.getAlly(allyID)).dist(desiredLocation) > DISTANCE_CONSTANT) {
+                if (!GameInfo.getPossessBall(allyID)) {
+                    Vector2d desiredLocation = new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - DRIBBLE_THRESHOLD - objectConfig.robotRadius);
                     this.moveToPositionNode.execute(desiredLocation);
                 }
             }
@@ -50,6 +52,8 @@ public class KickoffNode extends TaskNode {
                 // Move to our side of field
                 // Get in formation
                 // this.moveToPositionNode.execute();
+                Vector2d location = new Vector2d((allyID - (gameConfig.numBots / 2)) * 1400f, GameInfo.getField().getFieldLength() / -4);
+                this.moveToPositionNode.execute(location);
             }
         }
         // our team was not awarded kickoff
@@ -58,6 +62,8 @@ public class KickoffNode extends TaskNode {
                 // Move to our side of field
                 // Get in formation
                 // this.moveToPositionNode.execute();
+                Vector2d location = new Vector2d((allyID - (gameConfig.numBots / 2)) * 600f, GameInfo.getField().getFieldLength() / -10);
+                this.moveToPositionNode.execute(location);
         }
         return NodeState.SUCCESS;
     }

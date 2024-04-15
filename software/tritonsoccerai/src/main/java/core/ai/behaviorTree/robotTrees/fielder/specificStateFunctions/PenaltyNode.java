@@ -12,7 +12,11 @@ import main.java.core.util.Vector2d;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+import static main.java.core.constants.ProgramConstants.objectConfig;
+import static main.java.core.constants.RobotConstants.DRIBBLE_THRESHOLD;
+
 import static main.java.core.util.ProtobufUtils.getPos;
+import static main.java.core.util.ObjectHelper.awardedBall;
 
 /**
  * Handles Prepare Penalty game state
@@ -36,27 +40,25 @@ public class PenaltyNode extends TaskNode {
         float DISTANCE_CONSTANT = 1;
         float lineYValue;
         if (GameInfo.getPossessBall()) {
-            lineYValue = 30;
+            lineYValue = 2500;
         }
         else {
-            lineYValue = -30;
+            lineYValue = -2500;
         }
-        if (GameInfo.getPossessBall() && NodeState.isSuccess(this.closestToBallNode.execute())) {
-            Vector2d desiredLocation = new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - 2);
-            while (getPos(GameInfo.getAlly(allyID)).dist(desiredLocation) > DISTANCE_CONSTANT) {
+        if (awardedBall() && NodeState.isSuccess(this.closestToBallNode.execute())) {
+            if (!GameInfo.getPossessBall(allyID)) {
+                Vector2d desiredLocation = new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - DRIBBLE_THRESHOLD - objectConfig.robotRadius);
                 this.moveToPositionNode.execute(desiredLocation);
             }
         }
         else {
-            while ((GameInfo.getAlly(allyID).getY() - lineYValue) > DISTANCE_CONSTANT) {
                 this.moveToPositionNode.execute(findOptimalPositionSpot(lineYValue));
-            }
         }
         return NodeState.SUCCESS;
     }
 
     private Vector2d findOptimalPositionSpot(float lineYValue) {
-        float DISTANCE_CONSTANT = 1;
+        float DISTANCE_CONSTANT = 100;
         float SPACE_CONSTANT = (float) (1.5 * RobotConstants.ROBOT_WIDTH);
         ArrayList<Double> xVals = new ArrayList<>();
         for (Robot robot : GameInfo.getFielders()) {
