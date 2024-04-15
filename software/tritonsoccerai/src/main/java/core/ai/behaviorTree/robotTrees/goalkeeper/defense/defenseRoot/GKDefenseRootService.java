@@ -33,7 +33,7 @@ public class GKDefenseRootService extends ServiceNode {
     @Override
     public NodeState execute() {
         SSL_GeometryFieldSize field = GameInfo.getField();
-        System.out.println(GameInfo.getAllyClosestToBallIncGK().getId());
+        // System.out.println(GameInfo.getAllyClosestToBallIncGK().getId());
         if ((GameInfo.getAllyClosestToBallIncGK().getId() == 0) 
             && (((getPos(GameInfo.getFoeClosestToBall())).dist(getPos(GameInfo.getBall())) 
                 - getPos(GameInfo.getKeeper()).dist(getPos(GameInfo.getBall()))) > 400)

@@ -33,6 +33,7 @@ public class PenaltyNode extends TaskNode {
         super("Prepare Penalty Node: " + allyID, allyID);
         this.closestToBallNode = closestToBallNode;
         this.moveToPositionNode = new MoveToPositionNode(allyID);
+        this.moveToPositionNode.setAvoidBall(true);
     }
 
     @Override

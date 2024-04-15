@@ -27,11 +27,13 @@ public class MoveToPositionNode extends TaskNode {
     PathfindGridGroup pathfindGridGroup;
     Vector2d targetLocation;
     boolean dribbleOn;
+    boolean avoidBall;
     
     public MoveToPositionNode(int allyID) {
         super("Move To Position Node: " + allyID, allyID);
         this.pathfindGridGroup = new PathfindGridGroup(ProgramConstants.gameConfig.numBots, GameInfo.getField());
         this.dribbleOn = false;
+        this.avoidBall = false;
     }
 
     @Override
@@ -40,17 +42,13 @@ public class MoveToPositionNode extends TaskNode {
     }
 
     public NodeState execute(Vector2d endLoc) {
-        return this.execute(endLoc, false);
-    }
-
-    public NodeState execute(Vector2d endLoc, boolean avoidBall) {
         Robot ally = GameInfo.getAlly(allyID);
         Ball ball = GameInfo.getBall();
         
         Vector2d allyPos = getPos(GameInfo.getAlly(allyID));
 
         // Pathfinding to endLoc
-        pathfindGridGroup.updateObstacles(GameInfo.getWrapper(), avoidBall);
+        pathfindGridGroup.updateObstacles(GameInfo.getWrapper(), this.avoidBall);
         LinkedList<Node2d> route = pathfindGridGroup.findRoute(allyID, allyPos, endLoc);
         Vector2d next = pathfindGridGroup.findNext(allyID, route);
 
@@ -111,6 +109,14 @@ public class MoveToPositionNode extends TaskNode {
      */
     public void setDribbleOn(boolean dribbleOn) {
         this.dribbleOn = dribbleOn;
+    }
+
+    /**
+     * Sets the dribble setting
+     * @param dribbleOn whether robot velocity should be restricted to max dribbling speed
+     */
+    public void setAvoidBall(boolean avoidBall) {
+        this.avoidBall = avoidBall;
     }
 
 }

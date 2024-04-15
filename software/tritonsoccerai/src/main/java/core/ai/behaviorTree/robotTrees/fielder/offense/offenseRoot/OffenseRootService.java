@@ -21,7 +21,7 @@ public class OffenseRootService extends ServiceNode {
     private final ShootBallNode shootBall;
     private final CompositeNode makePlay;
     private final PositionSelfNode positionSelf;
-    private CatchBallNode catchBall;
+    private final CatchBallNode catchBall;
     private int allyID;
     // private int curr;
 
@@ -33,6 +33,7 @@ public class OffenseRootService extends ServiceNode {
         this.shootBall = new ShootBallNode(allyID);
         this.makePlay = new MakePlayNode(allyID);
         this.positionSelf = new PositionSelfNode(allyID);
+        this.catchBall = new CatchBallNode(this.allyID);
 
         // this.curr = 1;
     }
@@ -53,8 +54,7 @@ public class OffenseRootService extends ServiceNode {
                 // System.out.println("Make play executed " + curr);
             }
         } else if(GameInfo.getCoordinatedPass().getReceiverID() == this.allyID) {
-            this.catchBall = new CatchBallNode(this.allyID);
-            catchBall.execute();
+            this.catchBall.execute();
         } else {
             this.positionSelf.execute();
             // System.out.println("Position self executed " + curr);

@@ -34,6 +34,7 @@ public class IndirectFreeNode extends TaskNode {
         super("Prepare Indirect Free Node: " + allyID, allyID);
         this.closestToBallNode = closestToBallNode;
         this.moveToPositionNode = new MoveToPositionNode(allyID);
+        this.moveToPositionNode.setAvoidBall(true);
         this.positionSelfNode = new PositionSelfNode(allyID);
         this.cutPassingLaneNode = new CutPassingLaneNode(allyID);
     }

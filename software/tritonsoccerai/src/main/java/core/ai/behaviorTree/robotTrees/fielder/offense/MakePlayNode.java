@@ -23,22 +23,25 @@ public class MakePlayNode extends CompositeNode {
     private final DribbleBallNode dribble;
     private final CoordinatedPassNode coordinatedPass;
 
+    private final int allyID;
+
     public MakePlayNode(int allyID) {
         super("Make Play Node " + allyID);
         this.dribble = new DribbleBallNode(allyID);
         this.coordinatedPass = new CoordinatedPassNode(allyID);
+        this.allyID = allyID;
     }
     
     @Override
     public NodeState execute() {
         //If there is a space between robot and goal, dribble
         //otherwise, pass the ball to the other robots
-        if (checkDribble()) {
-            this.dribble.execute(new Vector2d(0, GameInfo.getField().getFieldLength() / 2));
-        }
-        else {
-            this.coordinatedPass.execute();
-        }
+        // if (checkDribble()) {
+            this.dribble.execute(DribbleBallNode.findDribblingDirection(allyID));
+        // }
+        // else {
+        //     this.coordinatedPass.execute();
+        // }
 
         return NodeState.SUCCESS;
     }
