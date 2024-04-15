@@ -15,6 +15,7 @@ import proto.simulation.SslSimulationRobotControl;
 import proto.triton.FilteredObject.Robot;
 
 import static proto.triton.FilteredObject.Robot;
+import static main.java.core.util.ProtobufUtils.getPos;
 
 import java.util.ArrayList;
 import java.util.List;
