@@ -47,8 +47,8 @@ public class ShootBallNode extends SequenceNode {
      */
     public NodeState execute(Vector2d shotTo) {
         // kicks the ball
-        this.kickBall.execute(shotTo.sub(getPos(GameInfo.getAlly(allyID))), RobotConstants.MAX_KICK_VELOCITY, false);
-        // System.out.println("Executed shot: " + shotTo);
+        NodeState result = this.kickBall.execute(shotTo.sub(getPos(GameInfo.getAlly(allyID))), RobotConstants.MAX_KICK_VELOCITY, false);
+        if (result == NodeState.SUCCESS) {System.out.println("Shot ball.");}
         return NodeState.SUCCESS;
     }
 

@@ -25,8 +25,7 @@ public class RotateBotNode extends TaskNode{
 
         int allyID = 0;
 
-        RobotCommand localCommand = generateLocalMoveCommand(0f, 0f, 1f,
-                                                            0f, allyID);
+        RobotCommand localCommand = generateLocalMoveCommand(0f, 0f, 1f, 0f, allyID);
 
         // Publish command to robot
         ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, localCommand);

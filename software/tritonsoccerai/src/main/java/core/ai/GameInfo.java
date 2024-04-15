@@ -11,6 +11,7 @@ import static main.java.core.constants.RobotConstants.DRIBBLE_THRESHOLD;
 import java.util.ArrayList;
 
 import static main.java.core.util.ProtobufUtils.getPos;
+import static proto.triton.CoordinatedPassInfo.CoordinatedPass;
 
 /**
  * central hub to find all info related to game
@@ -27,6 +28,8 @@ public class GameInfo {
 
     private static Team TEAM_COLOR;
     private static Team FOE_TEAM_COLOR;
+
+    private static CoordinatedPass currentPass;
 
     // private static Vector2d ballPlacementLocation;
 
@@ -57,12 +60,12 @@ public class GameInfo {
 
     public static ArrayList<Robot> getFielders() {
         ArrayList<Robot> allies = getAllies();
-        allies.remove(0);
+        allies.remove(getKeeper());
         return allies;
     }
 
     public static Robot getKeeper() {
-        return getAllies().get(0);
+        return getAlly(0);
     }
 
     public static ArrayList<Robot> getAllies() {
@@ -77,20 +80,30 @@ public class GameInfo {
 
     public static ArrayList<Robot> getFoeFielders() {
         ArrayList<Robot> foes = getFoes();
-        foes.remove(0);
+        foes.remove(getFoeKeeper());
         return foes;
     }
 
     public static Robot getFoeKeeper() {
-        return getFoes().get(0);
+        return getFoe(0);
     }
 
     public static Robot getAlly(int id) {
-        return getAllies().get(id);
+        for (Robot ally : getAllies()) {
+            if (ally.getId() == id) {
+                return ally;
+            }
+        }
+        return null;
     }
 
     public static Robot getFoe(int id) {
-        return getFoes().get(id);
+        for (Robot foe : getFoes()) {
+            if (foe.getId() == id) {
+                return foe;
+            }
+        }
+        return null;
     }
 
     public static Boolean getPossessBall() {
@@ -109,12 +122,28 @@ public class GameInfo {
     }
 
     public static Robot getAllyClosestToBall() {
-        ArrayList<Robot> allies = getAllies();
-        Vector2d ballPos = getPos(wrapper.getBall());
-        Robot closest = allies.get(1);
+        ArrayList<Robot> allies = getFielders();
+        Vector2d ballPos = getPos(getBall());
+        Robot closest = allies.get(0);
         float minDist = getPos(closest).dist(ballPos);
         float distToBall;
-        for (int i = 2; i < allies.size(); i++) {
+        for (int i = 1; i < allies.size(); i++) {
+            distToBall = getPos(allies.get(i)).dist(ballPos);
+            if (distToBall < minDist) {
+                closest = allies.get(i);
+                minDist = distToBall;
+            }
+        }
+        return closest;
+    }
+
+    public static Robot getAllyClosestToBallIncGK() {
+        ArrayList<Robot> allies = getAllies();
+        Vector2d ballPos = getPos(getBall());
+        Robot closest = allies.get(0);
+        float minDist = getPos(closest).dist(ballPos);
+        float distToBall;
+        for (int i = 1; i < allies.size(); i++) {
             distToBall = getPos(allies.get(i)).dist(ballPos);
             if (distToBall < minDist) {
                 closest = allies.get(i);
@@ -126,7 +155,7 @@ public class GameInfo {
 
     public static Robot getFoeClosestToBall() {
         ArrayList<Robot> foes = getFoes();
-        Vector2d ballPos = getPos(wrapper.getBall());
+        Vector2d ballPos = getPos(getBall());
         Robot closest = foes.get(0);
         float minDist = getPos(closest).dist(ballPos);
         float distToBall;
@@ -192,6 +221,14 @@ public class GameInfo {
 
     public static void setInOpenPlay(boolean inOpenPlay) {
         GameInfo.inOpenPlay = inOpenPlay;
+    }
+
+    public static void setCoordinatedPass(CoordinatedPass pass) {
+        GameInfo.currentPass = pass;
+    }
+
+    public static CoordinatedPass getCoordinatedPass() {
+        return GameInfo.currentPass;
     }
 
 }

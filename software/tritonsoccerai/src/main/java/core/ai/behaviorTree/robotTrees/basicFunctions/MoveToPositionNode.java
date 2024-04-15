@@ -27,11 +27,13 @@ public class MoveToPositionNode extends TaskNode {
     PathfindGridGroup pathfindGridGroup;
     Vector2d targetLocation;
     boolean dribbleOn;
+    boolean avoidBall;
     
     public MoveToPositionNode(int allyID) {
         super("Move To Position Node: " + allyID, allyID);
         this.pathfindGridGroup = new PathfindGridGroup(ProgramConstants.gameConfig.numBots, GameInfo.getField());
         this.dribbleOn = false;
+        this.avoidBall = false;
     }
 
     @Override
@@ -46,7 +48,7 @@ public class MoveToPositionNode extends TaskNode {
         Vector2d allyPos = getPos(GameInfo.getAlly(allyID));
 
         // Pathfinding to endLoc
-        pathfindGridGroup.updateObstacles(GameInfo.getWrapper());
+        pathfindGridGroup.updateObstacles(GameInfo.getWrapper(), this.avoidBall);
         LinkedList<Node2d> route = pathfindGridGroup.findRoute(allyID, allyPos, endLoc);
         Vector2d next = pathfindGridGroup.findNext(allyID, route);
 
@@ -74,7 +76,6 @@ public class MoveToPositionNode extends TaskNode {
         if (this.dribbleOn) {
             localCommand = localCommand.toBuilder().setDribblerSpeed(RobotConstants.DRIBBLE_RPM).build();
         }
-        localCommand.toBuilder().setKickSpeed(0f);
 
         // Publish command to robot
         ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, localCommand);
@@ -108,6 +109,14 @@ public class MoveToPositionNode extends TaskNode {
      */
     public void setDribbleOn(boolean dribbleOn) {
         this.dribbleOn = dribbleOn;
+    }
+
+    /**
+     * Sets the dribble setting
+     * @param dribbleOn whether robot velocity should be restricted to max dribbling speed
+     */
+    public void setAvoidBall(boolean avoidBall) {
+        this.avoidBall = avoidBall;
     }
 
 }

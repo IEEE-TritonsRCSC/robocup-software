@@ -61,7 +61,8 @@ public class KickBallNode extends TaskNode {
             robotCommand.setDribblerSpeed(0);
 
             ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
-            System.out.println("SUCCESSfully kicked");
+            // System.out.println("SUCCESSfully kicked");
+            return NodeState.SUCCESS;
          }
         // if robot is not facing the right direction, rotate 
         else {
@@ -82,9 +83,8 @@ public class KickBallNode extends TaskNode {
 
             ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
             // System.out.println("Orientation INCORRECT for kick");
+            return NodeState.FAILURE;
         }
-
-        return NodeState.SUCCESS;
     }
 
 }

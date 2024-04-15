@@ -32,6 +32,7 @@ public class KickoffNode extends TaskNode {
         super("Prepare Kickoff Node: " + allyID, allyID);
         this.closestToBallNode = closestToBallNode;
         this.moveToPositionNode = new MoveToPositionNode(allyID);
+        this.moveToPositionNode.setAvoidBall(true);
     }
 
     @Override

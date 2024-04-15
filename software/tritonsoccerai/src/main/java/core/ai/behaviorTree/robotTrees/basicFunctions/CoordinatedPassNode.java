@@ -118,7 +118,8 @@ public class CoordinatedPassNode extends SequenceNode {
             // System.out.println("diff: " + diff);
         //} 
         //else {
-            this.kickBall.execute(direction, RobotConstants.MAX_KICK_VELOCITY, false);
+            NodeState result = this.kickBall.execute(direction, RobotConstants.MAX_KICK_VELOCITY, false);
+            if (result == NodeState.SUCCESS) {System.out.println("Passed ball.");}
         //}
         return NodeState.SUCCESS;
     }
@@ -188,7 +189,7 @@ public class CoordinatedPassNode extends SequenceNode {
         passInfo.setPassLocX(passLocs.get(bestLocIndex).x);
         passInfo.setPassLocY(passLocs.get(bestLocIndex).y);
 
-        System.out.println(passInfo.getReceiverID());
+        // System.out.println(passInfo.getReceiverID());
 
         return passInfo.build();
     }

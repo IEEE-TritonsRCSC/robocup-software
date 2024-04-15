@@ -15,6 +15,7 @@ import java.util.concurrent.TimeoutException;
 import static main.java.core.messaging.Exchange.*;
  // method for deserializing the message (in bytes)
 import static main.java.core.messaging.SimpleSerialize.simpleDeserialize;
+import static proto.triton.CoordinatedPassInfo.CoordinatedPass;
 
 /**
  * AI Module - refer to Figure 1
@@ -36,6 +37,7 @@ public class AIModule extends Module {
     @Override
     protected void declareConsumes() throws IOException, TimeoutException {
         declareConsume(AI_GAME_CONTROLLER_WRAPPER, this::callbackWrapper);
+        declareConsume(CENTRAL_COORDINATOR_PASSING, this::passingCallBack);
     }
 
     /**
@@ -58,6 +60,11 @@ public class AIModule extends Module {
             System.out.println(wrapper.getCommand());
         }
         GameInfo.setReferee(wrapper);
+    }
+
+    private void passingCallBack(String s, Delivery delivery) {
+        CoordinatedPass pass = (CoordinatedPass) simpleDeserialize(delivery.getBody());
+        GameInfo.setCoordinatedPass(pass);
     }
 
     @Override

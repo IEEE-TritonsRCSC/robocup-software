@@ -13,7 +13,7 @@ public class GKKickoffNode extends TaskNode {
 
     public GKKickoffNode() {
         super("Prepare Kickoff Node : " + 0, 0);
-        this.positionSelfNode = new GKPositionSelfNode(null);
+        this.positionSelfNode = new GKPositionSelfNode();
         this.blockBallNode = new BlockBallNode(0);
     }
 

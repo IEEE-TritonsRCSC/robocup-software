@@ -16,7 +16,7 @@ public class GKIndirectFreeNode extends TaskNode {
     public GKIndirectFreeNode() {
         super("GK Indirect Free Node: " + 0, 0);
         this.blockBallNode = new BlockBallNode(0);
-        this.positionSelfNode = new GKPositionSelfNode(null);
+        this.positionSelfNode = new GKPositionSelfNode();
     }
 
     @Override
