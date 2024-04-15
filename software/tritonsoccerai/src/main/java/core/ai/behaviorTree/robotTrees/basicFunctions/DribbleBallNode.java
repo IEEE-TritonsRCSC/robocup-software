@@ -93,24 +93,27 @@ public class DribbleBallNode extends TaskNode {
             boolean rightSideValid = true;
 
             for (Robot obstacle : obstacles) {
+                // Check both left half and right half; scanning from the front outwards in a semicircle
                 if (leftSideValid) {
                     if (!(Math.atan2(obstacle.getX() - robot.getX(), obstacle.getY() - robot.getY()) + j < 0.001)) {
-                        leftSideValid = false;
+                        leftSideValid = false; // obstacle on the left at angle -j
                     }
                 }
                 if (rightSideValid) {
                     if (Math.atan2(obstacle.getX() - robot.getX(), obstacle.getY() - robot.getY()) - j < 0.001) {
-                        rightSideValid = false;
+                        rightSideValid = false; // obstacle on the right at angle j
                     }
                 }
             }
 
             if (leftSideValid) {
+                // Return correct vector on the left half of the semicircle
                 if (j == 0) return new Vector2d(0, 10);
                 if (j == Math.PI/2) return new Vector2d(-10, 0);
                 else return new Vector2d(10*Math.tan(j), 10);
             }
             if (rightSideValid) {
+                // Return correct vector on the right half of the semicircle
                 if (j == 0) return new Vector2d(0, 10);
                 if (j == Math.PI/2) return new Vector2d(10, 0);
                 else return new Vector2d(-10*Math.tan(j), 10);
