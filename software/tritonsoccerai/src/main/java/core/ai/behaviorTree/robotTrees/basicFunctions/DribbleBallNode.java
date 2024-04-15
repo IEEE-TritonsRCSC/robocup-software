@@ -18,7 +18,7 @@ import static proto.triton.FilteredObject.Robot;
 import java.util.ArrayList;
 import java.util.List;
 
-import core.ai.GameInfo;
+import main.java.core.ai.GameInfo;
 
 /**
  * Defines tasks to be performed to dribble ball
