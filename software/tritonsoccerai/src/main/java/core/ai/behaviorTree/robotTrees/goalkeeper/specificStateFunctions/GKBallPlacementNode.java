@@ -15,7 +15,7 @@ public class GKBallPlacementNode extends TaskNode {
 
     public GKBallPlacementNode() {
         super("GK Ball Placement: " + 0, 0);
-        this.positionSelfNode = new GKPositionSelfNode(null);
+        this.positionSelfNode = new GKPositionSelfNode();
         this.blockBallNode = new BlockBallNode(0);
     }
 

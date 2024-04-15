@@ -38,7 +38,7 @@ public class DribbleBallNode extends TaskNode {
 
         robotCommand.setId(allyID);
         robotCommand.setDribblerSpeed(DRIBBLE_RPM);
-        robotCommand.setKickSpeed(0);
+        robotCommand.setKickSpeed(0.0f);
 
         ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
 
