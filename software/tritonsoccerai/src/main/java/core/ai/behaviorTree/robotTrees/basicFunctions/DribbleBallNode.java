@@ -59,7 +59,7 @@ public class DribbleBallNode extends TaskNode {
         return NodeState.SUCCESS;
     }
 
-    public void limitDribbleTime() {
+    public void timeLimitedExecute() {
         long start = System.currentTimeMillis();
         while(System.currentTimeMillis() - start < 2000) {
             execute(findDribblingDirection());
