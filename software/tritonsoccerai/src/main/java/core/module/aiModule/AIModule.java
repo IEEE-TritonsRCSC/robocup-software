@@ -15,6 +15,7 @@ import java.util.concurrent.TimeoutException;
 import static main.java.core.messaging.Exchange.*;
  // method for deserializing the message (in bytes)
 import static main.java.core.messaging.SimpleSerialize.simpleDeserialize;
+import static proto.triton.CoordinatedPassInfo.CoordinatedPass;
 
 /**
  * AI Module - refer to Figure 1

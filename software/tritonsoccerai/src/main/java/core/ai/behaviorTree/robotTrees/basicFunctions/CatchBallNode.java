@@ -9,11 +9,21 @@ import static main.java.core.util.ProtobufUtils.getPos;
 import static main.java.core.util.ProtobufUtils.getVel;
 
 import proto.simulation.SslSimulationRobotControl;
+import static proto.simulation.SslSimulationRobotControl.RobotCommand;
+import static proto.simulation.SslSimulationRobotControl.RobotMoveCommand;
+import static proto.simulation.SslSimulationRobotControl.MoveLocalVelocity;
 
 import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
 import static main.java.core.constants.RobotConstants.DRIBBLE_RPM;
 
 import static main.java.core.constants.ProgramConstants.objectConfig;
+import main.java.core.constants.ProgramConstants;
+import static proto.triton.FilteredObject.Ball;
+import static proto.triton.FilteredObject.Robot;
+import main.java.core.ai.GameInfo;
+import main.java.core.util.Vector2d;
+import static proto.triton.CoordinatedPassInfo.CoordinatedPass;
+import main.java.core.messaging.Exchange;
 
 /**
  * Defines task of catching ball in motion
@@ -23,9 +33,9 @@ public class CatchBallNode extends TaskNode {
     private Robot robot;
     private Ball ball;
     private MoveToPositionNode moveToPosition;
-    private final float kP = 3.0;
+    private final float kP = 3.0f;
     private final float DIST_THRESHOLD = objectConfig.robotRadius + objectConfig.ballRadius * 4;
-    private final float ANGLE_THRESHOLD = 15.0 * MATH.PI / 180.0;
+    private final float ANGLE_THRESHOLD = (float) (15.0 * Math.PI / 180.0);
     private float prevDistDiff = Float.MAX_VALUE;
 
     public CatchBallNode(int allyID) {
@@ -39,9 +49,9 @@ public class CatchBallNode extends TaskNode {
         ball = GameInfo.getBall();
 
         Vector2d ballToRobot = getPos(robot).sub(getPos(ball));
-        Vector2d proj = ballVel.project(ballToRobot);
+        Vector2d proj = getVel(ball).project(ballToRobot);
 
-        Vector2d closestPointToBallPath = ballPos.add(proj);
+        Vector2d closestPointToBallPath = getPos(ball).add(proj);
 
         this.moveToPosition.execute(closestPointToBallPath);
 
@@ -51,11 +61,11 @@ public class CatchBallNode extends TaskNode {
         robotCommand.setDribblerSpeed(DRIBBLE_RPM);
         robotCommand.setKickSpeed(0);
 
-        float angleDiff = Vector2d.angleDifference(robot.getOrientation(), getVel(ball).angle() + Math.PI); // adding pi to flip direction
+        float angleDiff = Vector2d.angleDifference(robot.getOrientation(), getVel(ball).angle() + (float) Math.PI); // adding pi to flip direction
         
         RobotMoveCommand.Builder moveCommand = RobotMoveCommand.newBuilder();
         MoveLocalVelocity.Builder localVel = MoveLocalVelocity.newBuilder();
-        localVel.setAngular = angleDiff * kP;
+        localVel.setAngular(angleDiff * kP);
         moveCommand.setLocalVelocity(localVel);
         robotCommand.setMoveCommand(moveCommand);
         
@@ -65,7 +75,7 @@ public class CatchBallNode extends TaskNode {
         boolean success = this.passRecieved();
         boolean failure = this.passFailed();
         if (success || failure) {
-            CoordinatedPassInfo.CoordinatedPass.Builder passInfo = CoordinatedPassInfo.CoordinatedPass.newBuilder();
+            CoordinatedPass.Builder passInfo = CoordinatedPass.newBuilder();
             passInfo.setReceiverID(-1);
             ProgramConstants.commandPublishingModule.publish(Exchange.CENTRAL_COORDINATOR_PASSING, passInfo.build());
             

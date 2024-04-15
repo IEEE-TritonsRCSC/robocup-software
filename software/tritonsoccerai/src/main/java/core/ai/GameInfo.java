@@ -11,6 +11,7 @@ import static main.java.core.constants.RobotConstants.DRIBBLE_THRESHOLD;
 import java.util.ArrayList;
 
 import static main.java.core.util.ProtobufUtils.getPos;
+import static proto.triton.CoordinatedPassInfo.CoordinatedPass;
 
 /**
  * central hub to find all info related to game
@@ -197,11 +198,11 @@ public class GameInfo {
     }
 
     public static void setCoordinatedPass(CoordinatedPass pass) {
-        this.pass = pass;
+        GameInfo.currentPass = pass;
     }
 
     public static CoordinatedPass getCoordinatedPass() {
-        return this.pass;
+        return GameInfo.currentPass;
     }
 
 }
