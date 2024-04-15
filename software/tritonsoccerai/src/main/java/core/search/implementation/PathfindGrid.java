@@ -16,6 +16,7 @@ import java.util.*;
 
 import static main.java.core.constants.ProgramConstants.aiConfig;
 import static main.java.core.util.ObjectHelper.predictRobotPos;
+import static main.java.core.util.ObjectHelper.predictBallPos;
 import static main.java.core.util.ProtobufUtils.getVel;
 import static proto.triton.FilteredObject.Robot;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
@@ -121,14 +122,19 @@ public class PathfindGrid {
         return neighbors;
     }
 
+    public synchronized void updateObstacles(Map<Integer, Robot> allies, Map<Integer, Robot> foes, Robot excludeAlly) {
+        updateObstacles(allies, foes, excludeAlly, false);
+    }
+
     /**
      * Set obstacle value on nodes.
      *
      * @param allies      list of allies
      * @param foes        list of foes
      * @param excludeAlly an ally that is not counted as an obstacle
+     * @param avoidBall   whether to consider the ball as an obstacle or not
      */
-    public synchronized void updateObstacles(Map<Integer, Robot> allies, Map<Integer, Robot> foes, Robot excludeAlly) {
+    public synchronized void updateObstacles(Map<Integer, Robot> allies, Map<Integer, Robot> foes, Robot excludeAlly, boolean avoidBall) {
         this.allies = allies;
         this.foes = foes;
 
@@ -141,40 +147,40 @@ public class PathfindGrid {
                 node.setPenalty(aiConfig.calculateBoundPenalty(dist));
         });
 
-        float minPenaltyFactor = 1f;
-        float maxRobotRadius = GameInfo.getField().getMaxRobotRadius();
 
         allies.forEach((id, ally) -> {
             if (ally == excludeAlly) return;
             Vector2d allyVel = getVel(ally);
             Vector2d pos = predictRobotPos(ally, aiConfig.collisionExtrapolation);
-
-            float collisionExtension = aiConfig.collisionSpeedScale * allyVel.mag();
-            float collisionDist = aiConfig.getRobotCollisionDist() + collisionExtension;
-            List<Node2d> nearestNodes = getNearestNodes(pos, collisionDist);
-            nearestNodes.forEach(node -> {
-                float dist = node.getPos().dist(pos);
-                Vector2d distToNode = node.getPos().sub(pos).norm();
-                float penaltyFactor = Math.max(Math.abs(allyVel.dot(distToNode)), minPenaltyFactor);
-                node.updatePenalty(penaltyFactor * aiConfig.calculateRobotPenalty(dist + maxRobotRadius, collisionExtension));
-                obstacles.add(node);
-            });
+            updateObstacle(allyVel, pos);
         });
 
         foes.forEach((id, foe) -> {
             Vector2d foeVel = getVel(foe);
             Vector2d pos = predictRobotPos(foe, aiConfig.collisionExtrapolation);
+            updateObstacle(foeVel, pos);
+        });
 
-            float collisionExtension = aiConfig.collisionSpeedScale * foeVel.mag();
-            float collisionDist = aiConfig.getRobotCollisionDist() + collisionExtension;
-            List<Node2d> nearestNodes = getNearestNodes(pos, collisionDist);
-            nearestNodes.forEach(node -> {
-                float dist = node.getPos().dist(pos);
-                Vector2d distToNode = node.getPos().sub(pos).norm();
-                float penaltyFactor = Math.max(Math.abs(foeVel.dot(distToNode)), minPenaltyFactor);
-                node.updatePenalty(penaltyFactor * aiConfig.calculateRobotPenalty(dist + maxRobotRadius, collisionExtension));
-                obstacles.add(node);
-            });
+        if (avoidBall) {
+            Vector2d ballVel = getVel(GameInfo.getBall());
+            Vector2d pos = predictBallPos(aiConfig.collisionExtrapolation);
+            updateObstacle(ballVel, pos);
+        }
+    }
+
+    public void updateObstacle(Vector2d vel, Vector2d predictedPos) {
+        float minPenaltyFactor = 1f;
+        float maxRobotRadius = GameInfo.getField().getMaxRobotRadius();
+
+        float collisionExtension = aiConfig.collisionSpeedScale * vel.mag();
+        float collisionDist = aiConfig.getRobotCollisionDist() + collisionExtension;
+        List<Node2d> nearestNodes = getNearestNodes(predictedPos, collisionDist);
+        nearestNodes.forEach(node -> {
+            float dist = node.getPos().dist(predictedPos);
+            Vector2d distToNode = node.getPos().sub(predictedPos).norm();
+            float penaltyFactor = Math.max(Math.abs(vel.dot(distToNode)), minPenaltyFactor);
+            node.updatePenalty(penaltyFactor * aiConfig.calculateRobotPenalty(dist + maxRobotRadius, collisionExtension));
+            obstacles.add(node);
         });
     }
 

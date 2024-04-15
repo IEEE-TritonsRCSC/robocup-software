@@ -40,13 +40,17 @@ public class MoveToPositionNode extends TaskNode {
     }
 
     public NodeState execute(Vector2d endLoc) {
+        return this.execute(endLoc, false);
+    }
+
+    public NodeState execute(Vector2d endLoc, boolean avoidBall) {
         Robot ally = GameInfo.getAlly(allyID);
         Ball ball = GameInfo.getBall();
         
         Vector2d allyPos = getPos(GameInfo.getAlly(allyID));
 
         // Pathfinding to endLoc
-        pathfindGridGroup.updateObstacles(GameInfo.getWrapper());
+        pathfindGridGroup.updateObstacles(GameInfo.getWrapper(), avoidBall);
         LinkedList<Node2d> route = pathfindGridGroup.findRoute(allyID, allyPos, endLoc);
         Vector2d next = pathfindGridGroup.findNext(allyID, route);
 
