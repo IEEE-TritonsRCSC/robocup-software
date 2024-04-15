@@ -23,6 +23,7 @@ public class BallPlacementNode extends TaskNode {
     private final ClosestToBallNode closestToBallNode;
     private final DribbleBallNode dribbleBallNode;
     private final MoveToPositionNode moveToPositionNode; //
+    private final ChaseBallNode ChaseBallNode;
 
     public BallPlacementNode(int allyID, ClosestToBallNode closestToBallNode) {
         super("Ball Placement Node: " + allyID, allyID);
@@ -57,13 +58,16 @@ public class BallPlacementNode extends TaskNode {
             // TODO - move away from placement location if close to it
             Robot ally = GameInfo.getAlly(allyID);
             Vector2d allyPos = getPos(ally);
-            Vector2d ballPos = GameInfo.getBallPlacementLocation();
-            System.out.println("ballposition:" + ballPos);
+            Vector2d ballPlacePos = GameInfo.getBallPlacementLocation();
+            Vector2d ballPos = getPos(GameInfo.getBall());
+            System.out.println("ballplacementposition:" + ballPlacePos);
             System.out.println("allyposition:" + allyPos);
+            Vector2d locToAlley = getPos(ally).sub(ballPlacePos);
             Vector2d ballToAlley = getPos(ally).sub(ballPos);
-            System.out.println("Dist:" + ballToAlley);
-            if(ballToAlley.mag()<500){
-                Vector2d targetPos =  ballPos.add(new Vector2d(50000/(allyPos.x - ballPos.x), 50000/(allyPos.y - ballPos.y)));
+            System.out.println("Dist:" + locToAlley);
+            if(locToAlley.mag()<500 && ballToAlley.mag()<500 ){
+                Vector2d targetPos =  ballPlacePos.add(new Vector2d(50000/(allyPos.x - ballPlacePos.x), 50000/(allyPos.y - ballPlacePos.y)));
+                targetPos.add(new Vector2d(50000/(allyPos.x - ballPos.x), 50000/(allyPos.y - ballPos.y)));
                 System.out.println("targetPos:" + targetPos);
                 MoveToPositionNode MoveToPosition = new MoveToPositionNode(allyID);
                 MoveToPosition.execute(targetPos);
