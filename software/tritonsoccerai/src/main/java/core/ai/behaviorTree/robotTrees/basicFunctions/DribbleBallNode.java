@@ -67,6 +67,8 @@ public class DribbleBallNode extends TaskNode {
     }
 
     public Vector2d findDribblingDirection() {
+        int directionMagnitude = 10; // magnitude of the direction vector that is returned
+
         ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoeFielders());
         ArrayList<Robot> alliesList = new ArrayList<>(GameInfo.getFielders());
         ArrayList<Robot> obstacles = new ArrayList<>();
@@ -108,15 +110,15 @@ public class DribbleBallNode extends TaskNode {
 
             if (leftSideValid) {
                 // Return correct vector on the left half of the semicircle
-                if (j == 0) return new Vector2d(0, 10);
-                if (j == Math.PI/2) return new Vector2d(-10, 0);
-                else return new Vector2d(10*Math.tan(j), 10);
+                if (j == 0) return new Vector2d(0, directionMagnitude);
+                if (j == Math.PI/2) return new Vector2d(-directionMagnitude, 0);
+                else return new Vector2d(-directionMagnitude*Math.tan(j), directionMagnitude);
             }
             if (rightSideValid) {
                 // Return correct vector on the right half of the semicircle
-                if (j == 0) return new Vector2d(0, 10);
-                if (j == Math.PI/2) return new Vector2d(10, 0);
-                else return new Vector2d(-10*Math.tan(j), 10);
+                if (j == 0) return new Vector2d(0, directionMagnitude);
+                if (j == Math.PI/2) return new Vector2d(directionMagnitude, 0);
+                else return new Vector2d(directionMagnitude*Math.tan(j), directionMagnitude);
             }
         }
 
