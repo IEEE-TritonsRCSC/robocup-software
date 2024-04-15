@@ -59,6 +59,13 @@ public class DribbleBallNode extends TaskNode {
         return NodeState.SUCCESS;
     }
 
+    public void limitDribbleTime() {
+        long start = System.currentTimeMillis();
+        while(System.currentTimeMillis() - start < 2000) {
+            execute(findDribblingDirection());
+        }
+    }
+
     public Vector2d findDribblingDirection() {
         ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoeFielders());
         ArrayList<Robot> alliesList = new ArrayList<>(GameInfo.getFielders());
@@ -81,13 +88,32 @@ public class DribbleBallNode extends TaskNode {
         }
 
         //if there are directions in which there are no obstacles
-        for(int i = 0; i < obstacles.size(); i++) {
-            Robot obstacle = obstacles.get(i);
-            for(double j = 0; j <= Math.PI; j+= Math.PI/18) {
-                //if there is a direction in which an obstacle exists, return direction vector
-                if(!(Math.abs(Math.atan2(obstacle.getY() - robot.getY(), obstacle.getX() - robot.getX())) - j < 0.001)) {
-                    return new Vector2d(10, 10*Math.tan(j));
+        for (double j = 0; j < Math.PI/2; j += Math.PI/32) {
+            boolean leftSideValid = true;
+            boolean rightSideValid = true;
+
+            for (Robot obstacle : obstacles) {
+                if (leftSideValid) {
+                    if (!(Math.atan2(obstacle.getX() - robot.getX(), obstacle.getY() - robot.getY()) + j < 0.001)) {
+                        leftSideValid = false;
+                    }
                 }
+                if (rightSideValid) {
+                    if (Math.atan2(obstacle.getX() - robot.getX(), obstacle.getY() - robot.getY()) - j < 0.001) {
+                        rightSideValid = false;
+                    }
+                }
+            }
+
+            if (leftSideValid) {
+                if (j == 0) return new Vector2d(0, 10);
+                if (j == Math.PI/2) return new Vector2d(-10, 0);
+                else return new Vector2d(10*Math.tan(j), 10);
+            }
+            if (rightSideValid) {
+                if (j == 0) return new Vector2d(0, 10);
+                if (j == Math.PI/2) return new Vector2d(10, 0);
+                else return new Vector2d(-10*Math.tan(j), 10);
             }
         }
 
