@@ -5,12 +5,14 @@ import main.java.core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 import main.java.core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
 import main.java.core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
 import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.RobotHasPossessionNode;
+import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.CatchBallNode;
 import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.MakePlayNode;
 import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.PositionSelfNode;
 import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.ShootBallNode;
 import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.HaveOpenShotNode;
 import main.java.core.util.Vector2d;
 import static proto.triton.FilteredObject.Robot;
+import main.java.core.ai.GameInfo;
 
 public class OffenseRootService extends ServiceNode {
 
@@ -19,11 +21,13 @@ public class OffenseRootService extends ServiceNode {
     private final ShootBallNode shootBall;
     private final CompositeNode makePlay;
     private final PositionSelfNode positionSelf;
-    private final CatchBallNode catchBall;
+    private CatchBallNode catchBall;
+    private int allyID;
     // private int curr;
 
     public OffenseRootService(int allyID) {
         super("Offense Root Service " + allyID);
+        this.allyID = allyID;
         this.havePossession = new RobotHasPossessionNode(allyID);
         this.haveOpenShot = new HaveOpenShotNode(allyID);
         this.shootBall = new ShootBallNode(allyID);
