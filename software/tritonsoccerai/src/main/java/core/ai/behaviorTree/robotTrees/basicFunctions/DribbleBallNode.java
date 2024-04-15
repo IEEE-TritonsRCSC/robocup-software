@@ -9,6 +9,7 @@ import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNo
 
 import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
 import static main.java.core.constants.RobotConstants.DRIBBLE_RPM;
+import static main.java.core.constants.ProgramConstants.aiConfig;
 
 import proto.simulation.SslSimulationRobotControl;
 import proto.triton.FilteredObject.Robot;
