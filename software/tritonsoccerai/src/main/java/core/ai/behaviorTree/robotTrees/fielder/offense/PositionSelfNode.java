@@ -60,10 +60,9 @@ public class PositionSelfNode extends TaskNode {
     /**
      * Finds optimal location to position self
      */
-    private Vector2d findPositioningLocation() {
+    private Vector2d findPositioningLocation(int zoneWidth) {
         int h = GameInfo.getField().field_width; // 6000
         int w = GameInfo.getField().field_height; // 9000
-        int zoneWidth = 1000;
         ArrayList<int[]> empty = possiblePos(h, w, zoneWidth);
         ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoes());
         ArrayList<Robot> alliesList = new ArrayList<>(GameInfo.getFielders());
