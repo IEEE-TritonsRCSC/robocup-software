@@ -61,8 +61,8 @@ public class PositionSelfNode extends TaskNode {
      * Finds optimal location to position self
      */
     private Vector2d findPositioningLocation(int zoneWidth) {
-        int h = GameInfo.getField().field_width; // 6000
-        int w = GameInfo.getField().field_height; // 9000
+        int h = 6000; // 6000
+        int w = 9000; // 9000
         ArrayList<int[]> empty = possiblePos(h, w, zoneWidth);
         ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoes());
         ArrayList<Robot> alliesList = new ArrayList<>(GameInfo.getFielders());
@@ -78,9 +78,9 @@ public class PositionSelfNode extends TaskNode {
 		}
 
 
-        for (Vector2D obstacle : obstaclePositions) {
-            int px = Math.round((float) obstacle.getX() / (float) zoneWidth);
-            int py = Math.round((float) obstacle.getY() / (float) zoneWidth);
+        for (Vector2d obstacle : obstaclePositions) {
+            int px = Math.round((float) obstacle.x / (float) zoneWidth);
+            int py = Math.round((float) obstacle.y / (float) zoneWidth);
             int[][] transforms = { { -1, -1 }, { -1, 0 }, { 0, -1 }, { 0, 0 } };
             for (int[] transform : transforms) {
                 if (px + transform[0] > 0 && py + transform[1] > 0 && px + transform[0] < h / zoneWidth
