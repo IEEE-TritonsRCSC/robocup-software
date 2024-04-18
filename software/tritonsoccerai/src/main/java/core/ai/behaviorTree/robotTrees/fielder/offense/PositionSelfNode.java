@@ -12,7 +12,6 @@ import proto.triton.FilteredObject.Robot;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
 
 import static main.java.core.util.ProtobufUtils.getPos;
 
@@ -90,7 +89,7 @@ public class PositionSelfNode extends TaskNode {
         int[] out = empty.get(0);
 
         
-        return new Vector2D(new double[]{(double) out[0], (double) out[1]});
+        return new Vector2d((float) out[0], (float) out[1]);
         
     }
 

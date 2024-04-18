@@ -19,6 +19,7 @@
 /home/arnavg/Developer/robocup-software/software/tritonsoccerai/src/main/java/core/search/node1d/Value1dScorer.java
 /home/arnavg/Developer/robocup-software/software/tritonsoccerai/src/main/java/core/module/Module.java
 /home/arnavg/Developer/robocup-software/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/goalkeeper/defense/BlockBallNode.java
+/home/arnavg/Developer/robocup-software/software/tritonsoccerai/src/main/java/core/module/testModule/PositionTestModule.java
 /home/arnavg/Developer/robocup-software/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/simulation/SslVisionDetection.java
 /home/arnavg/Developer/robocup-software/software/tritonsoccerai/target/generated-sources/protobuf/java/proto/gc/SslGcState.java
 /home/arnavg/Developer/robocup-software/software/tritonsoccerai/src/main/java/core/ai/behaviorTree/robotTrees/central/CentralCoordinatorRoot.java
