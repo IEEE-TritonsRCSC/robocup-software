@@ -7,9 +7,11 @@ import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNo
 
 import static proto.triton.FilteredObject.Robot;
 import main.java.core.util.Vector2d;
+import proto.triton.FilteredObject.Robot;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 import static main.java.core.util.ProtobufUtils.getPos;
 
@@ -19,6 +21,7 @@ import static main.java.core.util.ProtobufUtils.getPos;
 public class PositionSelfNode extends TaskNode {
 
     private final MoveToPositionNode moveToPositionNode;
+    
 
     public PositionSelfNode(int allyID) {
         super("Position Self Node: " + allyID, allyID);
@@ -30,18 +33,37 @@ public class PositionSelfNode extends TaskNode {
      */
     @Override
     public NodeState execute() {
-        // this.moveToPositionNode.execute(findPositioningLocation());
+        int zoneWidth = 1000;
+        Vector2d pos = null;
+        while(pos == null){
+            pos = findPositioningLocation(zoneWidth);
+            zoneWidth = zoneWidth-100;
+        }
+        this.moveToPositionNode.execute(pos);
         return NodeState.SUCCESS;
+    }
+
+    private static ArrayList<int[]> possiblePos(int h, int w, int width) {
+        ArrayList<int[]> out = new ArrayList<>();
+        for (int i = 0; i < h / width; i++) {
+            for (int j = 0; i < w / width; i++) {
+                out.add(new int[] { i, j });
+            }
+        }
+        return out;
+    }
+    private static double distance(int[] a, double[] b) {
+        double dist = Math.sqrt(Math.pow(a[0] - b[0], 2) - Math.pow(a[1] - b[1], 2));
+        return dist;
     }
 
     /**
      * Finds optimal location to position self
      */
-    private Vector2d findPositioningLocation() {
-
-        // TODO We have to change how to calculate the optimal position (Maybe we have to use Numerical Optimization Algorithm)
-        // This is just a temporary implementation
-
+    private Vector2d findPositioningLocation(int zoneWidth) {
+        int h = 6000; // 6000
+        int w = 9000; // 9000
+        ArrayList<int[]> empty = possiblePos(h, w, zoneWidth);
         ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoes());
         ArrayList<Robot> alliesList = new ArrayList<>(GameInfo.getFielders());
         List<Vector2d> obstaclePositions = new ArrayList<>();
@@ -55,31 +77,27 @@ public class PositionSelfNode extends TaskNode {
             obstaclePositions.add(getPos(foesList.get(i)));
 		}
 
-        // add ballposition to the obstaclesPositions list
-        obstaclePositions.add(getPos(GameInfo.getBall()));
-
-
-        // distance from the nearest of several obstacles
-        Vector2d nearestObstacle = null;
-        float distance = 5;
-        float minDistance = Float.MAX_VALUE;
 
         for (Vector2d obstacle : obstaclePositions) {
-            float currentdist = getPos(GameInfo.getAlly(allyID)).dist(obstacle);
-
-            if (currentdist < minDistance) {
-                minDistance = currentdist;
-                nearestObstacle = obstacle;
+            int px = Math.round((float) obstacle.x / (float) zoneWidth);
+            int py = Math.round((float) obstacle.y / (float) zoneWidth);
+            int[][] transforms = { { -1, -1 }, { -1, 0 }, { 0, -1 }, { 0, 0 } };
+            for (int[] transform : transforms) {
+                if (px + transform[0] > 0 && py + transform[1] > 0 && px + transform[0] < h / zoneWidth
+                        && py + transform[1] < w / zoneWidth) {
+                    empty.remove(new int[] { px + transform[0], py + transform[1] });
+                }
             }
         }
+        // double dist = Double.MAX_VALUE;
+        if(empty.size() == 0 ){
+            return null;
+        }
+        int[] out = empty.get(0);
 
-         // end position
-         float newX = nearestObstacle.x + (GameInfo.getAlly(allyID).getX() - nearestObstacle.x) * distance / minDistance;
-         float newY = nearestObstacle.y + (GameInfo.getAlly(allyID).getY() - nearestObstacle.y) * distance / minDistance;
- 
-         Vector2d endLoc = new Vector2d(newX, newY);
-
-        return endLoc;
+        
+        return new Vector2d((float) out[0], (float) out[1]);
+        
     }
 
 }
