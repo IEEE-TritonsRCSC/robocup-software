@@ -195,6 +195,14 @@ public class GameInfo {
         return wrapper.getField();
     }
 
+    public static int getFieldLength() {
+        return wrapper.getField().getFieldLength();
+    }
+
+    public static int getFieldWidth() {
+        return wrapper.getField().getFieldWidth();
+    }
+
     public static boolean inOpenPlay() {
         return inOpenPlay;
     }
@@ -228,7 +236,7 @@ public class GameInfo {
     }
 
     public static CoordinatedPass getCoordinatedPass() {
-        return GameInfo.currentPass;
+        return currentPass;
     }
 
 }

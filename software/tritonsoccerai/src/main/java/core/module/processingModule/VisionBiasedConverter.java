@@ -26,6 +26,8 @@ import static proto.vision.MessagesRobocupSslWrapper.SSL_WrapperPacket;
  */
 public class VisionBiasedConverter extends Module {
     
+    private static SSL_DetectionFrame detection;
+    private static SSL_GeometryData geometry;
     
     public VisionBiasedConverter(ScheduledThreadPoolExecutor executor) {
         super(executor);
@@ -63,8 +65,14 @@ public class VisionBiasedConverter extends Module {
      */
     private static SSL_WrapperPacket wrapperAudienceToBiased(SSL_WrapperPacket wrapper) {
         SSL_WrapperPacket.Builder biasedWrapper = wrapper.toBuilder();
-        biasedWrapper.setDetection(detectionAudienceToBiased(wrapper.getDetection()));
-        biasedWrapper.setGeometry(geometryAudienceToBiased(wrapper.getGeometry()));
+        if ((wrapper.getDetection() != null) && (wrapper.getDetection().hasCameraId())) {
+            detection = detectionAudienceToBiased(wrapper.getDetection());
+        }
+        if ((wrapper.getGeometry() != null) && (wrapper.getGeometry().hasField())) {
+            geometry = geometryAudienceToBiased(wrapper.getGeometry());
+        }
+        biasedWrapper.setDetection(detection);
+        biasedWrapper.setGeometry(geometry);
         return biasedWrapper.build();
     }
 

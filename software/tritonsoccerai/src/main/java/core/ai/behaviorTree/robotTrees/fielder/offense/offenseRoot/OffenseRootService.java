@@ -33,7 +33,7 @@ public class OffenseRootService extends ServiceNode {
         this.shootBall = new ShootBallNode(allyID);
         this.makePlay = new MakePlayNode(allyID);
         this.positionSelf = new PositionSelfNode(allyID);
-        this.catchBall = new CatchBallNode(this.allyID);
+        this.catchBall = new CatchBallNode(allyID);
 
         // this.curr = 1;
     }
@@ -55,9 +55,10 @@ public class OffenseRootService extends ServiceNode {
             }
         } else if(GameInfo.getCoordinatedPass().getReceiverID() == this.allyID) {
             this.catchBall.execute();
+            if (allyID == 2) {System.out.println("Catch ball executed " + allyID);}
         } else {
             this.positionSelf.execute();
-            // System.out.println("Position self executed " + curr);
+            if (allyID == 2) {System.out.println("Position self executed " + allyID);}
         }
         // curr++;
         return NodeState.SUCCESS;

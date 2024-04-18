@@ -66,9 +66,9 @@ public class FilterModule extends Module {
     @Override
     public void run() {
         super.run();
-        initDefaultFilteredWrapper();
-        publishFilteredWrapperFuture = executor.scheduleAtFixedRate(this::publishFilteredWrapper, 0,    
-                DEFAULT_PUBLISH_PERIOD, TimeUnit.MILLISECONDS);
+        prepare();
+        //publishFilteredWrapperFuture = executor.scheduleAtFixedRate(this::publishFilteredWrapper, 0,    
+                //DEFAULT_PUBLISH_PERIOD, TimeUnit.MILLISECONDS);
     }
 
     /** 
@@ -92,6 +92,7 @@ public class FilterModule extends Module {
      */
     private void publishFilteredWrapper() {
         super.publish(AI_FILTERED_VISION_WRAPPER, filteredWrapper);
+        GameInfo.setWrapper(this.filteredWrapper);
     }
 
     /**
@@ -203,7 +204,8 @@ public class FilterModule extends Module {
         filteredWrapper.putAllAllies(filterAllies(allies, this.filteredWrapper.getAlliesMap(), feedbacks, timestamp));
         filteredWrapper.putAllFoes(filterFoes(foes, this.filteredWrapper.getFoesMap(), feedbacks, timestamp));
         this.filteredWrapper = filteredWrapper.build();
-        GameInfo.setWrapper(this.filteredWrapper);
+        publishFilteredWrapper();
+        // GameInfo.setWrapper(this.filteredWrapper);
     }
 
     /**

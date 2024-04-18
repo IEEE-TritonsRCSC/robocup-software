@@ -116,7 +116,7 @@ public class MoveToPositionNode extends TaskNode {
      * @param dribbleOn whether robot velocity should be restricted to max dribbling speed
      */
     public void setAvoidBall(boolean avoidBall) {
-        this.avoidBall = avoidBall;
+        // this.avoidBall = avoidBall;
     }
 
 }

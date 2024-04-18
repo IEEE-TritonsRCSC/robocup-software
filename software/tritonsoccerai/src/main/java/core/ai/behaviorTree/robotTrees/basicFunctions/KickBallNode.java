@@ -50,7 +50,7 @@ public class KickBallNode extends TaskNode {
 
             SslSimulationRobotControl.RobotMoveCommand.Builder moveCommand = SslSimulationRobotControl.RobotMoveCommand.newBuilder();
             SslSimulationRobotControl.MoveLocalVelocity.Builder localCommand = SslSimulationRobotControl.MoveLocalVelocity.newBuilder();
-            localCommand.setForward(1.6f);
+            localCommand.setForward(2.0f);
             localCommand.setLeft(0);
             localCommand.setAngular(0);
             moveCommand.setLocalVelocity(localCommand);
@@ -72,7 +72,7 @@ public class KickBallNode extends TaskNode {
 
             SslSimulationRobotControl.RobotMoveCommand.Builder moveCommand = SslSimulationRobotControl.RobotMoveCommand.newBuilder();
             SslSimulationRobotControl.MoveLocalVelocity.Builder localCommand = SslSimulationRobotControl.MoveLocalVelocity.newBuilder();
-            localCommand.setForward(0.03f);
+            localCommand.setForward(0.0f);
             localCommand.setLeft(0);
             localCommand.setAngular(RotateInPlaceNode.getAngular(direction.angle(), allyID, true) / 2);
             moveCommand.setLocalVelocity(localCommand);

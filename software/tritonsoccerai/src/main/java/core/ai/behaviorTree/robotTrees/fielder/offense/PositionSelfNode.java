@@ -35,11 +35,17 @@ public class PositionSelfNode extends TaskNode {
     public NodeState execute() {
         int zoneWidth = 1000;
         Vector2d pos = null;
-        while(pos == null){
+        // while(pos == null){
             pos = findPositioningLocation(zoneWidth);
             zoneWidth = zoneWidth-100;
+        // }
+        if (pos == null) {
+            System.out.println(allyID + " pos is null");
         }
-        this.moveToPositionNode.execute(pos);
+        else {
+            if (allyID == 2) {System.out.println(pos);}
+            this.moveToPositionNode.execute(pos);
+        }
         return NodeState.SUCCESS;
     }
 
@@ -52,6 +58,7 @@ public class PositionSelfNode extends TaskNode {
         }
         return out;
     }
+    
     private static double distance(int[] a, double[] b) {
         double dist = Math.sqrt(Math.pow(a[0] - b[0], 2) - Math.pow(a[1] - b[1], 2));
         return dist;
@@ -61,10 +68,10 @@ public class PositionSelfNode extends TaskNode {
      * Finds optimal location to position self
      */
     private Vector2d findPositioningLocation(int zoneWidth) {
-        int h = 6000; // 6000
-        int w = 9000; // 9000
+        int h = GameInfo.getField().getFieldWidth(); // 6000
+        int w = GameInfo.getField().getFieldLength(); // 9000
         ArrayList<int[]> empty = possiblePos(h, w, zoneWidth);
-        ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoes());
+        ArrayList<Robot> foesList = new ArrayList<>(GameInfo.getFoeFielders());
         ArrayList<Robot> alliesList = new ArrayList<>(GameInfo.getFielders());
         List<Vector2d> obstaclePositions = new ArrayList<>();
 
@@ -72,8 +79,11 @@ public class PositionSelfNode extends TaskNode {
         alliesList.remove(allyID);
 
         // add the other ally positions and foe positions to the obstaclesPositions list
-        for(int i=0;i<alliesList.size();i++) {
+        for (int i = 0; i < alliesList.size(); i++) {
 			obstaclePositions.add(getPos(alliesList.get(i)));
+		}
+
+        for (int i = 0; i < foesList.size(); i++) {
             obstaclePositions.add(getPos(foesList.get(i)));
 		}
 

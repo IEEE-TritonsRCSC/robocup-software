@@ -187,9 +187,12 @@ public class AI {
         startModule(new CentralCoordinatorModule(executor));
 
         startModule(new GKTreeModule(executor));
+        System.out.println("Goalkeeper 0 started.");
         
-        for (int id = 1; id <= GameInfo.getFielders().size(); id++) {
-            startModule(new FielderTreeModule(executor, id));
+        // for (int id = 1; id <= GameInfo.getFielders().size(); id++) {
+        for (Robot ally : GameInfo.getFielders()) {
+            startModule(new FielderTreeModule(executor, ally.getId()));
+            System.out.println("Fielder " + ally.getId() + " started.");
         }
     }
 
