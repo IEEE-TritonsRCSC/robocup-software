@@ -33,7 +33,13 @@ public class PositionSelfNode extends TaskNode {
      */
     @Override
     public NodeState execute() {
-        this.moveToPositionNode.execute(findPositioningLocation());
+        int zoneWidth = 1000;
+        Vector2d pos = null;
+        while(pos == null){
+            pos = findPositioningLocation(zoneWidth);
+            zoneWidth = zoneWidth-100;
+        }
+        this.moveToPositionNode.execute(pos);
         return NodeState.SUCCESS;
     }
 
@@ -84,8 +90,10 @@ public class PositionSelfNode extends TaskNode {
                 }
             }
         }
-        double dist = Double.MAX_VALUE;
-
+        // double dist = Double.MAX_VALUE;
+        if(empty.size() == 0 ){
+            return null;
+        }
         int[] out = empty.get(0);
 
         
