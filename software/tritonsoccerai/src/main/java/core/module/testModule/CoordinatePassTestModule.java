@@ -61,6 +61,7 @@ public class CoordinatePassTestModule extends TestModule{
     @Override
     public void run() {
         super.run();
+        // System.out.println(GameInfo.getField());
         // float robot_x = GameInfo.getAllyClosestToBall().getX(), robot_y = GameInfo.getAllyClosestToBall().getY();
         // float ball_x = GameInfo.getBall().getX(), ball_y = GameInfo.getBall().getY();
 
