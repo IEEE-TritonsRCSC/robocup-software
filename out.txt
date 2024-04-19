@@ -1,0 +1,16 @@
+>>> running ./simulator-cli -g 2020B --realism RC2021 in a new terminal tab
+/home/terri_taiii/Desktop/robocup-software/framework/build/bin
+>>> running ./ssl-game-controller_v2.13.0_linux_amd64 in a new terminal tab
+/home/terri_taiii/Desktop/robocup-software/game-controller
+>>> running ./ssl-vision-client_v1.6.0_linux_amd64 in a new terminal tab
+/home/terri_taiii/Desktop/robocup-software/ssl-vision-client
+>>> running python3 triton_bot.py --team=yellow --id 0 in a new terminal tab
+/home/terri_taiii/Desktop/robocup-software/software/tritonbot/python/
+>>> running python3 triton_bot.py --team=yellow --id 1 in a new terminal tab
+/home/terri_taiii/Desktop/robocup-software/software/tritonbot/python/
+>>> running python3 triton_bot.py --team=yellow --id 2 in a new terminal tab
+/home/terri_taiii/Desktop/robocup-software/software/tritonbot/python/
+>>> running python3 triton_bot.py --team=yellow --id 3 in a new terminal tab
+/home/terri_taiii/Desktop/robocup-software/software/tritonbot/python/
+>>> running java -jar triton-soccer-ai-1.0-SNAPSHOT-jar-with-dependencies.jar --team=yellow --test in a new terminal tab
+/home/terri_taiii/Desktop/robocup-software/software/tritonsoccerai/target/

@@ -38,8 +38,13 @@ import static proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall;
 import static proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot; 
 // proto for all field dimensions 
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize; 
+import static proto.vision.MessagesRobocupSslDetection.*;
+import static proto.vision.MessagesRobocupSslGeometry.*;
 
 public class FilterModule extends Module {
+
+    SSL_DetectionFrame detection;
+    SSL_GeometryData geometry;
 
     // constant period for the scheduled executor (10ms)
     private static final long DEFAULT_PUBLISH_PERIOD = 10;
@@ -49,6 +54,7 @@ public class FilterModule extends Module {
 
     // Future object which will contain a ScheduledFuture    
     private Future publishFilteredWrapperFuture;
+
 
     /**
      * Constructor for FilterModule
@@ -186,24 +192,37 @@ public class FilterModule extends Module {
         long timestamp = System.currentTimeMillis();
 
         FilteredWrapperPacket.Builder filteredWrapper = this.filteredWrapper.toBuilder();
-        filteredWrapper.setField(wrapper.getGeometry().getField());
-        filteredWrapper.setBall(filterBalls(wrapper.getDetection().getBallsList(), this.filteredWrapper.getBall(),
-                feedbacks, this.filteredWrapper.getFoesMap(), timestamp));
-
-        List<SSL_DetectionRobot> allies;
-        List<SSL_DetectionRobot> foes;
-        if (GameInfo.getTeamColor() == Team.YELLOW) {
-            allies = wrapper.getDetection().getRobotsYellowList();
-            foes = wrapper.getDetection().getRobotsBlueList();
-        } else {
-            allies = wrapper.getDetection().getRobotsBlueList();
-            foes = wrapper.getDetection().getRobotsYellowList();
+        if(wrapper.hasGeometry()) {
+            if(wrapper.getGeometry().hasField()) {
+                this.geometry = wrapper.getGeometry();
+            }
         }
+        if(wrapper.hasDetection()) {
+            if(wrapper.getDetection().hasCameraId()) {
+                this.detection = wrapper.getDetection();
+            }
+        }
+        if(geometry != null && detection != null) {
+            filteredWrapper.setField(this.geometry.getField());
+            filteredWrapper.setBall(filterBalls(this.detection.getBallsList(), this.filteredWrapper.getBall(),
+                    feedbacks, this.filteredWrapper.getFoesMap(), timestamp));
 
-        filteredWrapper.putAllAllies(filterAllies(allies, this.filteredWrapper.getAlliesMap(), feedbacks, timestamp));
-        filteredWrapper.putAllFoes(filterFoes(foes, this.filteredWrapper.getFoesMap(), feedbacks, timestamp));
-        this.filteredWrapper = filteredWrapper.build();
-        GameInfo.setWrapper(this.filteredWrapper);
+            List<SSL_DetectionRobot> allies;
+            List<SSL_DetectionRobot> foes;
+            if (GameInfo.getTeamColor() == Team.YELLOW) {
+                allies = this.detection.getRobotsYellowList();
+                foes = this.detection.getRobotsBlueList();
+            } else {
+                allies = this.detection.getRobotsBlueList();
+                foes = this.detection.getRobotsYellowList();
+            }
+
+            filteredWrapper.putAllAllies(filterAllies(allies, this.filteredWrapper.getAlliesMap(), feedbacks, timestamp));
+            filteredWrapper.putAllFoes(filterFoes(foes, this.filteredWrapper.getFoesMap(), feedbacks, timestamp));
+            this.filteredWrapper = filteredWrapper.build();
+            GameInfo.setWrapper(this.filteredWrapper);
+
+        }
     }
 
     /**

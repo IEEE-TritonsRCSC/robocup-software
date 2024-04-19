@@ -31,6 +31,8 @@ public class GameInfo {
 
     private static CoordinatedPass currentPass;
 
+    static Ball ball;
+
     // private static Vector2d ballPlacementLocation;
 
     /**
@@ -188,7 +190,10 @@ public class GameInfo {
     }
 
     public static Ball getBall() {
-        return wrapper.getBall();
+        if(wrapper.hasBall()) {
+            ball = wrapper.getBall();
+        }
+        return ball;
     }
 
     public static SSL_GeometryFieldSize getField() {

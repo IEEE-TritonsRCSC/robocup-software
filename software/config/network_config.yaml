@@ -2,7 +2,7 @@ gameControllerAddress: "224.5.23.1"
 gameControllerDetectionPort: 10003
 
 visionAddress: "224.5.23.2"
-visionDetectionPort: 10020
+visionDetectionPort: 10006
 
 simulationCommandAddress: "localhost"
 simulationCommandPort: 10300

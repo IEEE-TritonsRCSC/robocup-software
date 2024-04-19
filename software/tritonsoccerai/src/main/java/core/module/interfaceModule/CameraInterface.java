@@ -8,10 +8,15 @@ import java.io.IOException;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
+import java.util.List;
 
 import static main.java.core.messaging.Exchange.AI_VISION_WRAPPER;
 
 import static proto.vision.MessagesRobocupSslWrapper.SSL_WrapperPacket;
+import static proto.vision.MessagesRobocupSslDetection.*;
+import static proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame;
+import static proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.Builder;
+import static proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot;
 
 public class CameraInterface extends Module {
     Future<?> receiverFuture;
@@ -60,6 +65,18 @@ public class CameraInterface extends Module {
     private void callbackWrapper(byte[] bytes) {
         try {
             SSL_WrapperPacket wrapper = SSL_WrapperPacket.parseFrom(bytes);
+            if(wrapper.hasDetection()) {
+                SSL_DetectionFrame frame = wrapper.getDetection();
+                List<SSL_DetectionRobot> robots_yellow = frame.getRobotsYellowList();
+                List<SSL_DetectionRobot> robots_blue = frame.getRobotsBlueList();
+                for(SSL_DetectionRobot yrobot : robots_yellow) {
+                    System.out.println("yellow robot" + yrobot.getRobotId() + ":" + yrobot.getX() + "," + yrobot.getY());
+                }
+                for(SSL_DetectionRobot brobot : robots_blue) {
+                    System.out.println("blue robot" + brobot.getRobotId() + ":" + brobot.getX() + "," + brobot.getY());
+                }
+            }
+            
             publish(AI_VISION_WRAPPER, wrapper);
         } catch (IOException e) {
             e.printStackTrace();

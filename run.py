@@ -72,7 +72,7 @@ if (args.team == 'blue' or args.team == 'both'):
 
 if (args.team == 'yellow' or args.team == 'both'):
     if (args.test == 'true'):
-        run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team=yellow", "--test"], triton_soccer_ai_jar_path, "tab")
+        run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team=yellow", "--test"], triton_soccer_ai_jar_path, "current")
         time.sleep(0.1)
     else:
         run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team=yellow"], triton_soccer_ai_jar_path, "tab")
@@ -80,7 +80,7 @@ if (args.team == 'yellow' or args.team == 'both'):
 
 if (args.team == 'blue' or args.team == 'both'):
     if (args.test == 'true'):
-        run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team=blue", "--test"], triton_soccer_ai_jar_path, "tab")
+        run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team=blue", "--test"], triton_soccer_ai_jar_path, "current")
         time.sleep(0.1)
     else:
         run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team=blue"], triton_soccer_ai_jar_path, "tab")

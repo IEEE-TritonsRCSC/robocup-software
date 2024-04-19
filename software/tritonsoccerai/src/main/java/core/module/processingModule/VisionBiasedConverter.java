@@ -25,6 +25,9 @@ import static proto.vision.MessagesRobocupSslWrapper.SSL_WrapperPacket;
  * Class for converting from audience biased vision to robot biased vision
  */
 public class VisionBiasedConverter extends Module {
+
+    static SSL_DetectionFrame detection;
+    static SSL_GeometryData geometry;
     
     
     public VisionBiasedConverter(ScheduledThreadPoolExecutor executor) {
@@ -63,8 +66,19 @@ public class VisionBiasedConverter extends Module {
      */
     private static SSL_WrapperPacket wrapperAudienceToBiased(SSL_WrapperPacket wrapper) {
         SSL_WrapperPacket.Builder biasedWrapper = wrapper.toBuilder();
-        biasedWrapper.setDetection(detectionAudienceToBiased(wrapper.getDetection()));
-        biasedWrapper.setGeometry(geometryAudienceToBiased(wrapper.getGeometry()));
+        if(wrapper.hasGeometry()) {
+            if(biasedWrapper.getGeometry().hasField()) {
+                geometry = geometryAudienceToBiased(wrapper.getGeometry());
+            }
+        }
+        if(wrapper.hasDetection()) {
+            if(biasedWrapper.getDetection().hasCameraId()) {
+                detection = detectionAudienceToBiased(wrapper.getDetection());
+            }   
+
+        }
+        biasedWrapper.setDetection(detection);
+        biasedWrapper.setGeometry(geometry);
         return biasedWrapper.build();
     }
 
@@ -136,7 +150,6 @@ public class VisionBiasedConverter extends Module {
         biasedField.clearFieldArcs();
         for (SSL_FieldCircularArc fieldArc : field.getFieldArcsList())
             biasedField.addFieldArcs(arcAudienceToBiased(fieldArc));
-
         return biasedField.build();
     }
 
