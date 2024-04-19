@@ -67,14 +67,6 @@ public class CameraInterface extends Module {
             SSL_WrapperPacket wrapper = SSL_WrapperPacket.parseFrom(bytes);
             if(wrapper.hasDetection()) {
                 SSL_DetectionFrame frame = wrapper.getDetection();
-                List<SSL_DetectionRobot> robots_yellow = frame.getRobotsYellowList();
-                List<SSL_DetectionRobot> robots_blue = frame.getRobotsBlueList();
-                for(SSL_DetectionRobot yrobot : robots_yellow) {
-                    System.out.println("yellow robot" + yrobot.getRobotId() + ":" + yrobot.getX() + "," + yrobot.getY());
-                }
-                for(SSL_DetectionRobot brobot : robots_blue) {
-                    System.out.println("blue robot" + brobot.getRobotId() + ":" + brobot.getX() + "," + brobot.getY());
-                }
             }
             
             publish(AI_VISION_WRAPPER, wrapper);

@@ -155,7 +155,6 @@ public class TritonBotMessageBuilder extends Module {
             allies = frame.getRobotsYellowList();
 
         allies.forEach(ally -> {
-            System.out.println(ally.getRobotId() + ":" + ally.getX() + "," + ally.getY());
             if (ally.getRobotId() >= ProgramConstants.gameConfig.numBots) return;
             aggregateVisions.put(ally.getRobotId(), ally);
         });

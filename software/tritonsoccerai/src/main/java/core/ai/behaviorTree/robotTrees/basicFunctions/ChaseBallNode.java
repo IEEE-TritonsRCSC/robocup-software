@@ -39,7 +39,7 @@ public class ChaseBallNode extends TaskNode {
         // System.out.println("Running chase ball node");
 
         // Calculating path from robot to ball
-        /*Ball ball = GameInfo.getBall();
+        Ball ball = GameInfo.getBall();
         Robot ally = GameInfo.getAlly(allyID);
         Vector2d allyPos = getPos(ally);
         Vector2d ballPos = getPos(ball);
@@ -50,10 +50,10 @@ public class ChaseBallNode extends TaskNode {
         // Move to ball
         MoveToPositionNode MoveToPosition = new MoveToPositionNode(allyID);
         MoveToPosition.setDribbleOn(true);
-        MoveToPosition.execute(targetPos);  */
+        MoveToPosition.execute(targetPos); 
 
-        // DribbleBallNode dribbleBall = new DribbleBallNode(allyID);
-        // float distanceFromAllyToBall = allyPos.dist(ballPos);
+        DribbleBallNode dribbleBall = new DribbleBallNode(allyID);
+        float distanceFromAllyToBall = allyPos.dist(ballPos);
         
         // Dribble It
         if (getPos(GameInfo.getAlly(allyID)).dist(getPos(GameInfo.getBall())) > DRIBBLE_THRESHOLD){

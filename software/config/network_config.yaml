@@ -2,7 +2,7 @@ gameControllerAddress: "224.5.23.1"
 gameControllerDetectionPort: 10003
 
 visionAddress: "224.5.23.2"
-visionDetectionPort: 10006
+visionDetectionPort: 10020
 
 simulationCommandAddress: "localhost"
 simulationCommandPort: 10300
@@ -12,8 +12,8 @@ simulationRobotControlPortBlue: 10301
 simulationRobotControlAddressYellow: "localhost"
 simulationRobotControlPortYellow: 10302
 
-tritonBotAddressBlue: "224.1.1.1"
+tritonBotAddressBlue: "224.6.6.1"
 tritonBotPortBaseBlue: 10500
-tritonBotAddressYellow: "224.1.1.1"
+tritonBotAddressYellow: "224.6.6.1"
 tritonBotPortBaseYellow: 10600
-tritonBotPortIncr: 10
+tritonBotPortIncr: 5

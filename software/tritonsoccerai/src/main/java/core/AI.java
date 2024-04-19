@@ -141,37 +141,38 @@ public class AI {
     private void runTests() {
         List<Module> testModules = new ArrayList<>();
         List<Future<?>> testFutures = new ArrayList<>();
-        Scanner scanner = new Scanner(System.in);
+        // Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Available tests:");
-            for (AITest test : AITest.values())
-                System.out.println("- " + test.ordinal() + ". " + test.name() + ":\n\t" + test.getDesc());
+            // System.out.println("Available tests:");
+            // for (AITest test : AITest.values())
+            //     System.out.println("- " + test.ordinal() + ". " + test.name() + ":\n\t" + test.getDesc());
 
-            System.out.print("Choose a test:\t");
-            AITest test = parseTest(scanner.nextLine());
-            System.out.println(test);
+            // System.out.print("Choose a test:\t");
+            AITest test = parseTest("2");
+            // System.out.println(test);
 
-            if (test == null) {
-                System.out.println("Test not found. Try again.");
-                continue;
-            }
+            // if (test == null) {
+            //     System.out.println("Test not found. Try again.");
+            //     continue;
+            // }
 
             TestModule testModule = test.createNewTestModule(executor);
             ProgramConstants.commandPublishingModule = testModule;
             startModule(testModule, testModules, testFutures);
 
-            while (!testModules.isEmpty()) {
-                System.out.print("Running test, type 'q' to stop:\t");
-                if (scanner.nextLine().equals("q")) {
-                    testFutures.forEach(testFuture -> testFuture.cancel(false));
-                    testModules.forEach(Module::interrupt);
-                    testModules.clear();
-                    testFutures.clear();
-                }
-            }
+            // while (!testModules.isEmpty()) {
+            //     System.out.print("Running test, type 'q' to stop:\t");
+            //     if (scanner.nextLine().equals("q")) {
+            //         testFutures.forEach(testFuture -> testFuture.cancel(false));
+            //         testModules.forEach(Module::interrupt);
+            //         testModules.clear();
+            //         testFutures.clear();
+            //     }
+            // }
         }
     }
+    
 
     /**
      * Starts AIModule, FielderTreeModule (x5), GKTreeModule, and CentralCoordinatorModule
