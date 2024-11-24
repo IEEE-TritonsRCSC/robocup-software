@@ -32,7 +32,7 @@ public class OffenseRootService extends ServiceNode {
         this.haveOpenShot = new HaveOpenShotNode(allyID);
         this.shootBall = new ShootBallNode(allyID);
         this.makePlay = new MakePlayNode(allyID);
-        this.positionSelf = new PositionSelfNode(allyID);
+        this.positionSelf = new PositionSelfNode(allyID, this.havePossession);
         this.catchBall = new CatchBallNode(this.allyID);
 
         // this.curr = 1;
