@@ -92,7 +92,7 @@ public class ShootBallNode extends SequenceNode {
         //best kick direction
         Vector2d bestKickTo = null;
 
-        float maxScore = Float.MIN_VALUE;
+        float maxScore = -1;
 
         //defines the best kick direction based on the position of the obstacles
         for (Vector2d kickTo : kickTos) {

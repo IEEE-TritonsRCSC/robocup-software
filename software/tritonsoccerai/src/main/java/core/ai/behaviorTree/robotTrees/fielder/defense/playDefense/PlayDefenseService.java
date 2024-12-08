@@ -30,7 +30,7 @@ public class PlayDefenseService extends ServiceNode {
     public NodeState execute() {
         if (NodeState.isSuccess(this.closestToBallNode.execute())) {
             this.chaseBallNode.execute();
-            // System.out.println("Chase ball node executed " + curr);
+            // System.out.println("Chase ball node executed");
             // curr++;
         }
         else {

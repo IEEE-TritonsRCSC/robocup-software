@@ -34,7 +34,7 @@ public class CutPassingLaneNode extends TaskNode {
      */
     @Override
     public NodeState execute() {
-        execute(GameInfo.getFielders());
+        execute(GameInfo.getFoeFielders());
         return NodeState.SUCCESS;
     }
 

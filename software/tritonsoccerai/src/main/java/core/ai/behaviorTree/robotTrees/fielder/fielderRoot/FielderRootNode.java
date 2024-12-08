@@ -31,6 +31,7 @@ public class FielderRootNode extends CompositeNode {
      */
     @Override
     public NodeState execute() {
+        System.out.println("Fielder root started");
         executor.scheduleAtFixedRate(this.fielderRootService, ProgramConstants.INITIAL_DELAY,
                                     ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
         return NodeState.RUNNING;

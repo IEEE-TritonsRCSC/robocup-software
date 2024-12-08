@@ -68,14 +68,11 @@ public class PositionTestModule extends TestModule{
         while(true){
             this.PositionBot.execute();
             try {
-                TimeUnit.MILLISECONDS.sleep(100);
+                TimeUnit.MILLISECONDS.sleep(50);
             } catch (Exception e) {}
         }
 
     }
-
-        
-
 
         // if(distance(robot_x, robot_y, ball_x, ball_y) > 1000){
         //     this.moveToObjectNode = new MoveToObjectNode(GameInfo.getAllyClosestToBall().getId());
