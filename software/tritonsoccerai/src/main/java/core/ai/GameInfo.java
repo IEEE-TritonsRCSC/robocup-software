@@ -8,7 +8,7 @@ import main.java.core.constants.Team;
 
 import static main.java.core.constants.RobotConstants.DRIBBLE_THRESHOLD;
 
-import java.util.ArrayList;
+import java.util.*;
 
 import static main.java.core.util.ProtobufUtils.getPos;
 import static proto.triton.CoordinatedPassInfo.CoordinatedPass;
@@ -69,13 +69,19 @@ public class GameInfo {
     }
 
     public static ArrayList<Robot> getAllies() {
-        ArrayList<Robot> allies = new ArrayList<Robot>(wrapper.getAlliesMap().values());
-        return allies;
+        return new ArrayList<Robot>(getAlliesMap().values());
     }
 
     public static ArrayList<Robot> getFoes() {
-        ArrayList<Robot> foes = new ArrayList<Robot>(wrapper.getFoesMap().values());
-        return foes;
+        return new ArrayList<Robot>(getFoesMap().values());
+    }
+
+    public static Map<Integer, Robot> getAlliesMap() {
+        return new HashMap<Integer, Robot>(wrapper.getAlliesMap());
+    }
+
+    public static Map<Integer, Robot> getFoesMap() {
+        return new HashMap<Integer, Robot>(wrapper.getFoesMap());
     }
 
     public static ArrayList<Robot> getFoeFielders() {
@@ -89,21 +95,11 @@ public class GameInfo {
     }
 
     public static Robot getAlly(int id) {
-        for (Robot ally : getAllies()) {
-            if (ally.getId() == id) {
-                return ally;
-            }
-        }
-        return null;
+        return getAlliesMap().get(id);
     }
 
     public static Robot getFoe(int id) {
-        for (Robot foe : getFoes()) {
-            if (foe.getId() == id) {
-                return foe;
-            }
-        }
-        return null;
+        return getFoesMap().get(id);
     }
 
     public static Boolean getPossessBall() {

@@ -59,7 +59,7 @@ public class AI {
 
         AI ai = new AI();
         ai.startSupportModules();
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         if (ProgramConstants.test) {
             ai.runTests();
         } else {
@@ -130,8 +130,9 @@ public class AI {
     /**
      * Starts support (non-AI) modules
      */
-    public void startSupportModules() {
+    public void startSupportModules() throws java.lang.InterruptedException {
         startProcessingModules();
+        Thread.sleep(2000);
         startInterfaceModules();
     }
 

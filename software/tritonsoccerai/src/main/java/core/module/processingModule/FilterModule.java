@@ -200,6 +200,8 @@ public class FilterModule extends Module {
             allies = wrapper.getDetection().getRobotsBlueList();
             foes = wrapper.getDetection().getRobotsYellowList();
         }
+        // System.out.println("Num allies: " + allies.size());
+        // System.out.println("Num foes: " + foes.size());
 
         filteredWrapper.putAllAllies(filterAllies(allies, this.filteredWrapper.getAlliesMap(), feedbacks, timestamp));
         filteredWrapper.putAllFoes(filterFoes(foes, this.filteredWrapper.getFoesMap(), feedbacks, timestamp));
@@ -347,6 +349,11 @@ public class FilterModule extends Module {
                 }
                 Robot filteredAlly = filterRobot(timestamp, ally, lastAlly, hasBall);
                 filteredAllies.put(ally.getRobotId(), filteredAlly);
+            }
+            else {
+                // System.out.println("Ally " + ally.getRobotId() + " not accounted for.");
+                // System.out.println(ally.getX() + "  " + ally.getY());
+                // System.out.println();
             }
         }
 
