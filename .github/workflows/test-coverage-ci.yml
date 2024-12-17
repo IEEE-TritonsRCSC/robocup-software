@@ -16,6 +16,13 @@ jobs:
         with:
           java-version: 17
 
+      - name: Set up Protobuf
+        run: |
+            sudo apt install protobuf-compiler
+            protoc --version
+            which protoc
+            sudo ln -s /usr/bin/protoc /usr/local/bin/protoc
+
       - name: Build with Maven
         run: cd software/tritonsoccerai ; mvn package
 
