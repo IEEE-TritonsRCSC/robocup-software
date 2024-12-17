@@ -1,12 +1,12 @@
-package main.java.core.search.implementation;
+package core.search.implementation;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.search.base.Graph;
-import main.java.core.search.base.RouteFinder;
-import main.java.core.search.base.Scorer;
-import main.java.core.search.node2d.Euclidean2dWithPenaltyScorer;
-import main.java.core.search.node2d.Node2d;
-import main.java.core.util.Vector2d;
+import core.ai.GameInfo;
+import core.search.base.Graph;
+import core.search.base.RouteFinder;
+import core.search.base.Scorer;
+import core.search.node2d.Euclidean2dWithPenaltyScorer;
+import core.search.node2d.Node2d;
+import core.util.Vector2d;
 import proto.triton.FilteredObject.Robot;
 import proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
 
@@ -14,10 +14,10 @@ import org.apache.commons.collections4.iterators.ReverseListIterator;
 
 import java.util.*;
 
-import static main.java.core.constants.ProgramConstants.aiConfig;
-import static main.java.core.util.ObjectHelper.predictRobotPos;
-import static main.java.core.util.ObjectHelper.predictBallPos;
-import static main.java.core.util.ProtobufUtils.getVel;
+import static core.constants.ProgramConstants.aiConfig;
+import static core.util.ObjectHelper.predictRobotPos;
+import static core.util.ObjectHelper.predictBallPos;
+import static core.util.ProtobufUtils.getVel;
 import static proto.triton.FilteredObject.Robot;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
 

@@ -1,19 +1,19 @@
-package main.java.core.ai.behaviorTree.robotTrees.fielder.offense;
+package core.ai.behaviorTree.robotTrees.fielder.offense;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
+import core.ai.GameInfo;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
 
 import static proto.triton.FilteredObject.Robot;
-import main.java.core.util.Vector2d;
+import core.util.Vector2d;
 import proto.triton.FilteredObject.Robot;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-import static main.java.core.util.ProtobufUtils.getPos;
+import static core.util.ProtobufUtils.getPos;
 
 /**
  * Positions ally at optimal position

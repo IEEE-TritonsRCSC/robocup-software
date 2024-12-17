@@ -1,20 +1,20 @@
-package main.java.core.module.testModule;
+package core.module.testModule;
 
 import java.io.IOException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.Future;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
-import main.java.core.ai.GameInfo;
-import main.java.core.util.Vector2d;
-import main.java.core.constants.ProgramConstants;
-import static main.java.core.constants.RobotConstants.*;
+import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
+import core.ai.GameInfo;
+import core.util.Vector2d;
+import core.constants.ProgramConstants;
+import static core.constants.RobotConstants.*;
 
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.ChaseBallNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.ChaseBallNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
 
-import static main.java.core.util.ProtobufUtils.getPos;
+import static core.util.ProtobufUtils.getPos;
 
 public class DribbleTestModule extends TestModule {
     private final int TEST_ALLY_ID;

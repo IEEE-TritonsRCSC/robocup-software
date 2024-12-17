@@ -1,19 +1,19 @@
-package main.java.core.ai.behaviorTree.robotTrees.basicFunctions;
+package core.ai.behaviorTree.robotTrees.basicFunctions;
 
 
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.RotateBotNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.RotateInPlaceNode;
-import main.java.core.constants.RobotConstants;
-import main.java.core.messaging.Exchange;
+import core.ai.GameInfo;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.RotateBotNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.RotateInPlaceNode;
+import core.constants.RobotConstants;
+import core.messaging.Exchange;
 
 
-import static main.java.core.constants.ProgramConstants.aiConfig;
-import static main.java.core.util.ObjectHelper.distToPath;
-import static main.java.core.util.ProtobufUtils.getPos;
-import main.java.core.util.Vector2d;
+import static core.constants.ProgramConstants.aiConfig;
+import static core.util.ObjectHelper.distToPath;
+import static core.util.ProtobufUtils.getPos;
+import core.util.Vector2d;
 import proto.triton.CoordinatedPassInfo;
 import proto.triton.FilteredObject.Robot;
 
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-import main.java.core.constants.ProgramConstants;
+import core.constants.ProgramConstants;
 
 
 import static proto.triton.FilteredObject.*;

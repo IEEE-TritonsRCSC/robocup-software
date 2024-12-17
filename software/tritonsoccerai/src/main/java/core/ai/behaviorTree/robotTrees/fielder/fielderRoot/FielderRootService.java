@@ -1,20 +1,20 @@
-package main.java.core.ai.behaviorTree.robotTrees.fielder.fielderRoot;
+package core.ai.behaviorTree.robotTrees.fielder.fielderRoot;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.constants.ProgramConstants;
-// import main.java.core.ai.GameState;
-import main.java.core.ai.behaviorTree.nodes.BTNode;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
-import main.java.core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
-import main.java.core.ai.behaviorTree.robotTrees.fielder.defense.playDefense.PlayDefenseService;
-import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot.OffenseRootService;
-import main.java.core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.*;
+import core.ai.GameInfo;
+import core.constants.ProgramConstants;
+// import core.ai.GameState;
+import core.ai.behaviorTree.nodes.BTNode;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
+import core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
+import core.ai.behaviorTree.robotTrees.fielder.defense.playDefense.PlayDefenseService;
+import core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot.OffenseRootService;
+import core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.*;
 import static proto.triton.FilteredObject.Robot;
 import static proto.gc.SslGcRefereeMessage.Referee;
 
-import static main.java.core.util.ProtobufUtils.getPos;
+import static core.util.ProtobufUtils.getPos;
 
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;

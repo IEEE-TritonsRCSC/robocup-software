@@ -1,4 +1,4 @@
-package main.java.core.module.testModule;
+package core.module.testModule;
 
 
 import java.io.IOException;
@@ -8,13 +8,13 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
-import main.java.core.constants.ProgramConstants;
-import main.java.core.module.testModule.TestModule;
-import main.java.core.util.Vector2d;
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToObjectNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
+import core.constants.ProgramConstants;
+import core.module.testModule.TestModule;
+import core.util.Vector2d;
+import core.ai.GameInfo;
+import core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToObjectNode;
 
 
 public class CoordinatePassTestModule extends TestModule{

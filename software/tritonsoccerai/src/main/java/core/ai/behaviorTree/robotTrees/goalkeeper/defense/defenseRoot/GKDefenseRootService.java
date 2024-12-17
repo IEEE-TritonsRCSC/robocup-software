@@ -1,12 +1,12 @@
-package main.java.core.ai.behaviorTree.robotTrees.goalkeeper.defense.defenseRoot;
+package core.ai.behaviorTree.robotTrees.goalkeeper.defense.defenseRoot;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
-import main.java.core.ai.behaviorTree.robotTrees.goalkeeper.defense.BlockBallNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.ChaseBallNode;
+import core.ai.GameInfo;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
+import core.ai.behaviorTree.robotTrees.goalkeeper.defense.BlockBallNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.ChaseBallNode;
 
-import static main.java.core.util.ProtobufUtils.getPos;
+import static core.util.ProtobufUtils.getPos;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
 
 /**

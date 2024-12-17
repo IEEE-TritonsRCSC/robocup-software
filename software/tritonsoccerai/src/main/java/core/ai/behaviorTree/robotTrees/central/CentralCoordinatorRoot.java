@@ -1,12 +1,12 @@
-package main.java.core.ai.behaviorTree.robotTrees.central;
+package core.ai.behaviorTree.robotTrees.central;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.GameState;
-import main.java.core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
+import core.ai.GameInfo;
+import core.ai.GameState;
+import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
+import core.ai.behaviorTree.nodes.NodeState;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import main.java.core.constants.ProgramConstants;
+import core.constants.ProgramConstants;
 
 public class CentralCoordinatorRoot extends CompositeNode {
 

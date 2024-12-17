@@ -1,4 +1,4 @@
-package main.java.core.ai;
+package core.ai;
 
 /**
  * Defines every possible state that the game may be in at any given time

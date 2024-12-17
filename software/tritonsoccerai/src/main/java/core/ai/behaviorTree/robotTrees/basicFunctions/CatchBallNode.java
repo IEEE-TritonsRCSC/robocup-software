@@ -1,29 +1,29 @@
-package main.java.core.ai.behaviorTree.robotTrees.basicFunctions;
+package core.ai.behaviorTree.robotTrees.basicFunctions;
 
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 
 import static proto.triton.FilteredObject.Robot;
 
-import static main.java.core.util.ProtobufUtils.getPos;
-import static main.java.core.util.ProtobufUtils.getVel;
+import static core.util.ProtobufUtils.getPos;
+import static core.util.ProtobufUtils.getVel;
 
 import proto.simulation.SslSimulationRobotControl;
 import static proto.simulation.SslSimulationRobotControl.RobotCommand;
 import static proto.simulation.SslSimulationRobotControl.RobotMoveCommand;
 import static proto.simulation.SslSimulationRobotControl.MoveLocalVelocity;
 
-import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
-import static main.java.core.constants.RobotConstants.DRIBBLE_RPM;
+import static core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
+import static core.constants.RobotConstants.DRIBBLE_RPM;
 
-import static main.java.core.constants.ProgramConstants.objectConfig;
-import main.java.core.constants.ProgramConstants;
+import static core.constants.ProgramConstants.objectConfig;
+import core.constants.ProgramConstants;
 import static proto.triton.FilteredObject.Ball;
 import static proto.triton.FilteredObject.Robot;
-import main.java.core.ai.GameInfo;
-import main.java.core.util.Vector2d;
+import core.ai.GameInfo;
+import core.util.Vector2d;
 import static proto.triton.CoordinatedPassInfo.CoordinatedPass;
-import main.java.core.messaging.Exchange;
+import core.messaging.Exchange;
 
 /**
  * Defines task of catching ball in motion

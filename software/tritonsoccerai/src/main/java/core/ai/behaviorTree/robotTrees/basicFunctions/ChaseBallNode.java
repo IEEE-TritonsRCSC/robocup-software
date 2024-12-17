@@ -1,17 +1,17 @@
-package main.java.core.ai.behaviorTree.robotTrees.basicFunctions;
+package core.ai.behaviorTree.robotTrees.basicFunctions;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.ai.GameInfo;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import static proto.triton.FilteredObject.Robot;
 
 import static proto.triton.FilteredObject.Ball;
-import static main.java.core.util.ProtobufUtils.*;
-import main.java.core.util.*;
+import static core.util.ProtobufUtils.*;
+import core.util.*;
 
-import static main.java.core.constants.RobotConstants.DRIBBLE_THRESHOLD;
+import static core.constants.RobotConstants.DRIBBLE_THRESHOLD;
 
-import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot.OffenseRootNode;
+import core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot.OffenseRootNode;
 /**
  * Defines task of chasing ball
  */

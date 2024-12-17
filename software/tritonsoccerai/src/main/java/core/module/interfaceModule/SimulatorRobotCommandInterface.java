@@ -1,12 +1,12 @@
-package main.java.core.module.interfaceModule;
+package core.module.interfaceModule;
 
 import com.rabbitmq.client.Delivery;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.constants.ProgramConstants;
-import main.java.core.constants.Team;
-import main.java.core.module.Module;
-import main.java.core.networking.UDP_Client;
+import core.ai.GameInfo;
+import core.constants.ProgramConstants;
+import core.constants.Team;
+import core.module.Module;
+import core.networking.UDP_Client;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -15,9 +15,9 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
-import static main.java.core.messaging.Exchange.AI_ROBOT_COMMAND;
-import static main.java.core.messaging.Exchange.AI_ROBOT_FEEDBACKS;
-import static main.java.core.messaging.SimpleSerialize.simpleDeserialize;
+import static core.messaging.Exchange.AI_ROBOT_COMMAND;
+import static core.messaging.Exchange.AI_ROBOT_FEEDBACKS;
+import static core.messaging.SimpleSerialize.simpleDeserialize;
 
 import static proto.simulation.SslSimulationRobotControl.RobotCommand;
 import static proto.simulation.SslSimulationRobotControl.RobotControl;

@@ -1,15 +1,15 @@
-package main.java.core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions;
+package core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
-import main.java.core.ai.behaviorTree.robotTrees.goalkeeper.defense.BlockBallNode;
-import main.java.core.util.Vector2d;
+import core.ai.GameInfo;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
+import core.ai.behaviorTree.robotTrees.goalkeeper.defense.BlockBallNode;
+import core.util.Vector2d;
 
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
 
-import static main.java.core.util.ObjectHelper.awardedBall;
+import static core.util.ObjectHelper.awardedBall;
 
 public class GKPenaltyNode extends TaskNode {
 
