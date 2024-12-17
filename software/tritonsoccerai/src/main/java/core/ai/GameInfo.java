@@ -1,16 +1,16 @@
-package main.java.core.ai;
+package core.ai;
 
 import static proto.triton.FilteredObject.*;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
 import static proto.gc.SslGcRefereeMessage.Referee;
-import main.java.core.util.Vector2d;
-import main.java.core.constants.Team;
+import core.util.Vector2d;
+import core.constants.Team;
 
-import static main.java.core.constants.RobotConstants.DRIBBLE_THRESHOLD;
+import static core.constants.RobotConstants.DRIBBLE_THRESHOLD;
 
 import java.util.ArrayList;
 
-import static main.java.core.util.ProtobufUtils.getPos;
+import static core.util.ProtobufUtils.getPos;
 import static proto.triton.CoordinatedPassInfo.CoordinatedPass;
 
 /**

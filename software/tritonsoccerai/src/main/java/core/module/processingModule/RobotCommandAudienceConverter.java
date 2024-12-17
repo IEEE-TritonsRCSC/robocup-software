@@ -1,17 +1,17 @@
-package main.java.core.module.processingModule;
+package core.module.processingModule;
 
 import com.rabbitmq.client.Delivery;
-import main.java.core.module.Module;
-import main.java.core.util.ConvertCoordinate;
-import main.java.core.util.Vector2d;
+import core.module.Module;
+import core.util.ConvertCoordinate;
+import core.util.Vector2d;
 
 import java.io.IOException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
-import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
-import static main.java.core.messaging.Exchange.AI_ROBOT_COMMAND;
-import static main.java.core.messaging.SimpleSerialize.simpleDeserialize;
+import static core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
+import static core.messaging.Exchange.AI_ROBOT_COMMAND;
+import static core.messaging.SimpleSerialize.simpleDeserialize;
 import static proto.simulation.SslSimulationRobotControl.*;
 
 /**

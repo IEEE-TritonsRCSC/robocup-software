@@ -1,15 +1,15 @@
-package main.java.core.ai.behaviorTree.robotTrees.basicFunctions;
+package core.ai.behaviorTree.robotTrees.basicFunctions;
 
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import static proto.triton.FilteredObject.*;
-import main.java.core.util.Vector2d;
-import main.java.core.ai.GameInfo;
+import core.util.Vector2d;
+import core.ai.GameInfo;
 
-import static main.java.core.util.ProtobufUtils.getPos;
-import static main.java.core.util.ProtobufUtils.getVel;
+import static core.util.ProtobufUtils.getPos;
+import static core.util.ProtobufUtils.getVel;
 
-import static main.java.core.constants.ProgramConstants.objectConfig;
+import static core.constants.ProgramConstants.objectConfig;
 
 /**
  * Moves ally towards a particular field object, taking into account where it is moving towards

@@ -1,17 +1,17 @@
-package main.java.core.ai.behaviorTree.robotTrees.fielder.defense;
+package core.ai.behaviorTree.robotTrees.fielder.defense;
 
 import java.util.ArrayList;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToObjectNode;
+import core.ai.GameInfo;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToObjectNode;
 import static proto.triton.FilteredObject.Robot;
-import static main.java.core.util.ObjectHelper.identifyFoeToGuard;
-import static main.java.core.util.ProtobufUtils.getPos;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.ChaseBallNode;
-import main.java.core.util.Vector2d;
+import static core.util.ObjectHelper.identifyFoeToGuard;
+import static core.util.ProtobufUtils.getPos;
+import core.ai.behaviorTree.robotTrees.basicFunctions.ChaseBallNode;
+import core.util.Vector2d;
 
 /**
  * Cuts passing lane between ball and a foe

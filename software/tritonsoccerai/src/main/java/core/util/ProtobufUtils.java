@@ -1,10 +1,10 @@
-package main.java.core.util;
+package core.util;
 
 import proto.simulation.SslGcCommon;
 
-import  main.java.core.constants.Team;
+import  core.constants.Team;
 
-import static main.java.core.constants.ProgramConstants.objectConfig;
+import static core.constants.ProgramConstants.objectConfig;
 import static proto.simulation.SslSimulationControl.TeleportBall;
 import static proto.simulation.SslSimulationControl.TeleportRobot;
 import static proto.triton.FilteredObject.Ball;

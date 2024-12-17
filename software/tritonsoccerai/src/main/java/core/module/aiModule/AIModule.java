@@ -1,9 +1,9 @@
-package main.java.core.module.aiModule;
+package core.module.aiModule;
 
 import com.rabbitmq.client.Delivery; // Class that encapsulates a message
 
-import main.java.core.module.Module;
-import main.java.core.ai.GameInfo;
+import core.module.Module;
+import core.ai.GameInfo;
 
 import static proto.gc.SslGcRefereeMessage.Referee;
 
@@ -12,9 +12,9 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
 // enum for all Exchange relevant Objects
-import static main.java.core.messaging.Exchange.*;
+import static core.messaging.Exchange.*;
  // method for deserializing the message (in bytes)
-import static main.java.core.messaging.SimpleSerialize.simpleDeserialize;
+import static core.messaging.SimpleSerialize.simpleDeserialize;
 import static proto.triton.CoordinatedPassInfo.CoordinatedPass;
 
 /**

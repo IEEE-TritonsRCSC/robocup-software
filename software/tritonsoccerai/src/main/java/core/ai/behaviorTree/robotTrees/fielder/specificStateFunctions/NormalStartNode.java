@@ -1,12 +1,12 @@
-package main.java.core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions;
+package core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.GameState;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
-import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.ShootBallNode;
+import core.ai.GameInfo;
+import core.ai.GameState;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
+import core.ai.behaviorTree.robotTrees.fielder.offense.ShootBallNode;
 import static proto.triton.FilteredObject.Robot;
 
 /**

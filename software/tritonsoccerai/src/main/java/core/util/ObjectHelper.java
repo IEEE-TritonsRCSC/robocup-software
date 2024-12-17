@@ -1,19 +1,19 @@
-package main.java.core.util;
+package core.util;
 
-import main.java.core.ai.GameInfo;
+import core.ai.GameInfo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static main.java.core.util.ProtobufUtils.getPos;
-import static main.java.core.util.ProtobufUtils.getVel;
-import static main.java.core.util.ProtobufUtils.getAcc;
+import static core.util.ProtobufUtils.getPos;
+import static core.util.ProtobufUtils.getVel;
+import static core.util.ProtobufUtils.getAcc;
 import static proto.triton.FilteredObject.Ball;
 import static proto.triton.FilteredObject.Robot;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
 import static proto.gc.SslGcRefereeMessage.Referee.Command;
 
-import main.java.core.constants.Team;
+import core.constants.Team;
 
 import static proto.simulation.SslSimulationRobotControl.RobotCommand;
 import static proto.simulation.SslSimulationRobotControl.RobotMoveCommand;

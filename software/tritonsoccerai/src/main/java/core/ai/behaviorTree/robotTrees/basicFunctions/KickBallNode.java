@@ -1,26 +1,26 @@
-package main.java.core.ai.behaviorTree.robotTrees.basicFunctions;
+package core.ai.behaviorTree.robotTrees.basicFunctions;
 
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import main.java.core.util.Vector2d;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.util.Vector2d;
 
-import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
+import static core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
 
-import main.java.core.constants.ProgramConstants;
-import main.java.core.ai.GameInfo;
+import core.constants.ProgramConstants;
+import core.ai.GameInfo;
 
 import proto.simulation.SslSimulationRobotControl;
 
-import main.java.core.util.ObjectHelper;
+import core.util.ObjectHelper;
 
-import static main.java.core.constants.ProgramConstants.aiConfig;
+import static core.constants.ProgramConstants.aiConfig;
 
 import static proto.simulation.SslGcCommon.RobotId;
 import static proto.triton.FilteredObject.Robot;
 
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.RotateInPlaceNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.RotateInPlaceNode;
 
-import main.java.core.constants.RobotConstants;
+import core.constants.RobotConstants;
 
 /**
  * Sends message to robot to kick ball with provided speed in provided direction

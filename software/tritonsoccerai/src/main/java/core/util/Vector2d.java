@@ -1,9 +1,8 @@
-package main.java.core.util;
+package core.util;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
 
 /**
  * Defines 2D vectors and their main functions
