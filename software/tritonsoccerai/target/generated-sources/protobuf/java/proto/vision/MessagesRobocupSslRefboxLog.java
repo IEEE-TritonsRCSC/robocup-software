@@ -78,63 +78,6 @@ public final class MessagesRobocupSslRefboxLog {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Log_Frame(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) != 0)) {
-                subBuilder = frame_.toBuilder();
-              }
-              frame_ = input.readMessage(proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(frame_);
-                frame_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-            case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000002;
-              refboxCmd_ = bs;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.vision.MessagesRobocupSslRefboxLog.internal_static_proto_vision_Log_Frame_descriptor;
@@ -176,7 +119,8 @@ public final class MessagesRobocupSslRefboxLog {
     }
 
     public static final int REFBOX_CMD_FIELD_NUMBER = 2;
-    private volatile java.lang.Object refboxCmd_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object refboxCmd_ = "";
     /**
      * <code>required string refbox_cmd = 2;</code>
      * @return Whether the refboxCmd field is set.
@@ -255,7 +199,7 @@ public final class MessagesRobocupSslRefboxLog {
       if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, refboxCmd_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -271,7 +215,7 @@ public final class MessagesRobocupSslRefboxLog {
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, refboxCmd_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -296,7 +240,7 @@ public final class MessagesRobocupSslRefboxLog {
         if (!getRefboxCmd()
             .equals(other.getRefboxCmd())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -315,7 +259,7 @@ public final class MessagesRobocupSslRefboxLog {
         hash = (37 * hash) + REFBOX_CMD_FIELD_NUMBER;
         hash = (53 * hash) + getRefboxCmd().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -449,14 +393,13 @@ public final class MessagesRobocupSslRefboxLog {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (frameBuilder_ == null) {
-          frame_ = null;
-        } else {
-          frameBuilder_.clear();
+        bitField0_ = 0;
+        frame_ = null;
+        if (frameBuilder_ != null) {
+          frameBuilder_.dispose();
+          frameBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         refboxCmd_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -483,23 +426,25 @@ public final class MessagesRobocupSslRefboxLog {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslRefboxLog.Log_Frame buildPartial() {
         proto.vision.MessagesRobocupSslRefboxLog.Log_Frame result = new proto.vision.MessagesRobocupSslRefboxLog.Log_Frame(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.vision.MessagesRobocupSslRefboxLog.Log_Frame result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          if (frameBuilder_ == null) {
-            result.frame_ = frame_;
-          } else {
-            result.frame_ = frameBuilder_.build();
-          }
+          result.frame_ = frameBuilder_ == null
+              ? frame_
+              : frameBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.refboxCmd_ = refboxCmd_;
           to_bitField0_ |= 0x00000002;
         }
-        result.refboxCmd_ = refboxCmd_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -550,11 +495,11 @@ public final class MessagesRobocupSslRefboxLog {
           mergeFrame(other.getFrame());
         }
         if (other.hasRefboxCmd()) {
-          bitField0_ |= 0x00000002;
           refboxCmd_ = other.refboxCmd_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -578,17 +523,42 @@ public final class MessagesRobocupSslRefboxLog {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.vision.MessagesRobocupSslRefboxLog.Log_Frame parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getFrameFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                refboxCmd_ = input.readBytes();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.vision.MessagesRobocupSslRefboxLog.Log_Frame) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -623,11 +593,11 @@ public final class MessagesRobocupSslRefboxLog {
             throw new NullPointerException();
           }
           frame_ = value;
-          onChanged();
         } else {
           frameBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -637,11 +607,11 @@ public final class MessagesRobocupSslRefboxLog {
           proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.Builder builderForValue) {
         if (frameBuilder_ == null) {
           frame_ = builderForValue.build();
-          onChanged();
         } else {
           frameBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -650,31 +620,30 @@ public final class MessagesRobocupSslRefboxLog {
       public Builder mergeFrame(proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame value) {
         if (frameBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0) &&
-              frame_ != null &&
-              frame_ != proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.getDefaultInstance()) {
-            frame_ =
-              proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.newBuilder(frame_).mergeFrom(value).buildPartial();
+            frame_ != null &&
+            frame_ != proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.getDefaultInstance()) {
+            getFrameBuilder().mergeFrom(value);
           } else {
             frame_ = value;
           }
-          onChanged();
         } else {
           frameBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>required .proto.vision.SSL_DetectionFrame frame = 1;</code>
        */
       public Builder clearFrame() {
-        if (frameBuilder_ == null) {
-          frame_ = null;
-          onChanged();
-        } else {
-          frameBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000001);
+        frame_ = null;
+        if (frameBuilder_ != null) {
+          frameBuilder_.dispose();
+          frameBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -763,11 +732,9 @@ public final class MessagesRobocupSslRefboxLog {
        */
       public Builder setRefboxCmd(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+        if (value == null) { throw new NullPointerException(); }
         refboxCmd_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -776,8 +743,8 @@ public final class MessagesRobocupSslRefboxLog {
        * @return This builder for chaining.
        */
       public Builder clearRefboxCmd() {
-        bitField0_ = (bitField0_ & ~0x00000002);
         refboxCmd_ = getDefaultInstance().getRefboxCmd();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -788,11 +755,9 @@ public final class MessagesRobocupSslRefboxLog {
        */
       public Builder setRefboxCmdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+        if (value == null) { throw new NullPointerException(); }
         refboxCmd_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -829,7 +794,18 @@ public final class MessagesRobocupSslRefboxLog {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Log_Frame(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -905,56 +881,6 @@ public final class MessagesRobocupSslRefboxLog {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Refbox_Log(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                log_ = new java.util.ArrayList<proto.vision.MessagesRobocupSslRefboxLog.Log_Frame>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              log_.add(
-                  input.readMessage(proto.vision.MessagesRobocupSslRefboxLog.Log_Frame.PARSER, extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          log_ = java.util.Collections.unmodifiableList(log_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.vision.MessagesRobocupSslRefboxLog.internal_static_proto_vision_Refbox_Log_descriptor;
@@ -969,6 +895,7 @@ public final class MessagesRobocupSslRefboxLog {
     }
 
     public static final int LOG_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<proto.vision.MessagesRobocupSslRefboxLog.Log_Frame> log_;
     /**
      * <code>repeated .proto.vision.Log_Frame log = 1;</code>
@@ -1031,7 +958,7 @@ public final class MessagesRobocupSslRefboxLog {
       for (int i = 0; i < log_.size(); i++) {
         output.writeMessage(1, log_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1044,7 +971,7 @@ public final class MessagesRobocupSslRefboxLog {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, log_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1061,7 +988,7 @@ public final class MessagesRobocupSslRefboxLog {
 
       if (!getLogList()
           .equals(other.getLogList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1076,7 +1003,7 @@ public final class MessagesRobocupSslRefboxLog {
         hash = (37 * hash) + LOG_FIELD_NUMBER;
         hash = (53 * hash) + getLogList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1193,29 +1120,25 @@ public final class MessagesRobocupSslRefboxLog {
 
       // Construct using proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getLogFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (logBuilder_ == null) {
           log_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          log_ = null;
           logBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1242,7 +1165,13 @@ public final class MessagesRobocupSslRefboxLog {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log buildPartial() {
         proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log result = new proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log result) {
         if (logBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             log_ = java.util.Collections.unmodifiableList(log_);
@@ -1252,8 +1181,10 @@ public final class MessagesRobocupSslRefboxLog {
         } else {
           result.log_ = logBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1326,7 +1257,7 @@ public final class MessagesRobocupSslRefboxLog {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1346,17 +1277,43 @@ public final class MessagesRobocupSslRefboxLog {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                proto.vision.MessagesRobocupSslRefboxLog.Log_Frame m =
+                    input.readMessage(
+                        proto.vision.MessagesRobocupSslRefboxLog.Log_Frame.PARSER,
+                        extensionRegistry);
+                if (logBuilder_ == null) {
+                  ensureLogIsMutable();
+                  log_.add(m);
+                } else {
+                  logBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1633,7 +1590,18 @@ public final class MessagesRobocupSslRefboxLog {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Refbox_Log(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

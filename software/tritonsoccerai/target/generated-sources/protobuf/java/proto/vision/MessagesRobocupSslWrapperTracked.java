@@ -140,69 +140,6 @@ public final class MessagesRobocupSslWrapperTracked {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TrackerWrapperPacket(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              uuid_ = bs;
-              break;
-            }
-            case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000002;
-              sourceName_ = bs;
-              break;
-            }
-            case 26: {
-              proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) != 0)) {
-                subBuilder = trackedFrame_.toBuilder();
-              }
-              trackedFrame_ = input.readMessage(proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(trackedFrame_);
-                trackedFrame_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.vision.MessagesRobocupSslWrapperTracked.internal_static_proto_vision_TrackerWrapperPacket_descriptor;
@@ -218,7 +155,8 @@ public final class MessagesRobocupSslWrapperTracked {
 
     private int bitField0_;
     public static final int UUID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object uuid_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uuid_ = "";
     /**
      * <pre>
      * A random UUID of the source that is kept constant at the source while running
@@ -281,7 +219,8 @@ public final class MessagesRobocupSslWrapperTracked {
     }
 
     public static final int SOURCE_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object sourceName_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sourceName_ = "";
     /**
      * <pre>
      * The name of the source software that is producing this messages.
@@ -411,7 +350,7 @@ public final class MessagesRobocupSslWrapperTracked {
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(3, getTrackedFrame());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -430,7 +369,7 @@ public final class MessagesRobocupSslWrapperTracked {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getTrackedFrame());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -460,7 +399,7 @@ public final class MessagesRobocupSslWrapperTracked {
         if (!getTrackedFrame()
             .equals(other.getTrackedFrame())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -483,7 +422,7 @@ public final class MessagesRobocupSslWrapperTracked {
         hash = (37 * hash) + TRACKED_FRAME_FIELD_NUMBER;
         hash = (53 * hash) + getTrackedFrame().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -622,16 +561,14 @@ public final class MessagesRobocupSslWrapperTracked {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         uuid_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
         sourceName_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
-        if (trackedFrameBuilder_ == null) {
-          trackedFrame_ = null;
-        } else {
-          trackedFrameBuilder_.clear();
+        trackedFrame_ = null;
+        if (trackedFrameBuilder_ != null) {
+          trackedFrameBuilder_.dispose();
+          trackedFrameBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -658,27 +595,29 @@ public final class MessagesRobocupSslWrapperTracked {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket buildPartial() {
         proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket result = new proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uuid_ = uuid_;
           to_bitField0_ |= 0x00000001;
         }
-        result.uuid_ = uuid_;
         if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.sourceName_ = sourceName_;
           to_bitField0_ |= 0x00000002;
         }
-        result.sourceName_ = sourceName_;
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          if (trackedFrameBuilder_ == null) {
-            result.trackedFrame_ = trackedFrame_;
-          } else {
-            result.trackedFrame_ = trackedFrameBuilder_.build();
-          }
+          result.trackedFrame_ = trackedFrameBuilder_ == null
+              ? trackedFrame_
+              : trackedFrameBuilder_.build();
           to_bitField0_ |= 0x00000004;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -726,19 +665,19 @@ public final class MessagesRobocupSslWrapperTracked {
       public Builder mergeFrom(proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket other) {
         if (other == proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket.getDefaultInstance()) return this;
         if (other.hasUuid()) {
-          bitField0_ |= 0x00000001;
           uuid_ = other.uuid_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasSourceName()) {
-          bitField0_ |= 0x00000002;
           sourceName_ = other.sourceName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasTrackedFrame()) {
           mergeTrackedFrame(other.getTrackedFrame());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -761,17 +700,47 @@ public final class MessagesRobocupSslWrapperTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                uuid_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                sourceName_ = input.readBytes();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getTrackedFrameFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -846,11 +815,9 @@ public final class MessagesRobocupSslWrapperTracked {
        */
       public Builder setUuid(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+        if (value == null) { throw new NullPointerException(); }
         uuid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -864,8 +831,8 @@ public final class MessagesRobocupSslWrapperTracked {
        * @return This builder for chaining.
        */
       public Builder clearUuid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         uuid_ = getDefaultInstance().getUuid();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -881,11 +848,9 @@ public final class MessagesRobocupSslWrapperTracked {
        */
       public Builder setUuidBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+        if (value == null) { throw new NullPointerException(); }
         uuid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -956,11 +921,9 @@ public final class MessagesRobocupSslWrapperTracked {
        */
       public Builder setSourceName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+        if (value == null) { throw new NullPointerException(); }
         sourceName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -973,8 +936,8 @@ public final class MessagesRobocupSslWrapperTracked {
        * @return This builder for chaining.
        */
       public Builder clearSourceName() {
-        bitField0_ = (bitField0_ & ~0x00000002);
         sourceName_ = getDefaultInstance().getSourceName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -989,11 +952,9 @@ public final class MessagesRobocupSslWrapperTracked {
        */
       public Builder setSourceNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+        if (value == null) { throw new NullPointerException(); }
         sourceName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1040,11 +1001,11 @@ public final class MessagesRobocupSslWrapperTracked {
             throw new NullPointerException();
           }
           trackedFrame_ = value;
-          onChanged();
         } else {
           trackedFrameBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1058,11 +1019,11 @@ public final class MessagesRobocupSslWrapperTracked {
           proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame.Builder builderForValue) {
         if (trackedFrameBuilder_ == null) {
           trackedFrame_ = builderForValue.build();
-          onChanged();
         } else {
           trackedFrameBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1075,18 +1036,17 @@ public final class MessagesRobocupSslWrapperTracked {
       public Builder mergeTrackedFrame(proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame value) {
         if (trackedFrameBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0) &&
-              trackedFrame_ != null &&
-              trackedFrame_ != proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame.getDefaultInstance()) {
-            trackedFrame_ =
-              proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame.newBuilder(trackedFrame_).mergeFrom(value).buildPartial();
+            trackedFrame_ != null &&
+            trackedFrame_ != proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame.getDefaultInstance()) {
+            getTrackedFrameBuilder().mergeFrom(value);
           } else {
             trackedFrame_ = value;
           }
-          onChanged();
         } else {
           trackedFrameBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1097,13 +1057,13 @@ public final class MessagesRobocupSslWrapperTracked {
        * <code>optional .proto.vision.TrackedFrame tracked_frame = 3;</code>
        */
       public Builder clearTrackedFrame() {
-        if (trackedFrameBuilder_ == null) {
-          trackedFrame_ = null;
-          onChanged();
-        } else {
-          trackedFrameBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000004);
+        trackedFrame_ = null;
+        if (trackedFrameBuilder_ != null) {
+          trackedFrameBuilder_.dispose();
+          trackedFrameBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -1186,7 +1146,18 @@ public final class MessagesRobocupSslWrapperTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TrackerWrapperPacket(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

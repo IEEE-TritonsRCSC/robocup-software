@@ -669,6 +669,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.Prepared prepared = 1 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.prepared is deprecated.
+     *     See ssl_gc_game_event.proto;l=93
      * @return Whether the prepared field is set.
      */
     @java.lang.Deprecated boolean hasPrepared();
@@ -678,6 +680,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.Prepared prepared = 1 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.prepared is deprecated.
+     *     See ssl_gc_game_event.proto;l=93
      * @return The prepared.
      */
     @java.lang.Deprecated proto.gc.SslGcGameEvent.GameEvent.Prepared getPrepared();
@@ -696,6 +700,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.IndirectGoal indirect_goal = 9 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.indirect_goal is deprecated.
+     *     See ssl_gc_game_event.proto;l=95
      * @return Whether the indirectGoal field is set.
      */
     @java.lang.Deprecated boolean hasIndirectGoal();
@@ -705,6 +711,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.IndirectGoal indirect_goal = 9 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.indirect_goal is deprecated.
+     *     See ssl_gc_game_event.proto;l=95
      * @return The indirectGoal.
      */
     @java.lang.Deprecated proto.gc.SslGcGameEvent.GameEvent.IndirectGoal getIndirectGoal();
@@ -723,6 +731,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.ChippedGoal chipped_goal = 10 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.chipped_goal is deprecated.
+     *     See ssl_gc_game_event.proto;l=97
      * @return Whether the chippedGoal field is set.
      */
     @java.lang.Deprecated boolean hasChippedGoal();
@@ -732,6 +742,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.ChippedGoal chipped_goal = 10 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.chipped_goal is deprecated.
+     *     See ssl_gc_game_event.proto;l=97
      * @return The chippedGoal.
      */
     @java.lang.Deprecated proto.gc.SslGcGameEvent.GameEvent.ChippedGoal getChippedGoal();
@@ -750,6 +762,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.KickTimeout kick_timeout = 12 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.kick_timeout is deprecated.
+     *     See ssl_gc_game_event.proto;l=99
      * @return Whether the kickTimeout field is set.
      */
     @java.lang.Deprecated boolean hasKickTimeout();
@@ -759,6 +773,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.KickTimeout kick_timeout = 12 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.kick_timeout is deprecated.
+     *     See ssl_gc_game_event.proto;l=99
      * @return The kickTimeout.
      */
     @java.lang.Deprecated proto.gc.SslGcGameEvent.GameEvent.KickTimeout getKickTimeout();
@@ -777,6 +793,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.AttackerTouchedOpponentInDefenseArea attacker_touched_opponent_in_defense_area = 16 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.attacker_touched_opponent_in_defense_area is deprecated.
+     *     See ssl_gc_game_event.proto;l=101
      * @return Whether the attackerTouchedOpponentInDefenseArea field is set.
      */
     @java.lang.Deprecated boolean hasAttackerTouchedOpponentInDefenseArea();
@@ -786,6 +804,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.AttackerTouchedOpponentInDefenseArea attacker_touched_opponent_in_defense_area = 16 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.attacker_touched_opponent_in_defense_area is deprecated.
+     *     See ssl_gc_game_event.proto;l=101
      * @return The attackerTouchedOpponentInDefenseArea.
      */
     @java.lang.Deprecated proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedOpponentInDefenseArea getAttackerTouchedOpponentInDefenseArea();
@@ -804,6 +824,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.AttackerTouchedOpponentInDefenseArea attacker_touched_opponent_in_defense_area_skipped = 42 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.attacker_touched_opponent_in_defense_area_skipped is deprecated.
+     *     See ssl_gc_game_event.proto;l=103
      * @return Whether the attackerTouchedOpponentInDefenseAreaSkipped field is set.
      */
     @java.lang.Deprecated boolean hasAttackerTouchedOpponentInDefenseAreaSkipped();
@@ -813,6 +835,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.AttackerTouchedOpponentInDefenseArea attacker_touched_opponent_in_defense_area_skipped = 42 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.attacker_touched_opponent_in_defense_area_skipped is deprecated.
+     *     See ssl_gc_game_event.proto;l=103
      * @return The attackerTouchedOpponentInDefenseAreaSkipped.
      */
     @java.lang.Deprecated proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedOpponentInDefenseArea getAttackerTouchedOpponentInDefenseAreaSkipped();
@@ -831,6 +855,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.BotCrashUnique bot_crash_unique_skipped = 23 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.bot_crash_unique_skipped is deprecated.
+     *     See ssl_gc_game_event.proto;l=105
      * @return Whether the botCrashUniqueSkipped field is set.
      */
     @java.lang.Deprecated boolean hasBotCrashUniqueSkipped();
@@ -840,6 +866,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.BotCrashUnique bot_crash_unique_skipped = 23 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.bot_crash_unique_skipped is deprecated.
+     *     See ssl_gc_game_event.proto;l=105
      * @return The botCrashUniqueSkipped.
      */
     @java.lang.Deprecated proto.gc.SslGcGameEvent.GameEvent.BotCrashUnique getBotCrashUniqueSkipped();
@@ -858,6 +886,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.BotPushedBot bot_pushed_bot_skipped = 25 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.bot_pushed_bot_skipped is deprecated.
+     *     See ssl_gc_game_event.proto;l=107
      * @return Whether the botPushedBotSkipped field is set.
      */
     @java.lang.Deprecated boolean hasBotPushedBotSkipped();
@@ -867,6 +897,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.BotPushedBot bot_pushed_bot_skipped = 25 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.bot_pushed_bot_skipped is deprecated.
+     *     See ssl_gc_game_event.proto;l=107
      * @return The botPushedBotSkipped.
      */
     @java.lang.Deprecated proto.gc.SslGcGameEvent.GameEvent.BotPushedBot getBotPushedBotSkipped();
@@ -885,6 +917,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.DefenderInDefenseAreaPartially defender_in_defense_area_partially = 30 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.defender_in_defense_area_partially is deprecated.
+     *     See ssl_gc_game_event.proto;l=109
      * @return Whether the defenderInDefenseAreaPartially field is set.
      */
     @java.lang.Deprecated boolean hasDefenderInDefenseAreaPartially();
@@ -894,6 +928,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.DefenderInDefenseAreaPartially defender_in_defense_area_partially = 30 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.defender_in_defense_area_partially is deprecated.
+     *     See ssl_gc_game_event.proto;l=109
      * @return The defenderInDefenseAreaPartially.
      */
     @java.lang.Deprecated proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseAreaPartially getDefenderInDefenseAreaPartially();
@@ -912,6 +948,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.MultiplePlacementFailures multiple_placement_failures = 33 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.multiple_placement_failures is deprecated.
+     *     See ssl_gc_game_event.proto;l=111
      * @return Whether the multiplePlacementFailures field is set.
      */
     @java.lang.Deprecated boolean hasMultiplePlacementFailures();
@@ -921,6 +959,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.MultiplePlacementFailures multiple_placement_failures = 33 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.multiple_placement_failures is deprecated.
+     *     See ssl_gc_game_event.proto;l=111
      * @return The multiplePlacementFailures.
      */
     @java.lang.Deprecated proto.gc.SslGcGameEvent.GameEvent.MultiplePlacementFailures getMultiplePlacementFailures();
@@ -973,710 +1013,6 @@ public final class SslGcGameEvent {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private GameEvent(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      int mutable_bitField1_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              proto.gc.SslGcGameEvent.GameEvent.Prepared.Builder subBuilder = null;
-              if (eventCase_ == 1) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.Prepared) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.Prepared.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.Prepared) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 1;
-              break;
-            }
-            case 18: {
-              proto.gc.SslGcGameEvent.GameEvent.NoProgressInGame.Builder subBuilder = null;
-              if (eventCase_ == 2) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.NoProgressInGame) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.NoProgressInGame.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.NoProgressInGame) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 2;
-              break;
-            }
-            case 26: {
-              proto.gc.SslGcGameEvent.GameEvent.PlacementFailed.Builder subBuilder = null;
-              if (eventCase_ == 3) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.PlacementFailed) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.PlacementFailed.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.PlacementFailed) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 3;
-              break;
-            }
-            case 42: {
-              proto.gc.SslGcGameEvent.GameEvent.PlacementSucceeded.Builder subBuilder = null;
-              if (eventCase_ == 5) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.PlacementSucceeded) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.PlacementSucceeded.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.PlacementSucceeded) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 5;
-              break;
-            }
-            case 50: {
-              proto.gc.SslGcGameEvent.GameEvent.BallLeftField.Builder subBuilder = null;
-              if (eventCase_ == 6) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.BallLeftField) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.BallLeftField.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.BallLeftField) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 6;
-              break;
-            }
-            case 58: {
-              proto.gc.SslGcGameEvent.GameEvent.BallLeftField.Builder subBuilder = null;
-              if (eventCase_ == 7) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.BallLeftField) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.BallLeftField.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.BallLeftField) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 7;
-              break;
-            }
-            case 66: {
-              proto.gc.SslGcGameEvent.GameEvent.Goal.Builder subBuilder = null;
-              if (eventCase_ == 8) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.Goal) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.Goal.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.Goal) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 8;
-              break;
-            }
-            case 74: {
-              proto.gc.SslGcGameEvent.GameEvent.IndirectGoal.Builder subBuilder = null;
-              if (eventCase_ == 9) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.IndirectGoal) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.IndirectGoal.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.IndirectGoal) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 9;
-              break;
-            }
-            case 82: {
-              proto.gc.SslGcGameEvent.GameEvent.ChippedGoal.Builder subBuilder = null;
-              if (eventCase_ == 10) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.ChippedGoal) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.ChippedGoal.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.ChippedGoal) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 10;
-              break;
-            }
-            case 90: {
-              proto.gc.SslGcGameEvent.GameEvent.AimlessKick.Builder subBuilder = null;
-              if (eventCase_ == 11) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.AimlessKick) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.AimlessKick.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.AimlessKick) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 11;
-              break;
-            }
-            case 98: {
-              proto.gc.SslGcGameEvent.GameEvent.KickTimeout.Builder subBuilder = null;
-              if (eventCase_ == 12) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.KickTimeout) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.KickTimeout.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.KickTimeout) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 12;
-              break;
-            }
-            case 106: {
-              proto.gc.SslGcGameEvent.GameEvent.KeeperHeldBall.Builder subBuilder = null;
-              if (eventCase_ == 13) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.KeeperHeldBall) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.KeeperHeldBall.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.KeeperHeldBall) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 13;
-              break;
-            }
-            case 114: {
-              proto.gc.SslGcGameEvent.GameEvent.AttackerDoubleTouchedBall.Builder subBuilder = null;
-              if (eventCase_ == 14) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.AttackerDoubleTouchedBall) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.AttackerDoubleTouchedBall.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.AttackerDoubleTouchedBall) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 14;
-              break;
-            }
-            case 122: {
-              proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedBallInDefenseArea.Builder subBuilder = null;
-              if (eventCase_ == 15) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedBallInDefenseArea) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedBallInDefenseArea.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedBallInDefenseArea) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 15;
-              break;
-            }
-            case 130: {
-              proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedOpponentInDefenseArea.Builder subBuilder = null;
-              if (eventCase_ == 16) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedOpponentInDefenseArea) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedOpponentInDefenseArea.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedOpponentInDefenseArea) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 16;
-              break;
-            }
-            case 138: {
-              proto.gc.SslGcGameEvent.GameEvent.BotDribbledBallTooFar.Builder subBuilder = null;
-              if (eventCase_ == 17) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.BotDribbledBallTooFar) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.BotDribbledBallTooFar.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.BotDribbledBallTooFar) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 17;
-              break;
-            }
-            case 146: {
-              proto.gc.SslGcGameEvent.GameEvent.BotKickedBallTooFast.Builder subBuilder = null;
-              if (eventCase_ == 18) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.BotKickedBallTooFast) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.BotKickedBallTooFast.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.BotKickedBallTooFast) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 18;
-              break;
-            }
-            case 154: {
-              proto.gc.SslGcGameEvent.GameEvent.AttackerTooCloseToDefenseArea.Builder subBuilder = null;
-              if (eventCase_ == 19) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.AttackerTooCloseToDefenseArea) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.AttackerTooCloseToDefenseArea.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.AttackerTooCloseToDefenseArea) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 19;
-              break;
-            }
-            case 162: {
-              proto.gc.SslGcGameEvent.GameEvent.BotInterferedPlacement.Builder subBuilder = null;
-              if (eventCase_ == 20) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.BotInterferedPlacement) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.BotInterferedPlacement.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.BotInterferedPlacement) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 20;
-              break;
-            }
-            case 170: {
-              proto.gc.SslGcGameEvent.GameEvent.BotCrashDrawn.Builder subBuilder = null;
-              if (eventCase_ == 21) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.BotCrashDrawn) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.BotCrashDrawn.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.BotCrashDrawn) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 21;
-              break;
-            }
-            case 178: {
-              proto.gc.SslGcGameEvent.GameEvent.BotCrashUnique.Builder subBuilder = null;
-              if (eventCase_ == 22) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.BotCrashUnique) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.BotCrashUnique.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.BotCrashUnique) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 22;
-              break;
-            }
-            case 186: {
-              proto.gc.SslGcGameEvent.GameEvent.BotCrashUnique.Builder subBuilder = null;
-              if (eventCase_ == 23) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.BotCrashUnique) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.BotCrashUnique.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.BotCrashUnique) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 23;
-              break;
-            }
-            case 194: {
-              proto.gc.SslGcGameEvent.GameEvent.BotPushedBot.Builder subBuilder = null;
-              if (eventCase_ == 24) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.BotPushedBot) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.BotPushedBot.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.BotPushedBot) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 24;
-              break;
-            }
-            case 202: {
-              proto.gc.SslGcGameEvent.GameEvent.BotPushedBot.Builder subBuilder = null;
-              if (eventCase_ == 25) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.BotPushedBot) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.BotPushedBot.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.BotPushedBot) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 25;
-              break;
-            }
-            case 210: {
-              proto.gc.SslGcGameEvent.GameEvent.BotHeldBallDeliberately.Builder subBuilder = null;
-              if (eventCase_ == 26) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.BotHeldBallDeliberately) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.BotHeldBallDeliberately.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.BotHeldBallDeliberately) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 26;
-              break;
-            }
-            case 218: {
-              proto.gc.SslGcGameEvent.GameEvent.BotTippedOver.Builder subBuilder = null;
-              if (eventCase_ == 27) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.BotTippedOver) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.BotTippedOver.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.BotTippedOver) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 27;
-              break;
-            }
-            case 226: {
-              proto.gc.SslGcGameEvent.GameEvent.BotTooFastInStop.Builder subBuilder = null;
-              if (eventCase_ == 28) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.BotTooFastInStop) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.BotTooFastInStop.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.BotTooFastInStop) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 28;
-              break;
-            }
-            case 234: {
-              proto.gc.SslGcGameEvent.GameEvent.DefenderTooCloseToKickPoint.Builder subBuilder = null;
-              if (eventCase_ == 29) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.DefenderTooCloseToKickPoint) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.DefenderTooCloseToKickPoint.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.DefenderTooCloseToKickPoint) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 29;
-              break;
-            }
-            case 242: {
-              proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseAreaPartially.Builder subBuilder = null;
-              if (eventCase_ == 30) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseAreaPartially) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseAreaPartially.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseAreaPartially) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 30;
-              break;
-            }
-            case 250: {
-              proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseArea.Builder subBuilder = null;
-              if (eventCase_ == 31) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseArea) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseArea.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseArea) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 31;
-              break;
-            }
-            case 258: {
-              proto.gc.SslGcGameEvent.GameEvent.MultipleCards.Builder subBuilder = null;
-              if (eventCase_ == 32) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.MultipleCards) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.MultipleCards.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.MultipleCards) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 32;
-              break;
-            }
-            case 266: {
-              proto.gc.SslGcGameEvent.GameEvent.MultiplePlacementFailures.Builder subBuilder = null;
-              if (eventCase_ == 33) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.MultiplePlacementFailures) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.MultiplePlacementFailures.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.MultiplePlacementFailures) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 33;
-              break;
-            }
-            case 274: {
-              proto.gc.SslGcGameEvent.GameEvent.MultipleFouls.Builder subBuilder = null;
-              if (eventCase_ == 34) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.MultipleFouls) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.MultipleFouls.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.MultipleFouls) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 34;
-              break;
-            }
-            case 282: {
-              proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMinor.Builder subBuilder = null;
-              if (eventCase_ == 35) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMinor) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMinor.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMinor) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 35;
-              break;
-            }
-            case 290: {
-              proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMajor.Builder subBuilder = null;
-              if (eventCase_ == 36) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMajor) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMajor.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMajor) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 36;
-              break;
-            }
-            case 298: {
-              proto.gc.SslGcGameEvent.GameEvent.BotSubstitution.Builder subBuilder = null;
-              if (eventCase_ == 37) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.BotSubstitution) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.BotSubstitution.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.BotSubstitution) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 37;
-              break;
-            }
-            case 306: {
-              proto.gc.SslGcGameEvent.GameEvent.TooManyRobots.Builder subBuilder = null;
-              if (eventCase_ == 38) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.TooManyRobots) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.TooManyRobots.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.TooManyRobots) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 38;
-              break;
-            }
-            case 314: {
-              proto.gc.SslGcGameEvent.GameEvent.Goal.Builder subBuilder = null;
-              if (eventCase_ == 39) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.Goal) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.Goal.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.Goal) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 39;
-              break;
-            }
-            case 320: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              proto.gc.SslGcGameEvent.GameEvent.Type value = proto.gc.SslGcGameEvent.GameEvent.Type.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(40, rawValue);
-              } else {
-                bitField0_ |= 0x00000002;
-                type_ = rawValue;
-              }
-              break;
-            }
-            case 330: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                origin_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              origin_.add(bs);
-              break;
-            }
-            case 338: {
-              proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedOpponentInDefenseArea.Builder subBuilder = null;
-              if (eventCase_ == 42) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedOpponentInDefenseArea) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedOpponentInDefenseArea.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedOpponentInDefenseArea) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 42;
-              break;
-            }
-            case 346: {
-              proto.gc.SslGcGameEvent.GameEvent.BoundaryCrossing.Builder subBuilder = null;
-              if (eventCase_ == 43) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.BoundaryCrossing) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.BoundaryCrossing.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.BoundaryCrossing) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 43;
-              break;
-            }
-            case 354: {
-              proto.gc.SslGcGameEvent.GameEvent.Goal.Builder subBuilder = null;
-              if (eventCase_ == 44) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.Goal) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.Goal.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.Goal) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 44;
-              break;
-            }
-            case 362: {
-              proto.gc.SslGcGameEvent.GameEvent.PenaltyKickFailed.Builder subBuilder = null;
-              if (eventCase_ == 45) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.PenaltyKickFailed) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.PenaltyKickFailed.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.PenaltyKickFailed) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 45;
-              break;
-            }
-            case 370: {
-              proto.gc.SslGcGameEvent.GameEvent.ChallengeFlag.Builder subBuilder = null;
-              if (eventCase_ == 46) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.ChallengeFlag) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.ChallengeFlag.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.ChallengeFlag) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 46;
-              break;
-            }
-            case 378: {
-              proto.gc.SslGcGameEvent.GameEvent.EmergencyStop.Builder subBuilder = null;
-              if (eventCase_ == 47) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.EmergencyStop) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.EmergencyStop.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.EmergencyStop) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 47;
-              break;
-            }
-            case 386: {
-              proto.gc.SslGcGameEvent.GameEvent.ChallengeFlagHandled.Builder subBuilder = null;
-              if (eventCase_ == 48) {
-                subBuilder = ((proto.gc.SslGcGameEvent.GameEvent.ChallengeFlagHandled) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.ChallengeFlagHandled.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((proto.gc.SslGcGameEvent.GameEvent.ChallengeFlagHandled) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 48;
-              break;
-            }
-            case 392: {
-              bitField0_ |= 0x00000004;
-              createdTimestamp_ = input.readUInt64();
-              break;
-            }
-            case 402: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              id_ = bs;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          origin_ = origin_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2574,74 +1910,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private BallLeftField(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                byBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_BallLeftField_descriptor;
@@ -2657,7 +1925,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that last touched the ball
@@ -2678,13 +1946,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int BY_BOT_FIELD_NUMBER = 2;
-      private int byBot_;
+      private int byBot_ = 0;
       /**
        * <pre>
        * the bot that last touched the ball
@@ -2781,7 +2048,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000004) != 0)) {
           output.writeMessage(3, getLocation());
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -2802,7 +2069,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(3, getLocation());
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -2831,7 +2098,7 @@ public final class SslGcGameEvent {
           if (!getLocation()
               .equals(other.getLocation())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -2854,7 +2121,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + LOCATION_FIELD_NUMBER;
           hash = (53 * hash) + getLocation().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -2992,16 +2259,14 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           byBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
           return this;
         }
 
@@ -3028,27 +2293,29 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.BallLeftField buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.BallLeftField result = new proto.gc.SslGcGameEvent.GameEvent.BallLeftField(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.BallLeftField result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.byBot_ = byBot_;
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000004;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -3104,7 +2371,7 @@ public final class SslGcGameEvent {
           if (other.hasLocation()) {
             mergeLocation(other.getLocation());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -3127,17 +2394,54 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.BallLeftField parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  byBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.BallLeftField) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -3164,8 +2468,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -3236,8 +2539,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setByBot(int value) {
-          bitField0_ |= 0x00000002;
+          
           byBot_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -3298,11 +2602,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -3316,11 +2620,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -3333,18 +2637,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -3355,13 +2658,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000004);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -3444,7 +2747,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BallLeftField(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -3592,87 +2906,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private AimlessKick(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                byBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-              case 34: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000008) != 0)) {
-                  subBuilder = kickLocation_.toBuilder();
-                }
-                kickLocation_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(kickLocation_);
-                  kickLocation_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000008;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_AimlessKick_descriptor;
@@ -3688,7 +2921,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that last touched the ball
@@ -3709,13 +2942,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int BY_BOT_FIELD_NUMBER = 2;
-      private int byBot_;
+      private int byBot_ = 0;
       /**
        * <pre>
        * the bot that last touched the ball
@@ -3859,7 +3091,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000008) != 0)) {
           output.writeMessage(4, getKickLocation());
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -3884,7 +3116,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(4, getKickLocation());
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -3918,7 +3150,7 @@ public final class SslGcGameEvent {
           if (!getKickLocation()
               .equals(other.getKickLocation())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -3945,7 +3177,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + KICK_LOCATION_FIELD_NUMBER;
           hash = (53 * hash) + getKickLocation().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -4084,22 +3316,19 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           byBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
-          if (kickLocationBuilder_ == null) {
-            kickLocation_ = null;
-          } else {
-            kickLocationBuilder_.clear();
+          kickLocation_ = null;
+          if (kickLocationBuilder_ != null) {
+            kickLocationBuilder_.dispose();
+            kickLocationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -4126,35 +3355,35 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.AimlessKick buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.AimlessKick result = new proto.gc.SslGcGameEvent.GameEvent.AimlessKick(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.AimlessKick result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.byBot_ = byBot_;
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
-            if (kickLocationBuilder_ == null) {
-              result.kickLocation_ = kickLocation_;
-            } else {
-              result.kickLocation_ = kickLocationBuilder_.build();
-            }
+            result.kickLocation_ = kickLocationBuilder_ == null
+                ? kickLocation_
+                : kickLocationBuilder_.build();
             to_bitField0_ |= 0x00000008;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -4213,7 +3442,7 @@ public final class SslGcGameEvent {
           if (other.hasKickLocation()) {
             mergeKickLocation(other.getKickLocation());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -4241,17 +3470,61 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.AimlessKick parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  byBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                case 34: {
+                  input.readMessage(
+                      getKickLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.AimlessKick) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -4278,8 +3551,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -4350,8 +3622,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setByBot(int value) {
-          bitField0_ |= 0x00000002;
+          
           byBot_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -4412,11 +3685,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -4430,11 +3703,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -4447,18 +3720,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -4469,13 +3741,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000004);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -4568,11 +3840,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             kickLocation_ = value;
-            onChanged();
           } else {
             kickLocationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -4586,11 +3858,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (kickLocationBuilder_ == null) {
             kickLocation_ = builderForValue.build();
-            onChanged();
           } else {
             kickLocationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -4603,18 +3875,17 @@ public final class SslGcGameEvent {
         public Builder mergeKickLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (kickLocationBuilder_ == null) {
             if (((bitField0_ & 0x00000008) != 0) &&
-                kickLocation_ != null &&
-                kickLocation_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              kickLocation_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(kickLocation_).mergeFrom(value).buildPartial();
+              kickLocation_ != null &&
+              kickLocation_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getKickLocationBuilder().mergeFrom(value);
             } else {
               kickLocation_ = value;
             }
-            onChanged();
           } else {
             kickLocationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -4625,13 +3896,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 kick_location = 4;</code>
          */
         public Builder clearKickLocation() {
-          if (kickLocationBuilder_ == null) {
-            kickLocation_ = null;
-            onChanged();
-          } else {
-            kickLocationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000008);
+          kickLocation_ = null;
+          if (kickLocationBuilder_ != null) {
+            kickLocationBuilder_.dispose();
+            kickLocationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -4714,7 +3985,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AimlessKick(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -4969,120 +4251,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private Goal(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000004;
-                kickingBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000008) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000008;
-                break;
-              }
-              case 34: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000010) != 0)) {
-                  subBuilder = kickLocation_.toBuilder();
-                }
-                kickLocation_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(kickLocation_);
-                  kickLocation_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000010;
-                break;
-              }
-              case 45: {
-                bitField0_ |= 0x00000020;
-                maxBallHeight_ = input.readFloat();
-                break;
-              }
-              case 48: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(6, rawValue);
-                } else {
-                  bitField0_ |= 0x00000002;
-                  kickingTeam_ = rawValue;
-                }
-                break;
-              }
-              case 56: {
-                bitField0_ |= 0x00000040;
-                numRobotsByTeam_ = input.readUInt32();
-                break;
-              }
-              case 64: {
-                bitField0_ |= 0x00000080;
-                lastTouchByTeam_ = input.readUInt64();
-                break;
-              }
-              case 74: {
-                com.google.protobuf.ByteString bs = input.readBytes();
-                bitField0_ |= 0x00000100;
-                message_ = bs;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_Goal_descriptor;
@@ -5098,7 +4266,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that scored the goal
@@ -5119,13 +4287,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int KICKING_TEAM_FIELD_NUMBER = 6;
-      private int kickingTeam_;
+      private int kickingTeam_ = 0;
       /**
        * <pre>
        * the team that shot the goal (different from by_team for own goals)
@@ -5146,13 +4313,12 @@ public final class SslGcGameEvent {
        * @return The kickingTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getKickingTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(kickingTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(kickingTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int KICKING_BOT_FIELD_NUMBER = 2;
-      private int kickingBot_;
+      private int kickingBot_ = 0;
       /**
        * <pre>
        * the bot that shot the goal
@@ -5255,7 +4421,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int MAX_BALL_HEIGHT_FIELD_NUMBER = 5;
-      private float maxBallHeight_;
+      private float maxBallHeight_ = 0F;
       /**
        * <pre>
        * the maximum height the ball reached during the goal kick (for deciding if this was a valid goal) [m]
@@ -5282,7 +4448,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int NUM_ROBOTS_BY_TEAM_FIELD_NUMBER = 7;
-      private int numRobotsByTeam_;
+      private int numRobotsByTeam_ = 0;
       /**
        * <pre>
        * number of robots of scoring team when the ball entered the goal (for deciding if this was a valid goal)
@@ -5309,7 +4475,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int LAST_TOUCH_BY_TEAM_FIELD_NUMBER = 8;
-      private long lastTouchByTeam_;
+      private long lastTouchByTeam_ = 0L;
       /**
        * <pre>
        * The UNIX timestamp [μs] when the scoring team last touched the ball
@@ -5336,7 +4502,8 @@ public final class SslGcGameEvent {
       }
 
       public static final int MESSAGE_FIELD_NUMBER = 9;
-      private volatile java.lang.Object message_;
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object message_ = "";
       /**
        * <pre>
        * An additional message with e.g. a reason for invalid goals
@@ -5452,7 +4619,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000100) != 0)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 9, message_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -5496,7 +4663,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000100) != 0)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, message_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -5555,7 +4722,7 @@ public final class SslGcGameEvent {
           if (!getMessage()
               .equals(other.getMessage())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -5604,7 +4771,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
           hash = (53 * hash) + getMessage().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -5743,32 +4910,24 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           kickingTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
           kickingBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000004);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000008);
-          if (kickLocationBuilder_ == null) {
-            kickLocation_ = null;
-          } else {
-            kickLocationBuilder_.clear();
+          kickLocation_ = null;
+          if (kickLocationBuilder_ != null) {
+            kickLocationBuilder_.dispose();
+            kickLocationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000010);
           maxBallHeight_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000020);
           numRobotsByTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000040);
           lastTouchByTeam_ = 0L;
-          bitField0_ = (bitField0_ & ~0x00000080);
           message_ = "";
-          bitField0_ = (bitField0_ & ~0x00000100);
           return this;
         }
 
@@ -5795,34 +4954,36 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.Goal buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.Goal result = new proto.gc.SslGcGameEvent.GameEvent.Goal(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.Goal result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.kickingTeam_ = kickingTeam_;
             to_bitField0_ |= 0x00000002;
           }
-          result.kickingTeam_ = kickingTeam_;
           if (((from_bitField0_ & 0x00000004) != 0)) {
             result.kickingBot_ = kickingBot_;
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000008;
           }
           if (((from_bitField0_ & 0x00000010) != 0)) {
-            if (kickLocationBuilder_ == null) {
-              result.kickLocation_ = kickLocation_;
-            } else {
-              result.kickLocation_ = kickLocationBuilder_.build();
-            }
+            result.kickLocation_ = kickLocationBuilder_ == null
+                ? kickLocation_
+                : kickLocationBuilder_.build();
             to_bitField0_ |= 0x00000010;
           }
           if (((from_bitField0_ & 0x00000020) != 0)) {
@@ -5838,12 +4999,10 @@ public final class SslGcGameEvent {
             to_bitField0_ |= 0x00000080;
           }
           if (((from_bitField0_ & 0x00000100) != 0)) {
+            result.message_ = message_;
             to_bitField0_ |= 0x00000100;
           }
-          result.message_ = message_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -5915,11 +5074,11 @@ public final class SslGcGameEvent {
             setLastTouchByTeam(other.getLastTouchByTeam());
           }
           if (other.hasMessage()) {
-            bitField0_ |= 0x00000100;
             message_ = other.message_;
+            bitField0_ |= 0x00000100;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -5947,17 +5106,93 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.Goal parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  kickingBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 26
+                case 34: {
+                  input.readMessage(
+                      getKickLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 34
+                case 45: {
+                  maxBallHeight_ = input.readFloat();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 45
+                case 48: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(6, tmpRaw);
+                  } else {
+                    kickingTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000002;
+                  }
+                  break;
+                } // case 48
+                case 56: {
+                  numRobotsByTeam_ = input.readUInt32();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 56
+                case 64: {
+                  lastTouchByTeam_ = input.readUInt64();
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 64
+                case 74: {
+                  message_ = input.readBytes();
+                  bitField0_ |= 0x00000100;
+                  break;
+                } // case 74
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.Goal) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -5984,8 +5219,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -6043,8 +5277,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getKickingTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(kickingTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(kickingTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -6115,8 +5348,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setKickingBot(int value) {
-          bitField0_ |= 0x00000004;
+          
           kickingBot_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -6177,11 +5411,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -6195,11 +5429,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -6212,18 +5446,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000008) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -6234,13 +5467,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000008);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -6333,11 +5566,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             kickLocation_ = value;
-            onChanged();
           } else {
             kickLocationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000010;
+          onChanged();
           return this;
         }
         /**
@@ -6351,11 +5584,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (kickLocationBuilder_ == null) {
             kickLocation_ = builderForValue.build();
-            onChanged();
           } else {
             kickLocationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000010;
+          onChanged();
           return this;
         }
         /**
@@ -6368,18 +5601,17 @@ public final class SslGcGameEvent {
         public Builder mergeKickLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (kickLocationBuilder_ == null) {
             if (((bitField0_ & 0x00000010) != 0) &&
-                kickLocation_ != null &&
-                kickLocation_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              kickLocation_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(kickLocation_).mergeFrom(value).buildPartial();
+              kickLocation_ != null &&
+              kickLocation_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getKickLocationBuilder().mergeFrom(value);
             } else {
               kickLocation_ = value;
             }
-            onChanged();
           } else {
             kickLocationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000010;
+          onChanged();
           return this;
         }
         /**
@@ -6390,13 +5622,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 kick_location = 4;</code>
          */
         public Builder clearKickLocation() {
-          if (kickLocationBuilder_ == null) {
-            kickLocation_ = null;
-            onChanged();
-          } else {
-            kickLocationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000010);
+          kickLocation_ = null;
+          if (kickLocationBuilder_ != null) {
+            kickLocationBuilder_.dispose();
+            kickLocationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -6482,8 +5714,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setMaxBallHeight(float value) {
-          bitField0_ |= 0x00000020;
+          
           maxBallHeight_ = value;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -6537,8 +5770,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setNumRobotsByTeam(int value) {
-          bitField0_ |= 0x00000040;
+          
           numRobotsByTeam_ = value;
+          bitField0_ |= 0x00000040;
           onChanged();
           return this;
         }
@@ -6592,8 +5826,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setLastTouchByTeam(long value) {
-          bitField0_ |= 0x00000080;
+          
           lastTouchByTeam_ = value;
+          bitField0_ |= 0x00000080;
           onChanged();
           return this;
         }
@@ -6678,11 +5913,9 @@ public final class SslGcGameEvent {
          */
         public Builder setMessage(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000100;
+          if (value == null) { throw new NullPointerException(); }
           message_ = value;
+          bitField0_ |= 0x00000100;
           onChanged();
           return this;
         }
@@ -6695,8 +5928,8 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder clearMessage() {
-          bitField0_ = (bitField0_ & ~0x00000100);
           message_ = getDefaultInstance().getMessage();
+          bitField0_ = (bitField0_ & ~0x00000100);
           onChanged();
           return this;
         }
@@ -6711,11 +5944,9 @@ public final class SslGcGameEvent {
          */
         public Builder setMessageBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000100;
+          if (value == null) { throw new NullPointerException(); }
           message_ = value;
+          bitField0_ |= 0x00000100;
           onChanged();
           return this;
         }
@@ -6752,7 +5983,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Goal(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -6900,87 +6142,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private IndirectGoal(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                byBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-              case 34: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000008) != 0)) {
-                  subBuilder = kickLocation_.toBuilder();
-                }
-                kickLocation_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(kickLocation_);
-                  kickLocation_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000008;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_IndirectGoal_descriptor;
@@ -6996,7 +6157,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that tried to shoot the goal
@@ -7017,13 +6178,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int BY_BOT_FIELD_NUMBER = 2;
-      private int byBot_;
+      private int byBot_ = 0;
       /**
        * <pre>
        * the bot that kicked the ball - at least the team must be set
@@ -7167,7 +6327,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000008) != 0)) {
           output.writeMessage(4, getKickLocation());
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -7192,7 +6352,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(4, getKickLocation());
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -7226,7 +6386,7 @@ public final class SslGcGameEvent {
           if (!getKickLocation()
               .equals(other.getKickLocation())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -7253,7 +6413,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + KICK_LOCATION_FIELD_NUMBER;
           hash = (53 * hash) + getKickLocation().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -7392,22 +6552,19 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           byBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
-          if (kickLocationBuilder_ == null) {
-            kickLocation_ = null;
-          } else {
-            kickLocationBuilder_.clear();
+          kickLocation_ = null;
+          if (kickLocationBuilder_ != null) {
+            kickLocationBuilder_.dispose();
+            kickLocationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -7434,35 +6591,35 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.IndirectGoal buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.IndirectGoal result = new proto.gc.SslGcGameEvent.GameEvent.IndirectGoal(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.IndirectGoal result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.byBot_ = byBot_;
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
-            if (kickLocationBuilder_ == null) {
-              result.kickLocation_ = kickLocation_;
-            } else {
-              result.kickLocation_ = kickLocationBuilder_.build();
-            }
+            result.kickLocation_ = kickLocationBuilder_ == null
+                ? kickLocation_
+                : kickLocationBuilder_.build();
             to_bitField0_ |= 0x00000008;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -7521,7 +6678,7 @@ public final class SslGcGameEvent {
           if (other.hasKickLocation()) {
             mergeKickLocation(other.getKickLocation());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -7549,17 +6706,61 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.IndirectGoal parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  byBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                case 34: {
+                  input.readMessage(
+                      getKickLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.IndirectGoal) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -7586,8 +6787,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -7658,8 +6858,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setByBot(int value) {
-          bitField0_ |= 0x00000002;
+          
           byBot_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -7720,11 +6921,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -7738,11 +6939,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -7755,18 +6956,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -7777,13 +6977,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000004);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -7876,11 +7076,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             kickLocation_ = value;
-            onChanged();
           } else {
             kickLocationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -7894,11 +7094,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (kickLocationBuilder_ == null) {
             kickLocation_ = builderForValue.build();
-            onChanged();
           } else {
             kickLocationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -7911,18 +7111,17 @@ public final class SslGcGameEvent {
         public Builder mergeKickLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (kickLocationBuilder_ == null) {
             if (((bitField0_ & 0x00000008) != 0) &&
-                kickLocation_ != null &&
-                kickLocation_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              kickLocation_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(kickLocation_).mergeFrom(value).buildPartial();
+              kickLocation_ != null &&
+              kickLocation_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getKickLocationBuilder().mergeFrom(value);
             } else {
               kickLocation_ = value;
             }
-            onChanged();
           } else {
             kickLocationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -7933,13 +7132,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 kick_location = 4;</code>
          */
         public Builder clearKickLocation() {
-          if (kickLocationBuilder_ == null) {
-            kickLocation_ = null;
-            onChanged();
-          } else {
-            kickLocationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000008);
+          kickLocation_ = null;
+          if (kickLocationBuilder_ != null) {
+            kickLocationBuilder_.dispose();
+            kickLocationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -8022,7 +7221,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new IndirectGoal(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -8189,92 +7399,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private ChippedGoal(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                byBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-              case 34: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000008) != 0)) {
-                  subBuilder = kickLocation_.toBuilder();
-                }
-                kickLocation_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(kickLocation_);
-                  kickLocation_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000008;
-                break;
-              }
-              case 45: {
-                bitField0_ |= 0x00000010;
-                maxBallHeight_ = input.readFloat();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_ChippedGoal_descriptor;
@@ -8290,7 +7414,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that tried to shoot the goal
@@ -8311,13 +7435,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int BY_BOT_FIELD_NUMBER = 2;
-      private int byBot_;
+      private int byBot_ = 0;
       /**
        * <pre>
        * the bot that kicked the ball
@@ -8420,7 +7543,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int MAX_BALL_HEIGHT_FIELD_NUMBER = 5;
-      private float maxBallHeight_;
+      private float maxBallHeight_ = 0F;
       /**
        * <pre>
        * the maximum height [m] of the ball, before it entered the goal and since the last kick [m]
@@ -8491,7 +7614,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000010) != 0)) {
           output.writeFloat(5, maxBallHeight_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -8520,7 +7643,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(5, maxBallHeight_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -8560,7 +7683,7 @@ public final class SslGcGameEvent {
               != java.lang.Float.floatToIntBits(
                   other.getMaxBallHeight())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -8592,7 +7715,7 @@ public final class SslGcGameEvent {
           hash = (53 * hash) + java.lang.Float.floatToIntBits(
               getMaxBallHeight());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -8731,24 +7854,20 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           byBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
-          if (kickLocationBuilder_ == null) {
-            kickLocation_ = null;
-          } else {
-            kickLocationBuilder_.clear();
+          kickLocation_ = null;
+          if (kickLocationBuilder_ != null) {
+            kickLocationBuilder_.dispose();
+            kickLocationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000008);
           maxBallHeight_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000010);
           return this;
         }
 
@@ -8775,39 +7894,39 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.ChippedGoal buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.ChippedGoal result = new proto.gc.SslGcGameEvent.GameEvent.ChippedGoal(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.ChippedGoal result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.byBot_ = byBot_;
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
-            if (kickLocationBuilder_ == null) {
-              result.kickLocation_ = kickLocation_;
-            } else {
-              result.kickLocation_ = kickLocationBuilder_.build();
-            }
+            result.kickLocation_ = kickLocationBuilder_ == null
+                ? kickLocation_
+                : kickLocationBuilder_.build();
             to_bitField0_ |= 0x00000008;
           }
           if (((from_bitField0_ & 0x00000010) != 0)) {
             result.maxBallHeight_ = maxBallHeight_;
             to_bitField0_ |= 0x00000010;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -8869,7 +7988,7 @@ public final class SslGcGameEvent {
           if (other.hasMaxBallHeight()) {
             setMaxBallHeight(other.getMaxBallHeight());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -8897,17 +8016,66 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.ChippedGoal parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  byBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                case 34: {
+                  input.readMessage(
+                      getKickLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+                case 45: {
+                  maxBallHeight_ = input.readFloat();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 45
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.ChippedGoal) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -8934,8 +8102,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -9006,8 +8173,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setByBot(int value) {
-          bitField0_ |= 0x00000002;
+          
           byBot_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -9068,11 +8236,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -9086,11 +8254,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -9103,18 +8271,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -9125,13 +8292,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000004);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -9224,11 +8391,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             kickLocation_ = value;
-            onChanged();
           } else {
             kickLocationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -9242,11 +8409,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (kickLocationBuilder_ == null) {
             kickLocation_ = builderForValue.build();
-            onChanged();
           } else {
             kickLocationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -9259,18 +8426,17 @@ public final class SslGcGameEvent {
         public Builder mergeKickLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (kickLocationBuilder_ == null) {
             if (((bitField0_ & 0x00000008) != 0) &&
-                kickLocation_ != null &&
-                kickLocation_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              kickLocation_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(kickLocation_).mergeFrom(value).buildPartial();
+              kickLocation_ != null &&
+              kickLocation_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getKickLocationBuilder().mergeFrom(value);
             } else {
               kickLocation_ = value;
             }
-            onChanged();
           } else {
             kickLocationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -9281,13 +8447,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 kick_location = 4;</code>
          */
         public Builder clearKickLocation() {
-          if (kickLocationBuilder_ == null) {
-            kickLocation_ = null;
-            onChanged();
-          } else {
-            kickLocationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000008);
+          kickLocation_ = null;
+          if (kickLocationBuilder_ != null) {
+            kickLocationBuilder_.dispose();
+            kickLocationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -9373,8 +8539,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setMaxBallHeight(float value) {
-          bitField0_ |= 0x00000010;
+          
           maxBallHeight_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -9425,7 +8592,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ChippedGoal(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -9565,79 +8743,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private BotTooFastInStop(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                byBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-              case 37: {
-                bitField0_ |= 0x00000008;
-                speed_ = input.readFloat();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_BotTooFastInStop_descriptor;
@@ -9653,7 +8758,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that found guilty
@@ -9674,13 +8779,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int BY_BOT_FIELD_NUMBER = 2;
-      private int byBot_;
+      private int byBot_ = 0;
       /**
        * <pre>
        * the bot that was too fast
@@ -9745,7 +8849,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int SPEED_FIELD_NUMBER = 4;
-      private float speed_;
+      private float speed_ = 0F;
       /**
        * <pre>
        * the bot speed [m/s]
@@ -9807,7 +8911,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000008) != 0)) {
           output.writeFloat(4, speed_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -9832,7 +8936,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(4, speed_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -9867,7 +8971,7 @@ public final class SslGcGameEvent {
               != java.lang.Float.floatToIntBits(
                   other.getSpeed())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -9895,7 +8999,7 @@ public final class SslGcGameEvent {
           hash = (53 * hash) + java.lang.Float.floatToIntBits(
               getSpeed());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -10033,18 +9137,15 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           byBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
           speed_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -10071,31 +9172,33 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.BotTooFastInStop buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.BotTooFastInStop result = new proto.gc.SslGcGameEvent.GameEvent.BotTooFastInStop(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.BotTooFastInStop result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.byBot_ = byBot_;
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.speed_ = speed_;
             to_bitField0_ |= 0x00000008;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -10154,7 +9257,7 @@ public final class SslGcGameEvent {
           if (other.hasSpeed()) {
             setSpeed(other.getSpeed());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -10177,17 +9280,59 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.BotTooFastInStop parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  byBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                case 37: {
+                  speed_ = input.readFloat();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 37
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.BotTooFastInStop) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -10214,8 +9359,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -10286,8 +9430,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setByBot(int value) {
-          bitField0_ |= 0x00000002;
+          
           byBot_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -10348,11 +9493,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -10366,11 +9511,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -10383,18 +9528,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -10405,13 +9549,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000004);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -10497,8 +9641,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setSpeed(float value) {
-          bitField0_ |= 0x00000008;
+          
           speed_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -10549,7 +9694,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BotTooFastInStop(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -10689,79 +9845,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private DefenderTooCloseToKickPoint(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                byBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-              case 37: {
-                bitField0_ |= 0x00000008;
-                distance_ = input.readFloat();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_DefenderTooCloseToKickPoint_descriptor;
@@ -10777,7 +9860,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that was found guilty
@@ -10798,13 +9881,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int BY_BOT_FIELD_NUMBER = 2;
-      private int byBot_;
+      private int byBot_ = 0;
       /**
        * <pre>
        * the bot that violates the distance to the kick point
@@ -10869,7 +9951,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int DISTANCE_FIELD_NUMBER = 4;
-      private float distance_;
+      private float distance_ = 0F;
       /**
        * <pre>
        * the distance [m] from bot to the kick point (including the minimum radius)
@@ -10931,7 +10013,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000008) != 0)) {
           output.writeFloat(4, distance_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -10956,7 +10038,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(4, distance_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -10991,7 +10073,7 @@ public final class SslGcGameEvent {
               != java.lang.Float.floatToIntBits(
                   other.getDistance())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -11019,7 +10101,7 @@ public final class SslGcGameEvent {
           hash = (53 * hash) + java.lang.Float.floatToIntBits(
               getDistance());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -11157,18 +10239,15 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           byBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
           distance_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -11195,31 +10274,33 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.DefenderTooCloseToKickPoint buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.DefenderTooCloseToKickPoint result = new proto.gc.SslGcGameEvent.GameEvent.DefenderTooCloseToKickPoint(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.DefenderTooCloseToKickPoint result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.byBot_ = byBot_;
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.distance_ = distance_;
             to_bitField0_ |= 0x00000008;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -11278,7 +10359,7 @@ public final class SslGcGameEvent {
           if (other.hasDistance()) {
             setDistance(other.getDistance());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -11301,17 +10382,59 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.DefenderTooCloseToKickPoint parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  byBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                case 37: {
+                  distance_ = input.readFloat();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 37
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.DefenderTooCloseToKickPoint) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -11338,8 +10461,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -11410,8 +10532,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setByBot(int value) {
-          bitField0_ |= 0x00000002;
+          
           byBot_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -11472,11 +10595,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -11490,11 +10613,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -11507,18 +10630,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -11529,13 +10651,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000004);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -11621,8 +10743,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setDistance(float value) {
-          bitField0_ |= 0x00000008;
+          
           distance_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -11673,7 +10796,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DefenderTooCloseToKickPoint(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -11854,82 +10988,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private BotCrashDrawn(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                bitField0_ |= 0x00000001;
-                botYellow_ = input.readUInt32();
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                botBlue_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-              case 37: {
-                bitField0_ |= 0x00000008;
-                crashSpeed_ = input.readFloat();
-                break;
-              }
-              case 45: {
-                bitField0_ |= 0x00000010;
-                speedDiff_ = input.readFloat();
-                break;
-              }
-              case 53: {
-                bitField0_ |= 0x00000020;
-                crashAngle_ = input.readFloat();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_BotCrashDrawn_descriptor;
@@ -11945,7 +11003,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BOT_YELLOW_FIELD_NUMBER = 1;
-      private int botYellow_;
+      private int botYellow_ = 0;
       /**
        * <pre>
        * the bot of the yellow team
@@ -11972,7 +11030,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int BOT_BLUE_FIELD_NUMBER = 2;
-      private int botBlue_;
+      private int botBlue_ = 0;
       /**
        * <pre>
        * the bot of the blue team
@@ -12037,7 +11095,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int CRASH_SPEED_FIELD_NUMBER = 4;
-      private float crashSpeed_;
+      private float crashSpeed_ = 0F;
       /**
        * <pre>
        * the calculated crash speed [m/s] of the two bots
@@ -12064,7 +11122,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int SPEED_DIFF_FIELD_NUMBER = 5;
-      private float speedDiff_;
+      private float speedDiff_ = 0F;
       /**
        * <pre>
        * the difference [m/s] of the velocity of the two bots
@@ -12091,7 +11149,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int CRASH_ANGLE_FIELD_NUMBER = 6;
-      private float crashAngle_;
+      private float crashAngle_ = 0F;
       /**
        * <pre>
        * the angle [rad] in the range [0, π] of the bot velocity vectors
@@ -12159,7 +11217,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000020) != 0)) {
           output.writeFloat(6, crashAngle_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -12192,7 +11250,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(6, crashAngle_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -12240,7 +11298,7 @@ public final class SslGcGameEvent {
               != java.lang.Float.floatToIntBits(
                   other.getCrashAngle())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -12278,7 +11336,7 @@ public final class SslGcGameEvent {
           hash = (53 * hash) + java.lang.Float.floatToIntBits(
               getCrashAngle());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -12416,22 +11474,17 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           botYellow_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           botBlue_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
           crashSpeed_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000008);
           speedDiff_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000010);
           crashAngle_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000020);
           return this;
         }
 
@@ -12458,6 +11511,12 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.BotCrashDrawn buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.BotCrashDrawn result = new proto.gc.SslGcGameEvent.GameEvent.BotCrashDrawn(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.BotCrashDrawn result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -12469,11 +11528,9 @@ public final class SslGcGameEvent {
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
@@ -12488,9 +11545,7 @@ public final class SslGcGameEvent {
             result.crashAngle_ = crashAngle_;
             to_bitField0_ |= 0x00000020;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -12555,7 +11610,7 @@ public final class SslGcGameEvent {
           if (other.hasCrashAngle()) {
             setCrashAngle(other.getCrashAngle());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -12575,17 +11630,62 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.BotCrashDrawn parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  botYellow_ = input.readUInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+                case 16: {
+                  botBlue_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                case 37: {
+                  crashSpeed_ = input.readFloat();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 37
+                case 45: {
+                  speedDiff_ = input.readFloat();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 45
+                case 53: {
+                  crashAngle_ = input.readFloat();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 53
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.BotCrashDrawn) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -12625,8 +11725,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setBotYellow(int value) {
-          bitField0_ |= 0x00000001;
+          
           botYellow_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -12680,8 +11781,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setBotBlue(int value) {
-          bitField0_ |= 0x00000002;
+          
           botBlue_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -12742,11 +11844,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -12760,11 +11862,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -12777,18 +11879,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -12799,13 +11900,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000004);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -12891,8 +11992,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setCrashSpeed(float value) {
-          bitField0_ |= 0x00000008;
+          
           crashSpeed_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -12946,8 +12048,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setSpeedDiff(float value) {
-          bitField0_ |= 0x00000010;
+          
           speedDiff_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -13007,8 +12110,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setCrashAngle(float value) {
-          bitField0_ |= 0x00000020;
+          
           crashAngle_ = value;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -13061,7 +12165,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BotCrashDrawn(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -13262,94 +12377,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private BotCrashUnique(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                violator_ = input.readUInt32();
-                break;
-              }
-              case 24: {
-                bitField0_ |= 0x00000004;
-                victim_ = input.readUInt32();
-                break;
-              }
-              case 34: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000008) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000008;
-                break;
-              }
-              case 45: {
-                bitField0_ |= 0x00000010;
-                crashSpeed_ = input.readFloat();
-                break;
-              }
-              case 53: {
-                bitField0_ |= 0x00000020;
-                speedDiff_ = input.readFloat();
-                break;
-              }
-              case 61: {
-                bitField0_ |= 0x00000040;
-                crashAngle_ = input.readFloat();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_BotCrashUnique_descriptor;
@@ -13365,7 +12392,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that caused the crash
@@ -13386,13 +12413,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int VIOLATOR_FIELD_NUMBER = 2;
-      private int violator_;
+      private int violator_ = 0;
       /**
        * <pre>
        * the bot that caused the crash
@@ -13419,7 +12445,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int VICTIM_FIELD_NUMBER = 3;
-      private int victim_;
+      private int victim_ = 0;
       /**
        * <pre>
        * the bot of the opposite team that was involved in the crash
@@ -13484,7 +12510,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int CRASH_SPEED_FIELD_NUMBER = 5;
-      private float crashSpeed_;
+      private float crashSpeed_ = 0F;
       /**
        * <pre>
        * the calculated crash speed vector [m/s] of the two bots
@@ -13511,7 +12537,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int SPEED_DIFF_FIELD_NUMBER = 6;
-      private float speedDiff_;
+      private float speedDiff_ = 0F;
       /**
        * <pre>
        * the difference [m/s] of the velocity of the two bots
@@ -13538,7 +12564,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int CRASH_ANGLE_FIELD_NUMBER = 7;
-      private float crashAngle_;
+      private float crashAngle_ = 0F;
       /**
        * <pre>
        * the angle [rad] in the range [0, π] of the bot velocity vectors
@@ -13613,7 +12639,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000040) != 0)) {
           output.writeFloat(7, crashAngle_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -13650,7 +12676,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(7, crashAngle_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -13702,7 +12728,7 @@ public final class SslGcGameEvent {
               != java.lang.Float.floatToIntBits(
                   other.getCrashAngle())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -13744,7 +12770,7 @@ public final class SslGcGameEvent {
           hash = (53 * hash) + java.lang.Float.floatToIntBits(
               getCrashAngle());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -13882,24 +12908,18 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           violator_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
           victim_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000004);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000008);
           crashSpeed_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000010);
           speedDiff_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000020);
           crashAngle_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000040);
           return this;
         }
 
@@ -13926,12 +12946,18 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.BotCrashUnique buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.BotCrashUnique result = new proto.gc.SslGcGameEvent.GameEvent.BotCrashUnique(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.BotCrashUnique result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.violator_ = violator_;
             to_bitField0_ |= 0x00000002;
@@ -13941,11 +12967,9 @@ public final class SslGcGameEvent {
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000008;
           }
           if (((from_bitField0_ & 0x00000010) != 0)) {
@@ -13960,9 +12984,7 @@ public final class SslGcGameEvent {
             result.crashAngle_ = crashAngle_;
             to_bitField0_ |= 0x00000040;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -14030,7 +13052,7 @@ public final class SslGcGameEvent {
           if (other.hasCrashAngle()) {
             setCrashAngle(other.getCrashAngle());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -14053,17 +13075,74 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.BotCrashUnique parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  violator_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 24: {
+                  victim_ = input.readUInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+                case 34: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+                case 45: {
+                  crashSpeed_ = input.readFloat();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 45
+                case 53: {
+                  speedDiff_ = input.readFloat();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 53
+                case 61: {
+                  crashAngle_ = input.readFloat();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 61
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.BotCrashUnique) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -14090,8 +13169,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -14162,8 +13240,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setViolator(int value) {
-          bitField0_ |= 0x00000002;
+          
           violator_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -14217,8 +13296,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setVictim(int value) {
-          bitField0_ |= 0x00000004;
+          
           victim_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -14279,11 +13359,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -14297,11 +13377,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -14314,18 +13394,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000008) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -14336,13 +13415,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 4;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000008);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -14428,8 +13507,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setCrashSpeed(float value) {
-          bitField0_ |= 0x00000010;
+          
           crashSpeed_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -14483,8 +13563,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setSpeedDiff(float value) {
-          bitField0_ |= 0x00000020;
+          
           speedDiff_ = value;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -14544,8 +13625,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setCrashAngle(float value) {
-          bitField0_ |= 0x00000040;
+          
           crashAngle_ = value;
+          bitField0_ |= 0x00000040;
           onChanged();
           return this;
         }
@@ -14598,7 +13680,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BotCrashUnique(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -14757,84 +13850,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private BotPushedBot(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                violator_ = input.readUInt32();
-                break;
-              }
-              case 24: {
-                bitField0_ |= 0x00000004;
-                victim_ = input.readUInt32();
-                break;
-              }
-              case 34: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000008) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000008;
-                break;
-              }
-              case 45: {
-                bitField0_ |= 0x00000010;
-                pushedDistance_ = input.readFloat();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_BotPushedBot_descriptor;
@@ -14850,7 +13865,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that pushed the other team
@@ -14871,13 +13886,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int VIOLATOR_FIELD_NUMBER = 2;
-      private int violator_;
+      private int violator_ = 0;
       /**
        * <pre>
        * the bot that pushed the other bot
@@ -14904,7 +13918,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int VICTIM_FIELD_NUMBER = 3;
-      private int victim_;
+      private int victim_ = 0;
       /**
        * <pre>
        * the bot of the opposite team that was pushed
@@ -14969,7 +13983,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int PUSHED_DISTANCE_FIELD_NUMBER = 5;
-      private float pushedDistance_;
+      private float pushedDistance_ = 0F;
       /**
        * <pre>
        * the pushed distance [m]
@@ -15034,7 +14048,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000010) != 0)) {
           output.writeFloat(5, pushedDistance_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -15063,7 +14077,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(5, pushedDistance_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -15103,7 +14117,7 @@ public final class SslGcGameEvent {
               != java.lang.Float.floatToIntBits(
                   other.getPushedDistance())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -15135,7 +14149,7 @@ public final class SslGcGameEvent {
           hash = (53 * hash) + java.lang.Float.floatToIntBits(
               getPushedDistance());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -15273,20 +14287,16 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           violator_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
           victim_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000004);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000008);
           pushedDistance_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000010);
           return this;
         }
 
@@ -15313,12 +14323,18 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.BotPushedBot buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.BotPushedBot result = new proto.gc.SslGcGameEvent.GameEvent.BotPushedBot(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.BotPushedBot result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.violator_ = violator_;
             to_bitField0_ |= 0x00000002;
@@ -15328,20 +14344,16 @@ public final class SslGcGameEvent {
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000008;
           }
           if (((from_bitField0_ & 0x00000010) != 0)) {
             result.pushedDistance_ = pushedDistance_;
             to_bitField0_ |= 0x00000010;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -15403,7 +14415,7 @@ public final class SslGcGameEvent {
           if (other.hasPushedDistance()) {
             setPushedDistance(other.getPushedDistance());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -15426,17 +14438,64 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.BotPushedBot parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  violator_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 24: {
+                  victim_ = input.readUInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+                case 34: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+                case 45: {
+                  pushedDistance_ = input.readFloat();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 45
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.BotPushedBot) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -15463,8 +14522,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -15535,8 +14593,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setViolator(int value) {
-          bitField0_ |= 0x00000002;
+          
           violator_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -15590,8 +14649,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setVictim(int value) {
-          bitField0_ |= 0x00000004;
+          
           victim_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -15652,11 +14712,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -15670,11 +14730,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -15687,18 +14747,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000008) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -15709,13 +14768,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 4;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000008);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -15801,8 +14860,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setPushedDistance(float value) {
-          bitField0_ |= 0x00000010;
+          
           pushedDistance_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -15853,7 +14913,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BotPushedBot(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -16001,87 +15072,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private BotTippedOver(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                byBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-              case 34: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000008) != 0)) {
-                  subBuilder = ballLocation_.toBuilder();
-                }
-                ballLocation_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(ballLocation_);
-                  ballLocation_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000008;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_BotTippedOver_descriptor;
@@ -16097,7 +15087,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that found guilty
@@ -16118,13 +15108,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int BY_BOT_FIELD_NUMBER = 2;
-      private int byBot_;
+      private int byBot_ = 0;
       /**
        * <pre>
        * the bot that tipped over
@@ -16268,7 +15257,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000008) != 0)) {
           output.writeMessage(4, getBallLocation());
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -16293,7 +15282,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(4, getBallLocation());
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -16327,7 +15316,7 @@ public final class SslGcGameEvent {
           if (!getBallLocation()
               .equals(other.getBallLocation())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -16354,7 +15343,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + BALL_LOCATION_FIELD_NUMBER;
           hash = (53 * hash) + getBallLocation().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -16493,22 +15482,19 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           byBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
-          if (ballLocationBuilder_ == null) {
-            ballLocation_ = null;
-          } else {
-            ballLocationBuilder_.clear();
+          ballLocation_ = null;
+          if (ballLocationBuilder_ != null) {
+            ballLocationBuilder_.dispose();
+            ballLocationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -16535,35 +15521,35 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.BotTippedOver buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.BotTippedOver result = new proto.gc.SslGcGameEvent.GameEvent.BotTippedOver(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.BotTippedOver result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.byBot_ = byBot_;
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
-            if (ballLocationBuilder_ == null) {
-              result.ballLocation_ = ballLocation_;
-            } else {
-              result.ballLocation_ = ballLocationBuilder_.build();
-            }
+            result.ballLocation_ = ballLocationBuilder_ == null
+                ? ballLocation_
+                : ballLocationBuilder_.build();
             to_bitField0_ |= 0x00000008;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -16622,7 +15608,7 @@ public final class SslGcGameEvent {
           if (other.hasBallLocation()) {
             mergeBallLocation(other.getBallLocation());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -16650,17 +15636,61 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.BotTippedOver parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  byBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                case 34: {
+                  input.readMessage(
+                      getBallLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.BotTippedOver) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -16687,8 +15717,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -16759,8 +15788,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setByBot(int value) {
-          bitField0_ |= 0x00000002;
+          
           byBot_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -16821,11 +15851,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -16839,11 +15869,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -16856,18 +15886,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -16878,13 +15907,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000004);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -16977,11 +16006,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             ballLocation_ = value;
-            onChanged();
           } else {
             ballLocationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -16995,11 +16024,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (ballLocationBuilder_ == null) {
             ballLocation_ = builderForValue.build();
-            onChanged();
           } else {
             ballLocationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -17012,18 +16041,17 @@ public final class SslGcGameEvent {
         public Builder mergeBallLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (ballLocationBuilder_ == null) {
             if (((bitField0_ & 0x00000008) != 0) &&
-                ballLocation_ != null &&
-                ballLocation_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              ballLocation_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(ballLocation_).mergeFrom(value).buildPartial();
+              ballLocation_ != null &&
+              ballLocation_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getBallLocationBuilder().mergeFrom(value);
             } else {
               ballLocation_ = value;
             }
-            onChanged();
           } else {
             ballLocationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -17034,13 +16062,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 ball_location = 4;</code>
          */
         public Builder clearBallLocation() {
-          if (ballLocationBuilder_ == null) {
-            ballLocation_ = null;
-            onChanged();
-          } else {
-            ballLocationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000008);
+          ballLocation_ = null;
+          if (ballLocationBuilder_ != null) {
+            ballLocationBuilder_.dispose();
+            ballLocationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -17123,7 +16151,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BotTippedOver(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -17263,79 +16302,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private DefenderInDefenseArea(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                byBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-              case 37: {
-                bitField0_ |= 0x00000008;
-                distance_ = input.readFloat();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_DefenderInDefenseArea_descriptor;
@@ -17351,7 +16317,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that found guilty
@@ -17372,13 +16338,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int BY_BOT_FIELD_NUMBER = 2;
-      private int byBot_;
+      private int byBot_ = 0;
       /**
        * <pre>
        * the bot that is inside the penalty area
@@ -17443,7 +16408,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int DISTANCE_FIELD_NUMBER = 4;
-      private float distance_;
+      private float distance_ = 0F;
       /**
        * <pre>
        * the distance [m] from bot case to the nearest point outside the defense area
@@ -17505,7 +16470,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000008) != 0)) {
           output.writeFloat(4, distance_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -17530,7 +16495,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(4, distance_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -17565,7 +16530,7 @@ public final class SslGcGameEvent {
               != java.lang.Float.floatToIntBits(
                   other.getDistance())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -17593,7 +16558,7 @@ public final class SslGcGameEvent {
           hash = (53 * hash) + java.lang.Float.floatToIntBits(
               getDistance());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -17731,18 +16696,15 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           byBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
           distance_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -17769,31 +16731,33 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseArea buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseArea result = new proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseArea(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseArea result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.byBot_ = byBot_;
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.distance_ = distance_;
             to_bitField0_ |= 0x00000008;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -17852,7 +16816,7 @@ public final class SslGcGameEvent {
           if (other.hasDistance()) {
             setDistance(other.getDistance());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -17875,17 +16839,59 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseArea parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  byBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                case 37: {
+                  distance_ = input.readFloat();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 37
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseArea) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -17912,8 +16918,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -17984,8 +16989,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setByBot(int value) {
-          bitField0_ |= 0x00000002;
+          
           byBot_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -18046,11 +17052,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -18064,11 +17070,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -18081,18 +17087,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -18103,13 +17108,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000004);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -18195,8 +17200,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setDistance(float value) {
-          bitField0_ |= 0x00000008;
+          
           distance_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -18247,7 +17253,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DefenderInDefenseArea(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -18414,92 +17431,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private DefenderInDefenseAreaPartially(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                byBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-              case 37: {
-                bitField0_ |= 0x00000008;
-                distance_ = input.readFloat();
-                break;
-              }
-              case 42: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000010) != 0)) {
-                  subBuilder = ballLocation_.toBuilder();
-                }
-                ballLocation_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(ballLocation_);
-                  ballLocation_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000010;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_DefenderInDefenseAreaPartially_descriptor;
@@ -18515,7 +17446,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that found guilty
@@ -18536,13 +17467,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int BY_BOT_FIELD_NUMBER = 2;
-      private int byBot_;
+      private int byBot_ = 0;
       /**
        * <pre>
        * the bot that is partially inside the penalty area
@@ -18607,7 +17537,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int DISTANCE_FIELD_NUMBER = 4;
-      private float distance_;
+      private float distance_ = 0F;
       /**
        * <pre>
        * the distance [m] that the bot is inside the penalty area
@@ -18716,7 +17646,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000010) != 0)) {
           output.writeMessage(5, getBallLocation());
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -18745,7 +17675,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(5, getBallLocation());
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -18785,7 +17715,7 @@ public final class SslGcGameEvent {
           if (!getBallLocation()
               .equals(other.getBallLocation())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -18817,7 +17747,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + BALL_LOCATION_FIELD_NUMBER;
           hash = (53 * hash) + getBallLocation().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -18956,24 +17886,20 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           byBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
           distance_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000008);
-          if (ballLocationBuilder_ == null) {
-            ballLocation_ = null;
-          } else {
-            ballLocationBuilder_.clear();
+          ballLocation_ = null;
+          if (ballLocationBuilder_ != null) {
+            ballLocationBuilder_.dispose();
+            ballLocationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000010);
           return this;
         }
 
@@ -19000,22 +17926,26 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseAreaPartially buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseAreaPartially result = new proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseAreaPartially(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseAreaPartially result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.byBot_ = byBot_;
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
@@ -19023,16 +17953,12 @@ public final class SslGcGameEvent {
             to_bitField0_ |= 0x00000008;
           }
           if (((from_bitField0_ & 0x00000010) != 0)) {
-            if (ballLocationBuilder_ == null) {
-              result.ballLocation_ = ballLocation_;
-            } else {
-              result.ballLocation_ = ballLocationBuilder_.build();
-            }
+            result.ballLocation_ = ballLocationBuilder_ == null
+                ? ballLocation_
+                : ballLocationBuilder_.build();
             to_bitField0_ |= 0x00000010;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -19094,7 +18020,7 @@ public final class SslGcGameEvent {
           if (other.hasBallLocation()) {
             mergeBallLocation(other.getBallLocation());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -19122,17 +18048,66 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseAreaPartially parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  byBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                case 37: {
+                  distance_ = input.readFloat();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 37
+                case 42: {
+                  input.readMessage(
+                      getBallLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.DefenderInDefenseAreaPartially) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -19159,8 +18134,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -19231,8 +18205,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setByBot(int value) {
-          bitField0_ |= 0x00000002;
+          
           byBot_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -19293,11 +18268,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -19311,11 +18286,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -19328,18 +18303,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -19350,13 +18324,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000004);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -19442,8 +18416,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setDistance(float value) {
-          bitField0_ |= 0x00000008;
+          
           distance_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -19504,11 +18479,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             ballLocation_ = value;
-            onChanged();
           } else {
             ballLocationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000010;
+          onChanged();
           return this;
         }
         /**
@@ -19522,11 +18497,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (ballLocationBuilder_ == null) {
             ballLocation_ = builderForValue.build();
-            onChanged();
           } else {
             ballLocationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000010;
+          onChanged();
           return this;
         }
         /**
@@ -19539,18 +18514,17 @@ public final class SslGcGameEvent {
         public Builder mergeBallLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (ballLocationBuilder_ == null) {
             if (((bitField0_ & 0x00000010) != 0) &&
-                ballLocation_ != null &&
-                ballLocation_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              ballLocation_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(ballLocation_).mergeFrom(value).buildPartial();
+              ballLocation_ != null &&
+              ballLocation_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getBallLocationBuilder().mergeFrom(value);
             } else {
               ballLocation_ = value;
             }
-            onChanged();
           } else {
             ballLocationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000010;
+          onChanged();
           return this;
         }
         /**
@@ -19561,13 +18535,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 ball_location = 5;</code>
          */
         public Builder clearBallLocation() {
-          if (ballLocationBuilder_ == null) {
-            ballLocation_ = null;
-            onChanged();
-          } else {
-            ballLocationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000010);
+          ballLocation_ = null;
+          if (ballLocationBuilder_ != null) {
+            ballLocationBuilder_.dispose();
+            ballLocationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -19650,7 +18624,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DefenderInDefenseAreaPartially(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -19790,79 +18775,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private AttackerTouchedBallInDefenseArea(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                byBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-              case 37: {
-                bitField0_ |= 0x00000008;
-                distance_ = input.readFloat();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_AttackerTouchedBallInDefenseArea_descriptor;
@@ -19878,7 +18790,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that found guilty
@@ -19899,13 +18811,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int BY_BOT_FIELD_NUMBER = 2;
-      private int byBot_;
+      private int byBot_ = 0;
       /**
        * <pre>
        * the bot that is inside the penalty area
@@ -19970,7 +18881,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int DISTANCE_FIELD_NUMBER = 4;
-      private float distance_;
+      private float distance_ = 0F;
       /**
        * <pre>
        * the distance [m] that the bot is inside the penalty area
@@ -20032,7 +18943,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000008) != 0)) {
           output.writeFloat(4, distance_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -20057,7 +18968,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(4, distance_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -20092,7 +19003,7 @@ public final class SslGcGameEvent {
               != java.lang.Float.floatToIntBits(
                   other.getDistance())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -20120,7 +19031,7 @@ public final class SslGcGameEvent {
           hash = (53 * hash) + java.lang.Float.floatToIntBits(
               getDistance());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -20258,18 +19169,15 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           byBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
           distance_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -20296,31 +19204,33 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedBallInDefenseArea buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedBallInDefenseArea result = new proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedBallInDefenseArea(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedBallInDefenseArea result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.byBot_ = byBot_;
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.distance_ = distance_;
             to_bitField0_ |= 0x00000008;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -20379,7 +19289,7 @@ public final class SslGcGameEvent {
           if (other.hasDistance()) {
             setDistance(other.getDistance());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -20402,17 +19312,59 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedBallInDefenseArea parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  byBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                case 37: {
+                  distance_ = input.readFloat();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 37
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedBallInDefenseArea) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -20439,8 +19391,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -20511,8 +19462,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setByBot(int value) {
-          bitField0_ |= 0x00000002;
+          
           byBot_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -20573,11 +19525,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -20591,11 +19543,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -20608,18 +19560,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -20630,13 +19581,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000004);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -20722,8 +19673,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setDistance(float value) {
-          bitField0_ |= 0x00000008;
+          
           distance_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -20774,7 +19726,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AttackerTouchedBallInDefenseArea(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -20933,84 +19896,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private BotKickedBallTooFast(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                byBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-              case 37: {
-                bitField0_ |= 0x00000008;
-                initialBallSpeed_ = input.readFloat();
-                break;
-              }
-              case 40: {
-                bitField0_ |= 0x00000010;
-                chipped_ = input.readBool();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_BotKickedBallTooFast_descriptor;
@@ -21026,7 +19911,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that found guilty
@@ -21047,13 +19932,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int BY_BOT_FIELD_NUMBER = 2;
-      private int byBot_;
+      private int byBot_ = 0;
       /**
        * <pre>
        * the bot that kicked too fast
@@ -21118,7 +20002,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int INITIAL_BALL_SPEED_FIELD_NUMBER = 4;
-      private float initialBallSpeed_;
+      private float initialBallSpeed_ = 0F;
       /**
        * <pre>
        * the absolute initial ball speed (kick speed) [m/s]
@@ -21145,7 +20029,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int CHIPPED_FIELD_NUMBER = 5;
-      private boolean chipped_;
+      private boolean chipped_ = false;
       /**
        * <pre>
        * was the ball chipped?
@@ -21210,7 +20094,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000010) != 0)) {
           output.writeBool(5, chipped_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -21239,7 +20123,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(5, chipped_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -21279,7 +20163,7 @@ public final class SslGcGameEvent {
           if (getChipped()
               != other.getChipped()) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -21312,7 +20196,7 @@ public final class SslGcGameEvent {
           hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
               getChipped());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -21450,20 +20334,16 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           byBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
           initialBallSpeed_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000008);
           chipped_ = false;
-          bitField0_ = (bitField0_ & ~0x00000010);
           return this;
         }
 
@@ -21490,22 +20370,26 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.BotKickedBallTooFast buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.BotKickedBallTooFast result = new proto.gc.SslGcGameEvent.GameEvent.BotKickedBallTooFast(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.BotKickedBallTooFast result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.byBot_ = byBot_;
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
@@ -21516,9 +20400,7 @@ public final class SslGcGameEvent {
             result.chipped_ = chipped_;
             to_bitField0_ |= 0x00000010;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -21580,7 +20462,7 @@ public final class SslGcGameEvent {
           if (other.hasChipped()) {
             setChipped(other.getChipped());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -21603,17 +20485,64 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.BotKickedBallTooFast parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  byBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                case 37: {
+                  initialBallSpeed_ = input.readFloat();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 37
+                case 40: {
+                  chipped_ = input.readBool();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.BotKickedBallTooFast) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -21640,8 +20569,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -21712,8 +20640,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setByBot(int value) {
-          bitField0_ |= 0x00000002;
+          
           byBot_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -21774,11 +20703,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -21792,11 +20721,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -21809,18 +20738,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -21831,13 +20759,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000004);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -21923,8 +20851,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setInitialBallSpeed(float value) {
-          bitField0_ |= 0x00000008;
+          
           initialBallSpeed_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -21978,8 +20907,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setChipped(boolean value) {
-          bitField0_ |= 0x00000010;
+          
           chipped_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -22030,7 +20960,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BotKickedBallTooFast(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -22178,87 +21119,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private BotDribbledBallTooFar(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                byBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                  subBuilder = start_.toBuilder();
-                }
-                start_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(start_);
-                  start_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-              case 34: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000008) != 0)) {
-                  subBuilder = end_.toBuilder();
-                }
-                end_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(end_);
-                  end_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000008;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_BotDribbledBallTooFar_descriptor;
@@ -22274,7 +21134,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that found guilty
@@ -22295,13 +21155,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int BY_BOT_FIELD_NUMBER = 2;
-      private int byBot_;
+      private int byBot_ = 0;
       /**
        * <pre>
        * the bot that dribbled too far
@@ -22445,7 +21304,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000008) != 0)) {
           output.writeMessage(4, getEnd());
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -22470,7 +21329,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(4, getEnd());
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -22504,7 +21363,7 @@ public final class SslGcGameEvent {
           if (!getEnd()
               .equals(other.getEnd())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -22531,7 +21390,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + END_FIELD_NUMBER;
           hash = (53 * hash) + getEnd().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -22670,22 +21529,19 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           byBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (startBuilder_ == null) {
-            start_ = null;
-          } else {
-            startBuilder_.clear();
+          start_ = null;
+          if (startBuilder_ != null) {
+            startBuilder_.dispose();
+            startBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
-          if (endBuilder_ == null) {
-            end_ = null;
-          } else {
-            endBuilder_.clear();
+          end_ = null;
+          if (endBuilder_ != null) {
+            endBuilder_.dispose();
+            endBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -22712,35 +21568,35 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.BotDribbledBallTooFar buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.BotDribbledBallTooFar result = new proto.gc.SslGcGameEvent.GameEvent.BotDribbledBallTooFar(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.BotDribbledBallTooFar result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.byBot_ = byBot_;
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            if (startBuilder_ == null) {
-              result.start_ = start_;
-            } else {
-              result.start_ = startBuilder_.build();
-            }
+            result.start_ = startBuilder_ == null
+                ? start_
+                : startBuilder_.build();
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
-            if (endBuilder_ == null) {
-              result.end_ = end_;
-            } else {
-              result.end_ = endBuilder_.build();
-            }
+            result.end_ = endBuilder_ == null
+                ? end_
+                : endBuilder_.build();
             to_bitField0_ |= 0x00000008;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -22799,7 +21655,7 @@ public final class SslGcGameEvent {
           if (other.hasEnd()) {
             mergeEnd(other.getEnd());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -22827,17 +21683,61 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.BotDribbledBallTooFar parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  byBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getStartFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                case 34: {
+                  input.readMessage(
+                      getEndFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.BotDribbledBallTooFar) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -22864,8 +21764,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -22936,8 +21835,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setByBot(int value) {
-          bitField0_ |= 0x00000002;
+          
           byBot_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -22998,11 +21898,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             start_ = value;
-            onChanged();
           } else {
             startBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -23016,11 +21916,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (startBuilder_ == null) {
             start_ = builderForValue.build();
-            onChanged();
           } else {
             startBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -23033,18 +21933,17 @@ public final class SslGcGameEvent {
         public Builder mergeStart(proto.gc.SslGcGeometry.Vector2 value) {
           if (startBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
-                start_ != null &&
-                start_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              start_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(start_).mergeFrom(value).buildPartial();
+              start_ != null &&
+              start_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getStartBuilder().mergeFrom(value);
             } else {
               start_ = value;
             }
-            onChanged();
           } else {
             startBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -23055,13 +21954,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 start = 3;</code>
          */
         public Builder clearStart() {
-          if (startBuilder_ == null) {
-            start_ = null;
-            onChanged();
-          } else {
-            startBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000004);
+          start_ = null;
+          if (startBuilder_ != null) {
+            startBuilder_.dispose();
+            startBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -23154,11 +22053,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             end_ = value;
-            onChanged();
           } else {
             endBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -23172,11 +22071,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (endBuilder_ == null) {
             end_ = builderForValue.build();
-            onChanged();
           } else {
             endBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -23189,18 +22088,17 @@ public final class SslGcGameEvent {
         public Builder mergeEnd(proto.gc.SslGcGeometry.Vector2 value) {
           if (endBuilder_ == null) {
             if (((bitField0_ & 0x00000008) != 0) &&
-                end_ != null &&
-                end_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              end_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(end_).mergeFrom(value).buildPartial();
+              end_ != null &&
+              end_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getEndBuilder().mergeFrom(value);
             } else {
               end_ = value;
             }
-            onChanged();
           } else {
             endBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -23211,13 +22109,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 end = 4;</code>
          */
         public Builder clearEnd() {
-          if (endBuilder_ == null) {
-            end_ = null;
-            onChanged();
-          } else {
-            endBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000008);
+          end_ = null;
+          if (endBuilder_ != null) {
+            endBuilder_.dispose();
+            endBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -23300,7 +22198,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BotDribbledBallTooFar(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -23440,79 +22349,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private AttackerTouchedOpponentInDefenseArea(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                byBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000008) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000008;
-                break;
-              }
-              case 32: {
-                bitField0_ |= 0x00000004;
-                victim_ = input.readUInt32();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_AttackerTouchedOpponentInDefenseArea_descriptor;
@@ -23528,7 +22364,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that found guilty
@@ -23549,13 +22385,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int BY_BOT_FIELD_NUMBER = 2;
-      private int byBot_;
+      private int byBot_ = 0;
       /**
        * <pre>
        * the bot that touched the opponent robot
@@ -23582,7 +22417,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int VICTIM_FIELD_NUMBER = 4;
-      private int victim_;
+      private int victim_ = 0;
       /**
        * <pre>
        * the bot of the opposite team that was touched
@@ -23682,7 +22517,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000004) != 0)) {
           output.writeUInt32(4, victim_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -23707,7 +22542,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(4, victim_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -23741,7 +22576,7 @@ public final class SslGcGameEvent {
           if (!getLocation()
               .equals(other.getLocation())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -23768,7 +22603,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + LOCATION_FIELD_NUMBER;
           hash = (53 * hash) + getLocation().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -23906,18 +22741,15 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           byBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
           victim_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000004);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -23944,12 +22776,18 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedOpponentInDefenseArea buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedOpponentInDefenseArea result = new proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedOpponentInDefenseArea(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedOpponentInDefenseArea result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.byBot_ = byBot_;
             to_bitField0_ |= 0x00000002;
@@ -23959,16 +22797,12 @@ public final class SslGcGameEvent {
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000008;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -24027,7 +22861,7 @@ public final class SslGcGameEvent {
           if (other.hasLocation()) {
             mergeLocation(other.getLocation());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -24050,17 +22884,59 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedOpponentInDefenseArea parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  byBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 26
+                case 32: {
+                  victim_ = input.readUInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 32
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.AttackerTouchedOpponentInDefenseArea) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -24087,8 +22963,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -24159,8 +23034,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setByBot(int value) {
-          bitField0_ |= 0x00000002;
+          
           byBot_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -24214,8 +23090,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setVictim(int value) {
-          bitField0_ |= 0x00000004;
+          
           victim_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -24276,11 +23153,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -24294,11 +23171,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -24311,18 +23188,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000008) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -24333,13 +23209,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000008);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -24422,7 +23298,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AttackerTouchedOpponentInDefenseArea(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -24543,74 +23430,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private AttackerDoubleTouchedBall(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                byBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_AttackerDoubleTouchedBall_descriptor;
@@ -24626,7 +23445,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that found guilty
@@ -24647,13 +23466,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int BY_BOT_FIELD_NUMBER = 2;
-      private int byBot_;
+      private int byBot_ = 0;
       /**
        * <pre>
        * the bot that touched the ball twice
@@ -24750,7 +23568,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000004) != 0)) {
           output.writeMessage(3, getLocation());
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -24771,7 +23589,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(3, getLocation());
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -24800,7 +23618,7 @@ public final class SslGcGameEvent {
           if (!getLocation()
               .equals(other.getLocation())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -24823,7 +23641,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + LOCATION_FIELD_NUMBER;
           hash = (53 * hash) + getLocation().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -24961,16 +23779,14 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           byBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
           return this;
         }
 
@@ -24997,27 +23813,29 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.AttackerDoubleTouchedBall buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.AttackerDoubleTouchedBall result = new proto.gc.SslGcGameEvent.GameEvent.AttackerDoubleTouchedBall(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.AttackerDoubleTouchedBall result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.byBot_ = byBot_;
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000004;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -25073,7 +23891,7 @@ public final class SslGcGameEvent {
           if (other.hasLocation()) {
             mergeLocation(other.getLocation());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -25096,17 +23914,54 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.AttackerDoubleTouchedBall parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  byBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.AttackerDoubleTouchedBall) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -25133,8 +23988,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -25205,8 +24059,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setByBot(int value) {
-          bitField0_ |= 0x00000002;
+          
           byBot_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -25267,11 +24122,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -25285,11 +24140,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -25302,18 +24157,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -25324,13 +24178,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000004);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -25413,7 +24267,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AttackerDoubleTouchedBall(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -25580,92 +24445,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private AttackerTooCloseToDefenseArea(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                byBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-              case 37: {
-                bitField0_ |= 0x00000008;
-                distance_ = input.readFloat();
-                break;
-              }
-              case 42: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000010) != 0)) {
-                  subBuilder = ballLocation_.toBuilder();
-                }
-                ballLocation_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(ballLocation_);
-                  ballLocation_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000010;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_AttackerTooCloseToDefenseArea_descriptor;
@@ -25681,7 +24460,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that found guilty
@@ -25702,13 +24481,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int BY_BOT_FIELD_NUMBER = 2;
-      private int byBot_;
+      private int byBot_ = 0;
       /**
        * <pre>
        * the bot that is too close to the defense area
@@ -25773,7 +24551,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int DISTANCE_FIELD_NUMBER = 4;
-      private float distance_;
+      private float distance_ = 0F;
       /**
        * <pre>
        * the distance [m] of the bot to the penalty area
@@ -25882,7 +24660,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000010) != 0)) {
           output.writeMessage(5, getBallLocation());
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -25911,7 +24689,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(5, getBallLocation());
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -25951,7 +24729,7 @@ public final class SslGcGameEvent {
           if (!getBallLocation()
               .equals(other.getBallLocation())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -25983,7 +24761,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + BALL_LOCATION_FIELD_NUMBER;
           hash = (53 * hash) + getBallLocation().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -26122,24 +24900,20 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           byBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
           distance_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000008);
-          if (ballLocationBuilder_ == null) {
-            ballLocation_ = null;
-          } else {
-            ballLocationBuilder_.clear();
+          ballLocation_ = null;
+          if (ballLocationBuilder_ != null) {
+            ballLocationBuilder_.dispose();
+            ballLocationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000010);
           return this;
         }
 
@@ -26166,22 +24940,26 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.AttackerTooCloseToDefenseArea buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.AttackerTooCloseToDefenseArea result = new proto.gc.SslGcGameEvent.GameEvent.AttackerTooCloseToDefenseArea(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.AttackerTooCloseToDefenseArea result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.byBot_ = byBot_;
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
@@ -26189,16 +24967,12 @@ public final class SslGcGameEvent {
             to_bitField0_ |= 0x00000008;
           }
           if (((from_bitField0_ & 0x00000010) != 0)) {
-            if (ballLocationBuilder_ == null) {
-              result.ballLocation_ = ballLocation_;
-            } else {
-              result.ballLocation_ = ballLocationBuilder_.build();
-            }
+            result.ballLocation_ = ballLocationBuilder_ == null
+                ? ballLocation_
+                : ballLocationBuilder_.build();
             to_bitField0_ |= 0x00000010;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -26260,7 +25034,7 @@ public final class SslGcGameEvent {
           if (other.hasBallLocation()) {
             mergeBallLocation(other.getBallLocation());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -26288,17 +25062,66 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.AttackerTooCloseToDefenseArea parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  byBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                case 37: {
+                  distance_ = input.readFloat();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 37
+                case 42: {
+                  input.readMessage(
+                      getBallLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.AttackerTooCloseToDefenseArea) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -26325,8 +25148,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -26397,8 +25219,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setByBot(int value) {
-          bitField0_ |= 0x00000002;
+          
           byBot_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -26459,11 +25282,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -26477,11 +25300,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -26494,18 +25317,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -26516,13 +25338,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000004);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -26608,8 +25430,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setDistance(float value) {
-          bitField0_ |= 0x00000008;
+          
           distance_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -26670,11 +25493,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             ballLocation_ = value;
-            onChanged();
           } else {
             ballLocationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000010;
+          onChanged();
           return this;
         }
         /**
@@ -26688,11 +25511,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (ballLocationBuilder_ == null) {
             ballLocation_ = builderForValue.build();
-            onChanged();
           } else {
             ballLocationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000010;
+          onChanged();
           return this;
         }
         /**
@@ -26705,18 +25528,17 @@ public final class SslGcGameEvent {
         public Builder mergeBallLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (ballLocationBuilder_ == null) {
             if (((bitField0_ & 0x00000010) != 0) &&
-                ballLocation_ != null &&
-                ballLocation_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              ballLocation_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(ballLocation_).mergeFrom(value).buildPartial();
+              ballLocation_ != null &&
+              ballLocation_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getBallLocationBuilder().mergeFrom(value);
             } else {
               ballLocation_ = value;
             }
-            onChanged();
           } else {
             ballLocationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000010;
+          onChanged();
           return this;
         }
         /**
@@ -26727,13 +25549,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 ball_location = 5;</code>
          */
         public Builder clearBallLocation() {
-          if (ballLocationBuilder_ == null) {
-            ballLocation_ = null;
-            onChanged();
-          } else {
-            ballLocationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000010);
+          ballLocation_ = null;
+          if (ballLocationBuilder_ != null) {
+            ballLocationBuilder_.dispose();
+            ballLocationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -26816,7 +25638,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AttackerTooCloseToDefenseArea(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -26956,79 +25789,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private BotHeldBallDeliberately(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                byBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-              case 37: {
-                bitField0_ |= 0x00000008;
-                duration_ = input.readFloat();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_BotHeldBallDeliberately_descriptor;
@@ -27044,7 +25804,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that found guilty
@@ -27065,13 +25825,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int BY_BOT_FIELD_NUMBER = 2;
-      private int byBot_;
+      private int byBot_ = 0;
       /**
        * <pre>
        * the bot that holds the ball
@@ -27136,7 +25895,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int DURATION_FIELD_NUMBER = 4;
-      private float duration_;
+      private float duration_ = 0F;
       /**
        * <pre>
        * the duration [s] that the bot hold the ball
@@ -27198,7 +25957,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000008) != 0)) {
           output.writeFloat(4, duration_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -27223,7 +25982,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(4, duration_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -27258,7 +26017,7 @@ public final class SslGcGameEvent {
               != java.lang.Float.floatToIntBits(
                   other.getDuration())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -27286,7 +26045,7 @@ public final class SslGcGameEvent {
           hash = (53 * hash) + java.lang.Float.floatToIntBits(
               getDuration());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -27424,18 +26183,15 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           byBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
           duration_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -27462,31 +26218,33 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.BotHeldBallDeliberately buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.BotHeldBallDeliberately result = new proto.gc.SslGcGameEvent.GameEvent.BotHeldBallDeliberately(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.BotHeldBallDeliberately result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.byBot_ = byBot_;
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.duration_ = duration_;
             to_bitField0_ |= 0x00000008;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -27545,7 +26303,7 @@ public final class SslGcGameEvent {
           if (other.hasDuration()) {
             setDuration(other.getDuration());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -27568,17 +26326,59 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.BotHeldBallDeliberately parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  byBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                case 37: {
+                  duration_ = input.readFloat();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 37
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.BotHeldBallDeliberately) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -27605,8 +26405,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -27677,8 +26476,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setByBot(int value) {
-          bitField0_ |= 0x00000002;
+          
           byBot_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -27739,11 +26539,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -27757,11 +26557,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -27774,18 +26574,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -27796,13 +26595,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000004);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -27888,8 +26687,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setDuration(float value) {
-          bitField0_ |= 0x00000008;
+          
           duration_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -27940,7 +26740,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BotHeldBallDeliberately(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -28061,74 +26872,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private BotInterferedPlacement(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                byBot_ = input.readUInt32();
-                break;
-              }
-              case 26: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_BotInterferedPlacement_descriptor;
@@ -28144,7 +26887,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that found guilty
@@ -28165,13 +26908,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int BY_BOT_FIELD_NUMBER = 2;
-      private int byBot_;
+      private int byBot_ = 0;
       /**
        * <pre>
        * the bot that interfered the placement
@@ -28268,7 +27010,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000004) != 0)) {
           output.writeMessage(3, getLocation());
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -28289,7 +27031,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(3, getLocation());
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -28318,7 +27060,7 @@ public final class SslGcGameEvent {
           if (!getLocation()
               .equals(other.getLocation())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -28341,7 +27083,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + LOCATION_FIELD_NUMBER;
           hash = (53 * hash) + getLocation().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -28479,16 +27221,14 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           byBot_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000004);
           return this;
         }
 
@@ -28515,27 +27255,29 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.BotInterferedPlacement buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.BotInterferedPlacement result = new proto.gc.SslGcGameEvent.GameEvent.BotInterferedPlacement(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.BotInterferedPlacement result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.byBot_ = byBot_;
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000004;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -28591,7 +27333,7 @@ public final class SslGcGameEvent {
           if (other.hasLocation()) {
             mergeLocation(other.getLocation());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -28614,17 +27356,54 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.BotInterferedPlacement parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  byBot_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 26: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.BotInterferedPlacement) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -28651,8 +27430,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -28723,8 +27501,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setByBot(int value) {
-          bitField0_ |= 0x00000002;
+          
           byBot_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -28785,11 +27564,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -28803,11 +27582,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -28820,18 +27599,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000004) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000004;
+          onChanged();
           return this;
         }
         /**
@@ -28842,13 +27620,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 3;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000004);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -28931,7 +27709,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BotInterferedPlacement(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -29006,56 +27795,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private MultipleCards(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_MultipleCards_descriptor;
@@ -29071,7 +27810,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that received multiple yellow cards
@@ -29092,8 +27831,7 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
@@ -29118,7 +27856,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeEnum(1, byTeam_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -29131,7 +27869,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(1, byTeam_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -29150,7 +27888,7 @@ public final class SslGcGameEvent {
         if (hasByTeam()) {
           if (byTeam_ != other.byTeam_) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -29165,7 +27903,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + BY_TEAM_FIELD_NUMBER;
           hash = (53 * hash) + byTeam_;
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -29286,24 +28024,19 @@ public final class SslGcGameEvent {
 
         // Construct using proto.gc.SslGcGameEvent.GameEvent.MultipleCards.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -29330,15 +28063,19 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.MultipleCards buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.MultipleCards result = new proto.gc.SslGcGameEvent.GameEvent.MultipleCards(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.MultipleCards result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -29388,7 +28125,7 @@ public final class SslGcGameEvent {
           if (other.hasByTeam()) {
             setByTeam(other.getByTeam());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -29406,17 +28143,42 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.MultipleCards parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.MultipleCards) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -29443,8 +28205,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -29512,7 +28273,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MultipleCards(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -29632,68 +28404,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private MultipleFouls(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 18: {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  causedGameEvents_ = new java.util.ArrayList<proto.gc.SslGcGameEvent.GameEvent>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                causedGameEvents_.add(
-                    input.readMessage(proto.gc.SslGcGameEvent.GameEvent.PARSER, extensionRegistry));
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
-            causedGameEvents_ = java.util.Collections.unmodifiableList(causedGameEvents_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_MultipleFouls_descriptor;
@@ -29709,7 +28419,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that collected multiple fouls
@@ -29730,12 +28440,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int CAUSED_GAME_EVENTS_FIELD_NUMBER = 2;
+      @SuppressWarnings("serial")
       private java.util.List<proto.gc.SslGcGameEvent.GameEvent> causedGameEvents_;
       /**
        * <pre>
@@ -29825,7 +28535,7 @@ public final class SslGcGameEvent {
         for (int i = 0; i < causedGameEvents_.size(); i++) {
           output.writeMessage(2, causedGameEvents_.get(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -29842,7 +28552,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(2, causedGameEvents_.get(i));
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -29863,7 +28573,7 @@ public final class SslGcGameEvent {
         }
         if (!getCausedGameEventsList()
             .equals(other.getCausedGameEventsList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -29882,7 +28592,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + CAUSED_GAME_EVENTS_FIELD_NUMBER;
           hash = (53 * hash) + getCausedGameEventsList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -30003,31 +28713,26 @@ public final class SslGcGameEvent {
 
         // Construct using proto.gc.SslGcGameEvent.GameEvent.MultipleFouls.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-            getCausedGameEventsFieldBuilder();
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           if (causedGameEventsBuilder_ == null) {
             causedGameEvents_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
+            causedGameEvents_ = null;
             causedGameEventsBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -30054,12 +28759,13 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.MultipleFouls buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.MultipleFouls result = new proto.gc.SslGcGameEvent.GameEvent.MultipleFouls(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) != 0)) {
-            to_bitField0_ |= 0x00000001;
-          }
-          result.byTeam_ = byTeam_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(proto.gc.SslGcGameEvent.GameEvent.MultipleFouls result) {
           if (causedGameEventsBuilder_ == null) {
             if (((bitField0_ & 0x00000002) != 0)) {
               causedGameEvents_ = java.util.Collections.unmodifiableList(causedGameEvents_);
@@ -30069,9 +28775,16 @@ public final class SslGcGameEvent {
           } else {
             result.causedGameEvents_ = causedGameEventsBuilder_.build();
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.MultipleFouls result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -30147,7 +28860,7 @@ public final class SslGcGameEvent {
               }
             }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -30170,17 +28883,55 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.MultipleFouls parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 18: {
+                  proto.gc.SslGcGameEvent.GameEvent m =
+                      input.readMessage(
+                          proto.gc.SslGcGameEvent.GameEvent.PARSER,
+                          extensionRegistry);
+                  if (causedGameEventsBuilder_ == null) {
+                    ensureCausedGameEventsIsMutable();
+                    causedGameEvents_.add(m);
+                  } else {
+                    causedGameEventsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.MultipleFouls) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -30207,8 +28958,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -30588,7 +29338,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MultipleFouls(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -30663,56 +29424,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private MultiplePlacementFailures(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_MultiplePlacementFailures_descriptor;
@@ -30728,7 +29439,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that failed multiple times
@@ -30749,8 +29460,7 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
@@ -30775,7 +29485,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeEnum(1, byTeam_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -30788,7 +29498,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(1, byTeam_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -30807,7 +29517,7 @@ public final class SslGcGameEvent {
         if (hasByTeam()) {
           if (byTeam_ != other.byTeam_) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -30822,7 +29532,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + BY_TEAM_FIELD_NUMBER;
           hash = (53 * hash) + byTeam_;
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -30943,24 +29653,19 @@ public final class SslGcGameEvent {
 
         // Construct using proto.gc.SslGcGameEvent.GameEvent.MultiplePlacementFailures.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -30987,15 +29692,19 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.MultiplePlacementFailures buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.MultiplePlacementFailures result = new proto.gc.SslGcGameEvent.GameEvent.MultiplePlacementFailures(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.MultiplePlacementFailures result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -31045,7 +29754,7 @@ public final class SslGcGameEvent {
           if (other.hasByTeam()) {
             setByTeam(other.getByTeam());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -31063,17 +29772,42 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.MultiplePlacementFailures parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.MultiplePlacementFailures) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -31100,8 +29834,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -31169,7 +29902,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MultiplePlacementFailures(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -31290,74 +30034,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private KickTimeout(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 18: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000002) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000002;
-                break;
-              }
-              case 29: {
-                bitField0_ |= 0x00000004;
-                time_ = input.readFloat();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_KickTimeout_descriptor;
@@ -31373,7 +30049,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that that should have kicked
@@ -31394,8 +30070,7 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
@@ -31438,7 +30113,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int TIME_FIELD_NUMBER = 3;
-      private float time_;
+      private float time_ = 0F;
       /**
        * <pre>
        * the time [s] that was waited
@@ -31497,7 +30172,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000004) != 0)) {
           output.writeFloat(3, time_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -31518,7 +30193,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(3, time_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -31548,7 +30223,7 @@ public final class SslGcGameEvent {
               != java.lang.Float.floatToIntBits(
                   other.getTime())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -31572,7 +30247,7 @@ public final class SslGcGameEvent {
           hash = (53 * hash) + java.lang.Float.floatToIntBits(
               getTime());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -31710,16 +30385,14 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000002);
           time_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000004);
           return this;
         }
 
@@ -31746,27 +30419,29 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.KickTimeout buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.KickTimeout result = new proto.gc.SslGcGameEvent.GameEvent.KickTimeout(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.KickTimeout result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
             result.time_ = time_;
             to_bitField0_ |= 0x00000004;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -31822,7 +30497,7 @@ public final class SslGcGameEvent {
           if (other.hasTime()) {
             setTime(other.getTime());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -31845,17 +30520,54 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.KickTimeout parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 18: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+                case 29: {
+                  time_ = input.readFloat();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 29
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.KickTimeout) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -31882,8 +30594,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -31961,11 +30672,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -31979,11 +30690,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -31996,18 +30707,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000002) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -32018,13 +30728,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 2;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000002);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -32110,8 +30820,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setTime(float value) {
-          bitField0_ |= 0x00000004;
+          
           time_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -32162,7 +30873,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new KickTimeout(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -32263,62 +30985,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private NoProgressInGame(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000001) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000001;
-                break;
-              }
-              case 21: {
-                bitField0_ |= 0x00000002;
-                time_ = input.readFloat();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_NoProgressInGame_descriptor;
@@ -32372,7 +31038,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int TIME_FIELD_NUMBER = 2;
-      private float time_;
+      private float time_ = 0F;
       /**
        * <pre>
        * the time [s] that was waited
@@ -32424,7 +31090,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000002) != 0)) {
           output.writeFloat(2, time_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -32441,7 +31107,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(2, time_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -32467,7 +31133,7 @@ public final class SslGcGameEvent {
               != java.lang.Float.floatToIntBits(
                   other.getTime())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -32487,7 +31153,7 @@ public final class SslGcGameEvent {
           hash = (53 * hash) + java.lang.Float.floatToIntBits(
               getTime());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -32625,14 +31291,13 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          bitField0_ = 0;
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000001);
           time_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -32659,23 +31324,25 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.NoProgressInGame buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.NoProgressInGame result = new proto.gc.SslGcGameEvent.GameEvent.NoProgressInGame(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.NoProgressInGame result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000001;
           }
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.time_ = time_;
             to_bitField0_ |= 0x00000002;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -32728,7 +31395,7 @@ public final class SslGcGameEvent {
           if (other.hasTime()) {
             setTime(other.getTime());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -32748,17 +31415,42 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.NoProgressInGame parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+                case 21: {
+                  time_ = input.readFloat();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 21
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.NoProgressInGame) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -32805,11 +31497,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -32823,11 +31515,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -32840,18 +31532,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -32862,13 +31553,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 1;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000001);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -32954,8 +31645,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setTime(float value) {
-          bitField0_ |= 0x00000002;
+          
           time_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -33006,7 +31698,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new NoProgressInGame(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -33100,61 +31803,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private PlacementFailed(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 21: {
-                bitField0_ |= 0x00000002;
-                remainingDistance_ = input.readFloat();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_PlacementFailed_descriptor;
@@ -33170,7 +31818,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that failed
@@ -33191,13 +31839,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int REMAINING_DISTANCE_FIELD_NUMBER = 2;
-      private float remainingDistance_;
+      private float remainingDistance_ = 0F;
       /**
        * <pre>
        * the remaining distance [m] from ball to placement position
@@ -33247,7 +31894,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000002) != 0)) {
           output.writeFloat(2, remainingDistance_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -33264,7 +31911,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(2, remainingDistance_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -33289,7 +31936,7 @@ public final class SslGcGameEvent {
               != java.lang.Float.floatToIntBits(
                   other.getRemainingDistance())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -33309,7 +31956,7 @@ public final class SslGcGameEvent {
           hash = (53 * hash) + java.lang.Float.floatToIntBits(
               getRemainingDistance());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -33430,26 +32077,20 @@ public final class SslGcGameEvent {
 
         // Construct using proto.gc.SslGcGameEvent.GameEvent.PlacementFailed.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           remainingDistance_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -33476,19 +32117,23 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.PlacementFailed buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.PlacementFailed result = new proto.gc.SslGcGameEvent.GameEvent.PlacementFailed(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.PlacementFailed result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.remainingDistance_ = remainingDistance_;
             to_bitField0_ |= 0x00000002;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -33541,7 +32186,7 @@ public final class SslGcGameEvent {
           if (other.hasRemainingDistance()) {
             setRemainingDistance(other.getRemainingDistance());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -33559,17 +32204,47 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.PlacementFailed parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 21: {
+                  remainingDistance_ = input.readFloat();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 21
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.PlacementFailed) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -33596,8 +32271,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -33668,8 +32342,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setRemainingDistance(float value) {
-          bitField0_ |= 0x00000002;
+          
           remainingDistance_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -33720,7 +32395,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PlacementFailed(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -33825,62 +32511,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private UnsportingBehaviorMinor(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 18: {
-                com.google.protobuf.ByteString bs = input.readBytes();
-                bitField0_ |= 0x00000002;
-                reason_ = bs;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_UnsportingBehaviorMinor_descriptor;
@@ -33896,7 +32526,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that found guilty
@@ -33917,13 +32547,13 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int REASON_FIELD_NUMBER = 2;
-      private volatile java.lang.Object reason_;
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object reason_ = "";
       /**
        * <pre>
        * an explanation of the situation and decision
@@ -34010,7 +32640,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000002) != 0)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, reason_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -34026,7 +32656,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000002) != 0)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, reason_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -34050,7 +32680,7 @@ public final class SslGcGameEvent {
           if (!getReason()
               .equals(other.getReason())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -34069,7 +32699,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + REASON_FIELD_NUMBER;
           hash = (53 * hash) + getReason().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -34190,26 +32820,20 @@ public final class SslGcGameEvent {
 
         // Construct using proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMinor.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           reason_ = "";
-          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -34236,19 +32860,23 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMinor buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMinor result = new proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMinor(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMinor result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.reason_ = reason_;
             to_bitField0_ |= 0x00000002;
           }
-          result.reason_ = reason_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -34299,11 +32927,11 @@ public final class SslGcGameEvent {
             setByTeam(other.getByTeam());
           }
           if (other.hasReason()) {
-            bitField0_ |= 0x00000002;
             reason_ = other.reason_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -34324,17 +32952,47 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMinor parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 18: {
+                  reason_ = input.readBytes();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMinor) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -34361,8 +33019,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -34464,11 +33121,9 @@ public final class SslGcGameEvent {
          */
         public Builder setReason(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          if (value == null) { throw new NullPointerException(); }
           reason_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -34481,8 +33136,8 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder clearReason() {
-          bitField0_ = (bitField0_ & ~0x00000002);
           reason_ = getDefaultInstance().getReason();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -34497,11 +33152,9 @@ public final class SslGcGameEvent {
          */
         public Builder setReasonBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          if (value == null) { throw new NullPointerException(); }
           reason_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -34538,7 +33191,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UnsportingBehaviorMinor(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -34643,62 +33307,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private UnsportingBehaviorMajor(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 18: {
-                com.google.protobuf.ByteString bs = input.readBytes();
-                bitField0_ |= 0x00000002;
-                reason_ = bs;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_UnsportingBehaviorMajor_descriptor;
@@ -34714,7 +33322,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that found guilty
@@ -34735,13 +33343,13 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int REASON_FIELD_NUMBER = 2;
-      private volatile java.lang.Object reason_;
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object reason_ = "";
       /**
        * <pre>
        * an explanation of the situation and decision
@@ -34828,7 +33436,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000002) != 0)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, reason_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -34844,7 +33452,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000002) != 0)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, reason_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -34868,7 +33476,7 @@ public final class SslGcGameEvent {
           if (!getReason()
               .equals(other.getReason())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -34887,7 +33495,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + REASON_FIELD_NUMBER;
           hash = (53 * hash) + getReason().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -35008,26 +33616,20 @@ public final class SslGcGameEvent {
 
         // Construct using proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMajor.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           reason_ = "";
-          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -35054,19 +33656,23 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMajor buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMajor result = new proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMajor(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMajor result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.reason_ = reason_;
             to_bitField0_ |= 0x00000002;
           }
-          result.reason_ = reason_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -35117,11 +33723,11 @@ public final class SslGcGameEvent {
             setByTeam(other.getByTeam());
           }
           if (other.hasReason()) {
-            bitField0_ |= 0x00000002;
             reason_ = other.reason_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -35142,17 +33748,47 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMajor parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 18: {
+                  reason_ = input.readBytes();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.UnsportingBehaviorMajor) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -35179,8 +33815,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -35282,11 +33917,9 @@ public final class SslGcGameEvent {
          */
         public Builder setReason(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          if (value == null) { throw new NullPointerException(); }
           reason_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -35299,8 +33932,8 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder clearReason() {
-          bitField0_ = (bitField0_ & ~0x00000002);
           reason_ = getDefaultInstance().getReason();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -35315,11 +33948,9 @@ public final class SslGcGameEvent {
          */
         public Builder setReasonBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+          if (value == null) { throw new NullPointerException(); }
           reason_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -35356,7 +33987,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UnsportingBehaviorMajor(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -35477,74 +34119,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private KeeperHeldBall(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 18: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000002) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000002;
-                break;
-              }
-              case 29: {
-                bitField0_ |= 0x00000004;
-                duration_ = input.readFloat();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_KeeperHeldBall_descriptor;
@@ -35560,7 +34134,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that found guilty
@@ -35581,8 +34155,7 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
@@ -35625,7 +34198,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int DURATION_FIELD_NUMBER = 3;
-      private float duration_;
+      private float duration_ = 0F;
       /**
        * <pre>
        * the duration [s] that the keeper hold the ball
@@ -35684,7 +34257,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000004) != 0)) {
           output.writeFloat(3, duration_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -35705,7 +34278,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(3, duration_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -35735,7 +34308,7 @@ public final class SslGcGameEvent {
               != java.lang.Float.floatToIntBits(
                   other.getDuration())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -35759,7 +34332,7 @@ public final class SslGcGameEvent {
           hash = (53 * hash) + java.lang.Float.floatToIntBits(
               getDuration());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -35897,16 +34470,14 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000002);
           duration_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000004);
           return this;
         }
 
@@ -35933,27 +34504,29 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.KeeperHeldBall buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.KeeperHeldBall result = new proto.gc.SslGcGameEvent.GameEvent.KeeperHeldBall(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.KeeperHeldBall result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
             result.duration_ = duration_;
             to_bitField0_ |= 0x00000004;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -36009,7 +34582,7 @@ public final class SslGcGameEvent {
           if (other.hasDuration()) {
             setDuration(other.getDuration());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -36032,17 +34605,54 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.KeeperHeldBall parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 18: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+                case 29: {
+                  duration_ = input.readFloat();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 29
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.KeeperHeldBall) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -36069,8 +34679,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -36148,11 +34757,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -36166,11 +34775,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -36183,18 +34792,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000002) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -36205,13 +34813,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 2;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000002);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -36297,8 +34905,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setDuration(float value) {
-          bitField0_ |= 0x00000004;
+          
           duration_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -36349,7 +34958,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new KeeperHeldBall(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -36481,71 +35101,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private PlacementSucceeded(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 21: {
-                bitField0_ |= 0x00000002;
-                timeTaken_ = input.readFloat();
-                break;
-              }
-              case 29: {
-                bitField0_ |= 0x00000004;
-                precision_ = input.readFloat();
-                break;
-              }
-              case 37: {
-                bitField0_ |= 0x00000008;
-                distance_ = input.readFloat();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_PlacementSucceeded_descriptor;
@@ -36561,7 +35116,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that did the placement
@@ -36582,13 +35137,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int TIME_TAKEN_FIELD_NUMBER = 2;
-      private float timeTaken_;
+      private float timeTaken_ = 0F;
       /**
        * <pre>
        * the time [s] taken for placing the ball
@@ -36615,7 +35169,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int PRECISION_FIELD_NUMBER = 3;
-      private float precision_;
+      private float precision_ = 0F;
       /**
        * <pre>
        * the distance [m] between placement location and actual ball position
@@ -36642,7 +35196,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int DISTANCE_FIELD_NUMBER = 4;
-      private float distance_;
+      private float distance_ = 0F;
       /**
        * <pre>
        * the distance [m] between the initial ball location and the placement position
@@ -36698,7 +35252,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000008) != 0)) {
           output.writeFloat(4, distance_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -36723,7 +35277,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(4, distance_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -36760,7 +35314,7 @@ public final class SslGcGameEvent {
               != java.lang.Float.floatToIntBits(
                   other.getDistance())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -36790,7 +35344,7 @@ public final class SslGcGameEvent {
           hash = (53 * hash) + java.lang.Float.floatToIntBits(
               getDistance());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -36911,30 +35465,22 @@ public final class SslGcGameEvent {
 
         // Construct using proto.gc.SslGcGameEvent.GameEvent.PlacementSucceeded.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           timeTaken_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000002);
           precision_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000004);
           distance_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -36961,12 +35507,18 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.PlacementSucceeded buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.PlacementSucceeded result = new proto.gc.SslGcGameEvent.GameEvent.PlacementSucceeded(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.PlacementSucceeded result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.timeTaken_ = timeTaken_;
             to_bitField0_ |= 0x00000002;
@@ -36979,9 +35531,7 @@ public final class SslGcGameEvent {
             result.distance_ = distance_;
             to_bitField0_ |= 0x00000008;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -37040,7 +35590,7 @@ public final class SslGcGameEvent {
           if (other.hasDistance()) {
             setDistance(other.getDistance());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -37058,17 +35608,57 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.PlacementSucceeded parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 21: {
+                  timeTaken_ = input.readFloat();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 21
+                case 29: {
+                  precision_ = input.readFloat();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 29
+                case 37: {
+                  distance_ = input.readFloat();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 37
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.PlacementSucceeded) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -37095,8 +35685,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -37167,8 +35756,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setTimeTaken(float value) {
-          bitField0_ |= 0x00000002;
+          
           timeTaken_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -37222,8 +35812,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setPrecision(float value) {
-          bitField0_ |= 0x00000004;
+          
           precision_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -37277,8 +35868,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setDistance(float value) {
-          bitField0_ |= 0x00000008;
+          
           distance_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -37329,7 +35921,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PlacementSucceeded(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -37403,49 +36006,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private Prepared(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                bitField0_ |= 0x00000001;
-                timeTaken_ = input.readFloat();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_Prepared_descriptor;
@@ -37461,7 +36021,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int TIME_TAKEN_FIELD_NUMBER = 1;
-      private float timeTaken_;
+      private float timeTaken_ = 0F;
       /**
        * <pre>
        * the time [s] taken for preparing
@@ -37504,7 +36064,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeFloat(1, timeTaken_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -37517,7 +36077,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(1, timeTaken_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -37538,7 +36098,7 @@ public final class SslGcGameEvent {
               != java.lang.Float.floatToIntBits(
                   other.getTimeTaken())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -37554,7 +36114,7 @@ public final class SslGcGameEvent {
           hash = (53 * hash) + java.lang.Float.floatToIntBits(
               getTimeTaken());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -37675,24 +36235,19 @@ public final class SslGcGameEvent {
 
         // Construct using proto.gc.SslGcGameEvent.GameEvent.Prepared.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           timeTaken_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -37719,15 +36274,19 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.Prepared buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.Prepared result = new proto.gc.SslGcGameEvent.GameEvent.Prepared(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.Prepared result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.timeTaken_ = timeTaken_;
             to_bitField0_ |= 0x00000001;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -37777,7 +36336,7 @@ public final class SslGcGameEvent {
           if (other.hasTimeTaken()) {
             setTimeTaken(other.getTimeTaken());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -37792,17 +36351,35 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.Prepared parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 13: {
+                  timeTaken_ = input.readFloat();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 13
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.Prepared) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -37842,8 +36419,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setTimeTaken(float value) {
-          bitField0_ |= 0x00000001;
+          
           timeTaken_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -37894,7 +36472,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Prepared(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -37969,56 +36558,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private BotSubstitution(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_BotSubstitution_descriptor;
@@ -38034,7 +36573,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that substitutes robots
@@ -38055,8 +36594,7 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
@@ -38081,7 +36619,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeEnum(1, byTeam_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -38094,7 +36632,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(1, byTeam_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -38113,7 +36651,7 @@ public final class SslGcGameEvent {
         if (hasByTeam()) {
           if (byTeam_ != other.byTeam_) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -38128,7 +36666,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + BY_TEAM_FIELD_NUMBER;
           hash = (53 * hash) + byTeam_;
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -38249,24 +36787,19 @@ public final class SslGcGameEvent {
 
         // Construct using proto.gc.SslGcGameEvent.GameEvent.BotSubstitution.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -38293,15 +36826,19 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.BotSubstitution buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.BotSubstitution result = new proto.gc.SslGcGameEvent.GameEvent.BotSubstitution(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.BotSubstitution result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -38351,7 +36888,7 @@ public final class SslGcGameEvent {
           if (other.hasByTeam()) {
             setByTeam(other.getByTeam());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -38369,17 +36906,42 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.BotSubstitution parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.BotSubstitution) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -38406,8 +36968,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -38475,7 +37036,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BotSubstitution(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -38550,56 +37122,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private ChallengeFlag(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_ChallengeFlag_descriptor;
@@ -38615,7 +37137,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that requested the challenge flag
@@ -38636,8 +37158,7 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
@@ -38662,7 +37183,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeEnum(1, byTeam_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -38675,7 +37196,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(1, byTeam_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -38694,7 +37215,7 @@ public final class SslGcGameEvent {
         if (hasByTeam()) {
           if (byTeam_ != other.byTeam_) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -38709,7 +37230,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + BY_TEAM_FIELD_NUMBER;
           hash = (53 * hash) + byTeam_;
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -38830,24 +37351,19 @@ public final class SslGcGameEvent {
 
         // Construct using proto.gc.SslGcGameEvent.GameEvent.ChallengeFlag.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -38874,15 +37390,19 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.ChallengeFlag buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.ChallengeFlag result = new proto.gc.SslGcGameEvent.GameEvent.ChallengeFlag(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.ChallengeFlag result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -38932,7 +37452,7 @@ public final class SslGcGameEvent {
           if (other.hasByTeam()) {
             setByTeam(other.getByTeam());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -38950,17 +37470,42 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.ChallengeFlag parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.ChallengeFlag) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -38987,8 +37532,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -39056,7 +37600,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ChallengeFlag(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -39150,61 +37705,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private ChallengeFlagHandled(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                accepted_ = input.readBool();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_ChallengeFlagHandled_descriptor;
@@ -39220,7 +37720,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that requested the challenge flag
@@ -39241,13 +37741,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int ACCEPTED_FIELD_NUMBER = 2;
-      private boolean accepted_;
+      private boolean accepted_ = false;
       /**
        * <pre>
        * the challenge was accepted by the referee
@@ -39301,7 +37800,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000002) != 0)) {
           output.writeBool(2, accepted_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -39318,7 +37817,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(2, accepted_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -39342,7 +37841,7 @@ public final class SslGcGameEvent {
           if (getAccepted()
               != other.getAccepted()) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -39362,7 +37861,7 @@ public final class SslGcGameEvent {
           hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
               getAccepted());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -39483,26 +37982,20 @@ public final class SslGcGameEvent {
 
         // Construct using proto.gc.SslGcGameEvent.GameEvent.ChallengeFlagHandled.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           accepted_ = false;
-          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -39529,19 +38022,23 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.ChallengeFlagHandled buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.ChallengeFlagHandled result = new proto.gc.SslGcGameEvent.GameEvent.ChallengeFlagHandled(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.ChallengeFlagHandled result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.accepted_ = accepted_;
             to_bitField0_ |= 0x00000002;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -39594,7 +38091,7 @@ public final class SslGcGameEvent {
           if (other.hasAccepted()) {
             setAccepted(other.getAccepted());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -39615,17 +38112,47 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.ChallengeFlagHandled parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  accepted_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.ChallengeFlagHandled) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -39652,8 +38179,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -39724,8 +38250,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setAccepted(boolean value) {
-          bitField0_ |= 0x00000002;
+          
           accepted_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -39776,7 +38303,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ChallengeFlagHandled(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -39851,56 +38389,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private EmergencyStop(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_EmergencyStop_descriptor;
@@ -39916,7 +38404,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that substitutes robots
@@ -39937,8 +38425,7 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
@@ -39963,7 +38450,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeEnum(1, byTeam_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -39976,7 +38463,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(1, byTeam_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -39995,7 +38482,7 @@ public final class SslGcGameEvent {
         if (hasByTeam()) {
           if (byTeam_ != other.byTeam_) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -40010,7 +38497,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + BY_TEAM_FIELD_NUMBER;
           hash = (53 * hash) + byTeam_;
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -40131,24 +38618,19 @@ public final class SslGcGameEvent {
 
         // Construct using proto.gc.SslGcGameEvent.GameEvent.EmergencyStop.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -40175,15 +38657,19 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.EmergencyStop buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.EmergencyStop result = new proto.gc.SslGcGameEvent.GameEvent.EmergencyStop(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.EmergencyStop result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -40233,7 +38719,7 @@ public final class SslGcGameEvent {
           if (other.hasByTeam()) {
             setByTeam(other.getByTeam());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -40251,17 +38737,42 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.EmergencyStop parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.EmergencyStop) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -40288,8 +38799,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -40357,7 +38867,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new EmergencyStop(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -40497,79 +39018,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private TooManyRobots(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                numRobotsAllowed_ = input.readInt32();
-                break;
-              }
-              case 24: {
-                bitField0_ |= 0x00000004;
-                numRobotsOnField_ = input.readInt32();
-                break;
-              }
-              case 34: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000008) != 0)) {
-                  subBuilder = ballLocation_.toBuilder();
-                }
-                ballLocation_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(ballLocation_);
-                  ballLocation_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000008;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_TooManyRobots_descriptor;
@@ -40585,7 +39033,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that has too many robots
@@ -40606,13 +39054,12 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
       public static final int NUM_ROBOTS_ALLOWED_FIELD_NUMBER = 2;
-      private int numRobotsAllowed_;
+      private int numRobotsAllowed_ = 0;
       /**
        * <pre>
        * number of robots allowed at the moment
@@ -40639,7 +39086,7 @@ public final class SslGcGameEvent {
       }
 
       public static final int NUM_ROBOTS_ON_FIELD_FIELD_NUMBER = 3;
-      private int numRobotsOnField_;
+      private int numRobotsOnField_ = 0;
       /**
        * <pre>
        * number of robots currently on the field
@@ -40739,7 +39186,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000008) != 0)) {
           output.writeMessage(4, getBallLocation());
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -40764,7 +39211,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(4, getBallLocation());
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -40798,7 +39245,7 @@ public final class SslGcGameEvent {
           if (!getBallLocation()
               .equals(other.getBallLocation())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -40825,7 +39272,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + BALL_LOCATION_FIELD_NUMBER;
           hash = (53 * hash) + getBallLocation().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -40963,18 +39410,15 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
           numRobotsAllowed_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
           numRobotsOnField_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000004);
-          if (ballLocationBuilder_ == null) {
-            ballLocation_ = null;
-          } else {
-            ballLocationBuilder_.clear();
+          ballLocation_ = null;
+          if (ballLocationBuilder_ != null) {
+            ballLocationBuilder_.dispose();
+            ballLocationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -41001,12 +39445,18 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.TooManyRobots buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.TooManyRobots result = new proto.gc.SslGcGameEvent.GameEvent.TooManyRobots(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.TooManyRobots result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.numRobotsAllowed_ = numRobotsAllowed_;
             to_bitField0_ |= 0x00000002;
@@ -41016,16 +39466,12 @@ public final class SslGcGameEvent {
             to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
-            if (ballLocationBuilder_ == null) {
-              result.ballLocation_ = ballLocation_;
-            } else {
-              result.ballLocation_ = ballLocationBuilder_.build();
-            }
+            result.ballLocation_ = ballLocationBuilder_ == null
+                ? ballLocation_
+                : ballLocationBuilder_.build();
             to_bitField0_ |= 0x00000008;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -41084,7 +39530,7 @@ public final class SslGcGameEvent {
           if (other.hasBallLocation()) {
             mergeBallLocation(other.getBallLocation());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -41107,17 +39553,59 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.TooManyRobots parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 16: {
+                  numRobotsAllowed_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 24: {
+                  numRobotsOnField_ = input.readInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+                case 34: {
+                  input.readMessage(
+                      getBallLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.TooManyRobots) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -41144,8 +39632,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -41216,8 +39703,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setNumRobotsAllowed(int value) {
-          bitField0_ |= 0x00000002;
+          
           numRobotsAllowed_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -41271,8 +39759,9 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder setNumRobotsOnField(int value) {
-          bitField0_ |= 0x00000004;
+          
           numRobotsOnField_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -41333,11 +39822,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             ballLocation_ = value;
-            onChanged();
           } else {
             ballLocationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -41351,11 +39840,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (ballLocationBuilder_ == null) {
             ballLocation_ = builderForValue.build();
-            onChanged();
           } else {
             ballLocationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -41368,18 +39857,17 @@ public final class SslGcGameEvent {
         public Builder mergeBallLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (ballLocationBuilder_ == null) {
             if (((bitField0_ & 0x00000008) != 0) &&
-                ballLocation_ != null &&
-                ballLocation_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              ballLocation_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(ballLocation_).mergeFrom(value).buildPartial();
+              ballLocation_ != null &&
+              ballLocation_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getBallLocationBuilder().mergeFrom(value);
             } else {
               ballLocation_ = value;
             }
-            onChanged();
           } else {
             ballLocationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000008;
+          onChanged();
           return this;
         }
         /**
@@ -41390,13 +39878,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 ball_location = 4;</code>
          */
         public Builder clearBallLocation() {
-          if (ballLocationBuilder_ == null) {
-            ballLocation_ = null;
-            onChanged();
-          } else {
-            ballLocationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000008);
+          ballLocation_ = null;
+          if (ballLocationBuilder_ != null) {
+            ballLocationBuilder_.dispose();
+            ballLocationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -41479,7 +39967,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TooManyRobots(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -41581,69 +40080,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private BoundaryCrossing(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 18: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000002) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000002;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_BoundaryCrossing_descriptor;
@@ -41659,7 +40095,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that has too many robots
@@ -41680,8 +40116,7 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
@@ -41753,7 +40188,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000002) != 0)) {
           output.writeMessage(2, getLocation());
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -41770,7 +40205,7 @@ public final class SslGcGameEvent {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(2, getLocation());
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -41794,7 +40229,7 @@ public final class SslGcGameEvent {
           if (!getLocation()
               .equals(other.getLocation())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -41813,7 +40248,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + LOCATION_FIELD_NUMBER;
           hash = (53 * hash) + getLocation().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -41951,14 +40386,13 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -41985,23 +40419,25 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.BoundaryCrossing buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.BoundaryCrossing result = new proto.gc.SslGcGameEvent.GameEvent.BoundaryCrossing(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.BoundaryCrossing result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000002;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -42054,7 +40490,7 @@ public final class SslGcGameEvent {
           if (other.hasLocation()) {
             mergeLocation(other.getLocation());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -42077,17 +40513,49 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.BoundaryCrossing parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 18: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.BoundaryCrossing) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -42114,8 +40582,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -42193,11 +40660,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -42211,11 +40678,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -42228,18 +40695,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000002) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -42250,13 +40716,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 2;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000002);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -42339,7 +40805,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BoundaryCrossing(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -42471,75 +40948,6 @@ public final class SslGcGameEvent {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private PenaltyKickFailed(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  byTeam_ = rawValue;
-                }
-                break;
-              }
-              case 18: {
-                proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000002) != 0)) {
-                  subBuilder = location_.toBuilder();
-                }
-                location_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(location_);
-                  location_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000002;
-                break;
-              }
-              case 26: {
-                com.google.protobuf.ByteString bs = input.readBytes();
-                bitField0_ |= 0x00000004;
-                reason_ = bs;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcGameEvent.internal_static_proto_gc_GameEvent_PenaltyKickFailed_descriptor;
@@ -42555,7 +40963,7 @@ public final class SslGcGameEvent {
 
       private int bitField0_;
       public static final int BY_TEAM_FIELD_NUMBER = 1;
-      private int byTeam_;
+      private int byTeam_ = 0;
       /**
        * <pre>
        * the team that last touched the ball
@@ -42576,8 +40984,7 @@ public final class SslGcGameEvent {
        * @return The byTeam.
        */
       @java.lang.Override public proto.simulation.SslGcCommon.Team getByTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
 
@@ -42620,7 +41027,8 @@ public final class SslGcGameEvent {
       }
 
       public static final int REASON_FIELD_NUMBER = 3;
-      private volatile java.lang.Object reason_;
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object reason_ = "";
       /**
        * <pre>
        * an explanation of the failure
@@ -42712,7 +41120,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000004) != 0)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reason_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -42732,7 +41140,7 @@ public final class SslGcGameEvent {
         if (((bitField0_ & 0x00000004) != 0)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reason_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -42761,7 +41169,7 @@ public final class SslGcGameEvent {
           if (!getReason()
               .equals(other.getReason())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -42784,7 +41192,7 @@ public final class SslGcGameEvent {
           hash = (37 * hash) + REASON_FIELD_NUMBER;
           hash = (53 * hash) + getReason().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -42922,16 +41330,14 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           byTeam_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          if (locationBuilder_ == null) {
-            location_ = null;
-          } else {
-            locationBuilder_.clear();
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
           }
-          bitField0_ = (bitField0_ & ~0x00000002);
           reason_ = "";
-          bitField0_ = (bitField0_ & ~0x00000004);
           return this;
         }
 
@@ -42958,27 +41364,29 @@ public final class SslGcGameEvent {
         @java.lang.Override
         public proto.gc.SslGcGameEvent.GameEvent.PenaltyKickFailed buildPartial() {
           proto.gc.SslGcGameEvent.GameEvent.PenaltyKickFailed result = new proto.gc.SslGcGameEvent.GameEvent.PenaltyKickFailed(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent.PenaltyKickFailed result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.byTeam_ = byTeam_;
             to_bitField0_ |= 0x00000001;
           }
-          result.byTeam_ = byTeam_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
-            if (locationBuilder_ == null) {
-              result.location_ = location_;
-            } else {
-              result.location_ = locationBuilder_.build();
-            }
+            result.location_ = locationBuilder_ == null
+                ? location_
+                : locationBuilder_.build();
             to_bitField0_ |= 0x00000002;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.reason_ = reason_;
             to_bitField0_ |= 0x00000004;
           }
-          result.reason_ = reason_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -43032,11 +41440,11 @@ public final class SslGcGameEvent {
             mergeLocation(other.getLocation());
           }
           if (other.hasReason()) {
-            bitField0_ |= 0x00000004;
             reason_ = other.reason_;
+            bitField0_ |= 0x00000004;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -43059,17 +41467,54 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcGameEvent.GameEvent.PenaltyKickFailed parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  proto.simulation.SslGcCommon.Team tmpValue =
+                      proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    byTeam_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 18: {
+                  input.readMessage(
+                      getLocationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+                case 26: {
+                  reason_ = input.readBytes();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcGameEvent.GameEvent.PenaltyKickFailed) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -43096,8 +41541,7 @@ public final class SslGcGameEvent {
          */
         @java.lang.Override
         public proto.simulation.SslGcCommon.Team getByTeam() {
-          @SuppressWarnings("deprecation")
-          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(byTeam_);
+          proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(byTeam_);
           return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
         }
         /**
@@ -43175,11 +41619,11 @@ public final class SslGcGameEvent {
               throw new NullPointerException();
             }
             location_ = value;
-            onChanged();
           } else {
             locationBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -43193,11 +41637,11 @@ public final class SslGcGameEvent {
             proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
           if (locationBuilder_ == null) {
             location_ = builderForValue.build();
-            onChanged();
           } else {
             locationBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -43210,18 +41654,17 @@ public final class SslGcGameEvent {
         public Builder mergeLocation(proto.gc.SslGcGeometry.Vector2 value) {
           if (locationBuilder_ == null) {
             if (((bitField0_ & 0x00000002) != 0) &&
-                location_ != null &&
-                location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-              location_ =
-                proto.gc.SslGcGeometry.Vector2.newBuilder(location_).mergeFrom(value).buildPartial();
+              location_ != null &&
+              location_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+              getLocationBuilder().mergeFrom(value);
             } else {
               location_ = value;
             }
-            onChanged();
           } else {
             locationBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -43232,13 +41675,13 @@ public final class SslGcGameEvent {
          * <code>optional .proto.gc.Vector2 location = 2;</code>
          */
         public Builder clearLocation() {
-          if (locationBuilder_ == null) {
-            location_ = null;
-            onChanged();
-          } else {
-            locationBuilder_.clear();
-          }
           bitField0_ = (bitField0_ & ~0x00000002);
+          location_ = null;
+          if (locationBuilder_ != null) {
+            locationBuilder_.dispose();
+            locationBuilder_ = null;
+          }
+          onChanged();
           return this;
         }
         /**
@@ -43355,11 +41798,9 @@ public final class SslGcGameEvent {
          */
         public Builder setReason(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
+          if (value == null) { throw new NullPointerException(); }
           reason_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -43372,8 +41813,8 @@ public final class SslGcGameEvent {
          * @return This builder for chaining.
          */
         public Builder clearReason() {
-          bitField0_ = (bitField0_ & ~0x00000004);
           reason_ = getDefaultInstance().getReason();
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
@@ -43388,11 +41829,9 @@ public final class SslGcGameEvent {
          */
         public Builder setReasonBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
+          if (value == null) { throw new NullPointerException(); }
           reason_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -43429,7 +41868,18 @@ public final class SslGcGameEvent {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PenaltyKickFailed(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -43579,7 +42029,8 @@ public final class SslGcGameEvent {
     }
 
     public static final int ID_FIELD_NUMBER = 50;
-    private volatile java.lang.Object id_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      * <pre>
      * A globally unique id of the game event.
@@ -43639,7 +42090,7 @@ public final class SslGcGameEvent {
     }
 
     public static final int TYPE_FIELD_NUMBER = 40;
-    private int type_;
+    private int type_ = 0;
     /**
      * <pre>
      * The type of the game event.
@@ -43660,12 +42111,12 @@ public final class SslGcGameEvent {
      * @return The type.
      */
     @java.lang.Override public proto.gc.SslGcGameEvent.GameEvent.Type getType() {
-      @SuppressWarnings("deprecation")
-      proto.gc.SslGcGameEvent.GameEvent.Type result = proto.gc.SslGcGameEvent.GameEvent.Type.valueOf(type_);
+      proto.gc.SslGcGameEvent.GameEvent.Type result = proto.gc.SslGcGameEvent.GameEvent.Type.forNumber(type_);
       return result == null ? proto.gc.SslGcGameEvent.GameEvent.Type.UNKNOWN_GAME_EVENT_TYPE : result;
     }
 
     public static final int ORIGIN_FIELD_NUMBER = 41;
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList origin_;
     /**
      * <pre>
@@ -43729,7 +42180,7 @@ public final class SslGcGameEvent {
     }
 
     public static final int CREATED_TIMESTAMP_FIELD_NUMBER = 49;
-    private long createdTimestamp_;
+    private long createdTimestamp_ = 0L;
     /**
      * <pre>
      * Unix timestamp in microseconds when the event was created.
@@ -44847,6 +43298,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.Prepared prepared = 1 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.prepared is deprecated.
+     *     See ssl_gc_game_event.proto;l=93
      * @return Whether the prepared field is set.
      */
     @java.lang.Override
@@ -44859,6 +43312,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.Prepared prepared = 1 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.prepared is deprecated.
+     *     See ssl_gc_game_event.proto;l=93
      * @return The prepared.
      */
     @java.lang.Override
@@ -44890,6 +43345,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.IndirectGoal indirect_goal = 9 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.indirect_goal is deprecated.
+     *     See ssl_gc_game_event.proto;l=95
      * @return Whether the indirectGoal field is set.
      */
     @java.lang.Override
@@ -44902,6 +43359,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.IndirectGoal indirect_goal = 9 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.indirect_goal is deprecated.
+     *     See ssl_gc_game_event.proto;l=95
      * @return The indirectGoal.
      */
     @java.lang.Override
@@ -44933,6 +43392,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.ChippedGoal chipped_goal = 10 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.chipped_goal is deprecated.
+     *     See ssl_gc_game_event.proto;l=97
      * @return Whether the chippedGoal field is set.
      */
     @java.lang.Override
@@ -44945,6 +43406,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.ChippedGoal chipped_goal = 10 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.chipped_goal is deprecated.
+     *     See ssl_gc_game_event.proto;l=97
      * @return The chippedGoal.
      */
     @java.lang.Override
@@ -44976,6 +43439,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.KickTimeout kick_timeout = 12 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.kick_timeout is deprecated.
+     *     See ssl_gc_game_event.proto;l=99
      * @return Whether the kickTimeout field is set.
      */
     @java.lang.Override
@@ -44988,6 +43453,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.KickTimeout kick_timeout = 12 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.kick_timeout is deprecated.
+     *     See ssl_gc_game_event.proto;l=99
      * @return The kickTimeout.
      */
     @java.lang.Override
@@ -45019,6 +43486,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.AttackerTouchedOpponentInDefenseArea attacker_touched_opponent_in_defense_area = 16 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.attacker_touched_opponent_in_defense_area is deprecated.
+     *     See ssl_gc_game_event.proto;l=101
      * @return Whether the attackerTouchedOpponentInDefenseArea field is set.
      */
     @java.lang.Override
@@ -45031,6 +43500,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.AttackerTouchedOpponentInDefenseArea attacker_touched_opponent_in_defense_area = 16 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.attacker_touched_opponent_in_defense_area is deprecated.
+     *     See ssl_gc_game_event.proto;l=101
      * @return The attackerTouchedOpponentInDefenseArea.
      */
     @java.lang.Override
@@ -45062,6 +43533,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.AttackerTouchedOpponentInDefenseArea attacker_touched_opponent_in_defense_area_skipped = 42 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.attacker_touched_opponent_in_defense_area_skipped is deprecated.
+     *     See ssl_gc_game_event.proto;l=103
      * @return Whether the attackerTouchedOpponentInDefenseAreaSkipped field is set.
      */
     @java.lang.Override
@@ -45074,6 +43547,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.AttackerTouchedOpponentInDefenseArea attacker_touched_opponent_in_defense_area_skipped = 42 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.attacker_touched_opponent_in_defense_area_skipped is deprecated.
+     *     See ssl_gc_game_event.proto;l=103
      * @return The attackerTouchedOpponentInDefenseAreaSkipped.
      */
     @java.lang.Override
@@ -45105,6 +43580,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.BotCrashUnique bot_crash_unique_skipped = 23 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.bot_crash_unique_skipped is deprecated.
+     *     See ssl_gc_game_event.proto;l=105
      * @return Whether the botCrashUniqueSkipped field is set.
      */
     @java.lang.Override
@@ -45117,6 +43594,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.BotCrashUnique bot_crash_unique_skipped = 23 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.bot_crash_unique_skipped is deprecated.
+     *     See ssl_gc_game_event.proto;l=105
      * @return The botCrashUniqueSkipped.
      */
     @java.lang.Override
@@ -45148,6 +43627,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.BotPushedBot bot_pushed_bot_skipped = 25 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.bot_pushed_bot_skipped is deprecated.
+     *     See ssl_gc_game_event.proto;l=107
      * @return Whether the botPushedBotSkipped field is set.
      */
     @java.lang.Override
@@ -45160,6 +43641,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.BotPushedBot bot_pushed_bot_skipped = 25 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.bot_pushed_bot_skipped is deprecated.
+     *     See ssl_gc_game_event.proto;l=107
      * @return The botPushedBotSkipped.
      */
     @java.lang.Override
@@ -45191,6 +43674,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.DefenderInDefenseAreaPartially defender_in_defense_area_partially = 30 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.defender_in_defense_area_partially is deprecated.
+     *     See ssl_gc_game_event.proto;l=109
      * @return Whether the defenderInDefenseAreaPartially field is set.
      */
     @java.lang.Override
@@ -45203,6 +43688,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.DefenderInDefenseAreaPartially defender_in_defense_area_partially = 30 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.defender_in_defense_area_partially is deprecated.
+     *     See ssl_gc_game_event.proto;l=109
      * @return The defenderInDefenseAreaPartially.
      */
     @java.lang.Override
@@ -45234,6 +43721,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.MultiplePlacementFailures multiple_placement_failures = 33 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.multiple_placement_failures is deprecated.
+     *     See ssl_gc_game_event.proto;l=111
      * @return Whether the multiplePlacementFailures field is set.
      */
     @java.lang.Override
@@ -45246,6 +43735,8 @@ public final class SslGcGameEvent {
      * </pre>
      *
      * <code>.proto.gc.GameEvent.MultiplePlacementFailures multiple_placement_failures = 33 [deprecated = true];</code>
+     * @deprecated proto.gc.GameEvent.multiple_placement_failures is deprecated.
+     *     See ssl_gc_game_event.proto;l=111
      * @return The multiplePlacementFailures.
      */
     @java.lang.Override
@@ -45695,7 +44186,7 @@ public final class SslGcGameEvent {
       if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 50, id_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -45903,7 +44394,7 @@ public final class SslGcGameEvent {
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(50, id_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -46119,7 +44610,7 @@ public final class SslGcGameEvent {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -46331,7 +44822,7 @@ public final class SslGcGameEvent {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -46457,30 +44948,159 @@ public final class SslGcGameEvent {
 
       // Construct using proto.gc.SslGcGameEvent.GameEvent.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        bitField1_ = 0;
         id_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
         type_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
         origin_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
         createdTimestamp_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        if (ballLeftFieldTouchLineBuilder_ != null) {
+          ballLeftFieldTouchLineBuilder_.clear();
+        }
+        if (ballLeftFieldGoalLineBuilder_ != null) {
+          ballLeftFieldGoalLineBuilder_.clear();
+        }
+        if (aimlessKickBuilder_ != null) {
+          aimlessKickBuilder_.clear();
+        }
+        if (attackerTooCloseToDefenseAreaBuilder_ != null) {
+          attackerTooCloseToDefenseAreaBuilder_.clear();
+        }
+        if (defenderInDefenseAreaBuilder_ != null) {
+          defenderInDefenseAreaBuilder_.clear();
+        }
+        if (boundaryCrossingBuilder_ != null) {
+          boundaryCrossingBuilder_.clear();
+        }
+        if (keeperHeldBallBuilder_ != null) {
+          keeperHeldBallBuilder_.clear();
+        }
+        if (botDribbledBallTooFarBuilder_ != null) {
+          botDribbledBallTooFarBuilder_.clear();
+        }
+        if (botPushedBotBuilder_ != null) {
+          botPushedBotBuilder_.clear();
+        }
+        if (botHeldBallDeliberatelyBuilder_ != null) {
+          botHeldBallDeliberatelyBuilder_.clear();
+        }
+        if (botTippedOverBuilder_ != null) {
+          botTippedOverBuilder_.clear();
+        }
+        if (attackerTouchedBallInDefenseAreaBuilder_ != null) {
+          attackerTouchedBallInDefenseAreaBuilder_.clear();
+        }
+        if (botKickedBallTooFastBuilder_ != null) {
+          botKickedBallTooFastBuilder_.clear();
+        }
+        if (botCrashUniqueBuilder_ != null) {
+          botCrashUniqueBuilder_.clear();
+        }
+        if (botCrashDrawnBuilder_ != null) {
+          botCrashDrawnBuilder_.clear();
+        }
+        if (defenderTooCloseToKickPointBuilder_ != null) {
+          defenderTooCloseToKickPointBuilder_.clear();
+        }
+        if (botTooFastInStopBuilder_ != null) {
+          botTooFastInStopBuilder_.clear();
+        }
+        if (botInterferedPlacementBuilder_ != null) {
+          botInterferedPlacementBuilder_.clear();
+        }
+        if (possibleGoalBuilder_ != null) {
+          possibleGoalBuilder_.clear();
+        }
+        if (goalBuilder_ != null) {
+          goalBuilder_.clear();
+        }
+        if (invalidGoalBuilder_ != null) {
+          invalidGoalBuilder_.clear();
+        }
+        if (attackerDoubleTouchedBallBuilder_ != null) {
+          attackerDoubleTouchedBallBuilder_.clear();
+        }
+        if (placementSucceededBuilder_ != null) {
+          placementSucceededBuilder_.clear();
+        }
+        if (penaltyKickFailedBuilder_ != null) {
+          penaltyKickFailedBuilder_.clear();
+        }
+        if (noProgressInGameBuilder_ != null) {
+          noProgressInGameBuilder_.clear();
+        }
+        if (placementFailedBuilder_ != null) {
+          placementFailedBuilder_.clear();
+        }
+        if (multipleCardsBuilder_ != null) {
+          multipleCardsBuilder_.clear();
+        }
+        if (multipleFoulsBuilder_ != null) {
+          multipleFoulsBuilder_.clear();
+        }
+        if (botSubstitutionBuilder_ != null) {
+          botSubstitutionBuilder_.clear();
+        }
+        if (tooManyRobotsBuilder_ != null) {
+          tooManyRobotsBuilder_.clear();
+        }
+        if (challengeFlagBuilder_ != null) {
+          challengeFlagBuilder_.clear();
+        }
+        if (challengeFlagHandledBuilder_ != null) {
+          challengeFlagHandledBuilder_.clear();
+        }
+        if (emergencyStopBuilder_ != null) {
+          emergencyStopBuilder_.clear();
+        }
+        if (unsportingBehaviorMinorBuilder_ != null) {
+          unsportingBehaviorMinorBuilder_.clear();
+        }
+        if (unsportingBehaviorMajorBuilder_ != null) {
+          unsportingBehaviorMajorBuilder_.clear();
+        }
+        if (preparedBuilder_ != null) {
+          preparedBuilder_.clear();
+        }
+        if (indirectGoalBuilder_ != null) {
+          indirectGoalBuilder_.clear();
+        }
+        if (chippedGoalBuilder_ != null) {
+          chippedGoalBuilder_.clear();
+        }
+        if (kickTimeoutBuilder_ != null) {
+          kickTimeoutBuilder_.clear();
+        }
+        if (attackerTouchedOpponentInDefenseAreaBuilder_ != null) {
+          attackerTouchedOpponentInDefenseAreaBuilder_.clear();
+        }
+        if (attackerTouchedOpponentInDefenseAreaSkippedBuilder_ != null) {
+          attackerTouchedOpponentInDefenseAreaSkippedBuilder_.clear();
+        }
+        if (botCrashUniqueSkippedBuilder_ != null) {
+          botCrashUniqueSkippedBuilder_.clear();
+        }
+        if (botPushedBotSkippedBuilder_ != null) {
+          botPushedBotSkippedBuilder_.clear();
+        }
+        if (defenderInDefenseAreaPartiallyBuilder_ != null) {
+          defenderInDefenseAreaPartiallyBuilder_.clear();
+        }
+        if (multiplePlacementFailuresBuilder_ != null) {
+          multiplePlacementFailuresBuilder_.clear();
+        }
         eventCase_ = 0;
         event_ = null;
         return this;
@@ -46509,347 +45129,227 @@ public final class SslGcGameEvent {
       @java.lang.Override
       public proto.gc.SslGcGameEvent.GameEvent buildPartial() {
         proto.gc.SslGcGameEvent.GameEvent result = new proto.gc.SslGcGameEvent.GameEvent(this);
-        int from_bitField0_ = bitField0_;
-        int from_bitField1_ = bitField1_;
-        int to_bitField0_ = 0;
-        int to_bitField1_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.id_ = id_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.type_ = type_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        if (bitField1_ != 0) { buildPartial1(result); }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(proto.gc.SslGcGameEvent.GameEvent result) {
         if (((bitField0_ & 0x00000004) != 0)) {
           origin_ = origin_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.origin_ = origin_;
+      }
+
+      private void buildPartial0(proto.gc.SslGcGameEvent.GameEvent result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.type_ = type_;
+          to_bitField0_ |= 0x00000002;
+        }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.createdTimestamp_ = createdTimestamp_;
           to_bitField0_ |= 0x00000004;
         }
-        if (eventCase_ == 6) {
-          if (ballLeftFieldTouchLineBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = ballLeftFieldTouchLineBuilder_.build();
-          }
-        }
-        if (eventCase_ == 7) {
-          if (ballLeftFieldGoalLineBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = ballLeftFieldGoalLineBuilder_.build();
-          }
-        }
-        if (eventCase_ == 11) {
-          if (aimlessKickBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = aimlessKickBuilder_.build();
-          }
-        }
-        if (eventCase_ == 19) {
-          if (attackerTooCloseToDefenseAreaBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = attackerTooCloseToDefenseAreaBuilder_.build();
-          }
-        }
-        if (eventCase_ == 31) {
-          if (defenderInDefenseAreaBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = defenderInDefenseAreaBuilder_.build();
-          }
-        }
-        if (eventCase_ == 43) {
-          if (boundaryCrossingBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = boundaryCrossingBuilder_.build();
-          }
-        }
-        if (eventCase_ == 13) {
-          if (keeperHeldBallBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = keeperHeldBallBuilder_.build();
-          }
-        }
-        if (eventCase_ == 17) {
-          if (botDribbledBallTooFarBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = botDribbledBallTooFarBuilder_.build();
-          }
-        }
-        if (eventCase_ == 24) {
-          if (botPushedBotBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = botPushedBotBuilder_.build();
-          }
-        }
-        if (eventCase_ == 26) {
-          if (botHeldBallDeliberatelyBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = botHeldBallDeliberatelyBuilder_.build();
-          }
-        }
-        if (eventCase_ == 27) {
-          if (botTippedOverBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = botTippedOverBuilder_.build();
-          }
-        }
-        if (eventCase_ == 15) {
-          if (attackerTouchedBallInDefenseAreaBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = attackerTouchedBallInDefenseAreaBuilder_.build();
-          }
-        }
-        if (eventCase_ == 18) {
-          if (botKickedBallTooFastBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = botKickedBallTooFastBuilder_.build();
-          }
-        }
-        if (eventCase_ == 22) {
-          if (botCrashUniqueBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = botCrashUniqueBuilder_.build();
-          }
-        }
-        if (eventCase_ == 21) {
-          if (botCrashDrawnBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = botCrashDrawnBuilder_.build();
-          }
-        }
-        if (eventCase_ == 29) {
-          if (defenderTooCloseToKickPointBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = defenderTooCloseToKickPointBuilder_.build();
-          }
-        }
-        if (eventCase_ == 28) {
-          if (botTooFastInStopBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = botTooFastInStopBuilder_.build();
-          }
-        }
-        if (eventCase_ == 20) {
-          if (botInterferedPlacementBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = botInterferedPlacementBuilder_.build();
-          }
-        }
-        if (eventCase_ == 39) {
-          if (possibleGoalBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = possibleGoalBuilder_.build();
-          }
-        }
-        if (eventCase_ == 8) {
-          if (goalBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = goalBuilder_.build();
-          }
-        }
-        if (eventCase_ == 44) {
-          if (invalidGoalBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = invalidGoalBuilder_.build();
-          }
-        }
-        if (eventCase_ == 14) {
-          if (attackerDoubleTouchedBallBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = attackerDoubleTouchedBallBuilder_.build();
-          }
-        }
-        if (eventCase_ == 5) {
-          if (placementSucceededBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = placementSucceededBuilder_.build();
-          }
-        }
-        if (eventCase_ == 45) {
-          if (penaltyKickFailedBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = penaltyKickFailedBuilder_.build();
-          }
-        }
-        if (eventCase_ == 2) {
-          if (noProgressInGameBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = noProgressInGameBuilder_.build();
-          }
-        }
-        if (eventCase_ == 3) {
-          if (placementFailedBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = placementFailedBuilder_.build();
-          }
-        }
-        if (eventCase_ == 32) {
-          if (multipleCardsBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = multipleCardsBuilder_.build();
-          }
-        }
-        if (eventCase_ == 34) {
-          if (multipleFoulsBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = multipleFoulsBuilder_.build();
-          }
-        }
-        if (eventCase_ == 37) {
-          if (botSubstitutionBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = botSubstitutionBuilder_.build();
-          }
-        }
-        if (eventCase_ == 38) {
-          if (tooManyRobotsBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = tooManyRobotsBuilder_.build();
-          }
-        }
-        if (eventCase_ == 46) {
-          if (challengeFlagBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = challengeFlagBuilder_.build();
-          }
-        }
-        if (eventCase_ == 48) {
-          if (challengeFlagHandledBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = challengeFlagHandledBuilder_.build();
-          }
-        }
-        if (eventCase_ == 47) {
-          if (emergencyStopBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = emergencyStopBuilder_.build();
-          }
-        }
-        if (eventCase_ == 35) {
-          if (unsportingBehaviorMinorBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = unsportingBehaviorMinorBuilder_.build();
-          }
-        }
-        if (eventCase_ == 36) {
-          if (unsportingBehaviorMajorBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = unsportingBehaviorMajorBuilder_.build();
-          }
-        }
-        if (eventCase_ == 1) {
-          if (preparedBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = preparedBuilder_.build();
-          }
-        }
-        if (eventCase_ == 9) {
-          if (indirectGoalBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = indirectGoalBuilder_.build();
-          }
-        }
-        if (eventCase_ == 10) {
-          if (chippedGoalBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = chippedGoalBuilder_.build();
-          }
-        }
-        if (eventCase_ == 12) {
-          if (kickTimeoutBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = kickTimeoutBuilder_.build();
-          }
-        }
-        if (eventCase_ == 16) {
-          if (attackerTouchedOpponentInDefenseAreaBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = attackerTouchedOpponentInDefenseAreaBuilder_.build();
-          }
-        }
-        if (eventCase_ == 42) {
-          if (attackerTouchedOpponentInDefenseAreaSkippedBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = attackerTouchedOpponentInDefenseAreaSkippedBuilder_.build();
-          }
-        }
-        if (eventCase_ == 23) {
-          if (botCrashUniqueSkippedBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = botCrashUniqueSkippedBuilder_.build();
-          }
-        }
-        if (eventCase_ == 25) {
-          if (botPushedBotSkippedBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = botPushedBotSkippedBuilder_.build();
-          }
-        }
-        if (eventCase_ == 30) {
-          if (defenderInDefenseAreaPartiallyBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = defenderInDefenseAreaPartiallyBuilder_.build();
-          }
-        }
-        if (eventCase_ == 33) {
-          if (multiplePlacementFailuresBuilder_ == null) {
-            result.event_ = event_;
-          } else {
-            result.event_ = multiplePlacementFailuresBuilder_.build();
-          }
-        }
-        result.bitField0_ = to_bitField0_;
-        result.bitField1_ = to_bitField1_;
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      private void buildPartial1(proto.gc.SslGcGameEvent.GameEvent result) {
+        int from_bitField1_ = bitField1_;
+      }
+
+      private void buildPartialOneofs(proto.gc.SslGcGameEvent.GameEvent result) {
         result.eventCase_ = eventCase_;
-        onBuilt();
-        return result;
+        result.event_ = this.event_;
+        if (eventCase_ == 6 &&
+            ballLeftFieldTouchLineBuilder_ != null) {
+          result.event_ = ballLeftFieldTouchLineBuilder_.build();
+        }
+        if (eventCase_ == 7 &&
+            ballLeftFieldGoalLineBuilder_ != null) {
+          result.event_ = ballLeftFieldGoalLineBuilder_.build();
+        }
+        if (eventCase_ == 11 &&
+            aimlessKickBuilder_ != null) {
+          result.event_ = aimlessKickBuilder_.build();
+        }
+        if (eventCase_ == 19 &&
+            attackerTooCloseToDefenseAreaBuilder_ != null) {
+          result.event_ = attackerTooCloseToDefenseAreaBuilder_.build();
+        }
+        if (eventCase_ == 31 &&
+            defenderInDefenseAreaBuilder_ != null) {
+          result.event_ = defenderInDefenseAreaBuilder_.build();
+        }
+        if (eventCase_ == 43 &&
+            boundaryCrossingBuilder_ != null) {
+          result.event_ = boundaryCrossingBuilder_.build();
+        }
+        if (eventCase_ == 13 &&
+            keeperHeldBallBuilder_ != null) {
+          result.event_ = keeperHeldBallBuilder_.build();
+        }
+        if (eventCase_ == 17 &&
+            botDribbledBallTooFarBuilder_ != null) {
+          result.event_ = botDribbledBallTooFarBuilder_.build();
+        }
+        if (eventCase_ == 24 &&
+            botPushedBotBuilder_ != null) {
+          result.event_ = botPushedBotBuilder_.build();
+        }
+        if (eventCase_ == 26 &&
+            botHeldBallDeliberatelyBuilder_ != null) {
+          result.event_ = botHeldBallDeliberatelyBuilder_.build();
+        }
+        if (eventCase_ == 27 &&
+            botTippedOverBuilder_ != null) {
+          result.event_ = botTippedOverBuilder_.build();
+        }
+        if (eventCase_ == 15 &&
+            attackerTouchedBallInDefenseAreaBuilder_ != null) {
+          result.event_ = attackerTouchedBallInDefenseAreaBuilder_.build();
+        }
+        if (eventCase_ == 18 &&
+            botKickedBallTooFastBuilder_ != null) {
+          result.event_ = botKickedBallTooFastBuilder_.build();
+        }
+        if (eventCase_ == 22 &&
+            botCrashUniqueBuilder_ != null) {
+          result.event_ = botCrashUniqueBuilder_.build();
+        }
+        if (eventCase_ == 21 &&
+            botCrashDrawnBuilder_ != null) {
+          result.event_ = botCrashDrawnBuilder_.build();
+        }
+        if (eventCase_ == 29 &&
+            defenderTooCloseToKickPointBuilder_ != null) {
+          result.event_ = defenderTooCloseToKickPointBuilder_.build();
+        }
+        if (eventCase_ == 28 &&
+            botTooFastInStopBuilder_ != null) {
+          result.event_ = botTooFastInStopBuilder_.build();
+        }
+        if (eventCase_ == 20 &&
+            botInterferedPlacementBuilder_ != null) {
+          result.event_ = botInterferedPlacementBuilder_.build();
+        }
+        if (eventCase_ == 39 &&
+            possibleGoalBuilder_ != null) {
+          result.event_ = possibleGoalBuilder_.build();
+        }
+        if (eventCase_ == 8 &&
+            goalBuilder_ != null) {
+          result.event_ = goalBuilder_.build();
+        }
+        if (eventCase_ == 44 &&
+            invalidGoalBuilder_ != null) {
+          result.event_ = invalidGoalBuilder_.build();
+        }
+        if (eventCase_ == 14 &&
+            attackerDoubleTouchedBallBuilder_ != null) {
+          result.event_ = attackerDoubleTouchedBallBuilder_.build();
+        }
+        if (eventCase_ == 5 &&
+            placementSucceededBuilder_ != null) {
+          result.event_ = placementSucceededBuilder_.build();
+        }
+        if (eventCase_ == 45 &&
+            penaltyKickFailedBuilder_ != null) {
+          result.event_ = penaltyKickFailedBuilder_.build();
+        }
+        if (eventCase_ == 2 &&
+            noProgressInGameBuilder_ != null) {
+          result.event_ = noProgressInGameBuilder_.build();
+        }
+        if (eventCase_ == 3 &&
+            placementFailedBuilder_ != null) {
+          result.event_ = placementFailedBuilder_.build();
+        }
+        if (eventCase_ == 32 &&
+            multipleCardsBuilder_ != null) {
+          result.event_ = multipleCardsBuilder_.build();
+        }
+        if (eventCase_ == 34 &&
+            multipleFoulsBuilder_ != null) {
+          result.event_ = multipleFoulsBuilder_.build();
+        }
+        if (eventCase_ == 37 &&
+            botSubstitutionBuilder_ != null) {
+          result.event_ = botSubstitutionBuilder_.build();
+        }
+        if (eventCase_ == 38 &&
+            tooManyRobotsBuilder_ != null) {
+          result.event_ = tooManyRobotsBuilder_.build();
+        }
+        if (eventCase_ == 46 &&
+            challengeFlagBuilder_ != null) {
+          result.event_ = challengeFlagBuilder_.build();
+        }
+        if (eventCase_ == 48 &&
+            challengeFlagHandledBuilder_ != null) {
+          result.event_ = challengeFlagHandledBuilder_.build();
+        }
+        if (eventCase_ == 47 &&
+            emergencyStopBuilder_ != null) {
+          result.event_ = emergencyStopBuilder_.build();
+        }
+        if (eventCase_ == 35 &&
+            unsportingBehaviorMinorBuilder_ != null) {
+          result.event_ = unsportingBehaviorMinorBuilder_.build();
+        }
+        if (eventCase_ == 36 &&
+            unsportingBehaviorMajorBuilder_ != null) {
+          result.event_ = unsportingBehaviorMajorBuilder_.build();
+        }
+        if (eventCase_ == 1 &&
+            preparedBuilder_ != null) {
+          result.event_ = preparedBuilder_.build();
+        }
+        if (eventCase_ == 9 &&
+            indirectGoalBuilder_ != null) {
+          result.event_ = indirectGoalBuilder_.build();
+        }
+        if (eventCase_ == 10 &&
+            chippedGoalBuilder_ != null) {
+          result.event_ = chippedGoalBuilder_.build();
+        }
+        if (eventCase_ == 12 &&
+            kickTimeoutBuilder_ != null) {
+          result.event_ = kickTimeoutBuilder_.build();
+        }
+        if (eventCase_ == 16 &&
+            attackerTouchedOpponentInDefenseAreaBuilder_ != null) {
+          result.event_ = attackerTouchedOpponentInDefenseAreaBuilder_.build();
+        }
+        if (eventCase_ == 42 &&
+            attackerTouchedOpponentInDefenseAreaSkippedBuilder_ != null) {
+          result.event_ = attackerTouchedOpponentInDefenseAreaSkippedBuilder_.build();
+        }
+        if (eventCase_ == 23 &&
+            botCrashUniqueSkippedBuilder_ != null) {
+          result.event_ = botCrashUniqueSkippedBuilder_.build();
+        }
+        if (eventCase_ == 25 &&
+            botPushedBotSkippedBuilder_ != null) {
+          result.event_ = botPushedBotSkippedBuilder_.build();
+        }
+        if (eventCase_ == 30 &&
+            defenderInDefenseAreaPartiallyBuilder_ != null) {
+          result.event_ = defenderInDefenseAreaPartiallyBuilder_.build();
+        }
+        if (eventCase_ == 33 &&
+            multiplePlacementFailuresBuilder_ != null) {
+          result.event_ = multiplePlacementFailuresBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -46897,8 +45397,8 @@ public final class SslGcGameEvent {
       public Builder mergeFrom(proto.gc.SslGcGameEvent.GameEvent other) {
         if (other == proto.gc.SslGcGameEvent.GameEvent.getDefaultInstance()) return this;
         if (other.hasId()) {
-          bitField0_ |= 0x00000001;
           id_ = other.id_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasType()) {
@@ -47102,7 +45602,7 @@ public final class SslGcGameEvent {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -47337,17 +45837,373 @@ public final class SslGcGameEvent {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcGameEvent.GameEvent parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getPreparedFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 1;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getNoProgressInGameFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 2;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getPlacementFailedFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 3;
+                break;
+              } // case 26
+              case 42: {
+                input.readMessage(
+                    getPlacementSucceededFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 5;
+                break;
+              } // case 42
+              case 50: {
+                input.readMessage(
+                    getBallLeftFieldTouchLineFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 6;
+                break;
+              } // case 50
+              case 58: {
+                input.readMessage(
+                    getBallLeftFieldGoalLineFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 7;
+                break;
+              } // case 58
+              case 66: {
+                input.readMessage(
+                    getGoalFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 8;
+                break;
+              } // case 66
+              case 74: {
+                input.readMessage(
+                    getIndirectGoalFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 9;
+                break;
+              } // case 74
+              case 82: {
+                input.readMessage(
+                    getChippedGoalFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 10;
+                break;
+              } // case 82
+              case 90: {
+                input.readMessage(
+                    getAimlessKickFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 11;
+                break;
+              } // case 90
+              case 98: {
+                input.readMessage(
+                    getKickTimeoutFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 12;
+                break;
+              } // case 98
+              case 106: {
+                input.readMessage(
+                    getKeeperHeldBallFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 13;
+                break;
+              } // case 106
+              case 114: {
+                input.readMessage(
+                    getAttackerDoubleTouchedBallFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 14;
+                break;
+              } // case 114
+              case 122: {
+                input.readMessage(
+                    getAttackerTouchedBallInDefenseAreaFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 15;
+                break;
+              } // case 122
+              case 130: {
+                input.readMessage(
+                    getAttackerTouchedOpponentInDefenseAreaFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 16;
+                break;
+              } // case 130
+              case 138: {
+                input.readMessage(
+                    getBotDribbledBallTooFarFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 17;
+                break;
+              } // case 138
+              case 146: {
+                input.readMessage(
+                    getBotKickedBallTooFastFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 18;
+                break;
+              } // case 146
+              case 154: {
+                input.readMessage(
+                    getAttackerTooCloseToDefenseAreaFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 19;
+                break;
+              } // case 154
+              case 162: {
+                input.readMessage(
+                    getBotInterferedPlacementFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 20;
+                break;
+              } // case 162
+              case 170: {
+                input.readMessage(
+                    getBotCrashDrawnFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 21;
+                break;
+              } // case 170
+              case 178: {
+                input.readMessage(
+                    getBotCrashUniqueFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 22;
+                break;
+              } // case 178
+              case 186: {
+                input.readMessage(
+                    getBotCrashUniqueSkippedFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 23;
+                break;
+              } // case 186
+              case 194: {
+                input.readMessage(
+                    getBotPushedBotFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 24;
+                break;
+              } // case 194
+              case 202: {
+                input.readMessage(
+                    getBotPushedBotSkippedFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 25;
+                break;
+              } // case 202
+              case 210: {
+                input.readMessage(
+                    getBotHeldBallDeliberatelyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 26;
+                break;
+              } // case 210
+              case 218: {
+                input.readMessage(
+                    getBotTippedOverFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 27;
+                break;
+              } // case 218
+              case 226: {
+                input.readMessage(
+                    getBotTooFastInStopFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 28;
+                break;
+              } // case 226
+              case 234: {
+                input.readMessage(
+                    getDefenderTooCloseToKickPointFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 29;
+                break;
+              } // case 234
+              case 242: {
+                input.readMessage(
+                    getDefenderInDefenseAreaPartiallyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 30;
+                break;
+              } // case 242
+              case 250: {
+                input.readMessage(
+                    getDefenderInDefenseAreaFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 31;
+                break;
+              } // case 250
+              case 258: {
+                input.readMessage(
+                    getMultipleCardsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 32;
+                break;
+              } // case 258
+              case 266: {
+                input.readMessage(
+                    getMultiplePlacementFailuresFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 33;
+                break;
+              } // case 266
+              case 274: {
+                input.readMessage(
+                    getMultipleFoulsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 34;
+                break;
+              } // case 274
+              case 282: {
+                input.readMessage(
+                    getUnsportingBehaviorMinorFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 35;
+                break;
+              } // case 282
+              case 290: {
+                input.readMessage(
+                    getUnsportingBehaviorMajorFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 36;
+                break;
+              } // case 290
+              case 298: {
+                input.readMessage(
+                    getBotSubstitutionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 37;
+                break;
+              } // case 298
+              case 306: {
+                input.readMessage(
+                    getTooManyRobotsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 38;
+                break;
+              } // case 306
+              case 314: {
+                input.readMessage(
+                    getPossibleGoalFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 39;
+                break;
+              } // case 314
+              case 320: {
+                int tmpRaw = input.readEnum();
+                proto.gc.SslGcGameEvent.GameEvent.Type tmpValue =
+                    proto.gc.SslGcGameEvent.GameEvent.Type.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(40, tmpRaw);
+                } else {
+                  type_ = tmpRaw;
+                  bitField0_ |= 0x00000002;
+                }
+                break;
+              } // case 320
+              case 330: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                ensureOriginIsMutable();
+                origin_.add(bs);
+                break;
+              } // case 330
+              case 338: {
+                input.readMessage(
+                    getAttackerTouchedOpponentInDefenseAreaSkippedFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 42;
+                break;
+              } // case 338
+              case 346: {
+                input.readMessage(
+                    getBoundaryCrossingFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 43;
+                break;
+              } // case 346
+              case 354: {
+                input.readMessage(
+                    getInvalidGoalFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 44;
+                break;
+              } // case 354
+              case 362: {
+                input.readMessage(
+                    getPenaltyKickFailedFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 45;
+                break;
+              } // case 362
+              case 370: {
+                input.readMessage(
+                    getChallengeFlagFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 46;
+                break;
+              } // case 370
+              case 378: {
+                input.readMessage(
+                    getEmergencyStopFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 47;
+                break;
+              } // case 378
+              case 386: {
+                input.readMessage(
+                    getChallengeFlagHandledFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 48;
+                break;
+              } // case 386
+              case 392: {
+                createdTimestamp_ = input.readUInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 392
+              case 402: {
+                id_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 402
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcGameEvent.GameEvent) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int eventCase_ = 0;
@@ -47434,11 +46290,9 @@ public final class SslGcGameEvent {
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+        if (value == null) { throw new NullPointerException(); }
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -47451,8 +46305,8 @@ public final class SslGcGameEvent {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -47467,11 +46321,9 @@ public final class SslGcGameEvent {
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+        if (value == null) { throw new NullPointerException(); }
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -47498,8 +46350,7 @@ public final class SslGcGameEvent {
        */
       @java.lang.Override
       public proto.gc.SslGcGameEvent.GameEvent.Type getType() {
-        @SuppressWarnings("deprecation")
-        proto.gc.SslGcGameEvent.GameEvent.Type result = proto.gc.SslGcGameEvent.GameEvent.Type.valueOf(type_);
+        proto.gc.SslGcGameEvent.GameEvent.Type result = proto.gc.SslGcGameEvent.GameEvent.Type.forNumber(type_);
         return result == null ? proto.gc.SslGcGameEvent.GameEvent.Type.UNKNOWN_GAME_EVENT_TYPE : result;
       }
       /**
@@ -47617,10 +46468,8 @@ public final class SslGcGameEvent {
        */
       public Builder setOrigin(
           int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureOriginIsMutable();
+        if (value == null) { throw new NullPointerException(); }
+        ensureOriginIsMutable();
         origin_.set(index, value);
         onChanged();
         return this;
@@ -47639,10 +46488,8 @@ public final class SslGcGameEvent {
        */
       public Builder addOrigin(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureOriginIsMutable();
+        if (value == null) { throw new NullPointerException(); }
+        ensureOriginIsMutable();
         origin_.add(value);
         onChanged();
         return this;
@@ -47698,10 +46545,8 @@ public final class SslGcGameEvent {
        */
       public Builder addOriginBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureOriginIsMutable();
+        if (value == null) { throw new NullPointerException(); }
+        ensureOriginIsMutable();
         origin_.add(value);
         onChanged();
         return this;
@@ -47742,8 +46587,9 @@ public final class SslGcGameEvent {
        * @return This builder for chaining.
        */
       public Builder setCreatedTimestamp(long value) {
-        bitField0_ |= 0x00000008;
+        
         createdTimestamp_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -47836,8 +46682,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 6) {
             ballLeftFieldTouchLineBuilder_.mergeFrom(value);
+          } else {
+            ballLeftFieldTouchLineBuilder_.setMessage(value);
           }
-          ballLeftFieldTouchLineBuilder_.setMessage(value);
         }
         eventCase_ = 6;
         return this;
@@ -47899,7 +46746,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 6;
-        onChanged();;
+        onChanged();
         return ballLeftFieldTouchLineBuilder_;
       }
 
@@ -47977,8 +46824,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 7) {
             ballLeftFieldGoalLineBuilder_.mergeFrom(value);
+          } else {
+            ballLeftFieldGoalLineBuilder_.setMessage(value);
           }
-          ballLeftFieldGoalLineBuilder_.setMessage(value);
         }
         eventCase_ = 7;
         return this;
@@ -48040,7 +46888,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 7;
-        onChanged();;
+        onChanged();
         return ballLeftFieldGoalLineBuilder_;
       }
 
@@ -48118,8 +46966,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 11) {
             aimlessKickBuilder_.mergeFrom(value);
+          } else {
+            aimlessKickBuilder_.setMessage(value);
           }
-          aimlessKickBuilder_.setMessage(value);
         }
         eventCase_ = 11;
         return this;
@@ -48181,7 +47030,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 11;
-        onChanged();;
+        onChanged();
         return aimlessKickBuilder_;
       }
 
@@ -48259,8 +47108,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 19) {
             attackerTooCloseToDefenseAreaBuilder_.mergeFrom(value);
+          } else {
+            attackerTooCloseToDefenseAreaBuilder_.setMessage(value);
           }
-          attackerTooCloseToDefenseAreaBuilder_.setMessage(value);
         }
         eventCase_ = 19;
         return this;
@@ -48322,7 +47172,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 19;
-        onChanged();;
+        onChanged();
         return attackerTooCloseToDefenseAreaBuilder_;
       }
 
@@ -48400,8 +47250,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 31) {
             defenderInDefenseAreaBuilder_.mergeFrom(value);
+          } else {
+            defenderInDefenseAreaBuilder_.setMessage(value);
           }
-          defenderInDefenseAreaBuilder_.setMessage(value);
         }
         eventCase_ = 31;
         return this;
@@ -48463,7 +47314,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 31;
-        onChanged();;
+        onChanged();
         return defenderInDefenseAreaBuilder_;
       }
 
@@ -48541,8 +47392,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 43) {
             boundaryCrossingBuilder_.mergeFrom(value);
+          } else {
+            boundaryCrossingBuilder_.setMessage(value);
           }
-          boundaryCrossingBuilder_.setMessage(value);
         }
         eventCase_ = 43;
         return this;
@@ -48604,7 +47456,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 43;
-        onChanged();;
+        onChanged();
         return boundaryCrossingBuilder_;
       }
 
@@ -48682,8 +47534,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 13) {
             keeperHeldBallBuilder_.mergeFrom(value);
+          } else {
+            keeperHeldBallBuilder_.setMessage(value);
           }
-          keeperHeldBallBuilder_.setMessage(value);
         }
         eventCase_ = 13;
         return this;
@@ -48745,7 +47598,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 13;
-        onChanged();;
+        onChanged();
         return keeperHeldBallBuilder_;
       }
 
@@ -48823,8 +47676,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 17) {
             botDribbledBallTooFarBuilder_.mergeFrom(value);
+          } else {
+            botDribbledBallTooFarBuilder_.setMessage(value);
           }
-          botDribbledBallTooFarBuilder_.setMessage(value);
         }
         eventCase_ = 17;
         return this;
@@ -48886,7 +47740,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 17;
-        onChanged();;
+        onChanged();
         return botDribbledBallTooFarBuilder_;
       }
 
@@ -48964,8 +47818,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 24) {
             botPushedBotBuilder_.mergeFrom(value);
+          } else {
+            botPushedBotBuilder_.setMessage(value);
           }
-          botPushedBotBuilder_.setMessage(value);
         }
         eventCase_ = 24;
         return this;
@@ -49027,7 +47882,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 24;
-        onChanged();;
+        onChanged();
         return botPushedBotBuilder_;
       }
 
@@ -49105,8 +47960,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 26) {
             botHeldBallDeliberatelyBuilder_.mergeFrom(value);
+          } else {
+            botHeldBallDeliberatelyBuilder_.setMessage(value);
           }
-          botHeldBallDeliberatelyBuilder_.setMessage(value);
         }
         eventCase_ = 26;
         return this;
@@ -49168,7 +48024,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 26;
-        onChanged();;
+        onChanged();
         return botHeldBallDeliberatelyBuilder_;
       }
 
@@ -49246,8 +48102,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 27) {
             botTippedOverBuilder_.mergeFrom(value);
+          } else {
+            botTippedOverBuilder_.setMessage(value);
           }
-          botTippedOverBuilder_.setMessage(value);
         }
         eventCase_ = 27;
         return this;
@@ -49309,7 +48166,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 27;
-        onChanged();;
+        onChanged();
         return botTippedOverBuilder_;
       }
 
@@ -49387,8 +48244,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 15) {
             attackerTouchedBallInDefenseAreaBuilder_.mergeFrom(value);
+          } else {
+            attackerTouchedBallInDefenseAreaBuilder_.setMessage(value);
           }
-          attackerTouchedBallInDefenseAreaBuilder_.setMessage(value);
         }
         eventCase_ = 15;
         return this;
@@ -49450,7 +48308,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 15;
-        onChanged();;
+        onChanged();
         return attackerTouchedBallInDefenseAreaBuilder_;
       }
 
@@ -49528,8 +48386,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 18) {
             botKickedBallTooFastBuilder_.mergeFrom(value);
+          } else {
+            botKickedBallTooFastBuilder_.setMessage(value);
           }
-          botKickedBallTooFastBuilder_.setMessage(value);
         }
         eventCase_ = 18;
         return this;
@@ -49591,7 +48450,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 18;
-        onChanged();;
+        onChanged();
         return botKickedBallTooFastBuilder_;
       }
 
@@ -49669,8 +48528,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 22) {
             botCrashUniqueBuilder_.mergeFrom(value);
+          } else {
+            botCrashUniqueBuilder_.setMessage(value);
           }
-          botCrashUniqueBuilder_.setMessage(value);
         }
         eventCase_ = 22;
         return this;
@@ -49732,7 +48592,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 22;
-        onChanged();;
+        onChanged();
         return botCrashUniqueBuilder_;
       }
 
@@ -49810,8 +48670,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 21) {
             botCrashDrawnBuilder_.mergeFrom(value);
+          } else {
+            botCrashDrawnBuilder_.setMessage(value);
           }
-          botCrashDrawnBuilder_.setMessage(value);
         }
         eventCase_ = 21;
         return this;
@@ -49873,7 +48734,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 21;
-        onChanged();;
+        onChanged();
         return botCrashDrawnBuilder_;
       }
 
@@ -49951,8 +48812,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 29) {
             defenderTooCloseToKickPointBuilder_.mergeFrom(value);
+          } else {
+            defenderTooCloseToKickPointBuilder_.setMessage(value);
           }
-          defenderTooCloseToKickPointBuilder_.setMessage(value);
         }
         eventCase_ = 29;
         return this;
@@ -50014,7 +48876,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 29;
-        onChanged();;
+        onChanged();
         return defenderTooCloseToKickPointBuilder_;
       }
 
@@ -50092,8 +48954,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 28) {
             botTooFastInStopBuilder_.mergeFrom(value);
+          } else {
+            botTooFastInStopBuilder_.setMessage(value);
           }
-          botTooFastInStopBuilder_.setMessage(value);
         }
         eventCase_ = 28;
         return this;
@@ -50155,7 +49018,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 28;
-        onChanged();;
+        onChanged();
         return botTooFastInStopBuilder_;
       }
 
@@ -50233,8 +49096,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 20) {
             botInterferedPlacementBuilder_.mergeFrom(value);
+          } else {
+            botInterferedPlacementBuilder_.setMessage(value);
           }
-          botInterferedPlacementBuilder_.setMessage(value);
         }
         eventCase_ = 20;
         return this;
@@ -50296,7 +49160,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 20;
-        onChanged();;
+        onChanged();
         return botInterferedPlacementBuilder_;
       }
 
@@ -50374,8 +49238,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 39) {
             possibleGoalBuilder_.mergeFrom(value);
+          } else {
+            possibleGoalBuilder_.setMessage(value);
           }
-          possibleGoalBuilder_.setMessage(value);
         }
         eventCase_ = 39;
         return this;
@@ -50437,7 +49302,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 39;
-        onChanged();;
+        onChanged();
         return possibleGoalBuilder_;
       }
 
@@ -50515,8 +49380,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 8) {
             goalBuilder_.mergeFrom(value);
+          } else {
+            goalBuilder_.setMessage(value);
           }
-          goalBuilder_.setMessage(value);
         }
         eventCase_ = 8;
         return this;
@@ -50578,7 +49444,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 8;
-        onChanged();;
+        onChanged();
         return goalBuilder_;
       }
 
@@ -50656,8 +49522,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 44) {
             invalidGoalBuilder_.mergeFrom(value);
+          } else {
+            invalidGoalBuilder_.setMessage(value);
           }
-          invalidGoalBuilder_.setMessage(value);
         }
         eventCase_ = 44;
         return this;
@@ -50719,7 +49586,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 44;
-        onChanged();;
+        onChanged();
         return invalidGoalBuilder_;
       }
 
@@ -50797,8 +49664,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 14) {
             attackerDoubleTouchedBallBuilder_.mergeFrom(value);
+          } else {
+            attackerDoubleTouchedBallBuilder_.setMessage(value);
           }
-          attackerDoubleTouchedBallBuilder_.setMessage(value);
         }
         eventCase_ = 14;
         return this;
@@ -50860,7 +49728,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 14;
-        onChanged();;
+        onChanged();
         return attackerDoubleTouchedBallBuilder_;
       }
 
@@ -50938,8 +49806,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 5) {
             placementSucceededBuilder_.mergeFrom(value);
+          } else {
+            placementSucceededBuilder_.setMessage(value);
           }
-          placementSucceededBuilder_.setMessage(value);
         }
         eventCase_ = 5;
         return this;
@@ -51001,7 +49870,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 5;
-        onChanged();;
+        onChanged();
         return placementSucceededBuilder_;
       }
 
@@ -51079,8 +49948,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 45) {
             penaltyKickFailedBuilder_.mergeFrom(value);
+          } else {
+            penaltyKickFailedBuilder_.setMessage(value);
           }
-          penaltyKickFailedBuilder_.setMessage(value);
         }
         eventCase_ = 45;
         return this;
@@ -51142,7 +50012,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 45;
-        onChanged();;
+        onChanged();
         return penaltyKickFailedBuilder_;
       }
 
@@ -51220,8 +50090,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 2) {
             noProgressInGameBuilder_.mergeFrom(value);
+          } else {
+            noProgressInGameBuilder_.setMessage(value);
           }
-          noProgressInGameBuilder_.setMessage(value);
         }
         eventCase_ = 2;
         return this;
@@ -51283,7 +50154,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 2;
-        onChanged();;
+        onChanged();
         return noProgressInGameBuilder_;
       }
 
@@ -51361,8 +50232,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 3) {
             placementFailedBuilder_.mergeFrom(value);
+          } else {
+            placementFailedBuilder_.setMessage(value);
           }
-          placementFailedBuilder_.setMessage(value);
         }
         eventCase_ = 3;
         return this;
@@ -51424,7 +50296,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 3;
-        onChanged();;
+        onChanged();
         return placementFailedBuilder_;
       }
 
@@ -51502,8 +50374,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 32) {
             multipleCardsBuilder_.mergeFrom(value);
+          } else {
+            multipleCardsBuilder_.setMessage(value);
           }
-          multipleCardsBuilder_.setMessage(value);
         }
         eventCase_ = 32;
         return this;
@@ -51565,7 +50438,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 32;
-        onChanged();;
+        onChanged();
         return multipleCardsBuilder_;
       }
 
@@ -51643,8 +50516,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 34) {
             multipleFoulsBuilder_.mergeFrom(value);
+          } else {
+            multipleFoulsBuilder_.setMessage(value);
           }
-          multipleFoulsBuilder_.setMessage(value);
         }
         eventCase_ = 34;
         return this;
@@ -51706,7 +50580,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 34;
-        onChanged();;
+        onChanged();
         return multipleFoulsBuilder_;
       }
 
@@ -51784,8 +50658,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 37) {
             botSubstitutionBuilder_.mergeFrom(value);
+          } else {
+            botSubstitutionBuilder_.setMessage(value);
           }
-          botSubstitutionBuilder_.setMessage(value);
         }
         eventCase_ = 37;
         return this;
@@ -51847,7 +50722,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 37;
-        onChanged();;
+        onChanged();
         return botSubstitutionBuilder_;
       }
 
@@ -51925,8 +50800,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 38) {
             tooManyRobotsBuilder_.mergeFrom(value);
+          } else {
+            tooManyRobotsBuilder_.setMessage(value);
           }
-          tooManyRobotsBuilder_.setMessage(value);
         }
         eventCase_ = 38;
         return this;
@@ -51988,7 +50864,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 38;
-        onChanged();;
+        onChanged();
         return tooManyRobotsBuilder_;
       }
 
@@ -52066,8 +50942,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 46) {
             challengeFlagBuilder_.mergeFrom(value);
+          } else {
+            challengeFlagBuilder_.setMessage(value);
           }
-          challengeFlagBuilder_.setMessage(value);
         }
         eventCase_ = 46;
         return this;
@@ -52129,7 +51006,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 46;
-        onChanged();;
+        onChanged();
         return challengeFlagBuilder_;
       }
 
@@ -52207,8 +51084,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 48) {
             challengeFlagHandledBuilder_.mergeFrom(value);
+          } else {
+            challengeFlagHandledBuilder_.setMessage(value);
           }
-          challengeFlagHandledBuilder_.setMessage(value);
         }
         eventCase_ = 48;
         return this;
@@ -52270,7 +51148,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 48;
-        onChanged();;
+        onChanged();
         return challengeFlagHandledBuilder_;
       }
 
@@ -52348,8 +51226,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 47) {
             emergencyStopBuilder_.mergeFrom(value);
+          } else {
+            emergencyStopBuilder_.setMessage(value);
           }
-          emergencyStopBuilder_.setMessage(value);
         }
         eventCase_ = 47;
         return this;
@@ -52411,7 +51290,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 47;
-        onChanged();;
+        onChanged();
         return emergencyStopBuilder_;
       }
 
@@ -52489,8 +51368,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 35) {
             unsportingBehaviorMinorBuilder_.mergeFrom(value);
+          } else {
+            unsportingBehaviorMinorBuilder_.setMessage(value);
           }
-          unsportingBehaviorMinorBuilder_.setMessage(value);
         }
         eventCase_ = 35;
         return this;
@@ -52552,7 +51432,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 35;
-        onChanged();;
+        onChanged();
         return unsportingBehaviorMinorBuilder_;
       }
 
@@ -52630,8 +51510,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 36) {
             unsportingBehaviorMajorBuilder_.mergeFrom(value);
+          } else {
+            unsportingBehaviorMajorBuilder_.setMessage(value);
           }
-          unsportingBehaviorMajorBuilder_.setMessage(value);
         }
         eventCase_ = 36;
         return this;
@@ -52693,7 +51574,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 36;
-        onChanged();;
+        onChanged();
         return unsportingBehaviorMajorBuilder_;
       }
 
@@ -52705,6 +51586,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.Prepared prepared = 1 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.prepared is deprecated.
+       *     See ssl_gc_game_event.proto;l=93
        * @return Whether the prepared field is set.
        */
       @java.lang.Override
@@ -52717,6 +51600,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.Prepared prepared = 1 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.prepared is deprecated.
+       *     See ssl_gc_game_event.proto;l=93
        * @return The prepared.
        */
       @java.lang.Override
@@ -52791,8 +51676,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 1) {
             preparedBuilder_.mergeFrom(value);
+          } else {
+            preparedBuilder_.setMessage(value);
           }
-          preparedBuilder_.setMessage(value);
         }
         eventCase_ = 1;
         return this;
@@ -52870,7 +51756,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 1;
-        onChanged();;
+        onChanged();
         return preparedBuilder_;
       }
 
@@ -52882,6 +51768,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.IndirectGoal indirect_goal = 9 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.indirect_goal is deprecated.
+       *     See ssl_gc_game_event.proto;l=95
        * @return Whether the indirectGoal field is set.
        */
       @java.lang.Override
@@ -52894,6 +51782,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.IndirectGoal indirect_goal = 9 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.indirect_goal is deprecated.
+       *     See ssl_gc_game_event.proto;l=95
        * @return The indirectGoal.
        */
       @java.lang.Override
@@ -52968,8 +51858,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 9) {
             indirectGoalBuilder_.mergeFrom(value);
+          } else {
+            indirectGoalBuilder_.setMessage(value);
           }
-          indirectGoalBuilder_.setMessage(value);
         }
         eventCase_ = 9;
         return this;
@@ -53047,7 +51938,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 9;
-        onChanged();;
+        onChanged();
         return indirectGoalBuilder_;
       }
 
@@ -53059,6 +51950,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.ChippedGoal chipped_goal = 10 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.chipped_goal is deprecated.
+       *     See ssl_gc_game_event.proto;l=97
        * @return Whether the chippedGoal field is set.
        */
       @java.lang.Override
@@ -53071,6 +51964,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.ChippedGoal chipped_goal = 10 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.chipped_goal is deprecated.
+       *     See ssl_gc_game_event.proto;l=97
        * @return The chippedGoal.
        */
       @java.lang.Override
@@ -53145,8 +52040,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 10) {
             chippedGoalBuilder_.mergeFrom(value);
+          } else {
+            chippedGoalBuilder_.setMessage(value);
           }
-          chippedGoalBuilder_.setMessage(value);
         }
         eventCase_ = 10;
         return this;
@@ -53224,7 +52120,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 10;
-        onChanged();;
+        onChanged();
         return chippedGoalBuilder_;
       }
 
@@ -53236,6 +52132,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.KickTimeout kick_timeout = 12 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.kick_timeout is deprecated.
+       *     See ssl_gc_game_event.proto;l=99
        * @return Whether the kickTimeout field is set.
        */
       @java.lang.Override
@@ -53248,6 +52146,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.KickTimeout kick_timeout = 12 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.kick_timeout is deprecated.
+       *     See ssl_gc_game_event.proto;l=99
        * @return The kickTimeout.
        */
       @java.lang.Override
@@ -53322,8 +52222,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 12) {
             kickTimeoutBuilder_.mergeFrom(value);
+          } else {
+            kickTimeoutBuilder_.setMessage(value);
           }
-          kickTimeoutBuilder_.setMessage(value);
         }
         eventCase_ = 12;
         return this;
@@ -53401,7 +52302,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 12;
-        onChanged();;
+        onChanged();
         return kickTimeoutBuilder_;
       }
 
@@ -53413,6 +52314,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.AttackerTouchedOpponentInDefenseArea attacker_touched_opponent_in_defense_area = 16 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.attacker_touched_opponent_in_defense_area is deprecated.
+       *     See ssl_gc_game_event.proto;l=101
        * @return Whether the attackerTouchedOpponentInDefenseArea field is set.
        */
       @java.lang.Override
@@ -53425,6 +52328,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.AttackerTouchedOpponentInDefenseArea attacker_touched_opponent_in_defense_area = 16 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.attacker_touched_opponent_in_defense_area is deprecated.
+       *     See ssl_gc_game_event.proto;l=101
        * @return The attackerTouchedOpponentInDefenseArea.
        */
       @java.lang.Override
@@ -53499,8 +52404,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 16) {
             attackerTouchedOpponentInDefenseAreaBuilder_.mergeFrom(value);
+          } else {
+            attackerTouchedOpponentInDefenseAreaBuilder_.setMessage(value);
           }
-          attackerTouchedOpponentInDefenseAreaBuilder_.setMessage(value);
         }
         eventCase_ = 16;
         return this;
@@ -53578,7 +52484,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 16;
-        onChanged();;
+        onChanged();
         return attackerTouchedOpponentInDefenseAreaBuilder_;
       }
 
@@ -53590,6 +52496,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.AttackerTouchedOpponentInDefenseArea attacker_touched_opponent_in_defense_area_skipped = 42 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.attacker_touched_opponent_in_defense_area_skipped is deprecated.
+       *     See ssl_gc_game_event.proto;l=103
        * @return Whether the attackerTouchedOpponentInDefenseAreaSkipped field is set.
        */
       @java.lang.Override
@@ -53602,6 +52510,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.AttackerTouchedOpponentInDefenseArea attacker_touched_opponent_in_defense_area_skipped = 42 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.attacker_touched_opponent_in_defense_area_skipped is deprecated.
+       *     See ssl_gc_game_event.proto;l=103
        * @return The attackerTouchedOpponentInDefenseAreaSkipped.
        */
       @java.lang.Override
@@ -53676,8 +52586,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 42) {
             attackerTouchedOpponentInDefenseAreaSkippedBuilder_.mergeFrom(value);
+          } else {
+            attackerTouchedOpponentInDefenseAreaSkippedBuilder_.setMessage(value);
           }
-          attackerTouchedOpponentInDefenseAreaSkippedBuilder_.setMessage(value);
         }
         eventCase_ = 42;
         return this;
@@ -53755,7 +52666,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 42;
-        onChanged();;
+        onChanged();
         return attackerTouchedOpponentInDefenseAreaSkippedBuilder_;
       }
 
@@ -53767,6 +52678,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.BotCrashUnique bot_crash_unique_skipped = 23 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.bot_crash_unique_skipped is deprecated.
+       *     See ssl_gc_game_event.proto;l=105
        * @return Whether the botCrashUniqueSkipped field is set.
        */
       @java.lang.Override
@@ -53779,6 +52692,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.BotCrashUnique bot_crash_unique_skipped = 23 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.bot_crash_unique_skipped is deprecated.
+       *     See ssl_gc_game_event.proto;l=105
        * @return The botCrashUniqueSkipped.
        */
       @java.lang.Override
@@ -53853,8 +52768,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 23) {
             botCrashUniqueSkippedBuilder_.mergeFrom(value);
+          } else {
+            botCrashUniqueSkippedBuilder_.setMessage(value);
           }
-          botCrashUniqueSkippedBuilder_.setMessage(value);
         }
         eventCase_ = 23;
         return this;
@@ -53932,7 +52848,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 23;
-        onChanged();;
+        onChanged();
         return botCrashUniqueSkippedBuilder_;
       }
 
@@ -53944,6 +52860,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.BotPushedBot bot_pushed_bot_skipped = 25 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.bot_pushed_bot_skipped is deprecated.
+       *     See ssl_gc_game_event.proto;l=107
        * @return Whether the botPushedBotSkipped field is set.
        */
       @java.lang.Override
@@ -53956,6 +52874,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.BotPushedBot bot_pushed_bot_skipped = 25 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.bot_pushed_bot_skipped is deprecated.
+       *     See ssl_gc_game_event.proto;l=107
        * @return The botPushedBotSkipped.
        */
       @java.lang.Override
@@ -54030,8 +52950,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 25) {
             botPushedBotSkippedBuilder_.mergeFrom(value);
+          } else {
+            botPushedBotSkippedBuilder_.setMessage(value);
           }
-          botPushedBotSkippedBuilder_.setMessage(value);
         }
         eventCase_ = 25;
         return this;
@@ -54109,7 +53030,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 25;
-        onChanged();;
+        onChanged();
         return botPushedBotSkippedBuilder_;
       }
 
@@ -54121,6 +53042,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.DefenderInDefenseAreaPartially defender_in_defense_area_partially = 30 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.defender_in_defense_area_partially is deprecated.
+       *     See ssl_gc_game_event.proto;l=109
        * @return Whether the defenderInDefenseAreaPartially field is set.
        */
       @java.lang.Override
@@ -54133,6 +53056,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.DefenderInDefenseAreaPartially defender_in_defense_area_partially = 30 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.defender_in_defense_area_partially is deprecated.
+       *     See ssl_gc_game_event.proto;l=109
        * @return The defenderInDefenseAreaPartially.
        */
       @java.lang.Override
@@ -54207,8 +53132,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 30) {
             defenderInDefenseAreaPartiallyBuilder_.mergeFrom(value);
+          } else {
+            defenderInDefenseAreaPartiallyBuilder_.setMessage(value);
           }
-          defenderInDefenseAreaPartiallyBuilder_.setMessage(value);
         }
         eventCase_ = 30;
         return this;
@@ -54286,7 +53212,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 30;
-        onChanged();;
+        onChanged();
         return defenderInDefenseAreaPartiallyBuilder_;
       }
 
@@ -54298,6 +53224,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.MultiplePlacementFailures multiple_placement_failures = 33 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.multiple_placement_failures is deprecated.
+       *     See ssl_gc_game_event.proto;l=111
        * @return Whether the multiplePlacementFailures field is set.
        */
       @java.lang.Override
@@ -54310,6 +53238,8 @@ public final class SslGcGameEvent {
        * </pre>
        *
        * <code>.proto.gc.GameEvent.MultiplePlacementFailures multiple_placement_failures = 33 [deprecated = true];</code>
+       * @deprecated proto.gc.GameEvent.multiple_placement_failures is deprecated.
+       *     See ssl_gc_game_event.proto;l=111
        * @return The multiplePlacementFailures.
        */
       @java.lang.Override
@@ -54384,8 +53314,9 @@ public final class SslGcGameEvent {
         } else {
           if (eventCase_ == 33) {
             multiplePlacementFailuresBuilder_.mergeFrom(value);
+          } else {
+            multiplePlacementFailuresBuilder_.setMessage(value);
           }
-          multiplePlacementFailuresBuilder_.setMessage(value);
         }
         eventCase_ = 33;
         return this;
@@ -54463,7 +53394,7 @@ public final class SslGcGameEvent {
           event_ = null;
         }
         eventCase_ = 33;
-        onChanged();;
+        onChanged();
         return multiplePlacementFailuresBuilder_;
       }
       @java.lang.Override
@@ -54499,7 +53430,18 @@ public final class SslGcGameEvent {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GameEvent(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

@@ -57,10 +57,11 @@ public final class SslGcEngine {
      *
      * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
      */
-
-    proto.gc.SslGcEngine.GcStateTeam getTeamStateOrDefault(
+    /* nullable */
+proto.gc.SslGcEngine.GcStateTeam getTeamStateOrDefault(
         java.lang.String key,
-        proto.gc.SslGcEngine.GcStateTeam defaultValue);
+        /* nullable */
+proto.gc.SslGcEngine.GcStateTeam defaultValue);
     /**
      * <pre>
      * the state of each team
@@ -68,7 +69,6 @@ public final class SslGcEngine {
      *
      * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
      */
-
     proto.gc.SslGcEngine.GcStateTeam getTeamStateOrThrow(
         java.lang.String key);
 
@@ -111,10 +111,11 @@ public final class SslGcEngine {
      *
      * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
      */
-
-    proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrDefault(
+    /* nullable */
+proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrDefault(
         java.lang.String key,
-        proto.gc.SslGcEngine.GcStateAutoRef defaultValue);
+        /* nullable */
+proto.gc.SslGcEngine.GcStateAutoRef defaultValue);
     /**
      * <pre>
      * the states of the auto referees
@@ -122,7 +123,6 @@ public final class SslGcEngine {
      *
      * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
      */
-
     proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrThrow(
         java.lang.String key);
 
@@ -165,10 +165,11 @@ public final class SslGcEngine {
      *
      * <code>map&lt;string, string&gt; trackers = 3;</code>
      */
-
-    java.lang.String getTrackersOrDefault(
+    /* nullable */
+java.lang.String getTrackersOrDefault(
         java.lang.String key,
-        java.lang.String defaultValue);
+        /* nullable */
+java.lang.String defaultValue);
     /**
      * <pre>
      * the attached trackers (uuid -&gt; source_name)
@@ -176,7 +177,6 @@ public final class SslGcEngine {
      *
      * <code>map&lt;string, string&gt; trackers = 3;</code>
      */
-
     java.lang.String getTrackersOrThrow(
         java.lang.String key);
 
@@ -301,107 +301,6 @@ public final class SslGcEngine {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GcState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                teamState_ = com.google.protobuf.MapField.newMapField(
-                    TeamStateDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, proto.gc.SslGcEngine.GcStateTeam>
-              teamState__ = input.readMessage(
-                  TeamStateDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              teamState_.getMutableMap().put(
-                  teamState__.getKey(), teamState__.getValue());
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                autoRefState_ = com.google.protobuf.MapField.newMapField(
-                    AutoRefStateDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef>
-              autoRefState__ = input.readMessage(
-                  AutoRefStateDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              autoRefState_.getMutableMap().put(
-                  autoRefState__.getKey(), autoRefState__.getValue());
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                trackers_ = com.google.protobuf.MapField.newMapField(
-                    TrackersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              trackers__ = input.readMessage(
-                  TrackersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              trackers_.getMutableMap().put(
-                  trackers__.getKey(), trackers__.getValue());
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                continueActions_ = new java.util.ArrayList<proto.gc.SslGcEngine.ContinueAction>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              continueActions_.add(
-                  input.readMessage(proto.gc.SslGcEngine.ContinueAction.PARSER, extensionRegistry));
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                continueHints_ = new java.util.ArrayList<proto.gc.SslGcEngine.ContinueHint>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              continueHints_.add(
-                  input.readMessage(proto.gc.SslGcEngine.ContinueHint.PARSER, extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          continueActions_ = java.util.Collections.unmodifiableList(continueActions_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          continueHints_ = java.util.Collections.unmodifiableList(continueHints_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.gc.SslGcEngine.internal_static_proto_gc_GcState_descriptor;
@@ -443,6 +342,7 @@ public final class SslGcEngine {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   proto.gc.SslGcEngine.GcStateTeam.getDefaultInstance());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.String, proto.gc.SslGcEngine.GcStateTeam> teamState_;
     private com.google.protobuf.MapField<java.lang.String, proto.gc.SslGcEngine.GcStateTeam>
@@ -453,7 +353,6 @@ public final class SslGcEngine {
       }
       return teamState_;
     }
-
     public int getTeamStateCount() {
       return internalGetTeamState().getMap().size();
     }
@@ -464,11 +363,10 @@ public final class SslGcEngine {
      *
      * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
      */
-
     @java.lang.Override
     public boolean containsTeamState(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetTeamState().getMap().containsKey(key);
     }
     /**
@@ -487,7 +385,6 @@ public final class SslGcEngine {
      * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam> getTeamStateMap() {
       return internalGetTeamState().getMap();
     }
@@ -499,11 +396,12 @@ public final class SslGcEngine {
      * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
      */
     @java.lang.Override
-
-    public proto.gc.SslGcEngine.GcStateTeam getTeamStateOrDefault(
+    public /* nullable */
+proto.gc.SslGcEngine.GcStateTeam getTeamStateOrDefault(
         java.lang.String key,
-        proto.gc.SslGcEngine.GcStateTeam defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        /* nullable */
+proto.gc.SslGcEngine.GcStateTeam defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam> map =
           internalGetTeamState().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -516,10 +414,9 @@ public final class SslGcEngine {
      * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
      */
     @java.lang.Override
-
     public proto.gc.SslGcEngine.GcStateTeam getTeamStateOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam> map =
           internalGetTeamState().getMap();
       if (!map.containsKey(key)) {
@@ -540,6 +437,7 @@ public final class SslGcEngine {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   proto.gc.SslGcEngine.GcStateAutoRef.getDefaultInstance());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> autoRefState_;
     private com.google.protobuf.MapField<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef>
@@ -550,7 +448,6 @@ public final class SslGcEngine {
       }
       return autoRefState_;
     }
-
     public int getAutoRefStateCount() {
       return internalGetAutoRefState().getMap().size();
     }
@@ -561,11 +458,10 @@ public final class SslGcEngine {
      *
      * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
      */
-
     @java.lang.Override
     public boolean containsAutoRefState(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetAutoRefState().getMap().containsKey(key);
     }
     /**
@@ -584,7 +480,6 @@ public final class SslGcEngine {
      * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> getAutoRefStateMap() {
       return internalGetAutoRefState().getMap();
     }
@@ -596,11 +491,12 @@ public final class SslGcEngine {
      * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
      */
     @java.lang.Override
-
-    public proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrDefault(
+    public /* nullable */
+proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrDefault(
         java.lang.String key,
-        proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        /* nullable */
+proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> map =
           internalGetAutoRefState().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -613,10 +509,9 @@ public final class SslGcEngine {
      * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
      */
     @java.lang.Override
-
     public proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> map =
           internalGetAutoRefState().getMap();
       if (!map.containsKey(key)) {
@@ -637,6 +532,7 @@ public final class SslGcEngine {
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "");
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.String, java.lang.String> trackers_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -647,7 +543,6 @@ public final class SslGcEngine {
       }
       return trackers_;
     }
-
     public int getTrackersCount() {
       return internalGetTrackers().getMap().size();
     }
@@ -658,11 +553,10 @@ public final class SslGcEngine {
      *
      * <code>map&lt;string, string&gt; trackers = 3;</code>
      */
-
     @java.lang.Override
     public boolean containsTrackers(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetTrackers().getMap().containsKey(key);
     }
     /**
@@ -681,7 +575,6 @@ public final class SslGcEngine {
      * <code>map&lt;string, string&gt; trackers = 3;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.String, java.lang.String> getTrackersMap() {
       return internalGetTrackers().getMap();
     }
@@ -693,11 +586,12 @@ public final class SslGcEngine {
      * <code>map&lt;string, string&gt; trackers = 3;</code>
      */
     @java.lang.Override
-
-    public java.lang.String getTrackersOrDefault(
+    public /* nullable */
+java.lang.String getTrackersOrDefault(
         java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        /* nullable */
+java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetTrackers().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -710,10 +604,9 @@ public final class SslGcEngine {
      * <code>map&lt;string, string&gt; trackers = 3;</code>
      */
     @java.lang.Override
-
     public java.lang.String getTrackersOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetTrackers().getMap();
       if (!map.containsKey(key)) {
@@ -723,6 +616,7 @@ public final class SslGcEngine {
     }
 
     public static final int CONTINUE_ACTIONS_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
     private java.util.List<proto.gc.SslGcEngine.ContinueAction> continueActions_;
     /**
      * <pre>
@@ -783,6 +677,7 @@ public final class SslGcEngine {
     }
 
     public static final int CONTINUE_HINTS_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private java.util.List<proto.gc.SslGcEngine.ContinueHint> continueHints_;
     /**
      * <pre>
@@ -892,7 +787,7 @@ public final class SslGcEngine {
       for (int i = 0; i < continueHints_.size(); i++) {
         output.writeMessage(5, continueHints_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -939,7 +834,7 @@ public final class SslGcEngine {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, continueHints_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -964,7 +859,7 @@ public final class SslGcEngine {
           .equals(other.getContinueActionsList())) return false;
       if (!getContinueHintsList()
           .equals(other.getContinueHintsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -995,7 +890,7 @@ public final class SslGcEngine {
         hash = (37 * hash) + CONTINUE_HINTS_FIELD_NUMBER;
         hash = (53 * hash) + getContinueHintsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1146,39 +1041,35 @@ public final class SslGcEngine {
 
       // Construct using proto.gc.SslGcEngine.GcState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getContinueActionsFieldBuilder();
-          getContinueHintsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableTeamState().clear();
         internalGetMutableAutoRefState().clear();
         internalGetMutableTrackers().clear();
         if (continueActionsBuilder_ == null) {
           continueActions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          continueActions_ = null;
           continueActionsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (continueHintsBuilder_ == null) {
           continueHints_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
+          continueHints_ = null;
           continueHintsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1205,13 +1096,13 @@ public final class SslGcEngine {
       @java.lang.Override
       public proto.gc.SslGcEngine.GcState buildPartial() {
         proto.gc.SslGcEngine.GcState result = new proto.gc.SslGcEngine.GcState(this);
-        int from_bitField0_ = bitField0_;
-        result.teamState_ = internalGetTeamState();
-        result.teamState_.makeImmutable();
-        result.autoRefState_ = internalGetAutoRefState();
-        result.autoRefState_.makeImmutable();
-        result.trackers_ = internalGetTrackers();
-        result.trackers_.makeImmutable();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(proto.gc.SslGcEngine.GcState result) {
         if (continueActionsBuilder_ == null) {
           if (((bitField0_ & 0x00000008) != 0)) {
             continueActions_ = java.util.Collections.unmodifiableList(continueActions_);
@@ -1230,8 +1121,22 @@ public final class SslGcEngine {
         } else {
           result.continueHints_ = continueHintsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(proto.gc.SslGcEngine.GcState result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.teamState_ = internalGetTeamState();
+          result.teamState_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.autoRefState_ = internalGetAutoRefState();
+          result.autoRefState_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.trackers_ = internalGetTrackers();
+          result.trackers_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -1280,10 +1185,13 @@ public final class SslGcEngine {
         if (other == proto.gc.SslGcEngine.GcState.getDefaultInstance()) return this;
         internalGetMutableTeamState().mergeFrom(
             other.internalGetTeamState());
+        bitField0_ |= 0x00000001;
         internalGetMutableAutoRefState().mergeFrom(
             other.internalGetAutoRefState());
+        bitField0_ |= 0x00000002;
         internalGetMutableTrackers().mergeFrom(
             other.internalGetTrackers());
+        bitField0_ |= 0x00000004;
         if (continueActionsBuilder_ == null) {
           if (!other.continueActions_.isEmpty()) {
             if (continueActions_.isEmpty()) {
@@ -1336,7 +1244,7 @@ public final class SslGcEngine {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1361,17 +1269,83 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcEngine.GcState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.google.protobuf.MapEntry<java.lang.String, proto.gc.SslGcEngine.GcStateTeam>
+                teamState__ = input.readMessage(
+                    TeamStateDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableTeamState().getMutableMap().put(
+                    teamState__.getKey(), teamState__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                com.google.protobuf.MapEntry<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef>
+                autoRefState__ = input.readMessage(
+                    AutoRefStateDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableAutoRefState().getMutableMap().put(
+                    autoRefState__.getKey(), autoRefState__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                trackers__ = input.readMessage(
+                    TrackersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableTrackers().getMutableMap().put(
+                    trackers__.getKey(), trackers__.getValue());
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                proto.gc.SslGcEngine.ContinueAction m =
+                    input.readMessage(
+                        proto.gc.SslGcEngine.ContinueAction.PARSER,
+                        extensionRegistry);
+                if (continueActionsBuilder_ == null) {
+                  ensureContinueActionsIsMutable();
+                  continueActions_.add(m);
+                } else {
+                  continueActionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 42: {
+                proto.gc.SslGcEngine.ContinueHint m =
+                    input.readMessage(
+                        proto.gc.SslGcEngine.ContinueHint.PARSER,
+                        extensionRegistry);
+                if (continueHintsBuilder_ == null) {
+                  ensureContinueHintsIsMutable();
+                  continueHints_.add(m);
+                } else {
+                  continueHintsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcEngine.GcState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1379,7 +1353,7 @@ public final class SslGcEngine {
       private com.google.protobuf.MapField<
           java.lang.String, proto.gc.SslGcEngine.GcStateTeam> teamState_;
       private com.google.protobuf.MapField<java.lang.String, proto.gc.SslGcEngine.GcStateTeam>
-      internalGetTeamState() {
+          internalGetTeamState() {
         if (teamState_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               TeamStateDefaultEntryHolder.defaultEntry);
@@ -1387,8 +1361,7 @@ public final class SslGcEngine {
         return teamState_;
       }
       private com.google.protobuf.MapField<java.lang.String, proto.gc.SslGcEngine.GcStateTeam>
-      internalGetMutableTeamState() {
-        onChanged();;
+          internalGetMutableTeamState() {
         if (teamState_ == null) {
           teamState_ = com.google.protobuf.MapField.newMapField(
               TeamStateDefaultEntryHolder.defaultEntry);
@@ -1396,9 +1369,10 @@ public final class SslGcEngine {
         if (!teamState_.isMutable()) {
           teamState_ = teamState_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return teamState_;
       }
-
       public int getTeamStateCount() {
         return internalGetTeamState().getMap().size();
       }
@@ -1409,11 +1383,10 @@ public final class SslGcEngine {
        *
        * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
        */
-
       @java.lang.Override
       public boolean containsTeamState(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         return internalGetTeamState().getMap().containsKey(key);
       }
       /**
@@ -1432,7 +1405,6 @@ public final class SslGcEngine {
        * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam> getTeamStateMap() {
         return internalGetTeamState().getMap();
       }
@@ -1444,11 +1416,12 @@ public final class SslGcEngine {
        * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
        */
       @java.lang.Override
-
-      public proto.gc.SslGcEngine.GcStateTeam getTeamStateOrDefault(
+      public /* nullable */
+proto.gc.SslGcEngine.GcStateTeam getTeamStateOrDefault(
           java.lang.String key,
-          proto.gc.SslGcEngine.GcStateTeam defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+          /* nullable */
+proto.gc.SslGcEngine.GcStateTeam defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam> map =
             internalGetTeamState().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1461,10 +1434,9 @@ public final class SslGcEngine {
        * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
        */
       @java.lang.Override
-
       public proto.gc.SslGcEngine.GcStateTeam getTeamStateOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam> map =
             internalGetTeamState().getMap();
         if (!map.containsKey(key)) {
@@ -1472,8 +1444,8 @@ public final class SslGcEngine {
         }
         return map.get(key);
       }
-
       public Builder clearTeamState() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableTeamState().getMutableMap()
             .clear();
         return this;
@@ -1485,10 +1457,9 @@ public final class SslGcEngine {
        *
        * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
        */
-
       public Builder removeTeamState(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         internalGetMutableTeamState().getMutableMap()
             .remove(key);
         return this;
@@ -1498,7 +1469,8 @@ public final class SslGcEngine {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam>
-      getMutableTeamState() {
+          getMutableTeamState() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableTeamState().getMutableMap();
       }
       /**
@@ -1511,10 +1483,11 @@ public final class SslGcEngine {
       public Builder putTeamState(
           java.lang.String key,
           proto.gc.SslGcEngine.GcStateTeam value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableTeamState().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -1524,18 +1497,18 @@ public final class SslGcEngine {
        *
        * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
        */
-
       public Builder putAllTeamState(
           java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam> values) {
         internalGetMutableTeamState().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
 
       private com.google.protobuf.MapField<
           java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> autoRefState_;
       private com.google.protobuf.MapField<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef>
-      internalGetAutoRefState() {
+          internalGetAutoRefState() {
         if (autoRefState_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               AutoRefStateDefaultEntryHolder.defaultEntry);
@@ -1543,8 +1516,7 @@ public final class SslGcEngine {
         return autoRefState_;
       }
       private com.google.protobuf.MapField<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef>
-      internalGetMutableAutoRefState() {
-        onChanged();;
+          internalGetMutableAutoRefState() {
         if (autoRefState_ == null) {
           autoRefState_ = com.google.protobuf.MapField.newMapField(
               AutoRefStateDefaultEntryHolder.defaultEntry);
@@ -1552,9 +1524,10 @@ public final class SslGcEngine {
         if (!autoRefState_.isMutable()) {
           autoRefState_ = autoRefState_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return autoRefState_;
       }
-
       public int getAutoRefStateCount() {
         return internalGetAutoRefState().getMap().size();
       }
@@ -1565,11 +1538,10 @@ public final class SslGcEngine {
        *
        * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
        */
-
       @java.lang.Override
       public boolean containsAutoRefState(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         return internalGetAutoRefState().getMap().containsKey(key);
       }
       /**
@@ -1588,7 +1560,6 @@ public final class SslGcEngine {
        * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> getAutoRefStateMap() {
         return internalGetAutoRefState().getMap();
       }
@@ -1600,11 +1571,12 @@ public final class SslGcEngine {
        * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
        */
       @java.lang.Override
-
-      public proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrDefault(
+      public /* nullable */
+proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrDefault(
           java.lang.String key,
-          proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+          /* nullable */
+proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> map =
             internalGetAutoRefState().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1617,10 +1589,9 @@ public final class SslGcEngine {
        * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
        */
       @java.lang.Override
-
       public proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> map =
             internalGetAutoRefState().getMap();
         if (!map.containsKey(key)) {
@@ -1628,8 +1599,8 @@ public final class SslGcEngine {
         }
         return map.get(key);
       }
-
       public Builder clearAutoRefState() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableAutoRefState().getMutableMap()
             .clear();
         return this;
@@ -1641,10 +1612,9 @@ public final class SslGcEngine {
        *
        * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
        */
-
       public Builder removeAutoRefState(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         internalGetMutableAutoRefState().getMutableMap()
             .remove(key);
         return this;
@@ -1654,7 +1624,8 @@ public final class SslGcEngine {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef>
-      getMutableAutoRefState() {
+          getMutableAutoRefState() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableAutoRefState().getMutableMap();
       }
       /**
@@ -1667,10 +1638,11 @@ public final class SslGcEngine {
       public Builder putAutoRefState(
           java.lang.String key,
           proto.gc.SslGcEngine.GcStateAutoRef value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableAutoRefState().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -1680,18 +1652,18 @@ public final class SslGcEngine {
        *
        * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
        */
-
       public Builder putAllAutoRefState(
           java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> values) {
         internalGetMutableAutoRefState().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
       private com.google.protobuf.MapField<
           java.lang.String, java.lang.String> trackers_;
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetTrackers() {
+          internalGetTrackers() {
         if (trackers_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               TrackersDefaultEntryHolder.defaultEntry);
@@ -1699,8 +1671,7 @@ public final class SslGcEngine {
         return trackers_;
       }
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableTrackers() {
-        onChanged();;
+          internalGetMutableTrackers() {
         if (trackers_ == null) {
           trackers_ = com.google.protobuf.MapField.newMapField(
               TrackersDefaultEntryHolder.defaultEntry);
@@ -1708,9 +1679,10 @@ public final class SslGcEngine {
         if (!trackers_.isMutable()) {
           trackers_ = trackers_.copy();
         }
+        bitField0_ |= 0x00000004;
+        onChanged();
         return trackers_;
       }
-
       public int getTrackersCount() {
         return internalGetTrackers().getMap().size();
       }
@@ -1721,11 +1693,10 @@ public final class SslGcEngine {
        *
        * <code>map&lt;string, string&gt; trackers = 3;</code>
        */
-
       @java.lang.Override
       public boolean containsTrackers(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         return internalGetTrackers().getMap().containsKey(key);
       }
       /**
@@ -1744,7 +1715,6 @@ public final class SslGcEngine {
        * <code>map&lt;string, string&gt; trackers = 3;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.String, java.lang.String> getTrackersMap() {
         return internalGetTrackers().getMap();
       }
@@ -1756,11 +1726,12 @@ public final class SslGcEngine {
        * <code>map&lt;string, string&gt; trackers = 3;</code>
        */
       @java.lang.Override
-
-      public java.lang.String getTrackersOrDefault(
+      public /* nullable */
+java.lang.String getTrackersOrDefault(
           java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+          /* nullable */
+java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, java.lang.String> map =
             internalGetTrackers().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1773,10 +1744,9 @@ public final class SslGcEngine {
        * <code>map&lt;string, string&gt; trackers = 3;</code>
        */
       @java.lang.Override
-
       public java.lang.String getTrackersOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, java.lang.String> map =
             internalGetTrackers().getMap();
         if (!map.containsKey(key)) {
@@ -1784,8 +1754,8 @@ public final class SslGcEngine {
         }
         return map.get(key);
       }
-
       public Builder clearTrackers() {
+        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableTrackers().getMutableMap()
             .clear();
         return this;
@@ -1797,10 +1767,9 @@ public final class SslGcEngine {
        *
        * <code>map&lt;string, string&gt; trackers = 3;</code>
        */
-
       public Builder removeTrackers(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         internalGetMutableTrackers().getMutableMap()
             .remove(key);
         return this;
@@ -1810,7 +1779,8 @@ public final class SslGcEngine {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String>
-      getMutableTrackers() {
+          getMutableTrackers() {
+        bitField0_ |= 0x00000004;
         return internalGetMutableTrackers().getMutableMap();
       }
       /**
@@ -1823,10 +1793,11 @@ public final class SslGcEngine {
       public Builder putTrackers(
           java.lang.String key,
           java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableTrackers().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
@@ -1836,11 +1807,11 @@ public final class SslGcEngine {
        *
        * <code>map&lt;string, string&gt; trackers = 3;</code>
        */
-
       public Builder putAllTrackers(
           java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableTrackers().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000004;
         return this;
       }
 
@@ -2500,7 +2471,18 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GcState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2658,77 +2640,6 @@ public final class SslGcEngine {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GcStateTeam(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              bitField0_ |= 0x00000001;
-              connected_ = input.readBool();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              connectionVerified_ = input.readBool();
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000004;
-              remoteControlConnected_ = input.readBool();
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              remoteControlConnectionVerified_ = input.readBool();
-              break;
-            }
-            case 42: {
-              proto.gc.SslGcEngine.TeamAdvantageChoice.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000010) != 0)) {
-                subBuilder = advantageChoice_.toBuilder();
-              }
-              advantageChoice_ = input.readMessage(proto.gc.SslGcEngine.TeamAdvantageChoice.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(advantageChoice_);
-                advantageChoice_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000010;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.gc.SslGcEngine.internal_static_proto_gc_GcStateTeam_descriptor;
@@ -2744,7 +2655,7 @@ public final class SslGcEngine {
 
     private int bitField0_;
     public static final int CONNECTED_FIELD_NUMBER = 1;
-    private boolean connected_;
+    private boolean connected_ = false;
     /**
      * <pre>
      * true: The team is connected
@@ -2771,7 +2682,7 @@ public final class SslGcEngine {
     }
 
     public static final int CONNECTION_VERIFIED_FIELD_NUMBER = 2;
-    private boolean connectionVerified_;
+    private boolean connectionVerified_ = false;
     /**
      * <pre>
      * true: The team connected via TLS with a verified certificate
@@ -2798,7 +2709,7 @@ public final class SslGcEngine {
     }
 
     public static final int REMOTE_CONTROL_CONNECTED_FIELD_NUMBER = 3;
-    private boolean remoteControlConnected_;
+    private boolean remoteControlConnected_ = false;
     /**
      * <pre>
      * true: The remote control for the team is connected
@@ -2825,7 +2736,7 @@ public final class SslGcEngine {
     }
 
     public static final int REMOTE_CONTROL_CONNECTION_VERIFIED_FIELD_NUMBER = 4;
-    private boolean remoteControlConnectionVerified_;
+    private boolean remoteControlConnectionVerified_ = false;
     /**
      * <pre>
      * true: The remote control for the team connected via TLS with a verified certificate
@@ -2918,7 +2829,7 @@ public final class SslGcEngine {
       if (((bitField0_ & 0x00000010) != 0)) {
         output.writeMessage(5, getAdvantageChoice());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2947,7 +2858,7 @@ public final class SslGcEngine {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getAdvantageChoice());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2987,7 +2898,7 @@ public final class SslGcEngine {
         if (!getAdvantageChoice()
             .equals(other.getAdvantageChoice())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3022,7 +2933,7 @@ public final class SslGcEngine {
         hash = (37 * hash) + ADVANTAGE_CHOICE_FIELD_NUMBER;
         hash = (53 * hash) + getAdvantageChoice().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3160,20 +3071,16 @@ public final class SslGcEngine {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         connected_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         connectionVerified_ = false;
-        bitField0_ = (bitField0_ & ~0x00000002);
         remoteControlConnected_ = false;
-        bitField0_ = (bitField0_ & ~0x00000004);
         remoteControlConnectionVerified_ = false;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        if (advantageChoiceBuilder_ == null) {
-          advantageChoice_ = null;
-        } else {
-          advantageChoiceBuilder_.clear();
+        advantageChoice_ = null;
+        if (advantageChoiceBuilder_ != null) {
+          advantageChoiceBuilder_.dispose();
+          advantageChoiceBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -3200,6 +3107,12 @@ public final class SslGcEngine {
       @java.lang.Override
       public proto.gc.SslGcEngine.GcStateTeam buildPartial() {
         proto.gc.SslGcEngine.GcStateTeam result = new proto.gc.SslGcEngine.GcStateTeam(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.gc.SslGcEngine.GcStateTeam result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -3219,16 +3132,12 @@ public final class SslGcEngine {
           to_bitField0_ |= 0x00000008;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
-          if (advantageChoiceBuilder_ == null) {
-            result.advantageChoice_ = advantageChoice_;
-          } else {
-            result.advantageChoice_ = advantageChoiceBuilder_.build();
-          }
+          result.advantageChoice_ = advantageChoiceBuilder_ == null
+              ? advantageChoice_
+              : advantageChoiceBuilder_.build();
           to_bitField0_ |= 0x00000010;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -3290,7 +3199,7 @@ public final class SslGcEngine {
         if (other.hasAdvantageChoice()) {
           mergeAdvantageChoice(other.getAdvantageChoice());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3305,17 +3214,57 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcEngine.GcStateTeam parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                connected_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                connectionVerified_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                remoteControlConnected_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                remoteControlConnectionVerified_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 42: {
+                input.readMessage(
+                    getAdvantageChoiceFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcEngine.GcStateTeam) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -3355,8 +3304,9 @@ public final class SslGcEngine {
        * @return This builder for chaining.
        */
       public Builder setConnected(boolean value) {
-        bitField0_ |= 0x00000001;
+        
         connected_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3410,8 +3360,9 @@ public final class SslGcEngine {
        * @return This builder for chaining.
        */
       public Builder setConnectionVerified(boolean value) {
-        bitField0_ |= 0x00000002;
+        
         connectionVerified_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3465,8 +3416,9 @@ public final class SslGcEngine {
        * @return This builder for chaining.
        */
       public Builder setRemoteControlConnected(boolean value) {
-        bitField0_ |= 0x00000004;
+        
         remoteControlConnected_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3520,8 +3472,9 @@ public final class SslGcEngine {
        * @return This builder for chaining.
        */
       public Builder setRemoteControlConnectionVerified(boolean value) {
-        bitField0_ |= 0x00000008;
+        
         remoteControlConnectionVerified_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3582,11 +3535,11 @@ public final class SslGcEngine {
             throw new NullPointerException();
           }
           advantageChoice_ = value;
-          onChanged();
         } else {
           advantageChoiceBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -3600,11 +3553,11 @@ public final class SslGcEngine {
           proto.gc.SslGcEngine.TeamAdvantageChoice.Builder builderForValue) {
         if (advantageChoiceBuilder_ == null) {
           advantageChoice_ = builderForValue.build();
-          onChanged();
         } else {
           advantageChoiceBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -3617,18 +3570,17 @@ public final class SslGcEngine {
       public Builder mergeAdvantageChoice(proto.gc.SslGcEngine.TeamAdvantageChoice value) {
         if (advantageChoiceBuilder_ == null) {
           if (((bitField0_ & 0x00000010) != 0) &&
-              advantageChoice_ != null &&
-              advantageChoice_ != proto.gc.SslGcEngine.TeamAdvantageChoice.getDefaultInstance()) {
-            advantageChoice_ =
-              proto.gc.SslGcEngine.TeamAdvantageChoice.newBuilder(advantageChoice_).mergeFrom(value).buildPartial();
+            advantageChoice_ != null &&
+            advantageChoice_ != proto.gc.SslGcEngine.TeamAdvantageChoice.getDefaultInstance()) {
+            getAdvantageChoiceBuilder().mergeFrom(value);
           } else {
             advantageChoice_ = value;
           }
-          onChanged();
         } else {
           advantageChoiceBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -3639,13 +3591,13 @@ public final class SslGcEngine {
        * <code>optional .proto.gc.TeamAdvantageChoice advantage_choice = 5;</code>
        */
       public Builder clearAdvantageChoice() {
-        if (advantageChoiceBuilder_ == null) {
-          advantageChoice_ = null;
-          onChanged();
-        } else {
-          advantageChoiceBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000010);
+        advantageChoice_ = null;
+        if (advantageChoiceBuilder_ != null) {
+          advantageChoiceBuilder_.dispose();
+          advantageChoiceBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -3728,7 +3680,18 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GcStateTeam(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -3802,56 +3765,6 @@ public final class SslGcEngine {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private TeamAdvantageChoice(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice value = proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(1, rawValue);
-              } else {
-                bitField0_ |= 0x00000001;
-                choice_ = rawValue;
-              }
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3984,7 +3897,7 @@ public final class SslGcEngine {
 
     private int bitField0_;
     public static final int CHOICE_FIELD_NUMBER = 1;
-    private int choice_;
+    private int choice_ = 0;
     /**
      * <pre>
      * the choice of the team
@@ -4005,8 +3918,7 @@ public final class SslGcEngine {
      * @return The choice.
      */
     @java.lang.Override public proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice getChoice() {
-      @SuppressWarnings("deprecation")
-      proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice result = proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice.valueOf(choice_);
+      proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice result = proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice.forNumber(choice_);
       return result == null ? proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice.STOP : result;
     }
 
@@ -4027,7 +3939,7 @@ public final class SslGcEngine {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeEnum(1, choice_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4040,7 +3952,7 @@ public final class SslGcEngine {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, choice_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4059,7 +3971,7 @@ public final class SslGcEngine {
       if (hasChoice()) {
         if (choice_ != other.choice_) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4074,7 +3986,7 @@ public final class SslGcEngine {
         hash = (37 * hash) + CHOICE_FIELD_NUMBER;
         hash = (53 * hash) + choice_;
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4195,24 +4107,19 @@ public final class SslGcEngine {
 
       // Construct using proto.gc.SslGcEngine.TeamAdvantageChoice.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         choice_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -4239,15 +4146,19 @@ public final class SslGcEngine {
       @java.lang.Override
       public proto.gc.SslGcEngine.TeamAdvantageChoice buildPartial() {
         proto.gc.SslGcEngine.TeamAdvantageChoice result = new proto.gc.SslGcEngine.TeamAdvantageChoice(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.gc.SslGcEngine.TeamAdvantageChoice result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.choice_ = choice_;
           to_bitField0_ |= 0x00000001;
         }
-        result.choice_ = choice_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -4297,7 +4208,7 @@ public final class SslGcEngine {
         if (other.hasChoice()) {
           setChoice(other.getChoice());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4312,17 +4223,42 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcEngine.TeamAdvantageChoice parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                int tmpRaw = input.readEnum();
+                proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice tmpValue =
+                    proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(1, tmpRaw);
+                } else {
+                  choice_ = tmpRaw;
+                  bitField0_ |= 0x00000001;
+                }
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcEngine.TeamAdvantageChoice) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -4349,8 +4285,7 @@ public final class SslGcEngine {
        */
       @java.lang.Override
       public proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice getChoice() {
-        @SuppressWarnings("deprecation")
-        proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice result = proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice.valueOf(choice_);
+        proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice result = proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice.forNumber(choice_);
         return result == null ? proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice.STOP : result;
       }
       /**
@@ -4418,7 +4353,18 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TeamAdvantageChoice(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -4492,49 +4438,6 @@ public final class SslGcEngine {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GcStateAutoRef(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              bitField0_ |= 0x00000001;
-              connectionVerified_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.gc.SslGcEngine.internal_static_proto_gc_GcStateAutoRef_descriptor;
@@ -4550,7 +4453,7 @@ public final class SslGcEngine {
 
     private int bitField0_;
     public static final int CONNECTION_VERIFIED_FIELD_NUMBER = 1;
-    private boolean connectionVerified_;
+    private boolean connectionVerified_ = false;
     /**
      * <pre>
      * true: The autoRef connected via TLS with a verified certificate
@@ -4593,7 +4496,7 @@ public final class SslGcEngine {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeBool(1, connectionVerified_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4606,7 +4509,7 @@ public final class SslGcEngine {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, connectionVerified_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4626,7 +4529,7 @@ public final class SslGcEngine {
         if (getConnectionVerified()
             != other.getConnectionVerified()) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4642,7 +4545,7 @@ public final class SslGcEngine {
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getConnectionVerified());
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4763,24 +4666,19 @@ public final class SslGcEngine {
 
       // Construct using proto.gc.SslGcEngine.GcStateAutoRef.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         connectionVerified_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -4807,15 +4705,19 @@ public final class SslGcEngine {
       @java.lang.Override
       public proto.gc.SslGcEngine.GcStateAutoRef buildPartial() {
         proto.gc.SslGcEngine.GcStateAutoRef result = new proto.gc.SslGcEngine.GcStateAutoRef(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.gc.SslGcEngine.GcStateAutoRef result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.connectionVerified_ = connectionVerified_;
           to_bitField0_ |= 0x00000001;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -4865,7 +4767,7 @@ public final class SslGcEngine {
         if (other.hasConnectionVerified()) {
           setConnectionVerified(other.getConnectionVerified());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4880,17 +4782,35 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcEngine.GcStateAutoRef parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                connectionVerified_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcEngine.GcStateAutoRef) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -4930,8 +4850,9 @@ public final class SslGcEngine {
        * @return This builder for chaining.
        */
       public Builder setConnectionVerified(boolean value) {
-        bitField0_ |= 0x00000001;
+        
         connectionVerified_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4982,7 +4903,18 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GcStateAutoRef(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -5169,81 +5101,6 @@ public final class SslGcEngine {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GcStateTracker(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              sourceName_ = bs;
-              break;
-            }
-            case 18: {
-              proto.gc.SslGcEngine.Ball.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) != 0)) {
-                subBuilder = ball_.toBuilder();
-              }
-              ball_ = input.readMessage(proto.gc.SslGcEngine.Ball.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(ball_);
-                ball_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                robots_ = new java.util.ArrayList<proto.gc.SslGcEngine.Robot>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              robots_.add(
-                  input.readMessage(proto.gc.SslGcEngine.Robot.PARSER, extensionRegistry));
-              break;
-            }
-            case 34: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000002;
-              uuid_ = bs;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          robots_ = java.util.Collections.unmodifiableList(robots_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.gc.SslGcEngine.internal_static_proto_gc_GcStateTracker_descriptor;
@@ -5259,7 +5116,8 @@ public final class SslGcEngine {
 
     private int bitField0_;
     public static final int SOURCE_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object sourceName_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sourceName_ = "";
     /**
      * <pre>
      * Name of the source
@@ -5319,7 +5177,8 @@ public final class SslGcEngine {
     }
 
     public static final int UUID_FIELD_NUMBER = 4;
-    private volatile java.lang.Object uuid_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uuid_ = "";
     /**
      * <pre>
      * UUID of the source
@@ -5417,6 +5276,7 @@ public final class SslGcEngine {
     }
 
     public static final int ROBOTS_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<proto.gc.SslGcEngine.Robot> robots_;
     /**
      * <pre>
@@ -5514,7 +5374,7 @@ public final class SslGcEngine {
       if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, uuid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5537,7 +5397,7 @@ public final class SslGcEngine {
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, uuid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5569,7 +5429,7 @@ public final class SslGcEngine {
       }
       if (!getRobotsList()
           .equals(other.getRobotsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5596,7 +5456,7 @@ public final class SslGcEngine {
         hash = (37 * hash) + ROBOTS_FIELD_NUMBER;
         hash = (53 * hash) + getRobotsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5735,22 +5595,21 @@ public final class SslGcEngine {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sourceName_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
         uuid_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
-        if (ballBuilder_ == null) {
-          ball_ = null;
-        } else {
-          ballBuilder_.clear();
+        ball_ = null;
+        if (ballBuilder_ != null) {
+          ballBuilder_.dispose();
+          ballBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         if (robotsBuilder_ == null) {
           robots_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          robots_ = null;
           robotsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -5777,24 +5636,13 @@ public final class SslGcEngine {
       @java.lang.Override
       public proto.gc.SslGcEngine.GcStateTracker buildPartial() {
         proto.gc.SslGcEngine.GcStateTracker result = new proto.gc.SslGcEngine.GcStateTracker(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.sourceName_ = sourceName_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.uuid_ = uuid_;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          if (ballBuilder_ == null) {
-            result.ball_ = ball_;
-          } else {
-            result.ball_ = ballBuilder_.build();
-          }
-          to_bitField0_ |= 0x00000004;
-        }
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(proto.gc.SslGcEngine.GcStateTracker result) {
         if (robotsBuilder_ == null) {
           if (((bitField0_ & 0x00000008) != 0)) {
             robots_ = java.util.Collections.unmodifiableList(robots_);
@@ -5804,9 +5652,26 @@ public final class SslGcEngine {
         } else {
           result.robots_ = robotsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(proto.gc.SslGcEngine.GcStateTracker result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sourceName_ = sourceName_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.uuid_ = uuid_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.ball_ = ballBuilder_ == null
+              ? ball_
+              : ballBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -5854,13 +5719,13 @@ public final class SslGcEngine {
       public Builder mergeFrom(proto.gc.SslGcEngine.GcStateTracker other) {
         if (other == proto.gc.SslGcEngine.GcStateTracker.getDefaultInstance()) return this;
         if (other.hasSourceName()) {
-          bitField0_ |= 0x00000001;
           sourceName_ = other.sourceName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasUuid()) {
-          bitField0_ |= 0x00000002;
           uuid_ = other.uuid_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasBall()) {
@@ -5892,7 +5757,7 @@ public final class SslGcEngine {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5917,17 +5782,60 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcEngine.GcStateTracker parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                sourceName_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getBallFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 18
+              case 26: {
+                proto.gc.SslGcEngine.Robot m =
+                    input.readMessage(
+                        proto.gc.SslGcEngine.Robot.PARSER,
+                        extensionRegistry);
+                if (robotsBuilder_ == null) {
+                  ensureRobotsIsMutable();
+                  robots_.add(m);
+                } else {
+                  robotsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 34: {
+                uuid_ = input.readBytes();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcEngine.GcStateTracker) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -5998,11 +5906,9 @@ public final class SslGcEngine {
        */
       public Builder setSourceName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+        if (value == null) { throw new NullPointerException(); }
         sourceName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6015,8 +5921,8 @@ public final class SslGcEngine {
        * @return This builder for chaining.
        */
       public Builder clearSourceName() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         sourceName_ = getDefaultInstance().getSourceName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -6031,11 +5937,9 @@ public final class SslGcEngine {
        */
       public Builder setSourceNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+        if (value == null) { throw new NullPointerException(); }
         sourceName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6106,11 +6010,9 @@ public final class SslGcEngine {
        */
       public Builder setUuid(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+        if (value == null) { throw new NullPointerException(); }
         uuid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6123,8 +6025,8 @@ public final class SslGcEngine {
        * @return This builder for chaining.
        */
       public Builder clearUuid() {
-        bitField0_ = (bitField0_ & ~0x00000002);
         uuid_ = getDefaultInstance().getUuid();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -6139,11 +6041,9 @@ public final class SslGcEngine {
        */
       public Builder setUuidBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+        if (value == null) { throw new NullPointerException(); }
         uuid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6190,11 +6090,11 @@ public final class SslGcEngine {
             throw new NullPointerException();
           }
           ball_ = value;
-          onChanged();
         } else {
           ballBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -6208,11 +6108,11 @@ public final class SslGcEngine {
           proto.gc.SslGcEngine.Ball.Builder builderForValue) {
         if (ballBuilder_ == null) {
           ball_ = builderForValue.build();
-          onChanged();
         } else {
           ballBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -6225,18 +6125,17 @@ public final class SslGcEngine {
       public Builder mergeBall(proto.gc.SslGcEngine.Ball value) {
         if (ballBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0) &&
-              ball_ != null &&
-              ball_ != proto.gc.SslGcEngine.Ball.getDefaultInstance()) {
-            ball_ =
-              proto.gc.SslGcEngine.Ball.newBuilder(ball_).mergeFrom(value).buildPartial();
+            ball_ != null &&
+            ball_ != proto.gc.SslGcEngine.Ball.getDefaultInstance()) {
+            getBallBuilder().mergeFrom(value);
           } else {
             ball_ = value;
           }
-          onChanged();
         } else {
           ballBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -6247,13 +6146,13 @@ public final class SslGcEngine {
        * <code>optional .proto.gc.Ball ball = 2;</code>
        */
       public Builder clearBall() {
-        if (ballBuilder_ == null) {
-          ball_ = null;
-          onChanged();
-        } else {
-          ballBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000004);
+        ball_ = null;
+        if (ballBuilder_ != null) {
+          ballBuilder_.dispose();
+          ballBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -6648,7 +6547,18 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GcStateTracker(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -6756,70 +6666,6 @@ public final class SslGcEngine {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private Ball(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              proto.gc.SslGcGeometry.Vector3.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) != 0)) {
-                subBuilder = pos_.toBuilder();
-              }
-              pos_ = input.readMessage(proto.gc.SslGcGeometry.Vector3.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pos_);
-                pos_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-            case 18: {
-              proto.gc.SslGcGeometry.Vector3.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) != 0)) {
-                subBuilder = vel_.toBuilder();
-              }
-              vel_ = input.readMessage(proto.gc.SslGcGeometry.Vector3.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(vel_);
-                vel_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000002;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -6943,7 +6789,7 @@ public final class SslGcEngine {
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(2, getVel());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -6960,7 +6806,7 @@ public final class SslGcEngine {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getVel());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6985,7 +6831,7 @@ public final class SslGcEngine {
         if (!getVel()
             .equals(other.getVel())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -7004,7 +6850,7 @@ public final class SslGcEngine {
         hash = (37 * hash) + VEL_FIELD_NUMBER;
         hash = (53 * hash) + getVel().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7143,18 +6989,17 @@ public final class SslGcEngine {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (posBuilder_ == null) {
-          pos_ = null;
-        } else {
-          posBuilder_.clear();
+        bitField0_ = 0;
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
+          posBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (velBuilder_ == null) {
-          vel_ = null;
-        } else {
-          velBuilder_.clear();
+        vel_ = null;
+        if (velBuilder_ != null) {
+          velBuilder_.dispose();
+          velBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -7181,27 +7026,27 @@ public final class SslGcEngine {
       @java.lang.Override
       public proto.gc.SslGcEngine.Ball buildPartial() {
         proto.gc.SslGcEngine.Ball result = new proto.gc.SslGcEngine.Ball(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.gc.SslGcEngine.Ball result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          if (posBuilder_ == null) {
-            result.pos_ = pos_;
-          } else {
-            result.pos_ = posBuilder_.build();
-          }
+          result.pos_ = posBuilder_ == null
+              ? pos_
+              : posBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          if (velBuilder_ == null) {
-            result.vel_ = vel_;
-          } else {
-            result.vel_ = velBuilder_.build();
-          }
+          result.vel_ = velBuilder_ == null
+              ? vel_
+              : velBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -7254,7 +7099,7 @@ public final class SslGcEngine {
         if (other.hasVel()) {
           mergeVel(other.getVel());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -7279,17 +7124,44 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcEngine.Ball parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getVelFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcEngine.Ball) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -7336,11 +7208,11 @@ public final class SslGcEngine {
             throw new NullPointerException();
           }
           pos_ = value;
-          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -7354,11 +7226,11 @@ public final class SslGcEngine {
           proto.gc.SslGcGeometry.Vector3.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
-          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -7371,18 +7243,17 @@ public final class SslGcEngine {
       public Builder mergePos(proto.gc.SslGcGeometry.Vector3 value) {
         if (posBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0) &&
-              pos_ != null &&
-              pos_ != proto.gc.SslGcGeometry.Vector3.getDefaultInstance()) {
-            pos_ =
-              proto.gc.SslGcGeometry.Vector3.newBuilder(pos_).mergeFrom(value).buildPartial();
+            pos_ != null &&
+            pos_ != proto.gc.SslGcGeometry.Vector3.getDefaultInstance()) {
+            getPosBuilder().mergeFrom(value);
           } else {
             pos_ = value;
           }
-          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -7393,13 +7264,13 @@ public final class SslGcEngine {
        * <code>optional .proto.gc.Vector3 pos = 1;</code>
        */
       public Builder clearPos() {
-        if (posBuilder_ == null) {
-          pos_ = null;
-          onChanged();
-        } else {
-          posBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000001);
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
+          posBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -7492,11 +7363,11 @@ public final class SslGcEngine {
             throw new NullPointerException();
           }
           vel_ = value;
-          onChanged();
         } else {
           velBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -7510,11 +7381,11 @@ public final class SslGcEngine {
           proto.gc.SslGcGeometry.Vector3.Builder builderForValue) {
         if (velBuilder_ == null) {
           vel_ = builderForValue.build();
-          onChanged();
         } else {
           velBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -7527,18 +7398,17 @@ public final class SslGcEngine {
       public Builder mergeVel(proto.gc.SslGcGeometry.Vector3 value) {
         if (velBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0) &&
-              vel_ != null &&
-              vel_ != proto.gc.SslGcGeometry.Vector3.getDefaultInstance()) {
-            vel_ =
-              proto.gc.SslGcGeometry.Vector3.newBuilder(vel_).mergeFrom(value).buildPartial();
+            vel_ != null &&
+            vel_ != proto.gc.SslGcGeometry.Vector3.getDefaultInstance()) {
+            getVelBuilder().mergeFrom(value);
           } else {
             vel_ = value;
           }
-          onChanged();
         } else {
           velBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -7549,13 +7419,13 @@ public final class SslGcEngine {
        * <code>optional .proto.gc.Vector3 vel = 2;</code>
        */
       public Builder clearVel() {
-        if (velBuilder_ == null) {
-          vel_ = null;
-          onChanged();
-        } else {
-          velBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000002);
+        vel_ = null;
+        if (velBuilder_ != null) {
+          velBuilder_.dispose();
+          velBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -7638,7 +7508,18 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Ball(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -7746,70 +7627,6 @@ public final class SslGcEngine {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private Robot(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              proto.vision.MessagesRobocupSslDetectionTracked.RobotId.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) != 0)) {
-                subBuilder = id_.toBuilder();
-              }
-              id_ = input.readMessage(proto.vision.MessagesRobocupSslDetectionTracked.RobotId.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(id_);
-                id_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-            case 18: {
-              proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) != 0)) {
-                subBuilder = pos_.toBuilder();
-              }
-              pos_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pos_);
-                pos_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000002;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -7933,7 +7750,7 @@ public final class SslGcEngine {
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(2, getPos());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -7950,7 +7767,7 @@ public final class SslGcEngine {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPos());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7975,7 +7792,7 @@ public final class SslGcEngine {
         if (!getPos()
             .equals(other.getPos())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -7994,7 +7811,7 @@ public final class SslGcEngine {
         hash = (37 * hash) + POS_FIELD_NUMBER;
         hash = (53 * hash) + getPos().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8133,18 +7950,17 @@ public final class SslGcEngine {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (idBuilder_ == null) {
-          id_ = null;
-        } else {
-          idBuilder_.clear();
+        bitField0_ = 0;
+        id_ = null;
+        if (idBuilder_ != null) {
+          idBuilder_.dispose();
+          idBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (posBuilder_ == null) {
-          pos_ = null;
-        } else {
-          posBuilder_.clear();
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
+          posBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -8171,27 +7987,27 @@ public final class SslGcEngine {
       @java.lang.Override
       public proto.gc.SslGcEngine.Robot buildPartial() {
         proto.gc.SslGcEngine.Robot result = new proto.gc.SslGcEngine.Robot(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.gc.SslGcEngine.Robot result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          if (idBuilder_ == null) {
-            result.id_ = id_;
-          } else {
-            result.id_ = idBuilder_.build();
-          }
+          result.id_ = idBuilder_ == null
+              ? id_
+              : idBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          if (posBuilder_ == null) {
-            result.pos_ = pos_;
-          } else {
-            result.pos_ = posBuilder_.build();
-          }
+          result.pos_ = posBuilder_ == null
+              ? pos_
+              : posBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -8244,7 +8060,7 @@ public final class SslGcEngine {
         if (other.hasPos()) {
           mergePos(other.getPos());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -8269,17 +8085,44 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcEngine.Robot parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getIdFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcEngine.Robot) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -8326,11 +8169,11 @@ public final class SslGcEngine {
             throw new NullPointerException();
           }
           id_ = value;
-          onChanged();
         } else {
           idBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -8344,11 +8187,11 @@ public final class SslGcEngine {
           proto.vision.MessagesRobocupSslDetectionTracked.RobotId.Builder builderForValue) {
         if (idBuilder_ == null) {
           id_ = builderForValue.build();
-          onChanged();
         } else {
           idBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -8361,18 +8204,17 @@ public final class SslGcEngine {
       public Builder mergeId(proto.vision.MessagesRobocupSslDetectionTracked.RobotId value) {
         if (idBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0) &&
-              id_ != null &&
-              id_ != proto.vision.MessagesRobocupSslDetectionTracked.RobotId.getDefaultInstance()) {
-            id_ =
-              proto.vision.MessagesRobocupSslDetectionTracked.RobotId.newBuilder(id_).mergeFrom(value).buildPartial();
+            id_ != null &&
+            id_ != proto.vision.MessagesRobocupSslDetectionTracked.RobotId.getDefaultInstance()) {
+            getIdBuilder().mergeFrom(value);
           } else {
             id_ = value;
           }
-          onChanged();
         } else {
           idBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -8383,13 +8225,13 @@ public final class SslGcEngine {
        * <code>optional .proto.vision.RobotId id = 1;</code>
        */
       public Builder clearId() {
-        if (idBuilder_ == null) {
-          id_ = null;
-          onChanged();
-        } else {
-          idBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = null;
+        if (idBuilder_ != null) {
+          idBuilder_.dispose();
+          idBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -8482,11 +8324,11 @@ public final class SslGcEngine {
             throw new NullPointerException();
           }
           pos_ = value;
-          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -8500,11 +8342,11 @@ public final class SslGcEngine {
           proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
-          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -8517,18 +8359,17 @@ public final class SslGcEngine {
       public Builder mergePos(proto.gc.SslGcGeometry.Vector2 value) {
         if (posBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0) &&
-              pos_ != null &&
-              pos_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-            pos_ =
-              proto.gc.SslGcGeometry.Vector2.newBuilder(pos_).mergeFrom(value).buildPartial();
+            pos_ != null &&
+            pos_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+            getPosBuilder().mergeFrom(value);
           } else {
             pos_ = value;
           }
-          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -8539,13 +8380,13 @@ public final class SslGcEngine {
        * <code>optional .proto.gc.Vector2 pos = 2;</code>
        */
       public Builder clearPos() {
-        if (posBuilder_ == null) {
-          pos_ = null;
-          onChanged();
-        } else {
-          posBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000002);
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
+          posBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -8628,7 +8469,18 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Robot(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -8807,105 +8659,6 @@ public final class SslGcEngine {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private ContinueAction(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              proto.gc.SslGcEngine.ContinueAction.Type value = proto.gc.SslGcEngine.ContinueAction.Type.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(1, rawValue);
-              } else {
-                bitField0_ |= 0x00000001;
-                type_ = rawValue;
-              }
-              break;
-            }
-            case 16: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(2, rawValue);
-              } else {
-                bitField0_ |= 0x00000002;
-                forTeam_ = rawValue;
-              }
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                continuationIssues_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              continuationIssues_.add(bs);
-              break;
-            }
-            case 34: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) != 0)) {
-                subBuilder = readyAt_.toBuilder();
-              }
-              readyAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(readyAt_);
-                readyAt_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              proto.gc.SslGcEngine.ContinueAction.State value = proto.gc.SslGcEngine.ContinueAction.State.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(5, rawValue);
-              } else {
-                bitField0_ |= 0x00000008;
-                state_ = rawValue;
-              }
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          continuationIssues_ = continuationIssues_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -9312,7 +9065,7 @@ public final class SslGcEngine {
 
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private int type_ = 0;
     /**
      * <pre>
      * type of action that will be performed next
@@ -9333,13 +9086,12 @@ public final class SslGcEngine {
      * @return The type.
      */
     @java.lang.Override public proto.gc.SslGcEngine.ContinueAction.Type getType() {
-      @SuppressWarnings("deprecation")
-      proto.gc.SslGcEngine.ContinueAction.Type result = proto.gc.SslGcEngine.ContinueAction.Type.valueOf(type_);
+      proto.gc.SslGcEngine.ContinueAction.Type result = proto.gc.SslGcEngine.ContinueAction.Type.forNumber(type_);
       return result == null ? proto.gc.SslGcEngine.ContinueAction.Type.TYPE_UNKNOWN : result;
     }
 
     public static final int FOR_TEAM_FIELD_NUMBER = 2;
-    private int forTeam_;
+    private int forTeam_ = 0;
     /**
      * <pre>
      * for which team (if team specific)
@@ -9360,12 +9112,12 @@ public final class SslGcEngine {
      * @return The forTeam.
      */
     @java.lang.Override public proto.simulation.SslGcCommon.Team getForTeam() {
-      @SuppressWarnings("deprecation")
-      proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(forTeam_);
+      proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(forTeam_);
       return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
     }
 
     public static final int CONTINUATION_ISSUES_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList continuationIssues_;
     /**
      * <pre>
@@ -9455,7 +9207,7 @@ public final class SslGcEngine {
     }
 
     public static final int STATE_FIELD_NUMBER = 5;
-    private int state_;
+    private int state_ = 0;
     /**
      * <pre>
      * state of the action
@@ -9476,8 +9228,7 @@ public final class SslGcEngine {
      * @return The state.
      */
     @java.lang.Override public proto.gc.SslGcEngine.ContinueAction.State getState() {
-      @SuppressWarnings("deprecation")
-      proto.gc.SslGcEngine.ContinueAction.State result = proto.gc.SslGcEngine.ContinueAction.State.valueOf(state_);
+      proto.gc.SslGcEngine.ContinueAction.State result = proto.gc.SslGcEngine.ContinueAction.State.forNumber(state_);
       return result == null ? proto.gc.SslGcEngine.ContinueAction.State.STATE_UNKNOWN : result;
     }
 
@@ -9518,7 +9269,7 @@ public final class SslGcEngine {
       if (((bitField0_ & 0x00000008) != 0)) {
         output.writeEnum(5, state_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -9551,7 +9302,7 @@ public final class SslGcEngine {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, state_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9585,7 +9336,7 @@ public final class SslGcEngine {
       if (hasState()) {
         if (state_ != other.state_) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -9616,7 +9367,7 @@ public final class SslGcEngine {
         hash = (37 * hash) + STATE_FIELD_NUMBER;
         hash = (53 * hash) + state_;
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9750,20 +9501,17 @@ public final class SslGcEngine {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
         forTeam_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
         continuationIssues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
-        if (readyAtBuilder_ == null) {
-          readyAt_ = null;
-        } else {
-          readyAtBuilder_.clear();
+        readyAt_ = null;
+        if (readyAtBuilder_ != null) {
+          readyAtBuilder_.dispose();
+          readyAtBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         state_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -9790,36 +9538,42 @@ public final class SslGcEngine {
       @java.lang.Override
       public proto.gc.SslGcEngine.ContinueAction buildPartial() {
         proto.gc.SslGcEngine.ContinueAction result = new proto.gc.SslGcEngine.ContinueAction(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.type_ = type_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.forTeam_ = forTeam_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(proto.gc.SslGcEngine.ContinueAction result) {
         if (((bitField0_ & 0x00000004) != 0)) {
           continuationIssues_ = continuationIssues_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.continuationIssues_ = continuationIssues_;
+      }
+
+      private void buildPartial0(proto.gc.SslGcEngine.ContinueAction result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.forTeam_ = forTeam_;
+          to_bitField0_ |= 0x00000002;
+        }
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          if (readyAtBuilder_ == null) {
-            result.readyAt_ = readyAt_;
-          } else {
-            result.readyAt_ = readyAtBuilder_.build();
-          }
+          result.readyAt_ = readyAtBuilder_ == null
+              ? readyAt_
+              : readyAtBuilder_.build();
           to_bitField0_ |= 0x00000004;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.state_ = state_;
           to_bitField0_ |= 0x00000008;
         }
-        result.state_ = state_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -9888,7 +9642,7 @@ public final class SslGcEngine {
         if (other.hasState()) {
           setState(other.getState());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -9909,17 +9663,79 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcEngine.ContinueAction parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                int tmpRaw = input.readEnum();
+                proto.gc.SslGcEngine.ContinueAction.Type tmpValue =
+                    proto.gc.SslGcEngine.ContinueAction.Type.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(1, tmpRaw);
+                } else {
+                  type_ = tmpRaw;
+                  bitField0_ |= 0x00000001;
+                }
+                break;
+              } // case 8
+              case 16: {
+                int tmpRaw = input.readEnum();
+                proto.simulation.SslGcCommon.Team tmpValue =
+                    proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(2, tmpRaw);
+                } else {
+                  forTeam_ = tmpRaw;
+                  bitField0_ |= 0x00000002;
+                }
+                break;
+              } // case 16
+              case 26: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                ensureContinuationIssuesIsMutable();
+                continuationIssues_.add(bs);
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getReadyAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 40: {
+                int tmpRaw = input.readEnum();
+                proto.gc.SslGcEngine.ContinueAction.State tmpValue =
+                    proto.gc.SslGcEngine.ContinueAction.State.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(5, tmpRaw);
+                } else {
+                  state_ = tmpRaw;
+                  bitField0_ |= 0x00000010;
+                }
+                break;
+              } // case 40
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcEngine.ContinueAction) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -9946,8 +9762,7 @@ public final class SslGcEngine {
        */
       @java.lang.Override
       public proto.gc.SslGcEngine.ContinueAction.Type getType() {
-        @SuppressWarnings("deprecation")
-        proto.gc.SslGcEngine.ContinueAction.Type result = proto.gc.SslGcEngine.ContinueAction.Type.valueOf(type_);
+        proto.gc.SslGcEngine.ContinueAction.Type result = proto.gc.SslGcEngine.ContinueAction.Type.forNumber(type_);
         return result == null ? proto.gc.SslGcEngine.ContinueAction.Type.TYPE_UNKNOWN : result;
       }
       /**
@@ -10005,8 +9820,7 @@ public final class SslGcEngine {
        */
       @java.lang.Override
       public proto.simulation.SslGcCommon.Team getForTeam() {
-        @SuppressWarnings("deprecation")
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(forTeam_);
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(forTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
       /**
@@ -10109,10 +9923,8 @@ public final class SslGcEngine {
        */
       public Builder setContinuationIssues(
           int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureContinuationIssuesIsMutable();
+        if (value == null) { throw new NullPointerException(); }
+        ensureContinuationIssuesIsMutable();
         continuationIssues_.set(index, value);
         onChanged();
         return this;
@@ -10128,10 +9940,8 @@ public final class SslGcEngine {
        */
       public Builder addContinuationIssues(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureContinuationIssuesIsMutable();
+        if (value == null) { throw new NullPointerException(); }
+        ensureContinuationIssuesIsMutable();
         continuationIssues_.add(value);
         onChanged();
         return this;
@@ -10178,10 +9988,8 @@ public final class SslGcEngine {
        */
       public Builder addContinuationIssuesBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureContinuationIssuesIsMutable();
+        if (value == null) { throw new NullPointerException(); }
+        ensureContinuationIssuesIsMutable();
         continuationIssues_.add(value);
         onChanged();
         return this;
@@ -10229,11 +10037,11 @@ public final class SslGcEngine {
             throw new NullPointerException();
           }
           readyAt_ = value;
-          onChanged();
         } else {
           readyAtBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -10247,11 +10055,11 @@ public final class SslGcEngine {
           com.google.protobuf.Timestamp.Builder builderForValue) {
         if (readyAtBuilder_ == null) {
           readyAt_ = builderForValue.build();
-          onChanged();
         } else {
           readyAtBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -10264,18 +10072,17 @@ public final class SslGcEngine {
       public Builder mergeReadyAt(com.google.protobuf.Timestamp value) {
         if (readyAtBuilder_ == null) {
           if (((bitField0_ & 0x00000008) != 0) &&
-              readyAt_ != null &&
-              readyAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-            readyAt_ =
-              com.google.protobuf.Timestamp.newBuilder(readyAt_).mergeFrom(value).buildPartial();
+            readyAt_ != null &&
+            readyAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getReadyAtBuilder().mergeFrom(value);
           } else {
             readyAt_ = value;
           }
-          onChanged();
         } else {
           readyAtBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -10286,13 +10093,13 @@ public final class SslGcEngine {
        * <code>optional .google.protobuf.Timestamp ready_at = 4;</code>
        */
       public Builder clearReadyAt() {
-        if (readyAtBuilder_ == null) {
-          readyAt_ = null;
-          onChanged();
-        } else {
-          readyAtBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000008);
+        readyAt_ = null;
+        if (readyAtBuilder_ != null) {
+          readyAtBuilder_.dispose();
+          readyAtBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -10365,8 +10172,7 @@ public final class SslGcEngine {
        */
       @java.lang.Override
       public proto.gc.SslGcEngine.ContinueAction.State getState() {
-        @SuppressWarnings("deprecation")
-        proto.gc.SslGcEngine.ContinueAction.State result = proto.gc.SslGcEngine.ContinueAction.State.valueOf(state_);
+        proto.gc.SslGcEngine.ContinueAction.State result = proto.gc.SslGcEngine.ContinueAction.State.forNumber(state_);
         return result == null ? proto.gc.SslGcEngine.ContinueAction.State.STATE_UNKNOWN : result;
       }
       /**
@@ -10434,7 +10240,18 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ContinueAction(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -10503,50 +10320,6 @@ public final class SslGcEngine {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ContinueHint(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              message_ = bs;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.gc.SslGcEngine.internal_static_proto_gc_ContinueHint_descriptor;
@@ -10562,7 +10335,8 @@ public final class SslGcEngine {
 
     private int bitField0_;
     public static final int MESSAGE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object message_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object message_ = "";
     /**
      * <code>required string message = 1;</code>
      * @return Whether the message field is set.
@@ -10630,7 +10404,7 @@ public final class SslGcEngine {
       if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -10642,7 +10416,7 @@ public final class SslGcEngine {
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -10662,7 +10436,7 @@ public final class SslGcEngine {
         if (!getMessage()
             .equals(other.getMessage())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -10677,7 +10451,7 @@ public final class SslGcEngine {
         hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
         hash = (53 * hash) + getMessage().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -10794,24 +10568,19 @@ public final class SslGcEngine {
 
       // Construct using proto.gc.SslGcEngine.ContinueHint.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         message_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -10838,15 +10607,19 @@ public final class SslGcEngine {
       @java.lang.Override
       public proto.gc.SslGcEngine.ContinueHint buildPartial() {
         proto.gc.SslGcEngine.ContinueHint result = new proto.gc.SslGcEngine.ContinueHint(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.gc.SslGcEngine.ContinueHint result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.message_ = message_;
           to_bitField0_ |= 0x00000001;
         }
-        result.message_ = message_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -10894,11 +10667,11 @@ public final class SslGcEngine {
       public Builder mergeFrom(proto.gc.SslGcEngine.ContinueHint other) {
         if (other == proto.gc.SslGcEngine.ContinueHint.getDefaultInstance()) return this;
         if (other.hasMessage()) {
-          bitField0_ |= 0x00000001;
           message_ = other.message_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -10916,17 +10689,35 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcEngine.ContinueHint parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                message_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcEngine.ContinueHint) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -10981,11 +10772,9 @@ public final class SslGcEngine {
        */
       public Builder setMessage(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+        if (value == null) { throw new NullPointerException(); }
         message_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -10994,8 +10783,8 @@ public final class SslGcEngine {
        * @return This builder for chaining.
        */
       public Builder clearMessage() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         message_ = getDefaultInstance().getMessage();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -11006,11 +10795,9 @@ public final class SslGcEngine {
        */
       public Builder setMessageBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+        if (value == null) { throw new NullPointerException(); }
         message_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -11047,7 +10834,18 @@ public final class SslGcEngine {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ContinueHint(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
