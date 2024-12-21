@@ -559,191 +559,6 @@ public final class SslGcRefereeMessage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Referee(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              bitField0_ |= 0x00000004;
-              packetTimestamp_ = input.readUInt64();
-              break;
-            }
-            case 16: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              proto.gc.SslGcRefereeMessage.Referee.Stage value = proto.gc.SslGcRefereeMessage.Referee.Stage.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(2, rawValue);
-              } else {
-                bitField0_ |= 0x00000008;
-                stage_ = rawValue;
-              }
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000010;
-              stageTimeLeft_ = input.readSInt64();
-              break;
-            }
-            case 32: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              proto.gc.SslGcRefereeMessage.Referee.Command value = proto.gc.SslGcRefereeMessage.Referee.Command.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(4, rawValue);
-              } else {
-                bitField0_ |= 0x00000020;
-                command_ = rawValue;
-              }
-              break;
-            }
-            case 40: {
-              bitField0_ |= 0x00000040;
-              commandCounter_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-              bitField0_ |= 0x00000080;
-              commandTimestamp_ = input.readUInt64();
-              break;
-            }
-            case 58: {
-              proto.gc.SslGcRefereeMessage.Referee.TeamInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000100) != 0)) {
-                subBuilder = yellow_.toBuilder();
-              }
-              yellow_ = input.readMessage(proto.gc.SslGcRefereeMessage.Referee.TeamInfo.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(yellow_);
-                yellow_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000100;
-              break;
-            }
-            case 66: {
-              proto.gc.SslGcRefereeMessage.Referee.TeamInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000200) != 0)) {
-                subBuilder = blue_.toBuilder();
-              }
-              blue_ = input.readMessage(proto.gc.SslGcRefereeMessage.Referee.TeamInfo.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(blue_);
-                blue_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000200;
-              break;
-            }
-            case 74: {
-              proto.gc.SslGcRefereeMessage.Referee.Point.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000400) != 0)) {
-                subBuilder = designatedPosition_.toBuilder();
-              }
-              designatedPosition_ = input.readMessage(proto.gc.SslGcRefereeMessage.Referee.Point.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(designatedPosition_);
-                designatedPosition_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000400;
-              break;
-            }
-            case 80: {
-              bitField0_ |= 0x00000800;
-              blueTeamOnPositiveHalf_ = input.readBool();
-              break;
-            }
-            case 96: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              proto.gc.SslGcRefereeMessage.Referee.Command value = proto.gc.SslGcRefereeMessage.Referee.Command.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(12, rawValue);
-              } else {
-                bitField0_ |= 0x00001000;
-                nextCommand_ = rawValue;
-              }
-              break;
-            }
-            case 120: {
-              bitField0_ |= 0x00002000;
-              currentActionTimeRemaining_ = input.readInt64();
-              break;
-            }
-            case 130: {
-              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
-                gameEvents_ = new java.util.ArrayList<proto.gc.SslGcGameEvent.GameEvent>();
-                mutable_bitField0_ |= 0x00002000;
-              }
-              gameEvents_.add(
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.PARSER, extensionRegistry));
-              break;
-            }
-            case 138: {
-              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
-                gameEventProposals_ = new java.util.ArrayList<proto.gc.SslGcRefereeMessage.GameEventProposalGroup>();
-                mutable_bitField0_ |= 0x00004000;
-              }
-              gameEventProposals_.add(
-                  input.readMessage(proto.gc.SslGcRefereeMessage.GameEventProposalGroup.PARSER, extensionRegistry));
-              break;
-            }
-            case 146: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              sourceIdentifier_ = bs;
-              break;
-            }
-            case 152: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              proto.gc.SslGcRefereeMessage.MatchType value = proto.gc.SslGcRefereeMessage.MatchType.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(19, rawValue);
-              } else {
-                bitField0_ |= 0x00000002;
-                matchType_ = rawValue;
-              }
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00002000) != 0)) {
-          gameEvents_ = java.util.Collections.unmodifiableList(gameEvents_);
-        }
-        if (((mutable_bitField0_ & 0x00004000) != 0)) {
-          gameEventProposals_ = java.util.Collections.unmodifiableList(gameEventProposals_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.gc.SslGcRefereeMessage.internal_static_proto_gc_Referee_descriptor;
@@ -1843,139 +1658,6 @@ public final class SslGcRefereeMessage {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private TeamInfo(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                com.google.protobuf.ByteString bs = input.readBytes();
-                bitField0_ |= 0x00000001;
-                name_ = bs;
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                score_ = input.readUInt32();
-                break;
-              }
-              case 24: {
-                bitField0_ |= 0x00000004;
-                redCards_ = input.readUInt32();
-                break;
-              }
-              case 32: {
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                  yellowCardTimes_ = newIntList();
-                  mutable_bitField0_ |= 0x00000008;
-                }
-                yellowCardTimes_.addInt(input.readUInt32());
-                break;
-              }
-              case 34: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
-                  yellowCardTimes_ = newIntList();
-                  mutable_bitField0_ |= 0x00000008;
-                }
-                while (input.getBytesUntilLimit() > 0) {
-                  yellowCardTimes_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              }
-              case 40: {
-                bitField0_ |= 0x00000008;
-                yellowCards_ = input.readUInt32();
-                break;
-              }
-              case 48: {
-                bitField0_ |= 0x00000010;
-                timeouts_ = input.readUInt32();
-                break;
-              }
-              case 56: {
-                bitField0_ |= 0x00000020;
-                timeoutTime_ = input.readUInt32();
-                break;
-              }
-              case 64: {
-                bitField0_ |= 0x00000040;
-                goalkeeper_ = input.readUInt32();
-                break;
-              }
-              case 72: {
-                bitField0_ |= 0x00000080;
-                foulCounter_ = input.readUInt32();
-                break;
-              }
-              case 80: {
-                bitField0_ |= 0x00000100;
-                ballPlacementFailures_ = input.readUInt32();
-                break;
-              }
-              case 96: {
-                bitField0_ |= 0x00000200;
-                canPlaceBall_ = input.readBool();
-                break;
-              }
-              case 104: {
-                bitField0_ |= 0x00000400;
-                maxAllowedBots_ = input.readUInt32();
-                break;
-              }
-              case 112: {
-                bitField0_ |= 0x00000800;
-                botSubstitutionIntent_ = input.readBool();
-                break;
-              }
-              case 120: {
-                bitField0_ |= 0x00001000;
-                ballPlacementFailuresReached_ = input.readBool();
-                break;
-              }
-              case 128: {
-                bitField0_ |= 0x00002000;
-                botSubstitutionAllowed_ = input.readBool();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
-            yellowCardTimes_.makeImmutable(); // C
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcRefereeMessage.internal_static_proto_gc_Referee_TeamInfo_descriptor;
@@ -1991,7 +1673,8 @@ public final class SslGcRefereeMessage {
 
       private int bitField0_;
       public static final int NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object name_;
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object name_ = "";
       /**
        * <pre>
        * The team's name (empty string if operator has not typed anything).
@@ -2051,7 +1734,7 @@ public final class SslGcRefereeMessage {
       }
 
       public static final int SCORE_FIELD_NUMBER = 2;
-      private int score_;
+      private int score_ = 0;
       /**
        * <pre>
        * The number of goals scored by the team during normal play and overtime.
@@ -2078,7 +1761,7 @@ public final class SslGcRefereeMessage {
       }
 
       public static final int RED_CARDS_FIELD_NUMBER = 3;
-      private int redCards_;
+      private int redCards_ = 0;
       /**
        * <pre>
        * The number of red cards issued to the team since the beginning of the game.
@@ -2105,6 +1788,7 @@ public final class SslGcRefereeMessage {
       }
 
       public static final int YELLOW_CARD_TIMES_FIELD_NUMBER = 4;
+      @SuppressWarnings("serial")
       private com.google.protobuf.Internal.IntList yellowCardTimes_;
       /**
        * <pre>
@@ -2151,7 +1835,7 @@ public final class SslGcRefereeMessage {
       private int yellowCardTimesMemoizedSerializedSize = -1;
 
       public static final int YELLOW_CARDS_FIELD_NUMBER = 5;
-      private int yellowCards_;
+      private int yellowCards_ = 0;
       /**
        * <pre>
        * The total number of yellow cards ever issued to the team.
@@ -2178,7 +1862,7 @@ public final class SslGcRefereeMessage {
       }
 
       public static final int TIMEOUTS_FIELD_NUMBER = 6;
-      private int timeouts_;
+      private int timeouts_ = 0;
       /**
        * <pre>
        * The number of timeouts this team can still call.
@@ -2207,7 +1891,7 @@ public final class SslGcRefereeMessage {
       }
 
       public static final int TIMEOUT_TIME_FIELD_NUMBER = 7;
-      private int timeoutTime_;
+      private int timeoutTime_ = 0;
       /**
        * <pre>
        * The number of microseconds of timeout this team can use.
@@ -2234,7 +1918,7 @@ public final class SslGcRefereeMessage {
       }
 
       public static final int GOALKEEPER_FIELD_NUMBER = 8;
-      private int goalkeeper_;
+      private int goalkeeper_ = 0;
       /**
        * <pre>
        * The pattern number of this team's goalkeeper.
@@ -2261,7 +1945,7 @@ public final class SslGcRefereeMessage {
       }
 
       public static final int FOUL_COUNTER_FIELD_NUMBER = 9;
-      private int foulCounter_;
+      private int foulCounter_ = 0;
       /**
        * <pre>
        * The total number of countable fouls that act towards yellow cards
@@ -2288,7 +1972,7 @@ public final class SslGcRefereeMessage {
       }
 
       public static final int BALL_PLACEMENT_FAILURES_FIELD_NUMBER = 10;
-      private int ballPlacementFailures_;
+      private int ballPlacementFailures_ = 0;
       /**
        * <pre>
        * The number of consecutive ball placement failures of this team
@@ -2315,7 +1999,7 @@ public final class SslGcRefereeMessage {
       }
 
       public static final int CAN_PLACE_BALL_FIELD_NUMBER = 12;
-      private boolean canPlaceBall_;
+      private boolean canPlaceBall_ = false;
       /**
        * <pre>
        * Indicate if the team is able and allowed to place the ball
@@ -2342,7 +2026,7 @@ public final class SslGcRefereeMessage {
       }
 
       public static final int MAX_ALLOWED_BOTS_FIELD_NUMBER = 13;
-      private int maxAllowedBots_;
+      private int maxAllowedBots_ = 0;
       /**
        * <pre>
        * The maximum number of bots allowed on the field based on division and cards
@@ -2369,7 +2053,7 @@ public final class SslGcRefereeMessage {
       }
 
       public static final int BOT_SUBSTITUTION_INTENT_FIELD_NUMBER = 14;
-      private boolean botSubstitutionIntent_;
+      private boolean botSubstitutionIntent_ = false;
       /**
        * <pre>
        * The team has submitted an intent to substitute one or more robots at the next chance
@@ -2396,7 +2080,7 @@ public final class SslGcRefereeMessage {
       }
 
       public static final int BALL_PLACEMENT_FAILURES_REACHED_FIELD_NUMBER = 15;
-      private boolean ballPlacementFailuresReached_;
+      private boolean ballPlacementFailuresReached_ = false;
       /**
        * <pre>
        * Indicate if the team reached the maximum allowed ball placement failures and is thus not allowed to place the ball anymore
@@ -2423,7 +2107,7 @@ public final class SslGcRefereeMessage {
       }
 
       public static final int BOT_SUBSTITUTION_ALLOWED_FIELD_NUMBER = 16;
-      private boolean botSubstitutionAllowed_;
+      private boolean botSubstitutionAllowed_ = false;
       /**
        * <pre>
        * The team is allowed to substitute one or more robots currently
@@ -2541,7 +2225,7 @@ public final class SslGcRefereeMessage {
         if (((bitField0_ & 0x00002000) != 0)) {
           output.writeBool(16, botSubstitutionAllowed_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -2619,7 +2303,7 @@ public final class SslGcRefereeMessage {
           size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(16, botSubstitutionAllowed_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -2706,7 +2390,7 @@ public final class SslGcRefereeMessage {
           if (getBotSubstitutionAllowed()
               != other.getBotSubstitutionAllowed()) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -2781,7 +2465,7 @@ public final class SslGcRefereeMessage {
           hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
               getBotSubstitutionAllowed());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -2902,52 +2586,33 @@ public final class SslGcRefereeMessage {
 
         // Construct using proto.gc.SslGcRefereeMessage.Referee.TeamInfo.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           name_ = "";
-          bitField0_ = (bitField0_ & ~0x00000001);
           score_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
           redCards_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000004);
           yellowCardTimes_ = emptyIntList();
-          bitField0_ = (bitField0_ & ~0x00000008);
           yellowCards_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000010);
           timeouts_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000020);
           timeoutTime_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000040);
           goalkeeper_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000080);
           foulCounter_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000100);
           ballPlacementFailures_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000200);
           canPlaceBall_ = false;
-          bitField0_ = (bitField0_ & ~0x00000400);
           maxAllowedBots_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000800);
           botSubstitutionIntent_ = false;
-          bitField0_ = (bitField0_ & ~0x00001000);
           ballPlacementFailuresReached_ = false;
-          bitField0_ = (bitField0_ & ~0x00002000);
           botSubstitutionAllowed_ = false;
-          bitField0_ = (bitField0_ & ~0x00004000);
           return this;
         }
 
@@ -2974,12 +2639,27 @@ public final class SslGcRefereeMessage {
         @java.lang.Override
         public proto.gc.SslGcRefereeMessage.Referee.TeamInfo buildPartial() {
           proto.gc.SslGcRefereeMessage.Referee.TeamInfo result = new proto.gc.SslGcRefereeMessage.Referee.TeamInfo(this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(proto.gc.SslGcRefereeMessage.Referee.TeamInfo result) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            yellowCardTimes_.makeImmutable();
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.yellowCardTimes_ = yellowCardTimes_;
+        }
+
+        private void buildPartial0(proto.gc.SslGcRefereeMessage.Referee.TeamInfo result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.name_ = name_;
             to_bitField0_ |= 0x00000001;
           }
-          result.name_ = name_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.score_ = score_;
             to_bitField0_ |= 0x00000002;
@@ -2988,11 +2668,6 @@ public final class SslGcRefereeMessage {
             result.redCards_ = redCards_;
             to_bitField0_ |= 0x00000004;
           }
-          if (((bitField0_ & 0x00000008) != 0)) {
-            yellowCardTimes_.makeImmutable();
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.yellowCardTimes_ = yellowCardTimes_;
           if (((from_bitField0_ & 0x00000010) != 0)) {
             result.yellowCards_ = yellowCards_;
             to_bitField0_ |= 0x00000008;
@@ -3037,9 +2712,7 @@ public final class SslGcRefereeMessage {
             result.botSubstitutionAllowed_ = botSubstitutionAllowed_;
             to_bitField0_ |= 0x00002000;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -3087,8 +2760,8 @@ public final class SslGcRefereeMessage {
         public Builder mergeFrom(proto.gc.SslGcRefereeMessage.Referee.TeamInfo other) {
           if (other == proto.gc.SslGcRefereeMessage.Referee.TeamInfo.getDefaultInstance()) return this;
           if (other.hasName()) {
-            bitField0_ |= 0x00000001;
             name_ = other.name_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (other.hasScore()) {
@@ -3140,7 +2813,7 @@ public final class SslGcRefereeMessage {
           if (other.hasBotSubstitutionAllowed()) {
             setBotSubstitutionAllowed(other.getBotSubstitutionAllowed());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -3176,17 +2849,116 @@ public final class SslGcRefereeMessage {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcRefereeMessage.Referee.TeamInfo parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  name_ = input.readBytes();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+                case 16: {
+                  score_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                case 24: {
+                  redCards_ = input.readUInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+                case 32: {
+                  int v = input.readUInt32();
+                  ensureYellowCardTimesIsMutable();
+                  yellowCardTimes_.addInt(v);
+                  break;
+                } // case 32
+                case 34: {
+                  int length = input.readRawVarint32();
+                  int limit = input.pushLimit(length);
+                  ensureYellowCardTimesIsMutable();
+                  while (input.getBytesUntilLimit() > 0) {
+                    yellowCardTimes_.addInt(input.readUInt32());
+                  }
+                  input.popLimit(limit);
+                  break;
+                } // case 34
+                case 40: {
+                  yellowCards_ = input.readUInt32();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
+                case 48: {
+                  timeouts_ = input.readUInt32();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 48
+                case 56: {
+                  timeoutTime_ = input.readUInt32();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 56
+                case 64: {
+                  goalkeeper_ = input.readUInt32();
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 64
+                case 72: {
+                  foulCounter_ = input.readUInt32();
+                  bitField0_ |= 0x00000100;
+                  break;
+                } // case 72
+                case 80: {
+                  ballPlacementFailures_ = input.readUInt32();
+                  bitField0_ |= 0x00000200;
+                  break;
+                } // case 80
+                case 96: {
+                  canPlaceBall_ = input.readBool();
+                  bitField0_ |= 0x00000400;
+                  break;
+                } // case 96
+                case 104: {
+                  maxAllowedBots_ = input.readUInt32();
+                  bitField0_ |= 0x00000800;
+                  break;
+                } // case 104
+                case 112: {
+                  botSubstitutionIntent_ = input.readBool();
+                  bitField0_ |= 0x00001000;
+                  break;
+                } // case 112
+                case 120: {
+                  ballPlacementFailuresReached_ = input.readBool();
+                  bitField0_ |= 0x00002000;
+                  break;
+                } // case 120
+                case 128: {
+                  botSubstitutionAllowed_ = input.readBool();
+                  bitField0_ |= 0x00004000;
+                  break;
+                } // case 128
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcRefereeMessage.Referee.TeamInfo) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -3257,11 +3029,9 @@ public final class SslGcRefereeMessage {
          */
         public Builder setName(
             java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          if (value == null) { throw new NullPointerException(); }
           name_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -3274,8 +3044,8 @@ public final class SslGcRefereeMessage {
          * @return This builder for chaining.
          */
         public Builder clearName() {
-          bitField0_ = (bitField0_ & ~0x00000001);
           name_ = getDefaultInstance().getName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -3290,11 +3060,9 @@ public final class SslGcRefereeMessage {
          */
         public Builder setNameBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+          if (value == null) { throw new NullPointerException(); }
           name_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -3334,8 +3102,9 @@ public final class SslGcRefereeMessage {
          * @return This builder for chaining.
          */
         public Builder setScore(int value) {
-          bitField0_ |= 0x00000002;
+          
           score_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -3389,8 +3158,9 @@ public final class SslGcRefereeMessage {
          * @return This builder for chaining.
          */
         public Builder setRedCards(int value) {
-          bitField0_ |= 0x00000004;
+          
           redCards_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -3414,7 +3184,7 @@ public final class SslGcRefereeMessage {
           if (!((bitField0_ & 0x00000008) != 0)) {
             yellowCardTimes_ = mutableCopy(yellowCardTimes_);
             bitField0_ |= 0x00000008;
-           }
+          }
         }
         /**
          * <pre>
@@ -3472,6 +3242,7 @@ public final class SslGcRefereeMessage {
          */
         public Builder setYellowCardTimes(
             int index, int value) {
+          
           ensureYellowCardTimesIsMutable();
           yellowCardTimes_.setInt(index, value);
           onChanged();
@@ -3489,6 +3260,7 @@ public final class SslGcRefereeMessage {
          * @return This builder for chaining.
          */
         public Builder addYellowCardTimes(int value) {
+          
           ensureYellowCardTimesIsMutable();
           yellowCardTimes_.addInt(value);
           onChanged();
@@ -3565,8 +3337,9 @@ public final class SslGcRefereeMessage {
          * @return This builder for chaining.
          */
         public Builder setYellowCards(int value) {
-          bitField0_ |= 0x00000010;
+          
           yellowCards_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -3623,8 +3396,9 @@ public final class SslGcRefereeMessage {
          * @return This builder for chaining.
          */
         public Builder setTimeouts(int value) {
-          bitField0_ |= 0x00000020;
+          
           timeouts_ = value;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -3679,8 +3453,9 @@ public final class SslGcRefereeMessage {
          * @return This builder for chaining.
          */
         public Builder setTimeoutTime(int value) {
-          bitField0_ |= 0x00000040;
+          
           timeoutTime_ = value;
+          bitField0_ |= 0x00000040;
           onChanged();
           return this;
         }
@@ -3734,8 +3509,9 @@ public final class SslGcRefereeMessage {
          * @return This builder for chaining.
          */
         public Builder setGoalkeeper(int value) {
-          bitField0_ |= 0x00000080;
+          
           goalkeeper_ = value;
+          bitField0_ |= 0x00000080;
           onChanged();
           return this;
         }
@@ -3789,8 +3565,9 @@ public final class SslGcRefereeMessage {
          * @return This builder for chaining.
          */
         public Builder setFoulCounter(int value) {
-          bitField0_ |= 0x00000100;
+          
           foulCounter_ = value;
+          bitField0_ |= 0x00000100;
           onChanged();
           return this;
         }
@@ -3844,8 +3621,9 @@ public final class SslGcRefereeMessage {
          * @return This builder for chaining.
          */
         public Builder setBallPlacementFailures(int value) {
-          bitField0_ |= 0x00000200;
+          
           ballPlacementFailures_ = value;
+          bitField0_ |= 0x00000200;
           onChanged();
           return this;
         }
@@ -3899,8 +3677,9 @@ public final class SslGcRefereeMessage {
          * @return This builder for chaining.
          */
         public Builder setCanPlaceBall(boolean value) {
-          bitField0_ |= 0x00000400;
+          
           canPlaceBall_ = value;
+          bitField0_ |= 0x00000400;
           onChanged();
           return this;
         }
@@ -3954,8 +3733,9 @@ public final class SslGcRefereeMessage {
          * @return This builder for chaining.
          */
         public Builder setMaxAllowedBots(int value) {
-          bitField0_ |= 0x00000800;
+          
           maxAllowedBots_ = value;
+          bitField0_ |= 0x00000800;
           onChanged();
           return this;
         }
@@ -4009,8 +3789,9 @@ public final class SslGcRefereeMessage {
          * @return This builder for chaining.
          */
         public Builder setBotSubstitutionIntent(boolean value) {
-          bitField0_ |= 0x00001000;
+          
           botSubstitutionIntent_ = value;
+          bitField0_ |= 0x00001000;
           onChanged();
           return this;
         }
@@ -4064,8 +3845,9 @@ public final class SslGcRefereeMessage {
          * @return This builder for chaining.
          */
         public Builder setBallPlacementFailuresReached(boolean value) {
-          bitField0_ |= 0x00002000;
+          
           ballPlacementFailuresReached_ = value;
+          bitField0_ |= 0x00002000;
           onChanged();
           return this;
         }
@@ -4119,8 +3901,9 @@ public final class SslGcRefereeMessage {
          * @return This builder for chaining.
          */
         public Builder setBotSubstitutionAllowed(boolean value) {
-          bitField0_ |= 0x00004000;
+          
           botSubstitutionAllowed_ = value;
+          bitField0_ |= 0x00004000;
           onChanged();
           return this;
         }
@@ -4171,7 +3954,18 @@ public final class SslGcRefereeMessage {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TeamInfo(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -4251,54 +4045,6 @@ public final class SslGcRefereeMessage {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private Point(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                bitField0_ |= 0x00000001;
-                x_ = input.readFloat();
-                break;
-              }
-              case 21: {
-                bitField0_ |= 0x00000002;
-                y_ = input.readFloat();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return proto.gc.SslGcRefereeMessage.internal_static_proto_gc_Referee_Point_descriptor;
@@ -4314,7 +4060,7 @@ public final class SslGcRefereeMessage {
 
       private int bitField0_;
       public static final int X_FIELD_NUMBER = 1;
-      private float x_;
+      private float x_ = 0F;
       /**
        * <code>required float x = 1;</code>
        * @return Whether the x field is set.
@@ -4333,7 +4079,7 @@ public final class SslGcRefereeMessage {
       }
 
       public static final int Y_FIELD_NUMBER = 2;
-      private float y_;
+      private float y_ = 0F;
       /**
        * <code>required float y = 2;</code>
        * @return Whether the y field is set.
@@ -4379,7 +4125,7 @@ public final class SslGcRefereeMessage {
         if (((bitField0_ & 0x00000002) != 0)) {
           output.writeFloat(2, y_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -4396,7 +4142,7 @@ public final class SslGcRefereeMessage {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(2, y_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -4423,7 +4169,7 @@ public final class SslGcRefereeMessage {
               != java.lang.Float.floatToIntBits(
                   other.getY())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -4444,7 +4190,7 @@ public final class SslGcRefereeMessage {
           hash = (53 * hash) + java.lang.Float.floatToIntBits(
               getY());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -4568,26 +4314,20 @@ public final class SslGcRefereeMessage {
 
         // Construct using proto.gc.SslGcRefereeMessage.Referee.Point.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           x_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000001);
           y_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -4614,6 +4354,12 @@ public final class SslGcRefereeMessage {
         @java.lang.Override
         public proto.gc.SslGcRefereeMessage.Referee.Point buildPartial() {
           proto.gc.SslGcRefereeMessage.Referee.Point result = new proto.gc.SslGcRefereeMessage.Referee.Point(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(proto.gc.SslGcRefereeMessage.Referee.Point result) {
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -4624,9 +4370,7 @@ public final class SslGcRefereeMessage {
             result.y_ = y_;
             to_bitField0_ |= 0x00000002;
           }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -4679,7 +4423,7 @@ public final class SslGcRefereeMessage {
           if (other.hasY()) {
             setY(other.getY());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -4700,17 +4444,40 @@ public final class SslGcRefereeMessage {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          proto.gc.SslGcRefereeMessage.Referee.Point parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 13: {
+                  x_ = input.readFloat();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 13
+                case 21: {
+                  y_ = input.readFloat();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 21
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (proto.gc.SslGcRefereeMessage.Referee.Point) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -4738,8 +4505,9 @@ public final class SslGcRefereeMessage {
          * @return This builder for chaining.
          */
         public Builder setX(float value) {
-          bitField0_ |= 0x00000001;
+          
           x_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -4777,8 +4545,9 @@ public final class SslGcRefereeMessage {
          * @return This builder for chaining.
          */
         public Builder setY(float value) {
-          bitField0_ |= 0x00000002;
+          
           y_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -4825,7 +4594,18 @@ public final class SslGcRefereeMessage {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Point(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -4847,7 +4627,8 @@ public final class SslGcRefereeMessage {
 
     private int bitField0_;
     public static final int SOURCE_IDENTIFIER_FIELD_NUMBER = 18;
-    private volatile java.lang.Object sourceIdentifier_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sourceIdentifier_ = "";
     /**
      * <pre>
      * A random UUID of the source that is kept constant at the source while running
@@ -4910,7 +4691,7 @@ public final class SslGcRefereeMessage {
     }
 
     public static final int MATCH_TYPE_FIELD_NUMBER = 19;
-    private int matchType_;
+    private int matchType_ = 0;
     /**
      * <pre>
      * The match type is a meta information about the current match that helps to process the logs after a competition
@@ -4931,13 +4712,12 @@ public final class SslGcRefereeMessage {
      * @return The matchType.
      */
     @java.lang.Override public proto.gc.SslGcRefereeMessage.MatchType getMatchType() {
-      @SuppressWarnings("deprecation")
-      proto.gc.SslGcRefereeMessage.MatchType result = proto.gc.SslGcRefereeMessage.MatchType.valueOf(matchType_);
+      proto.gc.SslGcRefereeMessage.MatchType result = proto.gc.SslGcRefereeMessage.MatchType.forNumber(matchType_);
       return result == null ? proto.gc.SslGcRefereeMessage.MatchType.UNKNOWN_MATCH : result;
     }
 
     public static final int PACKET_TIMESTAMP_FIELD_NUMBER = 1;
-    private long packetTimestamp_;
+    private long packetTimestamp_ = 0L;
     /**
      * <pre>
      * The UNIX timestamp when the packet was sent, in microseconds.
@@ -4966,7 +4746,7 @@ public final class SslGcRefereeMessage {
     }
 
     public static final int STAGE_FIELD_NUMBER = 2;
-    private int stage_;
+    private int stage_ = 0;
     /**
      * <code>required .proto.gc.Referee.Stage stage = 2;</code>
      * @return Whether the stage field is set.
@@ -4979,13 +4759,12 @@ public final class SslGcRefereeMessage {
      * @return The stage.
      */
     @java.lang.Override public proto.gc.SslGcRefereeMessage.Referee.Stage getStage() {
-      @SuppressWarnings("deprecation")
-      proto.gc.SslGcRefereeMessage.Referee.Stage result = proto.gc.SslGcRefereeMessage.Referee.Stage.valueOf(stage_);
+      proto.gc.SslGcRefereeMessage.Referee.Stage result = proto.gc.SslGcRefereeMessage.Referee.Stage.forNumber(stage_);
       return result == null ? proto.gc.SslGcRefereeMessage.Referee.Stage.NORMAL_FIRST_HALF_PRE : result;
     }
 
     public static final int STAGE_TIME_LEFT_FIELD_NUMBER = 3;
-    private long stageTimeLeft_;
+    private long stageTimeLeft_ = 0L;
     /**
      * <pre>
      * The number of microseconds left in the stage.
@@ -5034,7 +4813,7 @@ public final class SslGcRefereeMessage {
     }
 
     public static final int COMMAND_FIELD_NUMBER = 4;
-    private int command_;
+    private int command_ = 0;
     /**
      * <code>required .proto.gc.Referee.Command command = 4;</code>
      * @return Whether the command field is set.
@@ -5047,13 +4826,12 @@ public final class SslGcRefereeMessage {
      * @return The command.
      */
     @java.lang.Override public proto.gc.SslGcRefereeMessage.Referee.Command getCommand() {
-      @SuppressWarnings("deprecation")
-      proto.gc.SslGcRefereeMessage.Referee.Command result = proto.gc.SslGcRefereeMessage.Referee.Command.valueOf(command_);
+      proto.gc.SslGcRefereeMessage.Referee.Command result = proto.gc.SslGcRefereeMessage.Referee.Command.forNumber(command_);
       return result == null ? proto.gc.SslGcRefereeMessage.Referee.Command.HALT : result;
     }
 
     public static final int COMMAND_COUNTER_FIELD_NUMBER = 5;
-    private int commandCounter_;
+    private int commandCounter_ = 0;
     /**
      * <pre>
      * The number of commands issued since startup (mod 2^32).
@@ -5080,7 +4858,7 @@ public final class SslGcRefereeMessage {
     }
 
     public static final int COMMAND_TIMESTAMP_FIELD_NUMBER = 6;
-    private long commandTimestamp_;
+    private long commandTimestamp_ = 0L;
     /**
      * <pre>
      * The UNIX timestamp when the command was issued, in microseconds.
@@ -5199,7 +4977,7 @@ public final class SslGcRefereeMessage {
     }
 
     public static final int BLUE_TEAM_ON_POSITIVE_HALF_FIELD_NUMBER = 10;
-    private boolean blueTeamOnPositiveHalf_;
+    private boolean blueTeamOnPositiveHalf_ = false;
     /**
      * <pre>
      * Information about the direction of play.
@@ -5230,7 +5008,7 @@ public final class SslGcRefereeMessage {
     }
 
     public static final int NEXT_COMMAND_FIELD_NUMBER = 12;
-    private int nextCommand_;
+    private int nextCommand_ = 0;
     /**
      * <pre>
      * The command that will be issued after the current stoppage and ball placement to continue the game.
@@ -5251,12 +5029,12 @@ public final class SslGcRefereeMessage {
      * @return The nextCommand.
      */
     @java.lang.Override public proto.gc.SslGcRefereeMessage.Referee.Command getNextCommand() {
-      @SuppressWarnings("deprecation")
-      proto.gc.SslGcRefereeMessage.Referee.Command result = proto.gc.SslGcRefereeMessage.Referee.Command.valueOf(nextCommand_);
+      proto.gc.SslGcRefereeMessage.Referee.Command result = proto.gc.SslGcRefereeMessage.Referee.Command.forNumber(nextCommand_);
       return result == null ? proto.gc.SslGcRefereeMessage.Referee.Command.HALT : result;
     }
 
     public static final int GAME_EVENTS_FIELD_NUMBER = 16;
+    @SuppressWarnings("serial")
     private java.util.List<proto.gc.SslGcGameEvent.GameEvent> gameEvents_;
     /**
      * <code>repeated .proto.gc.GameEvent game_events = 16;</code>
@@ -5297,6 +5075,7 @@ public final class SslGcRefereeMessage {
     }
 
     public static final int GAME_EVENT_PROPOSALS_FIELD_NUMBER = 17;
+    @SuppressWarnings("serial")
     private java.util.List<proto.gc.SslGcRefereeMessage.GameEventProposalGroup> gameEventProposals_;
     /**
      * <code>repeated .proto.gc.GameEventProposalGroup game_event_proposals = 17;</code>
@@ -5337,7 +5116,7 @@ public final class SslGcRefereeMessage {
     }
 
     public static final int CURRENT_ACTION_TIME_REMAINING_FIELD_NUMBER = 15;
-    private long currentActionTimeRemaining_;
+    private long currentActionTimeRemaining_ = 0L;
     /**
      * <pre>
      * The time in microseconds that is remaining until the current action times out
@@ -5491,7 +5270,7 @@ public final class SslGcRefereeMessage {
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeEnum(19, matchType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5563,7 +5342,7 @@ public final class SslGcRefereeMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(19, matchType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5648,7 +5427,7 @@ public final class SslGcRefereeMessage {
         if (getCurrentActionTimeRemaining()
             != other.getCurrentActionTimeRemaining()) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5728,7 +5507,7 @@ public final class SslGcRefereeMessage {
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getCurrentActionTimeRemaining());
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5870,58 +5649,47 @@ public final class SslGcRefereeMessage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sourceIdentifier_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
         matchType_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
         packetTimestamp_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000004);
         stage_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000008);
         stageTimeLeft_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000010);
         command_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000020);
         commandCounter_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000040);
         commandTimestamp_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000080);
-        if (yellowBuilder_ == null) {
-          yellow_ = null;
-        } else {
-          yellowBuilder_.clear();
+        yellow_ = null;
+        if (yellowBuilder_ != null) {
+          yellowBuilder_.dispose();
+          yellowBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000100);
-        if (blueBuilder_ == null) {
-          blue_ = null;
-        } else {
-          blueBuilder_.clear();
+        blue_ = null;
+        if (blueBuilder_ != null) {
+          blueBuilder_.dispose();
+          blueBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000200);
-        if (designatedPositionBuilder_ == null) {
-          designatedPosition_ = null;
-        } else {
-          designatedPositionBuilder_.clear();
+        designatedPosition_ = null;
+        if (designatedPositionBuilder_ != null) {
+          designatedPositionBuilder_.dispose();
+          designatedPositionBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000400);
         blueTeamOnPositiveHalf_ = false;
-        bitField0_ = (bitField0_ & ~0x00000800);
         nextCommand_ = 0;
-        bitField0_ = (bitField0_ & ~0x00001000);
         if (gameEventsBuilder_ == null) {
           gameEvents_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00002000);
         } else {
+          gameEvents_ = null;
           gameEventsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00002000);
         if (gameEventProposalsBuilder_ == null) {
           gameEventProposals_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00004000);
         } else {
+          gameEventProposals_ = null;
           gameEventProposalsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00004000);
         currentActionTimeRemaining_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00008000);
         return this;
       }
 
@@ -5948,72 +5716,13 @@ public final class SslGcRefereeMessage {
       @java.lang.Override
       public proto.gc.SslGcRefereeMessage.Referee buildPartial() {
         proto.gc.SslGcRefereeMessage.Referee result = new proto.gc.SslGcRefereeMessage.Referee(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.sourceIdentifier_ = sourceIdentifier_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.matchType_ = matchType_;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.packetTimestamp_ = packetTimestamp_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.stage_ = stage_;
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.stageTimeLeft_ = stageTimeLeft_;
-          to_bitField0_ |= 0x00000010;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        result.command_ = command_;
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.commandCounter_ = commandCounter_;
-          to_bitField0_ |= 0x00000040;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.commandTimestamp_ = commandTimestamp_;
-          to_bitField0_ |= 0x00000080;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          if (yellowBuilder_ == null) {
-            result.yellow_ = yellow_;
-          } else {
-            result.yellow_ = yellowBuilder_.build();
-          }
-          to_bitField0_ |= 0x00000100;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          if (blueBuilder_ == null) {
-            result.blue_ = blue_;
-          } else {
-            result.blue_ = blueBuilder_.build();
-          }
-          to_bitField0_ |= 0x00000200;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          if (designatedPositionBuilder_ == null) {
-            result.designatedPosition_ = designatedPosition_;
-          } else {
-            result.designatedPosition_ = designatedPositionBuilder_.build();
-          }
-          to_bitField0_ |= 0x00000400;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.blueTeamOnPositiveHalf_ = blueTeamOnPositiveHalf_;
-          to_bitField0_ |= 0x00000800;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          to_bitField0_ |= 0x00001000;
-        }
-        result.nextCommand_ = nextCommand_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(proto.gc.SslGcRefereeMessage.Referee result) {
         if (gameEventsBuilder_ == null) {
           if (((bitField0_ & 0x00002000) != 0)) {
             gameEvents_ = java.util.Collections.unmodifiableList(gameEvents_);
@@ -6032,13 +5741,74 @@ public final class SslGcRefereeMessage {
         } else {
           result.gameEventProposals_ = gameEventProposalsBuilder_.build();
         }
+      }
+
+      private void buildPartial0(proto.gc.SslGcRefereeMessage.Referee result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sourceIdentifier_ = sourceIdentifier_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.matchType_ = matchType_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.packetTimestamp_ = packetTimestamp_;
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.stage_ = stage_;
+          to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.stageTimeLeft_ = stageTimeLeft_;
+          to_bitField0_ |= 0x00000010;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.command_ = command_;
+          to_bitField0_ |= 0x00000020;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.commandCounter_ = commandCounter_;
+          to_bitField0_ |= 0x00000040;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.commandTimestamp_ = commandTimestamp_;
+          to_bitField0_ |= 0x00000080;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.yellow_ = yellowBuilder_ == null
+              ? yellow_
+              : yellowBuilder_.build();
+          to_bitField0_ |= 0x00000100;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.blue_ = blueBuilder_ == null
+              ? blue_
+              : blueBuilder_.build();
+          to_bitField0_ |= 0x00000200;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.designatedPosition_ = designatedPositionBuilder_ == null
+              ? designatedPosition_
+              : designatedPositionBuilder_.build();
+          to_bitField0_ |= 0x00000400;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.blueTeamOnPositiveHalf_ = blueTeamOnPositiveHalf_;
+          to_bitField0_ |= 0x00000800;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.nextCommand_ = nextCommand_;
+          to_bitField0_ |= 0x00001000;
+        }
         if (((from_bitField0_ & 0x00008000) != 0)) {
           result.currentActionTimeRemaining_ = currentActionTimeRemaining_;
           to_bitField0_ |= 0x00002000;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -6086,8 +5856,8 @@ public final class SslGcRefereeMessage {
       public Builder mergeFrom(proto.gc.SslGcRefereeMessage.Referee other) {
         if (other == proto.gc.SslGcRefereeMessage.Referee.getDefaultInstance()) return this;
         if (other.hasSourceIdentifier()) {
-          bitField0_ |= 0x00000001;
           sourceIdentifier_ = other.sourceIdentifier_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasMatchType()) {
@@ -6181,7 +5951,7 @@ public final class SslGcRefereeMessage {
         if (other.hasCurrentActionTimeRemaining()) {
           setCurrentActionTimeRemaining(other.getCurrentActionTimeRemaining());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -6238,17 +6008,160 @@ public final class SslGcRefereeMessage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcRefereeMessage.Referee parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                packetTimestamp_ = input.readUInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 8
+              case 16: {
+                int tmpRaw = input.readEnum();
+                proto.gc.SslGcRefereeMessage.Referee.Stage tmpValue =
+                    proto.gc.SslGcRefereeMessage.Referee.Stage.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(2, tmpRaw);
+                } else {
+                  stage_ = tmpRaw;
+                  bitField0_ |= 0x00000008;
+                }
+                break;
+              } // case 16
+              case 24: {
+                stageTimeLeft_ = input.readSInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 24
+              case 32: {
+                int tmpRaw = input.readEnum();
+                proto.gc.SslGcRefereeMessage.Referee.Command tmpValue =
+                    proto.gc.SslGcRefereeMessage.Referee.Command.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(4, tmpRaw);
+                } else {
+                  command_ = tmpRaw;
+                  bitField0_ |= 0x00000020;
+                }
+                break;
+              } // case 32
+              case 40: {
+                commandCounter_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 40
+              case 48: {
+                commandTimestamp_ = input.readUInt64();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 48
+              case 58: {
+                input.readMessage(
+                    getYellowFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 58
+              case 66: {
+                input.readMessage(
+                    getBlueFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 66
+              case 74: {
+                input.readMessage(
+                    getDesignatedPositionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 74
+              case 80: {
+                blueTeamOnPositiveHalf_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 80
+              case 96: {
+                int tmpRaw = input.readEnum();
+                proto.gc.SslGcRefereeMessage.Referee.Command tmpValue =
+                    proto.gc.SslGcRefereeMessage.Referee.Command.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(12, tmpRaw);
+                } else {
+                  nextCommand_ = tmpRaw;
+                  bitField0_ |= 0x00001000;
+                }
+                break;
+              } // case 96
+              case 120: {
+                currentActionTimeRemaining_ = input.readInt64();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 120
+              case 130: {
+                proto.gc.SslGcGameEvent.GameEvent m =
+                    input.readMessage(
+                        proto.gc.SslGcGameEvent.GameEvent.PARSER,
+                        extensionRegistry);
+                if (gameEventsBuilder_ == null) {
+                  ensureGameEventsIsMutable();
+                  gameEvents_.add(m);
+                } else {
+                  gameEventsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 130
+              case 138: {
+                proto.gc.SslGcRefereeMessage.GameEventProposalGroup m =
+                    input.readMessage(
+                        proto.gc.SslGcRefereeMessage.GameEventProposalGroup.PARSER,
+                        extensionRegistry);
+                if (gameEventProposalsBuilder_ == null) {
+                  ensureGameEventProposalsIsMutable();
+                  gameEventProposals_.add(m);
+                } else {
+                  gameEventProposalsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 138
+              case 146: {
+                sourceIdentifier_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 146
+              case 152: {
+                int tmpRaw = input.readEnum();
+                proto.gc.SslGcRefereeMessage.MatchType tmpValue =
+                    proto.gc.SslGcRefereeMessage.MatchType.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(19, tmpRaw);
+                } else {
+                  matchType_ = tmpRaw;
+                  bitField0_ |= 0x00000002;
+                }
+                break;
+              } // case 152
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcRefereeMessage.Referee) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -6323,11 +6236,9 @@ public final class SslGcRefereeMessage {
        */
       public Builder setSourceIdentifier(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+        if (value == null) { throw new NullPointerException(); }
         sourceIdentifier_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6341,8 +6252,8 @@ public final class SslGcRefereeMessage {
        * @return This builder for chaining.
        */
       public Builder clearSourceIdentifier() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         sourceIdentifier_ = getDefaultInstance().getSourceIdentifier();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -6358,11 +6269,9 @@ public final class SslGcRefereeMessage {
        */
       public Builder setSourceIdentifierBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+        if (value == null) { throw new NullPointerException(); }
         sourceIdentifier_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6389,8 +6298,7 @@ public final class SslGcRefereeMessage {
        */
       @java.lang.Override
       public proto.gc.SslGcRefereeMessage.MatchType getMatchType() {
-        @SuppressWarnings("deprecation")
-        proto.gc.SslGcRefereeMessage.MatchType result = proto.gc.SslGcRefereeMessage.MatchType.valueOf(matchType_);
+        proto.gc.SslGcRefereeMessage.MatchType result = proto.gc.SslGcRefereeMessage.MatchType.forNumber(matchType_);
         return result == null ? proto.gc.SslGcRefereeMessage.MatchType.UNKNOWN_MATCH : result;
       }
       /**
@@ -6464,8 +6372,9 @@ public final class SslGcRefereeMessage {
        * @return This builder for chaining.
        */
       public Builder setPacketTimestamp(long value) {
-        bitField0_ |= 0x00000004;
+        
         packetTimestamp_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -6499,8 +6408,7 @@ public final class SslGcRefereeMessage {
        */
       @java.lang.Override
       public proto.gc.SslGcRefereeMessage.Referee.Stage getStage() {
-        @SuppressWarnings("deprecation")
-        proto.gc.SslGcRefereeMessage.Referee.Stage result = proto.gc.SslGcRefereeMessage.Referee.Stage.valueOf(stage_);
+        proto.gc.SslGcRefereeMessage.Referee.Stage result = proto.gc.SslGcRefereeMessage.Referee.Stage.forNumber(stage_);
         return result == null ? proto.gc.SslGcRefereeMessage.Referee.Stage.NORMAL_FIRST_HALF_PRE : result;
       }
       /**
@@ -6596,8 +6504,9 @@ public final class SslGcRefereeMessage {
        * @return This builder for chaining.
        */
       public Builder setStageTimeLeft(long value) {
-        bitField0_ |= 0x00000010;
+        
         stageTimeLeft_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -6641,8 +6550,7 @@ public final class SslGcRefereeMessage {
        */
       @java.lang.Override
       public proto.gc.SslGcRefereeMessage.Referee.Command getCommand() {
-        @SuppressWarnings("deprecation")
-        proto.gc.SslGcRefereeMessage.Referee.Command result = proto.gc.SslGcRefereeMessage.Referee.Command.valueOf(command_);
+        proto.gc.SslGcRefereeMessage.Referee.Command result = proto.gc.SslGcRefereeMessage.Referee.Command.forNumber(command_);
         return result == null ? proto.gc.SslGcRefereeMessage.Referee.Command.HALT : result;
       }
       /**
@@ -6705,8 +6613,9 @@ public final class SslGcRefereeMessage {
        * @return This builder for chaining.
        */
       public Builder setCommandCounter(int value) {
-        bitField0_ |= 0x00000040;
+        
         commandCounter_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -6763,8 +6672,9 @@ public final class SslGcRefereeMessage {
        * @return This builder for chaining.
        */
       public Builder setCommandTimestamp(long value) {
-        bitField0_ |= 0x00000080;
+        
         commandTimestamp_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -6826,11 +6736,11 @@ public final class SslGcRefereeMessage {
             throw new NullPointerException();
           }
           yellow_ = value;
-          onChanged();
         } else {
           yellowBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000100;
+        onChanged();
         return this;
       }
       /**
@@ -6844,11 +6754,11 @@ public final class SslGcRefereeMessage {
           proto.gc.SslGcRefereeMessage.Referee.TeamInfo.Builder builderForValue) {
         if (yellowBuilder_ == null) {
           yellow_ = builderForValue.build();
-          onChanged();
         } else {
           yellowBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000100;
+        onChanged();
         return this;
       }
       /**
@@ -6861,18 +6771,17 @@ public final class SslGcRefereeMessage {
       public Builder mergeYellow(proto.gc.SslGcRefereeMessage.Referee.TeamInfo value) {
         if (yellowBuilder_ == null) {
           if (((bitField0_ & 0x00000100) != 0) &&
-              yellow_ != null &&
-              yellow_ != proto.gc.SslGcRefereeMessage.Referee.TeamInfo.getDefaultInstance()) {
-            yellow_ =
-              proto.gc.SslGcRefereeMessage.Referee.TeamInfo.newBuilder(yellow_).mergeFrom(value).buildPartial();
+            yellow_ != null &&
+            yellow_ != proto.gc.SslGcRefereeMessage.Referee.TeamInfo.getDefaultInstance()) {
+            getYellowBuilder().mergeFrom(value);
           } else {
             yellow_ = value;
           }
-          onChanged();
         } else {
           yellowBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000100;
+        onChanged();
         return this;
       }
       /**
@@ -6883,13 +6792,13 @@ public final class SslGcRefereeMessage {
        * <code>required .proto.gc.Referee.TeamInfo yellow = 7;</code>
        */
       public Builder clearYellow() {
-        if (yellowBuilder_ == null) {
-          yellow_ = null;
-          onChanged();
-        } else {
-          yellowBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000100);
+        yellow_ = null;
+        if (yellowBuilder_ != null) {
+          yellowBuilder_.dispose();
+          yellowBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -6970,11 +6879,11 @@ public final class SslGcRefereeMessage {
             throw new NullPointerException();
           }
           blue_ = value;
-          onChanged();
         } else {
           blueBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000200;
+        onChanged();
         return this;
       }
       /**
@@ -6984,11 +6893,11 @@ public final class SslGcRefereeMessage {
           proto.gc.SslGcRefereeMessage.Referee.TeamInfo.Builder builderForValue) {
         if (blueBuilder_ == null) {
           blue_ = builderForValue.build();
-          onChanged();
         } else {
           blueBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000200;
+        onChanged();
         return this;
       }
       /**
@@ -6997,31 +6906,30 @@ public final class SslGcRefereeMessage {
       public Builder mergeBlue(proto.gc.SslGcRefereeMessage.Referee.TeamInfo value) {
         if (blueBuilder_ == null) {
           if (((bitField0_ & 0x00000200) != 0) &&
-              blue_ != null &&
-              blue_ != proto.gc.SslGcRefereeMessage.Referee.TeamInfo.getDefaultInstance()) {
-            blue_ =
-              proto.gc.SslGcRefereeMessage.Referee.TeamInfo.newBuilder(blue_).mergeFrom(value).buildPartial();
+            blue_ != null &&
+            blue_ != proto.gc.SslGcRefereeMessage.Referee.TeamInfo.getDefaultInstance()) {
+            getBlueBuilder().mergeFrom(value);
           } else {
             blue_ = value;
           }
-          onChanged();
         } else {
           blueBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000200;
+        onChanged();
         return this;
       }
       /**
        * <code>required .proto.gc.Referee.TeamInfo blue = 8;</code>
        */
       public Builder clearBlue() {
-        if (blueBuilder_ == null) {
-          blue_ = null;
-          onChanged();
-        } else {
-          blueBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000200);
+        blue_ = null;
+        if (blueBuilder_ != null) {
+          blueBuilder_.dispose();
+          blueBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -7090,11 +6998,11 @@ public final class SslGcRefereeMessage {
             throw new NullPointerException();
           }
           designatedPosition_ = value;
-          onChanged();
         } else {
           designatedPositionBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000400;
+        onChanged();
         return this;
       }
       /**
@@ -7104,11 +7012,11 @@ public final class SslGcRefereeMessage {
           proto.gc.SslGcRefereeMessage.Referee.Point.Builder builderForValue) {
         if (designatedPositionBuilder_ == null) {
           designatedPosition_ = builderForValue.build();
-          onChanged();
         } else {
           designatedPositionBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000400;
+        onChanged();
         return this;
       }
       /**
@@ -7117,31 +7025,30 @@ public final class SslGcRefereeMessage {
       public Builder mergeDesignatedPosition(proto.gc.SslGcRefereeMessage.Referee.Point value) {
         if (designatedPositionBuilder_ == null) {
           if (((bitField0_ & 0x00000400) != 0) &&
-              designatedPosition_ != null &&
-              designatedPosition_ != proto.gc.SslGcRefereeMessage.Referee.Point.getDefaultInstance()) {
-            designatedPosition_ =
-              proto.gc.SslGcRefereeMessage.Referee.Point.newBuilder(designatedPosition_).mergeFrom(value).buildPartial();
+            designatedPosition_ != null &&
+            designatedPosition_ != proto.gc.SslGcRefereeMessage.Referee.Point.getDefaultInstance()) {
+            getDesignatedPositionBuilder().mergeFrom(value);
           } else {
             designatedPosition_ = value;
           }
-          onChanged();
         } else {
           designatedPositionBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000400;
+        onChanged();
         return this;
       }
       /**
        * <code>optional .proto.gc.Referee.Point designated_position = 9;</code>
        */
       public Builder clearDesignatedPosition() {
-        if (designatedPositionBuilder_ == null) {
-          designatedPosition_ = null;
-          onChanged();
-        } else {
-          designatedPositionBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000400);
+        designatedPosition_ = null;
+        if (designatedPositionBuilder_ != null) {
+          designatedPositionBuilder_.dispose();
+          designatedPositionBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -7221,8 +7128,9 @@ public final class SslGcRefereeMessage {
        * @return This builder for chaining.
        */
       public Builder setBlueTeamOnPositiveHalf(boolean value) {
-        bitField0_ |= 0x00000800;
+        
         blueTeamOnPositiveHalf_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -7265,8 +7173,7 @@ public final class SslGcRefereeMessage {
        */
       @java.lang.Override
       public proto.gc.SslGcRefereeMessage.Referee.Command getNextCommand() {
-        @SuppressWarnings("deprecation")
-        proto.gc.SslGcRefereeMessage.Referee.Command result = proto.gc.SslGcRefereeMessage.Referee.Command.valueOf(nextCommand_);
+        proto.gc.SslGcRefereeMessage.Referee.Command result = proto.gc.SslGcRefereeMessage.Referee.Command.forNumber(nextCommand_);
         return result == null ? proto.gc.SslGcRefereeMessage.Referee.Command.HALT : result;
       }
       /**
@@ -7835,8 +7742,9 @@ public final class SslGcRefereeMessage {
        * @return This builder for chaining.
        */
       public Builder setCurrentActionTimeRemaining(long value) {
-        bitField0_ |= 0x00008000;
+        
         currentActionTimeRemaining_ = value;
+        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -7893,7 +7801,18 @@ public final class SslGcRefereeMessage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Referee(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -8042,67 +7961,6 @@ public final class SslGcRefereeMessage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GameEventProposalGroup(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                gameEvents_ = new java.util.ArrayList<proto.gc.SslGcGameEvent.GameEvent>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              gameEvents_.add(
-                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.PARSER, extensionRegistry));
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              accepted_ = input.readBool();
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              id_ = bs;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          gameEvents_ = java.util.Collections.unmodifiableList(gameEvents_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.gc.SslGcRefereeMessage.internal_static_proto_gc_GameEventProposalGroup_descriptor;
@@ -8118,7 +7976,8 @@ public final class SslGcRefereeMessage {
 
     private int bitField0_;
     public static final int ID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object id_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      * <pre>
      * Unique ID of this group
@@ -8178,6 +8037,7 @@ public final class SslGcRefereeMessage {
     }
 
     public static final int GAME_EVENTS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<proto.gc.SslGcGameEvent.GameEvent> gameEvents_;
     /**
      * <pre>
@@ -8238,7 +8098,7 @@ public final class SslGcRefereeMessage {
     }
 
     public static final int ACCEPTED_FIELD_NUMBER = 2;
-    private boolean accepted_;
+    private boolean accepted_ = false;
     /**
      * <pre>
      * Whether the proposal group was accepted
@@ -8293,7 +8153,7 @@ public final class SslGcRefereeMessage {
       if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -8313,7 +8173,7 @@ public final class SslGcRefereeMessage {
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -8340,7 +8200,7 @@ public final class SslGcRefereeMessage {
         if (getAccepted()
             != other.getAccepted()) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -8364,7 +8224,7 @@ public final class SslGcRefereeMessage {
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getAccepted());
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8485,33 +8345,27 @@ public final class SslGcRefereeMessage {
 
       // Construct using proto.gc.SslGcRefereeMessage.GameEventProposalGroup.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getGameEventsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (gameEventsBuilder_ == null) {
           gameEvents_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          gameEvents_ = null;
           gameEventsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         accepted_ = false;
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -8538,12 +8392,13 @@ public final class SslGcRefereeMessage {
       @java.lang.Override
       public proto.gc.SslGcRefereeMessage.GameEventProposalGroup buildPartial() {
         proto.gc.SslGcRefereeMessage.GameEventProposalGroup result = new proto.gc.SslGcRefereeMessage.GameEventProposalGroup(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.id_ = id_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(proto.gc.SslGcRefereeMessage.GameEventProposalGroup result) {
         if (gameEventsBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
             gameEvents_ = java.util.Collections.unmodifiableList(gameEvents_);
@@ -8553,13 +8408,20 @@ public final class SslGcRefereeMessage {
         } else {
           result.gameEvents_ = gameEventsBuilder_.build();
         }
+      }
+
+      private void buildPartial0(proto.gc.SslGcRefereeMessage.GameEventProposalGroup result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+          to_bitField0_ |= 0x00000001;
+        }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.accepted_ = accepted_;
           to_bitField0_ |= 0x00000002;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -8607,8 +8469,8 @@ public final class SslGcRefereeMessage {
       public Builder mergeFrom(proto.gc.SslGcRefereeMessage.GameEventProposalGroup other) {
         if (other == proto.gc.SslGcRefereeMessage.GameEventProposalGroup.getDefaultInstance()) return this;
         if (other.hasId()) {
-          bitField0_ |= 0x00000001;
           id_ = other.id_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (gameEventsBuilder_ == null) {
@@ -8640,7 +8502,7 @@ public final class SslGcRefereeMessage {
         if (other.hasAccepted()) {
           setAccepted(other.getAccepted());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -8660,17 +8522,53 @@ public final class SslGcRefereeMessage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcRefereeMessage.GameEventProposalGroup parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                proto.gc.SslGcGameEvent.GameEvent m =
+                    input.readMessage(
+                        proto.gc.SslGcGameEvent.GameEvent.PARSER,
+                        extensionRegistry);
+                if (gameEventsBuilder_ == null) {
+                  ensureGameEventsIsMutable();
+                  gameEvents_.add(m);
+                } else {
+                  gameEventsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 16: {
+                accepted_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 16
+              case 26: {
+                id_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcRefereeMessage.GameEventProposalGroup) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -8741,11 +8639,9 @@ public final class SslGcRefereeMessage {
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+        if (value == null) { throw new NullPointerException(); }
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8758,8 +8654,8 @@ public final class SslGcRefereeMessage {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -8774,11 +8670,9 @@ public final class SslGcRefereeMessage {
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+        if (value == null) { throw new NullPointerException(); }
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -9130,8 +9024,9 @@ public final class SslGcRefereeMessage {
        * @return This builder for chaining.
        */
       public Builder setAccepted(boolean value) {
-        bitField0_ |= 0x00000004;
+        
         accepted_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -9182,7 +9077,18 @@ public final class SslGcRefereeMessage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GameEventProposalGroup(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

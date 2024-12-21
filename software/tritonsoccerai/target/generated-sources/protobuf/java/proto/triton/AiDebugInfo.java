@@ -60,56 +60,6 @@ public final class AiDebugInfo {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Debug(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              proto.triton.AiDebugInfo.DebugPath.Builder subBuilder = null;
-              if (path_ != null) {
-                subBuilder = path_.toBuilder();
-              }
-              path_ = input.readMessage(proto.triton.AiDebugInfo.DebugPath.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(path_);
-                path_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.triton.AiDebugInfo.internal_static_proto_triton_Debug_descriptor;
@@ -146,7 +96,7 @@ public final class AiDebugInfo {
      */
     @java.lang.Override
     public proto.triton.AiDebugInfo.DebugPathOrBuilder getPathOrBuilder() {
-      return getPath();
+      return path_ == null ? proto.triton.AiDebugInfo.DebugPath.getDefaultInstance() : path_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -166,7 +116,7 @@ public final class AiDebugInfo {
       if (path_ != null) {
         output.writeMessage(1, getPath());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -179,7 +129,7 @@ public final class AiDebugInfo {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getPath());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -199,7 +149,7 @@ public final class AiDebugInfo {
         if (!getPath()
             .equals(other.getPath())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -214,7 +164,7 @@ public final class AiDebugInfo {
         hash = (37 * hash) + PATH_FIELD_NUMBER;
         hash = (53 * hash) + getPath().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -331,26 +281,21 @@ public final class AiDebugInfo {
 
       // Construct using proto.triton.AiDebugInfo.Debug.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (pathBuilder_ == null) {
-          path_ = null;
-        } else {
-          path_ = null;
+        bitField0_ = 0;
+        path_ = null;
+        if (pathBuilder_ != null) {
+          pathBuilder_.dispose();
           pathBuilder_ = null;
         }
         return this;
@@ -379,13 +324,18 @@ public final class AiDebugInfo {
       @java.lang.Override
       public proto.triton.AiDebugInfo.Debug buildPartial() {
         proto.triton.AiDebugInfo.Debug result = new proto.triton.AiDebugInfo.Debug(this);
-        if (pathBuilder_ == null) {
-          result.path_ = path_;
-        } else {
-          result.path_ = pathBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(proto.triton.AiDebugInfo.Debug result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.path_ = pathBuilder_ == null
+              ? path_
+              : pathBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -435,7 +385,7 @@ public final class AiDebugInfo {
         if (other.hasPath()) {
           mergePath(other.getPath());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -450,19 +400,40 @@ public final class AiDebugInfo {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.triton.AiDebugInfo.Debug parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getPathFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.triton.AiDebugInfo.Debug) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private proto.triton.AiDebugInfo.DebugPath path_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -472,7 +443,7 @@ public final class AiDebugInfo {
        * @return Whether the path field is set.
        */
       public boolean hasPath() {
-        return pathBuilder_ != null || path_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.proto.triton.DebugPath path = 1;</code>
@@ -494,11 +465,11 @@ public final class AiDebugInfo {
             throw new NullPointerException();
           }
           path_ = value;
-          onChanged();
         } else {
           pathBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -508,11 +479,11 @@ public final class AiDebugInfo {
           proto.triton.AiDebugInfo.DebugPath.Builder builderForValue) {
         if (pathBuilder_ == null) {
           path_ = builderForValue.build();
-          onChanged();
         } else {
           pathBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -520,38 +491,38 @@ public final class AiDebugInfo {
        */
       public Builder mergePath(proto.triton.AiDebugInfo.DebugPath value) {
         if (pathBuilder_ == null) {
-          if (path_ != null) {
-            path_ =
-              proto.triton.AiDebugInfo.DebugPath.newBuilder(path_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            path_ != null &&
+            path_ != proto.triton.AiDebugInfo.DebugPath.getDefaultInstance()) {
+            getPathBuilder().mergeFrom(value);
           } else {
             path_ = value;
           }
-          onChanged();
         } else {
           pathBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.proto.triton.DebugPath path = 1;</code>
        */
       public Builder clearPath() {
-        if (pathBuilder_ == null) {
-          path_ = null;
-          onChanged();
-        } else {
-          path_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        path_ = null;
+        if (pathBuilder_ != null) {
+          pathBuilder_.dispose();
           pathBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.proto.triton.DebugPath path = 1;</code>
        */
       public proto.triton.AiDebugInfo.DebugPath.Builder getPathBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getPathFieldBuilder().getBuilder();
       }
@@ -615,7 +586,18 @@ public final class AiDebugInfo {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Debug(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -742,100 +724,6 @@ public final class AiDebugInfo {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DebugPath(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              id_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                nodes_ = new java.util.ArrayList<proto.triton.AiDebugInfo.DebugVector>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              nodes_.add(
-                  input.readMessage(proto.triton.AiDebugInfo.DebugVector.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              proto.triton.AiDebugInfo.DebugVector.Builder subBuilder = null;
-              if (fromPos_ != null) {
-                subBuilder = fromPos_.toBuilder();
-              }
-              fromPos_ = input.readMessage(proto.triton.AiDebugInfo.DebugVector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(fromPos_);
-                fromPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 34: {
-              proto.triton.AiDebugInfo.DebugVector.Builder subBuilder = null;
-              if (toPos_ != null) {
-                subBuilder = toPos_.toBuilder();
-              }
-              toPos_ = input.readMessage(proto.triton.AiDebugInfo.DebugVector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(toPos_);
-                toPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              proto.triton.AiDebugInfo.DebugVector.Builder subBuilder = null;
-              if (nextPos_ != null) {
-                subBuilder = nextPos_.toBuilder();
-              }
-              nextPos_ = input.readMessage(proto.triton.AiDebugInfo.DebugVector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(nextPos_);
-                nextPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          nodes_ = java.util.Collections.unmodifiableList(nodes_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.triton.AiDebugInfo.internal_static_proto_triton_DebugPath_descriptor;
@@ -850,7 +738,7 @@ public final class AiDebugInfo {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    private int id_ = 0;
     /**
      * <code>int32 id = 1;</code>
      * @return The id.
@@ -883,7 +771,7 @@ public final class AiDebugInfo {
      */
     @java.lang.Override
     public proto.triton.AiDebugInfo.DebugVectorOrBuilder getFromPosOrBuilder() {
-      return getFromPos();
+      return fromPos_ == null ? proto.triton.AiDebugInfo.DebugVector.getDefaultInstance() : fromPos_;
     }
 
     public static final int TOPOS_FIELD_NUMBER = 4;
@@ -909,7 +797,7 @@ public final class AiDebugInfo {
      */
     @java.lang.Override
     public proto.triton.AiDebugInfo.DebugVectorOrBuilder getToPosOrBuilder() {
-      return getToPos();
+      return toPos_ == null ? proto.triton.AiDebugInfo.DebugVector.getDefaultInstance() : toPos_;
     }
 
     public static final int NEXTPOS_FIELD_NUMBER = 5;
@@ -935,10 +823,11 @@ public final class AiDebugInfo {
      */
     @java.lang.Override
     public proto.triton.AiDebugInfo.DebugVectorOrBuilder getNextPosOrBuilder() {
-      return getNextPos();
+      return nextPos_ == null ? proto.triton.AiDebugInfo.DebugVector.getDefaultInstance() : nextPos_;
     }
 
     public static final int NODES_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private java.util.List<proto.triton.AiDebugInfo.DebugVector> nodes_;
     /**
      * <code>repeated .proto.triton.DebugVector nodes = 2;</code>
@@ -1007,7 +896,7 @@ public final class AiDebugInfo {
       if (nextPos_ != null) {
         output.writeMessage(5, getNextPos());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1036,7 +925,7 @@ public final class AiDebugInfo {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getNextPos());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1070,7 +959,7 @@ public final class AiDebugInfo {
       }
       if (!getNodesList()
           .equals(other.getNodesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1099,7 +988,7 @@ public final class AiDebugInfo {
         hash = (37 * hash) + NODES_FIELD_NUMBER;
         hash = (53 * hash) + getNodesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1216,49 +1105,41 @@ public final class AiDebugInfo {
 
       // Construct using proto.triton.AiDebugInfo.DebugPath.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getNodesFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = 0;
-
-        if (fromPosBuilder_ == null) {
-          fromPos_ = null;
-        } else {
-          fromPos_ = null;
+        fromPos_ = null;
+        if (fromPosBuilder_ != null) {
+          fromPosBuilder_.dispose();
           fromPosBuilder_ = null;
         }
-        if (toPosBuilder_ == null) {
-          toPos_ = null;
-        } else {
-          toPos_ = null;
+        toPos_ = null;
+        if (toPosBuilder_ != null) {
+          toPosBuilder_.dispose();
           toPosBuilder_ = null;
         }
-        if (nextPosBuilder_ == null) {
-          nextPos_ = null;
-        } else {
-          nextPos_ = null;
+        nextPos_ = null;
+        if (nextPosBuilder_ != null) {
+          nextPosBuilder_.dispose();
           nextPosBuilder_ = null;
         }
         if (nodesBuilder_ == null) {
           nodes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          nodes_ = null;
           nodesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1285,34 +1166,44 @@ public final class AiDebugInfo {
       @java.lang.Override
       public proto.triton.AiDebugInfo.DebugPath buildPartial() {
         proto.triton.AiDebugInfo.DebugPath result = new proto.triton.AiDebugInfo.DebugPath(this);
-        int from_bitField0_ = bitField0_;
-        result.id_ = id_;
-        if (fromPosBuilder_ == null) {
-          result.fromPos_ = fromPos_;
-        } else {
-          result.fromPos_ = fromPosBuilder_.build();
-        }
-        if (toPosBuilder_ == null) {
-          result.toPos_ = toPos_;
-        } else {
-          result.toPos_ = toPosBuilder_.build();
-        }
-        if (nextPosBuilder_ == null) {
-          result.nextPos_ = nextPos_;
-        } else {
-          result.nextPos_ = nextPosBuilder_.build();
-        }
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(proto.triton.AiDebugInfo.DebugPath result) {
         if (nodesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             nodes_ = java.util.Collections.unmodifiableList(nodes_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.nodes_ = nodes_;
         } else {
           result.nodes_ = nodesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(proto.triton.AiDebugInfo.DebugPath result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.fromPos_ = fromPosBuilder_ == null
+              ? fromPos_
+              : fromPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.toPos_ = toPosBuilder_ == null
+              ? toPos_
+              : toPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.nextPos_ = nextPosBuilder_ == null
+              ? nextPos_
+              : nextPosBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1375,7 +1266,7 @@ public final class AiDebugInfo {
           if (!other.nodes_.isEmpty()) {
             if (nodes_.isEmpty()) {
               nodes_ = other.nodes_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureNodesIsMutable();
               nodes_.addAll(other.nodes_);
@@ -1388,7 +1279,7 @@ public final class AiDebugInfo {
               nodesBuilder_.dispose();
               nodesBuilder_ = null;
               nodes_ = other.nodes_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000010);
               nodesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getNodesFieldBuilder() : null;
@@ -1397,7 +1288,7 @@ public final class AiDebugInfo {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1412,17 +1303,69 @@ public final class AiDebugInfo {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.triton.AiDebugInfo.DebugPath parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                proto.triton.AiDebugInfo.DebugVector m =
+                    input.readMessage(
+                        proto.triton.AiDebugInfo.DebugVector.parser(),
+                        extensionRegistry);
+                if (nodesBuilder_ == null) {
+                  ensureNodesIsMutable();
+                  nodes_.add(m);
+                } else {
+                  nodesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getFromPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getToPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
+              case 42: {
+                input.readMessage(
+                    getNextPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.triton.AiDebugInfo.DebugPath) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1444,6 +1387,7 @@ public final class AiDebugInfo {
       public Builder setId(int value) {
         
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1452,7 +1396,7 @@ public final class AiDebugInfo {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0;
         onChanged();
         return this;
@@ -1466,7 +1410,7 @@ public final class AiDebugInfo {
        * @return Whether the fromPos field is set.
        */
       public boolean hasFromPos() {
-        return fromPosBuilder_ != null || fromPos_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.proto.triton.DebugVector fromPos = 3;</code>
@@ -1488,11 +1432,11 @@ public final class AiDebugInfo {
             throw new NullPointerException();
           }
           fromPos_ = value;
-          onChanged();
         } else {
           fromPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1502,11 +1446,11 @@ public final class AiDebugInfo {
           proto.triton.AiDebugInfo.DebugVector.Builder builderForValue) {
         if (fromPosBuilder_ == null) {
           fromPos_ = builderForValue.build();
-          onChanged();
         } else {
           fromPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1514,38 +1458,38 @@ public final class AiDebugInfo {
        */
       public Builder mergeFromPos(proto.triton.AiDebugInfo.DebugVector value) {
         if (fromPosBuilder_ == null) {
-          if (fromPos_ != null) {
-            fromPos_ =
-              proto.triton.AiDebugInfo.DebugVector.newBuilder(fromPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            fromPos_ != null &&
+            fromPos_ != proto.triton.AiDebugInfo.DebugVector.getDefaultInstance()) {
+            getFromPosBuilder().mergeFrom(value);
           } else {
             fromPos_ = value;
           }
-          onChanged();
         } else {
           fromPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.proto.triton.DebugVector fromPos = 3;</code>
        */
       public Builder clearFromPos() {
-        if (fromPosBuilder_ == null) {
-          fromPos_ = null;
-          onChanged();
-        } else {
-          fromPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        fromPos_ = null;
+        if (fromPosBuilder_ != null) {
+          fromPosBuilder_.dispose();
           fromPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.proto.triton.DebugVector fromPos = 3;</code>
        */
       public proto.triton.AiDebugInfo.DebugVector.Builder getFromPosBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getFromPosFieldBuilder().getBuilder();
       }
@@ -1585,7 +1529,7 @@ public final class AiDebugInfo {
        * @return Whether the toPos field is set.
        */
       public boolean hasToPos() {
-        return toPosBuilder_ != null || toPos_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.proto.triton.DebugVector toPos = 4;</code>
@@ -1607,11 +1551,11 @@ public final class AiDebugInfo {
             throw new NullPointerException();
           }
           toPos_ = value;
-          onChanged();
         } else {
           toPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1621,11 +1565,11 @@ public final class AiDebugInfo {
           proto.triton.AiDebugInfo.DebugVector.Builder builderForValue) {
         if (toPosBuilder_ == null) {
           toPos_ = builderForValue.build();
-          onChanged();
         } else {
           toPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1633,38 +1577,38 @@ public final class AiDebugInfo {
        */
       public Builder mergeToPos(proto.triton.AiDebugInfo.DebugVector value) {
         if (toPosBuilder_ == null) {
-          if (toPos_ != null) {
-            toPos_ =
-              proto.triton.AiDebugInfo.DebugVector.newBuilder(toPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            toPos_ != null &&
+            toPos_ != proto.triton.AiDebugInfo.DebugVector.getDefaultInstance()) {
+            getToPosBuilder().mergeFrom(value);
           } else {
             toPos_ = value;
           }
-          onChanged();
         } else {
           toPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.proto.triton.DebugVector toPos = 4;</code>
        */
       public Builder clearToPos() {
-        if (toPosBuilder_ == null) {
-          toPos_ = null;
-          onChanged();
-        } else {
-          toPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        toPos_ = null;
+        if (toPosBuilder_ != null) {
+          toPosBuilder_.dispose();
           toPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.proto.triton.DebugVector toPos = 4;</code>
        */
       public proto.triton.AiDebugInfo.DebugVector.Builder getToPosBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getToPosFieldBuilder().getBuilder();
       }
@@ -1704,7 +1648,7 @@ public final class AiDebugInfo {
        * @return Whether the nextPos field is set.
        */
       public boolean hasNextPos() {
-        return nextPosBuilder_ != null || nextPos_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.proto.triton.DebugVector nextPos = 5;</code>
@@ -1726,11 +1670,11 @@ public final class AiDebugInfo {
             throw new NullPointerException();
           }
           nextPos_ = value;
-          onChanged();
         } else {
           nextPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1740,11 +1684,11 @@ public final class AiDebugInfo {
           proto.triton.AiDebugInfo.DebugVector.Builder builderForValue) {
         if (nextPosBuilder_ == null) {
           nextPos_ = builderForValue.build();
-          onChanged();
         } else {
           nextPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1752,38 +1696,38 @@ public final class AiDebugInfo {
        */
       public Builder mergeNextPos(proto.triton.AiDebugInfo.DebugVector value) {
         if (nextPosBuilder_ == null) {
-          if (nextPos_ != null) {
-            nextPos_ =
-              proto.triton.AiDebugInfo.DebugVector.newBuilder(nextPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            nextPos_ != null &&
+            nextPos_ != proto.triton.AiDebugInfo.DebugVector.getDefaultInstance()) {
+            getNextPosBuilder().mergeFrom(value);
           } else {
             nextPos_ = value;
           }
-          onChanged();
         } else {
           nextPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.proto.triton.DebugVector nextPos = 5;</code>
        */
       public Builder clearNextPos() {
-        if (nextPosBuilder_ == null) {
-          nextPos_ = null;
-          onChanged();
-        } else {
-          nextPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        nextPos_ = null;
+        if (nextPosBuilder_ != null) {
+          nextPosBuilder_.dispose();
           nextPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.proto.triton.DebugVector nextPos = 5;</code>
        */
       public proto.triton.AiDebugInfo.DebugVector.Builder getNextPosBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getNextPosFieldBuilder().getBuilder();
       }
@@ -1818,9 +1762,9 @@ public final class AiDebugInfo {
       private java.util.List<proto.triton.AiDebugInfo.DebugVector> nodes_ =
         java.util.Collections.emptyList();
       private void ensureNodesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           nodes_ = new java.util.ArrayList<proto.triton.AiDebugInfo.DebugVector>(nodes_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -1970,7 +1914,7 @@ public final class AiDebugInfo {
       public Builder clearNodes() {
         if (nodesBuilder_ == null) {
           nodes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           nodesBuilder_.clear();
@@ -2047,7 +1991,7 @@ public final class AiDebugInfo {
           nodesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               proto.triton.AiDebugInfo.DebugVector, proto.triton.AiDebugInfo.DebugVector.Builder, proto.triton.AiDebugInfo.DebugVectorOrBuilder>(
                   nodes_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           nodes_ = null;
@@ -2087,7 +2031,18 @@ public final class AiDebugInfo {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DebugPath(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2150,53 +2105,6 @@ public final class AiDebugInfo {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DebugVector(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 13: {
-
-              x_ = input.readFloat();
-              break;
-            }
-            case 21: {
-
-              y_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.triton.AiDebugInfo.internal_static_proto_triton_DebugVector_descriptor;
@@ -2211,7 +2119,7 @@ public final class AiDebugInfo {
     }
 
     public static final int X_FIELD_NUMBER = 1;
-    private float x_;
+    private float x_ = 0F;
     /**
      * <code>float x = 1;</code>
      * @return The x.
@@ -2222,7 +2130,7 @@ public final class AiDebugInfo {
     }
 
     public static final int Y_FIELD_NUMBER = 2;
-    private float y_;
+    private float y_ = 0F;
     /**
      * <code>float y = 2;</code>
      * @return The y.
@@ -2246,13 +2154,13 @@ public final class AiDebugInfo {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (x_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(x_) != 0) {
         output.writeFloat(1, x_);
       }
-      if (y_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(y_) != 0) {
         output.writeFloat(2, y_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2261,15 +2169,15 @@ public final class AiDebugInfo {
       if (size != -1) return size;
 
       size = 0;
-      if (x_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(x_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, x_);
       }
-      if (y_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(y_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, y_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2290,7 +2198,7 @@ public final class AiDebugInfo {
       if (java.lang.Float.floatToIntBits(getY())
           != java.lang.Float.floatToIntBits(
               other.getY())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2307,7 +2215,7 @@ public final class AiDebugInfo {
       hash = (37 * hash) + Y_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getY());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2424,26 +2332,20 @@ public final class AiDebugInfo {
 
       // Construct using proto.triton.AiDebugInfo.DebugVector.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         x_ = 0F;
-
         y_ = 0F;
-
         return this;
       }
 
@@ -2470,10 +2372,19 @@ public final class AiDebugInfo {
       @java.lang.Override
       public proto.triton.AiDebugInfo.DebugVector buildPartial() {
         proto.triton.AiDebugInfo.DebugVector result = new proto.triton.AiDebugInfo.DebugVector(this);
-        result.x_ = x_;
-        result.y_ = y_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(proto.triton.AiDebugInfo.DebugVector result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.x_ = x_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.y_ = y_;
+        }
       }
 
       @java.lang.Override
@@ -2526,7 +2437,7 @@ public final class AiDebugInfo {
         if (other.getY() != 0F) {
           setY(other.getY());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2541,19 +2452,43 @@ public final class AiDebugInfo {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.triton.AiDebugInfo.DebugVector parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13: {
+                x_ = input.readFloat();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 13
+              case 21: {
+                y_ = input.readFloat();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 21
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.triton.AiDebugInfo.DebugVector) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private float x_ ;
       /**
@@ -2572,6 +2507,7 @@ public final class AiDebugInfo {
       public Builder setX(float value) {
         
         x_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2580,7 +2516,7 @@ public final class AiDebugInfo {
        * @return This builder for chaining.
        */
       public Builder clearX() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         x_ = 0F;
         onChanged();
         return this;
@@ -2603,6 +2539,7 @@ public final class AiDebugInfo {
       public Builder setY(float value) {
         
         y_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2611,7 +2548,7 @@ public final class AiDebugInfo {
        * @return This builder for chaining.
        */
       public Builder clearY() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         y_ = 0F;
         onChanged();
         return this;
@@ -2649,7 +2586,18 @@ public final class AiDebugInfo {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DebugVector(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

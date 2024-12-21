@@ -157,96 +157,6 @@ public final class SslGcApi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Output(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              proto.gc.SslGcState.State.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) != 0)) {
-                subBuilder = matchState_.toBuilder();
-              }
-              matchState_ = input.readMessage(proto.gc.SslGcState.State.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(matchState_);
-                matchState_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-            case 18: {
-              proto.gc.SslGcEngine.GcState.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) != 0)) {
-                subBuilder = gcState_.toBuilder();
-              }
-              gcState_ = input.readMessage(proto.gc.SslGcEngine.GcState.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(gcState_);
-                gcState_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000002;
-              break;
-            }
-            case 26: {
-              proto.gc.SslGcApi.Protocol.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) != 0)) {
-                subBuilder = protocol_.toBuilder();
-              }
-              protocol_ = input.readMessage(proto.gc.SslGcApi.Protocol.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(protocol_);
-                protocol_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
-              break;
-            }
-            case 34: {
-              proto.gc.SslGcEngineConfig.Config.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000008) != 0)) {
-                subBuilder = config_.toBuilder();
-              }
-              config_ = input.readMessage(proto.gc.SslGcEngineConfig.Config.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(config_);
-                config_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000008;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.gc.SslGcApi.internal_static_proto_gc_Output_descriptor;
@@ -457,7 +367,7 @@ public final class SslGcApi {
       if (((bitField0_ & 0x00000008) != 0)) {
         output.writeMessage(4, getConfig());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -482,7 +392,7 @@ public final class SslGcApi {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getConfig());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -517,7 +427,7 @@ public final class SslGcApi {
         if (!getConfig()
             .equals(other.getConfig())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -544,7 +454,7 @@ public final class SslGcApi {
         hash = (37 * hash) + CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getConfig().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -685,30 +595,27 @@ public final class SslGcApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (matchStateBuilder_ == null) {
-          matchState_ = null;
-        } else {
-          matchStateBuilder_.clear();
+        bitField0_ = 0;
+        matchState_ = null;
+        if (matchStateBuilder_ != null) {
+          matchStateBuilder_.dispose();
+          matchStateBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (gcStateBuilder_ == null) {
-          gcState_ = null;
-        } else {
-          gcStateBuilder_.clear();
+        gcState_ = null;
+        if (gcStateBuilder_ != null) {
+          gcStateBuilder_.dispose();
+          gcStateBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        if (protocolBuilder_ == null) {
-          protocol_ = null;
-        } else {
-          protocolBuilder_.clear();
+        protocol_ = null;
+        if (protocolBuilder_ != null) {
+          protocolBuilder_.dispose();
+          protocolBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
-        if (configBuilder_ == null) {
-          config_ = null;
-        } else {
-          configBuilder_.clear();
+        config_ = null;
+        if (configBuilder_ != null) {
+          configBuilder_.dispose();
+          configBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -735,43 +642,39 @@ public final class SslGcApi {
       @java.lang.Override
       public proto.gc.SslGcApi.Output buildPartial() {
         proto.gc.SslGcApi.Output result = new proto.gc.SslGcApi.Output(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.gc.SslGcApi.Output result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          if (matchStateBuilder_ == null) {
-            result.matchState_ = matchState_;
-          } else {
-            result.matchState_ = matchStateBuilder_.build();
-          }
+          result.matchState_ = matchStateBuilder_ == null
+              ? matchState_
+              : matchStateBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          if (gcStateBuilder_ == null) {
-            result.gcState_ = gcState_;
-          } else {
-            result.gcState_ = gcStateBuilder_.build();
-          }
+          result.gcState_ = gcStateBuilder_ == null
+              ? gcState_
+              : gcStateBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          if (protocolBuilder_ == null) {
-            result.protocol_ = protocol_;
-          } else {
-            result.protocol_ = protocolBuilder_.build();
-          }
+          result.protocol_ = protocolBuilder_ == null
+              ? protocol_
+              : protocolBuilder_.build();
           to_bitField0_ |= 0x00000004;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          if (configBuilder_ == null) {
-            result.config_ = config_;
-          } else {
-            result.config_ = configBuilder_.build();
-          }
+          result.config_ = configBuilder_ == null
+              ? config_
+              : configBuilder_.build();
           to_bitField0_ |= 0x00000008;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -830,7 +733,7 @@ public final class SslGcApi {
         if (other.hasConfig()) {
           mergeConfig(other.getConfig());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -860,17 +763,58 @@ public final class SslGcApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcApi.Output parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getMatchStateFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getGcStateFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getProtocolFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcApi.Output) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -917,11 +861,11 @@ public final class SslGcApi {
             throw new NullPointerException();
           }
           matchState_ = value;
-          onChanged();
         } else {
           matchStateBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -935,11 +879,11 @@ public final class SslGcApi {
           proto.gc.SslGcState.State.Builder builderForValue) {
         if (matchStateBuilder_ == null) {
           matchState_ = builderForValue.build();
-          onChanged();
         } else {
           matchStateBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -952,18 +896,17 @@ public final class SslGcApi {
       public Builder mergeMatchState(proto.gc.SslGcState.State value) {
         if (matchStateBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0) &&
-              matchState_ != null &&
-              matchState_ != proto.gc.SslGcState.State.getDefaultInstance()) {
-            matchState_ =
-              proto.gc.SslGcState.State.newBuilder(matchState_).mergeFrom(value).buildPartial();
+            matchState_ != null &&
+            matchState_ != proto.gc.SslGcState.State.getDefaultInstance()) {
+            getMatchStateBuilder().mergeFrom(value);
           } else {
             matchState_ = value;
           }
-          onChanged();
         } else {
           matchStateBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -974,13 +917,13 @@ public final class SslGcApi {
        * <code>optional .proto.gc.State match_state = 1;</code>
        */
       public Builder clearMatchState() {
-        if (matchStateBuilder_ == null) {
-          matchState_ = null;
-          onChanged();
-        } else {
-          matchStateBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000001);
+        matchState_ = null;
+        if (matchStateBuilder_ != null) {
+          matchStateBuilder_.dispose();
+          matchStateBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -1073,11 +1016,11 @@ public final class SslGcApi {
             throw new NullPointerException();
           }
           gcState_ = value;
-          onChanged();
         } else {
           gcStateBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1091,11 +1034,11 @@ public final class SslGcApi {
           proto.gc.SslGcEngine.GcState.Builder builderForValue) {
         if (gcStateBuilder_ == null) {
           gcState_ = builderForValue.build();
-          onChanged();
         } else {
           gcStateBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1108,18 +1051,17 @@ public final class SslGcApi {
       public Builder mergeGcState(proto.gc.SslGcEngine.GcState value) {
         if (gcStateBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0) &&
-              gcState_ != null &&
-              gcState_ != proto.gc.SslGcEngine.GcState.getDefaultInstance()) {
-            gcState_ =
-              proto.gc.SslGcEngine.GcState.newBuilder(gcState_).mergeFrom(value).buildPartial();
+            gcState_ != null &&
+            gcState_ != proto.gc.SslGcEngine.GcState.getDefaultInstance()) {
+            getGcStateBuilder().mergeFrom(value);
           } else {
             gcState_ = value;
           }
-          onChanged();
         } else {
           gcStateBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1130,13 +1072,13 @@ public final class SslGcApi {
        * <code>optional .proto.gc.GcState gc_state = 2;</code>
        */
       public Builder clearGcState() {
-        if (gcStateBuilder_ == null) {
-          gcState_ = null;
-          onChanged();
-        } else {
-          gcStateBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000002);
+        gcState_ = null;
+        if (gcStateBuilder_ != null) {
+          gcStateBuilder_.dispose();
+          gcStateBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -1229,11 +1171,11 @@ public final class SslGcApi {
             throw new NullPointerException();
           }
           protocol_ = value;
-          onChanged();
         } else {
           protocolBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1247,11 +1189,11 @@ public final class SslGcApi {
           proto.gc.SslGcApi.Protocol.Builder builderForValue) {
         if (protocolBuilder_ == null) {
           protocol_ = builderForValue.build();
-          onChanged();
         } else {
           protocolBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1264,18 +1206,17 @@ public final class SslGcApi {
       public Builder mergeProtocol(proto.gc.SslGcApi.Protocol value) {
         if (protocolBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0) &&
-              protocol_ != null &&
-              protocol_ != proto.gc.SslGcApi.Protocol.getDefaultInstance()) {
-            protocol_ =
-              proto.gc.SslGcApi.Protocol.newBuilder(protocol_).mergeFrom(value).buildPartial();
+            protocol_ != null &&
+            protocol_ != proto.gc.SslGcApi.Protocol.getDefaultInstance()) {
+            getProtocolBuilder().mergeFrom(value);
           } else {
             protocol_ = value;
           }
-          onChanged();
         } else {
           protocolBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1286,13 +1227,13 @@ public final class SslGcApi {
        * <code>optional .proto.gc.Protocol protocol = 3;</code>
        */
       public Builder clearProtocol() {
-        if (protocolBuilder_ == null) {
-          protocol_ = null;
-          onChanged();
-        } else {
-          protocolBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000004);
+        protocol_ = null;
+        if (protocolBuilder_ != null) {
+          protocolBuilder_.dispose();
+          protocolBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -1385,11 +1326,11 @@ public final class SslGcApi {
             throw new NullPointerException();
           }
           config_ = value;
-          onChanged();
         } else {
           configBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1403,11 +1344,11 @@ public final class SslGcApi {
           proto.gc.SslGcEngineConfig.Config.Builder builderForValue) {
         if (configBuilder_ == null) {
           config_ = builderForValue.build();
-          onChanged();
         } else {
           configBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1420,18 +1361,17 @@ public final class SslGcApi {
       public Builder mergeConfig(proto.gc.SslGcEngineConfig.Config value) {
         if (configBuilder_ == null) {
           if (((bitField0_ & 0x00000008) != 0) &&
-              config_ != null &&
-              config_ != proto.gc.SslGcEngineConfig.Config.getDefaultInstance()) {
-            config_ =
-              proto.gc.SslGcEngineConfig.Config.newBuilder(config_).mergeFrom(value).buildPartial();
+            config_ != null &&
+            config_ != proto.gc.SslGcEngineConfig.Config.getDefaultInstance()) {
+            getConfigBuilder().mergeFrom(value);
           } else {
             config_ = value;
           }
-          onChanged();
         } else {
           configBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1442,13 +1382,13 @@ public final class SslGcApi {
        * <code>optional .proto.gc.Config config = 4;</code>
        */
       public Builder clearConfig() {
-        if (configBuilder_ == null) {
-          config_ = null;
-          onChanged();
-        } else {
-          configBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000008);
+        config_ = null;
+        if (configBuilder_ != null) {
+          configBuilder_.dispose();
+          configBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -1531,7 +1471,18 @@ public final class SslGcApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Output(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1654,61 +1605,6 @@ public final class SslGcApi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Protocol(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              bitField0_ |= 0x00000001;
-              delta_ = input.readBool();
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                entry_ = new java.util.ArrayList<proto.gc.SslGcApi.ProtocolEntry>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              entry_.add(
-                  input.readMessage(proto.gc.SslGcApi.ProtocolEntry.PARSER, extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          entry_ = java.util.Collections.unmodifiableList(entry_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.gc.SslGcApi.internal_static_proto_gc_Protocol_descriptor;
@@ -1724,7 +1620,7 @@ public final class SslGcApi {
 
     private int bitField0_;
     public static final int DELTA_FIELD_NUMBER = 1;
-    private boolean delta_;
+    private boolean delta_ = false;
     /**
      * <pre>
      * Is this a delta only?
@@ -1755,6 +1651,7 @@ public final class SslGcApi {
     }
 
     public static final int ENTRY_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private java.util.List<proto.gc.SslGcApi.ProtocolEntry> entry_;
     /**
      * <pre>
@@ -1840,7 +1737,7 @@ public final class SslGcApi {
       for (int i = 0; i < entry_.size(); i++) {
         output.writeMessage(2, entry_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1857,7 +1754,7 @@ public final class SslGcApi {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, entry_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1879,7 +1776,7 @@ public final class SslGcApi {
       }
       if (!getEntryList()
           .equals(other.getEntryList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1899,7 +1796,7 @@ public final class SslGcApi {
         hash = (37 * hash) + ENTRY_FIELD_NUMBER;
         hash = (53 * hash) + getEntryList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2020,31 +1917,26 @@ public final class SslGcApi {
 
       // Construct using proto.gc.SslGcApi.Protocol.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getEntryFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         delta_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (entryBuilder_ == null) {
           entry_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          entry_ = null;
           entryBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -2071,12 +1963,13 @@ public final class SslGcApi {
       @java.lang.Override
       public proto.gc.SslGcApi.Protocol buildPartial() {
         proto.gc.SslGcApi.Protocol result = new proto.gc.SslGcApi.Protocol(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.delta_ = delta_;
-          to_bitField0_ |= 0x00000001;
-        }
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(proto.gc.SslGcApi.Protocol result) {
         if (entryBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
             entry_ = java.util.Collections.unmodifiableList(entry_);
@@ -2086,9 +1979,16 @@ public final class SslGcApi {
         } else {
           result.entry_ = entryBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(proto.gc.SslGcApi.Protocol result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.delta_ = delta_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -2164,7 +2064,7 @@ public final class SslGcApi {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2184,17 +2084,48 @@ public final class SslGcApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcApi.Protocol parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                delta_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                proto.gc.SslGcApi.ProtocolEntry m =
+                    input.readMessage(
+                        proto.gc.SslGcApi.ProtocolEntry.PARSER,
+                        extensionRegistry);
+                if (entryBuilder_ == null) {
+                  ensureEntryIsMutable();
+                  entry_.add(m);
+                } else {
+                  entryBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcApi.Protocol) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2240,8 +2171,9 @@ public final class SslGcApi {
        * @return This builder for chaining.
        */
       public Builder setDelta(boolean value) {
-        bitField0_ |= 0x00000001;
+        
         delta_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2606,7 +2538,18 @@ public final class SslGcApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Protocol(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2761,88 +2704,6 @@ public final class SslGcApi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ProtocolEntry(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              bitField0_ |= 0x00000001;
-              id_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              proto.gc.SslGcChange.Change.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) != 0)) {
-                subBuilder = change_.toBuilder();
-              }
-              change_ = input.readMessage(proto.gc.SslGcChange.Change.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(change_);
-                change_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000002;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) != 0)) {
-                subBuilder = matchTimeElapsed_.toBuilder();
-              }
-              matchTimeElapsed_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(matchTimeElapsed_);
-                matchTimeElapsed_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
-              break;
-            }
-            case 34: {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000008) != 0)) {
-                subBuilder = stageTimeElapsed_.toBuilder();
-              }
-              stageTimeElapsed_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(stageTimeElapsed_);
-                stageTimeElapsed_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000008;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.gc.SslGcApi.internal_static_proto_gc_ProtocolEntry_descriptor;
@@ -2858,7 +2719,7 @@ public final class SslGcApi {
 
     private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    private int id_ = 0;
     /**
      * <pre>
      * Id of the entry
@@ -3030,7 +2891,7 @@ public final class SslGcApi {
       if (((bitField0_ & 0x00000008) != 0)) {
         output.writeMessage(4, getStageTimeElapsed());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3055,7 +2916,7 @@ public final class SslGcApi {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getStageTimeElapsed());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3090,7 +2951,7 @@ public final class SslGcApi {
         if (!getStageTimeElapsed()
             .equals(other.getStageTimeElapsed())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3117,7 +2978,7 @@ public final class SslGcApi {
         hash = (37 * hash) + STAGE_TIME_ELAPSED_FIELD_NUMBER;
         hash = (53 * hash) + getStageTimeElapsed().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3257,26 +3118,23 @@ public final class SslGcApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (changeBuilder_ == null) {
-          change_ = null;
-        } else {
-          changeBuilder_.clear();
+        change_ = null;
+        if (changeBuilder_ != null) {
+          changeBuilder_.dispose();
+          changeBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        if (matchTimeElapsedBuilder_ == null) {
-          matchTimeElapsed_ = null;
-        } else {
-          matchTimeElapsedBuilder_.clear();
+        matchTimeElapsed_ = null;
+        if (matchTimeElapsedBuilder_ != null) {
+          matchTimeElapsedBuilder_.dispose();
+          matchTimeElapsedBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
-        if (stageTimeElapsedBuilder_ == null) {
-          stageTimeElapsed_ = null;
-        } else {
-          stageTimeElapsedBuilder_.clear();
+        stageTimeElapsed_ = null;
+        if (stageTimeElapsedBuilder_ != null) {
+          stageTimeElapsedBuilder_.dispose();
+          stageTimeElapsedBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -3303,6 +3161,12 @@ public final class SslGcApi {
       @java.lang.Override
       public proto.gc.SslGcApi.ProtocolEntry buildPartial() {
         proto.gc.SslGcApi.ProtocolEntry result = new proto.gc.SslGcApi.ProtocolEntry(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.gc.SslGcApi.ProtocolEntry result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -3310,32 +3174,24 @@ public final class SslGcApi {
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          if (changeBuilder_ == null) {
-            result.change_ = change_;
-          } else {
-            result.change_ = changeBuilder_.build();
-          }
+          result.change_ = changeBuilder_ == null
+              ? change_
+              : changeBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          if (matchTimeElapsedBuilder_ == null) {
-            result.matchTimeElapsed_ = matchTimeElapsed_;
-          } else {
-            result.matchTimeElapsed_ = matchTimeElapsedBuilder_.build();
-          }
+          result.matchTimeElapsed_ = matchTimeElapsedBuilder_ == null
+              ? matchTimeElapsed_
+              : matchTimeElapsedBuilder_.build();
           to_bitField0_ |= 0x00000004;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          if (stageTimeElapsedBuilder_ == null) {
-            result.stageTimeElapsed_ = stageTimeElapsed_;
-          } else {
-            result.stageTimeElapsed_ = stageTimeElapsedBuilder_.build();
-          }
+          result.stageTimeElapsed_ = stageTimeElapsedBuilder_ == null
+              ? stageTimeElapsed_
+              : stageTimeElapsedBuilder_.build();
           to_bitField0_ |= 0x00000008;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -3394,7 +3250,7 @@ public final class SslGcApi {
         if (other.hasStageTimeElapsed()) {
           mergeStageTimeElapsed(other.getStageTimeElapsed());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3414,17 +3270,56 @@ public final class SslGcApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcApi.ProtocolEntry parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                input.readMessage(
+                    getChangeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getMatchTimeElapsedFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getStageTimeElapsedFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcApi.ProtocolEntry) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -3464,8 +3359,9 @@ public final class SslGcApi {
        * @return This builder for chaining.
        */
       public Builder setId(int value) {
-        bitField0_ |= 0x00000001;
+        
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3526,11 +3422,11 @@ public final class SslGcApi {
             throw new NullPointerException();
           }
           change_ = value;
-          onChanged();
         } else {
           changeBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3544,11 +3440,11 @@ public final class SslGcApi {
           proto.gc.SslGcChange.Change.Builder builderForValue) {
         if (changeBuilder_ == null) {
           change_ = builderForValue.build();
-          onChanged();
         } else {
           changeBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3561,18 +3457,17 @@ public final class SslGcApi {
       public Builder mergeChange(proto.gc.SslGcChange.Change value) {
         if (changeBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0) &&
-              change_ != null &&
-              change_ != proto.gc.SslGcChange.Change.getDefaultInstance()) {
-            change_ =
-              proto.gc.SslGcChange.Change.newBuilder(change_).mergeFrom(value).buildPartial();
+            change_ != null &&
+            change_ != proto.gc.SslGcChange.Change.getDefaultInstance()) {
+            getChangeBuilder().mergeFrom(value);
           } else {
             change_ = value;
           }
-          onChanged();
         } else {
           changeBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3583,13 +3478,13 @@ public final class SslGcApi {
        * <code>optional .proto.gc.Change change = 2;</code>
        */
       public Builder clearChange() {
-        if (changeBuilder_ == null) {
-          change_ = null;
-          onChanged();
-        } else {
-          changeBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000002);
+        change_ = null;
+        if (changeBuilder_ != null) {
+          changeBuilder_.dispose();
+          changeBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -3682,11 +3577,11 @@ public final class SslGcApi {
             throw new NullPointerException();
           }
           matchTimeElapsed_ = value;
-          onChanged();
         } else {
           matchTimeElapsedBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3700,11 +3595,11 @@ public final class SslGcApi {
           com.google.protobuf.Duration.Builder builderForValue) {
         if (matchTimeElapsedBuilder_ == null) {
           matchTimeElapsed_ = builderForValue.build();
-          onChanged();
         } else {
           matchTimeElapsedBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3717,18 +3612,17 @@ public final class SslGcApi {
       public Builder mergeMatchTimeElapsed(com.google.protobuf.Duration value) {
         if (matchTimeElapsedBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0) &&
-              matchTimeElapsed_ != null &&
-              matchTimeElapsed_ != com.google.protobuf.Duration.getDefaultInstance()) {
-            matchTimeElapsed_ =
-              com.google.protobuf.Duration.newBuilder(matchTimeElapsed_).mergeFrom(value).buildPartial();
+            matchTimeElapsed_ != null &&
+            matchTimeElapsed_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getMatchTimeElapsedBuilder().mergeFrom(value);
           } else {
             matchTimeElapsed_ = value;
           }
-          onChanged();
         } else {
           matchTimeElapsedBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -3739,13 +3633,13 @@ public final class SslGcApi {
        * <code>optional .google.protobuf.Duration match_time_elapsed = 3;</code>
        */
       public Builder clearMatchTimeElapsed() {
-        if (matchTimeElapsedBuilder_ == null) {
-          matchTimeElapsed_ = null;
-          onChanged();
-        } else {
-          matchTimeElapsedBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000004);
+        matchTimeElapsed_ = null;
+        if (matchTimeElapsedBuilder_ != null) {
+          matchTimeElapsedBuilder_.dispose();
+          matchTimeElapsedBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -3838,11 +3732,11 @@ public final class SslGcApi {
             throw new NullPointerException();
           }
           stageTimeElapsed_ = value;
-          onChanged();
         } else {
           stageTimeElapsedBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -3856,11 +3750,11 @@ public final class SslGcApi {
           com.google.protobuf.Duration.Builder builderForValue) {
         if (stageTimeElapsedBuilder_ == null) {
           stageTimeElapsed_ = builderForValue.build();
-          onChanged();
         } else {
           stageTimeElapsedBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -3873,18 +3767,17 @@ public final class SslGcApi {
       public Builder mergeStageTimeElapsed(com.google.protobuf.Duration value) {
         if (stageTimeElapsedBuilder_ == null) {
           if (((bitField0_ & 0x00000008) != 0) &&
-              stageTimeElapsed_ != null &&
-              stageTimeElapsed_ != com.google.protobuf.Duration.getDefaultInstance()) {
-            stageTimeElapsed_ =
-              com.google.protobuf.Duration.newBuilder(stageTimeElapsed_).mergeFrom(value).buildPartial();
+            stageTimeElapsed_ != null &&
+            stageTimeElapsed_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getStageTimeElapsedBuilder().mergeFrom(value);
           } else {
             stageTimeElapsed_ = value;
           }
-          onChanged();
         } else {
           stageTimeElapsedBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -3895,13 +3788,13 @@ public final class SslGcApi {
        * <code>optional .google.protobuf.Duration stage_time_elapsed = 4;</code>
        */
       public Builder clearStageTimeElapsed() {
-        if (stageTimeElapsedBuilder_ == null) {
-          stageTimeElapsed_ = null;
-          onChanged();
-        } else {
-          stageTimeElapsedBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000008);
+        stageTimeElapsed_ = null;
+        if (stageTimeElapsedBuilder_ != null) {
+          stageTimeElapsedBuilder_.dispose();
+          stageTimeElapsedBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -3984,7 +3877,18 @@ public final class SslGcApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ProtocolEntry(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -4139,88 +4043,6 @@ public final class SslGcApi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Input(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              proto.gc.SslGcChange.Change.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) != 0)) {
-                subBuilder = change_.toBuilder();
-              }
-              change_ = input.readMessage(proto.gc.SslGcChange.Change.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(change_);
-                change_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              resetMatch_ = input.readBool();
-              break;
-            }
-            case 26: {
-              proto.gc.SslGcEngineConfig.Config.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) != 0)) {
-                subBuilder = configDelta_.toBuilder();
-              }
-              configDelta_ = input.readMessage(proto.gc.SslGcEngineConfig.Config.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(configDelta_);
-                configDelta_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
-              break;
-            }
-            case 34: {
-              proto.gc.SslGcEngine.ContinueAction.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000008) != 0)) {
-                subBuilder = continueAction_.toBuilder();
-              }
-              continueAction_ = input.readMessage(proto.gc.SslGcEngine.ContinueAction.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(continueAction_);
-                continueAction_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000008;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.gc.SslGcApi.internal_static_proto_gc_Input_descriptor;
@@ -4274,7 +4096,7 @@ public final class SslGcApi {
     }
 
     public static final int RESET_MATCH_FIELD_NUMBER = 2;
-    private boolean resetMatch_;
+    private boolean resetMatch_ = false;
     /**
      * <pre>
      * Reset the match
@@ -4414,7 +4236,7 @@ public final class SslGcApi {
       if (((bitField0_ & 0x00000008) != 0)) {
         output.writeMessage(4, getContinueAction());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4439,7 +4261,7 @@ public final class SslGcApi {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getContinueAction());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4474,7 +4296,7 @@ public final class SslGcApi {
         if (!getContinueAction()
             .equals(other.getContinueAction())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4502,7 +4324,7 @@ public final class SslGcApi {
         hash = (37 * hash) + CONTINUE_ACTION_FIELD_NUMBER;
         hash = (53 * hash) + getContinueAction().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4642,26 +4464,23 @@ public final class SslGcApi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (changeBuilder_ == null) {
-          change_ = null;
-        } else {
-          changeBuilder_.clear();
+        bitField0_ = 0;
+        change_ = null;
+        if (changeBuilder_ != null) {
+          changeBuilder_.dispose();
+          changeBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         resetMatch_ = false;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        if (configDeltaBuilder_ == null) {
-          configDelta_ = null;
-        } else {
-          configDeltaBuilder_.clear();
+        configDelta_ = null;
+        if (configDeltaBuilder_ != null) {
+          configDeltaBuilder_.dispose();
+          configDeltaBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
-        if (continueActionBuilder_ == null) {
-          continueAction_ = null;
-        } else {
-          continueActionBuilder_.clear();
+        continueAction_ = null;
+        if (continueActionBuilder_ != null) {
+          continueActionBuilder_.dispose();
+          continueActionBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -4688,14 +4507,18 @@ public final class SslGcApi {
       @java.lang.Override
       public proto.gc.SslGcApi.Input buildPartial() {
         proto.gc.SslGcApi.Input result = new proto.gc.SslGcApi.Input(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.gc.SslGcApi.Input result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          if (changeBuilder_ == null) {
-            result.change_ = change_;
-          } else {
-            result.change_ = changeBuilder_.build();
-          }
+          result.change_ = changeBuilder_ == null
+              ? change_
+              : changeBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
@@ -4703,24 +4526,18 @@ public final class SslGcApi {
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          if (configDeltaBuilder_ == null) {
-            result.configDelta_ = configDelta_;
-          } else {
-            result.configDelta_ = configDeltaBuilder_.build();
-          }
+          result.configDelta_ = configDeltaBuilder_ == null
+              ? configDelta_
+              : configDeltaBuilder_.build();
           to_bitField0_ |= 0x00000004;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          if (continueActionBuilder_ == null) {
-            result.continueAction_ = continueAction_;
-          } else {
-            result.continueAction_ = continueActionBuilder_.build();
-          }
+          result.continueAction_ = continueActionBuilder_ == null
+              ? continueAction_
+              : continueActionBuilder_.build();
           to_bitField0_ |= 0x00000008;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -4779,7 +4596,7 @@ public final class SslGcApi {
         if (other.hasContinueAction()) {
           mergeContinueAction(other.getContinueAction());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4804,17 +4621,56 @@ public final class SslGcApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcApi.Input parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getChangeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 16: {
+                resetMatch_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 26: {
+                input.readMessage(
+                    getConfigDeltaFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getContinueActionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcApi.Input) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -4861,11 +4717,11 @@ public final class SslGcApi {
             throw new NullPointerException();
           }
           change_ = value;
-          onChanged();
         } else {
           changeBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4879,11 +4735,11 @@ public final class SslGcApi {
           proto.gc.SslGcChange.Change.Builder builderForValue) {
         if (changeBuilder_ == null) {
           change_ = builderForValue.build();
-          onChanged();
         } else {
           changeBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4896,18 +4752,17 @@ public final class SslGcApi {
       public Builder mergeChange(proto.gc.SslGcChange.Change value) {
         if (changeBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0) &&
-              change_ != null &&
-              change_ != proto.gc.SslGcChange.Change.getDefaultInstance()) {
-            change_ =
-              proto.gc.SslGcChange.Change.newBuilder(change_).mergeFrom(value).buildPartial();
+            change_ != null &&
+            change_ != proto.gc.SslGcChange.Change.getDefaultInstance()) {
+            getChangeBuilder().mergeFrom(value);
           } else {
             change_ = value;
           }
-          onChanged();
         } else {
           changeBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4918,13 +4773,13 @@ public final class SslGcApi {
        * <code>optional .proto.gc.Change change = 1;</code>
        */
       public Builder clearChange() {
-        if (changeBuilder_ == null) {
-          change_ = null;
-          onChanged();
-        } else {
-          changeBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000001);
+        change_ = null;
+        if (changeBuilder_ != null) {
+          changeBuilder_.dispose();
+          changeBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -5010,8 +4865,9 @@ public final class SslGcApi {
        * @return This builder for chaining.
        */
       public Builder setResetMatch(boolean value) {
-        bitField0_ |= 0x00000002;
+        
         resetMatch_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5072,11 +4928,11 @@ public final class SslGcApi {
             throw new NullPointerException();
           }
           configDelta_ = value;
-          onChanged();
         } else {
           configDeltaBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -5090,11 +4946,11 @@ public final class SslGcApi {
           proto.gc.SslGcEngineConfig.Config.Builder builderForValue) {
         if (configDeltaBuilder_ == null) {
           configDelta_ = builderForValue.build();
-          onChanged();
         } else {
           configDeltaBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -5107,18 +4963,17 @@ public final class SslGcApi {
       public Builder mergeConfigDelta(proto.gc.SslGcEngineConfig.Config value) {
         if (configDeltaBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0) &&
-              configDelta_ != null &&
-              configDelta_ != proto.gc.SslGcEngineConfig.Config.getDefaultInstance()) {
-            configDelta_ =
-              proto.gc.SslGcEngineConfig.Config.newBuilder(configDelta_).mergeFrom(value).buildPartial();
+            configDelta_ != null &&
+            configDelta_ != proto.gc.SslGcEngineConfig.Config.getDefaultInstance()) {
+            getConfigDeltaBuilder().mergeFrom(value);
           } else {
             configDelta_ = value;
           }
-          onChanged();
         } else {
           configDeltaBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -5129,13 +4984,13 @@ public final class SslGcApi {
        * <code>optional .proto.gc.Config config_delta = 3;</code>
        */
       public Builder clearConfigDelta() {
-        if (configDeltaBuilder_ == null) {
-          configDelta_ = null;
-          onChanged();
-        } else {
-          configDeltaBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000004);
+        configDelta_ = null;
+        if (configDeltaBuilder_ != null) {
+          configDeltaBuilder_.dispose();
+          configDeltaBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -5228,11 +5083,11 @@ public final class SslGcApi {
             throw new NullPointerException();
           }
           continueAction_ = value;
-          onChanged();
         } else {
           continueActionBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -5246,11 +5101,11 @@ public final class SslGcApi {
           proto.gc.SslGcEngine.ContinueAction.Builder builderForValue) {
         if (continueActionBuilder_ == null) {
           continueAction_ = builderForValue.build();
-          onChanged();
         } else {
           continueActionBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -5263,18 +5118,17 @@ public final class SslGcApi {
       public Builder mergeContinueAction(proto.gc.SslGcEngine.ContinueAction value) {
         if (continueActionBuilder_ == null) {
           if (((bitField0_ & 0x00000008) != 0) &&
-              continueAction_ != null &&
-              continueAction_ != proto.gc.SslGcEngine.ContinueAction.getDefaultInstance()) {
-            continueAction_ =
-              proto.gc.SslGcEngine.ContinueAction.newBuilder(continueAction_).mergeFrom(value).buildPartial();
+            continueAction_ != null &&
+            continueAction_ != proto.gc.SslGcEngine.ContinueAction.getDefaultInstance()) {
+            getContinueActionBuilder().mergeFrom(value);
           } else {
             continueAction_ = value;
           }
-          onChanged();
         } else {
           continueActionBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -5285,13 +5139,13 @@ public final class SslGcApi {
        * <code>optional .proto.gc.ContinueAction continue_action = 4;</code>
        */
       public Builder clearContinueAction() {
-        if (continueActionBuilder_ == null) {
-          continueAction_ = null;
-          onChanged();
-        } else {
-          continueActionBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000008);
+        continueAction_ = null;
+        if (continueActionBuilder_ != null) {
+          continueActionBuilder_.dispose();
+          continueActionBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -5374,7 +5228,18 @@ public final class SslGcApi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Input(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
