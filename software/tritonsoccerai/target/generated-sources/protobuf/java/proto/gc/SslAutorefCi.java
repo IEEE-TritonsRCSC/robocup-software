@@ -176,95 +176,6 @@ public final class SslAutorefCi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AutoRefCiInput(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              proto.gc.SslGcRefereeMessage.Referee.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) != 0)) {
-                subBuilder = refereeMessage_.toBuilder();
-              }
-              refereeMessage_ = input.readMessage(proto.gc.SslGcRefereeMessage.Referee.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(refereeMessage_);
-                refereeMessage_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-            case 18: {
-              proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) != 0)) {
-                subBuilder = trackerWrapperPacket_.toBuilder();
-              }
-              trackerWrapperPacket_ = input.readMessage(proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(trackerWrapperPacket_);
-                trackerWrapperPacket_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000002;
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                detection_ = new java.util.ArrayList<proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              detection_.add(
-                  input.readMessage(proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.PARSER, extensionRegistry));
-              break;
-            }
-            case 34: {
-              proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) != 0)) {
-                subBuilder = geometry_.toBuilder();
-              }
-              geometry_ = input.readMessage(proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(geometry_);
-                geometry_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          detection_ = java.util.Collections.unmodifiableList(detection_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.gc.SslAutorefCi.internal_static_proto_gc_AutoRefCiInput_descriptor;
@@ -356,6 +267,7 @@ public final class SslAutorefCi {
     }
 
     public static final int DETECTION_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame> detection_;
     /**
      * <pre>
@@ -503,7 +415,7 @@ public final class SslAutorefCi {
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(4, getGeometry());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -528,7 +440,7 @@ public final class SslAutorefCi {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getGeometry());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -560,7 +472,7 @@ public final class SslAutorefCi {
         if (!getGeometry()
             .equals(other.getGeometry())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -587,7 +499,7 @@ public final class SslAutorefCi {
         hash = (37 * hash) + GEOMETRY_FIELD_NUMBER;
         hash = (53 * hash) + getGeometry().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -729,30 +641,29 @@ public final class SslAutorefCi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (refereeMessageBuilder_ == null) {
-          refereeMessage_ = null;
-        } else {
-          refereeMessageBuilder_.clear();
+        bitField0_ = 0;
+        refereeMessage_ = null;
+        if (refereeMessageBuilder_ != null) {
+          refereeMessageBuilder_.dispose();
+          refereeMessageBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (trackerWrapperPacketBuilder_ == null) {
-          trackerWrapperPacket_ = null;
-        } else {
-          trackerWrapperPacketBuilder_.clear();
+        trackerWrapperPacket_ = null;
+        if (trackerWrapperPacketBuilder_ != null) {
+          trackerWrapperPacketBuilder_.dispose();
+          trackerWrapperPacketBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (detectionBuilder_ == null) {
           detection_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          detection_ = null;
           detectionBuilder_.clear();
         }
-        if (geometryBuilder_ == null) {
-          geometry_ = null;
-        } else {
-          geometryBuilder_.clear();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        geometry_ = null;
+        if (geometryBuilder_ != null) {
+          geometryBuilder_.dispose();
+          geometryBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -779,24 +690,13 @@ public final class SslAutorefCi {
       @java.lang.Override
       public proto.gc.SslAutorefCi.AutoRefCiInput buildPartial() {
         proto.gc.SslAutorefCi.AutoRefCiInput result = new proto.gc.SslAutorefCi.AutoRefCiInput(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          if (refereeMessageBuilder_ == null) {
-            result.refereeMessage_ = refereeMessage_;
-          } else {
-            result.refereeMessage_ = refereeMessageBuilder_.build();
-          }
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          if (trackerWrapperPacketBuilder_ == null) {
-            result.trackerWrapperPacket_ = trackerWrapperPacket_;
-          } else {
-            result.trackerWrapperPacket_ = trackerWrapperPacketBuilder_.build();
-          }
-          to_bitField0_ |= 0x00000002;
-        }
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(proto.gc.SslAutorefCi.AutoRefCiInput result) {
         if (detectionBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0)) {
             detection_ = java.util.Collections.unmodifiableList(detection_);
@@ -806,17 +706,30 @@ public final class SslAutorefCi {
         } else {
           result.detection_ = detectionBuilder_.build();
         }
+      }
+
+      private void buildPartial0(proto.gc.SslAutorefCi.AutoRefCiInput result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.refereeMessage_ = refereeMessageBuilder_ == null
+              ? refereeMessage_
+              : refereeMessageBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.trackerWrapperPacket_ = trackerWrapperPacketBuilder_ == null
+              ? trackerWrapperPacket_
+              : trackerWrapperPacketBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          if (geometryBuilder_ == null) {
-            result.geometry_ = geometry_;
-          } else {
-            result.geometry_ = geometryBuilder_.build();
-          }
+          result.geometry_ = geometryBuilder_ == null
+              ? geometry_
+              : geometryBuilder_.build();
           to_bitField0_ |= 0x00000004;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -898,7 +811,7 @@ public final class SslAutorefCi {
         if (other.hasGeometry()) {
           mergeGeometry(other.getGeometry());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -933,17 +846,64 @@ public final class SslAutorefCi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslAutorefCi.AutoRefCiInput parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getRefereeMessageFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getTrackerWrapperPacketFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame m =
+                    input.readMessage(
+                        proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.PARSER,
+                        extensionRegistry);
+                if (detectionBuilder_ == null) {
+                  ensureDetectionIsMutable();
+                  detection_.add(m);
+                } else {
+                  detectionBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getGeometryFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslAutorefCi.AutoRefCiInput) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -990,11 +950,11 @@ public final class SslAutorefCi {
             throw new NullPointerException();
           }
           refereeMessage_ = value;
-          onChanged();
         } else {
           refereeMessageBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1008,11 +968,11 @@ public final class SslAutorefCi {
           proto.gc.SslGcRefereeMessage.Referee.Builder builderForValue) {
         if (refereeMessageBuilder_ == null) {
           refereeMessage_ = builderForValue.build();
-          onChanged();
         } else {
           refereeMessageBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1025,18 +985,17 @@ public final class SslAutorefCi {
       public Builder mergeRefereeMessage(proto.gc.SslGcRefereeMessage.Referee value) {
         if (refereeMessageBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0) &&
-              refereeMessage_ != null &&
-              refereeMessage_ != proto.gc.SslGcRefereeMessage.Referee.getDefaultInstance()) {
-            refereeMessage_ =
-              proto.gc.SslGcRefereeMessage.Referee.newBuilder(refereeMessage_).mergeFrom(value).buildPartial();
+            refereeMessage_ != null &&
+            refereeMessage_ != proto.gc.SslGcRefereeMessage.Referee.getDefaultInstance()) {
+            getRefereeMessageBuilder().mergeFrom(value);
           } else {
             refereeMessage_ = value;
           }
-          onChanged();
         } else {
           refereeMessageBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1047,13 +1006,13 @@ public final class SslAutorefCi {
        * <code>optional .proto.gc.Referee referee_message = 1;</code>
        */
       public Builder clearRefereeMessage() {
-        if (refereeMessageBuilder_ == null) {
-          refereeMessage_ = null;
-          onChanged();
-        } else {
-          refereeMessageBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000001);
+        refereeMessage_ = null;
+        if (refereeMessageBuilder_ != null) {
+          refereeMessageBuilder_.dispose();
+          refereeMessageBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -1146,11 +1105,11 @@ public final class SslAutorefCi {
             throw new NullPointerException();
           }
           trackerWrapperPacket_ = value;
-          onChanged();
         } else {
           trackerWrapperPacketBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1164,11 +1123,11 @@ public final class SslAutorefCi {
           proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket.Builder builderForValue) {
         if (trackerWrapperPacketBuilder_ == null) {
           trackerWrapperPacket_ = builderForValue.build();
-          onChanged();
         } else {
           trackerWrapperPacketBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1181,18 +1140,17 @@ public final class SslAutorefCi {
       public Builder mergeTrackerWrapperPacket(proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket value) {
         if (trackerWrapperPacketBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0) &&
-              trackerWrapperPacket_ != null &&
-              trackerWrapperPacket_ != proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket.getDefaultInstance()) {
-            trackerWrapperPacket_ =
-              proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket.newBuilder(trackerWrapperPacket_).mergeFrom(value).buildPartial();
+            trackerWrapperPacket_ != null &&
+            trackerWrapperPacket_ != proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket.getDefaultInstance()) {
+            getTrackerWrapperPacketBuilder().mergeFrom(value);
           } else {
             trackerWrapperPacket_ = value;
           }
-          onChanged();
         } else {
           trackerWrapperPacketBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1203,13 +1161,13 @@ public final class SslAutorefCi {
        * <code>optional .proto.vision.TrackerWrapperPacket tracker_wrapper_packet = 2;</code>
        */
       public Builder clearTrackerWrapperPacket() {
-        if (trackerWrapperPacketBuilder_ == null) {
-          trackerWrapperPacket_ = null;
-          onChanged();
-        } else {
-          trackerWrapperPacketBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000002);
+        trackerWrapperPacket_ = null;
+        if (trackerWrapperPacketBuilder_ != null) {
+          trackerWrapperPacketBuilder_.dispose();
+          trackerWrapperPacketBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -1614,11 +1572,11 @@ public final class SslAutorefCi {
             throw new NullPointerException();
           }
           geometry_ = value;
-          onChanged();
         } else {
           geometryBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1632,11 +1590,11 @@ public final class SslAutorefCi {
           proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData.Builder builderForValue) {
         if (geometryBuilder_ == null) {
           geometry_ = builderForValue.build();
-          onChanged();
         } else {
           geometryBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1649,18 +1607,17 @@ public final class SslAutorefCi {
       public Builder mergeGeometry(proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData value) {
         if (geometryBuilder_ == null) {
           if (((bitField0_ & 0x00000008) != 0) &&
-              geometry_ != null &&
-              geometry_ != proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData.getDefaultInstance()) {
-            geometry_ =
-              proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData.newBuilder(geometry_).mergeFrom(value).buildPartial();
+            geometry_ != null &&
+            geometry_ != proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData.getDefaultInstance()) {
+            getGeometryBuilder().mergeFrom(value);
           } else {
             geometry_ = value;
           }
-          onChanged();
         } else {
           geometryBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1671,13 +1628,13 @@ public final class SslAutorefCi {
        * <code>optional .proto.vision.SSL_GeometryData geometry = 4;</code>
        */
       public Builder clearGeometry() {
-        if (geometryBuilder_ == null) {
-          geometry_ = null;
-          onChanged();
-        } else {
-          geometryBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000008);
+        geometry_ = null;
+        if (geometryBuilder_ != null) {
+          geometryBuilder_.dispose();
+          geometryBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -1760,7 +1717,18 @@ public final class SslAutorefCi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AutoRefCiInput(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1848,57 +1816,6 @@ public final class SslAutorefCi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AutoRefCiOutput(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) != 0)) {
-                subBuilder = trackerWrapperPacket_.toBuilder();
-              }
-              trackerWrapperPacket_ = input.readMessage(proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(trackerWrapperPacket_);
-                trackerWrapperPacket_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.gc.SslAutorefCi.internal_static_proto_gc_AutoRefCiOutput_descriptor;
@@ -1980,7 +1897,7 @@ public final class SslAutorefCi {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(1, getTrackerWrapperPacket());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1993,7 +1910,7 @@ public final class SslAutorefCi {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getTrackerWrapperPacket());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2013,7 +1930,7 @@ public final class SslAutorefCi {
         if (!getTrackerWrapperPacket()
             .equals(other.getTrackerWrapperPacket())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2028,7 +1945,7 @@ public final class SslAutorefCi {
         hash = (37 * hash) + TRACKER_WRAPPER_PACKET_FIELD_NUMBER;
         hash = (53 * hash) + getTrackerWrapperPacket().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2166,12 +2083,12 @@ public final class SslAutorefCi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (trackerWrapperPacketBuilder_ == null) {
-          trackerWrapperPacket_ = null;
-        } else {
-          trackerWrapperPacketBuilder_.clear();
+        bitField0_ = 0;
+        trackerWrapperPacket_ = null;
+        if (trackerWrapperPacketBuilder_ != null) {
+          trackerWrapperPacketBuilder_.dispose();
+          trackerWrapperPacketBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -2198,19 +2115,21 @@ public final class SslAutorefCi {
       @java.lang.Override
       public proto.gc.SslAutorefCi.AutoRefCiOutput buildPartial() {
         proto.gc.SslAutorefCi.AutoRefCiOutput result = new proto.gc.SslAutorefCi.AutoRefCiOutput(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.gc.SslAutorefCi.AutoRefCiOutput result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          if (trackerWrapperPacketBuilder_ == null) {
-            result.trackerWrapperPacket_ = trackerWrapperPacket_;
-          } else {
-            result.trackerWrapperPacket_ = trackerWrapperPacketBuilder_.build();
-          }
+          result.trackerWrapperPacket_ = trackerWrapperPacketBuilder_ == null
+              ? trackerWrapperPacket_
+              : trackerWrapperPacketBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -2260,7 +2179,7 @@ public final class SslAutorefCi {
         if (other.hasTrackerWrapperPacket()) {
           mergeTrackerWrapperPacket(other.getTrackerWrapperPacket());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2280,17 +2199,37 @@ public final class SslAutorefCi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslAutorefCi.AutoRefCiOutput parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getTrackerWrapperPacketFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslAutorefCi.AutoRefCiOutput) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2343,11 +2282,11 @@ public final class SslAutorefCi {
             throw new NullPointerException();
           }
           trackerWrapperPacket_ = value;
-          onChanged();
         } else {
           trackerWrapperPacketBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2363,11 +2302,11 @@ public final class SslAutorefCi {
           proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket.Builder builderForValue) {
         if (trackerWrapperPacketBuilder_ == null) {
           trackerWrapperPacket_ = builderForValue.build();
-          onChanged();
         } else {
           trackerWrapperPacketBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2382,18 +2321,17 @@ public final class SslAutorefCi {
       public Builder mergeTrackerWrapperPacket(proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket value) {
         if (trackerWrapperPacketBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0) &&
-              trackerWrapperPacket_ != null &&
-              trackerWrapperPacket_ != proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket.getDefaultInstance()) {
-            trackerWrapperPacket_ =
-              proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket.newBuilder(trackerWrapperPacket_).mergeFrom(value).buildPartial();
+            trackerWrapperPacket_ != null &&
+            trackerWrapperPacket_ != proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket.getDefaultInstance()) {
+            getTrackerWrapperPacketBuilder().mergeFrom(value);
           } else {
             trackerWrapperPacket_ = value;
           }
-          onChanged();
         } else {
           trackerWrapperPacketBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2406,13 +2344,13 @@ public final class SslAutorefCi {
        * <code>optional .proto.vision.TrackerWrapperPacket tracker_wrapper_packet = 1;</code>
        */
       public Builder clearTrackerWrapperPacket() {
-        if (trackerWrapperPacketBuilder_ == null) {
-          trackerWrapperPacket_ = null;
-          onChanged();
-        } else {
-          trackerWrapperPacketBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000001);
+        trackerWrapperPacket_ = null;
+        if (trackerWrapperPacketBuilder_ != null) {
+          trackerWrapperPacketBuilder_.dispose();
+          trackerWrapperPacketBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -2501,7 +2439,18 @@ public final class SslAutorefCi {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AutoRefCiOutput(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
