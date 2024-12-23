@@ -67,8 +67,6 @@ public final class SslGcRconTeam {
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -76,10 +74,6 @@ public final class SslGcRconTeam {
       return forNumber(value);
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
     public static AdvantageChoice forNumber(int value) {
       switch (value) {
         case 0: return STOP;
@@ -143,7 +137,6 @@ public final class SslGcRconTeam {
      * </pre>
      *
      * <code>required string team_name = 1;</code>
-     * @return Whether the teamName field is set.
      */
     boolean hasTeamName();
     /**
@@ -152,7 +145,6 @@ public final class SslGcRconTeam {
      * </pre>
      *
      * <code>required string team_name = 1;</code>
-     * @return The teamName.
      */
     java.lang.String getTeamName();
     /**
@@ -161,7 +153,6 @@ public final class SslGcRconTeam {
      * </pre>
      *
      * <code>required string team_name = 1;</code>
-     * @return The bytes for teamName.
      */
     com.google.protobuf.ByteString
         getTeamNameBytes();
@@ -172,7 +163,6 @@ public final class SslGcRconTeam {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 2;</code>
-     * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
@@ -181,7 +171,6 @@ public final class SslGcRconTeam {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 2;</code>
-     * @return The signature.
      */
     proto.gc.SslGcRcon.Signature getSignature();
     /**
@@ -199,7 +188,6 @@ public final class SslGcRconTeam {
      * </pre>
      *
      * <code>optional .proto.simulation.Team team = 3;</code>
-     * @return Whether the team field is set.
      */
     boolean hasTeam();
     /**
@@ -208,7 +196,6 @@ public final class SslGcRconTeam {
      * </pre>
      *
      * <code>optional .proto.simulation.Team team = 3;</code>
-     * @return The team.
      */
     proto.simulation.SslGcCommon.Team getTeam();
   }
@@ -219,7 +206,7 @@ public final class SslGcRconTeam {
    *
    * Protobuf type {@code proto.gc.TeamRegistration}
    */
-  public static final class TeamRegistration extends
+  public  static final class TeamRegistration extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.TeamRegistration)
       TeamRegistrationOrBuilder {
@@ -234,16 +221,78 @@ public final class SslGcRconTeam {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TeamRegistration();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private TeamRegistration(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              teamName_ = bs;
+              break;
+            }
+            case 18: {
+              proto.gc.SslGcRcon.Signature.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(proto.gc.SslGcRcon.Signature.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(3, rawValue);
+              } else {
+                bitField0_ |= 0x00000004;
+                team_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -260,19 +309,16 @@ public final class SslGcRconTeam {
 
     private int bitField0_;
     public static final int TEAM_NAME_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object teamName_ = "";
+    private volatile java.lang.Object teamName_;
     /**
      * <pre>
      * the exact team name as published by the game-controller
      * </pre>
      *
      * <code>required string team_name = 1;</code>
-     * @return Whether the teamName field is set.
      */
-    @java.lang.Override
     public boolean hasTeamName() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -280,9 +326,7 @@ public final class SslGcRconTeam {
      * </pre>
      *
      * <code>required string team_name = 1;</code>
-     * @return The teamName.
      */
-    @java.lang.Override
     public java.lang.String getTeamName() {
       java.lang.Object ref = teamName_;
       if (ref instanceof java.lang.String) {
@@ -303,9 +347,7 @@ public final class SslGcRconTeam {
      * </pre>
      *
      * <code>required string team_name = 1;</code>
-     * @return The bytes for teamName.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getTeamNameBytes() {
       java.lang.Object ref = teamName_;
@@ -328,11 +370,9 @@ public final class SslGcRconTeam {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 2;</code>
-     * @return Whether the signature field is set.
      */
-    @java.lang.Override
     public boolean hasSignature() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -340,9 +380,7 @@ public final class SslGcRconTeam {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 2;</code>
-     * @return The signature.
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.Signature getSignature() {
       return signature_ == null ? proto.gc.SslGcRcon.Signature.getDefaultInstance() : signature_;
     }
@@ -353,23 +391,21 @@ public final class SslGcRconTeam {
      *
      * <code>optional .proto.gc.Signature signature = 2;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.SignatureOrBuilder getSignatureOrBuilder() {
       return signature_ == null ? proto.gc.SslGcRcon.Signature.getDefaultInstance() : signature_;
     }
 
     public static final int TEAM_FIELD_NUMBER = 3;
-    private int team_ = 0;
+    private int team_;
     /**
      * <pre>
      * the team (relevant only if a team plays against itself)
      * </pre>
      *
      * <code>optional .proto.simulation.Team team = 3;</code>
-     * @return Whether the team field is set.
      */
-    @java.lang.Override public boolean hasTeam() {
-      return ((bitField0_ & 0x00000004) != 0);
+    public boolean hasTeam() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -377,10 +413,10 @@ public final class SslGcRconTeam {
      * </pre>
      *
      * <code>optional .proto.simulation.Team team = 3;</code>
-     * @return The team.
      */
-    @java.lang.Override public proto.simulation.SslGcCommon.Team getTeam() {
-      proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(team_);
+    public proto.simulation.SslGcCommon.Team getTeam() {
+      @SuppressWarnings("deprecation")
+      proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(team_);
       return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
     }
 
@@ -408,16 +444,16 @@ public final class SslGcRconTeam {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, teamName_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, getSignature());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeEnum(3, team_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -426,18 +462,18 @@ public final class SslGcRconTeam {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, teamName_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getSignature());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, team_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -452,22 +488,23 @@ public final class SslGcRconTeam {
       }
       proto.gc.SslGcRconTeam.TeamRegistration other = (proto.gc.SslGcRconTeam.TeamRegistration) obj;
 
-      if (hasTeamName() != other.hasTeamName()) return false;
+      boolean result = true;
+      result = result && (hasTeamName() == other.hasTeamName());
       if (hasTeamName()) {
-        if (!getTeamName()
-            .equals(other.getTeamName())) return false;
+        result = result && getTeamName()
+            .equals(other.getTeamName());
       }
-      if (hasSignature() != other.hasSignature()) return false;
+      result = result && (hasSignature() == other.hasSignature());
       if (hasSignature()) {
-        if (!getSignature()
-            .equals(other.getSignature())) return false;
+        result = result && getSignature()
+            .equals(other.getSignature());
       }
-      if (hasTeam() != other.hasTeam()) return false;
+      result = result && (hasTeam() == other.hasTeam());
       if (hasTeam()) {
-        if (team_ != other.team_) return false;
+        result = result && team_ == other.team_;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -489,7 +526,7 @@ public final class SslGcRconTeam {
         hash = (37 * hash) + TEAM_FIELD_NUMBER;
         hash = (53 * hash) + team_;
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -627,14 +664,16 @@ public final class SslGcRconTeam {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         teamName_ = "";
-        signature_ = null;
-        if (signatureBuilder_ != null) {
-          signatureBuilder_.dispose();
-          signatureBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signatureBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         team_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -661,62 +700,60 @@ public final class SslGcRconTeam {
       @java.lang.Override
       public proto.gc.SslGcRconTeam.TeamRegistration buildPartial() {
         proto.gc.SslGcRconTeam.TeamRegistration result = new proto.gc.SslGcRconTeam.TeamRegistration(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.teamName_ = teamName_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.team_ = team_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcRconTeam.TeamRegistration result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.teamName_ = teamName_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.signature_ = signatureBuilder_ == null
-              ? signature_
-              : signatureBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.team_ = team_;
-          to_bitField0_ |= 0x00000004;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -731,8 +768,8 @@ public final class SslGcRconTeam {
       public Builder mergeFrom(proto.gc.SslGcRconTeam.TeamRegistration other) {
         if (other == proto.gc.SslGcRconTeam.TeamRegistration.getDefaultInstance()) return this;
         if (other.hasTeamName()) {
-          teamName_ = other.teamName_;
           bitField0_ |= 0x00000001;
+          teamName_ = other.teamName_;
           onChanged();
         }
         if (other.hasSignature()) {
@@ -741,7 +778,7 @@ public final class SslGcRconTeam {
         if (other.hasTeam()) {
           setTeam(other.getTeam());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -764,54 +801,17 @@ public final class SslGcRconTeam {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcRconTeam.TeamRegistration parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                teamName_ = input.readBytes();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getSignatureFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 24: {
-                int tmpRaw = input.readEnum();
-                proto.simulation.SslGcCommon.Team tmpValue =
-                    proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(3, tmpRaw);
-                } else {
-                  team_ = tmpRaw;
-                  bitField0_ |= 0x00000004;
-                }
-                break;
-              } // case 24
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcRconTeam.TeamRegistration) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -823,10 +823,9 @@ public final class SslGcRconTeam {
        * </pre>
        *
        * <code>required string team_name = 1;</code>
-       * @return Whether the teamName field is set.
        */
       public boolean hasTeamName() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -834,7 +833,6 @@ public final class SslGcRconTeam {
        * </pre>
        *
        * <code>required string team_name = 1;</code>
-       * @return The teamName.
        */
       public java.lang.String getTeamName() {
         java.lang.Object ref = teamName_;
@@ -856,7 +854,6 @@ public final class SslGcRconTeam {
        * </pre>
        *
        * <code>required string team_name = 1;</code>
-       * @return The bytes for teamName.
        */
       public com.google.protobuf.ByteString
           getTeamNameBytes() {
@@ -877,14 +874,14 @@ public final class SslGcRconTeam {
        * </pre>
        *
        * <code>required string team_name = 1;</code>
-       * @param value The teamName to set.
-       * @return This builder for chaining.
        */
       public Builder setTeamName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         teamName_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -894,11 +891,10 @@ public final class SslGcRconTeam {
        * </pre>
        *
        * <code>required string team_name = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTeamName() {
-        teamName_ = getDefaultInstance().getTeamName();
         bitField0_ = (bitField0_ & ~0x00000001);
+        teamName_ = getDefaultInstance().getTeamName();
         onChanged();
         return this;
       }
@@ -908,19 +904,19 @@ public final class SslGcRconTeam {
        * </pre>
        *
        * <code>required string team_name = 1;</code>
-       * @param value The bytes for teamName to set.
-       * @return This builder for chaining.
        */
       public Builder setTeamNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         teamName_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private proto.gc.SslGcRcon.Signature signature_;
+      private proto.gc.SslGcRcon.Signature signature_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcRcon.Signature, proto.gc.SslGcRcon.Signature.Builder, proto.gc.SslGcRcon.SignatureOrBuilder> signatureBuilder_;
       /**
@@ -929,10 +925,9 @@ public final class SslGcRconTeam {
        * </pre>
        *
        * <code>optional .proto.gc.Signature signature = 2;</code>
-       * @return Whether the signature field is set.
        */
       public boolean hasSignature() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -940,7 +935,6 @@ public final class SslGcRconTeam {
        * </pre>
        *
        * <code>optional .proto.gc.Signature signature = 2;</code>
-       * @return The signature.
        */
       public proto.gc.SslGcRcon.Signature getSignature() {
         if (signatureBuilder_ == null) {
@@ -962,11 +956,11 @@ public final class SslGcRconTeam {
             throw new NullPointerException();
           }
           signature_ = value;
+          onChanged();
         } else {
           signatureBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -980,11 +974,11 @@ public final class SslGcRconTeam {
           proto.gc.SslGcRcon.Signature.Builder builderForValue) {
         if (signatureBuilder_ == null) {
           signature_ = builderForValue.build();
+          onChanged();
         } else {
           signatureBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -996,18 +990,19 @@ public final class SslGcRconTeam {
        */
       public Builder mergeSignature(proto.gc.SslGcRcon.Signature value) {
         if (signatureBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            signature_ != null &&
-            signature_ != proto.gc.SslGcRcon.Signature.getDefaultInstance()) {
-            getSignatureBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              signature_ != null &&
+              signature_ != proto.gc.SslGcRcon.Signature.getDefaultInstance()) {
+            signature_ =
+              proto.gc.SslGcRcon.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
           } else {
             signature_ = value;
           }
+          onChanged();
         } else {
           signatureBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -1018,13 +1013,13 @@ public final class SslGcRconTeam {
        * <code>optional .proto.gc.Signature signature = 2;</code>
        */
       public Builder clearSignature() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        signature_ = null;
-        if (signatureBuilder_ != null) {
-          signatureBuilder_.dispose();
-          signatureBuilder_ = null;
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signatureBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
@@ -1082,10 +1077,9 @@ public final class SslGcRconTeam {
        * </pre>
        *
        * <code>optional .proto.simulation.Team team = 3;</code>
-       * @return Whether the team field is set.
        */
-      @java.lang.Override public boolean hasTeam() {
-        return ((bitField0_ & 0x00000004) != 0);
+      public boolean hasTeam() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -1093,11 +1087,10 @@ public final class SslGcRconTeam {
        * </pre>
        *
        * <code>optional .proto.simulation.Team team = 3;</code>
-       * @return The team.
        */
-      @java.lang.Override
       public proto.simulation.SslGcCommon.Team getTeam() {
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(team_);
+        @SuppressWarnings("deprecation")
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(team_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
       /**
@@ -1106,8 +1099,6 @@ public final class SslGcRconTeam {
        * </pre>
        *
        * <code>optional .proto.simulation.Team team = 3;</code>
-       * @param value The team to set.
-       * @return This builder for chaining.
        */
       public Builder setTeam(proto.simulation.SslGcCommon.Team value) {
         if (value == null) {
@@ -1124,7 +1115,6 @@ public final class SslGcRconTeam {
        * </pre>
        *
        * <code>optional .proto.simulation.Team team = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTeam() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -1165,18 +1155,7 @@ public final class SslGcRconTeam {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TeamRegistration(input, extensionRegistry);
       }
     };
 
@@ -1206,7 +1185,6 @@ public final class SslGcRconTeam {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 1;</code>
-     * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
@@ -1215,7 +1193,6 @@ public final class SslGcRconTeam {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 1;</code>
-     * @return The signature.
      */
     proto.gc.SslGcRcon.Signature getSignature();
     /**
@@ -1232,8 +1209,7 @@ public final class SslGcRconTeam {
      * request a new desired keeper id
      * </pre>
      *
-     * <code>int32 desired_keeper = 2;</code>
-     * @return Whether the desiredKeeper field is set.
+     * <code>optional int32 desired_keeper = 2;</code>
      */
     boolean hasDesiredKeeper();
     /**
@@ -1241,8 +1217,7 @@ public final class SslGcRconTeam {
      * request a new desired keeper id
      * </pre>
      *
-     * <code>int32 desired_keeper = 2;</code>
-     * @return The desiredKeeper.
+     * <code>optional int32 desired_keeper = 2;</code>
      */
     int getDesiredKeeper();
 
@@ -1251,8 +1226,7 @@ public final class SslGcRconTeam {
      * response to an advantage choice request
      * </pre>
      *
-     * <code>.proto.gc.AdvantageChoice advantage_choice = 3;</code>
-     * @return Whether the advantageChoice field is set.
+     * <code>optional .proto.gc.AdvantageChoice advantage_choice = 3;</code>
      */
     boolean hasAdvantageChoice();
     /**
@@ -1260,8 +1234,7 @@ public final class SslGcRconTeam {
      * response to an advantage choice request
      * </pre>
      *
-     * <code>.proto.gc.AdvantageChoice advantage_choice = 3;</code>
-     * @return The advantageChoice.
+     * <code>optional .proto.gc.AdvantageChoice advantage_choice = 3;</code>
      */
     proto.gc.SslGcRconTeam.AdvantageChoice getAdvantageChoice();
 
@@ -1270,8 +1243,7 @@ public final class SslGcRconTeam {
      * request to substitute a robot at the next possibility
      * </pre>
      *
-     * <code>bool substitute_bot = 4;</code>
-     * @return Whether the substituteBot field is set.
+     * <code>optional bool substitute_bot = 4;</code>
      */
     boolean hasSubstituteBot();
     /**
@@ -1279,8 +1251,7 @@ public final class SslGcRconTeam {
      * request to substitute a robot at the next possibility
      * </pre>
      *
-     * <code>bool substitute_bot = 4;</code>
-     * @return The substituteBot.
+     * <code>optional bool substitute_bot = 4;</code>
      */
     boolean getSubstituteBot();
 
@@ -1290,8 +1261,7 @@ public final class SslGcRconTeam {
      * the value is ignored and a reply is sent back
      * </pre>
      *
-     * <code>bool ping = 5;</code>
-     * @return Whether the ping field is set.
+     * <code>optional bool ping = 5;</code>
      */
     boolean hasPing();
     /**
@@ -1300,8 +1270,7 @@ public final class SslGcRconTeam {
      * the value is ignored and a reply is sent back
      * </pre>
      *
-     * <code>bool ping = 5;</code>
-     * @return The ping.
+     * <code>optional bool ping = 5;</code>
      */
     boolean getPing();
 
@@ -1314,7 +1283,7 @@ public final class SslGcRconTeam {
    *
    * Protobuf type {@code proto.gc.TeamToController}
    */
-  public static final class TeamToController extends
+  public  static final class TeamToController extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.TeamToController)
       TeamToControllerOrBuilder {
@@ -1327,16 +1296,87 @@ public final class SslGcRconTeam {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TeamToController();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private TeamToController(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              proto.gc.SslGcRcon.Signature.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(proto.gc.SslGcRcon.Signature.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 16: {
+              msgCase_ = 2;
+              msg_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+              @SuppressWarnings("deprecation")
+              proto.gc.SslGcRconTeam.AdvantageChoice value = proto.gc.SslGcRconTeam.AdvantageChoice.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(3, rawValue);
+              } else {
+                msgCase_ = 3;
+                msg_ = rawValue;
+              }
+              break;
+            }
+            case 32: {
+              msgCase_ = 4;
+              msg_ = input.readBool();
+              break;
+            }
+            case 40: {
+              msgCase_ = 5;
+              msg_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1355,8 +1395,7 @@ public final class SslGcRconTeam {
     private int msgCase_ = 0;
     private java.lang.Object msg_;
     public enum MsgCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       DESIRED_KEEPER(2),
       ADVANTAGE_CHOICE(3),
       SUBSTITUTE_BOT(4),
@@ -1367,8 +1406,6 @@ public final class SslGcRconTeam {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -1405,11 +1442,9 @@ public final class SslGcRconTeam {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 1;</code>
-     * @return Whether the signature field is set.
      */
-    @java.lang.Override
     public boolean hasSignature() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -1417,9 +1452,7 @@ public final class SslGcRconTeam {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 1;</code>
-     * @return The signature.
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.Signature getSignature() {
       return signature_ == null ? proto.gc.SslGcRcon.Signature.getDefaultInstance() : signature_;
     }
@@ -1430,7 +1463,6 @@ public final class SslGcRconTeam {
      *
      * <code>optional .proto.gc.Signature signature = 1;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.SignatureOrBuilder getSignatureOrBuilder() {
       return signature_ == null ? proto.gc.SslGcRcon.Signature.getDefaultInstance() : signature_;
     }
@@ -1441,10 +1473,8 @@ public final class SslGcRconTeam {
      * request a new desired keeper id
      * </pre>
      *
-     * <code>int32 desired_keeper = 2;</code>
-     * @return Whether the desiredKeeper field is set.
+     * <code>optional int32 desired_keeper = 2;</code>
      */
-    @java.lang.Override
     public boolean hasDesiredKeeper() {
       return msgCase_ == 2;
     }
@@ -1453,10 +1483,8 @@ public final class SslGcRconTeam {
      * request a new desired keeper id
      * </pre>
      *
-     * <code>int32 desired_keeper = 2;</code>
-     * @return The desiredKeeper.
+     * <code>optional int32 desired_keeper = 2;</code>
      */
-    @java.lang.Override
     public int getDesiredKeeper() {
       if (msgCase_ == 2) {
         return (java.lang.Integer) msg_;
@@ -1470,8 +1498,7 @@ public final class SslGcRconTeam {
      * response to an advantage choice request
      * </pre>
      *
-     * <code>.proto.gc.AdvantageChoice advantage_choice = 3;</code>
-     * @return Whether the advantageChoice field is set.
+     * <code>optional .proto.gc.AdvantageChoice advantage_choice = 3;</code>
      */
     public boolean hasAdvantageChoice() {
       return msgCase_ == 3;
@@ -1481,12 +1508,12 @@ public final class SslGcRconTeam {
      * response to an advantage choice request
      * </pre>
      *
-     * <code>.proto.gc.AdvantageChoice advantage_choice = 3;</code>
-     * @return The advantageChoice.
+     * <code>optional .proto.gc.AdvantageChoice advantage_choice = 3;</code>
      */
     public proto.gc.SslGcRconTeam.AdvantageChoice getAdvantageChoice() {
       if (msgCase_ == 3) {
-        proto.gc.SslGcRconTeam.AdvantageChoice result = proto.gc.SslGcRconTeam.AdvantageChoice.forNumber(
+        @SuppressWarnings("deprecation")
+        proto.gc.SslGcRconTeam.AdvantageChoice result = proto.gc.SslGcRconTeam.AdvantageChoice.valueOf(
             (java.lang.Integer) msg_);
         return result == null ? proto.gc.SslGcRconTeam.AdvantageChoice.STOP : result;
       }
@@ -1499,10 +1526,8 @@ public final class SslGcRconTeam {
      * request to substitute a robot at the next possibility
      * </pre>
      *
-     * <code>bool substitute_bot = 4;</code>
-     * @return Whether the substituteBot field is set.
+     * <code>optional bool substitute_bot = 4;</code>
      */
-    @java.lang.Override
     public boolean hasSubstituteBot() {
       return msgCase_ == 4;
     }
@@ -1511,10 +1536,8 @@ public final class SslGcRconTeam {
      * request to substitute a robot at the next possibility
      * </pre>
      *
-     * <code>bool substitute_bot = 4;</code>
-     * @return The substituteBot.
+     * <code>optional bool substitute_bot = 4;</code>
      */
-    @java.lang.Override
     public boolean getSubstituteBot() {
       if (msgCase_ == 4) {
         return (java.lang.Boolean) msg_;
@@ -1529,10 +1552,8 @@ public final class SslGcRconTeam {
      * the value is ignored and a reply is sent back
      * </pre>
      *
-     * <code>bool ping = 5;</code>
-     * @return Whether the ping field is set.
+     * <code>optional bool ping = 5;</code>
      */
-    @java.lang.Override
     public boolean hasPing() {
       return msgCase_ == 5;
     }
@@ -1542,10 +1563,8 @@ public final class SslGcRconTeam {
      * the value is ignored and a reply is sent back
      * </pre>
      *
-     * <code>bool ping = 5;</code>
-     * @return The ping.
+     * <code>optional bool ping = 5;</code>
      */
-    @java.lang.Override
     public boolean getPing() {
       if (msgCase_ == 5) {
         return (java.lang.Boolean) msg_;
@@ -1573,7 +1592,7 @@ public final class SslGcRconTeam {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, getSignature());
       }
       if (msgCase_ == 2) {
@@ -1591,7 +1610,7 @@ public final class SslGcRconTeam {
         output.writeBool(
             5, (boolean)((java.lang.Boolean) msg_));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1600,7 +1619,7 @@ public final class SslGcRconTeam {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getSignature());
       }
@@ -1623,7 +1642,7 @@ public final class SslGcRconTeam {
           .computeBoolSize(
               5, (boolean)((java.lang.Boolean) msg_));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1638,34 +1657,37 @@ public final class SslGcRconTeam {
       }
       proto.gc.SslGcRconTeam.TeamToController other = (proto.gc.SslGcRconTeam.TeamToController) obj;
 
-      if (hasSignature() != other.hasSignature()) return false;
+      boolean result = true;
+      result = result && (hasSignature() == other.hasSignature());
       if (hasSignature()) {
-        if (!getSignature()
-            .equals(other.getSignature())) return false;
+        result = result && getSignature()
+            .equals(other.getSignature());
       }
-      if (!getMsgCase().equals(other.getMsgCase())) return false;
+      result = result && getMsgCase().equals(
+          other.getMsgCase());
+      if (!result) return false;
       switch (msgCase_) {
         case 2:
-          if (getDesiredKeeper()
-              != other.getDesiredKeeper()) return false;
+          result = result && (getDesiredKeeper()
+              == other.getDesiredKeeper());
           break;
         case 3:
-          if (!getAdvantageChoice()
-              .equals(other.getAdvantageChoice())) return false;
+          result = result && getAdvantageChoice()
+              .equals(other.getAdvantageChoice());
           break;
         case 4:
-          if (getSubstituteBot()
-              != other.getSubstituteBot()) return false;
+          result = result && (getSubstituteBot()
+              == other.getSubstituteBot());
           break;
         case 5:
-          if (getPing()
-              != other.getPing()) return false;
+          result = result && (getPing()
+              == other.getPing());
           break;
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1701,7 +1723,7 @@ public final class SslGcRconTeam {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1839,12 +1861,12 @@ public final class SslGcRconTeam {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        signature_ = null;
-        if (signatureBuilder_ != null) {
-          signatureBuilder_.dispose();
-          signatureBuilder_ = null;
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signatureBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         msgCase_ = 0;
         msg_ = null;
         return this;
@@ -1873,60 +1895,65 @@ public final class SslGcRconTeam {
       @java.lang.Override
       public proto.gc.SslGcRconTeam.TeamToController buildPartial() {
         proto.gc.SslGcRconTeam.TeamToController result = new proto.gc.SslGcRconTeam.TeamToController(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (msgCase_ == 2) {
+          result.msg_ = msg_;
+        }
+        if (msgCase_ == 3) {
+          result.msg_ = msg_;
+        }
+        if (msgCase_ == 4) {
+          result.msg_ = msg_;
+        }
+        if (msgCase_ == 5) {
+          result.msg_ = msg_;
+        }
+        result.bitField0_ = to_bitField0_;
+        result.msgCase_ = msgCase_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcRconTeam.TeamToController result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.signature_ = signatureBuilder_ == null
-              ? signature_
-              : signatureBuilder_.build();
-          to_bitField0_ |= 0x00000001;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
-      private void buildPartialOneofs(proto.gc.SslGcRconTeam.TeamToController result) {
-        result.msgCase_ = msgCase_;
-        result.msg_ = this.msg_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1964,7 +1991,7 @@ public final class SslGcRconTeam {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1984,64 +2011,17 @@ public final class SslGcRconTeam {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcRconTeam.TeamToController parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getSignatureFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 16: {
-                msg_ = input.readInt32();
-                msgCase_ = 2;
-                break;
-              } // case 16
-              case 24: {
-                int rawValue = input.readEnum();
-                proto.gc.SslGcRconTeam.AdvantageChoice value =
-                    proto.gc.SslGcRconTeam.AdvantageChoice.forNumber(rawValue);
-                if (value == null) {
-                  mergeUnknownVarintField(3, rawValue);
-                } else {
-                  msgCase_ = 3;
-                  msg_ = rawValue;
-                }
-                break;
-              } // case 24
-              case 32: {
-                msg_ = input.readBool();
-                msgCase_ = 4;
-                break;
-              } // case 32
-              case 40: {
-                msg_ = input.readBool();
-                msgCase_ = 5;
-                break;
-              } // case 40
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcRconTeam.TeamToController) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int msgCase_ = 0;
@@ -2061,7 +2041,7 @@ public final class SslGcRconTeam {
 
       private int bitField0_;
 
-      private proto.gc.SslGcRcon.Signature signature_;
+      private proto.gc.SslGcRcon.Signature signature_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcRcon.Signature, proto.gc.SslGcRcon.Signature.Builder, proto.gc.SslGcRcon.SignatureOrBuilder> signatureBuilder_;
       /**
@@ -2070,10 +2050,9 @@ public final class SslGcRconTeam {
        * </pre>
        *
        * <code>optional .proto.gc.Signature signature = 1;</code>
-       * @return Whether the signature field is set.
        */
       public boolean hasSignature() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -2081,7 +2060,6 @@ public final class SslGcRconTeam {
        * </pre>
        *
        * <code>optional .proto.gc.Signature signature = 1;</code>
-       * @return The signature.
        */
       public proto.gc.SslGcRcon.Signature getSignature() {
         if (signatureBuilder_ == null) {
@@ -2103,11 +2081,11 @@ public final class SslGcRconTeam {
             throw new NullPointerException();
           }
           signature_ = value;
+          onChanged();
         } else {
           signatureBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -2121,11 +2099,11 @@ public final class SslGcRconTeam {
           proto.gc.SslGcRcon.Signature.Builder builderForValue) {
         if (signatureBuilder_ == null) {
           signature_ = builderForValue.build();
+          onChanged();
         } else {
           signatureBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -2137,18 +2115,19 @@ public final class SslGcRconTeam {
        */
       public Builder mergeSignature(proto.gc.SslGcRcon.Signature value) {
         if (signatureBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            signature_ != null &&
-            signature_ != proto.gc.SslGcRcon.Signature.getDefaultInstance()) {
-            getSignatureBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              signature_ != null &&
+              signature_ != proto.gc.SslGcRcon.Signature.getDefaultInstance()) {
+            signature_ =
+              proto.gc.SslGcRcon.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
           } else {
             signature_ = value;
           }
+          onChanged();
         } else {
           signatureBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -2159,13 +2138,13 @@ public final class SslGcRconTeam {
        * <code>optional .proto.gc.Signature signature = 1;</code>
        */
       public Builder clearSignature() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        signature_ = null;
-        if (signatureBuilder_ != null) {
-          signatureBuilder_.dispose();
-          signatureBuilder_ = null;
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signatureBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
       /**
@@ -2221,8 +2200,7 @@ public final class SslGcRconTeam {
        * request a new desired keeper id
        * </pre>
        *
-       * <code>int32 desired_keeper = 2;</code>
-       * @return Whether the desiredKeeper field is set.
+       * <code>optional int32 desired_keeper = 2;</code>
        */
       public boolean hasDesiredKeeper() {
         return msgCase_ == 2;
@@ -2232,8 +2210,7 @@ public final class SslGcRconTeam {
        * request a new desired keeper id
        * </pre>
        *
-       * <code>int32 desired_keeper = 2;</code>
-       * @return The desiredKeeper.
+       * <code>optional int32 desired_keeper = 2;</code>
        */
       public int getDesiredKeeper() {
         if (msgCase_ == 2) {
@@ -2246,12 +2223,9 @@ public final class SslGcRconTeam {
        * request a new desired keeper id
        * </pre>
        *
-       * <code>int32 desired_keeper = 2;</code>
-       * @param value The desiredKeeper to set.
-       * @return This builder for chaining.
+       * <code>optional int32 desired_keeper = 2;</code>
        */
       public Builder setDesiredKeeper(int value) {
-        
         msgCase_ = 2;
         msg_ = value;
         onChanged();
@@ -2262,8 +2236,7 @@ public final class SslGcRconTeam {
        * request a new desired keeper id
        * </pre>
        *
-       * <code>int32 desired_keeper = 2;</code>
-       * @return This builder for chaining.
+       * <code>optional int32 desired_keeper = 2;</code>
        */
       public Builder clearDesiredKeeper() {
         if (msgCase_ == 2) {
@@ -2279,10 +2252,8 @@ public final class SslGcRconTeam {
        * response to an advantage choice request
        * </pre>
        *
-       * <code>.proto.gc.AdvantageChoice advantage_choice = 3;</code>
-       * @return Whether the advantageChoice field is set.
+       * <code>optional .proto.gc.AdvantageChoice advantage_choice = 3;</code>
        */
-      @java.lang.Override
       public boolean hasAdvantageChoice() {
         return msgCase_ == 3;
       }
@@ -2291,13 +2262,12 @@ public final class SslGcRconTeam {
        * response to an advantage choice request
        * </pre>
        *
-       * <code>.proto.gc.AdvantageChoice advantage_choice = 3;</code>
-       * @return The advantageChoice.
+       * <code>optional .proto.gc.AdvantageChoice advantage_choice = 3;</code>
        */
-      @java.lang.Override
       public proto.gc.SslGcRconTeam.AdvantageChoice getAdvantageChoice() {
         if (msgCase_ == 3) {
-          proto.gc.SslGcRconTeam.AdvantageChoice result = proto.gc.SslGcRconTeam.AdvantageChoice.forNumber(
+          @SuppressWarnings("deprecation")
+          proto.gc.SslGcRconTeam.AdvantageChoice result = proto.gc.SslGcRconTeam.AdvantageChoice.valueOf(
               (java.lang.Integer) msg_);
           return result == null ? proto.gc.SslGcRconTeam.AdvantageChoice.STOP : result;
         }
@@ -2308,9 +2278,7 @@ public final class SslGcRconTeam {
        * response to an advantage choice request
        * </pre>
        *
-       * <code>.proto.gc.AdvantageChoice advantage_choice = 3;</code>
-       * @param value The advantageChoice to set.
-       * @return This builder for chaining.
+       * <code>optional .proto.gc.AdvantageChoice advantage_choice = 3;</code>
        */
       public Builder setAdvantageChoice(proto.gc.SslGcRconTeam.AdvantageChoice value) {
         if (value == null) {
@@ -2326,8 +2294,7 @@ public final class SslGcRconTeam {
        * response to an advantage choice request
        * </pre>
        *
-       * <code>.proto.gc.AdvantageChoice advantage_choice = 3;</code>
-       * @return This builder for chaining.
+       * <code>optional .proto.gc.AdvantageChoice advantage_choice = 3;</code>
        */
       public Builder clearAdvantageChoice() {
         if (msgCase_ == 3) {
@@ -2343,8 +2310,7 @@ public final class SslGcRconTeam {
        * request to substitute a robot at the next possibility
        * </pre>
        *
-       * <code>bool substitute_bot = 4;</code>
-       * @return Whether the substituteBot field is set.
+       * <code>optional bool substitute_bot = 4;</code>
        */
       public boolean hasSubstituteBot() {
         return msgCase_ == 4;
@@ -2354,8 +2320,7 @@ public final class SslGcRconTeam {
        * request to substitute a robot at the next possibility
        * </pre>
        *
-       * <code>bool substitute_bot = 4;</code>
-       * @return The substituteBot.
+       * <code>optional bool substitute_bot = 4;</code>
        */
       public boolean getSubstituteBot() {
         if (msgCase_ == 4) {
@@ -2368,12 +2333,9 @@ public final class SslGcRconTeam {
        * request to substitute a robot at the next possibility
        * </pre>
        *
-       * <code>bool substitute_bot = 4;</code>
-       * @param value The substituteBot to set.
-       * @return This builder for chaining.
+       * <code>optional bool substitute_bot = 4;</code>
        */
       public Builder setSubstituteBot(boolean value) {
-        
         msgCase_ = 4;
         msg_ = value;
         onChanged();
@@ -2384,8 +2346,7 @@ public final class SslGcRconTeam {
        * request to substitute a robot at the next possibility
        * </pre>
        *
-       * <code>bool substitute_bot = 4;</code>
-       * @return This builder for chaining.
+       * <code>optional bool substitute_bot = 4;</code>
        */
       public Builder clearSubstituteBot() {
         if (msgCase_ == 4) {
@@ -2402,8 +2363,7 @@ public final class SslGcRconTeam {
        * the value is ignored and a reply is sent back
        * </pre>
        *
-       * <code>bool ping = 5;</code>
-       * @return Whether the ping field is set.
+       * <code>optional bool ping = 5;</code>
        */
       public boolean hasPing() {
         return msgCase_ == 5;
@@ -2414,8 +2374,7 @@ public final class SslGcRconTeam {
        * the value is ignored and a reply is sent back
        * </pre>
        *
-       * <code>bool ping = 5;</code>
-       * @return The ping.
+       * <code>optional bool ping = 5;</code>
        */
       public boolean getPing() {
         if (msgCase_ == 5) {
@@ -2429,12 +2388,9 @@ public final class SslGcRconTeam {
        * the value is ignored and a reply is sent back
        * </pre>
        *
-       * <code>bool ping = 5;</code>
-       * @param value The ping to set.
-       * @return This builder for chaining.
+       * <code>optional bool ping = 5;</code>
        */
       public Builder setPing(boolean value) {
-        
         msgCase_ = 5;
         msg_ = value;
         onChanged();
@@ -2446,8 +2402,7 @@ public final class SslGcRconTeam {
        * the value is ignored and a reply is sent back
        * </pre>
        *
-       * <code>bool ping = 5;</code>
-       * @return This builder for chaining.
+       * <code>optional bool ping = 5;</code>
        */
       public Builder clearPing() {
         if (msgCase_ == 5) {
@@ -2490,18 +2445,7 @@ public final class SslGcRconTeam {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TeamToController(input, extensionRegistry);
       }
     };
 
@@ -2530,8 +2474,7 @@ public final class SslGcRconTeam {
      * a reply from the controller
      * </pre>
      *
-     * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
-     * @return Whether the controllerReply field is set.
+     * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
      */
     boolean hasControllerReply();
     /**
@@ -2539,8 +2482,7 @@ public final class SslGcRconTeam {
      * a reply from the controller
      * </pre>
      *
-     * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
-     * @return The controllerReply.
+     * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
      */
     proto.gc.SslGcRcon.ControllerReply getControllerReply();
     /**
@@ -2548,7 +2490,7 @@ public final class SslGcRconTeam {
      * a reply from the controller
      * </pre>
      *
-     * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+     * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
      */
     proto.gc.SslGcRcon.ControllerReplyOrBuilder getControllerReplyOrBuilder();
 
@@ -2561,7 +2503,7 @@ public final class SslGcRconTeam {
    *
    * Protobuf type {@code proto.gc.ControllerToTeam}
    */
-  public static final class ControllerToTeam extends
+  public  static final class ControllerToTeam extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.ControllerToTeam)
       ControllerToTeamOrBuilder {
@@ -2574,16 +2516,61 @@ public final class SslGcRconTeam {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ControllerToTeam();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private ControllerToTeam(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              proto.gc.SslGcRcon.ControllerReply.Builder subBuilder = null;
+              if (msgCase_ == 1) {
+                subBuilder = ((proto.gc.SslGcRcon.ControllerReply) msg_).toBuilder();
+              }
+              msg_ =
+                  input.readMessage(proto.gc.SslGcRcon.ControllerReply.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((proto.gc.SslGcRcon.ControllerReply) msg_);
+                msg_ = subBuilder.buildPartial();
+              }
+              msgCase_ = 1;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2602,8 +2589,7 @@ public final class SslGcRconTeam {
     private int msgCase_ = 0;
     private java.lang.Object msg_;
     public enum MsgCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       CONTROLLER_REPLY(1),
       MSG_NOT_SET(0);
       private final int value;
@@ -2611,8 +2597,6 @@ public final class SslGcRconTeam {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -2644,10 +2628,8 @@ public final class SslGcRconTeam {
      * a reply from the controller
      * </pre>
      *
-     * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
-     * @return Whether the controllerReply field is set.
+     * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
      */
-    @java.lang.Override
     public boolean hasControllerReply() {
       return msgCase_ == 1;
     }
@@ -2656,10 +2638,8 @@ public final class SslGcRconTeam {
      * a reply from the controller
      * </pre>
      *
-     * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
-     * @return The controllerReply.
+     * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.ControllerReply getControllerReply() {
       if (msgCase_ == 1) {
          return (proto.gc.SslGcRcon.ControllerReply) msg_;
@@ -2671,9 +2651,8 @@ public final class SslGcRconTeam {
      * a reply from the controller
      * </pre>
      *
-     * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+     * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.ControllerReplyOrBuilder getControllerReplyOrBuilder() {
       if (msgCase_ == 1) {
          return (proto.gc.SslGcRcon.ControllerReply) msg_;
@@ -2698,7 +2677,7 @@ public final class SslGcRconTeam {
       if (msgCase_ == 1) {
         output.writeMessage(1, (proto.gc.SslGcRcon.ControllerReply) msg_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2711,7 +2690,7 @@ public final class SslGcRconTeam {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, (proto.gc.SslGcRcon.ControllerReply) msg_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2726,17 +2705,20 @@ public final class SslGcRconTeam {
       }
       proto.gc.SslGcRconTeam.ControllerToTeam other = (proto.gc.SslGcRconTeam.ControllerToTeam) obj;
 
-      if (!getMsgCase().equals(other.getMsgCase())) return false;
+      boolean result = true;
+      result = result && getMsgCase().equals(
+          other.getMsgCase());
+      if (!result) return false;
       switch (msgCase_) {
         case 1:
-          if (!getControllerReply()
-              .equals(other.getControllerReply())) return false;
+          result = result && getControllerReply()
+              .equals(other.getControllerReply());
           break;
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2754,7 +2736,7 @@ public final class SslGcRconTeam {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2875,21 +2857,22 @@ public final class SslGcRconTeam {
 
       // Construct using proto.gc.SslGcRconTeam.ControllerToTeam.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        if (controllerReplyBuilder_ != null) {
-          controllerReplyBuilder_.clear();
-        }
         msgCase_ = 0;
         msg_ = null;
         return this;
@@ -2918,56 +2901,52 @@ public final class SslGcRconTeam {
       @java.lang.Override
       public proto.gc.SslGcRconTeam.ControllerToTeam buildPartial() {
         proto.gc.SslGcRconTeam.ControllerToTeam result = new proto.gc.SslGcRconTeam.ControllerToTeam(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (msgCase_ == 1) {
+          if (controllerReplyBuilder_ == null) {
+            result.msg_ = msg_;
+          } else {
+            result.msg_ = controllerReplyBuilder_.build();
+          }
+        }
+        result.bitField0_ = to_bitField0_;
+        result.msgCase_ = msgCase_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcRconTeam.ControllerToTeam result) {
-        int from_bitField0_ = bitField0_;
-      }
-
-      private void buildPartialOneofs(proto.gc.SslGcRconTeam.ControllerToTeam result) {
-        result.msgCase_ = msgCase_;
-        result.msg_ = this.msg_;
-        if (msgCase_ == 1 &&
-            controllerReplyBuilder_ != null) {
-          result.msg_ = controllerReplyBuilder_.build();
-        }
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2990,7 +2969,7 @@ public final class SslGcRconTeam {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3005,37 +2984,17 @@ public final class SslGcRconTeam {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcRconTeam.ControllerToTeam parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getControllerReplyFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                msgCase_ = 1;
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcRconTeam.ControllerToTeam) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int msgCase_ = 0;
@@ -3062,10 +3021,8 @@ public final class SslGcRconTeam {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
-       * @return Whether the controllerReply field is set.
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
-      @java.lang.Override
       public boolean hasControllerReply() {
         return msgCase_ == 1;
       }
@@ -3074,10 +3031,8 @@ public final class SslGcRconTeam {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
-       * @return The controllerReply.
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
-      @java.lang.Override
       public proto.gc.SslGcRcon.ControllerReply getControllerReply() {
         if (controllerReplyBuilder_ == null) {
           if (msgCase_ == 1) {
@@ -3096,7 +3051,7 @@ public final class SslGcRconTeam {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
       public Builder setControllerReply(proto.gc.SslGcRcon.ControllerReply value) {
         if (controllerReplyBuilder_ == null) {
@@ -3116,7 +3071,7 @@ public final class SslGcRconTeam {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
       public Builder setControllerReply(
           proto.gc.SslGcRcon.ControllerReply.Builder builderForValue) {
@@ -3134,7 +3089,7 @@ public final class SslGcRconTeam {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
       public Builder mergeControllerReply(proto.gc.SslGcRcon.ControllerReply value) {
         if (controllerReplyBuilder_ == null) {
@@ -3149,9 +3104,8 @@ public final class SslGcRconTeam {
         } else {
           if (msgCase_ == 1) {
             controllerReplyBuilder_.mergeFrom(value);
-          } else {
-            controllerReplyBuilder_.setMessage(value);
           }
+          controllerReplyBuilder_.setMessage(value);
         }
         msgCase_ = 1;
         return this;
@@ -3161,7 +3115,7 @@ public final class SslGcRconTeam {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
       public Builder clearControllerReply() {
         if (controllerReplyBuilder_ == null) {
@@ -3184,7 +3138,7 @@ public final class SslGcRconTeam {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
       public proto.gc.SslGcRcon.ControllerReply.Builder getControllerReplyBuilder() {
         return getControllerReplyFieldBuilder().getBuilder();
@@ -3194,9 +3148,8 @@ public final class SslGcRconTeam {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
-      @java.lang.Override
       public proto.gc.SslGcRcon.ControllerReplyOrBuilder getControllerReplyOrBuilder() {
         if ((msgCase_ == 1) && (controllerReplyBuilder_ != null)) {
           return controllerReplyBuilder_.getMessageOrBuilder();
@@ -3212,7 +3165,7 @@ public final class SslGcRconTeam {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcRcon.ControllerReply, proto.gc.SslGcRcon.ControllerReply.Builder, proto.gc.SslGcRcon.ControllerReplyOrBuilder> 
@@ -3229,7 +3182,7 @@ public final class SslGcRconTeam {
           msg_ = null;
         }
         msgCase_ = 1;
-        onChanged();
+        onChanged();;
         return controllerReplyBuilder_;
       }
       @java.lang.Override
@@ -3265,18 +3218,7 @@ public final class SslGcRconTeam {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ControllerToTeam(input, extensionRegistry);
       }
     };
 
@@ -3336,12 +3278,20 @@ public final class SslGcRconTeam {
       "hub.com/RoboCup-SSL/ssl-game-controller/" +
       "internal/app/rcon"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           proto.gc.SslGcRcon.getDescriptor(),
           proto.simulation.SslGcCommon.getDescriptor(),
-        });
+        }, assigner);
     internal_static_proto_gc_TeamRegistration_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_gc_TeamRegistration_fieldAccessorTable = new

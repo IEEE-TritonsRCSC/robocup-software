@@ -24,7 +24,6 @@ public final class SslGcRconAutoref {
      * </pre>
      *
      * <code>required string identifier = 1;</code>
-     * @return Whether the identifier field is set.
      */
     boolean hasIdentifier();
     /**
@@ -33,7 +32,6 @@ public final class SslGcRconAutoref {
      * </pre>
      *
      * <code>required string identifier = 1;</code>
-     * @return The identifier.
      */
     java.lang.String getIdentifier();
     /**
@@ -42,7 +40,6 @@ public final class SslGcRconAutoref {
      * </pre>
      *
      * <code>required string identifier = 1;</code>
-     * @return The bytes for identifier.
      */
     com.google.protobuf.ByteString
         getIdentifierBytes();
@@ -53,7 +50,6 @@ public final class SslGcRconAutoref {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 2;</code>
-     * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
@@ -62,7 +58,6 @@ public final class SslGcRconAutoref {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 2;</code>
-     * @return The signature.
      */
     proto.gc.SslGcRcon.Signature getSignature();
     /**
@@ -81,7 +76,7 @@ public final class SslGcRconAutoref {
    *
    * Protobuf type {@code proto.gc.AutoRefRegistration}
    */
-  public static final class AutoRefRegistration extends
+  public  static final class AutoRefRegistration extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.AutoRefRegistration)
       AutoRefRegistrationOrBuilder {
@@ -95,16 +90,66 @@ public final class SslGcRconAutoref {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new AutoRefRegistration();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private AutoRefRegistration(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              identifier_ = bs;
+              break;
+            }
+            case 18: {
+              proto.gc.SslGcRcon.Signature.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(proto.gc.SslGcRcon.Signature.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -121,19 +166,16 @@ public final class SslGcRconAutoref {
 
     private int bitField0_;
     public static final int IDENTIFIER_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object identifier_ = "";
+    private volatile java.lang.Object identifier_;
     /**
      * <pre>
      * identifier is a unique name of the client
      * </pre>
      *
      * <code>required string identifier = 1;</code>
-     * @return Whether the identifier field is set.
      */
-    @java.lang.Override
     public boolean hasIdentifier() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -141,9 +183,7 @@ public final class SslGcRconAutoref {
      * </pre>
      *
      * <code>required string identifier = 1;</code>
-     * @return The identifier.
      */
-    @java.lang.Override
     public java.lang.String getIdentifier() {
       java.lang.Object ref = identifier_;
       if (ref instanceof java.lang.String) {
@@ -164,9 +204,7 @@ public final class SslGcRconAutoref {
      * </pre>
      *
      * <code>required string identifier = 1;</code>
-     * @return The bytes for identifier.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdentifierBytes() {
       java.lang.Object ref = identifier_;
@@ -189,11 +227,9 @@ public final class SslGcRconAutoref {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 2;</code>
-     * @return Whether the signature field is set.
      */
-    @java.lang.Override
     public boolean hasSignature() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -201,9 +237,7 @@ public final class SslGcRconAutoref {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 2;</code>
-     * @return The signature.
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.Signature getSignature() {
       return signature_ == null ? proto.gc.SslGcRcon.Signature.getDefaultInstance() : signature_;
     }
@@ -214,7 +248,6 @@ public final class SslGcRconAutoref {
      *
      * <code>optional .proto.gc.Signature signature = 2;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.SignatureOrBuilder getSignatureOrBuilder() {
       return signature_ == null ? proto.gc.SslGcRcon.Signature.getDefaultInstance() : signature_;
     }
@@ -243,13 +276,13 @@ public final class SslGcRconAutoref {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, identifier_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, getSignature());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -258,14 +291,14 @@ public final class SslGcRconAutoref {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, identifier_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getSignature());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -280,18 +313,19 @@ public final class SslGcRconAutoref {
       }
       proto.gc.SslGcRconAutoref.AutoRefRegistration other = (proto.gc.SslGcRconAutoref.AutoRefRegistration) obj;
 
-      if (hasIdentifier() != other.hasIdentifier()) return false;
+      boolean result = true;
+      result = result && (hasIdentifier() == other.hasIdentifier());
       if (hasIdentifier()) {
-        if (!getIdentifier()
-            .equals(other.getIdentifier())) return false;
+        result = result && getIdentifier()
+            .equals(other.getIdentifier());
       }
-      if (hasSignature() != other.hasSignature()) return false;
+      result = result && (hasSignature() == other.hasSignature());
       if (hasSignature()) {
-        if (!getSignature()
-            .equals(other.getSignature())) return false;
+        result = result && getSignature()
+            .equals(other.getSignature());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -309,7 +343,7 @@ public final class SslGcRconAutoref {
         hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
         hash = (53 * hash) + getSignature().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -447,13 +481,14 @@ public final class SslGcRconAutoref {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         identifier_ = "";
-        signature_ = null;
-        if (signatureBuilder_ != null) {
-          signatureBuilder_.dispose();
-          signatureBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signatureBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -480,58 +515,56 @@ public final class SslGcRconAutoref {
       @java.lang.Override
       public proto.gc.SslGcRconAutoref.AutoRefRegistration buildPartial() {
         proto.gc.SslGcRconAutoref.AutoRefRegistration result = new proto.gc.SslGcRconAutoref.AutoRefRegistration(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.identifier_ = identifier_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcRconAutoref.AutoRefRegistration result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.identifier_ = identifier_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.signature_ = signatureBuilder_ == null
-              ? signature_
-              : signatureBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -546,14 +579,14 @@ public final class SslGcRconAutoref {
       public Builder mergeFrom(proto.gc.SslGcRconAutoref.AutoRefRegistration other) {
         if (other == proto.gc.SslGcRconAutoref.AutoRefRegistration.getDefaultInstance()) return this;
         if (other.hasIdentifier()) {
-          identifier_ = other.identifier_;
           bitField0_ |= 0x00000001;
+          identifier_ = other.identifier_;
           onChanged();
         }
         if (other.hasSignature()) {
           mergeSignature(other.getSignature());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -576,42 +609,17 @@ public final class SslGcRconAutoref {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcRconAutoref.AutoRefRegistration parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                identifier_ = input.readBytes();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getSignatureFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcRconAutoref.AutoRefRegistration) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -623,10 +631,9 @@ public final class SslGcRconAutoref {
        * </pre>
        *
        * <code>required string identifier = 1;</code>
-       * @return Whether the identifier field is set.
        */
       public boolean hasIdentifier() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -634,7 +641,6 @@ public final class SslGcRconAutoref {
        * </pre>
        *
        * <code>required string identifier = 1;</code>
-       * @return The identifier.
        */
       public java.lang.String getIdentifier() {
         java.lang.Object ref = identifier_;
@@ -656,7 +662,6 @@ public final class SslGcRconAutoref {
        * </pre>
        *
        * <code>required string identifier = 1;</code>
-       * @return The bytes for identifier.
        */
       public com.google.protobuf.ByteString
           getIdentifierBytes() {
@@ -677,14 +682,14 @@ public final class SslGcRconAutoref {
        * </pre>
        *
        * <code>required string identifier = 1;</code>
-       * @param value The identifier to set.
-       * @return This builder for chaining.
        */
       public Builder setIdentifier(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         identifier_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -694,11 +699,10 @@ public final class SslGcRconAutoref {
        * </pre>
        *
        * <code>required string identifier = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearIdentifier() {
-        identifier_ = getDefaultInstance().getIdentifier();
         bitField0_ = (bitField0_ & ~0x00000001);
+        identifier_ = getDefaultInstance().getIdentifier();
         onChanged();
         return this;
       }
@@ -708,19 +712,19 @@ public final class SslGcRconAutoref {
        * </pre>
        *
        * <code>required string identifier = 1;</code>
-       * @param value The bytes for identifier to set.
-       * @return This builder for chaining.
        */
       public Builder setIdentifierBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         identifier_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private proto.gc.SslGcRcon.Signature signature_;
+      private proto.gc.SslGcRcon.Signature signature_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcRcon.Signature, proto.gc.SslGcRcon.Signature.Builder, proto.gc.SslGcRcon.SignatureOrBuilder> signatureBuilder_;
       /**
@@ -729,10 +733,9 @@ public final class SslGcRconAutoref {
        * </pre>
        *
        * <code>optional .proto.gc.Signature signature = 2;</code>
-       * @return Whether the signature field is set.
        */
       public boolean hasSignature() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -740,7 +743,6 @@ public final class SslGcRconAutoref {
        * </pre>
        *
        * <code>optional .proto.gc.Signature signature = 2;</code>
-       * @return The signature.
        */
       public proto.gc.SslGcRcon.Signature getSignature() {
         if (signatureBuilder_ == null) {
@@ -762,11 +764,11 @@ public final class SslGcRconAutoref {
             throw new NullPointerException();
           }
           signature_ = value;
+          onChanged();
         } else {
           signatureBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -780,11 +782,11 @@ public final class SslGcRconAutoref {
           proto.gc.SslGcRcon.Signature.Builder builderForValue) {
         if (signatureBuilder_ == null) {
           signature_ = builderForValue.build();
+          onChanged();
         } else {
           signatureBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -796,18 +798,19 @@ public final class SslGcRconAutoref {
        */
       public Builder mergeSignature(proto.gc.SslGcRcon.Signature value) {
         if (signatureBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            signature_ != null &&
-            signature_ != proto.gc.SslGcRcon.Signature.getDefaultInstance()) {
-            getSignatureBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              signature_ != null &&
+              signature_ != proto.gc.SslGcRcon.Signature.getDefaultInstance()) {
+            signature_ =
+              proto.gc.SslGcRcon.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
           } else {
             signature_ = value;
           }
+          onChanged();
         } else {
           signatureBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -818,13 +821,13 @@ public final class SslGcRconAutoref {
        * <code>optional .proto.gc.Signature signature = 2;</code>
        */
       public Builder clearSignature() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        signature_ = null;
-        if (signatureBuilder_ != null) {
-          signatureBuilder_.dispose();
-          signatureBuilder_ = null;
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signatureBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
@@ -907,18 +910,7 @@ public final class SslGcRconAutoref {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AutoRefRegistration(input, extensionRegistry);
       }
     };
 
@@ -948,7 +940,6 @@ public final class SslGcRconAutoref {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 1;</code>
-     * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
@@ -957,7 +948,6 @@ public final class SslGcRconAutoref {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 1;</code>
-     * @return The signature.
      */
     proto.gc.SslGcRcon.Signature getSignature();
     /**
@@ -975,7 +965,6 @@ public final class SslGcRconAutoref {
      * </pre>
      *
      * <code>optional .proto.gc.GameEvent game_event = 2;</code>
-     * @return Whether the gameEvent field is set.
      */
     boolean hasGameEvent();
     /**
@@ -984,7 +973,6 @@ public final class SslGcRconAutoref {
      * </pre>
      *
      * <code>optional .proto.gc.GameEvent game_event = 2;</code>
-     * @return The gameEvent.
      */
     proto.gc.SslGcGameEvent.GameEvent getGameEvent();
     /**
@@ -1003,7 +991,7 @@ public final class SslGcRconAutoref {
    *
    * Protobuf type {@code proto.gc.AutoRefToController}
    */
-  public static final class AutoRefToController extends
+  public  static final class AutoRefToController extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.AutoRefToController)
       AutoRefToControllerOrBuilder {
@@ -1016,16 +1004,73 @@ public final class SslGcRconAutoref {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new AutoRefToController();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private AutoRefToController(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              proto.gc.SslGcRcon.Signature.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(proto.gc.SslGcRcon.Signature.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 18: {
+              proto.gc.SslGcGameEvent.GameEvent.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = gameEvent_.toBuilder();
+              }
+              gameEvent_ = input.readMessage(proto.gc.SslGcGameEvent.GameEvent.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(gameEvent_);
+                gameEvent_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1049,11 +1094,9 @@ public final class SslGcRconAutoref {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 1;</code>
-     * @return Whether the signature field is set.
      */
-    @java.lang.Override
     public boolean hasSignature() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -1061,9 +1104,7 @@ public final class SslGcRconAutoref {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 1;</code>
-     * @return The signature.
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.Signature getSignature() {
       return signature_ == null ? proto.gc.SslGcRcon.Signature.getDefaultInstance() : signature_;
     }
@@ -1074,7 +1115,6 @@ public final class SslGcRconAutoref {
      *
      * <code>optional .proto.gc.Signature signature = 1;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.SignatureOrBuilder getSignatureOrBuilder() {
       return signature_ == null ? proto.gc.SslGcRcon.Signature.getDefaultInstance() : signature_;
     }
@@ -1087,11 +1127,9 @@ public final class SslGcRconAutoref {
      * </pre>
      *
      * <code>optional .proto.gc.GameEvent game_event = 2;</code>
-     * @return Whether the gameEvent field is set.
      */
-    @java.lang.Override
     public boolean hasGameEvent() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -1099,9 +1137,7 @@ public final class SslGcRconAutoref {
      * </pre>
      *
      * <code>optional .proto.gc.GameEvent game_event = 2;</code>
-     * @return The gameEvent.
      */
-    @java.lang.Override
     public proto.gc.SslGcGameEvent.GameEvent getGameEvent() {
       return gameEvent_ == null ? proto.gc.SslGcGameEvent.GameEvent.getDefaultInstance() : gameEvent_;
     }
@@ -1112,7 +1148,6 @@ public final class SslGcRconAutoref {
      *
      * <code>optional .proto.gc.GameEvent game_event = 2;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcGameEvent.GameEventOrBuilder getGameEventOrBuilder() {
       return gameEvent_ == null ? proto.gc.SslGcGameEvent.GameEvent.getDefaultInstance() : gameEvent_;
     }
@@ -1143,13 +1178,13 @@ public final class SslGcRconAutoref {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, getSignature());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, getGameEvent());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1158,15 +1193,15 @@ public final class SslGcRconAutoref {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getSignature());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getGameEvent());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1181,18 +1216,19 @@ public final class SslGcRconAutoref {
       }
       proto.gc.SslGcRconAutoref.AutoRefToController other = (proto.gc.SslGcRconAutoref.AutoRefToController) obj;
 
-      if (hasSignature() != other.hasSignature()) return false;
+      boolean result = true;
+      result = result && (hasSignature() == other.hasSignature());
       if (hasSignature()) {
-        if (!getSignature()
-            .equals(other.getSignature())) return false;
+        result = result && getSignature()
+            .equals(other.getSignature());
       }
-      if (hasGameEvent() != other.hasGameEvent()) return false;
+      result = result && (hasGameEvent() == other.hasGameEvent());
       if (hasGameEvent()) {
-        if (!getGameEvent()
-            .equals(other.getGameEvent())) return false;
+        result = result && getGameEvent()
+            .equals(other.getGameEvent());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1210,7 +1246,7 @@ public final class SslGcRconAutoref {
         hash = (37 * hash) + GAME_EVENT_FIELD_NUMBER;
         hash = (53 * hash) + getGameEvent().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1349,17 +1385,18 @@ public final class SslGcRconAutoref {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        signature_ = null;
-        if (signatureBuilder_ != null) {
-          signatureBuilder_.dispose();
-          signatureBuilder_ = null;
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signatureBuilder_.clear();
         }
-        gameEvent_ = null;
-        if (gameEventBuilder_ != null) {
-          gameEventBuilder_.dispose();
-          gameEventBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (gameEventBuilder_ == null) {
+          gameEvent_ = null;
+        } else {
+          gameEventBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1386,60 +1423,60 @@ public final class SslGcRconAutoref {
       @java.lang.Override
       public proto.gc.SslGcRconAutoref.AutoRefToController buildPartial() {
         proto.gc.SslGcRconAutoref.AutoRefToController result = new proto.gc.SslGcRconAutoref.AutoRefToController(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (gameEventBuilder_ == null) {
+          result.gameEvent_ = gameEvent_;
+        } else {
+          result.gameEvent_ = gameEventBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcRconAutoref.AutoRefToController result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.signature_ = signatureBuilder_ == null
-              ? signature_
-              : signatureBuilder_.build();
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.gameEvent_ = gameEventBuilder_ == null
-              ? gameEvent_
-              : gameEventBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1459,7 +1496,7 @@ public final class SslGcRconAutoref {
         if (other.hasGameEvent()) {
           mergeGameEvent(other.getGameEvent());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1484,49 +1521,22 @@ public final class SslGcRconAutoref {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcRconAutoref.AutoRefToController parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getSignatureFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getGameEventFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcRconAutoref.AutoRefToController) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
 
-      private proto.gc.SslGcRcon.Signature signature_;
+      private proto.gc.SslGcRcon.Signature signature_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcRcon.Signature, proto.gc.SslGcRcon.Signature.Builder, proto.gc.SslGcRcon.SignatureOrBuilder> signatureBuilder_;
       /**
@@ -1535,10 +1545,9 @@ public final class SslGcRconAutoref {
        * </pre>
        *
        * <code>optional .proto.gc.Signature signature = 1;</code>
-       * @return Whether the signature field is set.
        */
       public boolean hasSignature() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -1546,7 +1555,6 @@ public final class SslGcRconAutoref {
        * </pre>
        *
        * <code>optional .proto.gc.Signature signature = 1;</code>
-       * @return The signature.
        */
       public proto.gc.SslGcRcon.Signature getSignature() {
         if (signatureBuilder_ == null) {
@@ -1568,11 +1576,11 @@ public final class SslGcRconAutoref {
             throw new NullPointerException();
           }
           signature_ = value;
+          onChanged();
         } else {
           signatureBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -1586,11 +1594,11 @@ public final class SslGcRconAutoref {
           proto.gc.SslGcRcon.Signature.Builder builderForValue) {
         if (signatureBuilder_ == null) {
           signature_ = builderForValue.build();
+          onChanged();
         } else {
           signatureBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -1602,18 +1610,19 @@ public final class SslGcRconAutoref {
        */
       public Builder mergeSignature(proto.gc.SslGcRcon.Signature value) {
         if (signatureBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            signature_ != null &&
-            signature_ != proto.gc.SslGcRcon.Signature.getDefaultInstance()) {
-            getSignatureBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              signature_ != null &&
+              signature_ != proto.gc.SslGcRcon.Signature.getDefaultInstance()) {
+            signature_ =
+              proto.gc.SslGcRcon.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
           } else {
             signature_ = value;
           }
+          onChanged();
         } else {
           signatureBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -1624,13 +1633,13 @@ public final class SslGcRconAutoref {
        * <code>optional .proto.gc.Signature signature = 1;</code>
        */
       public Builder clearSignature() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        signature_ = null;
-        if (signatureBuilder_ != null) {
-          signatureBuilder_.dispose();
-          signatureBuilder_ = null;
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signatureBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
       /**
@@ -1681,7 +1690,7 @@ public final class SslGcRconAutoref {
         return signatureBuilder_;
       }
 
-      private proto.gc.SslGcGameEvent.GameEvent gameEvent_;
+      private proto.gc.SslGcGameEvent.GameEvent gameEvent_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcGameEvent.GameEvent, proto.gc.SslGcGameEvent.GameEvent.Builder, proto.gc.SslGcGameEvent.GameEventOrBuilder> gameEventBuilder_;
       /**
@@ -1690,10 +1699,9 @@ public final class SslGcRconAutoref {
        * </pre>
        *
        * <code>optional .proto.gc.GameEvent game_event = 2;</code>
-       * @return Whether the gameEvent field is set.
        */
       public boolean hasGameEvent() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -1701,7 +1709,6 @@ public final class SslGcRconAutoref {
        * </pre>
        *
        * <code>optional .proto.gc.GameEvent game_event = 2;</code>
-       * @return The gameEvent.
        */
       public proto.gc.SslGcGameEvent.GameEvent getGameEvent() {
         if (gameEventBuilder_ == null) {
@@ -1723,11 +1730,11 @@ public final class SslGcRconAutoref {
             throw new NullPointerException();
           }
           gameEvent_ = value;
+          onChanged();
         } else {
           gameEventBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -1741,11 +1748,11 @@ public final class SslGcRconAutoref {
           proto.gc.SslGcGameEvent.GameEvent.Builder builderForValue) {
         if (gameEventBuilder_ == null) {
           gameEvent_ = builderForValue.build();
+          onChanged();
         } else {
           gameEventBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -1757,18 +1764,19 @@ public final class SslGcRconAutoref {
        */
       public Builder mergeGameEvent(proto.gc.SslGcGameEvent.GameEvent value) {
         if (gameEventBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            gameEvent_ != null &&
-            gameEvent_ != proto.gc.SslGcGameEvent.GameEvent.getDefaultInstance()) {
-            getGameEventBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              gameEvent_ != null &&
+              gameEvent_ != proto.gc.SslGcGameEvent.GameEvent.getDefaultInstance()) {
+            gameEvent_ =
+              proto.gc.SslGcGameEvent.GameEvent.newBuilder(gameEvent_).mergeFrom(value).buildPartial();
           } else {
             gameEvent_ = value;
           }
+          onChanged();
         } else {
           gameEventBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -1779,13 +1787,13 @@ public final class SslGcRconAutoref {
        * <code>optional .proto.gc.GameEvent game_event = 2;</code>
        */
       public Builder clearGameEvent() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        gameEvent_ = null;
-        if (gameEventBuilder_ != null) {
-          gameEventBuilder_.dispose();
-          gameEventBuilder_ = null;
+        if (gameEventBuilder_ == null) {
+          gameEvent_ = null;
+          onChanged();
+        } else {
+          gameEventBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
@@ -1868,18 +1876,7 @@ public final class SslGcRconAutoref {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AutoRefToController(input, extensionRegistry);
       }
     };
 
@@ -1908,8 +1905,7 @@ public final class SslGcRconAutoref {
      * a reply from the controller
      * </pre>
      *
-     * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
-     * @return Whether the controllerReply field is set.
+     * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
      */
     boolean hasControllerReply();
     /**
@@ -1917,8 +1913,7 @@ public final class SslGcRconAutoref {
      * a reply from the controller
      * </pre>
      *
-     * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
-     * @return The controllerReply.
+     * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
      */
     proto.gc.SslGcRcon.ControllerReply getControllerReply();
     /**
@@ -1926,7 +1921,7 @@ public final class SslGcRconAutoref {
      * a reply from the controller
      * </pre>
      *
-     * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+     * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
      */
     proto.gc.SslGcRcon.ControllerReplyOrBuilder getControllerReplyOrBuilder();
 
@@ -1939,7 +1934,7 @@ public final class SslGcRconAutoref {
    *
    * Protobuf type {@code proto.gc.ControllerToAutoRef}
    */
-  public static final class ControllerToAutoRef extends
+  public  static final class ControllerToAutoRef extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.ControllerToAutoRef)
       ControllerToAutoRefOrBuilder {
@@ -1952,16 +1947,61 @@ public final class SslGcRconAutoref {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ControllerToAutoRef();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private ControllerToAutoRef(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              proto.gc.SslGcRcon.ControllerReply.Builder subBuilder = null;
+              if (msgCase_ == 1) {
+                subBuilder = ((proto.gc.SslGcRcon.ControllerReply) msg_).toBuilder();
+              }
+              msg_ =
+                  input.readMessage(proto.gc.SslGcRcon.ControllerReply.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((proto.gc.SslGcRcon.ControllerReply) msg_);
+                msg_ = subBuilder.buildPartial();
+              }
+              msgCase_ = 1;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1980,8 +2020,7 @@ public final class SslGcRconAutoref {
     private int msgCase_ = 0;
     private java.lang.Object msg_;
     public enum MsgCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       CONTROLLER_REPLY(1),
       MSG_NOT_SET(0);
       private final int value;
@@ -1989,8 +2028,6 @@ public final class SslGcRconAutoref {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -2022,10 +2059,8 @@ public final class SslGcRconAutoref {
      * a reply from the controller
      * </pre>
      *
-     * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
-     * @return Whether the controllerReply field is set.
+     * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
      */
-    @java.lang.Override
     public boolean hasControllerReply() {
       return msgCase_ == 1;
     }
@@ -2034,10 +2069,8 @@ public final class SslGcRconAutoref {
      * a reply from the controller
      * </pre>
      *
-     * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
-     * @return The controllerReply.
+     * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.ControllerReply getControllerReply() {
       if (msgCase_ == 1) {
          return (proto.gc.SslGcRcon.ControllerReply) msg_;
@@ -2049,9 +2082,8 @@ public final class SslGcRconAutoref {
      * a reply from the controller
      * </pre>
      *
-     * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+     * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.ControllerReplyOrBuilder getControllerReplyOrBuilder() {
       if (msgCase_ == 1) {
          return (proto.gc.SslGcRcon.ControllerReply) msg_;
@@ -2076,7 +2108,7 @@ public final class SslGcRconAutoref {
       if (msgCase_ == 1) {
         output.writeMessage(1, (proto.gc.SslGcRcon.ControllerReply) msg_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2089,7 +2121,7 @@ public final class SslGcRconAutoref {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, (proto.gc.SslGcRcon.ControllerReply) msg_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2104,17 +2136,20 @@ public final class SslGcRconAutoref {
       }
       proto.gc.SslGcRconAutoref.ControllerToAutoRef other = (proto.gc.SslGcRconAutoref.ControllerToAutoRef) obj;
 
-      if (!getMsgCase().equals(other.getMsgCase())) return false;
+      boolean result = true;
+      result = result && getMsgCase().equals(
+          other.getMsgCase());
+      if (!result) return false;
       switch (msgCase_) {
         case 1:
-          if (!getControllerReply()
-              .equals(other.getControllerReply())) return false;
+          result = result && getControllerReply()
+              .equals(other.getControllerReply());
           break;
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2132,7 +2167,7 @@ public final class SslGcRconAutoref {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2253,21 +2288,22 @@ public final class SslGcRconAutoref {
 
       // Construct using proto.gc.SslGcRconAutoref.ControllerToAutoRef.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        if (controllerReplyBuilder_ != null) {
-          controllerReplyBuilder_.clear();
-        }
         msgCase_ = 0;
         msg_ = null;
         return this;
@@ -2296,56 +2332,52 @@ public final class SslGcRconAutoref {
       @java.lang.Override
       public proto.gc.SslGcRconAutoref.ControllerToAutoRef buildPartial() {
         proto.gc.SslGcRconAutoref.ControllerToAutoRef result = new proto.gc.SslGcRconAutoref.ControllerToAutoRef(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (msgCase_ == 1) {
+          if (controllerReplyBuilder_ == null) {
+            result.msg_ = msg_;
+          } else {
+            result.msg_ = controllerReplyBuilder_.build();
+          }
+        }
+        result.bitField0_ = to_bitField0_;
+        result.msgCase_ = msgCase_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcRconAutoref.ControllerToAutoRef result) {
-        int from_bitField0_ = bitField0_;
-      }
-
-      private void buildPartialOneofs(proto.gc.SslGcRconAutoref.ControllerToAutoRef result) {
-        result.msgCase_ = msgCase_;
-        result.msg_ = this.msg_;
-        if (msgCase_ == 1 &&
-            controllerReplyBuilder_ != null) {
-          result.msg_ = controllerReplyBuilder_.build();
-        }
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2368,7 +2400,7 @@ public final class SslGcRconAutoref {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2383,37 +2415,17 @@ public final class SslGcRconAutoref {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcRconAutoref.ControllerToAutoRef parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getControllerReplyFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                msgCase_ = 1;
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcRconAutoref.ControllerToAutoRef) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int msgCase_ = 0;
@@ -2440,10 +2452,8 @@ public final class SslGcRconAutoref {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
-       * @return Whether the controllerReply field is set.
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
-      @java.lang.Override
       public boolean hasControllerReply() {
         return msgCase_ == 1;
       }
@@ -2452,10 +2462,8 @@ public final class SslGcRconAutoref {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
-       * @return The controllerReply.
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
-      @java.lang.Override
       public proto.gc.SslGcRcon.ControllerReply getControllerReply() {
         if (controllerReplyBuilder_ == null) {
           if (msgCase_ == 1) {
@@ -2474,7 +2482,7 @@ public final class SslGcRconAutoref {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
       public Builder setControllerReply(proto.gc.SslGcRcon.ControllerReply value) {
         if (controllerReplyBuilder_ == null) {
@@ -2494,7 +2502,7 @@ public final class SslGcRconAutoref {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
       public Builder setControllerReply(
           proto.gc.SslGcRcon.ControllerReply.Builder builderForValue) {
@@ -2512,7 +2520,7 @@ public final class SslGcRconAutoref {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
       public Builder mergeControllerReply(proto.gc.SslGcRcon.ControllerReply value) {
         if (controllerReplyBuilder_ == null) {
@@ -2527,9 +2535,8 @@ public final class SslGcRconAutoref {
         } else {
           if (msgCase_ == 1) {
             controllerReplyBuilder_.mergeFrom(value);
-          } else {
-            controllerReplyBuilder_.setMessage(value);
           }
+          controllerReplyBuilder_.setMessage(value);
         }
         msgCase_ = 1;
         return this;
@@ -2539,7 +2546,7 @@ public final class SslGcRconAutoref {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
       public Builder clearControllerReply() {
         if (controllerReplyBuilder_ == null) {
@@ -2562,7 +2569,7 @@ public final class SslGcRconAutoref {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
       public proto.gc.SslGcRcon.ControllerReply.Builder getControllerReplyBuilder() {
         return getControllerReplyFieldBuilder().getBuilder();
@@ -2572,9 +2579,8 @@ public final class SslGcRconAutoref {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
-      @java.lang.Override
       public proto.gc.SslGcRcon.ControllerReplyOrBuilder getControllerReplyOrBuilder() {
         if ((msgCase_ == 1) && (controllerReplyBuilder_ != null)) {
           return controllerReplyBuilder_.getMessageOrBuilder();
@@ -2590,7 +2596,7 @@ public final class SslGcRconAutoref {
        * a reply from the controller
        * </pre>
        *
-       * <code>.proto.gc.ControllerReply controller_reply = 1;</code>
+       * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcRcon.ControllerReply, proto.gc.SslGcRcon.ControllerReply.Builder, proto.gc.SslGcRcon.ControllerReplyOrBuilder> 
@@ -2607,7 +2613,7 @@ public final class SslGcRconAutoref {
           msg_ = null;
         }
         msgCase_ = 1;
-        onChanged();
+        onChanged();;
         return controllerReplyBuilder_;
       }
       @java.lang.Override
@@ -2643,18 +2649,7 @@ public final class SslGcRconAutoref {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ControllerToAutoRef(input, extensionRegistry);
       }
     };
 
@@ -2710,12 +2705,20 @@ public final class SslGcRconAutoref {
       "\n\003msgB>Z<github.com/RoboCup-SSL/ssl-game" +
       "-controller/internal/app/rcon"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           proto.gc.SslGcGameEvent.getDescriptor(),
           proto.gc.SslGcRcon.getDescriptor(),
-        });
+        }, assigner);
     internal_static_proto_gc_AutoRefRegistration_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_gc_AutoRefRegistration_fieldAccessorTable = new

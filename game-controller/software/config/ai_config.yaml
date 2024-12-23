@@ -1,0 +1,46 @@
+# General
+goalkeeperId: 0
+
+# MoveToPoint
+kpPos: 0.002
+kiPos: 0.000000
+kdPos: 0.0000
+kpOrientation: 3
+kiOrientation: 0.000000
+kdOrientation: 0.0000
+
+# Pathfinding
+nodeRadius: 50
+boundSafety: 0
+robotSafety: 75
+penaltyScale: 100000
+gridExtend: 250
+collisionSpeedScale: 0.1
+collisionExtrapolation: 0.2
+
+# PathToFormation
+pathToFormationOccupyDist: 300
+
+# KickToPoint
+kickToPointAngleTolerance: 0.0872665
+
+# KickFromPos
+kickFromPosDistTolerance: 100
+
+# GoalShoot
+goalShootKickFromSearchDist: 1000
+goalShootKickFromSearchSpacing: 200
+goalShootKickToSearchSpacing: 100
+goalShootDistToObstaclesScoreFactor: 3
+goalShootDistToShooterScoreFactor: 1
+goalShootKickSpeed: 8000
+
+# Pass
+passKickReceiverDistThreshold: 200
+passKickFromSearchDist: 1000
+passKickFromSearchSpacing: 200
+passDistToObstaclesScoreFactor: 10
+passDistToPasserScoreFactor: 0
+passCatchBallSpeedThreshold: 500
+passCatchBallAngleTolerance: 0.261799
+passKickSpeed: 3000

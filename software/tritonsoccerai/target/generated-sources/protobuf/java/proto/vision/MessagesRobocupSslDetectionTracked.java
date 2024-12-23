@@ -80,8 +80,6 @@ public final class MessagesRobocupSslDetectionTracked {
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -89,10 +87,6 @@ public final class MessagesRobocupSslDetectionTracked {
       return forNumber(value);
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
     public static TeamColor forNumber(int value) {
       switch (value) {
         case 0: return TEAM_COLOR_UNKNOWN;
@@ -197,8 +191,6 @@ public final class MessagesRobocupSslDetectionTracked {
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -206,10 +198,6 @@ public final class MessagesRobocupSslDetectionTracked {
       return forNumber(value);
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
     public static Capability forNumber(int value) {
       switch (value) {
         case 0: return CAPABILITY_UNKNOWN;
@@ -271,23 +259,19 @@ public final class MessagesRobocupSslDetectionTracked {
 
     /**
      * <code>required float x = 1;</code>
-     * @return Whether the x field is set.
      */
     boolean hasX();
     /**
      * <code>required float x = 1;</code>
-     * @return The x.
      */
     float getX();
 
     /**
      * <code>required float y = 2;</code>
-     * @return Whether the y field is set.
      */
     boolean hasY();
     /**
      * <code>required float y = 2;</code>
-     * @return The y.
      */
     float getY();
   }
@@ -298,7 +282,7 @@ public final class MessagesRobocupSslDetectionTracked {
    *
    * Protobuf type {@code proto.vision.Vector2}
    */
-  public static final class Vector2 extends
+  public  static final class Vector2 extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.vision.Vector2)
       Vector2OrBuilder {
@@ -308,19 +292,62 @@ public final class MessagesRobocupSslDetectionTracked {
       super(builder);
     }
     private Vector2() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Vector2();
+      x_ = 0F;
+      y_ = 0F;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Vector2(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+              bitField0_ |= 0x00000001;
+              x_ = input.readFloat();
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              y_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -337,39 +364,31 @@ public final class MessagesRobocupSslDetectionTracked {
 
     private int bitField0_;
     public static final int X_FIELD_NUMBER = 1;
-    private float x_ = 0F;
+    private float x_;
     /**
      * <code>required float x = 1;</code>
-     * @return Whether the x field is set.
      */
-    @java.lang.Override
     public boolean hasX() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required float x = 1;</code>
-     * @return The x.
      */
-    @java.lang.Override
     public float getX() {
       return x_;
     }
 
     public static final int Y_FIELD_NUMBER = 2;
-    private float y_ = 0F;
+    private float y_;
     /**
      * <code>required float y = 2;</code>
-     * @return Whether the y field is set.
      */
-    @java.lang.Override
     public boolean hasY() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>required float y = 2;</code>
-     * @return The y.
      */
-    @java.lang.Override
     public float getY() {
       return y_;
     }
@@ -396,13 +415,13 @@ public final class MessagesRobocupSslDetectionTracked {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeFloat(1, x_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeFloat(2, y_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -411,15 +430,15 @@ public final class MessagesRobocupSslDetectionTracked {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, x_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, y_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -434,20 +453,23 @@ public final class MessagesRobocupSslDetectionTracked {
       }
       proto.vision.MessagesRobocupSslDetectionTracked.Vector2 other = (proto.vision.MessagesRobocupSslDetectionTracked.Vector2) obj;
 
-      if (hasX() != other.hasX()) return false;
+      boolean result = true;
+      result = result && (hasX() == other.hasX());
       if (hasX()) {
-        if (java.lang.Float.floatToIntBits(getX())
-            != java.lang.Float.floatToIntBits(
-                other.getX())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getX())
+            == java.lang.Float.floatToIntBits(
+                other.getX()));
       }
-      if (hasY() != other.hasY()) return false;
+      result = result && (hasY() == other.hasY());
       if (hasY()) {
-        if (java.lang.Float.floatToIntBits(getY())
-            != java.lang.Float.floatToIntBits(
-                other.getY())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getY())
+            == java.lang.Float.floatToIntBits(
+                other.getY()));
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -467,7 +489,7 @@ public final class MessagesRobocupSslDetectionTracked {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getY());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -588,20 +610,26 @@ public final class MessagesRobocupSslDetectionTracked {
 
       // Construct using proto.vision.MessagesRobocupSslDetectionTracked.Vector2.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         x_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000001);
         y_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -628,56 +656,52 @@ public final class MessagesRobocupSslDetectionTracked {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslDetectionTracked.Vector2 buildPartial() {
         proto.vision.MessagesRobocupSslDetectionTracked.Vector2 result = new proto.vision.MessagesRobocupSslDetectionTracked.Vector2(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.x_ = x_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.y_ = y_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.vision.MessagesRobocupSslDetectionTracked.Vector2 result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.x_ = x_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.y_ = y_;
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -697,7 +721,7 @@ public final class MessagesRobocupSslDetectionTracked {
         if (other.hasY()) {
           setY(other.getY());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -718,40 +742,17 @@ public final class MessagesRobocupSslDetectionTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.vision.MessagesRobocupSslDetectionTracked.Vector2 parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                x_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 13
-              case 21: {
-                y_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 21
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.vision.MessagesRobocupSslDetectionTracked.Vector2) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -759,35 +760,27 @@ public final class MessagesRobocupSslDetectionTracked {
       private float x_ ;
       /**
        * <code>required float x = 1;</code>
-       * @return Whether the x field is set.
        */
-      @java.lang.Override
       public boolean hasX() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required float x = 1;</code>
-       * @return The x.
        */
-      @java.lang.Override
       public float getX() {
         return x_;
       }
       /**
        * <code>required float x = 1;</code>
-       * @param value The x to set.
-       * @return This builder for chaining.
        */
       public Builder setX(float value) {
-        
-        x_ = value;
         bitField0_ |= 0x00000001;
+        x_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float x = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearX() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -799,35 +792,27 @@ public final class MessagesRobocupSslDetectionTracked {
       private float y_ ;
       /**
        * <code>required float y = 2;</code>
-       * @return Whether the y field is set.
        */
-      @java.lang.Override
       public boolean hasY() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required float y = 2;</code>
-       * @return The y.
        */
-      @java.lang.Override
       public float getY() {
         return y_;
       }
       /**
        * <code>required float y = 2;</code>
-       * @param value The y to set.
-       * @return This builder for chaining.
        */
       public Builder setY(float value) {
-        
-        y_ = value;
         bitField0_ |= 0x00000002;
+        y_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float y = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearY() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -868,18 +853,7 @@ public final class MessagesRobocupSslDetectionTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Vector2(input, extensionRegistry);
       }
     };
 
@@ -905,34 +879,28 @@ public final class MessagesRobocupSslDetectionTracked {
 
     /**
      * <code>required float x = 1;</code>
-     * @return Whether the x field is set.
      */
     boolean hasX();
     /**
      * <code>required float x = 1;</code>
-     * @return The x.
      */
     float getX();
 
     /**
      * <code>required float y = 2;</code>
-     * @return Whether the y field is set.
      */
     boolean hasY();
     /**
      * <code>required float y = 2;</code>
-     * @return The y.
      */
     float getY();
 
     /**
      * <code>required float z = 3;</code>
-     * @return Whether the z field is set.
      */
     boolean hasZ();
     /**
      * <code>required float z = 3;</code>
-     * @return The z.
      */
     float getZ();
   }
@@ -943,7 +911,7 @@ public final class MessagesRobocupSslDetectionTracked {
    *
    * Protobuf type {@code proto.vision.Vector3}
    */
-  public static final class Vector3 extends
+  public  static final class Vector3 extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.vision.Vector3)
       Vector3OrBuilder {
@@ -953,19 +921,68 @@ public final class MessagesRobocupSslDetectionTracked {
       super(builder);
     }
     private Vector3() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Vector3();
+      x_ = 0F;
+      y_ = 0F;
+      z_ = 0F;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Vector3(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+              bitField0_ |= 0x00000001;
+              x_ = input.readFloat();
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              y_ = input.readFloat();
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              z_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -982,58 +999,46 @@ public final class MessagesRobocupSslDetectionTracked {
 
     private int bitField0_;
     public static final int X_FIELD_NUMBER = 1;
-    private float x_ = 0F;
+    private float x_;
     /**
      * <code>required float x = 1;</code>
-     * @return Whether the x field is set.
      */
-    @java.lang.Override
     public boolean hasX() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required float x = 1;</code>
-     * @return The x.
      */
-    @java.lang.Override
     public float getX() {
       return x_;
     }
 
     public static final int Y_FIELD_NUMBER = 2;
-    private float y_ = 0F;
+    private float y_;
     /**
      * <code>required float y = 2;</code>
-     * @return Whether the y field is set.
      */
-    @java.lang.Override
     public boolean hasY() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>required float y = 2;</code>
-     * @return The y.
      */
-    @java.lang.Override
     public float getY() {
       return y_;
     }
 
     public static final int Z_FIELD_NUMBER = 3;
-    private float z_ = 0F;
+    private float z_;
     /**
      * <code>required float z = 3;</code>
-     * @return Whether the z field is set.
      */
-    @java.lang.Override
     public boolean hasZ() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>required float z = 3;</code>
-     * @return The z.
      */
-    @java.lang.Override
     public float getZ() {
       return z_;
     }
@@ -1064,16 +1069,16 @@ public final class MessagesRobocupSslDetectionTracked {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeFloat(1, x_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeFloat(2, y_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeFloat(3, z_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1082,19 +1087,19 @@ public final class MessagesRobocupSslDetectionTracked {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, x_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, y_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, z_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1109,26 +1114,30 @@ public final class MessagesRobocupSslDetectionTracked {
       }
       proto.vision.MessagesRobocupSslDetectionTracked.Vector3 other = (proto.vision.MessagesRobocupSslDetectionTracked.Vector3) obj;
 
-      if (hasX() != other.hasX()) return false;
+      boolean result = true;
+      result = result && (hasX() == other.hasX());
       if (hasX()) {
-        if (java.lang.Float.floatToIntBits(getX())
-            != java.lang.Float.floatToIntBits(
-                other.getX())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getX())
+            == java.lang.Float.floatToIntBits(
+                other.getX()));
       }
-      if (hasY() != other.hasY()) return false;
+      result = result && (hasY() == other.hasY());
       if (hasY()) {
-        if (java.lang.Float.floatToIntBits(getY())
-            != java.lang.Float.floatToIntBits(
-                other.getY())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getY())
+            == java.lang.Float.floatToIntBits(
+                other.getY()));
       }
-      if (hasZ() != other.hasZ()) return false;
+      result = result && (hasZ() == other.hasZ());
       if (hasZ()) {
-        if (java.lang.Float.floatToIntBits(getZ())
-            != java.lang.Float.floatToIntBits(
-                other.getZ())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getZ())
+            == java.lang.Float.floatToIntBits(
+                other.getZ()));
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1153,7 +1162,7 @@ public final class MessagesRobocupSslDetectionTracked {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getZ());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1274,21 +1283,28 @@ public final class MessagesRobocupSslDetectionTracked {
 
       // Construct using proto.vision.MessagesRobocupSslDetectionTracked.Vector3.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         x_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000001);
         y_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
         z_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -1315,60 +1331,56 @@ public final class MessagesRobocupSslDetectionTracked {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslDetectionTracked.Vector3 buildPartial() {
         proto.vision.MessagesRobocupSslDetectionTracked.Vector3 result = new proto.vision.MessagesRobocupSslDetectionTracked.Vector3(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.x_ = x_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.y_ = y_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.z_ = z_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.vision.MessagesRobocupSslDetectionTracked.Vector3 result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.x_ = x_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.y_ = y_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.z_ = z_;
-          to_bitField0_ |= 0x00000004;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1391,7 +1403,7 @@ public final class MessagesRobocupSslDetectionTracked {
         if (other.hasZ()) {
           setZ(other.getZ());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1415,45 +1427,17 @@ public final class MessagesRobocupSslDetectionTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.vision.MessagesRobocupSslDetectionTracked.Vector3 parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                x_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 13
-              case 21: {
-                y_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 21
-              case 29: {
-                z_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 29
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.vision.MessagesRobocupSslDetectionTracked.Vector3) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1461,35 +1445,27 @@ public final class MessagesRobocupSslDetectionTracked {
       private float x_ ;
       /**
        * <code>required float x = 1;</code>
-       * @return Whether the x field is set.
        */
-      @java.lang.Override
       public boolean hasX() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required float x = 1;</code>
-       * @return The x.
        */
-      @java.lang.Override
       public float getX() {
         return x_;
       }
       /**
        * <code>required float x = 1;</code>
-       * @param value The x to set.
-       * @return This builder for chaining.
        */
       public Builder setX(float value) {
-        
-        x_ = value;
         bitField0_ |= 0x00000001;
+        x_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float x = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearX() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1501,35 +1477,27 @@ public final class MessagesRobocupSslDetectionTracked {
       private float y_ ;
       /**
        * <code>required float y = 2;</code>
-       * @return Whether the y field is set.
        */
-      @java.lang.Override
       public boolean hasY() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required float y = 2;</code>
-       * @return The y.
        */
-      @java.lang.Override
       public float getY() {
         return y_;
       }
       /**
        * <code>required float y = 2;</code>
-       * @param value The y to set.
-       * @return This builder for chaining.
        */
       public Builder setY(float value) {
-        
-        y_ = value;
         bitField0_ |= 0x00000002;
+        y_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float y = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearY() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -1541,35 +1509,27 @@ public final class MessagesRobocupSslDetectionTracked {
       private float z_ ;
       /**
        * <code>required float z = 3;</code>
-       * @return Whether the z field is set.
        */
-      @java.lang.Override
       public boolean hasZ() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>required float z = 3;</code>
-       * @return The z.
        */
-      @java.lang.Override
       public float getZ() {
         return z_;
       }
       /**
        * <code>required float z = 3;</code>
-       * @param value The z to set.
-       * @return This builder for chaining.
        */
       public Builder setZ(float value) {
-        
-        z_ = value;
         bitField0_ |= 0x00000004;
+        z_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float z = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearZ() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -1610,18 +1570,7 @@ public final class MessagesRobocupSslDetectionTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Vector3(input, extensionRegistry);
       }
     };
 
@@ -1651,7 +1600,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required uint32 id = 1;</code>
-     * @return Whether the id field is set.
      */
     boolean hasId();
     /**
@@ -1660,7 +1608,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required uint32 id = 1;</code>
-     * @return The id.
      */
     int getId();
 
@@ -1670,7 +1617,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.TeamColor team_color = 2;</code>
-     * @return Whether the teamColor field is set.
      */
     boolean hasTeamColor();
     /**
@@ -1679,7 +1625,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.TeamColor team_color = 2;</code>
-     * @return The teamColor.
      */
     proto.vision.MessagesRobocupSslDetectionTracked.TeamColor getTeamColor();
   }
@@ -1690,7 +1635,7 @@ public final class MessagesRobocupSslDetectionTracked {
    *
    * Protobuf type {@code proto.vision.RobotId}
    */
-  public static final class RobotId extends
+  public  static final class RobotId extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.vision.RobotId)
       RobotIdOrBuilder {
@@ -1700,20 +1645,69 @@ public final class MessagesRobocupSslDetectionTracked {
       super(builder);
     }
     private RobotId() {
+      id_ = 0;
       teamColor_ = 0;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new RobotId();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private RobotId(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              proto.vision.MessagesRobocupSslDetectionTracked.TeamColor value = proto.vision.MessagesRobocupSslDetectionTracked.TeamColor.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(2, rawValue);
+              } else {
+                bitField0_ |= 0x00000002;
+                teamColor_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1730,18 +1724,16 @@ public final class MessagesRobocupSslDetectionTracked {
 
     private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
-    private int id_ = 0;
+    private int id_;
     /**
      * <pre>
      * The robot number
      * </pre>
      *
      * <code>required uint32 id = 1;</code>
-     * @return Whether the id field is set.
      */
-    @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -1749,25 +1741,22 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required uint32 id = 1;</code>
-     * @return The id.
      */
-    @java.lang.Override
     public int getId() {
       return id_;
     }
 
     public static final int TEAM_COLOR_FIELD_NUMBER = 2;
-    private int teamColor_ = 0;
+    private int teamColor_;
     /**
      * <pre>
      * The team color
      * </pre>
      *
      * <code>required .proto.vision.TeamColor team_color = 2;</code>
-     * @return Whether the teamColor field is set.
      */
-    @java.lang.Override public boolean hasTeamColor() {
-      return ((bitField0_ & 0x00000002) != 0);
+    public boolean hasTeamColor() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -1775,10 +1764,10 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.TeamColor team_color = 2;</code>
-     * @return The teamColor.
      */
-    @java.lang.Override public proto.vision.MessagesRobocupSslDetectionTracked.TeamColor getTeamColor() {
-      proto.vision.MessagesRobocupSslDetectionTracked.TeamColor result = proto.vision.MessagesRobocupSslDetectionTracked.TeamColor.forNumber(teamColor_);
+    public proto.vision.MessagesRobocupSslDetectionTracked.TeamColor getTeamColor() {
+      @SuppressWarnings("deprecation")
+      proto.vision.MessagesRobocupSslDetectionTracked.TeamColor result = proto.vision.MessagesRobocupSslDetectionTracked.TeamColor.valueOf(teamColor_);
       return result == null ? proto.vision.MessagesRobocupSslDetectionTracked.TeamColor.TEAM_COLOR_UNKNOWN : result;
     }
 
@@ -1804,13 +1793,13 @@ public final class MessagesRobocupSslDetectionTracked {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeUInt32(1, id_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeEnum(2, teamColor_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1819,15 +1808,15 @@ public final class MessagesRobocupSslDetectionTracked {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, id_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, teamColor_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1842,17 +1831,18 @@ public final class MessagesRobocupSslDetectionTracked {
       }
       proto.vision.MessagesRobocupSslDetectionTracked.RobotId other = (proto.vision.MessagesRobocupSslDetectionTracked.RobotId) obj;
 
-      if (hasId() != other.hasId()) return false;
+      boolean result = true;
+      result = result && (hasId() == other.hasId());
       if (hasId()) {
-        if (getId()
-            != other.getId()) return false;
+        result = result && (getId()
+            == other.getId());
       }
-      if (hasTeamColor() != other.hasTeamColor()) return false;
+      result = result && (hasTeamColor() == other.hasTeamColor());
       if (hasTeamColor()) {
-        if (teamColor_ != other.teamColor_) return false;
+        result = result && teamColor_ == other.teamColor_;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1870,7 +1860,7 @@ public final class MessagesRobocupSslDetectionTracked {
         hash = (37 * hash) + TEAM_COLOR_FIELD_NUMBER;
         hash = (53 * hash) + teamColor_;
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1991,20 +1981,26 @@ public final class MessagesRobocupSslDetectionTracked {
 
       // Construct using proto.vision.MessagesRobocupSslDetectionTracked.RobotId.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
         teamColor_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -2031,56 +2027,52 @@ public final class MessagesRobocupSslDetectionTracked {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslDetectionTracked.RobotId buildPartial() {
         proto.vision.MessagesRobocupSslDetectionTracked.RobotId result = new proto.vision.MessagesRobocupSslDetectionTracked.RobotId(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.teamColor_ = teamColor_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.vision.MessagesRobocupSslDetectionTracked.RobotId result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.teamColor_ = teamColor_;
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2100,7 +2092,7 @@ public final class MessagesRobocupSslDetectionTracked {
         if (other.hasTeamColor()) {
           setTeamColor(other.getTeamColor());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2121,47 +2113,17 @@ public final class MessagesRobocupSslDetectionTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.vision.MessagesRobocupSslDetectionTracked.RobotId parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                id_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                int tmpRaw = input.readEnum();
-                proto.vision.MessagesRobocupSslDetectionTracked.TeamColor tmpValue =
-                    proto.vision.MessagesRobocupSslDetectionTracked.TeamColor.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(2, tmpRaw);
-                } else {
-                  teamColor_ = tmpRaw;
-                  bitField0_ |= 0x00000002;
-                }
-                break;
-              } // case 16
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.vision.MessagesRobocupSslDetectionTracked.RobotId) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -2173,11 +2135,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required uint32 id = 1;</code>
-       * @return Whether the id field is set.
        */
-      @java.lang.Override
       public boolean hasId() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -2185,9 +2145,7 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required uint32 id = 1;</code>
-       * @return The id.
        */
-      @java.lang.Override
       public int getId() {
         return id_;
       }
@@ -2197,13 +2155,10 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required uint32 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
        */
       public Builder setId(int value) {
-        
-        id_ = value;
         bitField0_ |= 0x00000001;
+        id_ = value;
         onChanged();
         return this;
       }
@@ -2213,7 +2168,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required uint32 id = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearId() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -2229,10 +2183,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required .proto.vision.TeamColor team_color = 2;</code>
-       * @return Whether the teamColor field is set.
        */
-      @java.lang.Override public boolean hasTeamColor() {
-        return ((bitField0_ & 0x00000002) != 0);
+      public boolean hasTeamColor() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -2240,11 +2193,10 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required .proto.vision.TeamColor team_color = 2;</code>
-       * @return The teamColor.
        */
-      @java.lang.Override
       public proto.vision.MessagesRobocupSslDetectionTracked.TeamColor getTeamColor() {
-        proto.vision.MessagesRobocupSslDetectionTracked.TeamColor result = proto.vision.MessagesRobocupSslDetectionTracked.TeamColor.forNumber(teamColor_);
+        @SuppressWarnings("deprecation")
+        proto.vision.MessagesRobocupSslDetectionTracked.TeamColor result = proto.vision.MessagesRobocupSslDetectionTracked.TeamColor.valueOf(teamColor_);
         return result == null ? proto.vision.MessagesRobocupSslDetectionTracked.TeamColor.TEAM_COLOR_UNKNOWN : result;
       }
       /**
@@ -2253,8 +2205,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required .proto.vision.TeamColor team_color = 2;</code>
-       * @param value The teamColor to set.
-       * @return This builder for chaining.
        */
       public Builder setTeamColor(proto.vision.MessagesRobocupSslDetectionTracked.TeamColor value) {
         if (value == null) {
@@ -2271,7 +2221,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required .proto.vision.TeamColor team_color = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTeamColor() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -2312,18 +2261,7 @@ public final class MessagesRobocupSslDetectionTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RobotId(input, extensionRegistry);
       }
     };
 
@@ -2353,7 +2291,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.Vector3 pos = 1;</code>
-     * @return Whether the pos field is set.
      */
     boolean hasPos();
     /**
@@ -2362,7 +2299,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.Vector3 pos = 1;</code>
-     * @return The pos.
      */
     proto.vision.MessagesRobocupSslDetectionTracked.Vector3 getPos();
     /**
@@ -2380,7 +2316,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.Vector3 vel = 2;</code>
-     * @return Whether the vel field is set.
      */
     boolean hasVel();
     /**
@@ -2389,7 +2324,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.Vector3 vel = 2;</code>
-     * @return The vel.
      */
     proto.vision.MessagesRobocupSslDetectionTracked.Vector3 getVel();
     /**
@@ -2409,7 +2343,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional float visibility = 3;</code>
-     * @return Whether the visibility field is set.
      */
     boolean hasVisibility();
     /**
@@ -2420,7 +2353,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional float visibility = 3;</code>
-     * @return The visibility.
      */
     float getVisibility();
   }
@@ -2431,7 +2363,7 @@ public final class MessagesRobocupSslDetectionTracked {
    *
    * Protobuf type {@code proto.vision.TrackedBall}
    */
-  public static final class TrackedBall extends
+  public  static final class TrackedBall extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.vision.TrackedBall)
       TrackedBallOrBuilder {
@@ -2441,19 +2373,82 @@ public final class MessagesRobocupSslDetectionTracked {
       super(builder);
     }
     private TrackedBall() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TrackedBall();
+      visibility_ = 0F;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private TrackedBall(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              proto.vision.MessagesRobocupSslDetectionTracked.Vector3.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = pos_.toBuilder();
+              }
+              pos_ = input.readMessage(proto.vision.MessagesRobocupSslDetectionTracked.Vector3.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pos_);
+                pos_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 18: {
+              proto.vision.MessagesRobocupSslDetectionTracked.Vector3.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = vel_.toBuilder();
+              }
+              vel_ = input.readMessage(proto.vision.MessagesRobocupSslDetectionTracked.Vector3.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(vel_);
+                vel_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              visibility_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2477,11 +2472,9 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.Vector3 pos = 1;</code>
-     * @return Whether the pos field is set.
      */
-    @java.lang.Override
     public boolean hasPos() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -2489,9 +2482,7 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.Vector3 pos = 1;</code>
-     * @return The pos.
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.Vector3 getPos() {
       return pos_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.Vector3.getDefaultInstance() : pos_;
     }
@@ -2502,7 +2493,6 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>required .proto.vision.Vector3 pos = 1;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.Vector3OrBuilder getPosOrBuilder() {
       return pos_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.Vector3.getDefaultInstance() : pos_;
     }
@@ -2515,11 +2505,9 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.Vector3 vel = 2;</code>
-     * @return Whether the vel field is set.
      */
-    @java.lang.Override
     public boolean hasVel() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -2527,9 +2515,7 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.Vector3 vel = 2;</code>
-     * @return The vel.
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.Vector3 getVel() {
       return vel_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.Vector3.getDefaultInstance() : vel_;
     }
@@ -2540,13 +2526,12 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>optional .proto.vision.Vector3 vel = 2;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.Vector3OrBuilder getVelOrBuilder() {
       return vel_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.Vector3.getDefaultInstance() : vel_;
     }
 
     public static final int VISIBILITY_FIELD_NUMBER = 3;
-    private float visibility_ = 0F;
+    private float visibility_;
     /**
      * <pre>
      * The visibility of the ball
@@ -2555,11 +2540,9 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional float visibility = 3;</code>
-     * @return Whether the visibility field is set.
      */
-    @java.lang.Override
     public boolean hasVisibility() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -2569,9 +2552,7 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional float visibility = 3;</code>
-     * @return The visibility.
      */
-    @java.lang.Override
     public float getVisibility() {
       return visibility_;
     }
@@ -2604,16 +2585,16 @@ public final class MessagesRobocupSslDetectionTracked {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, getPos());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, getVel());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeFloat(3, visibility_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2622,19 +2603,19 @@ public final class MessagesRobocupSslDetectionTracked {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getPos());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getVel());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, visibility_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2649,24 +2630,26 @@ public final class MessagesRobocupSslDetectionTracked {
       }
       proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall other = (proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall) obj;
 
-      if (hasPos() != other.hasPos()) return false;
+      boolean result = true;
+      result = result && (hasPos() == other.hasPos());
       if (hasPos()) {
-        if (!getPos()
-            .equals(other.getPos())) return false;
+        result = result && getPos()
+            .equals(other.getPos());
       }
-      if (hasVel() != other.hasVel()) return false;
+      result = result && (hasVel() == other.hasVel());
       if (hasVel()) {
-        if (!getVel()
-            .equals(other.getVel())) return false;
+        result = result && getVel()
+            .equals(other.getVel());
       }
-      if (hasVisibility() != other.hasVisibility()) return false;
+      result = result && (hasVisibility() == other.hasVisibility());
       if (hasVisibility()) {
-        if (java.lang.Float.floatToIntBits(getVisibility())
-            != java.lang.Float.floatToIntBits(
-                other.getVisibility())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getVisibility())
+            == java.lang.Float.floatToIntBits(
+                other.getVisibility()));
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2689,7 +2672,7 @@ public final class MessagesRobocupSslDetectionTracked {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getVisibility());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2828,18 +2811,20 @@ public final class MessagesRobocupSslDetectionTracked {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
-          posBuilder_ = null;
+        if (posBuilder_ == null) {
+          pos_ = null;
+        } else {
+          posBuilder_.clear();
         }
-        vel_ = null;
-        if (velBuilder_ != null) {
-          velBuilder_.dispose();
-          velBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (velBuilder_ == null) {
+          vel_ = null;
+        } else {
+          velBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         visibility_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -2866,64 +2851,64 @@ public final class MessagesRobocupSslDetectionTracked {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall buildPartial() {
         proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall result = new proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (posBuilder_ == null) {
+          result.pos_ = pos_;
+        } else {
+          result.pos_ = posBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (velBuilder_ == null) {
+          result.vel_ = vel_;
+        } else {
+          result.vel_ = velBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.visibility_ = visibility_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.pos_ = posBuilder_ == null
-              ? pos_
-              : posBuilder_.build();
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.vel_ = velBuilder_ == null
-              ? vel_
-              : velBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.visibility_ = visibility_;
-          to_bitField0_ |= 0x00000004;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2946,7 +2931,7 @@ public final class MessagesRobocupSslDetectionTracked {
         if (other.hasVisibility()) {
           setVisibility(other.getVisibility());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2972,54 +2957,22 @@ public final class MessagesRobocupSslDetectionTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getVelFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 29: {
-                visibility_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 29
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
 
-      private proto.vision.MessagesRobocupSslDetectionTracked.Vector3 pos_;
+      private proto.vision.MessagesRobocupSslDetectionTracked.Vector3 pos_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.vision.MessagesRobocupSslDetectionTracked.Vector3, proto.vision.MessagesRobocupSslDetectionTracked.Vector3.Builder, proto.vision.MessagesRobocupSslDetectionTracked.Vector3OrBuilder> posBuilder_;
       /**
@@ -3028,10 +2981,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required .proto.vision.Vector3 pos = 1;</code>
-       * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -3039,7 +2991,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required .proto.vision.Vector3 pos = 1;</code>
-       * @return The pos.
        */
       public proto.vision.MessagesRobocupSslDetectionTracked.Vector3 getPos() {
         if (posBuilder_ == null) {
@@ -3061,11 +3012,11 @@ public final class MessagesRobocupSslDetectionTracked {
             throw new NullPointerException();
           }
           pos_ = value;
+          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -3079,11 +3030,11 @@ public final class MessagesRobocupSslDetectionTracked {
           proto.vision.MessagesRobocupSslDetectionTracked.Vector3.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
+          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -3095,18 +3046,19 @@ public final class MessagesRobocupSslDetectionTracked {
        */
       public Builder mergePos(proto.vision.MessagesRobocupSslDetectionTracked.Vector3 value) {
         if (posBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            pos_ != null &&
-            pos_ != proto.vision.MessagesRobocupSslDetectionTracked.Vector3.getDefaultInstance()) {
-            getPosBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              pos_ != null &&
+              pos_ != proto.vision.MessagesRobocupSslDetectionTracked.Vector3.getDefaultInstance()) {
+            pos_ =
+              proto.vision.MessagesRobocupSslDetectionTracked.Vector3.newBuilder(pos_).mergeFrom(value).buildPartial();
           } else {
             pos_ = value;
           }
+          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -3117,13 +3069,13 @@ public final class MessagesRobocupSslDetectionTracked {
        * <code>required .proto.vision.Vector3 pos = 1;</code>
        */
       public Builder clearPos() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
-          posBuilder_ = null;
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          posBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
       /**
@@ -3174,7 +3126,7 @@ public final class MessagesRobocupSslDetectionTracked {
         return posBuilder_;
       }
 
-      private proto.vision.MessagesRobocupSslDetectionTracked.Vector3 vel_;
+      private proto.vision.MessagesRobocupSslDetectionTracked.Vector3 vel_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.vision.MessagesRobocupSslDetectionTracked.Vector3, proto.vision.MessagesRobocupSslDetectionTracked.Vector3.Builder, proto.vision.MessagesRobocupSslDetectionTracked.Vector3OrBuilder> velBuilder_;
       /**
@@ -3183,10 +3135,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional .proto.vision.Vector3 vel = 2;</code>
-       * @return Whether the vel field is set.
        */
       public boolean hasVel() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -3194,7 +3145,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional .proto.vision.Vector3 vel = 2;</code>
-       * @return The vel.
        */
       public proto.vision.MessagesRobocupSslDetectionTracked.Vector3 getVel() {
         if (velBuilder_ == null) {
@@ -3216,11 +3166,11 @@ public final class MessagesRobocupSslDetectionTracked {
             throw new NullPointerException();
           }
           vel_ = value;
+          onChanged();
         } else {
           velBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -3234,11 +3184,11 @@ public final class MessagesRobocupSslDetectionTracked {
           proto.vision.MessagesRobocupSslDetectionTracked.Vector3.Builder builderForValue) {
         if (velBuilder_ == null) {
           vel_ = builderForValue.build();
+          onChanged();
         } else {
           velBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -3250,18 +3200,19 @@ public final class MessagesRobocupSslDetectionTracked {
        */
       public Builder mergeVel(proto.vision.MessagesRobocupSslDetectionTracked.Vector3 value) {
         if (velBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            vel_ != null &&
-            vel_ != proto.vision.MessagesRobocupSslDetectionTracked.Vector3.getDefaultInstance()) {
-            getVelBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              vel_ != null &&
+              vel_ != proto.vision.MessagesRobocupSslDetectionTracked.Vector3.getDefaultInstance()) {
+            vel_ =
+              proto.vision.MessagesRobocupSslDetectionTracked.Vector3.newBuilder(vel_).mergeFrom(value).buildPartial();
           } else {
             vel_ = value;
           }
+          onChanged();
         } else {
           velBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -3272,13 +3223,13 @@ public final class MessagesRobocupSslDetectionTracked {
        * <code>optional .proto.vision.Vector3 vel = 2;</code>
        */
       public Builder clearVel() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        vel_ = null;
-        if (velBuilder_ != null) {
-          velBuilder_.dispose();
-          velBuilder_ = null;
+        if (velBuilder_ == null) {
+          vel_ = null;
+          onChanged();
+        } else {
+          velBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
@@ -3338,11 +3289,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional float visibility = 3;</code>
-       * @return Whether the visibility field is set.
        */
-      @java.lang.Override
       public boolean hasVisibility() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -3352,9 +3301,7 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional float visibility = 3;</code>
-       * @return The visibility.
        */
-      @java.lang.Override
       public float getVisibility() {
         return visibility_;
       }
@@ -3366,13 +3313,10 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional float visibility = 3;</code>
-       * @param value The visibility to set.
-       * @return This builder for chaining.
        */
       public Builder setVisibility(float value) {
-        
-        visibility_ = value;
         bitField0_ |= 0x00000004;
+        visibility_ = value;
         onChanged();
         return this;
       }
@@ -3384,7 +3328,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional float visibility = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearVisibility() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -3425,18 +3368,7 @@ public final class MessagesRobocupSslDetectionTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TrackedBall(input, extensionRegistry);
       }
     };
 
@@ -3466,7 +3398,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.Vector2 pos = 1;</code>
-     * @return Whether the pos field is set.
      */
     boolean hasPos();
     /**
@@ -3475,7 +3406,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.Vector2 pos = 1;</code>
-     * @return The pos.
      */
     proto.vision.MessagesRobocupSslDetectionTracked.Vector2 getPos();
     /**
@@ -3493,7 +3423,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.Vector3 vel = 2;</code>
-     * @return Whether the vel field is set.
      */
     boolean hasVel();
     /**
@@ -3502,7 +3431,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.Vector3 vel = 2;</code>
-     * @return The vel.
      */
     proto.vision.MessagesRobocupSslDetectionTracked.Vector3 getVel();
     /**
@@ -3520,7 +3448,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required double start_timestamp = 3;</code>
-     * @return Whether the startTimestamp field is set.
      */
     boolean hasStartTimestamp();
     /**
@@ -3529,7 +3456,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required double start_timestamp = 3;</code>
-     * @return The startTimestamp.
      */
     double getStartTimestamp();
 
@@ -3539,7 +3465,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional double stop_timestamp = 4;</code>
-     * @return Whether the stopTimestamp field is set.
      */
     boolean hasStopTimestamp();
     /**
@@ -3548,7 +3473,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional double stop_timestamp = 4;</code>
-     * @return The stopTimestamp.
      */
     double getStopTimestamp();
 
@@ -3558,7 +3482,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.Vector2 stop_pos = 5;</code>
-     * @return Whether the stopPos field is set.
      */
     boolean hasStopPos();
     /**
@@ -3567,7 +3490,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.Vector2 stop_pos = 5;</code>
-     * @return The stopPos.
      */
     proto.vision.MessagesRobocupSslDetectionTracked.Vector2 getStopPos();
     /**
@@ -3585,7 +3507,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.RobotId robot_id = 6;</code>
-     * @return Whether the robotId field is set.
      */
     boolean hasRobotId();
     /**
@@ -3594,7 +3515,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.RobotId robot_id = 6;</code>
-     * @return The robotId.
      */
     proto.vision.MessagesRobocupSslDetectionTracked.RobotId getRobotId();
     /**
@@ -3613,7 +3533,7 @@ public final class MessagesRobocupSslDetectionTracked {
    *
    * Protobuf type {@code proto.vision.KickedBall}
    */
-  public static final class KickedBall extends
+  public  static final class KickedBall extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.vision.KickedBall)
       KickedBallOrBuilder {
@@ -3623,19 +3543,114 @@ public final class MessagesRobocupSslDetectionTracked {
       super(builder);
     }
     private KickedBall() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new KickedBall();
+      startTimestamp_ = 0D;
+      stopTimestamp_ = 0D;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private KickedBall(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              proto.vision.MessagesRobocupSslDetectionTracked.Vector2.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = pos_.toBuilder();
+              }
+              pos_ = input.readMessage(proto.vision.MessagesRobocupSslDetectionTracked.Vector2.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pos_);
+                pos_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 18: {
+              proto.vision.MessagesRobocupSslDetectionTracked.Vector3.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = vel_.toBuilder();
+              }
+              vel_ = input.readMessage(proto.vision.MessagesRobocupSslDetectionTracked.Vector3.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(vel_);
+                vel_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 25: {
+              bitField0_ |= 0x00000004;
+              startTimestamp_ = input.readDouble();
+              break;
+            }
+            case 33: {
+              bitField0_ |= 0x00000008;
+              stopTimestamp_ = input.readDouble();
+              break;
+            }
+            case 42: {
+              proto.vision.MessagesRobocupSslDetectionTracked.Vector2.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                subBuilder = stopPos_.toBuilder();
+              }
+              stopPos_ = input.readMessage(proto.vision.MessagesRobocupSslDetectionTracked.Vector2.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(stopPos_);
+                stopPos_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000010;
+              break;
+            }
+            case 50: {
+              proto.vision.MessagesRobocupSslDetectionTracked.RobotId.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000020) == 0x00000020)) {
+                subBuilder = robotId_.toBuilder();
+              }
+              robotId_ = input.readMessage(proto.vision.MessagesRobocupSslDetectionTracked.RobotId.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(robotId_);
+                robotId_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000020;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3659,11 +3674,9 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.Vector2 pos = 1;</code>
-     * @return Whether the pos field is set.
      */
-    @java.lang.Override
     public boolean hasPos() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -3671,9 +3684,7 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.Vector2 pos = 1;</code>
-     * @return The pos.
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.Vector2 getPos() {
       return pos_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.Vector2.getDefaultInstance() : pos_;
     }
@@ -3684,7 +3695,6 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>required .proto.vision.Vector2 pos = 1;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.Vector2OrBuilder getPosOrBuilder() {
       return pos_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.Vector2.getDefaultInstance() : pos_;
     }
@@ -3697,11 +3707,9 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.Vector3 vel = 2;</code>
-     * @return Whether the vel field is set.
      */
-    @java.lang.Override
     public boolean hasVel() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -3709,9 +3717,7 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.Vector3 vel = 2;</code>
-     * @return The vel.
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.Vector3 getVel() {
       return vel_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.Vector3.getDefaultInstance() : vel_;
     }
@@ -3722,24 +3728,21 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>required .proto.vision.Vector3 vel = 2;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.Vector3OrBuilder getVelOrBuilder() {
       return vel_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.Vector3.getDefaultInstance() : vel_;
     }
 
     public static final int START_TIMESTAMP_FIELD_NUMBER = 3;
-    private double startTimestamp_ = 0D;
+    private double startTimestamp_;
     /**
      * <pre>
      * The unix timestamp [s] when the kick was performed
      * </pre>
      *
      * <code>required double start_timestamp = 3;</code>
-     * @return Whether the startTimestamp field is set.
      */
-    @java.lang.Override
     public boolean hasStartTimestamp() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -3747,26 +3750,22 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required double start_timestamp = 3;</code>
-     * @return The startTimestamp.
      */
-    @java.lang.Override
     public double getStartTimestamp() {
       return startTimestamp_;
     }
 
     public static final int STOP_TIMESTAMP_FIELD_NUMBER = 4;
-    private double stopTimestamp_ = 0D;
+    private double stopTimestamp_;
     /**
      * <pre>
      * The predicted unix timestamp [s] when the ball comes to a stop
      * </pre>
      *
      * <code>optional double stop_timestamp = 4;</code>
-     * @return Whether the stopTimestamp field is set.
      */
-    @java.lang.Override
     public boolean hasStopTimestamp() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <pre>
@@ -3774,9 +3773,7 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional double stop_timestamp = 4;</code>
-     * @return The stopTimestamp.
      */
-    @java.lang.Override
     public double getStopTimestamp() {
       return stopTimestamp_;
     }
@@ -3789,11 +3786,9 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.Vector2 stop_pos = 5;</code>
-     * @return Whether the stopPos field is set.
      */
-    @java.lang.Override
     public boolean hasStopPos() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <pre>
@@ -3801,9 +3796,7 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.Vector2 stop_pos = 5;</code>
-     * @return The stopPos.
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.Vector2 getStopPos() {
       return stopPos_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.Vector2.getDefaultInstance() : stopPos_;
     }
@@ -3814,7 +3807,6 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>optional .proto.vision.Vector2 stop_pos = 5;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.Vector2OrBuilder getStopPosOrBuilder() {
       return stopPos_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.Vector2.getDefaultInstance() : stopPos_;
     }
@@ -3827,11 +3819,9 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.RobotId robot_id = 6;</code>
-     * @return Whether the robotId field is set.
      */
-    @java.lang.Override
     public boolean hasRobotId() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <pre>
@@ -3839,9 +3829,7 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.RobotId robot_id = 6;</code>
-     * @return The robotId.
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.RobotId getRobotId() {
       return robotId_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.RobotId.getDefaultInstance() : robotId_;
     }
@@ -3852,7 +3840,6 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>optional .proto.vision.RobotId robot_id = 6;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.RobotIdOrBuilder getRobotIdOrBuilder() {
       return robotId_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.RobotId.getDefaultInstance() : robotId_;
     }
@@ -3903,25 +3890,25 @@ public final class MessagesRobocupSslDetectionTracked {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, getPos());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, getVel());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeDouble(3, startTimestamp_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeDouble(4, stopTimestamp_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeMessage(5, getStopPos());
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeMessage(6, getRobotId());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -3930,31 +3917,31 @@ public final class MessagesRobocupSslDetectionTracked {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getPos());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getVel());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(3, startTimestamp_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(4, stopTimestamp_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getStopPos());
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getRobotId());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3969,40 +3956,43 @@ public final class MessagesRobocupSslDetectionTracked {
       }
       proto.vision.MessagesRobocupSslDetectionTracked.KickedBall other = (proto.vision.MessagesRobocupSslDetectionTracked.KickedBall) obj;
 
-      if (hasPos() != other.hasPos()) return false;
+      boolean result = true;
+      result = result && (hasPos() == other.hasPos());
       if (hasPos()) {
-        if (!getPos()
-            .equals(other.getPos())) return false;
+        result = result && getPos()
+            .equals(other.getPos());
       }
-      if (hasVel() != other.hasVel()) return false;
+      result = result && (hasVel() == other.hasVel());
       if (hasVel()) {
-        if (!getVel()
-            .equals(other.getVel())) return false;
+        result = result && getVel()
+            .equals(other.getVel());
       }
-      if (hasStartTimestamp() != other.hasStartTimestamp()) return false;
+      result = result && (hasStartTimestamp() == other.hasStartTimestamp());
       if (hasStartTimestamp()) {
-        if (java.lang.Double.doubleToLongBits(getStartTimestamp())
-            != java.lang.Double.doubleToLongBits(
-                other.getStartTimestamp())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getStartTimestamp())
+            == java.lang.Double.doubleToLongBits(
+                other.getStartTimestamp()));
       }
-      if (hasStopTimestamp() != other.hasStopTimestamp()) return false;
+      result = result && (hasStopTimestamp() == other.hasStopTimestamp());
       if (hasStopTimestamp()) {
-        if (java.lang.Double.doubleToLongBits(getStopTimestamp())
-            != java.lang.Double.doubleToLongBits(
-                other.getStopTimestamp())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getStopTimestamp())
+            == java.lang.Double.doubleToLongBits(
+                other.getStopTimestamp()));
       }
-      if (hasStopPos() != other.hasStopPos()) return false;
+      result = result && (hasStopPos() == other.hasStopPos());
       if (hasStopPos()) {
-        if (!getStopPos()
-            .equals(other.getStopPos())) return false;
+        result = result && getStopPos()
+            .equals(other.getStopPos());
       }
-      if (hasRobotId() != other.hasRobotId()) return false;
+      result = result && (hasRobotId() == other.hasRobotId());
       if (hasRobotId()) {
-        if (!getRobotId()
-            .equals(other.getRobotId())) return false;
+        result = result && getRobotId()
+            .equals(other.getRobotId());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -4038,7 +4028,7 @@ public final class MessagesRobocupSslDetectionTracked {
         hash = (37 * hash) + ROBOT_ID_FIELD_NUMBER;
         hash = (53 * hash) + getRobotId().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4179,29 +4169,34 @@ public final class MessagesRobocupSslDetectionTracked {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
-          posBuilder_ = null;
+        if (posBuilder_ == null) {
+          pos_ = null;
+        } else {
+          posBuilder_.clear();
         }
-        vel_ = null;
-        if (velBuilder_ != null) {
-          velBuilder_.dispose();
-          velBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (velBuilder_ == null) {
+          vel_ = null;
+        } else {
+          velBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         startTimestamp_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000004);
         stopTimestamp_ = 0D;
-        stopPos_ = null;
-        if (stopPosBuilder_ != null) {
-          stopPosBuilder_.dispose();
-          stopPosBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        if (stopPosBuilder_ == null) {
+          stopPos_ = null;
+        } else {
+          stopPosBuilder_.clear();
         }
-        robotId_ = null;
-        if (robotIdBuilder_ != null) {
-          robotIdBuilder_.dispose();
-          robotIdBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        if (robotIdBuilder_ == null) {
+          robotId_ = null;
+        } else {
+          robotIdBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -4228,80 +4223,84 @@ public final class MessagesRobocupSslDetectionTracked {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslDetectionTracked.KickedBall buildPartial() {
         proto.vision.MessagesRobocupSslDetectionTracked.KickedBall result = new proto.vision.MessagesRobocupSslDetectionTracked.KickedBall(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (posBuilder_ == null) {
+          result.pos_ = pos_;
+        } else {
+          result.pos_ = posBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (velBuilder_ == null) {
+          result.vel_ = vel_;
+        } else {
+          result.vel_ = velBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.startTimestamp_ = startTimestamp_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.stopTimestamp_ = stopTimestamp_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        if (stopPosBuilder_ == null) {
+          result.stopPos_ = stopPos_;
+        } else {
+          result.stopPos_ = stopPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        if (robotIdBuilder_ == null) {
+          result.robotId_ = robotId_;
+        } else {
+          result.robotId_ = robotIdBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.vision.MessagesRobocupSslDetectionTracked.KickedBall result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.pos_ = posBuilder_ == null
-              ? pos_
-              : posBuilder_.build();
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.vel_ = velBuilder_ == null
-              ? vel_
-              : velBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.startTimestamp_ = startTimestamp_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.stopTimestamp_ = stopTimestamp_;
-          to_bitField0_ |= 0x00000008;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.stopPos_ = stopPosBuilder_ == null
-              ? stopPos_
-              : stopPosBuilder_.build();
-          to_bitField0_ |= 0x00000010;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.robotId_ = robotIdBuilder_ == null
-              ? robotId_
-              : robotIdBuilder_.build();
-          to_bitField0_ |= 0x00000020;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -4333,7 +4332,7 @@ public final class MessagesRobocupSslDetectionTracked {
         if (other.hasRobotId()) {
           mergeRobotId(other.getRobotId());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -4373,73 +4372,22 @@ public final class MessagesRobocupSslDetectionTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.vision.MessagesRobocupSslDetectionTracked.KickedBall parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getVelFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 25: {
-                startTimestamp_ = input.readDouble();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 25
-              case 33: {
-                stopTimestamp_ = input.readDouble();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 33
-              case 42: {
-                input.readMessage(
-                    getStopPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-              case 50: {
-                input.readMessage(
-                    getRobotIdFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 50
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.vision.MessagesRobocupSslDetectionTracked.KickedBall) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
 
-      private proto.vision.MessagesRobocupSslDetectionTracked.Vector2 pos_;
+      private proto.vision.MessagesRobocupSslDetectionTracked.Vector2 pos_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.vision.MessagesRobocupSslDetectionTracked.Vector2, proto.vision.MessagesRobocupSslDetectionTracked.Vector2.Builder, proto.vision.MessagesRobocupSslDetectionTracked.Vector2OrBuilder> posBuilder_;
       /**
@@ -4448,10 +4396,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required .proto.vision.Vector2 pos = 1;</code>
-       * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -4459,7 +4406,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required .proto.vision.Vector2 pos = 1;</code>
-       * @return The pos.
        */
       public proto.vision.MessagesRobocupSslDetectionTracked.Vector2 getPos() {
         if (posBuilder_ == null) {
@@ -4481,11 +4427,11 @@ public final class MessagesRobocupSslDetectionTracked {
             throw new NullPointerException();
           }
           pos_ = value;
+          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -4499,11 +4445,11 @@ public final class MessagesRobocupSslDetectionTracked {
           proto.vision.MessagesRobocupSslDetectionTracked.Vector2.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
+          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -4515,18 +4461,19 @@ public final class MessagesRobocupSslDetectionTracked {
        */
       public Builder mergePos(proto.vision.MessagesRobocupSslDetectionTracked.Vector2 value) {
         if (posBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            pos_ != null &&
-            pos_ != proto.vision.MessagesRobocupSslDetectionTracked.Vector2.getDefaultInstance()) {
-            getPosBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              pos_ != null &&
+              pos_ != proto.vision.MessagesRobocupSslDetectionTracked.Vector2.getDefaultInstance()) {
+            pos_ =
+              proto.vision.MessagesRobocupSslDetectionTracked.Vector2.newBuilder(pos_).mergeFrom(value).buildPartial();
           } else {
             pos_ = value;
           }
+          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -4537,13 +4484,13 @@ public final class MessagesRobocupSslDetectionTracked {
        * <code>required .proto.vision.Vector2 pos = 1;</code>
        */
       public Builder clearPos() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
-          posBuilder_ = null;
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          posBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
       /**
@@ -4594,7 +4541,7 @@ public final class MessagesRobocupSslDetectionTracked {
         return posBuilder_;
       }
 
-      private proto.vision.MessagesRobocupSslDetectionTracked.Vector3 vel_;
+      private proto.vision.MessagesRobocupSslDetectionTracked.Vector3 vel_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.vision.MessagesRobocupSslDetectionTracked.Vector3, proto.vision.MessagesRobocupSslDetectionTracked.Vector3.Builder, proto.vision.MessagesRobocupSslDetectionTracked.Vector3OrBuilder> velBuilder_;
       /**
@@ -4603,10 +4550,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required .proto.vision.Vector3 vel = 2;</code>
-       * @return Whether the vel field is set.
        */
       public boolean hasVel() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -4614,7 +4560,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required .proto.vision.Vector3 vel = 2;</code>
-       * @return The vel.
        */
       public proto.vision.MessagesRobocupSslDetectionTracked.Vector3 getVel() {
         if (velBuilder_ == null) {
@@ -4636,11 +4581,11 @@ public final class MessagesRobocupSslDetectionTracked {
             throw new NullPointerException();
           }
           vel_ = value;
+          onChanged();
         } else {
           velBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -4654,11 +4599,11 @@ public final class MessagesRobocupSslDetectionTracked {
           proto.vision.MessagesRobocupSslDetectionTracked.Vector3.Builder builderForValue) {
         if (velBuilder_ == null) {
           vel_ = builderForValue.build();
+          onChanged();
         } else {
           velBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -4670,18 +4615,19 @@ public final class MessagesRobocupSslDetectionTracked {
        */
       public Builder mergeVel(proto.vision.MessagesRobocupSslDetectionTracked.Vector3 value) {
         if (velBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            vel_ != null &&
-            vel_ != proto.vision.MessagesRobocupSslDetectionTracked.Vector3.getDefaultInstance()) {
-            getVelBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              vel_ != null &&
+              vel_ != proto.vision.MessagesRobocupSslDetectionTracked.Vector3.getDefaultInstance()) {
+            vel_ =
+              proto.vision.MessagesRobocupSslDetectionTracked.Vector3.newBuilder(vel_).mergeFrom(value).buildPartial();
           } else {
             vel_ = value;
           }
+          onChanged();
         } else {
           velBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -4692,13 +4638,13 @@ public final class MessagesRobocupSslDetectionTracked {
        * <code>required .proto.vision.Vector3 vel = 2;</code>
        */
       public Builder clearVel() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        vel_ = null;
-        if (velBuilder_ != null) {
-          velBuilder_.dispose();
-          velBuilder_ = null;
+        if (velBuilder_ == null) {
+          vel_ = null;
+          onChanged();
+        } else {
+          velBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
@@ -4756,11 +4702,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required double start_timestamp = 3;</code>
-       * @return Whether the startTimestamp field is set.
        */
-      @java.lang.Override
       public boolean hasStartTimestamp() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -4768,9 +4712,7 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required double start_timestamp = 3;</code>
-       * @return The startTimestamp.
        */
-      @java.lang.Override
       public double getStartTimestamp() {
         return startTimestamp_;
       }
@@ -4780,13 +4722,10 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required double start_timestamp = 3;</code>
-       * @param value The startTimestamp to set.
-       * @return This builder for chaining.
        */
       public Builder setStartTimestamp(double value) {
-        
-        startTimestamp_ = value;
         bitField0_ |= 0x00000004;
+        startTimestamp_ = value;
         onChanged();
         return this;
       }
@@ -4796,7 +4735,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required double start_timestamp = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearStartTimestamp() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -4812,11 +4750,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional double stop_timestamp = 4;</code>
-       * @return Whether the stopTimestamp field is set.
        */
-      @java.lang.Override
       public boolean hasStopTimestamp() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <pre>
@@ -4824,9 +4760,7 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional double stop_timestamp = 4;</code>
-       * @return The stopTimestamp.
        */
-      @java.lang.Override
       public double getStopTimestamp() {
         return stopTimestamp_;
       }
@@ -4836,13 +4770,10 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional double stop_timestamp = 4;</code>
-       * @param value The stopTimestamp to set.
-       * @return This builder for chaining.
        */
       public Builder setStopTimestamp(double value) {
-        
-        stopTimestamp_ = value;
         bitField0_ |= 0x00000008;
+        stopTimestamp_ = value;
         onChanged();
         return this;
       }
@@ -4852,7 +4783,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional double stop_timestamp = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearStopTimestamp() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -4861,7 +4791,7 @@ public final class MessagesRobocupSslDetectionTracked {
         return this;
       }
 
-      private proto.vision.MessagesRobocupSslDetectionTracked.Vector2 stopPos_;
+      private proto.vision.MessagesRobocupSslDetectionTracked.Vector2 stopPos_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.vision.MessagesRobocupSslDetectionTracked.Vector2, proto.vision.MessagesRobocupSslDetectionTracked.Vector2.Builder, proto.vision.MessagesRobocupSslDetectionTracked.Vector2OrBuilder> stopPosBuilder_;
       /**
@@ -4870,10 +4800,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional .proto.vision.Vector2 stop_pos = 5;</code>
-       * @return Whether the stopPos field is set.
        */
       public boolean hasStopPos() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <pre>
@@ -4881,7 +4810,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional .proto.vision.Vector2 stop_pos = 5;</code>
-       * @return The stopPos.
        */
       public proto.vision.MessagesRobocupSslDetectionTracked.Vector2 getStopPos() {
         if (stopPosBuilder_ == null) {
@@ -4903,11 +4831,11 @@ public final class MessagesRobocupSslDetectionTracked {
             throw new NullPointerException();
           }
           stopPos_ = value;
+          onChanged();
         } else {
           stopPosBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000010;
-        onChanged();
         return this;
       }
       /**
@@ -4921,11 +4849,11 @@ public final class MessagesRobocupSslDetectionTracked {
           proto.vision.MessagesRobocupSslDetectionTracked.Vector2.Builder builderForValue) {
         if (stopPosBuilder_ == null) {
           stopPos_ = builderForValue.build();
+          onChanged();
         } else {
           stopPosBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000010;
-        onChanged();
         return this;
       }
       /**
@@ -4937,18 +4865,19 @@ public final class MessagesRobocupSslDetectionTracked {
        */
       public Builder mergeStopPos(proto.vision.MessagesRobocupSslDetectionTracked.Vector2 value) {
         if (stopPosBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0) &&
-            stopPos_ != null &&
-            stopPos_ != proto.vision.MessagesRobocupSslDetectionTracked.Vector2.getDefaultInstance()) {
-            getStopPosBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+              stopPos_ != null &&
+              stopPos_ != proto.vision.MessagesRobocupSslDetectionTracked.Vector2.getDefaultInstance()) {
+            stopPos_ =
+              proto.vision.MessagesRobocupSslDetectionTracked.Vector2.newBuilder(stopPos_).mergeFrom(value).buildPartial();
           } else {
             stopPos_ = value;
           }
+          onChanged();
         } else {
           stopPosBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000010;
-        onChanged();
         return this;
       }
       /**
@@ -4959,13 +4888,13 @@ public final class MessagesRobocupSslDetectionTracked {
        * <code>optional .proto.vision.Vector2 stop_pos = 5;</code>
        */
       public Builder clearStopPos() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        stopPos_ = null;
-        if (stopPosBuilder_ != null) {
-          stopPosBuilder_.dispose();
-          stopPosBuilder_ = null;
+        if (stopPosBuilder_ == null) {
+          stopPos_ = null;
+          onChanged();
+        } else {
+          stopPosBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
       /**
@@ -5016,7 +4945,7 @@ public final class MessagesRobocupSslDetectionTracked {
         return stopPosBuilder_;
       }
 
-      private proto.vision.MessagesRobocupSslDetectionTracked.RobotId robotId_;
+      private proto.vision.MessagesRobocupSslDetectionTracked.RobotId robotId_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.vision.MessagesRobocupSslDetectionTracked.RobotId, proto.vision.MessagesRobocupSslDetectionTracked.RobotId.Builder, proto.vision.MessagesRobocupSslDetectionTracked.RobotIdOrBuilder> robotIdBuilder_;
       /**
@@ -5025,10 +4954,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional .proto.vision.RobotId robot_id = 6;</code>
-       * @return Whether the robotId field is set.
        */
       public boolean hasRobotId() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <pre>
@@ -5036,7 +4964,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional .proto.vision.RobotId robot_id = 6;</code>
-       * @return The robotId.
        */
       public proto.vision.MessagesRobocupSslDetectionTracked.RobotId getRobotId() {
         if (robotIdBuilder_ == null) {
@@ -5058,11 +4985,11 @@ public final class MessagesRobocupSslDetectionTracked {
             throw new NullPointerException();
           }
           robotId_ = value;
+          onChanged();
         } else {
           robotIdBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000020;
-        onChanged();
         return this;
       }
       /**
@@ -5076,11 +5003,11 @@ public final class MessagesRobocupSslDetectionTracked {
           proto.vision.MessagesRobocupSslDetectionTracked.RobotId.Builder builderForValue) {
         if (robotIdBuilder_ == null) {
           robotId_ = builderForValue.build();
+          onChanged();
         } else {
           robotIdBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000020;
-        onChanged();
         return this;
       }
       /**
@@ -5092,18 +5019,19 @@ public final class MessagesRobocupSslDetectionTracked {
        */
       public Builder mergeRobotId(proto.vision.MessagesRobocupSslDetectionTracked.RobotId value) {
         if (robotIdBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0) &&
-            robotId_ != null &&
-            robotId_ != proto.vision.MessagesRobocupSslDetectionTracked.RobotId.getDefaultInstance()) {
-            getRobotIdBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000020) == 0x00000020) &&
+              robotId_ != null &&
+              robotId_ != proto.vision.MessagesRobocupSslDetectionTracked.RobotId.getDefaultInstance()) {
+            robotId_ =
+              proto.vision.MessagesRobocupSslDetectionTracked.RobotId.newBuilder(robotId_).mergeFrom(value).buildPartial();
           } else {
             robotId_ = value;
           }
+          onChanged();
         } else {
           robotIdBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000020;
-        onChanged();
         return this;
       }
       /**
@@ -5114,13 +5042,13 @@ public final class MessagesRobocupSslDetectionTracked {
        * <code>optional .proto.vision.RobotId robot_id = 6;</code>
        */
       public Builder clearRobotId() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        robotId_ = null;
-        if (robotIdBuilder_ != null) {
-          robotIdBuilder_.dispose();
-          robotIdBuilder_ = null;
+        if (robotIdBuilder_ == null) {
+          robotId_ = null;
+          onChanged();
+        } else {
+          robotIdBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
       /**
@@ -5203,18 +5131,7 @@ public final class MessagesRobocupSslDetectionTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new KickedBall(input, extensionRegistry);
       }
     };
 
@@ -5240,12 +5157,10 @@ public final class MessagesRobocupSslDetectionTracked {
 
     /**
      * <code>required .proto.vision.RobotId robot_id = 1;</code>
-     * @return Whether the robotId field is set.
      */
     boolean hasRobotId();
     /**
      * <code>required .proto.vision.RobotId robot_id = 1;</code>
-     * @return The robotId.
      */
     proto.vision.MessagesRobocupSslDetectionTracked.RobotId getRobotId();
     /**
@@ -5259,7 +5174,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.Vector2 pos = 2;</code>
-     * @return Whether the pos field is set.
      */
     boolean hasPos();
     /**
@@ -5268,7 +5182,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.Vector2 pos = 2;</code>
-     * @return The pos.
      */
     proto.vision.MessagesRobocupSslDetectionTracked.Vector2 getPos();
     /**
@@ -5286,7 +5199,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required float orientation = 3;</code>
-     * @return Whether the orientation field is set.
      */
     boolean hasOrientation();
     /**
@@ -5295,7 +5207,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required float orientation = 3;</code>
-     * @return The orientation.
      */
     float getOrientation();
 
@@ -5305,7 +5216,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.Vector2 vel = 4;</code>
-     * @return Whether the vel field is set.
      */
     boolean hasVel();
     /**
@@ -5314,7 +5224,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.Vector2 vel = 4;</code>
-     * @return The vel.
      */
     proto.vision.MessagesRobocupSslDetectionTracked.Vector2 getVel();
     /**
@@ -5332,7 +5241,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional float vel_angular = 5;</code>
-     * @return Whether the velAngular field is set.
      */
     boolean hasVelAngular();
     /**
@@ -5341,7 +5249,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional float vel_angular = 5;</code>
-     * @return The velAngular.
      */
     float getVelAngular();
 
@@ -5353,7 +5260,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional float visibility = 6;</code>
-     * @return Whether the visibility field is set.
      */
     boolean hasVisibility();
     /**
@@ -5364,7 +5270,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional float visibility = 6;</code>
-     * @return The visibility.
      */
     float getVisibility();
   }
@@ -5375,7 +5280,7 @@ public final class MessagesRobocupSslDetectionTracked {
    *
    * Protobuf type {@code proto.vision.TrackedRobot}
    */
-  public static final class TrackedRobot extends
+  public  static final class TrackedRobot extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.vision.TrackedRobot)
       TrackedRobotOrBuilder {
@@ -5385,19 +5290,107 @@ public final class MessagesRobocupSslDetectionTracked {
       super(builder);
     }
     private TrackedRobot() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TrackedRobot();
+      orientation_ = 0F;
+      velAngular_ = 0F;
+      visibility_ = 0F;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private TrackedRobot(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              proto.vision.MessagesRobocupSslDetectionTracked.RobotId.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = robotId_.toBuilder();
+              }
+              robotId_ = input.readMessage(proto.vision.MessagesRobocupSslDetectionTracked.RobotId.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(robotId_);
+                robotId_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 18: {
+              proto.vision.MessagesRobocupSslDetectionTracked.Vector2.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = pos_.toBuilder();
+              }
+              pos_ = input.readMessage(proto.vision.MessagesRobocupSslDetectionTracked.Vector2.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pos_);
+                pos_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              orientation_ = input.readFloat();
+              break;
+            }
+            case 34: {
+              proto.vision.MessagesRobocupSslDetectionTracked.Vector2.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                subBuilder = vel_.toBuilder();
+              }
+              vel_ = input.readMessage(proto.vision.MessagesRobocupSslDetectionTracked.Vector2.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(vel_);
+                vel_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000008;
+              break;
+            }
+            case 45: {
+              bitField0_ |= 0x00000010;
+              velAngular_ = input.readFloat();
+              break;
+            }
+            case 53: {
+              bitField0_ |= 0x00000020;
+              visibility_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -5417,24 +5410,19 @@ public final class MessagesRobocupSslDetectionTracked {
     private proto.vision.MessagesRobocupSslDetectionTracked.RobotId robotId_;
     /**
      * <code>required .proto.vision.RobotId robot_id = 1;</code>
-     * @return Whether the robotId field is set.
      */
-    @java.lang.Override
     public boolean hasRobotId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required .proto.vision.RobotId robot_id = 1;</code>
-     * @return The robotId.
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.RobotId getRobotId() {
       return robotId_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.RobotId.getDefaultInstance() : robotId_;
     }
     /**
      * <code>required .proto.vision.RobotId robot_id = 1;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.RobotIdOrBuilder getRobotIdOrBuilder() {
       return robotId_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.RobotId.getDefaultInstance() : robotId_;
     }
@@ -5447,11 +5435,9 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.Vector2 pos = 2;</code>
-     * @return Whether the pos field is set.
      */
-    @java.lang.Override
     public boolean hasPos() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -5459,9 +5445,7 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required .proto.vision.Vector2 pos = 2;</code>
-     * @return The pos.
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.Vector2 getPos() {
       return pos_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.Vector2.getDefaultInstance() : pos_;
     }
@@ -5472,24 +5456,21 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>required .proto.vision.Vector2 pos = 2;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.Vector2OrBuilder getPosOrBuilder() {
       return pos_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.Vector2.getDefaultInstance() : pos_;
     }
 
     public static final int ORIENTATION_FIELD_NUMBER = 3;
-    private float orientation_ = 0F;
+    private float orientation_;
     /**
      * <pre>
      * The orientation [rad] in the ssl-vision coordinate system
      * </pre>
      *
      * <code>required float orientation = 3;</code>
-     * @return Whether the orientation field is set.
      */
-    @java.lang.Override
     public boolean hasOrientation() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -5497,9 +5478,7 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required float orientation = 3;</code>
-     * @return The orientation.
      */
-    @java.lang.Override
     public float getOrientation() {
       return orientation_;
     }
@@ -5512,11 +5491,9 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.Vector2 vel = 4;</code>
-     * @return Whether the vel field is set.
      */
-    @java.lang.Override
     public boolean hasVel() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <pre>
@@ -5524,9 +5501,7 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.Vector2 vel = 4;</code>
-     * @return The vel.
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.Vector2 getVel() {
       return vel_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.Vector2.getDefaultInstance() : vel_;
     }
@@ -5537,24 +5512,21 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>optional .proto.vision.Vector2 vel = 4;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.Vector2OrBuilder getVelOrBuilder() {
       return vel_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.Vector2.getDefaultInstance() : vel_;
     }
 
     public static final int VEL_ANGULAR_FIELD_NUMBER = 5;
-    private float velAngular_ = 0F;
+    private float velAngular_;
     /**
      * <pre>
      * The angular velocity [rad/s] in the ssl-vision coordinate system
      * </pre>
      *
      * <code>optional float vel_angular = 5;</code>
-     * @return Whether the velAngular field is set.
      */
-    @java.lang.Override
     public boolean hasVelAngular() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <pre>
@@ -5562,15 +5534,13 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional float vel_angular = 5;</code>
-     * @return The velAngular.
      */
-    @java.lang.Override
     public float getVelAngular() {
       return velAngular_;
     }
 
     public static final int VISIBILITY_FIELD_NUMBER = 6;
-    private float visibility_ = 0F;
+    private float visibility_;
     /**
      * <pre>
      * The visibility of the robot
@@ -5579,11 +5549,9 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional float visibility = 6;</code>
-     * @return Whether the visibility field is set.
      */
-    @java.lang.Override
     public boolean hasVisibility() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <pre>
@@ -5593,9 +5561,7 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional float visibility = 6;</code>
-     * @return The visibility.
      */
-    @java.lang.Override
     public float getVisibility() {
       return visibility_;
     }
@@ -5640,25 +5606,25 @@ public final class MessagesRobocupSslDetectionTracked {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, getRobotId());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, getPos());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeFloat(3, orientation_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeMessage(4, getVel());
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeFloat(5, velAngular_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeFloat(6, visibility_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -5667,31 +5633,31 @@ public final class MessagesRobocupSslDetectionTracked {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRobotId());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPos());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, orientation_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getVel());
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(5, velAngular_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(6, visibility_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5706,41 +5672,45 @@ public final class MessagesRobocupSslDetectionTracked {
       }
       proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot other = (proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot) obj;
 
-      if (hasRobotId() != other.hasRobotId()) return false;
+      boolean result = true;
+      result = result && (hasRobotId() == other.hasRobotId());
       if (hasRobotId()) {
-        if (!getRobotId()
-            .equals(other.getRobotId())) return false;
+        result = result && getRobotId()
+            .equals(other.getRobotId());
       }
-      if (hasPos() != other.hasPos()) return false;
+      result = result && (hasPos() == other.hasPos());
       if (hasPos()) {
-        if (!getPos()
-            .equals(other.getPos())) return false;
+        result = result && getPos()
+            .equals(other.getPos());
       }
-      if (hasOrientation() != other.hasOrientation()) return false;
+      result = result && (hasOrientation() == other.hasOrientation());
       if (hasOrientation()) {
-        if (java.lang.Float.floatToIntBits(getOrientation())
-            != java.lang.Float.floatToIntBits(
-                other.getOrientation())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getOrientation())
+            == java.lang.Float.floatToIntBits(
+                other.getOrientation()));
       }
-      if (hasVel() != other.hasVel()) return false;
+      result = result && (hasVel() == other.hasVel());
       if (hasVel()) {
-        if (!getVel()
-            .equals(other.getVel())) return false;
+        result = result && getVel()
+            .equals(other.getVel());
       }
-      if (hasVelAngular() != other.hasVelAngular()) return false;
+      result = result && (hasVelAngular() == other.hasVelAngular());
       if (hasVelAngular()) {
-        if (java.lang.Float.floatToIntBits(getVelAngular())
-            != java.lang.Float.floatToIntBits(
-                other.getVelAngular())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getVelAngular())
+            == java.lang.Float.floatToIntBits(
+                other.getVelAngular()));
       }
-      if (hasVisibility() != other.hasVisibility()) return false;
+      result = result && (hasVisibility() == other.hasVisibility());
       if (hasVisibility()) {
-        if (java.lang.Float.floatToIntBits(getVisibility())
-            != java.lang.Float.floatToIntBits(
-                other.getVisibility())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getVisibility())
+            == java.lang.Float.floatToIntBits(
+                other.getVisibility()));
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -5777,7 +5747,7 @@ public final class MessagesRobocupSslDetectionTracked {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getVisibility());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5917,25 +5887,30 @@ public final class MessagesRobocupSslDetectionTracked {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        robotId_ = null;
-        if (robotIdBuilder_ != null) {
-          robotIdBuilder_.dispose();
-          robotIdBuilder_ = null;
+        if (robotIdBuilder_ == null) {
+          robotId_ = null;
+        } else {
+          robotIdBuilder_.clear();
         }
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
-          posBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (posBuilder_ == null) {
+          pos_ = null;
+        } else {
+          posBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         orientation_ = 0F;
-        vel_ = null;
-        if (velBuilder_ != null) {
-          velBuilder_.dispose();
-          velBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        if (velBuilder_ == null) {
+          vel_ = null;
+        } else {
+          velBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         velAngular_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000010);
         visibility_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -5962,78 +5937,80 @@ public final class MessagesRobocupSslDetectionTracked {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot buildPartial() {
         proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot result = new proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (robotIdBuilder_ == null) {
+          result.robotId_ = robotId_;
+        } else {
+          result.robotId_ = robotIdBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (posBuilder_ == null) {
+          result.pos_ = pos_;
+        } else {
+          result.pos_ = posBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.orientation_ = orientation_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        if (velBuilder_ == null) {
+          result.vel_ = vel_;
+        } else {
+          result.vel_ = velBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.velAngular_ = velAngular_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.visibility_ = visibility_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.robotId_ = robotIdBuilder_ == null
-              ? robotId_
-              : robotIdBuilder_.build();
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.pos_ = posBuilder_ == null
-              ? pos_
-              : posBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.orientation_ = orientation_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.vel_ = velBuilder_ == null
-              ? vel_
-              : velBuilder_.build();
-          to_bitField0_ |= 0x00000008;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.velAngular_ = velAngular_;
-          to_bitField0_ |= 0x00000010;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.visibility_ = visibility_;
-          to_bitField0_ |= 0x00000020;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -6065,7 +6042,7 @@ public final class MessagesRobocupSslDetectionTracked {
         if (other.hasVisibility()) {
           setVisibility(other.getVisibility());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -6100,83 +6077,32 @@ public final class MessagesRobocupSslDetectionTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getRobotIdFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 29: {
-                orientation_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 29
-              case 34: {
-                input.readMessage(
-                    getVelFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              case 45: {
-                velAngular_ = input.readFloat();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 45
-              case 53: {
-                visibility_ = input.readFloat();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 53
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
 
-      private proto.vision.MessagesRobocupSslDetectionTracked.RobotId robotId_;
+      private proto.vision.MessagesRobocupSslDetectionTracked.RobotId robotId_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.vision.MessagesRobocupSslDetectionTracked.RobotId, proto.vision.MessagesRobocupSslDetectionTracked.RobotId.Builder, proto.vision.MessagesRobocupSslDetectionTracked.RobotIdOrBuilder> robotIdBuilder_;
       /**
        * <code>required .proto.vision.RobotId robot_id = 1;</code>
-       * @return Whether the robotId field is set.
        */
       public boolean hasRobotId() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required .proto.vision.RobotId robot_id = 1;</code>
-       * @return The robotId.
        */
       public proto.vision.MessagesRobocupSslDetectionTracked.RobotId getRobotId() {
         if (robotIdBuilder_ == null) {
@@ -6194,11 +6120,11 @@ public final class MessagesRobocupSslDetectionTracked {
             throw new NullPointerException();
           }
           robotId_ = value;
+          onChanged();
         } else {
           robotIdBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -6208,11 +6134,11 @@ public final class MessagesRobocupSslDetectionTracked {
           proto.vision.MessagesRobocupSslDetectionTracked.RobotId.Builder builderForValue) {
         if (robotIdBuilder_ == null) {
           robotId_ = builderForValue.build();
+          onChanged();
         } else {
           robotIdBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -6220,31 +6146,32 @@ public final class MessagesRobocupSslDetectionTracked {
        */
       public Builder mergeRobotId(proto.vision.MessagesRobocupSslDetectionTracked.RobotId value) {
         if (robotIdBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            robotId_ != null &&
-            robotId_ != proto.vision.MessagesRobocupSslDetectionTracked.RobotId.getDefaultInstance()) {
-            getRobotIdBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              robotId_ != null &&
+              robotId_ != proto.vision.MessagesRobocupSslDetectionTracked.RobotId.getDefaultInstance()) {
+            robotId_ =
+              proto.vision.MessagesRobocupSslDetectionTracked.RobotId.newBuilder(robotId_).mergeFrom(value).buildPartial();
           } else {
             robotId_ = value;
           }
+          onChanged();
         } else {
           robotIdBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
        * <code>required .proto.vision.RobotId robot_id = 1;</code>
        */
       public Builder clearRobotId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        robotId_ = null;
-        if (robotIdBuilder_ != null) {
-          robotIdBuilder_.dispose();
-          robotIdBuilder_ = null;
+        if (robotIdBuilder_ == null) {
+          robotId_ = null;
+          onChanged();
+        } else {
+          robotIdBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
       /**
@@ -6283,7 +6210,7 @@ public final class MessagesRobocupSslDetectionTracked {
         return robotIdBuilder_;
       }
 
-      private proto.vision.MessagesRobocupSslDetectionTracked.Vector2 pos_;
+      private proto.vision.MessagesRobocupSslDetectionTracked.Vector2 pos_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.vision.MessagesRobocupSslDetectionTracked.Vector2, proto.vision.MessagesRobocupSslDetectionTracked.Vector2.Builder, proto.vision.MessagesRobocupSslDetectionTracked.Vector2OrBuilder> posBuilder_;
       /**
@@ -6292,10 +6219,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required .proto.vision.Vector2 pos = 2;</code>
-       * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -6303,7 +6229,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required .proto.vision.Vector2 pos = 2;</code>
-       * @return The pos.
        */
       public proto.vision.MessagesRobocupSslDetectionTracked.Vector2 getPos() {
         if (posBuilder_ == null) {
@@ -6325,11 +6250,11 @@ public final class MessagesRobocupSslDetectionTracked {
             throw new NullPointerException();
           }
           pos_ = value;
+          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -6343,11 +6268,11 @@ public final class MessagesRobocupSslDetectionTracked {
           proto.vision.MessagesRobocupSslDetectionTracked.Vector2.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
+          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -6359,18 +6284,19 @@ public final class MessagesRobocupSslDetectionTracked {
        */
       public Builder mergePos(proto.vision.MessagesRobocupSslDetectionTracked.Vector2 value) {
         if (posBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            pos_ != null &&
-            pos_ != proto.vision.MessagesRobocupSslDetectionTracked.Vector2.getDefaultInstance()) {
-            getPosBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              pos_ != null &&
+              pos_ != proto.vision.MessagesRobocupSslDetectionTracked.Vector2.getDefaultInstance()) {
+            pos_ =
+              proto.vision.MessagesRobocupSslDetectionTracked.Vector2.newBuilder(pos_).mergeFrom(value).buildPartial();
           } else {
             pos_ = value;
           }
+          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -6381,13 +6307,13 @@ public final class MessagesRobocupSslDetectionTracked {
        * <code>required .proto.vision.Vector2 pos = 2;</code>
        */
       public Builder clearPos() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
-          posBuilder_ = null;
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          posBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
@@ -6445,11 +6371,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required float orientation = 3;</code>
-       * @return Whether the orientation field is set.
        */
-      @java.lang.Override
       public boolean hasOrientation() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -6457,9 +6381,7 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required float orientation = 3;</code>
-       * @return The orientation.
        */
-      @java.lang.Override
       public float getOrientation() {
         return orientation_;
       }
@@ -6469,13 +6391,10 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required float orientation = 3;</code>
-       * @param value The orientation to set.
-       * @return This builder for chaining.
        */
       public Builder setOrientation(float value) {
-        
-        orientation_ = value;
         bitField0_ |= 0x00000004;
+        orientation_ = value;
         onChanged();
         return this;
       }
@@ -6485,7 +6404,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required float orientation = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearOrientation() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -6494,7 +6412,7 @@ public final class MessagesRobocupSslDetectionTracked {
         return this;
       }
 
-      private proto.vision.MessagesRobocupSslDetectionTracked.Vector2 vel_;
+      private proto.vision.MessagesRobocupSslDetectionTracked.Vector2 vel_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.vision.MessagesRobocupSslDetectionTracked.Vector2, proto.vision.MessagesRobocupSslDetectionTracked.Vector2.Builder, proto.vision.MessagesRobocupSslDetectionTracked.Vector2OrBuilder> velBuilder_;
       /**
@@ -6503,10 +6421,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional .proto.vision.Vector2 vel = 4;</code>
-       * @return Whether the vel field is set.
        */
       public boolean hasVel() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <pre>
@@ -6514,7 +6431,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional .proto.vision.Vector2 vel = 4;</code>
-       * @return The vel.
        */
       public proto.vision.MessagesRobocupSslDetectionTracked.Vector2 getVel() {
         if (velBuilder_ == null) {
@@ -6536,11 +6452,11 @@ public final class MessagesRobocupSslDetectionTracked {
             throw new NullPointerException();
           }
           vel_ = value;
+          onChanged();
         } else {
           velBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000008;
-        onChanged();
         return this;
       }
       /**
@@ -6554,11 +6470,11 @@ public final class MessagesRobocupSslDetectionTracked {
           proto.vision.MessagesRobocupSslDetectionTracked.Vector2.Builder builderForValue) {
         if (velBuilder_ == null) {
           vel_ = builderForValue.build();
+          onChanged();
         } else {
           velBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000008;
-        onChanged();
         return this;
       }
       /**
@@ -6570,18 +6486,19 @@ public final class MessagesRobocupSslDetectionTracked {
        */
       public Builder mergeVel(proto.vision.MessagesRobocupSslDetectionTracked.Vector2 value) {
         if (velBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            vel_ != null &&
-            vel_ != proto.vision.MessagesRobocupSslDetectionTracked.Vector2.getDefaultInstance()) {
-            getVelBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000008) == 0x00000008) &&
+              vel_ != null &&
+              vel_ != proto.vision.MessagesRobocupSslDetectionTracked.Vector2.getDefaultInstance()) {
+            vel_ =
+              proto.vision.MessagesRobocupSslDetectionTracked.Vector2.newBuilder(vel_).mergeFrom(value).buildPartial();
           } else {
             vel_ = value;
           }
+          onChanged();
         } else {
           velBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000008;
-        onChanged();
         return this;
       }
       /**
@@ -6592,13 +6509,13 @@ public final class MessagesRobocupSslDetectionTracked {
        * <code>optional .proto.vision.Vector2 vel = 4;</code>
        */
       public Builder clearVel() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        vel_ = null;
-        if (velBuilder_ != null) {
-          velBuilder_.dispose();
-          velBuilder_ = null;
+        if (velBuilder_ == null) {
+          vel_ = null;
+          onChanged();
+        } else {
+          velBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
       /**
@@ -6656,11 +6573,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional float vel_angular = 5;</code>
-       * @return Whether the velAngular field is set.
        */
-      @java.lang.Override
       public boolean hasVelAngular() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <pre>
@@ -6668,9 +6583,7 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional float vel_angular = 5;</code>
-       * @return The velAngular.
        */
-      @java.lang.Override
       public float getVelAngular() {
         return velAngular_;
       }
@@ -6680,13 +6593,10 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional float vel_angular = 5;</code>
-       * @param value The velAngular to set.
-       * @return This builder for chaining.
        */
       public Builder setVelAngular(float value) {
-        
-        velAngular_ = value;
         bitField0_ |= 0x00000010;
+        velAngular_ = value;
         onChanged();
         return this;
       }
@@ -6696,7 +6606,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional float vel_angular = 5;</code>
-       * @return This builder for chaining.
        */
       public Builder clearVelAngular() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -6714,11 +6623,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional float visibility = 6;</code>
-       * @return Whether the visibility field is set.
        */
-      @java.lang.Override
       public boolean hasVisibility() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <pre>
@@ -6728,9 +6635,7 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional float visibility = 6;</code>
-       * @return The visibility.
        */
-      @java.lang.Override
       public float getVisibility() {
         return visibility_;
       }
@@ -6742,13 +6647,10 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional float visibility = 6;</code>
-       * @param value The visibility to set.
-       * @return This builder for chaining.
        */
       public Builder setVisibility(float value) {
-        
-        visibility_ = value;
         bitField0_ |= 0x00000020;
+        visibility_ = value;
         onChanged();
         return this;
       }
@@ -6760,7 +6662,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional float visibility = 6;</code>
-       * @return This builder for chaining.
        */
       public Builder clearVisibility() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -6801,18 +6702,7 @@ public final class MessagesRobocupSslDetectionTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TrackedRobot(input, extensionRegistry);
       }
     };
 
@@ -6842,7 +6732,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required uint32 frame_number = 1;</code>
-     * @return Whether the frameNumber field is set.
      */
     boolean hasFrameNumber();
     /**
@@ -6851,7 +6740,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required uint32 frame_number = 1;</code>
-     * @return The frameNumber.
      */
     int getFrameNumber();
 
@@ -6861,7 +6749,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required double timestamp = 2;</code>
-     * @return Whether the timestamp field is set.
      */
     boolean hasTimestamp();
     /**
@@ -6870,7 +6757,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required double timestamp = 2;</code>
-     * @return The timestamp.
      */
     double getTimestamp();
 
@@ -6979,7 +6865,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.KickedBall kicked_ball = 5;</code>
-     * @return Whether the kickedBall field is set.
      */
     boolean hasKickedBall();
     /**
@@ -6989,7 +6874,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.KickedBall kicked_ball = 5;</code>
-     * @return The kickedBall.
      */
     proto.vision.MessagesRobocupSslDetectionTracked.KickedBall getKickedBall();
     /**
@@ -7008,7 +6892,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>repeated .proto.vision.Capability capabilities = 6;</code>
-     * @return A list containing the capabilities.
      */
     java.util.List<proto.vision.MessagesRobocupSslDetectionTracked.Capability> getCapabilitiesList();
     /**
@@ -7017,7 +6900,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>repeated .proto.vision.Capability capabilities = 6;</code>
-     * @return The count of capabilities.
      */
     int getCapabilitiesCount();
     /**
@@ -7026,8 +6908,6 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>repeated .proto.vision.Capability capabilities = 6;</code>
-     * @param index The index of the element to return.
-     * @return The capabilities at the given index.
      */
     proto.vision.MessagesRobocupSslDetectionTracked.Capability getCapabilities(int index);
   }
@@ -7038,7 +6918,7 @@ public final class MessagesRobocupSslDetectionTracked {
    *
    * Protobuf type {@code proto.vision.TrackedFrame}
    */
-  public static final class TrackedFrame extends
+  public  static final class TrackedFrame extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.vision.TrackedFrame)
       TrackedFrameOrBuilder {
@@ -7048,22 +6928,140 @@ public final class MessagesRobocupSslDetectionTracked {
       super(builder);
     }
     private TrackedFrame() {
+      frameNumber_ = 0;
+      timestamp_ = 0D;
       balls_ = java.util.Collections.emptyList();
       robots_ = java.util.Collections.emptyList();
       capabilities_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TrackedFrame();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private TrackedFrame(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              frameNumber_ = input.readUInt32();
+              break;
+            }
+            case 17: {
+              bitField0_ |= 0x00000002;
+              timestamp_ = input.readDouble();
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                balls_ = new java.util.ArrayList<proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              balls_.add(
+                  input.readMessage(proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall.PARSER, extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                robots_ = new java.util.ArrayList<proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              robots_.add(
+                  input.readMessage(proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot.PARSER, extensionRegistry));
+              break;
+            }
+            case 42: {
+              proto.vision.MessagesRobocupSslDetectionTracked.KickedBall.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                subBuilder = kickedBall_.toBuilder();
+              }
+              kickedBall_ = input.readMessage(proto.vision.MessagesRobocupSslDetectionTracked.KickedBall.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(kickedBall_);
+                kickedBall_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+              @SuppressWarnings("deprecation")
+              proto.vision.MessagesRobocupSslDetectionTracked.Capability value = proto.vision.MessagesRobocupSslDetectionTracked.Capability.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(6, rawValue);
+              } else {
+                if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                  capabilities_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000020;
+                }
+                capabilities_.add(rawValue);
+              }
+              break;
+            }
+            case 50: {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while(input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+                proto.vision.MessagesRobocupSslDetectionTracked.Capability value = proto.vision.MessagesRobocupSslDetectionTracked.Capability.valueOf(rawValue);
+                if (value == null) {
+                  unknownFields.mergeVarintField(6, rawValue);
+                } else {
+                  if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                    capabilities_ = new java.util.ArrayList<java.lang.Integer>();
+                    mutable_bitField0_ |= 0x00000020;
+                  }
+                  capabilities_.add(rawValue);
+                }
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          balls_ = java.util.Collections.unmodifiableList(balls_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          robots_ = java.util.Collections.unmodifiableList(robots_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          capabilities_ = java.util.Collections.unmodifiableList(capabilities_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -7080,18 +7078,16 @@ public final class MessagesRobocupSslDetectionTracked {
 
     private int bitField0_;
     public static final int FRAME_NUMBER_FIELD_NUMBER = 1;
-    private int frameNumber_ = 0;
+    private int frameNumber_;
     /**
      * <pre>
      * A monotonous increasing frame counter
      * </pre>
      *
      * <code>required uint32 frame_number = 1;</code>
-     * @return Whether the frameNumber field is set.
      */
-    @java.lang.Override
     public boolean hasFrameNumber() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -7099,26 +7095,22 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required uint32 frame_number = 1;</code>
-     * @return The frameNumber.
      */
-    @java.lang.Override
     public int getFrameNumber() {
       return frameNumber_;
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 2;
-    private double timestamp_ = 0D;
+    private double timestamp_;
     /**
      * <pre>
      * The unix timestamp in [s] of the data
      * </pre>
      *
      * <code>required double timestamp = 2;</code>
-     * @return Whether the timestamp field is set.
      */
-    @java.lang.Override
     public boolean hasTimestamp() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -7126,15 +7118,12 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>required double timestamp = 2;</code>
-     * @return The timestamp.
      */
-    @java.lang.Override
     public double getTimestamp() {
       return timestamp_;
     }
 
     public static final int BALLS_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private java.util.List<proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall> balls_;
     /**
      * <pre>
@@ -7145,7 +7134,6 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>repeated .proto.vision.TrackedBall balls = 3;</code>
      */
-    @java.lang.Override
     public java.util.List<proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall> getBallsList() {
       return balls_;
     }
@@ -7158,7 +7146,6 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>repeated .proto.vision.TrackedBall balls = 3;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends proto.vision.MessagesRobocupSslDetectionTracked.TrackedBallOrBuilder> 
         getBallsOrBuilderList() {
       return balls_;
@@ -7172,7 +7159,6 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>repeated .proto.vision.TrackedBall balls = 3;</code>
      */
-    @java.lang.Override
     public int getBallsCount() {
       return balls_.size();
     }
@@ -7185,7 +7171,6 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>repeated .proto.vision.TrackedBall balls = 3;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall getBalls(int index) {
       return balls_.get(index);
     }
@@ -7198,14 +7183,12 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>repeated .proto.vision.TrackedBall balls = 3;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.TrackedBallOrBuilder getBallsOrBuilder(
         int index) {
       return balls_.get(index);
     }
 
     public static final int ROBOTS_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private java.util.List<proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot> robots_;
     /**
      * <pre>
@@ -7214,7 +7197,6 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>repeated .proto.vision.TrackedRobot robots = 4;</code>
      */
-    @java.lang.Override
     public java.util.List<proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot> getRobotsList() {
       return robots_;
     }
@@ -7225,7 +7207,6 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>repeated .proto.vision.TrackedRobot robots = 4;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobotOrBuilder> 
         getRobotsOrBuilderList() {
       return robots_;
@@ -7237,7 +7218,6 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>repeated .proto.vision.TrackedRobot robots = 4;</code>
      */
-    @java.lang.Override
     public int getRobotsCount() {
       return robots_.size();
     }
@@ -7248,7 +7228,6 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>repeated .proto.vision.TrackedRobot robots = 4;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot getRobots(int index) {
       return robots_.get(index);
     }
@@ -7259,7 +7238,6 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>repeated .proto.vision.TrackedRobot robots = 4;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobotOrBuilder getRobotsOrBuilder(
         int index) {
       return robots_.get(index);
@@ -7274,11 +7252,9 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.KickedBall kicked_ball = 5;</code>
-     * @return Whether the kickedBall field is set.
      */
-    @java.lang.Override
     public boolean hasKickedBall() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -7287,9 +7263,7 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>optional .proto.vision.KickedBall kicked_ball = 5;</code>
-     * @return The kickedBall.
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.KickedBall getKickedBall() {
       return kickedBall_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.KickedBall.getDefaultInstance() : kickedBall_;
     }
@@ -7301,20 +7275,19 @@ public final class MessagesRobocupSslDetectionTracked {
      *
      * <code>optional .proto.vision.KickedBall kicked_ball = 5;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.KickedBallOrBuilder getKickedBallOrBuilder() {
       return kickedBall_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.KickedBall.getDefaultInstance() : kickedBall_;
     }
 
     public static final int CAPABILITIES_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private java.util.List<java.lang.Integer> capabilities_;
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
         java.lang.Integer, proto.vision.MessagesRobocupSslDetectionTracked.Capability> capabilities_converter_ =
             new com.google.protobuf.Internal.ListAdapter.Converter<
                 java.lang.Integer, proto.vision.MessagesRobocupSslDetectionTracked.Capability>() {
               public proto.vision.MessagesRobocupSslDetectionTracked.Capability convert(java.lang.Integer from) {
-                proto.vision.MessagesRobocupSslDetectionTracked.Capability result = proto.vision.MessagesRobocupSslDetectionTracked.Capability.forNumber(from);
+                @SuppressWarnings("deprecation")
+                proto.vision.MessagesRobocupSslDetectionTracked.Capability result = proto.vision.MessagesRobocupSslDetectionTracked.Capability.valueOf(from);
                 return result == null ? proto.vision.MessagesRobocupSslDetectionTracked.Capability.CAPABILITY_UNKNOWN : result;
               }
             };
@@ -7324,9 +7297,7 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>repeated .proto.vision.Capability capabilities = 6;</code>
-     * @return A list containing the capabilities.
      */
-    @java.lang.Override
     public java.util.List<proto.vision.MessagesRobocupSslDetectionTracked.Capability> getCapabilitiesList() {
       return new com.google.protobuf.Internal.ListAdapter<
           java.lang.Integer, proto.vision.MessagesRobocupSslDetectionTracked.Capability>(capabilities_, capabilities_converter_);
@@ -7337,9 +7308,7 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>repeated .proto.vision.Capability capabilities = 6;</code>
-     * @return The count of capabilities.
      */
-    @java.lang.Override
     public int getCapabilitiesCount() {
       return capabilities_.size();
     }
@@ -7349,10 +7318,7 @@ public final class MessagesRobocupSslDetectionTracked {
      * </pre>
      *
      * <code>repeated .proto.vision.Capability capabilities = 6;</code>
-     * @param index The index of the element to return.
-     * @return The capabilities at the given index.
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.Capability getCapabilities(int index) {
       return capabilities_converter_.convert(capabilities_.get(index));
     }
@@ -7397,10 +7363,10 @@ public final class MessagesRobocupSslDetectionTracked {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeUInt32(1, frameNumber_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeDouble(2, timestamp_);
       }
       for (int i = 0; i < balls_.size(); i++) {
@@ -7409,13 +7375,13 @@ public final class MessagesRobocupSslDetectionTracked {
       for (int i = 0; i < robots_.size(); i++) {
         output.writeMessage(4, robots_.get(i));
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeMessage(5, getKickedBall());
       }
       for (int i = 0; i < capabilities_.size(); i++) {
         output.writeEnum(6, capabilities_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -7424,11 +7390,11 @@ public final class MessagesRobocupSslDetectionTracked {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, frameNumber_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(2, timestamp_);
       }
@@ -7440,7 +7406,7 @@ public final class MessagesRobocupSslDetectionTracked {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, robots_.get(i));
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getKickedBall());
       }
@@ -7453,7 +7419,7 @@ public final class MessagesRobocupSslDetectionTracked {
         size += dataSize;
         size += 1 * capabilities_.size();
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7468,29 +7434,31 @@ public final class MessagesRobocupSslDetectionTracked {
       }
       proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame other = (proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame) obj;
 
-      if (hasFrameNumber() != other.hasFrameNumber()) return false;
+      boolean result = true;
+      result = result && (hasFrameNumber() == other.hasFrameNumber());
       if (hasFrameNumber()) {
-        if (getFrameNumber()
-            != other.getFrameNumber()) return false;
+        result = result && (getFrameNumber()
+            == other.getFrameNumber());
       }
-      if (hasTimestamp() != other.hasTimestamp()) return false;
+      result = result && (hasTimestamp() == other.hasTimestamp());
       if (hasTimestamp()) {
-        if (java.lang.Double.doubleToLongBits(getTimestamp())
-            != java.lang.Double.doubleToLongBits(
-                other.getTimestamp())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getTimestamp())
+            == java.lang.Double.doubleToLongBits(
+                other.getTimestamp()));
       }
-      if (!getBallsList()
-          .equals(other.getBallsList())) return false;
-      if (!getRobotsList()
-          .equals(other.getRobotsList())) return false;
-      if (hasKickedBall() != other.hasKickedBall()) return false;
+      result = result && getBallsList()
+          .equals(other.getBallsList());
+      result = result && getRobotsList()
+          .equals(other.getRobotsList());
+      result = result && (hasKickedBall() == other.hasKickedBall());
       if (hasKickedBall()) {
-        if (!getKickedBall()
-            .equals(other.getKickedBall())) return false;
+        result = result && getKickedBall()
+            .equals(other.getKickedBall());
       }
-      if (!capabilities_.equals(other.capabilities_)) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && capabilities_.equals(other.capabilities_);
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -7525,7 +7493,7 @@ public final class MessagesRobocupSslDetectionTracked {
         hash = (37 * hash) + CAPABILITIES_FIELD_NUMBER;
         hash = (53 * hash) + capabilities_.hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7665,28 +7633,28 @@ public final class MessagesRobocupSslDetectionTracked {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         frameNumber_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
         timestamp_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (ballsBuilder_ == null) {
           balls_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          balls_ = null;
           ballsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         if (robotsBuilder_ == null) {
           robots_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          robots_ = null;
           robotsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
-        kickedBall_ = null;
-        if (kickedBallBuilder_ != null) {
-          kickedBallBuilder_.dispose();
-          kickedBallBuilder_ = null;
+        if (kickedBallBuilder_ == null) {
+          kickedBall_ = null;
+        } else {
+          kickedBallBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         capabilities_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000020);
         return this;
@@ -7715,15 +7683,18 @@ public final class MessagesRobocupSslDetectionTracked {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame buildPartial() {
         proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame result = new proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.frameNumber_ = frameNumber_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.timestamp_ = timestamp_;
         if (ballsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
             balls_ = java.util.Collections.unmodifiableList(balls_);
             bitField0_ = (bitField0_ & ~0x00000004);
           }
@@ -7732,7 +7703,7 @@ public final class MessagesRobocupSslDetectionTracked {
           result.balls_ = ballsBuilder_.build();
         }
         if (robotsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
             robots_ = java.util.Collections.unmodifiableList(robots_);
             bitField0_ = (bitField0_ & ~0x00000008);
           }
@@ -7740,64 +7711,55 @@ public final class MessagesRobocupSslDetectionTracked {
         } else {
           result.robots_ = robotsBuilder_.build();
         }
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        if (kickedBallBuilder_ == null) {
+          result.kickedBall_ = kickedBall_;
+        } else {
+          result.kickedBall_ = kickedBallBuilder_.build();
+        }
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
           capabilities_ = java.util.Collections.unmodifiableList(capabilities_);
           bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.capabilities_ = capabilities_;
-      }
-
-      private void buildPartial0(proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.frameNumber_ = frameNumber_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.timestamp_ = timestamp_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.kickedBall_ = kickedBallBuilder_ == null
-              ? kickedBall_
-              : kickedBallBuilder_.build();
-          to_bitField0_ |= 0x00000004;
-        }
-        result.bitField0_ |= to_bitField0_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -7882,7 +7844,7 @@ public final class MessagesRobocupSslDetectionTracked {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -7918,102 +7880,17 @@ public final class MessagesRobocupSslDetectionTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                frameNumber_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 17: {
-                timestamp_ = input.readDouble();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 17
-              case 26: {
-                proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall m =
-                    input.readMessage(
-                        proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall.PARSER,
-                        extensionRegistry);
-                if (ballsBuilder_ == null) {
-                  ensureBallsIsMutable();
-                  balls_.add(m);
-                } else {
-                  ballsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 34: {
-                proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot m =
-                    input.readMessage(
-                        proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot.PARSER,
-                        extensionRegistry);
-                if (robotsBuilder_ == null) {
-                  ensureRobotsIsMutable();
-                  robots_.add(m);
-                } else {
-                  robotsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 42: {
-                input.readMessage(
-                    getKickedBallFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-              case 48: {
-                int tmpRaw = input.readEnum();
-                proto.vision.MessagesRobocupSslDetectionTracked.Capability tmpValue =
-                    proto.vision.MessagesRobocupSslDetectionTracked.Capability.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(6, tmpRaw);
-                } else {
-                  ensureCapabilitiesIsMutable();
-                  capabilities_.add(tmpRaw);
-                }
-                break;
-              } // case 48
-              case 50: {
-                int length = input.readRawVarint32();
-                int oldLimit = input.pushLimit(length);
-                while(input.getBytesUntilLimit() > 0) {
-                  int tmpRaw = input.readEnum();
-                  proto.vision.MessagesRobocupSslDetectionTracked.Capability tmpValue =
-                      proto.vision.MessagesRobocupSslDetectionTracked.Capability.forNumber(tmpRaw);
-                  if (tmpValue == null) {
-                    mergeUnknownVarintField(6, tmpRaw);
-                  } else {
-                    ensureCapabilitiesIsMutable();
-                    capabilities_.add(tmpRaw);
-                  }
-                }
-                input.popLimit(oldLimit);
-                break;
-              } // case 50
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -8025,11 +7902,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required uint32 frame_number = 1;</code>
-       * @return Whether the frameNumber field is set.
        */
-      @java.lang.Override
       public boolean hasFrameNumber() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -8037,9 +7912,7 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required uint32 frame_number = 1;</code>
-       * @return The frameNumber.
        */
-      @java.lang.Override
       public int getFrameNumber() {
         return frameNumber_;
       }
@@ -8049,13 +7922,10 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required uint32 frame_number = 1;</code>
-       * @param value The frameNumber to set.
-       * @return This builder for chaining.
        */
       public Builder setFrameNumber(int value) {
-        
-        frameNumber_ = value;
         bitField0_ |= 0x00000001;
+        frameNumber_ = value;
         onChanged();
         return this;
       }
@@ -8065,7 +7935,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required uint32 frame_number = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearFrameNumber() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -8081,11 +7950,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required double timestamp = 2;</code>
-       * @return Whether the timestamp field is set.
        */
-      @java.lang.Override
       public boolean hasTimestamp() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -8093,9 +7960,7 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required double timestamp = 2;</code>
-       * @return The timestamp.
        */
-      @java.lang.Override
       public double getTimestamp() {
         return timestamp_;
       }
@@ -8105,13 +7970,10 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required double timestamp = 2;</code>
-       * @param value The timestamp to set.
-       * @return This builder for chaining.
        */
       public Builder setTimestamp(double value) {
-        
-        timestamp_ = value;
         bitField0_ |= 0x00000002;
+        timestamp_ = value;
         onChanged();
         return this;
       }
@@ -8121,7 +7983,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>required double timestamp = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -8133,7 +7994,7 @@ public final class MessagesRobocupSslDetectionTracked {
       private java.util.List<proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall> balls_ =
         java.util.Collections.emptyList();
       private void ensureBallsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
           balls_ = new java.util.ArrayList<proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall>(balls_);
           bitField0_ |= 0x00000004;
          }
@@ -8470,7 +8331,7 @@ public final class MessagesRobocupSslDetectionTracked {
           ballsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall, proto.vision.MessagesRobocupSslDetectionTracked.TrackedBall.Builder, proto.vision.MessagesRobocupSslDetectionTracked.TrackedBallOrBuilder>(
                   balls_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
                   isClean());
           balls_ = null;
@@ -8481,7 +8342,7 @@ public final class MessagesRobocupSslDetectionTracked {
       private java.util.List<proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot> robots_ =
         java.util.Collections.emptyList();
       private void ensureRobotsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
           robots_ = new java.util.ArrayList<proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot>(robots_);
           bitField0_ |= 0x00000008;
          }
@@ -8782,7 +8643,7 @@ public final class MessagesRobocupSslDetectionTracked {
           robotsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot, proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobot.Builder, proto.vision.MessagesRobocupSslDetectionTracked.TrackedRobotOrBuilder>(
                   robots_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
                   isClean());
           robots_ = null;
@@ -8790,7 +8651,7 @@ public final class MessagesRobocupSslDetectionTracked {
         return robotsBuilder_;
       }
 
-      private proto.vision.MessagesRobocupSslDetectionTracked.KickedBall kickedBall_;
+      private proto.vision.MessagesRobocupSslDetectionTracked.KickedBall kickedBall_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.vision.MessagesRobocupSslDetectionTracked.KickedBall, proto.vision.MessagesRobocupSslDetectionTracked.KickedBall.Builder, proto.vision.MessagesRobocupSslDetectionTracked.KickedBallOrBuilder> kickedBallBuilder_;
       /**
@@ -8800,10 +8661,9 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional .proto.vision.KickedBall kicked_ball = 5;</code>
-       * @return Whether the kickedBall field is set.
        */
       public boolean hasKickedBall() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <pre>
@@ -8812,7 +8672,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>optional .proto.vision.KickedBall kicked_ball = 5;</code>
-       * @return The kickedBall.
        */
       public proto.vision.MessagesRobocupSslDetectionTracked.KickedBall getKickedBall() {
         if (kickedBallBuilder_ == null) {
@@ -8835,11 +8694,11 @@ public final class MessagesRobocupSslDetectionTracked {
             throw new NullPointerException();
           }
           kickedBall_ = value;
+          onChanged();
         } else {
           kickedBallBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000010;
-        onChanged();
         return this;
       }
       /**
@@ -8854,11 +8713,11 @@ public final class MessagesRobocupSslDetectionTracked {
           proto.vision.MessagesRobocupSslDetectionTracked.KickedBall.Builder builderForValue) {
         if (kickedBallBuilder_ == null) {
           kickedBall_ = builderForValue.build();
+          onChanged();
         } else {
           kickedBallBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000010;
-        onChanged();
         return this;
       }
       /**
@@ -8871,18 +8730,19 @@ public final class MessagesRobocupSslDetectionTracked {
        */
       public Builder mergeKickedBall(proto.vision.MessagesRobocupSslDetectionTracked.KickedBall value) {
         if (kickedBallBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0) &&
-            kickedBall_ != null &&
-            kickedBall_ != proto.vision.MessagesRobocupSslDetectionTracked.KickedBall.getDefaultInstance()) {
-            getKickedBallBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+              kickedBall_ != null &&
+              kickedBall_ != proto.vision.MessagesRobocupSslDetectionTracked.KickedBall.getDefaultInstance()) {
+            kickedBall_ =
+              proto.vision.MessagesRobocupSslDetectionTracked.KickedBall.newBuilder(kickedBall_).mergeFrom(value).buildPartial();
           } else {
             kickedBall_ = value;
           }
+          onChanged();
         } else {
           kickedBallBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000010;
-        onChanged();
         return this;
       }
       /**
@@ -8894,13 +8754,13 @@ public final class MessagesRobocupSslDetectionTracked {
        * <code>optional .proto.vision.KickedBall kicked_ball = 5;</code>
        */
       public Builder clearKickedBall() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        kickedBall_ = null;
-        if (kickedBallBuilder_ != null) {
-          kickedBallBuilder_.dispose();
-          kickedBallBuilder_ = null;
+        if (kickedBallBuilder_ == null) {
+          kickedBall_ = null;
+          onChanged();
+        } else {
+          kickedBallBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
       /**
@@ -8957,7 +8817,7 @@ public final class MessagesRobocupSslDetectionTracked {
       private java.util.List<java.lang.Integer> capabilities_ =
         java.util.Collections.emptyList();
       private void ensureCapabilitiesIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
           capabilities_ = new java.util.ArrayList<java.lang.Integer>(capabilities_);
           bitField0_ |= 0x00000020;
         }
@@ -8968,7 +8828,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>repeated .proto.vision.Capability capabilities = 6;</code>
-       * @return A list containing the capabilities.
        */
       public java.util.List<proto.vision.MessagesRobocupSslDetectionTracked.Capability> getCapabilitiesList() {
         return new com.google.protobuf.Internal.ListAdapter<
@@ -8980,7 +8839,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>repeated .proto.vision.Capability capabilities = 6;</code>
-       * @return The count of capabilities.
        */
       public int getCapabilitiesCount() {
         return capabilities_.size();
@@ -8991,8 +8849,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>repeated .proto.vision.Capability capabilities = 6;</code>
-       * @param index The index of the element to return.
-       * @return The capabilities at the given index.
        */
       public proto.vision.MessagesRobocupSslDetectionTracked.Capability getCapabilities(int index) {
         return capabilities_converter_.convert(capabilities_.get(index));
@@ -9003,9 +8859,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>repeated .proto.vision.Capability capabilities = 6;</code>
-       * @param index The index to set the value at.
-       * @param value The capabilities to set.
-       * @return This builder for chaining.
        */
       public Builder setCapabilities(
           int index, proto.vision.MessagesRobocupSslDetectionTracked.Capability value) {
@@ -9023,8 +8876,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>repeated .proto.vision.Capability capabilities = 6;</code>
-       * @param value The capabilities to add.
-       * @return This builder for chaining.
        */
       public Builder addCapabilities(proto.vision.MessagesRobocupSslDetectionTracked.Capability value) {
         if (value == null) {
@@ -9041,8 +8892,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>repeated .proto.vision.Capability capabilities = 6;</code>
-       * @param values The capabilities to add.
-       * @return This builder for chaining.
        */
       public Builder addAllCapabilities(
           java.lang.Iterable<? extends proto.vision.MessagesRobocupSslDetectionTracked.Capability> values) {
@@ -9059,7 +8908,6 @@ public final class MessagesRobocupSslDetectionTracked {
        * </pre>
        *
        * <code>repeated .proto.vision.Capability capabilities = 6;</code>
-       * @return This builder for chaining.
        */
       public Builder clearCapabilities() {
         capabilities_ = java.util.Collections.emptyList();
@@ -9100,18 +8948,7 @@ public final class MessagesRobocupSslDetectionTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TrackedFrame(input, extensionRegistry);
       }
     };
 
@@ -9206,10 +9043,18 @@ public final class MessagesRobocupSslDetectionTracked {
       " CAPABILITY_DETECT_MULTIPLE_BALLS\020\002\022\"\n\036C" +
       "APABILITY_DETECT_KICKED_BALLS\020\003"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_proto_vision_Vector2_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_vision_Vector2_fieldAccessorTable = new

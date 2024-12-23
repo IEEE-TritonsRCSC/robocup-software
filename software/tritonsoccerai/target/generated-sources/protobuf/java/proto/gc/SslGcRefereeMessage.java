@@ -96,8 +96,6 @@ public final class SslGcRefereeMessage {
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -105,10 +103,6 @@ public final class SslGcRefereeMessage {
       return forNumber(value);
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
     public static MatchType forNumber(int value) {
       switch (value) {
         case 0: return UNKNOWN_MATCH;
@@ -175,7 +169,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional string source_identifier = 18;</code>
-     * @return Whether the sourceIdentifier field is set.
      */
     boolean hasSourceIdentifier();
     /**
@@ -185,7 +178,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional string source_identifier = 18;</code>
-     * @return The sourceIdentifier.
      */
     java.lang.String getSourceIdentifier();
     /**
@@ -195,7 +187,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional string source_identifier = 18;</code>
-     * @return The bytes for sourceIdentifier.
      */
     com.google.protobuf.ByteString
         getSourceIdentifierBytes();
@@ -206,7 +197,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional .proto.gc.MatchType match_type = 19 [default = UNKNOWN_MATCH];</code>
-     * @return Whether the matchType field is set.
      */
     boolean hasMatchType();
     /**
@@ -215,7 +205,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional .proto.gc.MatchType match_type = 19 [default = UNKNOWN_MATCH];</code>
-     * @return The matchType.
      */
     proto.gc.SslGcRefereeMessage.MatchType getMatchType();
 
@@ -226,7 +215,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>required uint64 packet_timestamp = 1;</code>
-     * @return Whether the packetTimestamp field is set.
      */
     boolean hasPacketTimestamp();
     /**
@@ -236,18 +224,15 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>required uint64 packet_timestamp = 1;</code>
-     * @return The packetTimestamp.
      */
     long getPacketTimestamp();
 
     /**
      * <code>required .proto.gc.Referee.Stage stage = 2;</code>
-     * @return Whether the stage field is set.
      */
     boolean hasStage();
     /**
      * <code>required .proto.gc.Referee.Stage stage = 2;</code>
-     * @return The stage.
      */
     proto.gc.SslGcRefereeMessage.Referee.Stage getStage();
 
@@ -268,7 +253,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional sint64 stage_time_left = 3;</code>
-     * @return Whether the stageTimeLeft field is set.
      */
     boolean hasStageTimeLeft();
     /**
@@ -288,18 +272,15 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional sint64 stage_time_left = 3;</code>
-     * @return The stageTimeLeft.
      */
     long getStageTimeLeft();
 
     /**
      * <code>required .proto.gc.Referee.Command command = 4;</code>
-     * @return Whether the command field is set.
      */
     boolean hasCommand();
     /**
      * <code>required .proto.gc.Referee.Command command = 4;</code>
-     * @return The command.
      */
     proto.gc.SslGcRefereeMessage.Referee.Command getCommand();
 
@@ -309,7 +290,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>required uint32 command_counter = 5;</code>
-     * @return Whether the commandCounter field is set.
      */
     boolean hasCommandCounter();
     /**
@@ -318,7 +298,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>required uint32 command_counter = 5;</code>
-     * @return The commandCounter.
      */
     int getCommandCounter();
 
@@ -329,7 +308,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>required uint64 command_timestamp = 6;</code>
-     * @return Whether the commandTimestamp field is set.
      */
     boolean hasCommandTimestamp();
     /**
@@ -339,7 +317,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>required uint64 command_timestamp = 6;</code>
-     * @return The commandTimestamp.
      */
     long getCommandTimestamp();
 
@@ -349,7 +326,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>required .proto.gc.Referee.TeamInfo yellow = 7;</code>
-     * @return Whether the yellow field is set.
      */
     boolean hasYellow();
     /**
@@ -358,7 +334,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>required .proto.gc.Referee.TeamInfo yellow = 7;</code>
-     * @return The yellow.
      */
     proto.gc.SslGcRefereeMessage.Referee.TeamInfo getYellow();
     /**
@@ -372,12 +347,10 @@ public final class SslGcRefereeMessage {
 
     /**
      * <code>required .proto.gc.Referee.TeamInfo blue = 8;</code>
-     * @return Whether the blue field is set.
      */
     boolean hasBlue();
     /**
      * <code>required .proto.gc.Referee.TeamInfo blue = 8;</code>
-     * @return The blue.
      */
     proto.gc.SslGcRefereeMessage.Referee.TeamInfo getBlue();
     /**
@@ -387,12 +360,10 @@ public final class SslGcRefereeMessage {
 
     /**
      * <code>optional .proto.gc.Referee.Point designated_position = 9;</code>
-     * @return Whether the designatedPosition field is set.
      */
     boolean hasDesignatedPosition();
     /**
      * <code>optional .proto.gc.Referee.Point designated_position = 9;</code>
-     * @return The designatedPosition.
      */
     proto.gc.SslGcRefereeMessage.Referee.Point getDesignatedPosition();
     /**
@@ -408,7 +379,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional bool blue_team_on_positive_half = 10;</code>
-     * @return Whether the blueTeamOnPositiveHalf field is set.
      */
     boolean hasBlueTeamOnPositiveHalf();
     /**
@@ -419,7 +389,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional bool blue_team_on_positive_half = 10;</code>
-     * @return The blueTeamOnPositiveHalf.
      */
     boolean getBlueTeamOnPositiveHalf();
 
@@ -429,7 +398,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional .proto.gc.Referee.Command next_command = 12;</code>
-     * @return Whether the nextCommand field is set.
      */
     boolean hasNextCommand();
     /**
@@ -438,7 +406,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional .proto.gc.Referee.Command next_command = 12;</code>
-     * @return The nextCommand.
      */
     proto.gc.SslGcRefereeMessage.Referee.Command getNextCommand();
 
@@ -502,7 +469,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional int64 current_action_time_remaining = 15;</code>
-     * @return Whether the currentActionTimeRemaining field is set.
      */
     boolean hasCurrentActionTimeRemaining();
     /**
@@ -517,7 +483,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional int64 current_action_time_remaining = 15;</code>
-     * @return The currentActionTimeRemaining.
      */
     long getCurrentActionTimeRemaining();
   }
@@ -528,7 +493,7 @@ public final class SslGcRefereeMessage {
    *
    * Protobuf type {@code proto.gc.Referee}
    */
-  public static final class Referee extends
+  public  static final class Referee extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.Referee)
       RefereeOrBuilder {
@@ -540,24 +505,208 @@ public final class SslGcRefereeMessage {
     private Referee() {
       sourceIdentifier_ = "";
       matchType_ = 0;
+      packetTimestamp_ = 0L;
       stage_ = 0;
+      stageTimeLeft_ = 0L;
       command_ = 0;
+      commandCounter_ = 0;
+      commandTimestamp_ = 0L;
+      blueTeamOnPositiveHalf_ = false;
       nextCommand_ = 0;
       gameEvents_ = java.util.Collections.emptyList();
       gameEventProposals_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Referee();
+      currentActionTimeRemaining_ = 0L;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Referee(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000004;
+              packetTimestamp_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              proto.gc.SslGcRefereeMessage.Referee.Stage value = proto.gc.SslGcRefereeMessage.Referee.Stage.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(2, rawValue);
+              } else {
+                bitField0_ |= 0x00000008;
+                stage_ = rawValue;
+              }
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000010;
+              stageTimeLeft_ = input.readSInt64();
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              proto.gc.SslGcRefereeMessage.Referee.Command value = proto.gc.SslGcRefereeMessage.Referee.Command.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(4, rawValue);
+              } else {
+                bitField0_ |= 0x00000020;
+                command_ = rawValue;
+              }
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000040;
+              commandCounter_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000080;
+              commandTimestamp_ = input.readUInt64();
+              break;
+            }
+            case 58: {
+              proto.gc.SslGcRefereeMessage.Referee.TeamInfo.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000100) == 0x00000100)) {
+                subBuilder = yellow_.toBuilder();
+              }
+              yellow_ = input.readMessage(proto.gc.SslGcRefereeMessage.Referee.TeamInfo.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(yellow_);
+                yellow_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000100;
+              break;
+            }
+            case 66: {
+              proto.gc.SslGcRefereeMessage.Referee.TeamInfo.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000200) == 0x00000200)) {
+                subBuilder = blue_.toBuilder();
+              }
+              blue_ = input.readMessage(proto.gc.SslGcRefereeMessage.Referee.TeamInfo.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(blue_);
+                blue_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000200;
+              break;
+            }
+            case 74: {
+              proto.gc.SslGcRefereeMessage.Referee.Point.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000400) == 0x00000400)) {
+                subBuilder = designatedPosition_.toBuilder();
+              }
+              designatedPosition_ = input.readMessage(proto.gc.SslGcRefereeMessage.Referee.Point.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(designatedPosition_);
+                designatedPosition_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000400;
+              break;
+            }
+            case 80: {
+              bitField0_ |= 0x00000800;
+              blueTeamOnPositiveHalf_ = input.readBool();
+              break;
+            }
+            case 96: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              proto.gc.SslGcRefereeMessage.Referee.Command value = proto.gc.SslGcRefereeMessage.Referee.Command.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(12, rawValue);
+              } else {
+                bitField0_ |= 0x00001000;
+                nextCommand_ = rawValue;
+              }
+              break;
+            }
+            case 120: {
+              bitField0_ |= 0x00002000;
+              currentActionTimeRemaining_ = input.readInt64();
+              break;
+            }
+            case 130: {
+              if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+                gameEvents_ = new java.util.ArrayList<proto.gc.SslGcGameEvent.GameEvent>();
+                mutable_bitField0_ |= 0x00002000;
+              }
+              gameEvents_.add(
+                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.PARSER, extensionRegistry));
+              break;
+            }
+            case 138: {
+              if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+                gameEventProposals_ = new java.util.ArrayList<proto.gc.SslGcRefereeMessage.GameEventProposalGroup>();
+                mutable_bitField0_ |= 0x00004000;
+              }
+              gameEventProposals_.add(
+                  input.readMessage(proto.gc.SslGcRefereeMessage.GameEventProposalGroup.PARSER, extensionRegistry));
+              break;
+            }
+            case 146: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              sourceIdentifier_ = bs;
+              break;
+            }
+            case 152: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              proto.gc.SslGcRefereeMessage.MatchType value = proto.gc.SslGcRefereeMessage.MatchType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(19, rawValue);
+              } else {
+                bitField0_ |= 0x00000002;
+                matchType_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+          gameEvents_ = java.util.Collections.unmodifiableList(gameEvents_);
+        }
+        if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+          gameEventProposals_ = java.util.Collections.unmodifiableList(gameEventProposals_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -830,8 +979,6 @@ public final class SslGcRefereeMessage {
       }
 
       /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -839,10 +986,6 @@ public final class SslGcRefereeMessage {
         return forNumber(value);
       }
 
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
       public static Stage forNumber(int value) {
         switch (value) {
           case 0: return NORMAL_FIRST_HALF_PRE;
@@ -1158,7 +1301,7 @@ public final class SslGcRefereeMessage {
        *
        * <code>INDIRECT_FREE_YELLOW = 10 [deprecated = true];</code>
        */
-      @java.lang.Deprecated public static final int INDIRECT_FREE_YELLOW_VALUE = 10;
+      public static final int INDIRECT_FREE_YELLOW_VALUE = 10;
       /**
        * <pre>
        * The blue team may take an indirect free kick.
@@ -1166,7 +1309,7 @@ public final class SslGcRefereeMessage {
        *
        * <code>INDIRECT_FREE_BLUE = 11 [deprecated = true];</code>
        */
-      @java.lang.Deprecated public static final int INDIRECT_FREE_BLUE_VALUE = 11;
+      public static final int INDIRECT_FREE_BLUE_VALUE = 11;
       /**
        * <pre>
        * The yellow team is currently in a timeout.
@@ -1192,7 +1335,7 @@ public final class SslGcRefereeMessage {
        *
        * <code>GOAL_YELLOW = 14 [deprecated = true];</code>
        */
-      @java.lang.Deprecated public static final int GOAL_YELLOW_VALUE = 14;
+      public static final int GOAL_YELLOW_VALUE = 14;
       /**
        * <pre>
        * The blue team just scored a goal. See also GOAL_YELLOW.
@@ -1200,7 +1343,7 @@ public final class SslGcRefereeMessage {
        *
        * <code>GOAL_BLUE = 15 [deprecated = true];</code>
        */
-      @java.lang.Deprecated public static final int GOAL_BLUE_VALUE = 15;
+      public static final int GOAL_BLUE_VALUE = 15;
       /**
        * <pre>
        * Equivalent to STOP, but the yellow team must pick up the ball and
@@ -1226,8 +1369,6 @@ public final class SslGcRefereeMessage {
       }
 
       /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -1235,10 +1376,6 @@ public final class SslGcRefereeMessage {
         return forNumber(value);
       }
 
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
       public static Command forNumber(int value) {
         switch (value) {
           case 0: return HALT;
@@ -1318,7 +1455,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @return Whether the name field is set.
        */
       boolean hasName();
       /**
@@ -1327,7 +1463,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @return The name.
        */
       java.lang.String getName();
       /**
@@ -1336,7 +1471,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @return The bytes for name.
        */
       com.google.protobuf.ByteString
           getNameBytes();
@@ -1347,7 +1481,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 score = 2;</code>
-       * @return Whether the score field is set.
        */
       boolean hasScore();
       /**
@@ -1356,7 +1489,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 score = 2;</code>
-       * @return The score.
        */
       int getScore();
 
@@ -1366,7 +1498,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 red_cards = 3;</code>
-       * @return Whether the redCards field is set.
        */
       boolean hasRedCards();
       /**
@@ -1375,7 +1506,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 red_cards = 3;</code>
-       * @return The redCards.
        */
       int getRedCards();
 
@@ -1387,7 +1517,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>repeated uint32 yellow_card_times = 4 [packed = true];</code>
-       * @return A list containing the yellowCardTimes.
        */
       java.util.List<java.lang.Integer> getYellowCardTimesList();
       /**
@@ -1398,7 +1527,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>repeated uint32 yellow_card_times = 4 [packed = true];</code>
-       * @return The count of yellowCardTimes.
        */
       int getYellowCardTimesCount();
       /**
@@ -1409,8 +1537,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>repeated uint32 yellow_card_times = 4 [packed = true];</code>
-       * @param index The index of the element to return.
-       * @return The yellowCardTimes at the given index.
        */
       int getYellowCardTimes(int index);
 
@@ -1420,7 +1546,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 yellow_cards = 5;</code>
-       * @return Whether the yellowCards field is set.
        */
       boolean hasYellowCards();
       /**
@@ -1429,7 +1554,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 yellow_cards = 5;</code>
-       * @return The yellowCards.
        */
       int getYellowCards();
 
@@ -1440,7 +1564,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 timeouts = 6;</code>
-       * @return Whether the timeouts field is set.
        */
       boolean hasTimeouts();
       /**
@@ -1450,7 +1573,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 timeouts = 6;</code>
-       * @return The timeouts.
        */
       int getTimeouts();
 
@@ -1460,7 +1582,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 timeout_time = 7;</code>
-       * @return Whether the timeoutTime field is set.
        */
       boolean hasTimeoutTime();
       /**
@@ -1469,7 +1590,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 timeout_time = 7;</code>
-       * @return The timeoutTime.
        */
       int getTimeoutTime();
 
@@ -1479,7 +1599,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 goalkeeper = 8;</code>
-       * @return Whether the goalkeeper field is set.
        */
       boolean hasGoalkeeper();
       /**
@@ -1488,7 +1607,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 goalkeeper = 8;</code>
-       * @return The goalkeeper.
        */
       int getGoalkeeper();
 
@@ -1498,7 +1616,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional uint32 foul_counter = 9;</code>
-       * @return Whether the foulCounter field is set.
        */
       boolean hasFoulCounter();
       /**
@@ -1507,7 +1624,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional uint32 foul_counter = 9;</code>
-       * @return The foulCounter.
        */
       int getFoulCounter();
 
@@ -1517,7 +1633,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional uint32 ball_placement_failures = 10;</code>
-       * @return Whether the ballPlacementFailures field is set.
        */
       boolean hasBallPlacementFailures();
       /**
@@ -1526,7 +1641,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional uint32 ball_placement_failures = 10;</code>
-       * @return The ballPlacementFailures.
        */
       int getBallPlacementFailures();
 
@@ -1536,7 +1650,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool can_place_ball = 12;</code>
-       * @return Whether the canPlaceBall field is set.
        */
       boolean hasCanPlaceBall();
       /**
@@ -1545,7 +1658,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool can_place_ball = 12;</code>
-       * @return The canPlaceBall.
        */
       boolean getCanPlaceBall();
 
@@ -1555,7 +1667,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional uint32 max_allowed_bots = 13;</code>
-       * @return Whether the maxAllowedBots field is set.
        */
       boolean hasMaxAllowedBots();
       /**
@@ -1564,7 +1675,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional uint32 max_allowed_bots = 13;</code>
-       * @return The maxAllowedBots.
        */
       int getMaxAllowedBots();
 
@@ -1574,7 +1684,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool bot_substitution_intent = 14;</code>
-       * @return Whether the botSubstitutionIntent field is set.
        */
       boolean hasBotSubstitutionIntent();
       /**
@@ -1583,7 +1692,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool bot_substitution_intent = 14;</code>
-       * @return The botSubstitutionIntent.
        */
       boolean getBotSubstitutionIntent();
 
@@ -1593,7 +1701,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool ball_placement_failures_reached = 15;</code>
-       * @return Whether the ballPlacementFailuresReached field is set.
        */
       boolean hasBallPlacementFailuresReached();
       /**
@@ -1602,7 +1709,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool ball_placement_failures_reached = 15;</code>
-       * @return The ballPlacementFailuresReached.
        */
       boolean getBallPlacementFailuresReached();
 
@@ -1612,7 +1718,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool bot_substitution_allowed = 16;</code>
-       * @return Whether the botSubstitutionAllowed field is set.
        */
       boolean hasBotSubstitutionAllowed();
       /**
@@ -1621,7 +1726,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool bot_substitution_allowed = 16;</code>
-       * @return The botSubstitutionAllowed.
        */
       boolean getBotSubstitutionAllowed();
     }
@@ -1632,7 +1736,7 @@ public final class SslGcRefereeMessage {
      *
      * Protobuf type {@code proto.gc.Referee.TeamInfo}
      */
-    public static final class TeamInfo extends
+    public  static final class TeamInfo extends
         com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:proto.gc.Referee.TeamInfo)
         TeamInfoOrBuilder {
@@ -1643,20 +1747,159 @@ public final class SslGcRefereeMessage {
       }
       private TeamInfo() {
         name_ = "";
-        yellowCardTimes_ = emptyIntList();
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(
-          UnusedPrivateParameter unused) {
-        return new TeamInfo();
+        score_ = 0;
+        redCards_ = 0;
+        yellowCardTimes_ = java.util.Collections.emptyList();
+        yellowCards_ = 0;
+        timeouts_ = 0;
+        timeoutTime_ = 0;
+        goalkeeper_ = 0;
+        foulCounter_ = 0;
+        ballPlacementFailures_ = 0;
+        canPlaceBall_ = false;
+        maxAllowedBots_ = 0;
+        botSubstitutionIntent_ = false;
+        ballPlacementFailuresReached_ = false;
+        botSubstitutionAllowed_ = false;
       }
 
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
+      }
+      private TeamInfo(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000001;
+                name_ = bs;
+                break;
+              }
+              case 16: {
+                bitField0_ |= 0x00000002;
+                score_ = input.readUInt32();
+                break;
+              }
+              case 24: {
+                bitField0_ |= 0x00000004;
+                redCards_ = input.readUInt32();
+                break;
+              }
+              case 32: {
+                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                  yellowCardTimes_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000008;
+                }
+                yellowCardTimes_.add(input.readUInt32());
+                break;
+              }
+              case 34: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
+                  yellowCardTimes_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000008;
+                }
+                while (input.getBytesUntilLimit() > 0) {
+                  yellowCardTimes_.add(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              }
+              case 40: {
+                bitField0_ |= 0x00000008;
+                yellowCards_ = input.readUInt32();
+                break;
+              }
+              case 48: {
+                bitField0_ |= 0x00000010;
+                timeouts_ = input.readUInt32();
+                break;
+              }
+              case 56: {
+                bitField0_ |= 0x00000020;
+                timeoutTime_ = input.readUInt32();
+                break;
+              }
+              case 64: {
+                bitField0_ |= 0x00000040;
+                goalkeeper_ = input.readUInt32();
+                break;
+              }
+              case 72: {
+                bitField0_ |= 0x00000080;
+                foulCounter_ = input.readUInt32();
+                break;
+              }
+              case 80: {
+                bitField0_ |= 0x00000100;
+                ballPlacementFailures_ = input.readUInt32();
+                break;
+              }
+              case 96: {
+                bitField0_ |= 0x00000200;
+                canPlaceBall_ = input.readBool();
+                break;
+              }
+              case 104: {
+                bitField0_ |= 0x00000400;
+                maxAllowedBots_ = input.readUInt32();
+                break;
+              }
+              case 112: {
+                bitField0_ |= 0x00000800;
+                botSubstitutionIntent_ = input.readBool();
+                break;
+              }
+              case 120: {
+                bitField0_ |= 0x00001000;
+                ballPlacementFailuresReached_ = input.readBool();
+                break;
+              }
+              case 128: {
+                bitField0_ |= 0x00002000;
+                botSubstitutionAllowed_ = input.readBool();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+            yellowCardTimes_ = java.util.Collections.unmodifiableList(yellowCardTimes_);
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -1673,19 +1916,16 @@ public final class SslGcRefereeMessage {
 
       private int bitField0_;
       public static final int NAME_FIELD_NUMBER = 1;
-      @SuppressWarnings("serial")
-      private volatile java.lang.Object name_ = "";
+      private volatile java.lang.Object name_;
       /**
        * <pre>
        * The team's name (empty string if operator has not typed anything).
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @return Whether the name field is set.
        */
-      @java.lang.Override
       public boolean hasName() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -1693,9 +1933,7 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @return The name.
        */
-      @java.lang.Override
       public java.lang.String getName() {
         java.lang.Object ref = name_;
         if (ref instanceof java.lang.String) {
@@ -1716,9 +1954,7 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @return The bytes for name.
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString
           getNameBytes() {
         java.lang.Object ref = name_;
@@ -1734,18 +1970,16 @@ public final class SslGcRefereeMessage {
       }
 
       public static final int SCORE_FIELD_NUMBER = 2;
-      private int score_ = 0;
+      private int score_;
       /**
        * <pre>
        * The number of goals scored by the team during normal play and overtime.
        * </pre>
        *
        * <code>required uint32 score = 2;</code>
-       * @return Whether the score field is set.
        */
-      @java.lang.Override
       public boolean hasScore() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -1753,26 +1987,22 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 score = 2;</code>
-       * @return The score.
        */
-      @java.lang.Override
       public int getScore() {
         return score_;
       }
 
       public static final int RED_CARDS_FIELD_NUMBER = 3;
-      private int redCards_ = 0;
+      private int redCards_;
       /**
        * <pre>
        * The number of red cards issued to the team since the beginning of the game.
        * </pre>
        *
        * <code>required uint32 red_cards = 3;</code>
-       * @return Whether the redCards field is set.
        */
-      @java.lang.Override
       public boolean hasRedCards() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -1780,16 +2010,13 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 red_cards = 3;</code>
-       * @return The redCards.
        */
-      @java.lang.Override
       public int getRedCards() {
         return redCards_;
       }
 
       public static final int YELLOW_CARD_TIMES_FIELD_NUMBER = 4;
-      @SuppressWarnings("serial")
-      private com.google.protobuf.Internal.IntList yellowCardTimes_;
+      private java.util.List<java.lang.Integer> yellowCardTimes_;
       /**
        * <pre>
        * The amount of time (in microseconds) left on each yellow card issued to the team.
@@ -1798,9 +2025,7 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>repeated uint32 yellow_card_times = 4 [packed = true];</code>
-       * @return A list containing the yellowCardTimes.
        */
-      @java.lang.Override
       public java.util.List<java.lang.Integer>
           getYellowCardTimesList() {
         return yellowCardTimes_;
@@ -1813,7 +2038,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>repeated uint32 yellow_card_times = 4 [packed = true];</code>
-       * @return The count of yellowCardTimes.
        */
       public int getYellowCardTimesCount() {
         return yellowCardTimes_.size();
@@ -1826,27 +2050,23 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>repeated uint32 yellow_card_times = 4 [packed = true];</code>
-       * @param index The index of the element to return.
-       * @return The yellowCardTimes at the given index.
        */
       public int getYellowCardTimes(int index) {
-        return yellowCardTimes_.getInt(index);
+        return yellowCardTimes_.get(index);
       }
       private int yellowCardTimesMemoizedSerializedSize = -1;
 
       public static final int YELLOW_CARDS_FIELD_NUMBER = 5;
-      private int yellowCards_ = 0;
+      private int yellowCards_;
       /**
        * <pre>
        * The total number of yellow cards ever issued to the team.
        * </pre>
        *
        * <code>required uint32 yellow_cards = 5;</code>
-       * @return Whether the yellowCards field is set.
        */
-      @java.lang.Override
       public boolean hasYellowCards() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <pre>
@@ -1854,15 +2074,13 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 yellow_cards = 5;</code>
-       * @return The yellowCards.
        */
-      @java.lang.Override
       public int getYellowCards() {
         return yellowCards_;
       }
 
       public static final int TIMEOUTS_FIELD_NUMBER = 6;
-      private int timeouts_ = 0;
+      private int timeouts_;
       /**
        * <pre>
        * The number of timeouts this team can still call.
@@ -1870,11 +2088,9 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 timeouts = 6;</code>
-       * @return Whether the timeouts field is set.
        */
-      @java.lang.Override
       public boolean hasTimeouts() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <pre>
@@ -1883,26 +2099,22 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 timeouts = 6;</code>
-       * @return The timeouts.
        */
-      @java.lang.Override
       public int getTimeouts() {
         return timeouts_;
       }
 
       public static final int TIMEOUT_TIME_FIELD_NUMBER = 7;
-      private int timeoutTime_ = 0;
+      private int timeoutTime_;
       /**
        * <pre>
        * The number of microseconds of timeout this team can use.
        * </pre>
        *
        * <code>required uint32 timeout_time = 7;</code>
-       * @return Whether the timeoutTime field is set.
        */
-      @java.lang.Override
       public boolean hasTimeoutTime() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <pre>
@@ -1910,26 +2122,22 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 timeout_time = 7;</code>
-       * @return The timeoutTime.
        */
-      @java.lang.Override
       public int getTimeoutTime() {
         return timeoutTime_;
       }
 
       public static final int GOALKEEPER_FIELD_NUMBER = 8;
-      private int goalkeeper_ = 0;
+      private int goalkeeper_;
       /**
        * <pre>
        * The pattern number of this team's goalkeeper.
        * </pre>
        *
        * <code>required uint32 goalkeeper = 8;</code>
-       * @return Whether the goalkeeper field is set.
        */
-      @java.lang.Override
       public boolean hasGoalkeeper() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <pre>
@@ -1937,26 +2145,22 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 goalkeeper = 8;</code>
-       * @return The goalkeeper.
        */
-      @java.lang.Override
       public int getGoalkeeper() {
         return goalkeeper_;
       }
 
       public static final int FOUL_COUNTER_FIELD_NUMBER = 9;
-      private int foulCounter_ = 0;
+      private int foulCounter_;
       /**
        * <pre>
        * The total number of countable fouls that act towards yellow cards
        * </pre>
        *
        * <code>optional uint32 foul_counter = 9;</code>
-       * @return Whether the foulCounter field is set.
        */
-      @java.lang.Override
       public boolean hasFoulCounter() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
        * <pre>
@@ -1964,26 +2168,22 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional uint32 foul_counter = 9;</code>
-       * @return The foulCounter.
        */
-      @java.lang.Override
       public int getFoulCounter() {
         return foulCounter_;
       }
 
       public static final int BALL_PLACEMENT_FAILURES_FIELD_NUMBER = 10;
-      private int ballPlacementFailures_ = 0;
+      private int ballPlacementFailures_;
       /**
        * <pre>
        * The number of consecutive ball placement failures of this team
        * </pre>
        *
        * <code>optional uint32 ball_placement_failures = 10;</code>
-       * @return Whether the ballPlacementFailures field is set.
        */
-      @java.lang.Override
       public boolean hasBallPlacementFailures() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
        * <pre>
@@ -1991,26 +2191,22 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional uint32 ball_placement_failures = 10;</code>
-       * @return The ballPlacementFailures.
        */
-      @java.lang.Override
       public int getBallPlacementFailures() {
         return ballPlacementFailures_;
       }
 
       public static final int CAN_PLACE_BALL_FIELD_NUMBER = 12;
-      private boolean canPlaceBall_ = false;
+      private boolean canPlaceBall_;
       /**
        * <pre>
        * Indicate if the team is able and allowed to place the ball
        * </pre>
        *
        * <code>optional bool can_place_ball = 12;</code>
-       * @return Whether the canPlaceBall field is set.
        */
-      @java.lang.Override
       public boolean hasCanPlaceBall() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
        * <pre>
@@ -2018,26 +2214,22 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool can_place_ball = 12;</code>
-       * @return The canPlaceBall.
        */
-      @java.lang.Override
       public boolean getCanPlaceBall() {
         return canPlaceBall_;
       }
 
       public static final int MAX_ALLOWED_BOTS_FIELD_NUMBER = 13;
-      private int maxAllowedBots_ = 0;
+      private int maxAllowedBots_;
       /**
        * <pre>
        * The maximum number of bots allowed on the field based on division and cards
        * </pre>
        *
        * <code>optional uint32 max_allowed_bots = 13;</code>
-       * @return Whether the maxAllowedBots field is set.
        */
-      @java.lang.Override
       public boolean hasMaxAllowedBots() {
-        return ((bitField0_ & 0x00000400) != 0);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
        * <pre>
@@ -2045,26 +2237,22 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional uint32 max_allowed_bots = 13;</code>
-       * @return The maxAllowedBots.
        */
-      @java.lang.Override
       public int getMaxAllowedBots() {
         return maxAllowedBots_;
       }
 
       public static final int BOT_SUBSTITUTION_INTENT_FIELD_NUMBER = 14;
-      private boolean botSubstitutionIntent_ = false;
+      private boolean botSubstitutionIntent_;
       /**
        * <pre>
        * The team has submitted an intent to substitute one or more robots at the next chance
        * </pre>
        *
        * <code>optional bool bot_substitution_intent = 14;</code>
-       * @return Whether the botSubstitutionIntent field is set.
        */
-      @java.lang.Override
       public boolean hasBotSubstitutionIntent() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
        * <pre>
@@ -2072,26 +2260,22 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool bot_substitution_intent = 14;</code>
-       * @return The botSubstitutionIntent.
        */
-      @java.lang.Override
       public boolean getBotSubstitutionIntent() {
         return botSubstitutionIntent_;
       }
 
       public static final int BALL_PLACEMENT_FAILURES_REACHED_FIELD_NUMBER = 15;
-      private boolean ballPlacementFailuresReached_ = false;
+      private boolean ballPlacementFailuresReached_;
       /**
        * <pre>
        * Indicate if the team reached the maximum allowed ball placement failures and is thus not allowed to place the ball anymore
        * </pre>
        *
        * <code>optional bool ball_placement_failures_reached = 15;</code>
-       * @return Whether the ballPlacementFailuresReached field is set.
        */
-      @java.lang.Override
       public boolean hasBallPlacementFailuresReached() {
-        return ((bitField0_ & 0x00001000) != 0);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
        * <pre>
@@ -2099,26 +2283,22 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool ball_placement_failures_reached = 15;</code>
-       * @return The ballPlacementFailuresReached.
        */
-      @java.lang.Override
       public boolean getBallPlacementFailuresReached() {
         return ballPlacementFailuresReached_;
       }
 
       public static final int BOT_SUBSTITUTION_ALLOWED_FIELD_NUMBER = 16;
-      private boolean botSubstitutionAllowed_ = false;
+      private boolean botSubstitutionAllowed_;
       /**
        * <pre>
        * The team is allowed to substitute one or more robots currently
        * </pre>
        *
        * <code>optional bool bot_substitution_allowed = 16;</code>
-       * @return Whether the botSubstitutionAllowed field is set.
        */
-      @java.lang.Override
       public boolean hasBotSubstitutionAllowed() {
-        return ((bitField0_ & 0x00002000) != 0);
+        return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
        * <pre>
@@ -2126,9 +2306,7 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool bot_substitution_allowed = 16;</code>
-       * @return The botSubstitutionAllowed.
        */
-      @java.lang.Override
       public boolean getBotSubstitutionAllowed() {
         return botSubstitutionAllowed_;
       }
@@ -2176,13 +2354,13 @@ public final class SslGcRefereeMessage {
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         getSerializedSize();
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
         }
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
           output.writeUInt32(2, score_);
         }
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
           output.writeUInt32(3, redCards_);
         }
         if (getYellowCardTimesList().size() > 0) {
@@ -2190,42 +2368,42 @@ public final class SslGcRefereeMessage {
           output.writeUInt32NoTag(yellowCardTimesMemoizedSerializedSize);
         }
         for (int i = 0; i < yellowCardTimes_.size(); i++) {
-          output.writeUInt32NoTag(yellowCardTimes_.getInt(i));
+          output.writeUInt32NoTag(yellowCardTimes_.get(i));
         }
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
           output.writeUInt32(5, yellowCards_);
         }
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
           output.writeUInt32(6, timeouts_);
         }
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
           output.writeUInt32(7, timeoutTime_);
         }
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000040) == 0x00000040)) {
           output.writeUInt32(8, goalkeeper_);
         }
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
           output.writeUInt32(9, foulCounter_);
         }
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000100) == 0x00000100)) {
           output.writeUInt32(10, ballPlacementFailures_);
         }
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000200) == 0x00000200)) {
           output.writeBool(12, canPlaceBall_);
         }
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000400) == 0x00000400)) {
           output.writeUInt32(13, maxAllowedBots_);
         }
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00000800) == 0x00000800)) {
           output.writeBool(14, botSubstitutionIntent_);
         }
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
           output.writeBool(15, ballPlacementFailuresReached_);
         }
-        if (((bitField0_ & 0x00002000) != 0)) {
+        if (((bitField0_ & 0x00002000) == 0x00002000)) {
           output.writeBool(16, botSubstitutionAllowed_);
         }
-        getUnknownFields().writeTo(output);
+        unknownFields.writeTo(output);
       }
 
       @java.lang.Override
@@ -2234,14 +2412,14 @@ public final class SslGcRefereeMessage {
         if (size != -1) return size;
 
         size = 0;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
         }
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(2, score_);
         }
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(3, redCards_);
         }
@@ -2249,7 +2427,7 @@ public final class SslGcRefereeMessage {
           int dataSize = 0;
           for (int i = 0; i < yellowCardTimes_.size(); i++) {
             dataSize += com.google.protobuf.CodedOutputStream
-              .computeUInt32SizeNoTag(yellowCardTimes_.getInt(i));
+              .computeUInt32SizeNoTag(yellowCardTimes_.get(i));
           }
           size += dataSize;
           if (!getYellowCardTimesList().isEmpty()) {
@@ -2259,51 +2437,51 @@ public final class SslGcRefereeMessage {
           }
           yellowCardTimesMemoizedSerializedSize = dataSize;
         }
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(5, yellowCards_);
         }
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(6, timeouts_);
         }
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(7, timeoutTime_);
         }
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000040) == 0x00000040)) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(8, goalkeeper_);
         }
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(9, foulCounter_);
         }
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000100) == 0x00000100)) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(10, ballPlacementFailures_);
         }
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000200) == 0x00000200)) {
           size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(12, canPlaceBall_);
         }
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000400) == 0x00000400)) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(13, maxAllowedBots_);
         }
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00000800) == 0x00000800)) {
           size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(14, botSubstitutionIntent_);
         }
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
           size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(15, ballPlacementFailuresReached_);
         }
-        if (((bitField0_ & 0x00002000) != 0)) {
+        if (((bitField0_ & 0x00002000) == 0x00002000)) {
           size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(16, botSubstitutionAllowed_);
         }
-        size += getUnknownFields().getSerializedSize();
+        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -2318,80 +2496,81 @@ public final class SslGcRefereeMessage {
         }
         proto.gc.SslGcRefereeMessage.Referee.TeamInfo other = (proto.gc.SslGcRefereeMessage.Referee.TeamInfo) obj;
 
-        if (hasName() != other.hasName()) return false;
+        boolean result = true;
+        result = result && (hasName() == other.hasName());
         if (hasName()) {
-          if (!getName()
-              .equals(other.getName())) return false;
+          result = result && getName()
+              .equals(other.getName());
         }
-        if (hasScore() != other.hasScore()) return false;
+        result = result && (hasScore() == other.hasScore());
         if (hasScore()) {
-          if (getScore()
-              != other.getScore()) return false;
+          result = result && (getScore()
+              == other.getScore());
         }
-        if (hasRedCards() != other.hasRedCards()) return false;
+        result = result && (hasRedCards() == other.hasRedCards());
         if (hasRedCards()) {
-          if (getRedCards()
-              != other.getRedCards()) return false;
+          result = result && (getRedCards()
+              == other.getRedCards());
         }
-        if (!getYellowCardTimesList()
-            .equals(other.getYellowCardTimesList())) return false;
-        if (hasYellowCards() != other.hasYellowCards()) return false;
+        result = result && getYellowCardTimesList()
+            .equals(other.getYellowCardTimesList());
+        result = result && (hasYellowCards() == other.hasYellowCards());
         if (hasYellowCards()) {
-          if (getYellowCards()
-              != other.getYellowCards()) return false;
+          result = result && (getYellowCards()
+              == other.getYellowCards());
         }
-        if (hasTimeouts() != other.hasTimeouts()) return false;
+        result = result && (hasTimeouts() == other.hasTimeouts());
         if (hasTimeouts()) {
-          if (getTimeouts()
-              != other.getTimeouts()) return false;
+          result = result && (getTimeouts()
+              == other.getTimeouts());
         }
-        if (hasTimeoutTime() != other.hasTimeoutTime()) return false;
+        result = result && (hasTimeoutTime() == other.hasTimeoutTime());
         if (hasTimeoutTime()) {
-          if (getTimeoutTime()
-              != other.getTimeoutTime()) return false;
+          result = result && (getTimeoutTime()
+              == other.getTimeoutTime());
         }
-        if (hasGoalkeeper() != other.hasGoalkeeper()) return false;
+        result = result && (hasGoalkeeper() == other.hasGoalkeeper());
         if (hasGoalkeeper()) {
-          if (getGoalkeeper()
-              != other.getGoalkeeper()) return false;
+          result = result && (getGoalkeeper()
+              == other.getGoalkeeper());
         }
-        if (hasFoulCounter() != other.hasFoulCounter()) return false;
+        result = result && (hasFoulCounter() == other.hasFoulCounter());
         if (hasFoulCounter()) {
-          if (getFoulCounter()
-              != other.getFoulCounter()) return false;
+          result = result && (getFoulCounter()
+              == other.getFoulCounter());
         }
-        if (hasBallPlacementFailures() != other.hasBallPlacementFailures()) return false;
+        result = result && (hasBallPlacementFailures() == other.hasBallPlacementFailures());
         if (hasBallPlacementFailures()) {
-          if (getBallPlacementFailures()
-              != other.getBallPlacementFailures()) return false;
+          result = result && (getBallPlacementFailures()
+              == other.getBallPlacementFailures());
         }
-        if (hasCanPlaceBall() != other.hasCanPlaceBall()) return false;
+        result = result && (hasCanPlaceBall() == other.hasCanPlaceBall());
         if (hasCanPlaceBall()) {
-          if (getCanPlaceBall()
-              != other.getCanPlaceBall()) return false;
+          result = result && (getCanPlaceBall()
+              == other.getCanPlaceBall());
         }
-        if (hasMaxAllowedBots() != other.hasMaxAllowedBots()) return false;
+        result = result && (hasMaxAllowedBots() == other.hasMaxAllowedBots());
         if (hasMaxAllowedBots()) {
-          if (getMaxAllowedBots()
-              != other.getMaxAllowedBots()) return false;
+          result = result && (getMaxAllowedBots()
+              == other.getMaxAllowedBots());
         }
-        if (hasBotSubstitutionIntent() != other.hasBotSubstitutionIntent()) return false;
+        result = result && (hasBotSubstitutionIntent() == other.hasBotSubstitutionIntent());
         if (hasBotSubstitutionIntent()) {
-          if (getBotSubstitutionIntent()
-              != other.getBotSubstitutionIntent()) return false;
+          result = result && (getBotSubstitutionIntent()
+              == other.getBotSubstitutionIntent());
         }
-        if (hasBallPlacementFailuresReached() != other.hasBallPlacementFailuresReached()) return false;
+        result = result && (hasBallPlacementFailuresReached() == other.hasBallPlacementFailuresReached());
         if (hasBallPlacementFailuresReached()) {
-          if (getBallPlacementFailuresReached()
-              != other.getBallPlacementFailuresReached()) return false;
+          result = result && (getBallPlacementFailuresReached()
+              == other.getBallPlacementFailuresReached());
         }
-        if (hasBotSubstitutionAllowed() != other.hasBotSubstitutionAllowed()) return false;
+        result = result && (hasBotSubstitutionAllowed() == other.hasBotSubstitutionAllowed());
         if (hasBotSubstitutionAllowed()) {
-          if (getBotSubstitutionAllowed()
-              != other.getBotSubstitutionAllowed()) return false;
+          result = result && (getBotSubstitutionAllowed()
+              == other.getBotSubstitutionAllowed());
         }
-        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-        return true;
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
       }
 
       @java.lang.Override
@@ -2465,7 +2644,7 @@ public final class SslGcRefereeMessage {
           hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
               getBotSubstitutionAllowed());
         }
-        hash = (29 * hash) + getUnknownFields().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -2586,33 +2765,52 @@ public final class SslGcRefereeMessage {
 
         // Construct using proto.gc.SslGcRefereeMessage.Referee.TeamInfo.newBuilder()
         private Builder() {
-
+          maybeForceBuilderInitialization();
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          bitField0_ = 0;
           name_ = "";
+          bitField0_ = (bitField0_ & ~0x00000001);
           score_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000002);
           redCards_ = 0;
-          yellowCardTimes_ = emptyIntList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          yellowCardTimes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
           yellowCards_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000010);
           timeouts_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000020);
           timeoutTime_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000040);
           goalkeeper_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000080);
           foulCounter_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000100);
           ballPlacementFailures_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000200);
           canPlaceBall_ = false;
+          bitField0_ = (bitField0_ & ~0x00000400);
           maxAllowedBots_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000800);
           botSubstitutionIntent_ = false;
+          bitField0_ = (bitField0_ & ~0x00001000);
           ballPlacementFailuresReached_ = false;
+          bitField0_ = (bitField0_ & ~0x00002000);
           botSubstitutionAllowed_ = false;
+          bitField0_ = (bitField0_ & ~0x00004000);
           return this;
         }
 
@@ -2639,113 +2837,105 @@ public final class SslGcRefereeMessage {
         @java.lang.Override
         public proto.gc.SslGcRefereeMessage.Referee.TeamInfo buildPartial() {
           proto.gc.SslGcRefereeMessage.Referee.TeamInfo result = new proto.gc.SslGcRefereeMessage.Referee.TeamInfo(this);
-          buildPartialRepeatedFields(result);
-          if (bitField0_ != 0) { buildPartial0(result); }
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.name_ = name_;
+          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+            to_bitField0_ |= 0x00000002;
+          }
+          result.score_ = score_;
+          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+            to_bitField0_ |= 0x00000004;
+          }
+          result.redCards_ = redCards_;
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            yellowCardTimes_ = java.util.Collections.unmodifiableList(yellowCardTimes_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.yellowCardTimes_ = yellowCardTimes_;
+          if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+            to_bitField0_ |= 0x00000008;
+          }
+          result.yellowCards_ = yellowCards_;
+          if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+            to_bitField0_ |= 0x00000010;
+          }
+          result.timeouts_ = timeouts_;
+          if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+            to_bitField0_ |= 0x00000020;
+          }
+          result.timeoutTime_ = timeoutTime_;
+          if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+            to_bitField0_ |= 0x00000040;
+          }
+          result.goalkeeper_ = goalkeeper_;
+          if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+            to_bitField0_ |= 0x00000080;
+          }
+          result.foulCounter_ = foulCounter_;
+          if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+            to_bitField0_ |= 0x00000100;
+          }
+          result.ballPlacementFailures_ = ballPlacementFailures_;
+          if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+            to_bitField0_ |= 0x00000200;
+          }
+          result.canPlaceBall_ = canPlaceBall_;
+          if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+            to_bitField0_ |= 0x00000400;
+          }
+          result.maxAllowedBots_ = maxAllowedBots_;
+          if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+            to_bitField0_ |= 0x00000800;
+          }
+          result.botSubstitutionIntent_ = botSubstitutionIntent_;
+          if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+            to_bitField0_ |= 0x00001000;
+          }
+          result.ballPlacementFailuresReached_ = ballPlacementFailuresReached_;
+          if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+            to_bitField0_ |= 0x00002000;
+          }
+          result.botSubstitutionAllowed_ = botSubstitutionAllowed_;
+          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
 
-        private void buildPartialRepeatedFields(proto.gc.SslGcRefereeMessage.Referee.TeamInfo result) {
-          if (((bitField0_ & 0x00000008) != 0)) {
-            yellowCardTimes_.makeImmutable();
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.yellowCardTimes_ = yellowCardTimes_;
-        }
-
-        private void buildPartial0(proto.gc.SslGcRefereeMessage.Referee.TeamInfo result) {
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) != 0)) {
-            result.name_ = name_;
-            to_bitField0_ |= 0x00000001;
-          }
-          if (((from_bitField0_ & 0x00000002) != 0)) {
-            result.score_ = score_;
-            to_bitField0_ |= 0x00000002;
-          }
-          if (((from_bitField0_ & 0x00000004) != 0)) {
-            result.redCards_ = redCards_;
-            to_bitField0_ |= 0x00000004;
-          }
-          if (((from_bitField0_ & 0x00000010) != 0)) {
-            result.yellowCards_ = yellowCards_;
-            to_bitField0_ |= 0x00000008;
-          }
-          if (((from_bitField0_ & 0x00000020) != 0)) {
-            result.timeouts_ = timeouts_;
-            to_bitField0_ |= 0x00000010;
-          }
-          if (((from_bitField0_ & 0x00000040) != 0)) {
-            result.timeoutTime_ = timeoutTime_;
-            to_bitField0_ |= 0x00000020;
-          }
-          if (((from_bitField0_ & 0x00000080) != 0)) {
-            result.goalkeeper_ = goalkeeper_;
-            to_bitField0_ |= 0x00000040;
-          }
-          if (((from_bitField0_ & 0x00000100) != 0)) {
-            result.foulCounter_ = foulCounter_;
-            to_bitField0_ |= 0x00000080;
-          }
-          if (((from_bitField0_ & 0x00000200) != 0)) {
-            result.ballPlacementFailures_ = ballPlacementFailures_;
-            to_bitField0_ |= 0x00000100;
-          }
-          if (((from_bitField0_ & 0x00000400) != 0)) {
-            result.canPlaceBall_ = canPlaceBall_;
-            to_bitField0_ |= 0x00000200;
-          }
-          if (((from_bitField0_ & 0x00000800) != 0)) {
-            result.maxAllowedBots_ = maxAllowedBots_;
-            to_bitField0_ |= 0x00000400;
-          }
-          if (((from_bitField0_ & 0x00001000) != 0)) {
-            result.botSubstitutionIntent_ = botSubstitutionIntent_;
-            to_bitField0_ |= 0x00000800;
-          }
-          if (((from_bitField0_ & 0x00002000) != 0)) {
-            result.ballPlacementFailuresReached_ = ballPlacementFailuresReached_;
-            to_bitField0_ |= 0x00001000;
-          }
-          if (((from_bitField0_ & 0x00004000) != 0)) {
-            result.botSubstitutionAllowed_ = botSubstitutionAllowed_;
-            to_bitField0_ |= 0x00002000;
-          }
-          result.bitField0_ |= to_bitField0_;
-        }
-
         @java.lang.Override
         public Builder clone() {
-          return super.clone();
+          return (Builder) super.clone();
         }
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
-          return super.setField(field, value);
+          return (Builder) super.setField(field, value);
         }
         @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
+          return (Builder) super.clearField(field);
         }
         @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
+          return (Builder) super.clearOneof(oneof);
         }
         @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
+          return (Builder) super.setRepeatedField(field, index, value);
         }
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
-          return super.addRepeatedField(field, value);
+          return (Builder) super.addRepeatedField(field, value);
         }
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2760,8 +2950,8 @@ public final class SslGcRefereeMessage {
         public Builder mergeFrom(proto.gc.SslGcRefereeMessage.Referee.TeamInfo other) {
           if (other == proto.gc.SslGcRefereeMessage.Referee.TeamInfo.getDefaultInstance()) return this;
           if (other.hasName()) {
-            name_ = other.name_;
             bitField0_ |= 0x00000001;
+            name_ = other.name_;
             onChanged();
           }
           if (other.hasScore()) {
@@ -2813,7 +3003,7 @@ public final class SslGcRefereeMessage {
           if (other.hasBotSubstitutionAllowed()) {
             setBotSubstitutionAllowed(other.getBotSubstitutionAllowed());
           }
-          this.mergeUnknownFields(other.getUnknownFields());
+          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
@@ -2849,116 +3039,17 @@ public final class SslGcRefereeMessage {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
+          proto.gc.SslGcRefereeMessage.Referee.TeamInfo parsedMessage = null;
           try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 10: {
-                  name_ = input.readBytes();
-                  bitField0_ |= 0x00000001;
-                  break;
-                } // case 10
-                case 16: {
-                  score_ = input.readUInt32();
-                  bitField0_ |= 0x00000002;
-                  break;
-                } // case 16
-                case 24: {
-                  redCards_ = input.readUInt32();
-                  bitField0_ |= 0x00000004;
-                  break;
-                } // case 24
-                case 32: {
-                  int v = input.readUInt32();
-                  ensureYellowCardTimesIsMutable();
-                  yellowCardTimes_.addInt(v);
-                  break;
-                } // case 32
-                case 34: {
-                  int length = input.readRawVarint32();
-                  int limit = input.pushLimit(length);
-                  ensureYellowCardTimesIsMutable();
-                  while (input.getBytesUntilLimit() > 0) {
-                    yellowCardTimes_.addInt(input.readUInt32());
-                  }
-                  input.popLimit(limit);
-                  break;
-                } // case 34
-                case 40: {
-                  yellowCards_ = input.readUInt32();
-                  bitField0_ |= 0x00000010;
-                  break;
-                } // case 40
-                case 48: {
-                  timeouts_ = input.readUInt32();
-                  bitField0_ |= 0x00000020;
-                  break;
-                } // case 48
-                case 56: {
-                  timeoutTime_ = input.readUInt32();
-                  bitField0_ |= 0x00000040;
-                  break;
-                } // case 56
-                case 64: {
-                  goalkeeper_ = input.readUInt32();
-                  bitField0_ |= 0x00000080;
-                  break;
-                } // case 64
-                case 72: {
-                  foulCounter_ = input.readUInt32();
-                  bitField0_ |= 0x00000100;
-                  break;
-                } // case 72
-                case 80: {
-                  ballPlacementFailures_ = input.readUInt32();
-                  bitField0_ |= 0x00000200;
-                  break;
-                } // case 80
-                case 96: {
-                  canPlaceBall_ = input.readBool();
-                  bitField0_ |= 0x00000400;
-                  break;
-                } // case 96
-                case 104: {
-                  maxAllowedBots_ = input.readUInt32();
-                  bitField0_ |= 0x00000800;
-                  break;
-                } // case 104
-                case 112: {
-                  botSubstitutionIntent_ = input.readBool();
-                  bitField0_ |= 0x00001000;
-                  break;
-                } // case 112
-                case 120: {
-                  ballPlacementFailuresReached_ = input.readBool();
-                  bitField0_ |= 0x00002000;
-                  break;
-                } // case 120
-                case 128: {
-                  botSubstitutionAllowed_ = input.readBool();
-                  bitField0_ |= 0x00004000;
-                  break;
-                } // case 128
-                default: {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-              } // switch (tag)
-            } // while (!done)
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (proto.gc.SslGcRefereeMessage.Referee.TeamInfo) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            onChanged();
-          } // finally
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
           return this;
         }
         private int bitField0_;
@@ -2970,10 +3061,9 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required string name = 1;</code>
-         * @return Whether the name field is set.
          */
         public boolean hasName() {
-          return ((bitField0_ & 0x00000001) != 0);
+          return ((bitField0_ & 0x00000001) == 0x00000001);
         }
         /**
          * <pre>
@@ -2981,7 +3071,6 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required string name = 1;</code>
-         * @return The name.
          */
         public java.lang.String getName() {
           java.lang.Object ref = name_;
@@ -3003,7 +3092,6 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required string name = 1;</code>
-         * @return The bytes for name.
          */
         public com.google.protobuf.ByteString
             getNameBytes() {
@@ -3024,14 +3112,14 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required string name = 1;</code>
-         * @param value The name to set.
-         * @return This builder for chaining.
          */
         public Builder setName(
             java.lang.String value) {
-          if (value == null) { throw new NullPointerException(); }
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
           name_ = value;
-          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -3041,11 +3129,10 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required string name = 1;</code>
-         * @return This builder for chaining.
          */
         public Builder clearName() {
-          name_ = getDefaultInstance().getName();
           bitField0_ = (bitField0_ & ~0x00000001);
+          name_ = getDefaultInstance().getName();
           onChanged();
           return this;
         }
@@ -3055,14 +3142,14 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required string name = 1;</code>
-         * @param value The bytes for name to set.
-         * @return This builder for chaining.
          */
         public Builder setNameBytes(
             com.google.protobuf.ByteString value) {
-          if (value == null) { throw new NullPointerException(); }
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
           name_ = value;
-          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -3074,11 +3161,9 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 score = 2;</code>
-         * @return Whether the score field is set.
          */
-        @java.lang.Override
         public boolean hasScore() {
-          return ((bitField0_ & 0x00000002) != 0);
+          return ((bitField0_ & 0x00000002) == 0x00000002);
         }
         /**
          * <pre>
@@ -3086,9 +3171,7 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 score = 2;</code>
-         * @return The score.
          */
-        @java.lang.Override
         public int getScore() {
           return score_;
         }
@@ -3098,13 +3181,10 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 score = 2;</code>
-         * @param value The score to set.
-         * @return This builder for chaining.
          */
         public Builder setScore(int value) {
-          
-          score_ = value;
           bitField0_ |= 0x00000002;
+          score_ = value;
           onChanged();
           return this;
         }
@@ -3114,7 +3194,6 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 score = 2;</code>
-         * @return This builder for chaining.
          */
         public Builder clearScore() {
           bitField0_ = (bitField0_ & ~0x00000002);
@@ -3130,11 +3209,9 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 red_cards = 3;</code>
-         * @return Whether the redCards field is set.
          */
-        @java.lang.Override
         public boolean hasRedCards() {
-          return ((bitField0_ & 0x00000004) != 0);
+          return ((bitField0_ & 0x00000004) == 0x00000004);
         }
         /**
          * <pre>
@@ -3142,9 +3219,7 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 red_cards = 3;</code>
-         * @return The redCards.
          */
-        @java.lang.Override
         public int getRedCards() {
           return redCards_;
         }
@@ -3154,13 +3229,10 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 red_cards = 3;</code>
-         * @param value The redCards to set.
-         * @return This builder for chaining.
          */
         public Builder setRedCards(int value) {
-          
-          redCards_ = value;
           bitField0_ |= 0x00000004;
+          redCards_ = value;
           onChanged();
           return this;
         }
@@ -3170,7 +3242,6 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 red_cards = 3;</code>
-         * @return This builder for chaining.
          */
         public Builder clearRedCards() {
           bitField0_ = (bitField0_ & ~0x00000004);
@@ -3179,12 +3250,12 @@ public final class SslGcRefereeMessage {
           return this;
         }
 
-        private com.google.protobuf.Internal.IntList yellowCardTimes_ = emptyIntList();
+        private java.util.List<java.lang.Integer> yellowCardTimes_ = java.util.Collections.emptyList();
         private void ensureYellowCardTimesIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
-            yellowCardTimes_ = mutableCopy(yellowCardTimes_);
+          if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+            yellowCardTimes_ = new java.util.ArrayList<java.lang.Integer>(yellowCardTimes_);
             bitField0_ |= 0x00000008;
-          }
+           }
         }
         /**
          * <pre>
@@ -3194,12 +3265,10 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>repeated uint32 yellow_card_times = 4 [packed = true];</code>
-         * @return A list containing the yellowCardTimes.
          */
         public java.util.List<java.lang.Integer>
             getYellowCardTimesList() {
-          return ((bitField0_ & 0x00000008) != 0) ?
-                   java.util.Collections.unmodifiableList(yellowCardTimes_) : yellowCardTimes_;
+          return java.util.Collections.unmodifiableList(yellowCardTimes_);
         }
         /**
          * <pre>
@@ -3209,7 +3278,6 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>repeated uint32 yellow_card_times = 4 [packed = true];</code>
-         * @return The count of yellowCardTimes.
          */
         public int getYellowCardTimesCount() {
           return yellowCardTimes_.size();
@@ -3222,11 +3290,9 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>repeated uint32 yellow_card_times = 4 [packed = true];</code>
-         * @param index The index of the element to return.
-         * @return The yellowCardTimes at the given index.
          */
         public int getYellowCardTimes(int index) {
-          return yellowCardTimes_.getInt(index);
+          return yellowCardTimes_.get(index);
         }
         /**
          * <pre>
@@ -3236,15 +3302,11 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>repeated uint32 yellow_card_times = 4 [packed = true];</code>
-         * @param index The index to set the value at.
-         * @param value The yellowCardTimes to set.
-         * @return This builder for chaining.
          */
         public Builder setYellowCardTimes(
             int index, int value) {
-          
           ensureYellowCardTimesIsMutable();
-          yellowCardTimes_.setInt(index, value);
+          yellowCardTimes_.set(index, value);
           onChanged();
           return this;
         }
@@ -3256,13 +3318,10 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>repeated uint32 yellow_card_times = 4 [packed = true];</code>
-         * @param value The yellowCardTimes to add.
-         * @return This builder for chaining.
          */
         public Builder addYellowCardTimes(int value) {
-          
           ensureYellowCardTimesIsMutable();
-          yellowCardTimes_.addInt(value);
+          yellowCardTimes_.add(value);
           onChanged();
           return this;
         }
@@ -3274,8 +3333,6 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>repeated uint32 yellow_card_times = 4 [packed = true];</code>
-         * @param values The yellowCardTimes to add.
-         * @return This builder for chaining.
          */
         public Builder addAllYellowCardTimes(
             java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -3293,10 +3350,9 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>repeated uint32 yellow_card_times = 4 [packed = true];</code>
-         * @return This builder for chaining.
          */
         public Builder clearYellowCardTimes() {
-          yellowCardTimes_ = emptyIntList();
+          yellowCardTimes_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
           return this;
@@ -3309,11 +3365,9 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 yellow_cards = 5;</code>
-         * @return Whether the yellowCards field is set.
          */
-        @java.lang.Override
         public boolean hasYellowCards() {
-          return ((bitField0_ & 0x00000010) != 0);
+          return ((bitField0_ & 0x00000010) == 0x00000010);
         }
         /**
          * <pre>
@@ -3321,9 +3375,7 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 yellow_cards = 5;</code>
-         * @return The yellowCards.
          */
-        @java.lang.Override
         public int getYellowCards() {
           return yellowCards_;
         }
@@ -3333,13 +3385,10 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 yellow_cards = 5;</code>
-         * @param value The yellowCards to set.
-         * @return This builder for chaining.
          */
         public Builder setYellowCards(int value) {
-          
-          yellowCards_ = value;
           bitField0_ |= 0x00000010;
+          yellowCards_ = value;
           onChanged();
           return this;
         }
@@ -3349,7 +3398,6 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 yellow_cards = 5;</code>
-         * @return This builder for chaining.
          */
         public Builder clearYellowCards() {
           bitField0_ = (bitField0_ & ~0x00000010);
@@ -3366,11 +3414,9 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 timeouts = 6;</code>
-         * @return Whether the timeouts field is set.
          */
-        @java.lang.Override
         public boolean hasTimeouts() {
-          return ((bitField0_ & 0x00000020) != 0);
+          return ((bitField0_ & 0x00000020) == 0x00000020);
         }
         /**
          * <pre>
@@ -3379,9 +3425,7 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 timeouts = 6;</code>
-         * @return The timeouts.
          */
-        @java.lang.Override
         public int getTimeouts() {
           return timeouts_;
         }
@@ -3392,13 +3436,10 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 timeouts = 6;</code>
-         * @param value The timeouts to set.
-         * @return This builder for chaining.
          */
         public Builder setTimeouts(int value) {
-          
-          timeouts_ = value;
           bitField0_ |= 0x00000020;
+          timeouts_ = value;
           onChanged();
           return this;
         }
@@ -3409,7 +3450,6 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 timeouts = 6;</code>
-         * @return This builder for chaining.
          */
         public Builder clearTimeouts() {
           bitField0_ = (bitField0_ & ~0x00000020);
@@ -3425,11 +3465,9 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 timeout_time = 7;</code>
-         * @return Whether the timeoutTime field is set.
          */
-        @java.lang.Override
         public boolean hasTimeoutTime() {
-          return ((bitField0_ & 0x00000040) != 0);
+          return ((bitField0_ & 0x00000040) == 0x00000040);
         }
         /**
          * <pre>
@@ -3437,9 +3475,7 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 timeout_time = 7;</code>
-         * @return The timeoutTime.
          */
-        @java.lang.Override
         public int getTimeoutTime() {
           return timeoutTime_;
         }
@@ -3449,13 +3485,10 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 timeout_time = 7;</code>
-         * @param value The timeoutTime to set.
-         * @return This builder for chaining.
          */
         public Builder setTimeoutTime(int value) {
-          
-          timeoutTime_ = value;
           bitField0_ |= 0x00000040;
+          timeoutTime_ = value;
           onChanged();
           return this;
         }
@@ -3465,7 +3498,6 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 timeout_time = 7;</code>
-         * @return This builder for chaining.
          */
         public Builder clearTimeoutTime() {
           bitField0_ = (bitField0_ & ~0x00000040);
@@ -3481,11 +3513,9 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 goalkeeper = 8;</code>
-         * @return Whether the goalkeeper field is set.
          */
-        @java.lang.Override
         public boolean hasGoalkeeper() {
-          return ((bitField0_ & 0x00000080) != 0);
+          return ((bitField0_ & 0x00000080) == 0x00000080);
         }
         /**
          * <pre>
@@ -3493,9 +3523,7 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 goalkeeper = 8;</code>
-         * @return The goalkeeper.
          */
-        @java.lang.Override
         public int getGoalkeeper() {
           return goalkeeper_;
         }
@@ -3505,13 +3533,10 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 goalkeeper = 8;</code>
-         * @param value The goalkeeper to set.
-         * @return This builder for chaining.
          */
         public Builder setGoalkeeper(int value) {
-          
-          goalkeeper_ = value;
           bitField0_ |= 0x00000080;
+          goalkeeper_ = value;
           onChanged();
           return this;
         }
@@ -3521,7 +3546,6 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>required uint32 goalkeeper = 8;</code>
-         * @return This builder for chaining.
          */
         public Builder clearGoalkeeper() {
           bitField0_ = (bitField0_ & ~0x00000080);
@@ -3537,11 +3561,9 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional uint32 foul_counter = 9;</code>
-         * @return Whether the foulCounter field is set.
          */
-        @java.lang.Override
         public boolean hasFoulCounter() {
-          return ((bitField0_ & 0x00000100) != 0);
+          return ((bitField0_ & 0x00000100) == 0x00000100);
         }
         /**
          * <pre>
@@ -3549,9 +3571,7 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional uint32 foul_counter = 9;</code>
-         * @return The foulCounter.
          */
-        @java.lang.Override
         public int getFoulCounter() {
           return foulCounter_;
         }
@@ -3561,13 +3581,10 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional uint32 foul_counter = 9;</code>
-         * @param value The foulCounter to set.
-         * @return This builder for chaining.
          */
         public Builder setFoulCounter(int value) {
-          
-          foulCounter_ = value;
           bitField0_ |= 0x00000100;
+          foulCounter_ = value;
           onChanged();
           return this;
         }
@@ -3577,7 +3594,6 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional uint32 foul_counter = 9;</code>
-         * @return This builder for chaining.
          */
         public Builder clearFoulCounter() {
           bitField0_ = (bitField0_ & ~0x00000100);
@@ -3593,11 +3609,9 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional uint32 ball_placement_failures = 10;</code>
-         * @return Whether the ballPlacementFailures field is set.
          */
-        @java.lang.Override
         public boolean hasBallPlacementFailures() {
-          return ((bitField0_ & 0x00000200) != 0);
+          return ((bitField0_ & 0x00000200) == 0x00000200);
         }
         /**
          * <pre>
@@ -3605,9 +3619,7 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional uint32 ball_placement_failures = 10;</code>
-         * @return The ballPlacementFailures.
          */
-        @java.lang.Override
         public int getBallPlacementFailures() {
           return ballPlacementFailures_;
         }
@@ -3617,13 +3629,10 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional uint32 ball_placement_failures = 10;</code>
-         * @param value The ballPlacementFailures to set.
-         * @return This builder for chaining.
          */
         public Builder setBallPlacementFailures(int value) {
-          
-          ballPlacementFailures_ = value;
           bitField0_ |= 0x00000200;
+          ballPlacementFailures_ = value;
           onChanged();
           return this;
         }
@@ -3633,7 +3642,6 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional uint32 ball_placement_failures = 10;</code>
-         * @return This builder for chaining.
          */
         public Builder clearBallPlacementFailures() {
           bitField0_ = (bitField0_ & ~0x00000200);
@@ -3649,11 +3657,9 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional bool can_place_ball = 12;</code>
-         * @return Whether the canPlaceBall field is set.
          */
-        @java.lang.Override
         public boolean hasCanPlaceBall() {
-          return ((bitField0_ & 0x00000400) != 0);
+          return ((bitField0_ & 0x00000400) == 0x00000400);
         }
         /**
          * <pre>
@@ -3661,9 +3667,7 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional bool can_place_ball = 12;</code>
-         * @return The canPlaceBall.
          */
-        @java.lang.Override
         public boolean getCanPlaceBall() {
           return canPlaceBall_;
         }
@@ -3673,13 +3677,10 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional bool can_place_ball = 12;</code>
-         * @param value The canPlaceBall to set.
-         * @return This builder for chaining.
          */
         public Builder setCanPlaceBall(boolean value) {
-          
-          canPlaceBall_ = value;
           bitField0_ |= 0x00000400;
+          canPlaceBall_ = value;
           onChanged();
           return this;
         }
@@ -3689,7 +3690,6 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional bool can_place_ball = 12;</code>
-         * @return This builder for chaining.
          */
         public Builder clearCanPlaceBall() {
           bitField0_ = (bitField0_ & ~0x00000400);
@@ -3705,11 +3705,9 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional uint32 max_allowed_bots = 13;</code>
-         * @return Whether the maxAllowedBots field is set.
          */
-        @java.lang.Override
         public boolean hasMaxAllowedBots() {
-          return ((bitField0_ & 0x00000800) != 0);
+          return ((bitField0_ & 0x00000800) == 0x00000800);
         }
         /**
          * <pre>
@@ -3717,9 +3715,7 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional uint32 max_allowed_bots = 13;</code>
-         * @return The maxAllowedBots.
          */
-        @java.lang.Override
         public int getMaxAllowedBots() {
           return maxAllowedBots_;
         }
@@ -3729,13 +3725,10 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional uint32 max_allowed_bots = 13;</code>
-         * @param value The maxAllowedBots to set.
-         * @return This builder for chaining.
          */
         public Builder setMaxAllowedBots(int value) {
-          
-          maxAllowedBots_ = value;
           bitField0_ |= 0x00000800;
+          maxAllowedBots_ = value;
           onChanged();
           return this;
         }
@@ -3745,7 +3738,6 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional uint32 max_allowed_bots = 13;</code>
-         * @return This builder for chaining.
          */
         public Builder clearMaxAllowedBots() {
           bitField0_ = (bitField0_ & ~0x00000800);
@@ -3761,11 +3753,9 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional bool bot_substitution_intent = 14;</code>
-         * @return Whether the botSubstitutionIntent field is set.
          */
-        @java.lang.Override
         public boolean hasBotSubstitutionIntent() {
-          return ((bitField0_ & 0x00001000) != 0);
+          return ((bitField0_ & 0x00001000) == 0x00001000);
         }
         /**
          * <pre>
@@ -3773,9 +3763,7 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional bool bot_substitution_intent = 14;</code>
-         * @return The botSubstitutionIntent.
          */
-        @java.lang.Override
         public boolean getBotSubstitutionIntent() {
           return botSubstitutionIntent_;
         }
@@ -3785,13 +3773,10 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional bool bot_substitution_intent = 14;</code>
-         * @param value The botSubstitutionIntent to set.
-         * @return This builder for chaining.
          */
         public Builder setBotSubstitutionIntent(boolean value) {
-          
-          botSubstitutionIntent_ = value;
           bitField0_ |= 0x00001000;
+          botSubstitutionIntent_ = value;
           onChanged();
           return this;
         }
@@ -3801,7 +3786,6 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional bool bot_substitution_intent = 14;</code>
-         * @return This builder for chaining.
          */
         public Builder clearBotSubstitutionIntent() {
           bitField0_ = (bitField0_ & ~0x00001000);
@@ -3817,11 +3801,9 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional bool ball_placement_failures_reached = 15;</code>
-         * @return Whether the ballPlacementFailuresReached field is set.
          */
-        @java.lang.Override
         public boolean hasBallPlacementFailuresReached() {
-          return ((bitField0_ & 0x00002000) != 0);
+          return ((bitField0_ & 0x00002000) == 0x00002000);
         }
         /**
          * <pre>
@@ -3829,9 +3811,7 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional bool ball_placement_failures_reached = 15;</code>
-         * @return The ballPlacementFailuresReached.
          */
-        @java.lang.Override
         public boolean getBallPlacementFailuresReached() {
           return ballPlacementFailuresReached_;
         }
@@ -3841,13 +3821,10 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional bool ball_placement_failures_reached = 15;</code>
-         * @param value The ballPlacementFailuresReached to set.
-         * @return This builder for chaining.
          */
         public Builder setBallPlacementFailuresReached(boolean value) {
-          
-          ballPlacementFailuresReached_ = value;
           bitField0_ |= 0x00002000;
+          ballPlacementFailuresReached_ = value;
           onChanged();
           return this;
         }
@@ -3857,7 +3834,6 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional bool ball_placement_failures_reached = 15;</code>
-         * @return This builder for chaining.
          */
         public Builder clearBallPlacementFailuresReached() {
           bitField0_ = (bitField0_ & ~0x00002000);
@@ -3873,11 +3849,9 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional bool bot_substitution_allowed = 16;</code>
-         * @return Whether the botSubstitutionAllowed field is set.
          */
-        @java.lang.Override
         public boolean hasBotSubstitutionAllowed() {
-          return ((bitField0_ & 0x00004000) != 0);
+          return ((bitField0_ & 0x00004000) == 0x00004000);
         }
         /**
          * <pre>
@@ -3885,9 +3859,7 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional bool bot_substitution_allowed = 16;</code>
-         * @return The botSubstitutionAllowed.
          */
-        @java.lang.Override
         public boolean getBotSubstitutionAllowed() {
           return botSubstitutionAllowed_;
         }
@@ -3897,13 +3869,10 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional bool bot_substitution_allowed = 16;</code>
-         * @param value The botSubstitutionAllowed to set.
-         * @return This builder for chaining.
          */
         public Builder setBotSubstitutionAllowed(boolean value) {
-          
-          botSubstitutionAllowed_ = value;
           bitField0_ |= 0x00004000;
+          botSubstitutionAllowed_ = value;
           onChanged();
           return this;
         }
@@ -3913,7 +3882,6 @@ public final class SslGcRefereeMessage {
          * </pre>
          *
          * <code>optional bool bot_substitution_allowed = 16;</code>
-         * @return This builder for chaining.
          */
         public Builder clearBotSubstitutionAllowed() {
           bitField0_ = (bitField0_ & ~0x00004000);
@@ -3954,18 +3922,7 @@ public final class SslGcRefereeMessage {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
+          return new TeamInfo(input, extensionRegistry);
         }
       };
 
@@ -3991,23 +3948,19 @@ public final class SslGcRefereeMessage {
 
       /**
        * <code>required float x = 1;</code>
-       * @return Whether the x field is set.
        */
       boolean hasX();
       /**
        * <code>required float x = 1;</code>
-       * @return The x.
        */
       float getX();
 
       /**
        * <code>required float y = 2;</code>
-       * @return Whether the y field is set.
        */
       boolean hasY();
       /**
        * <code>required float y = 2;</code>
-       * @return The y.
        */
       float getY();
     }
@@ -4021,7 +3974,7 @@ public final class SslGcRefereeMessage {
      *
      * Protobuf type {@code proto.gc.Referee.Point}
      */
-    public static final class Point extends
+    public  static final class Point extends
         com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:proto.gc.Referee.Point)
         PointOrBuilder {
@@ -4031,19 +3984,62 @@ public final class SslGcRefereeMessage {
         super(builder);
       }
       private Point() {
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(
-          UnusedPrivateParameter unused) {
-        return new Point();
+        x_ = 0F;
+        y_ = 0F;
       }
 
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
+      }
+      private Point(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13: {
+                bitField0_ |= 0x00000001;
+                x_ = input.readFloat();
+                break;
+              }
+              case 21: {
+                bitField0_ |= 0x00000002;
+                y_ = input.readFloat();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -4060,39 +4056,31 @@ public final class SslGcRefereeMessage {
 
       private int bitField0_;
       public static final int X_FIELD_NUMBER = 1;
-      private float x_ = 0F;
+      private float x_;
       /**
        * <code>required float x = 1;</code>
-       * @return Whether the x field is set.
        */
-      @java.lang.Override
       public boolean hasX() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required float x = 1;</code>
-       * @return The x.
        */
-      @java.lang.Override
       public float getX() {
         return x_;
       }
 
       public static final int Y_FIELD_NUMBER = 2;
-      private float y_ = 0F;
+      private float y_;
       /**
        * <code>required float y = 2;</code>
-       * @return Whether the y field is set.
        */
-      @java.lang.Override
       public boolean hasY() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required float y = 2;</code>
-       * @return The y.
        */
-      @java.lang.Override
       public float getY() {
         return y_;
       }
@@ -4119,13 +4107,13 @@ public final class SslGcRefereeMessage {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
           output.writeFloat(1, x_);
         }
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
           output.writeFloat(2, y_);
         }
-        getUnknownFields().writeTo(output);
+        unknownFields.writeTo(output);
       }
 
       @java.lang.Override
@@ -4134,15 +4122,15 @@ public final class SslGcRefereeMessage {
         if (size != -1) return size;
 
         size = 0;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(1, x_);
         }
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
           size += com.google.protobuf.CodedOutputStream
             .computeFloatSize(2, y_);
         }
-        size += getUnknownFields().getSerializedSize();
+        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -4157,20 +4145,23 @@ public final class SslGcRefereeMessage {
         }
         proto.gc.SslGcRefereeMessage.Referee.Point other = (proto.gc.SslGcRefereeMessage.Referee.Point) obj;
 
-        if (hasX() != other.hasX()) return false;
+        boolean result = true;
+        result = result && (hasX() == other.hasX());
         if (hasX()) {
-          if (java.lang.Float.floatToIntBits(getX())
-              != java.lang.Float.floatToIntBits(
-                  other.getX())) return false;
+          result = result && (
+              java.lang.Float.floatToIntBits(getX())
+              == java.lang.Float.floatToIntBits(
+                  other.getX()));
         }
-        if (hasY() != other.hasY()) return false;
+        result = result && (hasY() == other.hasY());
         if (hasY()) {
-          if (java.lang.Float.floatToIntBits(getY())
-              != java.lang.Float.floatToIntBits(
-                  other.getY())) return false;
+          result = result && (
+              java.lang.Float.floatToIntBits(getY())
+              == java.lang.Float.floatToIntBits(
+                  other.getY()));
         }
-        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-        return true;
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
       }
 
       @java.lang.Override
@@ -4190,7 +4181,7 @@ public final class SslGcRefereeMessage {
           hash = (53 * hash) + java.lang.Float.floatToIntBits(
               getY());
         }
-        hash = (29 * hash) + getUnknownFields().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -4314,20 +4305,26 @@ public final class SslGcRefereeMessage {
 
         // Construct using proto.gc.SslGcRefereeMessage.Referee.Point.newBuilder()
         private Builder() {
-
+          maybeForceBuilderInitialization();
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          bitField0_ = 0;
           x_ = 0F;
+          bitField0_ = (bitField0_ & ~0x00000001);
           y_ = 0F;
+          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -4354,56 +4351,52 @@ public final class SslGcRefereeMessage {
         @java.lang.Override
         public proto.gc.SslGcRefereeMessage.Referee.Point buildPartial() {
           proto.gc.SslGcRefereeMessage.Referee.Point result = new proto.gc.SslGcRefereeMessage.Referee.Point(this);
-          if (bitField0_ != 0) { buildPartial0(result); }
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.x_ = x_;
+          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+            to_bitField0_ |= 0x00000002;
+          }
+          result.y_ = y_;
+          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
 
-        private void buildPartial0(proto.gc.SslGcRefereeMessage.Referee.Point result) {
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) != 0)) {
-            result.x_ = x_;
-            to_bitField0_ |= 0x00000001;
-          }
-          if (((from_bitField0_ & 0x00000002) != 0)) {
-            result.y_ = y_;
-            to_bitField0_ |= 0x00000002;
-          }
-          result.bitField0_ |= to_bitField0_;
-        }
-
         @java.lang.Override
         public Builder clone() {
-          return super.clone();
+          return (Builder) super.clone();
         }
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
-          return super.setField(field, value);
+          return (Builder) super.setField(field, value);
         }
         @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
+          return (Builder) super.clearField(field);
         }
         @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
+          return (Builder) super.clearOneof(oneof);
         }
         @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
+          return (Builder) super.setRepeatedField(field, index, value);
         }
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
-          return super.addRepeatedField(field, value);
+          return (Builder) super.addRepeatedField(field, value);
         }
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -4423,7 +4416,7 @@ public final class SslGcRefereeMessage {
           if (other.hasY()) {
             setY(other.getY());
           }
-          this.mergeUnknownFields(other.getUnknownFields());
+          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
@@ -4444,40 +4437,17 @@ public final class SslGcRefereeMessage {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
+          proto.gc.SslGcRefereeMessage.Referee.Point parsedMessage = null;
           try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 13: {
-                  x_ = input.readFloat();
-                  bitField0_ |= 0x00000001;
-                  break;
-                } // case 13
-                case 21: {
-                  y_ = input.readFloat();
-                  bitField0_ |= 0x00000002;
-                  break;
-                } // case 21
-                default: {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-              } // switch (tag)
-            } // while (!done)
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (proto.gc.SslGcRefereeMessage.Referee.Point) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            onChanged();
-          } // finally
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
           return this;
         }
         private int bitField0_;
@@ -4485,35 +4455,27 @@ public final class SslGcRefereeMessage {
         private float x_ ;
         /**
          * <code>required float x = 1;</code>
-         * @return Whether the x field is set.
          */
-        @java.lang.Override
         public boolean hasX() {
-          return ((bitField0_ & 0x00000001) != 0);
+          return ((bitField0_ & 0x00000001) == 0x00000001);
         }
         /**
          * <code>required float x = 1;</code>
-         * @return The x.
          */
-        @java.lang.Override
         public float getX() {
           return x_;
         }
         /**
          * <code>required float x = 1;</code>
-         * @param value The x to set.
-         * @return This builder for chaining.
          */
         public Builder setX(float value) {
-          
-          x_ = value;
           bitField0_ |= 0x00000001;
+          x_ = value;
           onChanged();
           return this;
         }
         /**
          * <code>required float x = 1;</code>
-         * @return This builder for chaining.
          */
         public Builder clearX() {
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -4525,35 +4487,27 @@ public final class SslGcRefereeMessage {
         private float y_ ;
         /**
          * <code>required float y = 2;</code>
-         * @return Whether the y field is set.
          */
-        @java.lang.Override
         public boolean hasY() {
-          return ((bitField0_ & 0x00000002) != 0);
+          return ((bitField0_ & 0x00000002) == 0x00000002);
         }
         /**
          * <code>required float y = 2;</code>
-         * @return The y.
          */
-        @java.lang.Override
         public float getY() {
           return y_;
         }
         /**
          * <code>required float y = 2;</code>
-         * @param value The y to set.
-         * @return This builder for chaining.
          */
         public Builder setY(float value) {
-          
-          y_ = value;
           bitField0_ |= 0x00000002;
+          y_ = value;
           onChanged();
           return this;
         }
         /**
          * <code>required float y = 2;</code>
-         * @return This builder for chaining.
          */
         public Builder clearY() {
           bitField0_ = (bitField0_ & ~0x00000002);
@@ -4594,18 +4548,7 @@ public final class SslGcRefereeMessage {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
+          return new Point(input, extensionRegistry);
         }
       };
 
@@ -4627,8 +4570,7 @@ public final class SslGcRefereeMessage {
 
     private int bitField0_;
     public static final int SOURCE_IDENTIFIER_FIELD_NUMBER = 18;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object sourceIdentifier_ = "";
+    private volatile java.lang.Object sourceIdentifier_;
     /**
      * <pre>
      * A random UUID of the source that is kept constant at the source while running
@@ -4636,11 +4578,9 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional string source_identifier = 18;</code>
-     * @return Whether the sourceIdentifier field is set.
      */
-    @java.lang.Override
     public boolean hasSourceIdentifier() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -4649,9 +4589,7 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional string source_identifier = 18;</code>
-     * @return The sourceIdentifier.
      */
-    @java.lang.Override
     public java.lang.String getSourceIdentifier() {
       java.lang.Object ref = sourceIdentifier_;
       if (ref instanceof java.lang.String) {
@@ -4673,9 +4611,7 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional string source_identifier = 18;</code>
-     * @return The bytes for sourceIdentifier.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getSourceIdentifierBytes() {
       java.lang.Object ref = sourceIdentifier_;
@@ -4691,17 +4627,16 @@ public final class SslGcRefereeMessage {
     }
 
     public static final int MATCH_TYPE_FIELD_NUMBER = 19;
-    private int matchType_ = 0;
+    private int matchType_;
     /**
      * <pre>
      * The match type is a meta information about the current match that helps to process the logs after a competition
      * </pre>
      *
      * <code>optional .proto.gc.MatchType match_type = 19 [default = UNKNOWN_MATCH];</code>
-     * @return Whether the matchType field is set.
      */
-    @java.lang.Override public boolean hasMatchType() {
-      return ((bitField0_ & 0x00000002) != 0);
+    public boolean hasMatchType() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -4709,15 +4644,15 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional .proto.gc.MatchType match_type = 19 [default = UNKNOWN_MATCH];</code>
-     * @return The matchType.
      */
-    @java.lang.Override public proto.gc.SslGcRefereeMessage.MatchType getMatchType() {
-      proto.gc.SslGcRefereeMessage.MatchType result = proto.gc.SslGcRefereeMessage.MatchType.forNumber(matchType_);
+    public proto.gc.SslGcRefereeMessage.MatchType getMatchType() {
+      @SuppressWarnings("deprecation")
+      proto.gc.SslGcRefereeMessage.MatchType result = proto.gc.SslGcRefereeMessage.MatchType.valueOf(matchType_);
       return result == null ? proto.gc.SslGcRefereeMessage.MatchType.UNKNOWN_MATCH : result;
     }
 
     public static final int PACKET_TIMESTAMP_FIELD_NUMBER = 1;
-    private long packetTimestamp_ = 0L;
+    private long packetTimestamp_;
     /**
      * <pre>
      * The UNIX timestamp when the packet was sent, in microseconds.
@@ -4725,11 +4660,9 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>required uint64 packet_timestamp = 1;</code>
-     * @return Whether the packetTimestamp field is set.
      */
-    @java.lang.Override
     public boolean hasPacketTimestamp() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -4738,33 +4671,30 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>required uint64 packet_timestamp = 1;</code>
-     * @return The packetTimestamp.
      */
-    @java.lang.Override
     public long getPacketTimestamp() {
       return packetTimestamp_;
     }
 
     public static final int STAGE_FIELD_NUMBER = 2;
-    private int stage_ = 0;
+    private int stage_;
     /**
      * <code>required .proto.gc.Referee.Stage stage = 2;</code>
-     * @return Whether the stage field is set.
      */
-    @java.lang.Override public boolean hasStage() {
-      return ((bitField0_ & 0x00000008) != 0);
+    public boolean hasStage() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>required .proto.gc.Referee.Stage stage = 2;</code>
-     * @return The stage.
      */
-    @java.lang.Override public proto.gc.SslGcRefereeMessage.Referee.Stage getStage() {
-      proto.gc.SslGcRefereeMessage.Referee.Stage result = proto.gc.SslGcRefereeMessage.Referee.Stage.forNumber(stage_);
+    public proto.gc.SslGcRefereeMessage.Referee.Stage getStage() {
+      @SuppressWarnings("deprecation")
+      proto.gc.SslGcRefereeMessage.Referee.Stage result = proto.gc.SslGcRefereeMessage.Referee.Stage.valueOf(stage_);
       return result == null ? proto.gc.SslGcRefereeMessage.Referee.Stage.NORMAL_FIRST_HALF_PRE : result;
     }
 
     public static final int STAGE_TIME_LEFT_FIELD_NUMBER = 3;
-    private long stageTimeLeft_ = 0L;
+    private long stageTimeLeft_;
     /**
      * <pre>
      * The number of microseconds left in the stage.
@@ -4782,11 +4712,9 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional sint64 stage_time_left = 3;</code>
-     * @return Whether the stageTimeLeft field is set.
      */
-    @java.lang.Override
     public boolean hasStageTimeLeft() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <pre>
@@ -4805,44 +4733,39 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional sint64 stage_time_left = 3;</code>
-     * @return The stageTimeLeft.
      */
-    @java.lang.Override
     public long getStageTimeLeft() {
       return stageTimeLeft_;
     }
 
     public static final int COMMAND_FIELD_NUMBER = 4;
-    private int command_ = 0;
+    private int command_;
     /**
      * <code>required .proto.gc.Referee.Command command = 4;</code>
-     * @return Whether the command field is set.
      */
-    @java.lang.Override public boolean hasCommand() {
-      return ((bitField0_ & 0x00000020) != 0);
+    public boolean hasCommand() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>required .proto.gc.Referee.Command command = 4;</code>
-     * @return The command.
      */
-    @java.lang.Override public proto.gc.SslGcRefereeMessage.Referee.Command getCommand() {
-      proto.gc.SslGcRefereeMessage.Referee.Command result = proto.gc.SslGcRefereeMessage.Referee.Command.forNumber(command_);
+    public proto.gc.SslGcRefereeMessage.Referee.Command getCommand() {
+      @SuppressWarnings("deprecation")
+      proto.gc.SslGcRefereeMessage.Referee.Command result = proto.gc.SslGcRefereeMessage.Referee.Command.valueOf(command_);
       return result == null ? proto.gc.SslGcRefereeMessage.Referee.Command.HALT : result;
     }
 
     public static final int COMMAND_COUNTER_FIELD_NUMBER = 5;
-    private int commandCounter_ = 0;
+    private int commandCounter_;
     /**
      * <pre>
      * The number of commands issued since startup (mod 2^32).
      * </pre>
      *
      * <code>required uint32 command_counter = 5;</code>
-     * @return Whether the commandCounter field is set.
      */
-    @java.lang.Override
     public boolean hasCommandCounter() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <pre>
@@ -4850,15 +4773,13 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>required uint32 command_counter = 5;</code>
-     * @return The commandCounter.
      */
-    @java.lang.Override
     public int getCommandCounter() {
       return commandCounter_;
     }
 
     public static final int COMMAND_TIMESTAMP_FIELD_NUMBER = 6;
-    private long commandTimestamp_ = 0L;
+    private long commandTimestamp_;
     /**
      * <pre>
      * The UNIX timestamp when the command was issued, in microseconds.
@@ -4866,11 +4787,9 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>required uint64 command_timestamp = 6;</code>
-     * @return Whether the commandTimestamp field is set.
      */
-    @java.lang.Override
     public boolean hasCommandTimestamp() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
      * <pre>
@@ -4879,9 +4798,7 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>required uint64 command_timestamp = 6;</code>
-     * @return The commandTimestamp.
      */
-    @java.lang.Override
     public long getCommandTimestamp() {
       return commandTimestamp_;
     }
@@ -4894,11 +4811,9 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>required .proto.gc.Referee.TeamInfo yellow = 7;</code>
-     * @return Whether the yellow field is set.
      */
-    @java.lang.Override
     public boolean hasYellow() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
      * <pre>
@@ -4906,9 +4821,7 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>required .proto.gc.Referee.TeamInfo yellow = 7;</code>
-     * @return The yellow.
      */
-    @java.lang.Override
     public proto.gc.SslGcRefereeMessage.Referee.TeamInfo getYellow() {
       return yellow_ == null ? proto.gc.SslGcRefereeMessage.Referee.TeamInfo.getDefaultInstance() : yellow_;
     }
@@ -4919,7 +4832,6 @@ public final class SslGcRefereeMessage {
      *
      * <code>required .proto.gc.Referee.TeamInfo yellow = 7;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcRefereeMessage.Referee.TeamInfoOrBuilder getYellowOrBuilder() {
       return yellow_ == null ? proto.gc.SslGcRefereeMessage.Referee.TeamInfo.getDefaultInstance() : yellow_;
     }
@@ -4928,24 +4840,19 @@ public final class SslGcRefereeMessage {
     private proto.gc.SslGcRefereeMessage.Referee.TeamInfo blue_;
     /**
      * <code>required .proto.gc.Referee.TeamInfo blue = 8;</code>
-     * @return Whether the blue field is set.
      */
-    @java.lang.Override
     public boolean hasBlue() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
      * <code>required .proto.gc.Referee.TeamInfo blue = 8;</code>
-     * @return The blue.
      */
-    @java.lang.Override
     public proto.gc.SslGcRefereeMessage.Referee.TeamInfo getBlue() {
       return blue_ == null ? proto.gc.SslGcRefereeMessage.Referee.TeamInfo.getDefaultInstance() : blue_;
     }
     /**
      * <code>required .proto.gc.Referee.TeamInfo blue = 8;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcRefereeMessage.Referee.TeamInfoOrBuilder getBlueOrBuilder() {
       return blue_ == null ? proto.gc.SslGcRefereeMessage.Referee.TeamInfo.getDefaultInstance() : blue_;
     }
@@ -4954,30 +4861,25 @@ public final class SslGcRefereeMessage {
     private proto.gc.SslGcRefereeMessage.Referee.Point designatedPosition_;
     /**
      * <code>optional .proto.gc.Referee.Point designated_position = 9;</code>
-     * @return Whether the designatedPosition field is set.
      */
-    @java.lang.Override
     public boolean hasDesignatedPosition() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
      * <code>optional .proto.gc.Referee.Point designated_position = 9;</code>
-     * @return The designatedPosition.
      */
-    @java.lang.Override
     public proto.gc.SslGcRefereeMessage.Referee.Point getDesignatedPosition() {
       return designatedPosition_ == null ? proto.gc.SslGcRefereeMessage.Referee.Point.getDefaultInstance() : designatedPosition_;
     }
     /**
      * <code>optional .proto.gc.Referee.Point designated_position = 9;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcRefereeMessage.Referee.PointOrBuilder getDesignatedPositionOrBuilder() {
       return designatedPosition_ == null ? proto.gc.SslGcRefereeMessage.Referee.Point.getDefaultInstance() : designatedPosition_;
     }
 
     public static final int BLUE_TEAM_ON_POSITIVE_HALF_FIELD_NUMBER = 10;
-    private boolean blueTeamOnPositiveHalf_ = false;
+    private boolean blueTeamOnPositiveHalf_;
     /**
      * <pre>
      * Information about the direction of play.
@@ -4986,11 +4888,9 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional bool blue_team_on_positive_half = 10;</code>
-     * @return Whether the blueTeamOnPositiveHalf field is set.
      */
-    @java.lang.Override
     public boolean hasBlueTeamOnPositiveHalf() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
      * <pre>
@@ -5000,25 +4900,22 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional bool blue_team_on_positive_half = 10;</code>
-     * @return The blueTeamOnPositiveHalf.
      */
-    @java.lang.Override
     public boolean getBlueTeamOnPositiveHalf() {
       return blueTeamOnPositiveHalf_;
     }
 
     public static final int NEXT_COMMAND_FIELD_NUMBER = 12;
-    private int nextCommand_ = 0;
+    private int nextCommand_;
     /**
      * <pre>
      * The command that will be issued after the current stoppage and ball placement to continue the game.
      * </pre>
      *
      * <code>optional .proto.gc.Referee.Command next_command = 12;</code>
-     * @return Whether the nextCommand field is set.
      */
-    @java.lang.Override public boolean hasNextCommand() {
-      return ((bitField0_ & 0x00001000) != 0);
+    public boolean hasNextCommand() {
+      return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
      * <pre>
@@ -5026,27 +4923,24 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional .proto.gc.Referee.Command next_command = 12;</code>
-     * @return The nextCommand.
      */
-    @java.lang.Override public proto.gc.SslGcRefereeMessage.Referee.Command getNextCommand() {
-      proto.gc.SslGcRefereeMessage.Referee.Command result = proto.gc.SslGcRefereeMessage.Referee.Command.forNumber(nextCommand_);
+    public proto.gc.SslGcRefereeMessage.Referee.Command getNextCommand() {
+      @SuppressWarnings("deprecation")
+      proto.gc.SslGcRefereeMessage.Referee.Command result = proto.gc.SslGcRefereeMessage.Referee.Command.valueOf(nextCommand_);
       return result == null ? proto.gc.SslGcRefereeMessage.Referee.Command.HALT : result;
     }
 
     public static final int GAME_EVENTS_FIELD_NUMBER = 16;
-    @SuppressWarnings("serial")
     private java.util.List<proto.gc.SslGcGameEvent.GameEvent> gameEvents_;
     /**
      * <code>repeated .proto.gc.GameEvent game_events = 16;</code>
      */
-    @java.lang.Override
     public java.util.List<proto.gc.SslGcGameEvent.GameEvent> getGameEventsList() {
       return gameEvents_;
     }
     /**
      * <code>repeated .proto.gc.GameEvent game_events = 16;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends proto.gc.SslGcGameEvent.GameEventOrBuilder> 
         getGameEventsOrBuilderList() {
       return gameEvents_;
@@ -5054,40 +4948,34 @@ public final class SslGcRefereeMessage {
     /**
      * <code>repeated .proto.gc.GameEvent game_events = 16;</code>
      */
-    @java.lang.Override
     public int getGameEventsCount() {
       return gameEvents_.size();
     }
     /**
      * <code>repeated .proto.gc.GameEvent game_events = 16;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcGameEvent.GameEvent getGameEvents(int index) {
       return gameEvents_.get(index);
     }
     /**
      * <code>repeated .proto.gc.GameEvent game_events = 16;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcGameEvent.GameEventOrBuilder getGameEventsOrBuilder(
         int index) {
       return gameEvents_.get(index);
     }
 
     public static final int GAME_EVENT_PROPOSALS_FIELD_NUMBER = 17;
-    @SuppressWarnings("serial")
     private java.util.List<proto.gc.SslGcRefereeMessage.GameEventProposalGroup> gameEventProposals_;
     /**
      * <code>repeated .proto.gc.GameEventProposalGroup game_event_proposals = 17;</code>
      */
-    @java.lang.Override
     public java.util.List<proto.gc.SslGcRefereeMessage.GameEventProposalGroup> getGameEventProposalsList() {
       return gameEventProposals_;
     }
     /**
      * <code>repeated .proto.gc.GameEventProposalGroup game_event_proposals = 17;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends proto.gc.SslGcRefereeMessage.GameEventProposalGroupOrBuilder> 
         getGameEventProposalsOrBuilderList() {
       return gameEventProposals_;
@@ -5095,28 +4983,25 @@ public final class SslGcRefereeMessage {
     /**
      * <code>repeated .proto.gc.GameEventProposalGroup game_event_proposals = 17;</code>
      */
-    @java.lang.Override
     public int getGameEventProposalsCount() {
       return gameEventProposals_.size();
     }
     /**
      * <code>repeated .proto.gc.GameEventProposalGroup game_event_proposals = 17;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcRefereeMessage.GameEventProposalGroup getGameEventProposals(int index) {
       return gameEventProposals_.get(index);
     }
     /**
      * <code>repeated .proto.gc.GameEventProposalGroup game_event_proposals = 17;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcRefereeMessage.GameEventProposalGroupOrBuilder getGameEventProposalsOrBuilder(
         int index) {
       return gameEventProposals_.get(index);
     }
 
     public static final int CURRENT_ACTION_TIME_REMAINING_FIELD_NUMBER = 15;
-    private long currentActionTimeRemaining_ = 0L;
+    private long currentActionTimeRemaining_;
     /**
      * <pre>
      * The time in microseconds that is remaining until the current action times out
@@ -5129,11 +5014,9 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional int64 current_action_time_remaining = 15;</code>
-     * @return Whether the currentActionTimeRemaining field is set.
      */
-    @java.lang.Override
     public boolean hasCurrentActionTimeRemaining() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     /**
      * <pre>
@@ -5147,9 +5030,7 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional int64 current_action_time_remaining = 15;</code>
-     * @return The currentActionTimeRemaining.
      */
-    @java.lang.Override
     public long getCurrentActionTimeRemaining() {
       return currentActionTimeRemaining_;
     }
@@ -5222,40 +5103,40 @@ public final class SslGcRefereeMessage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeUInt64(1, packetTimestamp_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeEnum(2, stage_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeSInt64(3, stageTimeLeft_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeEnum(4, command_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeUInt32(5, commandCounter_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeUInt64(6, commandTimestamp_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeMessage(7, getYellow());
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         output.writeMessage(8, getBlue());
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         output.writeMessage(9, getDesignatedPosition());
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeBool(10, blueTeamOnPositiveHalf_);
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         output.writeEnum(12, nextCommand_);
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         output.writeInt64(15, currentActionTimeRemaining_);
       }
       for (int i = 0; i < gameEvents_.size(); i++) {
@@ -5264,13 +5145,13 @@ public final class SslGcRefereeMessage {
       for (int i = 0; i < gameEventProposals_.size(); i++) {
         output.writeMessage(17, gameEventProposals_.get(i));
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 18, sourceIdentifier_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeEnum(19, matchType_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -5279,51 +5160,51 @@ public final class SslGcRefereeMessage {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(1, packetTimestamp_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, stage_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeSInt64Size(3, stageTimeLeft_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, command_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, commandCounter_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(6, commandTimestamp_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getYellow());
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getBlue());
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getDesignatedPosition());
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(10, blueTeamOnPositiveHalf_);
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(12, nextCommand_);
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(15, currentActionTimeRemaining_);
       }
@@ -5335,14 +5216,14 @@ public final class SslGcRefereeMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(17, gameEventProposals_.get(i));
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, sourceIdentifier_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(19, matchType_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5357,78 +5238,79 @@ public final class SslGcRefereeMessage {
       }
       proto.gc.SslGcRefereeMessage.Referee other = (proto.gc.SslGcRefereeMessage.Referee) obj;
 
-      if (hasSourceIdentifier() != other.hasSourceIdentifier()) return false;
+      boolean result = true;
+      result = result && (hasSourceIdentifier() == other.hasSourceIdentifier());
       if (hasSourceIdentifier()) {
-        if (!getSourceIdentifier()
-            .equals(other.getSourceIdentifier())) return false;
+        result = result && getSourceIdentifier()
+            .equals(other.getSourceIdentifier());
       }
-      if (hasMatchType() != other.hasMatchType()) return false;
+      result = result && (hasMatchType() == other.hasMatchType());
       if (hasMatchType()) {
-        if (matchType_ != other.matchType_) return false;
+        result = result && matchType_ == other.matchType_;
       }
-      if (hasPacketTimestamp() != other.hasPacketTimestamp()) return false;
+      result = result && (hasPacketTimestamp() == other.hasPacketTimestamp());
       if (hasPacketTimestamp()) {
-        if (getPacketTimestamp()
-            != other.getPacketTimestamp()) return false;
+        result = result && (getPacketTimestamp()
+            == other.getPacketTimestamp());
       }
-      if (hasStage() != other.hasStage()) return false;
+      result = result && (hasStage() == other.hasStage());
       if (hasStage()) {
-        if (stage_ != other.stage_) return false;
+        result = result && stage_ == other.stage_;
       }
-      if (hasStageTimeLeft() != other.hasStageTimeLeft()) return false;
+      result = result && (hasStageTimeLeft() == other.hasStageTimeLeft());
       if (hasStageTimeLeft()) {
-        if (getStageTimeLeft()
-            != other.getStageTimeLeft()) return false;
+        result = result && (getStageTimeLeft()
+            == other.getStageTimeLeft());
       }
-      if (hasCommand() != other.hasCommand()) return false;
+      result = result && (hasCommand() == other.hasCommand());
       if (hasCommand()) {
-        if (command_ != other.command_) return false;
+        result = result && command_ == other.command_;
       }
-      if (hasCommandCounter() != other.hasCommandCounter()) return false;
+      result = result && (hasCommandCounter() == other.hasCommandCounter());
       if (hasCommandCounter()) {
-        if (getCommandCounter()
-            != other.getCommandCounter()) return false;
+        result = result && (getCommandCounter()
+            == other.getCommandCounter());
       }
-      if (hasCommandTimestamp() != other.hasCommandTimestamp()) return false;
+      result = result && (hasCommandTimestamp() == other.hasCommandTimestamp());
       if (hasCommandTimestamp()) {
-        if (getCommandTimestamp()
-            != other.getCommandTimestamp()) return false;
+        result = result && (getCommandTimestamp()
+            == other.getCommandTimestamp());
       }
-      if (hasYellow() != other.hasYellow()) return false;
+      result = result && (hasYellow() == other.hasYellow());
       if (hasYellow()) {
-        if (!getYellow()
-            .equals(other.getYellow())) return false;
+        result = result && getYellow()
+            .equals(other.getYellow());
       }
-      if (hasBlue() != other.hasBlue()) return false;
+      result = result && (hasBlue() == other.hasBlue());
       if (hasBlue()) {
-        if (!getBlue()
-            .equals(other.getBlue())) return false;
+        result = result && getBlue()
+            .equals(other.getBlue());
       }
-      if (hasDesignatedPosition() != other.hasDesignatedPosition()) return false;
+      result = result && (hasDesignatedPosition() == other.hasDesignatedPosition());
       if (hasDesignatedPosition()) {
-        if (!getDesignatedPosition()
-            .equals(other.getDesignatedPosition())) return false;
+        result = result && getDesignatedPosition()
+            .equals(other.getDesignatedPosition());
       }
-      if (hasBlueTeamOnPositiveHalf() != other.hasBlueTeamOnPositiveHalf()) return false;
+      result = result && (hasBlueTeamOnPositiveHalf() == other.hasBlueTeamOnPositiveHalf());
       if (hasBlueTeamOnPositiveHalf()) {
-        if (getBlueTeamOnPositiveHalf()
-            != other.getBlueTeamOnPositiveHalf()) return false;
+        result = result && (getBlueTeamOnPositiveHalf()
+            == other.getBlueTeamOnPositiveHalf());
       }
-      if (hasNextCommand() != other.hasNextCommand()) return false;
+      result = result && (hasNextCommand() == other.hasNextCommand());
       if (hasNextCommand()) {
-        if (nextCommand_ != other.nextCommand_) return false;
+        result = result && nextCommand_ == other.nextCommand_;
       }
-      if (!getGameEventsList()
-          .equals(other.getGameEventsList())) return false;
-      if (!getGameEventProposalsList()
-          .equals(other.getGameEventProposalsList())) return false;
-      if (hasCurrentActionTimeRemaining() != other.hasCurrentActionTimeRemaining()) return false;
+      result = result && getGameEventsList()
+          .equals(other.getGameEventsList());
+      result = result && getGameEventProposalsList()
+          .equals(other.getGameEventProposalsList());
+      result = result && (hasCurrentActionTimeRemaining() == other.hasCurrentActionTimeRemaining());
       if (hasCurrentActionTimeRemaining()) {
-        if (getCurrentActionTimeRemaining()
-            != other.getCurrentActionTimeRemaining()) return false;
+        result = result && (getCurrentActionTimeRemaining()
+            == other.getCurrentActionTimeRemaining());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -5507,7 +5389,7 @@ public final class SslGcRefereeMessage {
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getCurrentActionTimeRemaining());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5649,47 +5531,58 @@ public final class SslGcRefereeMessage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         sourceIdentifier_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
         matchType_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
         packetTimestamp_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
         stage_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
         stageTimeLeft_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000010);
         command_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000020);
         commandCounter_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000040);
         commandTimestamp_ = 0L;
-        yellow_ = null;
-        if (yellowBuilder_ != null) {
-          yellowBuilder_.dispose();
-          yellowBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        if (yellowBuilder_ == null) {
+          yellow_ = null;
+        } else {
+          yellowBuilder_.clear();
         }
-        blue_ = null;
-        if (blueBuilder_ != null) {
-          blueBuilder_.dispose();
-          blueBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000100);
+        if (blueBuilder_ == null) {
+          blue_ = null;
+        } else {
+          blueBuilder_.clear();
         }
-        designatedPosition_ = null;
-        if (designatedPositionBuilder_ != null) {
-          designatedPositionBuilder_.dispose();
-          designatedPositionBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000200);
+        if (designatedPositionBuilder_ == null) {
+          designatedPosition_ = null;
+        } else {
+          designatedPositionBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000400);
         blueTeamOnPositiveHalf_ = false;
+        bitField0_ = (bitField0_ & ~0x00000800);
         nextCommand_ = 0;
+        bitField0_ = (bitField0_ & ~0x00001000);
         if (gameEventsBuilder_ == null) {
           gameEvents_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00002000);
         } else {
-          gameEvents_ = null;
           gameEventsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00002000);
         if (gameEventProposalsBuilder_ == null) {
           gameEventProposals_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00004000);
         } else {
-          gameEventProposals_ = null;
           gameEventProposalsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00004000);
         currentActionTimeRemaining_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00008000);
         return this;
       }
 
@@ -5716,15 +5609,74 @@ public final class SslGcRefereeMessage {
       @java.lang.Override
       public proto.gc.SslGcRefereeMessage.Referee buildPartial() {
         proto.gc.SslGcRefereeMessage.Referee result = new proto.gc.SslGcRefereeMessage.Referee(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(proto.gc.SslGcRefereeMessage.Referee result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.sourceIdentifier_ = sourceIdentifier_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.matchType_ = matchType_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.packetTimestamp_ = packetTimestamp_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.stage_ = stage_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.stageTimeLeft_ = stageTimeLeft_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.command_ = command_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.commandCounter_ = commandCounter_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.commandTimestamp_ = commandTimestamp_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        if (yellowBuilder_ == null) {
+          result.yellow_ = yellow_;
+        } else {
+          result.yellow_ = yellowBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000200;
+        }
+        if (blueBuilder_ == null) {
+          result.blue_ = blue_;
+        } else {
+          result.blue_ = blueBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000400;
+        }
+        if (designatedPositionBuilder_ == null) {
+          result.designatedPosition_ = designatedPosition_;
+        } else {
+          result.designatedPosition_ = designatedPositionBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000800;
+        }
+        result.blueTeamOnPositiveHalf_ = blueTeamOnPositiveHalf_;
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00001000;
+        }
+        result.nextCommand_ = nextCommand_;
         if (gameEventsBuilder_ == null) {
-          if (((bitField0_ & 0x00002000) != 0)) {
+          if (((bitField0_ & 0x00002000) == 0x00002000)) {
             gameEvents_ = java.util.Collections.unmodifiableList(gameEvents_);
             bitField0_ = (bitField0_ & ~0x00002000);
           }
@@ -5733,7 +5685,7 @@ public final class SslGcRefereeMessage {
           result.gameEvents_ = gameEventsBuilder_.build();
         }
         if (gameEventProposalsBuilder_ == null) {
-          if (((bitField0_ & 0x00004000) != 0)) {
+          if (((bitField0_ & 0x00004000) == 0x00004000)) {
             gameEventProposals_ = java.util.Collections.unmodifiableList(gameEventProposals_);
             bitField0_ = (bitField0_ & ~0x00004000);
           }
@@ -5741,107 +5693,46 @@ public final class SslGcRefereeMessage {
         } else {
           result.gameEventProposals_ = gameEventProposalsBuilder_.build();
         }
-      }
-
-      private void buildPartial0(proto.gc.SslGcRefereeMessage.Referee result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.sourceIdentifier_ = sourceIdentifier_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.matchType_ = matchType_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.packetTimestamp_ = packetTimestamp_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.stage_ = stage_;
-          to_bitField0_ |= 0x00000008;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.stageTimeLeft_ = stageTimeLeft_;
-          to_bitField0_ |= 0x00000010;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.command_ = command_;
-          to_bitField0_ |= 0x00000020;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.commandCounter_ = commandCounter_;
-          to_bitField0_ |= 0x00000040;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.commandTimestamp_ = commandTimestamp_;
-          to_bitField0_ |= 0x00000080;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.yellow_ = yellowBuilder_ == null
-              ? yellow_
-              : yellowBuilder_.build();
-          to_bitField0_ |= 0x00000100;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.blue_ = blueBuilder_ == null
-              ? blue_
-              : blueBuilder_.build();
-          to_bitField0_ |= 0x00000200;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.designatedPosition_ = designatedPositionBuilder_ == null
-              ? designatedPosition_
-              : designatedPositionBuilder_.build();
-          to_bitField0_ |= 0x00000400;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.blueTeamOnPositiveHalf_ = blueTeamOnPositiveHalf_;
-          to_bitField0_ |= 0x00000800;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.nextCommand_ = nextCommand_;
-          to_bitField0_ |= 0x00001000;
-        }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.currentActionTimeRemaining_ = currentActionTimeRemaining_;
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
           to_bitField0_ |= 0x00002000;
         }
-        result.bitField0_ |= to_bitField0_;
+        result.currentActionTimeRemaining_ = currentActionTimeRemaining_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -5856,8 +5747,8 @@ public final class SslGcRefereeMessage {
       public Builder mergeFrom(proto.gc.SslGcRefereeMessage.Referee other) {
         if (other == proto.gc.SslGcRefereeMessage.Referee.getDefaultInstance()) return this;
         if (other.hasSourceIdentifier()) {
-          sourceIdentifier_ = other.sourceIdentifier_;
           bitField0_ |= 0x00000001;
+          sourceIdentifier_ = other.sourceIdentifier_;
           onChanged();
         }
         if (other.hasMatchType()) {
@@ -5951,7 +5842,7 @@ public final class SslGcRefereeMessage {
         if (other.hasCurrentActionTimeRemaining()) {
           setCurrentActionTimeRemaining(other.getCurrentActionTimeRemaining());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -6008,160 +5899,17 @@ public final class SslGcRefereeMessage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcRefereeMessage.Referee parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                packetTimestamp_ = input.readUInt64();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 8
-              case 16: {
-                int tmpRaw = input.readEnum();
-                proto.gc.SslGcRefereeMessage.Referee.Stage tmpValue =
-                    proto.gc.SslGcRefereeMessage.Referee.Stage.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(2, tmpRaw);
-                } else {
-                  stage_ = tmpRaw;
-                  bitField0_ |= 0x00000008;
-                }
-                break;
-              } // case 16
-              case 24: {
-                stageTimeLeft_ = input.readSInt64();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 24
-              case 32: {
-                int tmpRaw = input.readEnum();
-                proto.gc.SslGcRefereeMessage.Referee.Command tmpValue =
-                    proto.gc.SslGcRefereeMessage.Referee.Command.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(4, tmpRaw);
-                } else {
-                  command_ = tmpRaw;
-                  bitField0_ |= 0x00000020;
-                }
-                break;
-              } // case 32
-              case 40: {
-                commandCounter_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 40
-              case 48: {
-                commandTimestamp_ = input.readUInt64();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 48
-              case 58: {
-                input.readMessage(
-                    getYellowFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 58
-              case 66: {
-                input.readMessage(
-                    getBlueFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 66
-              case 74: {
-                input.readMessage(
-                    getDesignatedPositionFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 74
-              case 80: {
-                blueTeamOnPositiveHalf_ = input.readBool();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 80
-              case 96: {
-                int tmpRaw = input.readEnum();
-                proto.gc.SslGcRefereeMessage.Referee.Command tmpValue =
-                    proto.gc.SslGcRefereeMessage.Referee.Command.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(12, tmpRaw);
-                } else {
-                  nextCommand_ = tmpRaw;
-                  bitField0_ |= 0x00001000;
-                }
-                break;
-              } // case 96
-              case 120: {
-                currentActionTimeRemaining_ = input.readInt64();
-                bitField0_ |= 0x00008000;
-                break;
-              } // case 120
-              case 130: {
-                proto.gc.SslGcGameEvent.GameEvent m =
-                    input.readMessage(
-                        proto.gc.SslGcGameEvent.GameEvent.PARSER,
-                        extensionRegistry);
-                if (gameEventsBuilder_ == null) {
-                  ensureGameEventsIsMutable();
-                  gameEvents_.add(m);
-                } else {
-                  gameEventsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 130
-              case 138: {
-                proto.gc.SslGcRefereeMessage.GameEventProposalGroup m =
-                    input.readMessage(
-                        proto.gc.SslGcRefereeMessage.GameEventProposalGroup.PARSER,
-                        extensionRegistry);
-                if (gameEventProposalsBuilder_ == null) {
-                  ensureGameEventProposalsIsMutable();
-                  gameEventProposals_.add(m);
-                } else {
-                  gameEventProposalsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 138
-              case 146: {
-                sourceIdentifier_ = input.readBytes();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 146
-              case 152: {
-                int tmpRaw = input.readEnum();
-                proto.gc.SslGcRefereeMessage.MatchType tmpValue =
-                    proto.gc.SslGcRefereeMessage.MatchType.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(19, tmpRaw);
-                } else {
-                  matchType_ = tmpRaw;
-                  bitField0_ |= 0x00000002;
-                }
-                break;
-              } // case 152
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcRefereeMessage.Referee) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -6174,10 +5922,9 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional string source_identifier = 18;</code>
-       * @return Whether the sourceIdentifier field is set.
        */
       public boolean hasSourceIdentifier() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -6186,7 +5933,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional string source_identifier = 18;</code>
-       * @return The sourceIdentifier.
        */
       public java.lang.String getSourceIdentifier() {
         java.lang.Object ref = sourceIdentifier_;
@@ -6209,7 +5955,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional string source_identifier = 18;</code>
-       * @return The bytes for sourceIdentifier.
        */
       public com.google.protobuf.ByteString
           getSourceIdentifierBytes() {
@@ -6231,14 +5976,14 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional string source_identifier = 18;</code>
-       * @param value The sourceIdentifier to set.
-       * @return This builder for chaining.
        */
       public Builder setSourceIdentifier(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         sourceIdentifier_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6249,11 +5994,10 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional string source_identifier = 18;</code>
-       * @return This builder for chaining.
        */
       public Builder clearSourceIdentifier() {
-        sourceIdentifier_ = getDefaultInstance().getSourceIdentifier();
         bitField0_ = (bitField0_ & ~0x00000001);
+        sourceIdentifier_ = getDefaultInstance().getSourceIdentifier();
         onChanged();
         return this;
       }
@@ -6264,14 +6008,14 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional string source_identifier = 18;</code>
-       * @param value The bytes for sourceIdentifier to set.
-       * @return This builder for chaining.
        */
       public Builder setSourceIdentifierBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         sourceIdentifier_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6283,10 +6027,9 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional .proto.gc.MatchType match_type = 19 [default = UNKNOWN_MATCH];</code>
-       * @return Whether the matchType field is set.
        */
-      @java.lang.Override public boolean hasMatchType() {
-        return ((bitField0_ & 0x00000002) != 0);
+      public boolean hasMatchType() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -6294,11 +6037,10 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional .proto.gc.MatchType match_type = 19 [default = UNKNOWN_MATCH];</code>
-       * @return The matchType.
        */
-      @java.lang.Override
       public proto.gc.SslGcRefereeMessage.MatchType getMatchType() {
-        proto.gc.SslGcRefereeMessage.MatchType result = proto.gc.SslGcRefereeMessage.MatchType.forNumber(matchType_);
+        @SuppressWarnings("deprecation")
+        proto.gc.SslGcRefereeMessage.MatchType result = proto.gc.SslGcRefereeMessage.MatchType.valueOf(matchType_);
         return result == null ? proto.gc.SslGcRefereeMessage.MatchType.UNKNOWN_MATCH : result;
       }
       /**
@@ -6307,8 +6049,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional .proto.gc.MatchType match_type = 19 [default = UNKNOWN_MATCH];</code>
-       * @param value The matchType to set.
-       * @return This builder for chaining.
        */
       public Builder setMatchType(proto.gc.SslGcRefereeMessage.MatchType value) {
         if (value == null) {
@@ -6325,7 +6065,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional .proto.gc.MatchType match_type = 19 [default = UNKNOWN_MATCH];</code>
-       * @return This builder for chaining.
        */
       public Builder clearMatchType() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -6342,11 +6081,9 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint64 packet_timestamp = 1;</code>
-       * @return Whether the packetTimestamp field is set.
        */
-      @java.lang.Override
       public boolean hasPacketTimestamp() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -6355,9 +6092,7 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint64 packet_timestamp = 1;</code>
-       * @return The packetTimestamp.
        */
-      @java.lang.Override
       public long getPacketTimestamp() {
         return packetTimestamp_;
       }
@@ -6368,13 +6103,10 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint64 packet_timestamp = 1;</code>
-       * @param value The packetTimestamp to set.
-       * @return This builder for chaining.
        */
       public Builder setPacketTimestamp(long value) {
-        
-        packetTimestamp_ = value;
         bitField0_ |= 0x00000004;
+        packetTimestamp_ = value;
         onChanged();
         return this;
       }
@@ -6385,7 +6117,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint64 packet_timestamp = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearPacketTimestamp() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -6397,24 +6128,20 @@ public final class SslGcRefereeMessage {
       private int stage_ = 0;
       /**
        * <code>required .proto.gc.Referee.Stage stage = 2;</code>
-       * @return Whether the stage field is set.
        */
-      @java.lang.Override public boolean hasStage() {
-        return ((bitField0_ & 0x00000008) != 0);
+      public boolean hasStage() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>required .proto.gc.Referee.Stage stage = 2;</code>
-       * @return The stage.
        */
-      @java.lang.Override
       public proto.gc.SslGcRefereeMessage.Referee.Stage getStage() {
-        proto.gc.SslGcRefereeMessage.Referee.Stage result = proto.gc.SslGcRefereeMessage.Referee.Stage.forNumber(stage_);
+        @SuppressWarnings("deprecation")
+        proto.gc.SslGcRefereeMessage.Referee.Stage result = proto.gc.SslGcRefereeMessage.Referee.Stage.valueOf(stage_);
         return result == null ? proto.gc.SslGcRefereeMessage.Referee.Stage.NORMAL_FIRST_HALF_PRE : result;
       }
       /**
        * <code>required .proto.gc.Referee.Stage stage = 2;</code>
-       * @param value The stage to set.
-       * @return This builder for chaining.
        */
       public Builder setStage(proto.gc.SslGcRefereeMessage.Referee.Stage value) {
         if (value == null) {
@@ -6427,7 +6154,6 @@ public final class SslGcRefereeMessage {
       }
       /**
        * <code>required .proto.gc.Referee.Stage stage = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearStage() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -6454,11 +6180,9 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional sint64 stage_time_left = 3;</code>
-       * @return Whether the stageTimeLeft field is set.
        */
-      @java.lang.Override
       public boolean hasStageTimeLeft() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <pre>
@@ -6477,9 +6201,7 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional sint64 stage_time_left = 3;</code>
-       * @return The stageTimeLeft.
        */
-      @java.lang.Override
       public long getStageTimeLeft() {
         return stageTimeLeft_;
       }
@@ -6500,13 +6222,10 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional sint64 stage_time_left = 3;</code>
-       * @param value The stageTimeLeft to set.
-       * @return This builder for chaining.
        */
       public Builder setStageTimeLeft(long value) {
-        
-        stageTimeLeft_ = value;
         bitField0_ |= 0x00000010;
+        stageTimeLeft_ = value;
         onChanged();
         return this;
       }
@@ -6527,7 +6246,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional sint64 stage_time_left = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearStageTimeLeft() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -6539,24 +6257,20 @@ public final class SslGcRefereeMessage {
       private int command_ = 0;
       /**
        * <code>required .proto.gc.Referee.Command command = 4;</code>
-       * @return Whether the command field is set.
        */
-      @java.lang.Override public boolean hasCommand() {
-        return ((bitField0_ & 0x00000020) != 0);
+      public boolean hasCommand() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>required .proto.gc.Referee.Command command = 4;</code>
-       * @return The command.
        */
-      @java.lang.Override
       public proto.gc.SslGcRefereeMessage.Referee.Command getCommand() {
-        proto.gc.SslGcRefereeMessage.Referee.Command result = proto.gc.SslGcRefereeMessage.Referee.Command.forNumber(command_);
+        @SuppressWarnings("deprecation")
+        proto.gc.SslGcRefereeMessage.Referee.Command result = proto.gc.SslGcRefereeMessage.Referee.Command.valueOf(command_);
         return result == null ? proto.gc.SslGcRefereeMessage.Referee.Command.HALT : result;
       }
       /**
        * <code>required .proto.gc.Referee.Command command = 4;</code>
-       * @param value The command to set.
-       * @return This builder for chaining.
        */
       public Builder setCommand(proto.gc.SslGcRefereeMessage.Referee.Command value) {
         if (value == null) {
@@ -6569,7 +6283,6 @@ public final class SslGcRefereeMessage {
       }
       /**
        * <code>required .proto.gc.Referee.Command command = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearCommand() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -6585,11 +6298,9 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 command_counter = 5;</code>
-       * @return Whether the commandCounter field is set.
        */
-      @java.lang.Override
       public boolean hasCommandCounter() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <pre>
@@ -6597,9 +6308,7 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 command_counter = 5;</code>
-       * @return The commandCounter.
        */
-      @java.lang.Override
       public int getCommandCounter() {
         return commandCounter_;
       }
@@ -6609,13 +6318,10 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 command_counter = 5;</code>
-       * @param value The commandCounter to set.
-       * @return This builder for chaining.
        */
       public Builder setCommandCounter(int value) {
-        
-        commandCounter_ = value;
         bitField0_ |= 0x00000040;
+        commandCounter_ = value;
         onChanged();
         return this;
       }
@@ -6625,7 +6331,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint32 command_counter = 5;</code>
-       * @return This builder for chaining.
        */
       public Builder clearCommandCounter() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -6642,11 +6347,9 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint64 command_timestamp = 6;</code>
-       * @return Whether the commandTimestamp field is set.
        */
-      @java.lang.Override
       public boolean hasCommandTimestamp() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
        * <pre>
@@ -6655,9 +6358,7 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint64 command_timestamp = 6;</code>
-       * @return The commandTimestamp.
        */
-      @java.lang.Override
       public long getCommandTimestamp() {
         return commandTimestamp_;
       }
@@ -6668,13 +6369,10 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint64 command_timestamp = 6;</code>
-       * @param value The commandTimestamp to set.
-       * @return This builder for chaining.
        */
       public Builder setCommandTimestamp(long value) {
-        
-        commandTimestamp_ = value;
         bitField0_ |= 0x00000080;
+        commandTimestamp_ = value;
         onChanged();
         return this;
       }
@@ -6685,7 +6383,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required uint64 command_timestamp = 6;</code>
-       * @return This builder for chaining.
        */
       public Builder clearCommandTimestamp() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -6694,7 +6391,7 @@ public final class SslGcRefereeMessage {
         return this;
       }
 
-      private proto.gc.SslGcRefereeMessage.Referee.TeamInfo yellow_;
+      private proto.gc.SslGcRefereeMessage.Referee.TeamInfo yellow_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcRefereeMessage.Referee.TeamInfo, proto.gc.SslGcRefereeMessage.Referee.TeamInfo.Builder, proto.gc.SslGcRefereeMessage.Referee.TeamInfoOrBuilder> yellowBuilder_;
       /**
@@ -6703,10 +6400,9 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required .proto.gc.Referee.TeamInfo yellow = 7;</code>
-       * @return Whether the yellow field is set.
        */
       public boolean hasYellow() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
        * <pre>
@@ -6714,7 +6410,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>required .proto.gc.Referee.TeamInfo yellow = 7;</code>
-       * @return The yellow.
        */
       public proto.gc.SslGcRefereeMessage.Referee.TeamInfo getYellow() {
         if (yellowBuilder_ == null) {
@@ -6736,11 +6431,11 @@ public final class SslGcRefereeMessage {
             throw new NullPointerException();
           }
           yellow_ = value;
+          onChanged();
         } else {
           yellowBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000100;
-        onChanged();
         return this;
       }
       /**
@@ -6754,11 +6449,11 @@ public final class SslGcRefereeMessage {
           proto.gc.SslGcRefereeMessage.Referee.TeamInfo.Builder builderForValue) {
         if (yellowBuilder_ == null) {
           yellow_ = builderForValue.build();
+          onChanged();
         } else {
           yellowBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000100;
-        onChanged();
         return this;
       }
       /**
@@ -6770,18 +6465,19 @@ public final class SslGcRefereeMessage {
        */
       public Builder mergeYellow(proto.gc.SslGcRefereeMessage.Referee.TeamInfo value) {
         if (yellowBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) != 0) &&
-            yellow_ != null &&
-            yellow_ != proto.gc.SslGcRefereeMessage.Referee.TeamInfo.getDefaultInstance()) {
-            getYellowBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000100) == 0x00000100) &&
+              yellow_ != null &&
+              yellow_ != proto.gc.SslGcRefereeMessage.Referee.TeamInfo.getDefaultInstance()) {
+            yellow_ =
+              proto.gc.SslGcRefereeMessage.Referee.TeamInfo.newBuilder(yellow_).mergeFrom(value).buildPartial();
           } else {
             yellow_ = value;
           }
+          onChanged();
         } else {
           yellowBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000100;
-        onChanged();
         return this;
       }
       /**
@@ -6792,13 +6488,13 @@ public final class SslGcRefereeMessage {
        * <code>required .proto.gc.Referee.TeamInfo yellow = 7;</code>
        */
       public Builder clearYellow() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        yellow_ = null;
-        if (yellowBuilder_ != null) {
-          yellowBuilder_.dispose();
-          yellowBuilder_ = null;
+        if (yellowBuilder_ == null) {
+          yellow_ = null;
+          onChanged();
+        } else {
+          yellowBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
       /**
@@ -6849,19 +6545,17 @@ public final class SslGcRefereeMessage {
         return yellowBuilder_;
       }
 
-      private proto.gc.SslGcRefereeMessage.Referee.TeamInfo blue_;
+      private proto.gc.SslGcRefereeMessage.Referee.TeamInfo blue_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcRefereeMessage.Referee.TeamInfo, proto.gc.SslGcRefereeMessage.Referee.TeamInfo.Builder, proto.gc.SslGcRefereeMessage.Referee.TeamInfoOrBuilder> blueBuilder_;
       /**
        * <code>required .proto.gc.Referee.TeamInfo blue = 8;</code>
-       * @return Whether the blue field is set.
        */
       public boolean hasBlue() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
        * <code>required .proto.gc.Referee.TeamInfo blue = 8;</code>
-       * @return The blue.
        */
       public proto.gc.SslGcRefereeMessage.Referee.TeamInfo getBlue() {
         if (blueBuilder_ == null) {
@@ -6879,11 +6573,11 @@ public final class SslGcRefereeMessage {
             throw new NullPointerException();
           }
           blue_ = value;
+          onChanged();
         } else {
           blueBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000200;
-        onChanged();
         return this;
       }
       /**
@@ -6893,11 +6587,11 @@ public final class SslGcRefereeMessage {
           proto.gc.SslGcRefereeMessage.Referee.TeamInfo.Builder builderForValue) {
         if (blueBuilder_ == null) {
           blue_ = builderForValue.build();
+          onChanged();
         } else {
           blueBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000200;
-        onChanged();
         return this;
       }
       /**
@@ -6905,31 +6599,32 @@ public final class SslGcRefereeMessage {
        */
       public Builder mergeBlue(proto.gc.SslGcRefereeMessage.Referee.TeamInfo value) {
         if (blueBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) != 0) &&
-            blue_ != null &&
-            blue_ != proto.gc.SslGcRefereeMessage.Referee.TeamInfo.getDefaultInstance()) {
-            getBlueBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000200) == 0x00000200) &&
+              blue_ != null &&
+              blue_ != proto.gc.SslGcRefereeMessage.Referee.TeamInfo.getDefaultInstance()) {
+            blue_ =
+              proto.gc.SslGcRefereeMessage.Referee.TeamInfo.newBuilder(blue_).mergeFrom(value).buildPartial();
           } else {
             blue_ = value;
           }
+          onChanged();
         } else {
           blueBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000200;
-        onChanged();
         return this;
       }
       /**
        * <code>required .proto.gc.Referee.TeamInfo blue = 8;</code>
        */
       public Builder clearBlue() {
-        bitField0_ = (bitField0_ & ~0x00000200);
-        blue_ = null;
-        if (blueBuilder_ != null) {
-          blueBuilder_.dispose();
-          blueBuilder_ = null;
+        if (blueBuilder_ == null) {
+          blue_ = null;
+          onChanged();
+        } else {
+          blueBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
       /**
@@ -6968,19 +6663,17 @@ public final class SslGcRefereeMessage {
         return blueBuilder_;
       }
 
-      private proto.gc.SslGcRefereeMessage.Referee.Point designatedPosition_;
+      private proto.gc.SslGcRefereeMessage.Referee.Point designatedPosition_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcRefereeMessage.Referee.Point, proto.gc.SslGcRefereeMessage.Referee.Point.Builder, proto.gc.SslGcRefereeMessage.Referee.PointOrBuilder> designatedPositionBuilder_;
       /**
        * <code>optional .proto.gc.Referee.Point designated_position = 9;</code>
-       * @return Whether the designatedPosition field is set.
        */
       public boolean hasDesignatedPosition() {
-        return ((bitField0_ & 0x00000400) != 0);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
        * <code>optional .proto.gc.Referee.Point designated_position = 9;</code>
-       * @return The designatedPosition.
        */
       public proto.gc.SslGcRefereeMessage.Referee.Point getDesignatedPosition() {
         if (designatedPositionBuilder_ == null) {
@@ -6998,11 +6691,11 @@ public final class SslGcRefereeMessage {
             throw new NullPointerException();
           }
           designatedPosition_ = value;
+          onChanged();
         } else {
           designatedPositionBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000400;
-        onChanged();
         return this;
       }
       /**
@@ -7012,11 +6705,11 @@ public final class SslGcRefereeMessage {
           proto.gc.SslGcRefereeMessage.Referee.Point.Builder builderForValue) {
         if (designatedPositionBuilder_ == null) {
           designatedPosition_ = builderForValue.build();
+          onChanged();
         } else {
           designatedPositionBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000400;
-        onChanged();
         return this;
       }
       /**
@@ -7024,31 +6717,32 @@ public final class SslGcRefereeMessage {
        */
       public Builder mergeDesignatedPosition(proto.gc.SslGcRefereeMessage.Referee.Point value) {
         if (designatedPositionBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) != 0) &&
-            designatedPosition_ != null &&
-            designatedPosition_ != proto.gc.SslGcRefereeMessage.Referee.Point.getDefaultInstance()) {
-            getDesignatedPositionBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000400) == 0x00000400) &&
+              designatedPosition_ != null &&
+              designatedPosition_ != proto.gc.SslGcRefereeMessage.Referee.Point.getDefaultInstance()) {
+            designatedPosition_ =
+              proto.gc.SslGcRefereeMessage.Referee.Point.newBuilder(designatedPosition_).mergeFrom(value).buildPartial();
           } else {
             designatedPosition_ = value;
           }
+          onChanged();
         } else {
           designatedPositionBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000400;
-        onChanged();
         return this;
       }
       /**
        * <code>optional .proto.gc.Referee.Point designated_position = 9;</code>
        */
       public Builder clearDesignatedPosition() {
-        bitField0_ = (bitField0_ & ~0x00000400);
-        designatedPosition_ = null;
-        if (designatedPositionBuilder_ != null) {
-          designatedPositionBuilder_.dispose();
-          designatedPositionBuilder_ = null;
+        if (designatedPositionBuilder_ == null) {
+          designatedPosition_ = null;
+          onChanged();
+        } else {
+          designatedPositionBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000400);
         return this;
       }
       /**
@@ -7096,11 +6790,9 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool blue_team_on_positive_half = 10;</code>
-       * @return Whether the blueTeamOnPositiveHalf field is set.
        */
-      @java.lang.Override
       public boolean hasBlueTeamOnPositiveHalf() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
        * <pre>
@@ -7110,9 +6802,7 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool blue_team_on_positive_half = 10;</code>
-       * @return The blueTeamOnPositiveHalf.
        */
-      @java.lang.Override
       public boolean getBlueTeamOnPositiveHalf() {
         return blueTeamOnPositiveHalf_;
       }
@@ -7124,13 +6814,10 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool blue_team_on_positive_half = 10;</code>
-       * @param value The blueTeamOnPositiveHalf to set.
-       * @return This builder for chaining.
        */
       public Builder setBlueTeamOnPositiveHalf(boolean value) {
-        
-        blueTeamOnPositiveHalf_ = value;
         bitField0_ |= 0x00000800;
+        blueTeamOnPositiveHalf_ = value;
         onChanged();
         return this;
       }
@@ -7142,7 +6829,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool blue_team_on_positive_half = 10;</code>
-       * @return This builder for chaining.
        */
       public Builder clearBlueTeamOnPositiveHalf() {
         bitField0_ = (bitField0_ & ~0x00000800);
@@ -7158,10 +6844,9 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional .proto.gc.Referee.Command next_command = 12;</code>
-       * @return Whether the nextCommand field is set.
        */
-      @java.lang.Override public boolean hasNextCommand() {
-        return ((bitField0_ & 0x00001000) != 0);
+      public boolean hasNextCommand() {
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
        * <pre>
@@ -7169,11 +6854,10 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional .proto.gc.Referee.Command next_command = 12;</code>
-       * @return The nextCommand.
        */
-      @java.lang.Override
       public proto.gc.SslGcRefereeMessage.Referee.Command getNextCommand() {
-        proto.gc.SslGcRefereeMessage.Referee.Command result = proto.gc.SslGcRefereeMessage.Referee.Command.forNumber(nextCommand_);
+        @SuppressWarnings("deprecation")
+        proto.gc.SslGcRefereeMessage.Referee.Command result = proto.gc.SslGcRefereeMessage.Referee.Command.valueOf(nextCommand_);
         return result == null ? proto.gc.SslGcRefereeMessage.Referee.Command.HALT : result;
       }
       /**
@@ -7182,8 +6866,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional .proto.gc.Referee.Command next_command = 12;</code>
-       * @param value The nextCommand to set.
-       * @return This builder for chaining.
        */
       public Builder setNextCommand(proto.gc.SslGcRefereeMessage.Referee.Command value) {
         if (value == null) {
@@ -7200,7 +6882,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional .proto.gc.Referee.Command next_command = 12;</code>
-       * @return This builder for chaining.
        */
       public Builder clearNextCommand() {
         bitField0_ = (bitField0_ & ~0x00001000);
@@ -7212,7 +6893,7 @@ public final class SslGcRefereeMessage {
       private java.util.List<proto.gc.SslGcGameEvent.GameEvent> gameEvents_ =
         java.util.Collections.emptyList();
       private void ensureGameEventsIsMutable() {
-        if (!((bitField0_ & 0x00002000) != 0)) {
+        if (!((bitField0_ & 0x00002000) == 0x00002000)) {
           gameEvents_ = new java.util.ArrayList<proto.gc.SslGcGameEvent.GameEvent>(gameEvents_);
           bitField0_ |= 0x00002000;
          }
@@ -7441,7 +7122,7 @@ public final class SslGcRefereeMessage {
           gameEventsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               proto.gc.SslGcGameEvent.GameEvent, proto.gc.SslGcGameEvent.GameEvent.Builder, proto.gc.SslGcGameEvent.GameEventOrBuilder>(
                   gameEvents_,
-                  ((bitField0_ & 0x00002000) != 0),
+                  ((bitField0_ & 0x00002000) == 0x00002000),
                   getParentForChildren(),
                   isClean());
           gameEvents_ = null;
@@ -7452,7 +7133,7 @@ public final class SslGcRefereeMessage {
       private java.util.List<proto.gc.SslGcRefereeMessage.GameEventProposalGroup> gameEventProposals_ =
         java.util.Collections.emptyList();
       private void ensureGameEventProposalsIsMutable() {
-        if (!((bitField0_ & 0x00004000) != 0)) {
+        if (!((bitField0_ & 0x00004000) == 0x00004000)) {
           gameEventProposals_ = new java.util.ArrayList<proto.gc.SslGcRefereeMessage.GameEventProposalGroup>(gameEventProposals_);
           bitField0_ |= 0x00004000;
          }
@@ -7681,7 +7362,7 @@ public final class SslGcRefereeMessage {
           gameEventProposalsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               proto.gc.SslGcRefereeMessage.GameEventProposalGroup, proto.gc.SslGcRefereeMessage.GameEventProposalGroup.Builder, proto.gc.SslGcRefereeMessage.GameEventProposalGroupOrBuilder>(
                   gameEventProposals_,
-                  ((bitField0_ & 0x00004000) != 0),
+                  ((bitField0_ & 0x00004000) == 0x00004000),
                   getParentForChildren(),
                   isClean());
           gameEventProposals_ = null;
@@ -7702,11 +7383,9 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional int64 current_action_time_remaining = 15;</code>
-       * @return Whether the currentActionTimeRemaining field is set.
        */
-      @java.lang.Override
       public boolean hasCurrentActionTimeRemaining() {
-        return ((bitField0_ & 0x00008000) != 0);
+        return ((bitField0_ & 0x00008000) == 0x00008000);
       }
       /**
        * <pre>
@@ -7720,9 +7399,7 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional int64 current_action_time_remaining = 15;</code>
-       * @return The currentActionTimeRemaining.
        */
-      @java.lang.Override
       public long getCurrentActionTimeRemaining() {
         return currentActionTimeRemaining_;
       }
@@ -7738,13 +7415,10 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional int64 current_action_time_remaining = 15;</code>
-       * @param value The currentActionTimeRemaining to set.
-       * @return This builder for chaining.
        */
       public Builder setCurrentActionTimeRemaining(long value) {
-        
-        currentActionTimeRemaining_ = value;
         bitField0_ |= 0x00008000;
+        currentActionTimeRemaining_ = value;
         onChanged();
         return this;
       }
@@ -7760,7 +7434,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional int64 current_action_time_remaining = 15;</code>
-       * @return This builder for chaining.
        */
       public Builder clearCurrentActionTimeRemaining() {
         bitField0_ = (bitField0_ & ~0x00008000);
@@ -7801,18 +7474,7 @@ public final class SslGcRefereeMessage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Referee(input, extensionRegistry);
       }
     };
 
@@ -7842,7 +7504,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional string id = 3;</code>
-     * @return Whether the id field is set.
      */
     boolean hasId();
     /**
@@ -7851,7 +7512,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional string id = 3;</code>
-     * @return The id.
      */
     java.lang.String getId();
     /**
@@ -7860,7 +7520,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional string id = 3;</code>
-     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
@@ -7915,7 +7574,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional bool accepted = 2;</code>
-     * @return Whether the accepted field is set.
      */
     boolean hasAccepted();
     /**
@@ -7924,7 +7582,6 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional bool accepted = 2;</code>
-     * @return The accepted.
      */
     boolean getAccepted();
   }
@@ -7935,7 +7592,7 @@ public final class SslGcRefereeMessage {
    *
    * Protobuf type {@code proto.gc.GameEventProposalGroup}
    */
-  public static final class GameEventProposalGroup extends
+  public  static final class GameEventProposalGroup extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.GameEventProposalGroup)
       GameEventProposalGroupOrBuilder {
@@ -7947,19 +7604,74 @@ public final class SslGcRefereeMessage {
     private GameEventProposalGroup() {
       id_ = "";
       gameEvents_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new GameEventProposalGroup();
+      accepted_ = false;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private GameEventProposalGroup(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                gameEvents_ = new java.util.ArrayList<proto.gc.SslGcGameEvent.GameEvent>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              gameEvents_.add(
+                  input.readMessage(proto.gc.SslGcGameEvent.GameEvent.PARSER, extensionRegistry));
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              accepted_ = input.readBool();
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              id_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          gameEvents_ = java.util.Collections.unmodifiableList(gameEvents_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -7976,19 +7688,16 @@ public final class SslGcRefereeMessage {
 
     private int bitField0_;
     public static final int ID_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
+    private volatile java.lang.Object id_;
     /**
      * <pre>
      * Unique ID of this group
      * </pre>
      *
      * <code>optional string id = 3;</code>
-     * @return Whether the id field is set.
      */
-    @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -7996,9 +7705,7 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional string id = 3;</code>
-     * @return The id.
      */
-    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -8019,9 +7726,7 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional string id = 3;</code>
-     * @return The bytes for id.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -8037,7 +7742,6 @@ public final class SslGcRefereeMessage {
     }
 
     public static final int GAME_EVENTS_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<proto.gc.SslGcGameEvent.GameEvent> gameEvents_;
     /**
      * <pre>
@@ -8046,7 +7750,6 @@ public final class SslGcRefereeMessage {
      *
      * <code>repeated .proto.gc.GameEvent game_events = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<proto.gc.SslGcGameEvent.GameEvent> getGameEventsList() {
       return gameEvents_;
     }
@@ -8057,7 +7760,6 @@ public final class SslGcRefereeMessage {
      *
      * <code>repeated .proto.gc.GameEvent game_events = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends proto.gc.SslGcGameEvent.GameEventOrBuilder> 
         getGameEventsOrBuilderList() {
       return gameEvents_;
@@ -8069,7 +7771,6 @@ public final class SslGcRefereeMessage {
      *
      * <code>repeated .proto.gc.GameEvent game_events = 1;</code>
      */
-    @java.lang.Override
     public int getGameEventsCount() {
       return gameEvents_.size();
     }
@@ -8080,7 +7781,6 @@ public final class SslGcRefereeMessage {
      *
      * <code>repeated .proto.gc.GameEvent game_events = 1;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcGameEvent.GameEvent getGameEvents(int index) {
       return gameEvents_.get(index);
     }
@@ -8091,25 +7791,22 @@ public final class SslGcRefereeMessage {
      *
      * <code>repeated .proto.gc.GameEvent game_events = 1;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcGameEvent.GameEventOrBuilder getGameEventsOrBuilder(
         int index) {
       return gameEvents_.get(index);
     }
 
     public static final int ACCEPTED_FIELD_NUMBER = 2;
-    private boolean accepted_ = false;
+    private boolean accepted_;
     /**
      * <pre>
      * Whether the proposal group was accepted
      * </pre>
      *
      * <code>optional bool accepted = 2;</code>
-     * @return Whether the accepted field is set.
      */
-    @java.lang.Override
     public boolean hasAccepted() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -8117,9 +7814,7 @@ public final class SslGcRefereeMessage {
      * </pre>
      *
      * <code>optional bool accepted = 2;</code>
-     * @return The accepted.
      */
-    @java.lang.Override
     public boolean getAccepted() {
       return accepted_;
     }
@@ -8147,13 +7842,13 @@ public final class SslGcRefereeMessage {
       for (int i = 0; i < gameEvents_.size(); i++) {
         output.writeMessage(1, gameEvents_.get(i));
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBool(2, accepted_);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -8166,14 +7861,14 @@ public final class SslGcRefereeMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, gameEvents_.get(i));
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(2, accepted_);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -8188,20 +7883,21 @@ public final class SslGcRefereeMessage {
       }
       proto.gc.SslGcRefereeMessage.GameEventProposalGroup other = (proto.gc.SslGcRefereeMessage.GameEventProposalGroup) obj;
 
-      if (hasId() != other.hasId()) return false;
+      boolean result = true;
+      result = result && (hasId() == other.hasId());
       if (hasId()) {
-        if (!getId()
-            .equals(other.getId())) return false;
+        result = result && getId()
+            .equals(other.getId());
       }
-      if (!getGameEventsList()
-          .equals(other.getGameEventsList())) return false;
-      if (hasAccepted() != other.hasAccepted()) return false;
+      result = result && getGameEventsList()
+          .equals(other.getGameEventsList());
+      result = result && (hasAccepted() == other.hasAccepted());
       if (hasAccepted()) {
-        if (getAccepted()
-            != other.getAccepted()) return false;
+        result = result && (getAccepted()
+            == other.getAccepted());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -8224,7 +7920,7 @@ public final class SslGcRefereeMessage {
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getAccepted());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8345,27 +8041,33 @@ public final class SslGcRefereeMessage {
 
       // Construct using proto.gc.SslGcRefereeMessage.GameEventProposalGroup.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getGameEventsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (gameEventsBuilder_ == null) {
           gameEvents_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          gameEvents_ = null;
           gameEventsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         accepted_ = false;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -8392,15 +8094,14 @@ public final class SslGcRefereeMessage {
       @java.lang.Override
       public proto.gc.SslGcRefereeMessage.GameEventProposalGroup buildPartial() {
         proto.gc.SslGcRefereeMessage.GameEventProposalGroup result = new proto.gc.SslGcRefereeMessage.GameEventProposalGroup(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(proto.gc.SslGcRefereeMessage.GameEventProposalGroup result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
         if (gameEventsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
             gameEvents_ = java.util.Collections.unmodifiableList(gameEvents_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
@@ -8408,53 +8109,46 @@ public final class SslGcRefereeMessage {
         } else {
           result.gameEvents_ = gameEventsBuilder_.build();
         }
-      }
-
-      private void buildPartial0(proto.gc.SslGcRefereeMessage.GameEventProposalGroup result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.accepted_ = accepted_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.bitField0_ |= to_bitField0_;
+        result.accepted_ = accepted_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -8469,8 +8163,8 @@ public final class SslGcRefereeMessage {
       public Builder mergeFrom(proto.gc.SslGcRefereeMessage.GameEventProposalGroup other) {
         if (other == proto.gc.SslGcRefereeMessage.GameEventProposalGroup.getDefaultInstance()) return this;
         if (other.hasId()) {
-          id_ = other.id_;
           bitField0_ |= 0x00000001;
+          id_ = other.id_;
           onChanged();
         }
         if (gameEventsBuilder_ == null) {
@@ -8502,7 +8196,7 @@ public final class SslGcRefereeMessage {
         if (other.hasAccepted()) {
           setAccepted(other.getAccepted());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -8522,53 +8216,17 @@ public final class SslGcRefereeMessage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcRefereeMessage.GameEventProposalGroup parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                proto.gc.SslGcGameEvent.GameEvent m =
-                    input.readMessage(
-                        proto.gc.SslGcGameEvent.GameEvent.PARSER,
-                        extensionRegistry);
-                if (gameEventsBuilder_ == null) {
-                  ensureGameEventsIsMutable();
-                  gameEvents_.add(m);
-                } else {
-                  gameEventsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              case 16: {
-                accepted_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 16
-              case 26: {
-                id_ = input.readBytes();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcRefereeMessage.GameEventProposalGroup) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -8580,10 +8238,9 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional string id = 3;</code>
-       * @return Whether the id field is set.
        */
       public boolean hasId() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -8591,7 +8248,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional string id = 3;</code>
-       * @return The id.
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -8613,7 +8269,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional string id = 3;</code>
-       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -8634,14 +8289,14 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional string id = 3;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
        */
       public Builder setId(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8651,11 +8306,10 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional string id = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearId() {
-        id_ = getDefaultInstance().getId();
         bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = getDefaultInstance().getId();
         onChanged();
         return this;
       }
@@ -8665,14 +8319,14 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional string id = 3;</code>
-       * @param value The bytes for id to set.
-       * @return This builder for chaining.
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         id_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8680,7 +8334,7 @@ public final class SslGcRefereeMessage {
       private java.util.List<proto.gc.SslGcGameEvent.GameEvent> gameEvents_ =
         java.util.Collections.emptyList();
       private void ensureGameEventsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
           gameEvents_ = new java.util.ArrayList<proto.gc.SslGcGameEvent.GameEvent>(gameEvents_);
           bitField0_ |= 0x00000002;
          }
@@ -8981,7 +8635,7 @@ public final class SslGcRefereeMessage {
           gameEventsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               proto.gc.SslGcGameEvent.GameEvent, proto.gc.SslGcGameEvent.GameEvent.Builder, proto.gc.SslGcGameEvent.GameEventOrBuilder>(
                   gameEvents_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
                   isClean());
           gameEvents_ = null;
@@ -8996,11 +8650,9 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool accepted = 2;</code>
-       * @return Whether the accepted field is set.
        */
-      @java.lang.Override
       public boolean hasAccepted() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -9008,9 +8660,7 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool accepted = 2;</code>
-       * @return The accepted.
        */
-      @java.lang.Override
       public boolean getAccepted() {
         return accepted_;
       }
@@ -9020,13 +8670,10 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool accepted = 2;</code>
-       * @param value The accepted to set.
-       * @return This builder for chaining.
        */
       public Builder setAccepted(boolean value) {
-        
-        accepted_ = value;
         bitField0_ |= 0x00000004;
+        accepted_ = value;
         onChanged();
         return this;
       }
@@ -9036,7 +8683,6 @@ public final class SslGcRefereeMessage {
        * </pre>
        *
        * <code>optional bool accepted = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearAccepted() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -9077,18 +8723,7 @@ public final class SslGcRefereeMessage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GameEventProposalGroup(input, extensionRegistry);
       }
     };
 
@@ -9192,11 +8827,19 @@ public final class SslGcRefereeMessage {
       "NDLY\020\003B?Z=github.com/RoboCup-SSL/ssl-gam" +
       "e-controller/internal/app/state"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           proto.gc.SslGcGameEvent.getDescriptor(),
-        });
+        }, assigner);
     internal_static_proto_gc_Referee_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_gc_Referee_fieldAccessorTable = new

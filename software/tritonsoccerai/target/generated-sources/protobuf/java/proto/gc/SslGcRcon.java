@@ -24,7 +24,6 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>optional .proto.gc.ControllerReply.StatusCode status_code = 1;</code>
-     * @return Whether the statusCode field is set.
      */
     boolean hasStatusCode();
     /**
@@ -33,7 +32,6 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>optional .proto.gc.ControllerReply.StatusCode status_code = 1;</code>
-     * @return The statusCode.
      */
     proto.gc.SslGcRcon.ControllerReply.StatusCode getStatusCode();
 
@@ -43,7 +41,6 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>optional string reason = 2;</code>
-     * @return Whether the reason field is set.
      */
     boolean hasReason();
     /**
@@ -52,7 +49,6 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>optional string reason = 2;</code>
-     * @return The reason.
      */
     java.lang.String getReason();
     /**
@@ -61,7 +57,6 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>optional string reason = 2;</code>
-     * @return The bytes for reason.
      */
     com.google.protobuf.ByteString
         getReasonBytes();
@@ -75,7 +70,6 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>optional string next_token = 3;</code>
-     * @return Whether the nextToken field is set.
      */
     boolean hasNextToken();
     /**
@@ -87,7 +81,6 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>optional string next_token = 3;</code>
-     * @return The nextToken.
      */
     java.lang.String getNextToken();
     /**
@@ -99,7 +92,6 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>optional string next_token = 3;</code>
-     * @return The bytes for nextToken.
      */
     com.google.protobuf.ByteString
         getNextTokenBytes();
@@ -110,7 +102,6 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>optional .proto.gc.ControllerReply.Verification verification = 4;</code>
-     * @return Whether the verification field is set.
      */
     boolean hasVerification();
     /**
@@ -119,7 +110,6 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>optional .proto.gc.ControllerReply.Verification verification = 4;</code>
-     * @return The verification.
      */
     proto.gc.SslGcRcon.ControllerReply.Verification getVerification();
   }
@@ -130,7 +120,7 @@ public final class SslGcRcon {
    *
    * Protobuf type {@code proto.gc.ControllerReply}
    */
-  public static final class ControllerReply extends
+  public  static final class ControllerReply extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.ControllerReply)
       ControllerReplyOrBuilder {
@@ -147,16 +137,83 @@ public final class SslGcRcon {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ControllerReply();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private ControllerReply(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              proto.gc.SslGcRcon.ControllerReply.StatusCode value = proto.gc.SslGcRcon.ControllerReply.StatusCode.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                statusCode_ = rawValue;
+              }
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              reason_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              nextToken_ = bs;
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              proto.gc.SslGcRcon.ControllerReply.Verification value = proto.gc.SslGcRcon.ControllerReply.Verification.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(4, rawValue);
+              } else {
+                bitField0_ |= 0x00000008;
+                verification_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -209,8 +266,6 @@ public final class SslGcRcon {
       }
 
       /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -218,10 +273,6 @@ public final class SslGcRcon {
         return forNumber(value);
       }
 
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
       public static StatusCode forNumber(int value) {
         switch (value) {
           case 0: return UNKNOWN_STATUS_CODE;
@@ -314,8 +365,6 @@ public final class SslGcRcon {
       }
 
       /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -323,10 +372,6 @@ public final class SslGcRcon {
         return forNumber(value);
       }
 
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
       public static Verification forNumber(int value) {
         switch (value) {
           case 0: return UNKNOWN_VERIFICATION;
@@ -383,17 +428,16 @@ public final class SslGcRcon {
 
     private int bitField0_;
     public static final int STATUS_CODE_FIELD_NUMBER = 1;
-    private int statusCode_ = 0;
+    private int statusCode_;
     /**
      * <pre>
      * status_code is an optional code that indicates the result of the last request
      * </pre>
      *
      * <code>optional .proto.gc.ControllerReply.StatusCode status_code = 1;</code>
-     * @return Whether the statusCode field is set.
      */
-    @java.lang.Override public boolean hasStatusCode() {
-      return ((bitField0_ & 0x00000001) != 0);
+    public boolean hasStatusCode() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -401,27 +445,24 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>optional .proto.gc.ControllerReply.StatusCode status_code = 1;</code>
-     * @return The statusCode.
      */
-    @java.lang.Override public proto.gc.SslGcRcon.ControllerReply.StatusCode getStatusCode() {
-      proto.gc.SslGcRcon.ControllerReply.StatusCode result = proto.gc.SslGcRcon.ControllerReply.StatusCode.forNumber(statusCode_);
+    public proto.gc.SslGcRcon.ControllerReply.StatusCode getStatusCode() {
+      @SuppressWarnings("deprecation")
+      proto.gc.SslGcRcon.ControllerReply.StatusCode result = proto.gc.SslGcRcon.ControllerReply.StatusCode.valueOf(statusCode_);
       return result == null ? proto.gc.SslGcRcon.ControllerReply.StatusCode.UNKNOWN_STATUS_CODE : result;
     }
 
     public static final int REASON_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object reason_ = "";
+    private volatile java.lang.Object reason_;
     /**
      * <pre>
      * reason is an optional explanation of the status code
      * </pre>
      *
      * <code>optional string reason = 2;</code>
-     * @return Whether the reason field is set.
      */
-    @java.lang.Override
     public boolean hasReason() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -429,9 +470,7 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>optional string reason = 2;</code>
-     * @return The reason.
      */
-    @java.lang.Override
     public java.lang.String getReason() {
       java.lang.Object ref = reason_;
       if (ref instanceof java.lang.String) {
@@ -452,9 +491,7 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>optional string reason = 2;</code>
-     * @return The bytes for reason.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getReasonBytes() {
       java.lang.Object ref = reason_;
@@ -470,8 +507,7 @@ public final class SslGcRcon {
     }
 
     public static final int NEXT_TOKEN_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object nextToken_ = "";
+    private volatile java.lang.Object nextToken_;
     /**
      * <pre>
      * next_token must be send with the next request, if secure communication is used
@@ -481,11 +517,9 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>optional string next_token = 3;</code>
-     * @return Whether the nextToken field is set.
      */
-    @java.lang.Override
     public boolean hasNextToken() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -496,9 +530,7 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>optional string next_token = 3;</code>
-     * @return The nextToken.
      */
-    @java.lang.Override
     public java.lang.String getNextToken() {
       java.lang.Object ref = nextToken_;
       if (ref instanceof java.lang.String) {
@@ -522,9 +554,7 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>optional string next_token = 3;</code>
-     * @return The bytes for nextToken.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getNextTokenBytes() {
       java.lang.Object ref = nextToken_;
@@ -540,17 +570,16 @@ public final class SslGcRcon {
     }
 
     public static final int VERIFICATION_FIELD_NUMBER = 4;
-    private int verification_ = 0;
+    private int verification_;
     /**
      * <pre>
      * verification indicates if the last request could be verified (secure communication)
      * </pre>
      *
      * <code>optional .proto.gc.ControllerReply.Verification verification = 4;</code>
-     * @return Whether the verification field is set.
      */
-    @java.lang.Override public boolean hasVerification() {
-      return ((bitField0_ & 0x00000008) != 0);
+    public boolean hasVerification() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <pre>
@@ -558,10 +587,10 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>optional .proto.gc.ControllerReply.Verification verification = 4;</code>
-     * @return The verification.
      */
-    @java.lang.Override public proto.gc.SslGcRcon.ControllerReply.Verification getVerification() {
-      proto.gc.SslGcRcon.ControllerReply.Verification result = proto.gc.SslGcRcon.ControllerReply.Verification.forNumber(verification_);
+    public proto.gc.SslGcRcon.ControllerReply.Verification getVerification() {
+      @SuppressWarnings("deprecation")
+      proto.gc.SslGcRcon.ControllerReply.Verification result = proto.gc.SslGcRcon.ControllerReply.Verification.valueOf(verification_);
       return result == null ? proto.gc.SslGcRcon.ControllerReply.Verification.UNKNOWN_VERIFICATION : result;
     }
 
@@ -579,19 +608,19 @@ public final class SslGcRcon {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeEnum(1, statusCode_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, reason_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nextToken_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeEnum(4, verification_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -600,21 +629,21 @@ public final class SslGcRcon {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, statusCode_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, reason_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nextToken_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, verification_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -629,26 +658,27 @@ public final class SslGcRcon {
       }
       proto.gc.SslGcRcon.ControllerReply other = (proto.gc.SslGcRcon.ControllerReply) obj;
 
-      if (hasStatusCode() != other.hasStatusCode()) return false;
+      boolean result = true;
+      result = result && (hasStatusCode() == other.hasStatusCode());
       if (hasStatusCode()) {
-        if (statusCode_ != other.statusCode_) return false;
+        result = result && statusCode_ == other.statusCode_;
       }
-      if (hasReason() != other.hasReason()) return false;
+      result = result && (hasReason() == other.hasReason());
       if (hasReason()) {
-        if (!getReason()
-            .equals(other.getReason())) return false;
+        result = result && getReason()
+            .equals(other.getReason());
       }
-      if (hasNextToken() != other.hasNextToken()) return false;
+      result = result && (hasNextToken() == other.hasNextToken());
       if (hasNextToken()) {
-        if (!getNextToken()
-            .equals(other.getNextToken())) return false;
+        result = result && getNextToken()
+            .equals(other.getNextToken());
       }
-      if (hasVerification() != other.hasVerification()) return false;
+      result = result && (hasVerification() == other.hasVerification());
       if (hasVerification()) {
-        if (verification_ != other.verification_) return false;
+        result = result && verification_ == other.verification_;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -674,7 +704,7 @@ public final class SslGcRcon {
         hash = (37 * hash) + VERIFICATION_FIELD_NUMBER;
         hash = (53 * hash) + verification_;
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -795,22 +825,30 @@ public final class SslGcRcon {
 
       // Construct using proto.gc.SslGcRcon.ControllerReply.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         statusCode_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
         reason_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         nextToken_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
         verification_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -837,64 +875,60 @@ public final class SslGcRcon {
       @java.lang.Override
       public proto.gc.SslGcRcon.ControllerReply buildPartial() {
         proto.gc.SslGcRcon.ControllerReply result = new proto.gc.SslGcRcon.ControllerReply(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.statusCode_ = statusCode_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.reason_ = reason_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.nextToken_ = nextToken_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.verification_ = verification_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcRcon.ControllerReply result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.statusCode_ = statusCode_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.reason_ = reason_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.nextToken_ = nextToken_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.verification_ = verification_;
-          to_bitField0_ |= 0x00000008;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -912,19 +946,19 @@ public final class SslGcRcon {
           setStatusCode(other.getStatusCode());
         }
         if (other.hasReason()) {
-          reason_ = other.reason_;
           bitField0_ |= 0x00000002;
+          reason_ = other.reason_;
           onChanged();
         }
         if (other.hasNextToken()) {
-          nextToken_ = other.nextToken_;
           bitField0_ |= 0x00000004;
+          nextToken_ = other.nextToken_;
           onChanged();
         }
         if (other.hasVerification()) {
           setVerification(other.getVerification());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -939,64 +973,17 @@ public final class SslGcRcon {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcRcon.ControllerReply parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int tmpRaw = input.readEnum();
-                proto.gc.SslGcRcon.ControllerReply.StatusCode tmpValue =
-                    proto.gc.SslGcRcon.ControllerReply.StatusCode.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(1, tmpRaw);
-                } else {
-                  statusCode_ = tmpRaw;
-                  bitField0_ |= 0x00000001;
-                }
-                break;
-              } // case 8
-              case 18: {
-                reason_ = input.readBytes();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                nextToken_ = input.readBytes();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 32: {
-                int tmpRaw = input.readEnum();
-                proto.gc.SslGcRcon.ControllerReply.Verification tmpValue =
-                    proto.gc.SslGcRcon.ControllerReply.Verification.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(4, tmpRaw);
-                } else {
-                  verification_ = tmpRaw;
-                  bitField0_ |= 0x00000008;
-                }
-                break;
-              } // case 32
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcRcon.ControllerReply) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1008,10 +995,9 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional .proto.gc.ControllerReply.StatusCode status_code = 1;</code>
-       * @return Whether the statusCode field is set.
        */
-      @java.lang.Override public boolean hasStatusCode() {
-        return ((bitField0_ & 0x00000001) != 0);
+      public boolean hasStatusCode() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -1019,11 +1005,10 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional .proto.gc.ControllerReply.StatusCode status_code = 1;</code>
-       * @return The statusCode.
        */
-      @java.lang.Override
       public proto.gc.SslGcRcon.ControllerReply.StatusCode getStatusCode() {
-        proto.gc.SslGcRcon.ControllerReply.StatusCode result = proto.gc.SslGcRcon.ControllerReply.StatusCode.forNumber(statusCode_);
+        @SuppressWarnings("deprecation")
+        proto.gc.SslGcRcon.ControllerReply.StatusCode result = proto.gc.SslGcRcon.ControllerReply.StatusCode.valueOf(statusCode_);
         return result == null ? proto.gc.SslGcRcon.ControllerReply.StatusCode.UNKNOWN_STATUS_CODE : result;
       }
       /**
@@ -1032,8 +1017,6 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional .proto.gc.ControllerReply.StatusCode status_code = 1;</code>
-       * @param value The statusCode to set.
-       * @return This builder for chaining.
        */
       public Builder setStatusCode(proto.gc.SslGcRcon.ControllerReply.StatusCode value) {
         if (value == null) {
@@ -1050,7 +1033,6 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional .proto.gc.ControllerReply.StatusCode status_code = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearStatusCode() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1066,10 +1048,9 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional string reason = 2;</code>
-       * @return Whether the reason field is set.
        */
       public boolean hasReason() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -1077,7 +1058,6 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional string reason = 2;</code>
-       * @return The reason.
        */
       public java.lang.String getReason() {
         java.lang.Object ref = reason_;
@@ -1099,7 +1079,6 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional string reason = 2;</code>
-       * @return The bytes for reason.
        */
       public com.google.protobuf.ByteString
           getReasonBytes() {
@@ -1120,14 +1099,14 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional string reason = 2;</code>
-       * @param value The reason to set.
-       * @return This builder for chaining.
        */
       public Builder setReason(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         reason_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1137,11 +1116,10 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional string reason = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearReason() {
-        reason_ = getDefaultInstance().getReason();
         bitField0_ = (bitField0_ & ~0x00000002);
+        reason_ = getDefaultInstance().getReason();
         onChanged();
         return this;
       }
@@ -1151,14 +1129,14 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional string reason = 2;</code>
-       * @param value The bytes for reason to set.
-       * @return This builder for chaining.
        */
       public Builder setReasonBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         reason_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1173,10 +1151,9 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional string next_token = 3;</code>
-       * @return Whether the nextToken field is set.
        */
       public boolean hasNextToken() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -1187,7 +1164,6 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional string next_token = 3;</code>
-       * @return The nextToken.
        */
       public java.lang.String getNextToken() {
         java.lang.Object ref = nextToken_;
@@ -1212,7 +1188,6 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional string next_token = 3;</code>
-       * @return The bytes for nextToken.
        */
       public com.google.protobuf.ByteString
           getNextTokenBytes() {
@@ -1236,14 +1211,14 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional string next_token = 3;</code>
-       * @param value The nextToken to set.
-       * @return This builder for chaining.
        */
       public Builder setNextToken(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
         nextToken_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1256,11 +1231,10 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional string next_token = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearNextToken() {
-        nextToken_ = getDefaultInstance().getNextToken();
         bitField0_ = (bitField0_ & ~0x00000004);
+        nextToken_ = getDefaultInstance().getNextToken();
         onChanged();
         return this;
       }
@@ -1273,14 +1247,14 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional string next_token = 3;</code>
-       * @param value The bytes for nextToken to set.
-       * @return This builder for chaining.
        */
       public Builder setNextTokenBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
         nextToken_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1292,10 +1266,9 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional .proto.gc.ControllerReply.Verification verification = 4;</code>
-       * @return Whether the verification field is set.
        */
-      @java.lang.Override public boolean hasVerification() {
-        return ((bitField0_ & 0x00000008) != 0);
+      public boolean hasVerification() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <pre>
@@ -1303,11 +1276,10 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional .proto.gc.ControllerReply.Verification verification = 4;</code>
-       * @return The verification.
        */
-      @java.lang.Override
       public proto.gc.SslGcRcon.ControllerReply.Verification getVerification() {
-        proto.gc.SslGcRcon.ControllerReply.Verification result = proto.gc.SslGcRcon.ControllerReply.Verification.forNumber(verification_);
+        @SuppressWarnings("deprecation")
+        proto.gc.SslGcRcon.ControllerReply.Verification result = proto.gc.SslGcRcon.ControllerReply.Verification.valueOf(verification_);
         return result == null ? proto.gc.SslGcRcon.ControllerReply.Verification.UNKNOWN_VERIFICATION : result;
       }
       /**
@@ -1316,8 +1288,6 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional .proto.gc.ControllerReply.Verification verification = 4;</code>
-       * @param value The verification to set.
-       * @return This builder for chaining.
        */
       public Builder setVerification(proto.gc.SslGcRcon.ControllerReply.Verification value) {
         if (value == null) {
@@ -1334,7 +1304,6 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>optional .proto.gc.ControllerReply.Verification verification = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearVerification() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -1375,18 +1344,7 @@ public final class SslGcRcon {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ControllerReply(input, extensionRegistry);
       }
     };
 
@@ -1416,7 +1374,6 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>required string token = 1;</code>
-     * @return Whether the token field is set.
      */
     boolean hasToken();
     /**
@@ -1425,7 +1382,6 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>required string token = 1;</code>
-     * @return The token.
      */
     java.lang.String getToken();
     /**
@@ -1434,7 +1390,6 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>required string token = 1;</code>
-     * @return The bytes for token.
      */
     com.google.protobuf.ByteString
         getTokenBytes();
@@ -1445,7 +1400,6 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>required bytes pkcs1v15 = 2;</code>
-     * @return Whether the pkcs1v15 field is set.
      */
     boolean hasPkcs1V15();
     /**
@@ -1454,7 +1408,6 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>required bytes pkcs1v15 = 2;</code>
-     * @return The pkcs1v15.
      */
     com.google.protobuf.ByteString getPkcs1V15();
   }
@@ -1465,7 +1418,7 @@ public final class SslGcRcon {
    *
    * Protobuf type {@code proto.gc.Signature}
    */
-  public static final class Signature extends
+  public  static final class Signature extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.Signature)
       SignatureOrBuilder {
@@ -1480,16 +1433,58 @@ public final class SslGcRcon {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Signature();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Signature(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              token_ = bs;
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              pkcs1V15_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1506,19 +1501,16 @@ public final class SslGcRcon {
 
     private int bitField0_;
     public static final int TOKEN_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object token_ = "";
+    private volatile java.lang.Object token_;
     /**
      * <pre>
      * the token that was received with the last controller reply
      * </pre>
      *
      * <code>required string token = 1;</code>
-     * @return Whether the token field is set.
      */
-    @java.lang.Override
     public boolean hasToken() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -1526,9 +1518,7 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>required string token = 1;</code>
-     * @return The token.
      */
-    @java.lang.Override
     public java.lang.String getToken() {
       java.lang.Object ref = token_;
       if (ref instanceof java.lang.String) {
@@ -1549,9 +1539,7 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>required string token = 1;</code>
-     * @return The bytes for token.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getTokenBytes() {
       java.lang.Object ref = token_;
@@ -1567,18 +1555,16 @@ public final class SslGcRcon {
     }
 
     public static final int PKCS1V15_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString pkcs1V15_ = com.google.protobuf.ByteString.EMPTY;
+    private com.google.protobuf.ByteString pkcs1V15_;
     /**
      * <pre>
      * the PKCS1v15 signature of this message
      * </pre>
      *
      * <code>required bytes pkcs1v15 = 2;</code>
-     * @return Whether the pkcs1v15 field is set.
      */
-    @java.lang.Override
     public boolean hasPkcs1V15() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -1586,9 +1572,7 @@ public final class SslGcRcon {
      * </pre>
      *
      * <code>required bytes pkcs1v15 = 2;</code>
-     * @return The pkcs1v15.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getPkcs1V15() {
       return pkcs1V15_;
     }
@@ -1615,13 +1599,13 @@ public final class SslGcRcon {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(2, pkcs1V15_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1630,14 +1614,14 @@ public final class SslGcRcon {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, pkcs1V15_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1652,18 +1636,19 @@ public final class SslGcRcon {
       }
       proto.gc.SslGcRcon.Signature other = (proto.gc.SslGcRcon.Signature) obj;
 
-      if (hasToken() != other.hasToken()) return false;
+      boolean result = true;
+      result = result && (hasToken() == other.hasToken());
       if (hasToken()) {
-        if (!getToken()
-            .equals(other.getToken())) return false;
+        result = result && getToken()
+            .equals(other.getToken());
       }
-      if (hasPkcs1V15() != other.hasPkcs1V15()) return false;
+      result = result && (hasPkcs1V15() == other.hasPkcs1V15());
       if (hasPkcs1V15()) {
-        if (!getPkcs1V15()
-            .equals(other.getPkcs1V15())) return false;
+        result = result && getPkcs1V15()
+            .equals(other.getPkcs1V15());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1681,7 +1666,7 @@ public final class SslGcRcon {
         hash = (37 * hash) + PKCS1V15_FIELD_NUMBER;
         hash = (53 * hash) + getPkcs1V15().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1802,20 +1787,26 @@ public final class SslGcRcon {
 
       // Construct using proto.gc.SslGcRcon.Signature.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         token_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
         pkcs1V15_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1842,56 +1833,52 @@ public final class SslGcRcon {
       @java.lang.Override
       public proto.gc.SslGcRcon.Signature buildPartial() {
         proto.gc.SslGcRcon.Signature result = new proto.gc.SslGcRcon.Signature(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.token_ = token_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.pkcs1V15_ = pkcs1V15_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcRcon.Signature result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.token_ = token_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.pkcs1V15_ = pkcs1V15_;
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1906,14 +1893,14 @@ public final class SslGcRcon {
       public Builder mergeFrom(proto.gc.SslGcRcon.Signature other) {
         if (other == proto.gc.SslGcRcon.Signature.getDefaultInstance()) return this;
         if (other.hasToken()) {
-          token_ = other.token_;
           bitField0_ |= 0x00000001;
+          token_ = other.token_;
           onChanged();
         }
         if (other.hasPkcs1V15()) {
           setPkcs1V15(other.getPkcs1V15());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1934,40 +1921,17 @@ public final class SslGcRcon {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcRcon.Signature parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                token_ = input.readBytes();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                pkcs1V15_ = input.readBytes();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcRcon.Signature) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1979,10 +1943,9 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>required string token = 1;</code>
-       * @return Whether the token field is set.
        */
       public boolean hasToken() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -1990,7 +1953,6 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>required string token = 1;</code>
-       * @return The token.
        */
       public java.lang.String getToken() {
         java.lang.Object ref = token_;
@@ -2012,7 +1974,6 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>required string token = 1;</code>
-       * @return The bytes for token.
        */
       public com.google.protobuf.ByteString
           getTokenBytes() {
@@ -2033,14 +1994,14 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>required string token = 1;</code>
-       * @param value The token to set.
-       * @return This builder for chaining.
        */
       public Builder setToken(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         token_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2050,11 +2011,10 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>required string token = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearToken() {
-        token_ = getDefaultInstance().getToken();
         bitField0_ = (bitField0_ & ~0x00000001);
+        token_ = getDefaultInstance().getToken();
         onChanged();
         return this;
       }
@@ -2064,14 +2024,14 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>required string token = 1;</code>
-       * @param value The bytes for token to set.
-       * @return This builder for chaining.
        */
       public Builder setTokenBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         token_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2083,11 +2043,9 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>required bytes pkcs1v15 = 2;</code>
-       * @return Whether the pkcs1v15 field is set.
        */
-      @java.lang.Override
       public boolean hasPkcs1V15() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -2095,9 +2053,7 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>required bytes pkcs1v15 = 2;</code>
-       * @return The pkcs1v15.
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getPkcs1V15() {
         return pkcs1V15_;
       }
@@ -2107,13 +2063,13 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>required bytes pkcs1v15 = 2;</code>
-       * @param value The pkcs1v15 to set.
-       * @return This builder for chaining.
        */
       public Builder setPkcs1V15(com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         pkcs1V15_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2123,7 +2079,6 @@ public final class SslGcRcon {
        * </pre>
        *
        * <code>required bytes pkcs1v15 = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearPkcs1V15() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -2164,18 +2119,7 @@ public final class SslGcRcon {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Signature(input, extensionRegistry);
       }
     };
 
@@ -2227,10 +2171,18 @@ public final class SslGcRcon {
       "RoboCup-SSL/ssl-game-controller/internal" +
       "/app/rcon"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_proto_gc_ControllerReply_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_gc_ControllerReply_fieldAccessorTable = new

@@ -57,11 +57,9 @@ public final class SslGcEngineConfig {
      *
      * <code>map&lt;string, .proto.gc.Config.Behavior&gt; game_event_behavior = 1;</code>
      */
-    /* nullable */
-proto.gc.SslGcEngineConfig.Config.Behavior getGameEventBehaviorOrDefault(
+    proto.gc.SslGcEngineConfig.Config.Behavior getGameEventBehaviorOrDefault(
         java.lang.String key,
-        /* nullable */
-proto.gc.SslGcEngineConfig.Config.Behavior         defaultValue);
+        proto.gc.SslGcEngineConfig.Config.Behavior defaultValue);
     /**
      * <pre>
      * The behavior for each game event
@@ -111,11 +109,10 @@ proto.gc.SslGcEngineConfig.Config.Behavior         defaultValue);
      *
      * <code>map&lt;string, .proto.gc.AutoRefConfig&gt; auto_ref_configs = 2;</code>
      */
-    /* nullable */
-proto.gc.SslGcEngineConfig.AutoRefConfig getAutoRefConfigsOrDefault(
+
+    proto.gc.SslGcEngineConfig.AutoRefConfig getAutoRefConfigsOrDefault(
         java.lang.String key,
-        /* nullable */
-proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
+        proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
     /**
      * <pre>
      * The config for each auto referee
@@ -123,6 +120,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
      *
      * <code>map&lt;string, .proto.gc.AutoRefConfig&gt; auto_ref_configs = 2;</code>
      */
+
     proto.gc.SslGcEngineConfig.AutoRefConfig getAutoRefConfigsOrThrow(
         java.lang.String key);
 
@@ -132,7 +130,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
      * </pre>
      *
      * <code>optional string active_tracker_source = 3;</code>
-     * @return Whether the activeTrackerSource field is set.
      */
     boolean hasActiveTrackerSource();
     /**
@@ -141,7 +138,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
      * </pre>
      *
      * <code>optional string active_tracker_source = 3;</code>
-     * @return The activeTrackerSource.
      */
     java.lang.String getActiveTrackerSource();
     /**
@@ -150,7 +146,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
      * </pre>
      *
      * <code>optional string active_tracker_source = 3;</code>
-     * @return The bytes for activeTrackerSource.
      */
     com.google.protobuf.ByteString
         getActiveTrackerSourceBytes();
@@ -161,7 +156,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
      * </pre>
      *
      * <code>repeated string teams = 4;</code>
-     * @return A list containing the teams.
      */
     java.util.List<java.lang.String>
         getTeamsList();
@@ -171,7 +165,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
      * </pre>
      *
      * <code>repeated string teams = 4;</code>
-     * @return The count of teams.
      */
     int getTeamsCount();
     /**
@@ -180,8 +173,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
      * </pre>
      *
      * <code>repeated string teams = 4;</code>
-     * @param index The index of the element to return.
-     * @return The teams at the given index.
      */
     java.lang.String getTeams(int index);
     /**
@@ -190,8 +181,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
      * </pre>
      *
      * <code>repeated string teams = 4;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the teams at the given index.
      */
     com.google.protobuf.ByteString
         getTeamsBytes(int index);
@@ -202,7 +191,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
      * </pre>
      *
      * <code>optional bool auto_continue = 5;</code>
-     * @return Whether the autoContinue field is set.
      */
     boolean hasAutoContinue();
     /**
@@ -211,7 +199,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
      * </pre>
      *
      * <code>optional bool auto_continue = 5;</code>
-     * @return The autoContinue.
      */
     boolean getAutoContinue();
   }
@@ -222,7 +209,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
    *
    * Protobuf type {@code proto.gc.Config}
    */
-  public static final class Config extends
+  public  static final class Config extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.Config)
       ConfigOrBuilder {
@@ -234,19 +221,104 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
     private Config() {
       activeTrackerSource_ = "";
       teams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Config();
+      autoContinue_ = false;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Config(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                gameEventBehavior_ = com.google.protobuf.MapField.newMapField(
+                    GameEventBehaviorDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.ByteString bytes = input.readBytes();
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
+              gameEventBehavior__ = GameEventBehaviorDefaultEntryHolder.defaultEntry.getParserForType().parseFrom(bytes);
+              if (proto.gc.SslGcEngineConfig.Config.Behavior.forNumber(gameEventBehavior__.getValue()) == null) {
+                unknownFields.mergeLengthDelimitedField(1, bytes);
+              } else {
+                gameEventBehavior_.getMutableMap().put(
+                    gameEventBehavior__.getKey(), gameEventBehavior__.getValue());
+              }
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                autoRefConfigs_ = com.google.protobuf.MapField.newMapField(
+                    AutoRefConfigsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig>
+              autoRefConfigs__ = input.readMessage(
+                  AutoRefConfigsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              autoRefConfigs_.getMutableMap().put(
+                  autoRefConfigs__.getKey(), autoRefConfigs__.getValue());
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              activeTrackerSource_ = bs;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                teams_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              teams_.add(bs);
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000002;
+              autoContinue_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          teams_ = teams_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -389,8 +461,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
       }
 
       /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -398,10 +468,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
         return forNumber(value);
       }
 
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
       public static Behavior forNumber(int value) {
         switch (value) {
           case 0: return BEHAVIOR_UNKNOWN;
@@ -472,7 +538,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
                   com.google.protobuf.WireFormat.FieldType.ENUM,
                   proto.gc.SslGcEngineConfig.Config.Behavior.BEHAVIOR_UNKNOWN.getNumber());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.String, java.lang.Integer> gameEventBehavior_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
@@ -496,6 +561,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
           java.lang.String, proto.gc.SslGcEngineConfig.Config.Behavior, java.lang.Integer>(
               map, gameEventBehaviorValueConverter);
     }
+
     public int getGameEventBehaviorCount() {
       return internalGetGameEventBehavior().getMap().size();
     }
@@ -506,16 +572,15 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
      *
      * <code>map&lt;string, .proto.gc.Config.Behavior&gt; game_event_behavior = 1;</code>
      */
-    @java.lang.Override
+
     public boolean containsGameEventBehavior(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       return internalGetGameEventBehavior().getMap().containsKey(key);
     }
     /**
      * Use {@link #getGameEventBehaviorMap()} instead.
      */
-    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.Config.Behavior>
     getGameEventBehavior() {
@@ -528,7 +593,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
      *
      * <code>map&lt;string, .proto.gc.Config.Behavior&gt; game_event_behavior = 1;</code>
      */
-    @java.lang.Override
+
     public java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.Config.Behavior>
     getGameEventBehaviorMap() {
       return internalGetAdaptedGameEventBehaviorMap(
@@ -540,13 +605,11 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue);
      *
      * <code>map&lt;string, .proto.gc.Config.Behavior&gt; game_event_behavior = 1;</code>
      */
-    @java.lang.Override
-    public /* nullable */
-proto.gc.SslGcEngineConfig.Config.Behavior getGameEventBehaviorOrDefault(
+
+    public proto.gc.SslGcEngineConfig.Config.Behavior getGameEventBehaviorOrDefault(
         java.lang.String key,
-        /* nullable */
-proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
+        proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetGameEventBehavior().getMap();
       return map.containsKey(key)
@@ -560,10 +623,10 @@ proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
      *
      * <code>map&lt;string, .proto.gc.Config.Behavior&gt; game_event_behavior = 1;</code>
      */
-    @java.lang.Override
+
     public proto.gc.SslGcEngineConfig.Config.Behavior getGameEventBehaviorOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetGameEventBehavior().getMap();
       if (!map.containsKey(key)) {
@@ -584,7 +647,6 @@ proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   proto.gc.SslGcEngineConfig.AutoRefConfig.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig> autoRefConfigs_;
     private com.google.protobuf.MapField<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig>
@@ -595,6 +657,7 @@ proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
       }
       return autoRefConfigs_;
     }
+
     public int getAutoRefConfigsCount() {
       return internalGetAutoRefConfigs().getMap().size();
     }
@@ -605,16 +668,15 @@ proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
      *
      * <code>map&lt;string, .proto.gc.AutoRefConfig&gt; auto_ref_configs = 2;</code>
      */
-    @java.lang.Override
+
     public boolean containsAutoRefConfigs(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       return internalGetAutoRefConfigs().getMap().containsKey(key);
     }
     /**
      * Use {@link #getAutoRefConfigsMap()} instead.
      */
-    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig> getAutoRefConfigs() {
       return getAutoRefConfigsMap();
@@ -626,7 +688,7 @@ proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
      *
      * <code>map&lt;string, .proto.gc.AutoRefConfig&gt; auto_ref_configs = 2;</code>
      */
-    @java.lang.Override
+
     public java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig> getAutoRefConfigsMap() {
       return internalGetAutoRefConfigs().getMap();
     }
@@ -637,13 +699,11 @@ proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
      *
      * <code>map&lt;string, .proto.gc.AutoRefConfig&gt; auto_ref_configs = 2;</code>
      */
-    @java.lang.Override
-    public /* nullable */
-proto.gc.SslGcEngineConfig.AutoRefConfig getAutoRefConfigsOrDefault(
+
+    public proto.gc.SslGcEngineConfig.AutoRefConfig getAutoRefConfigsOrDefault(
         java.lang.String key,
-        /* nullable */
-proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
+        proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig> map =
           internalGetAutoRefConfigs().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -655,10 +715,10 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
      *
      * <code>map&lt;string, .proto.gc.AutoRefConfig&gt; auto_ref_configs = 2;</code>
      */
-    @java.lang.Override
+
     public proto.gc.SslGcEngineConfig.AutoRefConfig getAutoRefConfigsOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig> map =
           internalGetAutoRefConfigs().getMap();
       if (!map.containsKey(key)) {
@@ -668,19 +728,16 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
     }
 
     public static final int ACTIVE_TRACKER_SOURCE_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object activeTrackerSource_ = "";
+    private volatile java.lang.Object activeTrackerSource_;
     /**
      * <pre>
      * The selected tracker source
      * </pre>
      *
      * <code>optional string active_tracker_source = 3;</code>
-     * @return Whether the activeTrackerSource field is set.
      */
-    @java.lang.Override
     public boolean hasActiveTrackerSource() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -688,9 +745,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
      * </pre>
      *
      * <code>optional string active_tracker_source = 3;</code>
-     * @return The activeTrackerSource.
      */
-    @java.lang.Override
     public java.lang.String getActiveTrackerSource() {
       java.lang.Object ref = activeTrackerSource_;
       if (ref instanceof java.lang.String) {
@@ -711,9 +766,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
      * </pre>
      *
      * <code>optional string active_tracker_source = 3;</code>
-     * @return The bytes for activeTrackerSource.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getActiveTrackerSourceBytes() {
       java.lang.Object ref = activeTrackerSource_;
@@ -729,7 +782,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
     }
 
     public static final int TEAMS_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList teams_;
     /**
      * <pre>
@@ -737,7 +789,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
      * </pre>
      *
      * <code>repeated string teams = 4;</code>
-     * @return A list containing the teams.
      */
     public com.google.protobuf.ProtocolStringList
         getTeamsList() {
@@ -749,7 +800,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
      * </pre>
      *
      * <code>repeated string teams = 4;</code>
-     * @return The count of teams.
      */
     public int getTeamsCount() {
       return teams_.size();
@@ -760,8 +810,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
      * </pre>
      *
      * <code>repeated string teams = 4;</code>
-     * @param index The index of the element to return.
-     * @return The teams at the given index.
      */
     public java.lang.String getTeams(int index) {
       return teams_.get(index);
@@ -772,8 +820,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
      * </pre>
      *
      * <code>repeated string teams = 4;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the teams at the given index.
      */
     public com.google.protobuf.ByteString
         getTeamsBytes(int index) {
@@ -781,18 +827,16 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
     }
 
     public static final int AUTO_CONTINUE_FIELD_NUMBER = 5;
-    private boolean autoContinue_ = false;
+    private boolean autoContinue_;
     /**
      * <pre>
      * Enable or disable auto continuation
      * </pre>
      *
      * <code>optional bool auto_continue = 5;</code>
-     * @return Whether the autoContinue field is set.
      */
-    @java.lang.Override
     public boolean hasAutoContinue() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -800,9 +844,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
      * </pre>
      *
      * <code>optional bool auto_continue = 5;</code>
-     * @return The autoContinue.
      */
-    @java.lang.Override
     public boolean getAutoContinue() {
       return autoContinue_;
     }
@@ -833,16 +875,16 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
           internalGetAutoRefConfigs(),
           AutoRefConfigsDefaultEntryHolder.defaultEntry,
           2);
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, activeTrackerSource_);
       }
       for (int i = 0; i < teams_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, teams_.getRaw(i));
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBool(5, autoContinue_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -871,7 +913,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(2, autoRefConfigs__);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, activeTrackerSource_);
       }
       {
@@ -882,11 +924,11 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
         size += dataSize;
         size += 1 * getTeamsList().size();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(5, autoContinue_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -901,24 +943,25 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
       }
       proto.gc.SslGcEngineConfig.Config other = (proto.gc.SslGcEngineConfig.Config) obj;
 
-      if (!internalGetGameEventBehavior().equals(
-          other.internalGetGameEventBehavior())) return false;
-      if (!internalGetAutoRefConfigs().equals(
-          other.internalGetAutoRefConfigs())) return false;
-      if (hasActiveTrackerSource() != other.hasActiveTrackerSource()) return false;
+      boolean result = true;
+      result = result && internalGetGameEventBehavior().equals(
+          other.internalGetGameEventBehavior());
+      result = result && internalGetAutoRefConfigs().equals(
+          other.internalGetAutoRefConfigs());
+      result = result && (hasActiveTrackerSource() == other.hasActiveTrackerSource());
       if (hasActiveTrackerSource()) {
-        if (!getActiveTrackerSource()
-            .equals(other.getActiveTrackerSource())) return false;
+        result = result && getActiveTrackerSource()
+            .equals(other.getActiveTrackerSource());
       }
-      if (!getTeamsList()
-          .equals(other.getTeamsList())) return false;
-      if (hasAutoContinue() != other.hasAutoContinue()) return false;
+      result = result && getTeamsList()
+          .equals(other.getTeamsList());
+      result = result && (hasAutoContinue() == other.hasAutoContinue());
       if (hasAutoContinue()) {
-        if (getAutoContinue()
-            != other.getAutoContinue()) return false;
+        result = result && (getAutoContinue()
+            == other.getAutoContinue());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -949,7 +992,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getAutoContinue());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1096,24 +1139,30 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
 
       // Construct using proto.gc.SslGcEngineConfig.Config.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableGameEventBehavior().clear();
         internalGetMutableAutoRefConfigs().clear();
         activeTrackerSource_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
         teams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
         autoContinue_ = false;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1140,73 +1189,61 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
       @java.lang.Override
       public proto.gc.SslGcEngineConfig.Config buildPartial() {
         proto.gc.SslGcEngineConfig.Config result = new proto.gc.SslGcEngineConfig.Config(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(proto.gc.SslGcEngineConfig.Config result) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.gameEventBehavior_ = internalGetGameEventBehavior();
+        result.gameEventBehavior_.makeImmutable();
+        result.autoRefConfigs_ = internalGetAutoRefConfigs();
+        result.autoRefConfigs_.makeImmutable();
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.activeTrackerSource_ = activeTrackerSource_;
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
           teams_ = teams_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.teams_ = teams_;
-      }
-
-      private void buildPartial0(proto.gc.SslGcEngineConfig.Config result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.gameEventBehavior_ = internalGetGameEventBehavior();
-          result.gameEventBehavior_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.autoRefConfigs_ = internalGetAutoRefConfigs();
-          result.autoRefConfigs_.makeImmutable();
-        }
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.activeTrackerSource_ = activeTrackerSource_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.autoContinue_ = autoContinue_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.bitField0_ |= to_bitField0_;
+        result.autoContinue_ = autoContinue_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1222,13 +1259,11 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
         if (other == proto.gc.SslGcEngineConfig.Config.getDefaultInstance()) return this;
         internalGetMutableGameEventBehavior().mergeFrom(
             other.internalGetGameEventBehavior());
-        bitField0_ |= 0x00000001;
         internalGetMutableAutoRefConfigs().mergeFrom(
             other.internalGetAutoRefConfigs());
-        bitField0_ |= 0x00000002;
         if (other.hasActiveTrackerSource()) {
-          activeTrackerSource_ = other.activeTrackerSource_;
           bitField0_ |= 0x00000004;
+          activeTrackerSource_ = other.activeTrackerSource_;
           onChanged();
         }
         if (!other.teams_.isEmpty()) {
@@ -1244,7 +1279,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
         if (other.hasAutoContinue()) {
           setAutoContinue(other.getAutoContinue());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1259,68 +1294,17 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcEngineConfig.Config parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                com.google.protobuf.ByteString bytes = input.readBytes();
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
-                gameEventBehavior__ = GameEventBehaviorDefaultEntryHolder.defaultEntry.getParserForType().parseFrom(bytes);
-                if (proto.gc.SslGcEngineConfig.Config.Behavior.forNumber(gameEventBehavior__.getValue()) == null) {
-                  mergeUnknownLengthDelimitedField(1, bytes);
-                } else {
-                  internalGetMutableGameEventBehavior().getMutableMap().put(
-                      gameEventBehavior__.getKey(), gameEventBehavior__.getValue());
-                  bitField0_ |= 0x00000001;
-                }
-                break;
-              } // case 10
-              case 18: {
-                com.google.protobuf.MapEntry<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig>
-                autoRefConfigs__ = input.readMessage(
-                    AutoRefConfigsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableAutoRefConfigs().getMutableMap().put(
-                    autoRefConfigs__.getKey(), autoRefConfigs__.getValue());
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                activeTrackerSource_ = input.readBytes();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 34: {
-                com.google.protobuf.ByteString bs = input.readBytes();
-                ensureTeamsIsMutable();
-                teams_.add(bs);
-                break;
-              } // case 34
-              case 40: {
-                autoContinue_ = input.readBool();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcEngineConfig.Config) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1328,7 +1312,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
       private com.google.protobuf.MapField<
           java.lang.String, java.lang.Integer> gameEventBehavior_;
       private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
-          internalGetGameEventBehavior() {
+      internalGetGameEventBehavior() {
         if (gameEventBehavior_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               GameEventBehaviorDefaultEntryHolder.defaultEntry);
@@ -1336,7 +1320,8 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
         return gameEventBehavior_;
       }
       private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
-          internalGetMutableGameEventBehavior() {
+      internalGetMutableGameEventBehavior() {
+        onChanged();;
         if (gameEventBehavior_ == null) {
           gameEventBehavior_ = com.google.protobuf.MapField.newMapField(
               GameEventBehaviorDefaultEntryHolder.defaultEntry);
@@ -1344,10 +1329,9 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
         if (!gameEventBehavior_.isMutable()) {
           gameEventBehavior_ = gameEventBehavior_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return gameEventBehavior_;
       }
+
       public int getGameEventBehaviorCount() {
         return internalGetGameEventBehavior().getMap().size();
       }
@@ -1358,16 +1342,15 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.Config.Behavior&gt; game_event_behavior = 1;</code>
        */
-      @java.lang.Override
+
       public boolean containsGameEventBehavior(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         return internalGetGameEventBehavior().getMap().containsKey(key);
       }
       /**
        * Use {@link #getGameEventBehaviorMap()} instead.
        */
-      @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.Config.Behavior>
       getGameEventBehavior() {
@@ -1380,7 +1363,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.Config.Behavior&gt; game_event_behavior = 1;</code>
        */
-      @java.lang.Override
+
       public java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.Config.Behavior>
       getGameEventBehaviorMap() {
         return internalGetAdaptedGameEventBehaviorMap(
@@ -1392,13 +1375,11 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.Config.Behavior&gt; game_event_behavior = 1;</code>
        */
-      @java.lang.Override
-      public /* nullable */
-proto.gc.SslGcEngineConfig.Config.Behavior getGameEventBehaviorOrDefault(
+
+      public proto.gc.SslGcEngineConfig.Config.Behavior getGameEventBehaviorOrDefault(
           java.lang.String key,
-          /* nullable */
-proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
+          proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.Integer> map =
             internalGetGameEventBehavior().getMap();
         return map.containsKey(key)
@@ -1412,10 +1393,10 @@ proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.Config.Behavior&gt; game_event_behavior = 1;</code>
        */
-      @java.lang.Override
+
       public proto.gc.SslGcEngineConfig.Config.Behavior getGameEventBehaviorOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.Integer> map =
             internalGetGameEventBehavior().getMap();
         if (!map.containsKey(key)) {
@@ -1423,8 +1404,8 @@ proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
         }
         return gameEventBehaviorValueConverter.doForward(map.get(key));
       }
+
       public Builder clearGameEventBehavior() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableGameEventBehavior().getMutableMap()
             .clear();
         return this;
@@ -1436,9 +1417,10 @@ proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.Config.Behavior&gt; game_event_behavior = 1;</code>
        */
+
       public Builder removeGameEventBehavior(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableGameEventBehavior().getMutableMap()
             .remove(key);
         return this;
@@ -1448,8 +1430,7 @@ proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.Config.Behavior>
-          getMutableGameEventBehavior() {
-        bitField0_ |= 0x00000001;
+      getMutableGameEventBehavior() {
         return internalGetAdaptedGameEventBehaviorMap(
              internalGetMutableGameEventBehavior().getMutableMap());
       }
@@ -1463,11 +1444,10 @@ proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
       public Builder putGameEventBehavior(
           java.lang.String key,
           proto.gc.SslGcEngineConfig.Config.Behavior value) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableGameEventBehavior().getMutableMap()
             .put(key, gameEventBehaviorValueConverter.doBackward(value));
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -1482,14 +1462,13 @@ proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
         internalGetAdaptedGameEventBehaviorMap(
             internalGetMutableGameEventBehavior().getMutableMap())
                 .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
 
       private com.google.protobuf.MapField<
           java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig> autoRefConfigs_;
       private com.google.protobuf.MapField<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig>
-          internalGetAutoRefConfigs() {
+      internalGetAutoRefConfigs() {
         if (autoRefConfigs_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               AutoRefConfigsDefaultEntryHolder.defaultEntry);
@@ -1497,7 +1476,8 @@ proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
         return autoRefConfigs_;
       }
       private com.google.protobuf.MapField<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig>
-          internalGetMutableAutoRefConfigs() {
+      internalGetMutableAutoRefConfigs() {
+        onChanged();;
         if (autoRefConfigs_ == null) {
           autoRefConfigs_ = com.google.protobuf.MapField.newMapField(
               AutoRefConfigsDefaultEntryHolder.defaultEntry);
@@ -1505,10 +1485,9 @@ proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
         if (!autoRefConfigs_.isMutable()) {
           autoRefConfigs_ = autoRefConfigs_.copy();
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
         return autoRefConfigs_;
       }
+
       public int getAutoRefConfigsCount() {
         return internalGetAutoRefConfigs().getMap().size();
       }
@@ -1519,16 +1498,15 @@ proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.AutoRefConfig&gt; auto_ref_configs = 2;</code>
        */
-      @java.lang.Override
+
       public boolean containsAutoRefConfigs(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         return internalGetAutoRefConfigs().getMap().containsKey(key);
       }
       /**
        * Use {@link #getAutoRefConfigsMap()} instead.
        */
-      @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig> getAutoRefConfigs() {
         return getAutoRefConfigsMap();
@@ -1540,7 +1518,7 @@ proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.AutoRefConfig&gt; auto_ref_configs = 2;</code>
        */
-      @java.lang.Override
+
       public java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig> getAutoRefConfigsMap() {
         return internalGetAutoRefConfigs().getMap();
       }
@@ -1551,13 +1529,11 @@ proto.gc.SslGcEngineConfig.Config.Behavior defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.AutoRefConfig&gt; auto_ref_configs = 2;</code>
        */
-      @java.lang.Override
-      public /* nullable */
-proto.gc.SslGcEngineConfig.AutoRefConfig getAutoRefConfigsOrDefault(
+
+      public proto.gc.SslGcEngineConfig.AutoRefConfig getAutoRefConfigsOrDefault(
           java.lang.String key,
-          /* nullable */
-proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
+          proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig> map =
             internalGetAutoRefConfigs().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1569,10 +1545,10 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.AutoRefConfig&gt; auto_ref_configs = 2;</code>
        */
-      @java.lang.Override
+
       public proto.gc.SslGcEngineConfig.AutoRefConfig getAutoRefConfigsOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig> map =
             internalGetAutoRefConfigs().getMap();
         if (!map.containsKey(key)) {
@@ -1580,8 +1556,8 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearAutoRefConfigs() {
-        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableAutoRefConfigs().getMutableMap()
             .clear();
         return this;
@@ -1593,9 +1569,10 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.AutoRefConfig&gt; auto_ref_configs = 2;</code>
        */
+
       public Builder removeAutoRefConfigs(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableAutoRefConfigs().getMutableMap()
             .remove(key);
         return this;
@@ -1605,8 +1582,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig>
-          getMutableAutoRefConfigs() {
-        bitField0_ |= 0x00000002;
+      getMutableAutoRefConfigs() {
         return internalGetMutableAutoRefConfigs().getMutableMap();
       }
       /**
@@ -1619,11 +1595,10 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
       public Builder putAutoRefConfigs(
           java.lang.String key,
           proto.gc.SslGcEngineConfig.AutoRefConfig value) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableAutoRefConfigs().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -1633,11 +1608,11 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.AutoRefConfig&gt; auto_ref_configs = 2;</code>
        */
+
       public Builder putAllAutoRefConfigs(
           java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig> values) {
         internalGetMutableAutoRefConfigs().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -1648,10 +1623,9 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>optional string active_tracker_source = 3;</code>
-       * @return Whether the activeTrackerSource field is set.
        */
       public boolean hasActiveTrackerSource() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -1659,7 +1633,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>optional string active_tracker_source = 3;</code>
-       * @return The activeTrackerSource.
        */
       public java.lang.String getActiveTrackerSource() {
         java.lang.Object ref = activeTrackerSource_;
@@ -1681,7 +1654,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>optional string active_tracker_source = 3;</code>
-       * @return The bytes for activeTrackerSource.
        */
       public com.google.protobuf.ByteString
           getActiveTrackerSourceBytes() {
@@ -1702,14 +1674,14 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>optional string active_tracker_source = 3;</code>
-       * @param value The activeTrackerSource to set.
-       * @return This builder for chaining.
        */
       public Builder setActiveTrackerSource(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
         activeTrackerSource_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1719,11 +1691,10 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>optional string active_tracker_source = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearActiveTrackerSource() {
-        activeTrackerSource_ = getDefaultInstance().getActiveTrackerSource();
         bitField0_ = (bitField0_ & ~0x00000004);
+        activeTrackerSource_ = getDefaultInstance().getActiveTrackerSource();
         onChanged();
         return this;
       }
@@ -1733,21 +1704,21 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>optional string active_tracker_source = 3;</code>
-       * @param value The bytes for activeTrackerSource to set.
-       * @return This builder for chaining.
        */
       public Builder setActiveTrackerSourceBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
         activeTrackerSource_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
 
       private com.google.protobuf.LazyStringList teams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureTeamsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
           teams_ = new com.google.protobuf.LazyStringArrayList(teams_);
           bitField0_ |= 0x00000008;
          }
@@ -1758,7 +1729,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>repeated string teams = 4;</code>
-       * @return A list containing the teams.
        */
       public com.google.protobuf.ProtocolStringList
           getTeamsList() {
@@ -1770,7 +1740,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>repeated string teams = 4;</code>
-       * @return The count of teams.
        */
       public int getTeamsCount() {
         return teams_.size();
@@ -1781,8 +1750,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>repeated string teams = 4;</code>
-       * @param index The index of the element to return.
-       * @return The teams at the given index.
        */
       public java.lang.String getTeams(int index) {
         return teams_.get(index);
@@ -1793,8 +1760,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>repeated string teams = 4;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the teams at the given index.
        */
       public com.google.protobuf.ByteString
           getTeamsBytes(int index) {
@@ -1806,14 +1771,13 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>repeated string teams = 4;</code>
-       * @param index The index to set the value at.
-       * @param value The teams to set.
-       * @return This builder for chaining.
        */
       public Builder setTeams(
           int index, java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureTeamsIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTeamsIsMutable();
         teams_.set(index, value);
         onChanged();
         return this;
@@ -1824,13 +1788,13 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>repeated string teams = 4;</code>
-       * @param value The teams to add.
-       * @return This builder for chaining.
        */
       public Builder addTeams(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureTeamsIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTeamsIsMutable();
         teams_.add(value);
         onChanged();
         return this;
@@ -1841,8 +1805,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>repeated string teams = 4;</code>
-       * @param values The teams to add.
-       * @return This builder for chaining.
        */
       public Builder addAllTeams(
           java.lang.Iterable<java.lang.String> values) {
@@ -1858,7 +1820,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>repeated string teams = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTeams() {
         teams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1872,13 +1833,13 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>repeated string teams = 4;</code>
-       * @param value The bytes of the teams to add.
-       * @return This builder for chaining.
        */
       public Builder addTeamsBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureTeamsIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTeamsIsMutable();
         teams_.add(value);
         onChanged();
         return this;
@@ -1891,11 +1852,9 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>optional bool auto_continue = 5;</code>
-       * @return Whether the autoContinue field is set.
        */
-      @java.lang.Override
       public boolean hasAutoContinue() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <pre>
@@ -1903,9 +1862,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>optional bool auto_continue = 5;</code>
-       * @return The autoContinue.
        */
-      @java.lang.Override
       public boolean getAutoContinue() {
         return autoContinue_;
       }
@@ -1915,13 +1872,10 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>optional bool auto_continue = 5;</code>
-       * @param value The autoContinue to set.
-       * @return This builder for chaining.
        */
       public Builder setAutoContinue(boolean value) {
-        
-        autoContinue_ = value;
         bitField0_ |= 0x00000010;
+        autoContinue_ = value;
         onChanged();
         return this;
       }
@@ -1931,7 +1885,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
        * </pre>
        *
        * <code>optional bool auto_continue = 5;</code>
-       * @return This builder for chaining.
        */
       public Builder clearAutoContinue() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -1972,18 +1925,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Config(input, extensionRegistry);
       }
     };
 
@@ -2046,11 +1988,9 @@ proto.gc.SslGcEngineConfig.AutoRefConfig defaultValue) {
      *
      * <code>map&lt;string, .proto.gc.AutoRefConfig.Behavior&gt; game_event_behavior = 1;</code>
      */
-    /* nullable */
-proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior getGameEventBehaviorOrDefault(
+    proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior getGameEventBehaviorOrDefault(
         java.lang.String key,
-        /* nullable */
-proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior         defaultValue);
+        proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue);
     /**
      * <pre>
      * The game event behaviors for this auto referee
@@ -2068,7 +2008,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior         defaultValue);
    *
    * Protobuf type {@code proto.gc.AutoRefConfig}
    */
-  public static final class AutoRefConfig extends
+  public  static final class AutoRefConfig extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.AutoRefConfig)
       AutoRefConfigOrBuilder {
@@ -2081,16 +2021,64 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior         defaultValue);
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new AutoRefConfig();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private AutoRefConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                gameEventBehavior_ = com.google.protobuf.MapField.newMapField(
+                    GameEventBehaviorDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.ByteString bytes = input.readBytes();
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
+              gameEventBehavior__ = GameEventBehaviorDefaultEntryHolder.defaultEntry.getParserForType().parseFrom(bytes);
+              if (proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior.forNumber(gameEventBehavior__.getValue()) == null) {
+                unknownFields.mergeLengthDelimitedField(1, bytes);
+              } else {
+                gameEventBehavior_.getMutableMap().put(
+                    gameEventBehavior__.getKey(), gameEventBehavior__.getValue());
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2199,8 +2187,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior         defaultValue);
       }
 
       /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -2208,10 +2194,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior         defaultValue);
         return forNumber(value);
       }
 
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
       public static Behavior forNumber(int value) {
         switch (value) {
           case 0: return BEHAVIOR_UNKNOWN;
@@ -2279,7 +2261,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior         defaultValue);
                   com.google.protobuf.WireFormat.FieldType.ENUM,
                   proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior.BEHAVIOR_UNKNOWN.getNumber());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.String, java.lang.Integer> gameEventBehavior_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
@@ -2303,6 +2284,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior         defaultValue);
           java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior, java.lang.Integer>(
               map, gameEventBehaviorValueConverter);
     }
+
     public int getGameEventBehaviorCount() {
       return internalGetGameEventBehavior().getMap().size();
     }
@@ -2313,16 +2295,15 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior         defaultValue);
      *
      * <code>map&lt;string, .proto.gc.AutoRefConfig.Behavior&gt; game_event_behavior = 1;</code>
      */
-    @java.lang.Override
+
     public boolean containsGameEventBehavior(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       return internalGetGameEventBehavior().getMap().containsKey(key);
     }
     /**
      * Use {@link #getGameEventBehaviorMap()} instead.
      */
-    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior>
     getGameEventBehavior() {
@@ -2335,7 +2316,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior         defaultValue);
      *
      * <code>map&lt;string, .proto.gc.AutoRefConfig.Behavior&gt; game_event_behavior = 1;</code>
      */
-    @java.lang.Override
+
     public java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior>
     getGameEventBehaviorMap() {
       return internalGetAdaptedGameEventBehaviorMap(
@@ -2347,13 +2328,11 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior         defaultValue);
      *
      * <code>map&lt;string, .proto.gc.AutoRefConfig.Behavior&gt; game_event_behavior = 1;</code>
      */
-    @java.lang.Override
-    public /* nullable */
-proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior getGameEventBehaviorOrDefault(
+
+    public proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior getGameEventBehaviorOrDefault(
         java.lang.String key,
-        /* nullable */
-proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
+        proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetGameEventBehavior().getMap();
       return map.containsKey(key)
@@ -2367,10 +2346,10 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
      *
      * <code>map&lt;string, .proto.gc.AutoRefConfig.Behavior&gt; game_event_behavior = 1;</code>
      */
-    @java.lang.Override
+
     public proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior getGameEventBehaviorOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetGameEventBehavior().getMap();
       if (!map.containsKey(key)) {
@@ -2399,7 +2378,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
           internalGetGameEventBehavior(),
           GameEventBehaviorDefaultEntryHolder.defaultEntry,
           1);
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2418,7 +2397,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(1, gameEventBehavior__);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2433,10 +2412,11 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
       }
       proto.gc.SslGcEngineConfig.AutoRefConfig other = (proto.gc.SslGcEngineConfig.AutoRefConfig) obj;
 
-      if (!internalGetGameEventBehavior().equals(
-          other.internalGetGameEventBehavior())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      boolean result = true;
+      result = result && internalGetGameEventBehavior().equals(
+          other.internalGetGameEventBehavior());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2450,7 +2430,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
         hash = (37 * hash) + GAME_EVENT_BEHAVIOR_FIELD_NUMBER;
         hash = (53 * hash) + internalGetGameEventBehavior().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2593,18 +2573,22 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
 
       // Construct using proto.gc.SslGcEngineConfig.AutoRefConfig.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableGameEventBehavior().clear();
         return this;
       }
@@ -2632,50 +2616,44 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
       @java.lang.Override
       public proto.gc.SslGcEngineConfig.AutoRefConfig buildPartial() {
         proto.gc.SslGcEngineConfig.AutoRefConfig result = new proto.gc.SslGcEngineConfig.AutoRefConfig(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        result.gameEventBehavior_ = internalGetGameEventBehavior();
+        result.gameEventBehavior_.makeImmutable();
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcEngineConfig.AutoRefConfig result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.gameEventBehavior_ = internalGetGameEventBehavior();
-          result.gameEventBehavior_.makeImmutable();
-        }
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2691,8 +2669,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
         if (other == proto.gc.SslGcEngineConfig.AutoRefConfig.getDefaultInstance()) return this;
         internalGetMutableGameEventBehavior().mergeFrom(
             other.internalGetGameEventBehavior());
-        bitField0_ |= 0x00000001;
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2707,43 +2684,17 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcEngineConfig.AutoRefConfig parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                com.google.protobuf.ByteString bytes = input.readBytes();
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
-                gameEventBehavior__ = GameEventBehaviorDefaultEntryHolder.defaultEntry.getParserForType().parseFrom(bytes);
-                if (proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior.forNumber(gameEventBehavior__.getValue()) == null) {
-                  mergeUnknownLengthDelimitedField(1, bytes);
-                } else {
-                  internalGetMutableGameEventBehavior().getMutableMap().put(
-                      gameEventBehavior__.getKey(), gameEventBehavior__.getValue());
-                  bitField0_ |= 0x00000001;
-                }
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcEngineConfig.AutoRefConfig) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -2751,7 +2702,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
       private com.google.protobuf.MapField<
           java.lang.String, java.lang.Integer> gameEventBehavior_;
       private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
-          internalGetGameEventBehavior() {
+      internalGetGameEventBehavior() {
         if (gameEventBehavior_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               GameEventBehaviorDefaultEntryHolder.defaultEntry);
@@ -2759,7 +2710,8 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
         return gameEventBehavior_;
       }
       private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
-          internalGetMutableGameEventBehavior() {
+      internalGetMutableGameEventBehavior() {
+        onChanged();;
         if (gameEventBehavior_ == null) {
           gameEventBehavior_ = com.google.protobuf.MapField.newMapField(
               GameEventBehaviorDefaultEntryHolder.defaultEntry);
@@ -2767,10 +2719,9 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
         if (!gameEventBehavior_.isMutable()) {
           gameEventBehavior_ = gameEventBehavior_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return gameEventBehavior_;
       }
+
       public int getGameEventBehaviorCount() {
         return internalGetGameEventBehavior().getMap().size();
       }
@@ -2781,16 +2732,15 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.AutoRefConfig.Behavior&gt; game_event_behavior = 1;</code>
        */
-      @java.lang.Override
+
       public boolean containsGameEventBehavior(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         return internalGetGameEventBehavior().getMap().containsKey(key);
       }
       /**
        * Use {@link #getGameEventBehaviorMap()} instead.
        */
-      @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior>
       getGameEventBehavior() {
@@ -2803,7 +2753,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.AutoRefConfig.Behavior&gt; game_event_behavior = 1;</code>
        */
-      @java.lang.Override
+
       public java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior>
       getGameEventBehaviorMap() {
         return internalGetAdaptedGameEventBehaviorMap(
@@ -2815,13 +2765,11 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.AutoRefConfig.Behavior&gt; game_event_behavior = 1;</code>
        */
-      @java.lang.Override
-      public /* nullable */
-proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior getGameEventBehaviorOrDefault(
+
+      public proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior getGameEventBehaviorOrDefault(
           java.lang.String key,
-          /* nullable */
-proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
+          proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.Integer> map =
             internalGetGameEventBehavior().getMap();
         return map.containsKey(key)
@@ -2835,10 +2783,10 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.AutoRefConfig.Behavior&gt; game_event_behavior = 1;</code>
        */
-      @java.lang.Override
+
       public proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior getGameEventBehaviorOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.Integer> map =
             internalGetGameEventBehavior().getMap();
         if (!map.containsKey(key)) {
@@ -2846,8 +2794,8 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
         }
         return gameEventBehaviorValueConverter.doForward(map.get(key));
       }
+
       public Builder clearGameEventBehavior() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableGameEventBehavior().getMutableMap()
             .clear();
         return this;
@@ -2859,9 +2807,10 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.AutoRefConfig.Behavior&gt; game_event_behavior = 1;</code>
        */
+
       public Builder removeGameEventBehavior(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableGameEventBehavior().getMutableMap()
             .remove(key);
         return this;
@@ -2871,8 +2820,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior>
-          getMutableGameEventBehavior() {
-        bitField0_ |= 0x00000001;
+      getMutableGameEventBehavior() {
         return internalGetAdaptedGameEventBehaviorMap(
              internalGetMutableGameEventBehavior().getMutableMap());
       }
@@ -2886,11 +2834,10 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
       public Builder putGameEventBehavior(
           java.lang.String key,
           proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior value) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableGameEventBehavior().getMutableMap()
             .put(key, gameEventBehaviorValueConverter.doBackward(value));
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -2905,7 +2852,6 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
         internalGetAdaptedGameEventBehaviorMap(
             internalGetMutableGameEventBehavior().getMutableMap())
                 .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
       @java.lang.Override
@@ -2941,18 +2887,7 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new AutoRefConfig(input, extensionRegistry);
       }
     };
 
@@ -3030,10 +2965,18 @@ proto.gc.SslGcEngineConfig.AutoRefConfig.Behavior defaultValue) {
       "R_IGNORE\020\003B@Z>github.com/RoboCup-SSL/ssl" +
       "-game-controller/internal/app/engine"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_proto_gc_Config_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_gc_Config_fieldAccessorTable = new

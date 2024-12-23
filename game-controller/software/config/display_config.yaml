@@ -1,0 +1,13 @@
+fieldExtend: 500
+
+robotIdFontName: TimesRoman
+robotIdFontSize: 150
+
+showPrediction: false
+predictionDelta: 1
+
+showNodeGrid: false
+showOnlyObstacles: false
+showRoute: true
+showNext: true
+showTo: true

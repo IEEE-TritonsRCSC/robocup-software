@@ -24,7 +24,6 @@ public final class SslSimulationError {
      * </pre>
      *
      * <code>optional string code = 1;</code>
-     * @return Whether the code field is set.
      */
     boolean hasCode();
     /**
@@ -33,7 +32,6 @@ public final class SslSimulationError {
      * </pre>
      *
      * <code>optional string code = 1;</code>
-     * @return The code.
      */
     java.lang.String getCode();
     /**
@@ -42,7 +40,6 @@ public final class SslSimulationError {
      * </pre>
      *
      * <code>optional string code = 1;</code>
-     * @return The bytes for code.
      */
     com.google.protobuf.ByteString
         getCodeBytes();
@@ -53,7 +50,6 @@ public final class SslSimulationError {
      * </pre>
      *
      * <code>optional string message = 2;</code>
-     * @return Whether the message field is set.
      */
     boolean hasMessage();
     /**
@@ -62,7 +58,6 @@ public final class SslSimulationError {
      * </pre>
      *
      * <code>optional string message = 2;</code>
-     * @return The message.
      */
     java.lang.String getMessage();
     /**
@@ -71,7 +66,6 @@ public final class SslSimulationError {
      * </pre>
      *
      * <code>optional string message = 2;</code>
-     * @return The bytes for message.
      */
     com.google.protobuf.ByteString
         getMessageBytes();
@@ -83,7 +77,7 @@ public final class SslSimulationError {
    *
    * Protobuf type {@code proto.simulation.SimulatorError}
    */
-  public static final class SimulatorError extends
+  public  static final class SimulatorError extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.simulation.SimulatorError)
       SimulatorErrorOrBuilder {
@@ -98,16 +92,59 @@ public final class SslSimulationError {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SimulatorError();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private SimulatorError(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              code_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              message_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -124,19 +161,16 @@ public final class SslSimulationError {
 
     private int bitField0_;
     public static final int CODE_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object code_ = "";
+    private volatile java.lang.Object code_;
     /**
      * <pre>
      * Unique code of the error for automatic handling on client side
      * </pre>
      *
      * <code>optional string code = 1;</code>
-     * @return Whether the code field is set.
      */
-    @java.lang.Override
     public boolean hasCode() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -144,9 +178,7 @@ public final class SslSimulationError {
      * </pre>
      *
      * <code>optional string code = 1;</code>
-     * @return The code.
      */
-    @java.lang.Override
     public java.lang.String getCode() {
       java.lang.Object ref = code_;
       if (ref instanceof java.lang.String) {
@@ -167,9 +199,7 @@ public final class SslSimulationError {
      * </pre>
      *
      * <code>optional string code = 1;</code>
-     * @return The bytes for code.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getCodeBytes() {
       java.lang.Object ref = code_;
@@ -185,19 +215,16 @@ public final class SslSimulationError {
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object message_ = "";
+    private volatile java.lang.Object message_;
     /**
      * <pre>
      * Human readable description of the error
      * </pre>
      *
      * <code>optional string message = 2;</code>
-     * @return Whether the message field is set.
      */
-    @java.lang.Override
     public boolean hasMessage() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -205,9 +232,7 @@ public final class SslSimulationError {
      * </pre>
      *
      * <code>optional string message = 2;</code>
-     * @return The message.
      */
-    @java.lang.Override
     public java.lang.String getMessage() {
       java.lang.Object ref = message_;
       if (ref instanceof java.lang.String) {
@@ -228,9 +253,7 @@ public final class SslSimulationError {
      * </pre>
      *
      * <code>optional string message = 2;</code>
-     * @return The bytes for message.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getMessageBytes() {
       java.lang.Object ref = message_;
@@ -259,13 +282,13 @@ public final class SslSimulationError {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -274,13 +297,13 @@ public final class SslSimulationError {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -295,18 +318,19 @@ public final class SslSimulationError {
       }
       proto.simulation.SslSimulationError.SimulatorError other = (proto.simulation.SslSimulationError.SimulatorError) obj;
 
-      if (hasCode() != other.hasCode()) return false;
+      boolean result = true;
+      result = result && (hasCode() == other.hasCode());
       if (hasCode()) {
-        if (!getCode()
-            .equals(other.getCode())) return false;
+        result = result && getCode()
+            .equals(other.getCode());
       }
-      if (hasMessage() != other.hasMessage()) return false;
+      result = result && (hasMessage() == other.hasMessage());
       if (hasMessage()) {
-        if (!getMessage()
-            .equals(other.getMessage())) return false;
+        result = result && getMessage()
+            .equals(other.getMessage());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -324,7 +348,7 @@ public final class SslSimulationError {
         hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
         hash = (53 * hash) + getMessage().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -445,20 +469,26 @@ public final class SslSimulationError {
 
       // Construct using proto.simulation.SslSimulationError.SimulatorError.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         code_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
         message_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -485,56 +515,52 @@ public final class SslSimulationError {
       @java.lang.Override
       public proto.simulation.SslSimulationError.SimulatorError buildPartial() {
         proto.simulation.SslSimulationError.SimulatorError result = new proto.simulation.SslSimulationError.SimulatorError(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.code_ = code_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.message_ = message_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.simulation.SslSimulationError.SimulatorError result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.code_ = code_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.message_ = message_;
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -549,16 +575,16 @@ public final class SslSimulationError {
       public Builder mergeFrom(proto.simulation.SslSimulationError.SimulatorError other) {
         if (other == proto.simulation.SslSimulationError.SimulatorError.getDefaultInstance()) return this;
         if (other.hasCode()) {
-          code_ = other.code_;
           bitField0_ |= 0x00000001;
+          code_ = other.code_;
           onChanged();
         }
         if (other.hasMessage()) {
-          message_ = other.message_;
           bitField0_ |= 0x00000002;
+          message_ = other.message_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -573,40 +599,17 @@ public final class SslSimulationError {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.simulation.SslSimulationError.SimulatorError parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                code_ = input.readBytes();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                message_ = input.readBytes();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.simulation.SslSimulationError.SimulatorError) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -618,10 +621,9 @@ public final class SslSimulationError {
        * </pre>
        *
        * <code>optional string code = 1;</code>
-       * @return Whether the code field is set.
        */
       public boolean hasCode() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -629,7 +631,6 @@ public final class SslSimulationError {
        * </pre>
        *
        * <code>optional string code = 1;</code>
-       * @return The code.
        */
       public java.lang.String getCode() {
         java.lang.Object ref = code_;
@@ -651,7 +652,6 @@ public final class SslSimulationError {
        * </pre>
        *
        * <code>optional string code = 1;</code>
-       * @return The bytes for code.
        */
       public com.google.protobuf.ByteString
           getCodeBytes() {
@@ -672,14 +672,14 @@ public final class SslSimulationError {
        * </pre>
        *
        * <code>optional string code = 1;</code>
-       * @param value The code to set.
-       * @return This builder for chaining.
        */
       public Builder setCode(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         code_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -689,11 +689,10 @@ public final class SslSimulationError {
        * </pre>
        *
        * <code>optional string code = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearCode() {
-        code_ = getDefaultInstance().getCode();
         bitField0_ = (bitField0_ & ~0x00000001);
+        code_ = getDefaultInstance().getCode();
         onChanged();
         return this;
       }
@@ -703,14 +702,14 @@ public final class SslSimulationError {
        * </pre>
        *
        * <code>optional string code = 1;</code>
-       * @param value The bytes for code to set.
-       * @return This builder for chaining.
        */
       public Builder setCodeBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         code_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -722,10 +721,9 @@ public final class SslSimulationError {
        * </pre>
        *
        * <code>optional string message = 2;</code>
-       * @return Whether the message field is set.
        */
       public boolean hasMessage() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -733,7 +731,6 @@ public final class SslSimulationError {
        * </pre>
        *
        * <code>optional string message = 2;</code>
-       * @return The message.
        */
       public java.lang.String getMessage() {
         java.lang.Object ref = message_;
@@ -755,7 +752,6 @@ public final class SslSimulationError {
        * </pre>
        *
        * <code>optional string message = 2;</code>
-       * @return The bytes for message.
        */
       public com.google.protobuf.ByteString
           getMessageBytes() {
@@ -776,14 +772,14 @@ public final class SslSimulationError {
        * </pre>
        *
        * <code>optional string message = 2;</code>
-       * @param value The message to set.
-       * @return This builder for chaining.
        */
       public Builder setMessage(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         message_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -793,11 +789,10 @@ public final class SslSimulationError {
        * </pre>
        *
        * <code>optional string message = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearMessage() {
-        message_ = getDefaultInstance().getMessage();
         bitField0_ = (bitField0_ & ~0x00000002);
+        message_ = getDefaultInstance().getMessage();
         onChanged();
         return this;
       }
@@ -807,14 +802,14 @@ public final class SslSimulationError {
        * </pre>
        *
        * <code>optional string message = 2;</code>
-       * @param value The bytes for message to set.
-       * @return This builder for chaining.
        */
       public Builder setMessageBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         message_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -851,18 +846,7 @@ public final class SslSimulationError {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SimulatorError(input, extensionRegistry);
       }
     };
 
@@ -901,10 +885,18 @@ public final class SslSimulationError {
       "\n\007message\030\002 \001(\tB8Z6github.com/RoboCup-SS" +
       "L/ssl-simulation-protocol/pkg/sim"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_proto_simulation_SimulatorError_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_simulation_SimulatorError_fieldAccessorTable = new

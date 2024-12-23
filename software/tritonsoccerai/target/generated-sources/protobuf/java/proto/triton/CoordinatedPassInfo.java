@@ -20,32 +20,28 @@ public final class CoordinatedPassInfo {
 
     /**
      * <code>int32 receiverID = 1;</code>
-     * @return The receiverID.
      */
     int getReceiverID();
 
     /**
      * <code>int32 senderID = 2;</code>
-     * @return The senderID.
      */
     int getSenderID();
 
     /**
      * <code>float passLocX = 3;</code>
-     * @return The passLocX.
      */
     float getPassLocX();
 
     /**
      * <code>float passLocY = 4;</code>
-     * @return The passLocY.
      */
     float getPassLocY();
   }
   /**
    * Protobuf type {@code proto.triton.CoordinatedPass}
    */
-  public static final class CoordinatedPass extends
+  public  static final class CoordinatedPass extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.triton.CoordinatedPass)
       CoordinatedPassOrBuilder {
@@ -55,19 +51,74 @@ public final class CoordinatedPassInfo {
       super(builder);
     }
     private CoordinatedPass() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new CoordinatedPass();
+      receiverID_ = 0;
+      senderID_ = 0;
+      passLocX_ = 0F;
+      passLocY_ = 0F;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private CoordinatedPass(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              receiverID_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              senderID_ = input.readInt32();
+              break;
+            }
+            case 29: {
+
+              passLocX_ = input.readFloat();
+              break;
+            }
+            case 37: {
+
+              passLocY_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -83,45 +134,37 @@ public final class CoordinatedPassInfo {
     }
 
     public static final int RECEIVERID_FIELD_NUMBER = 1;
-    private int receiverID_ = 0;
+    private int receiverID_;
     /**
      * <code>int32 receiverID = 1;</code>
-     * @return The receiverID.
      */
-    @java.lang.Override
     public int getReceiverID() {
       return receiverID_;
     }
 
     public static final int SENDERID_FIELD_NUMBER = 2;
-    private int senderID_ = 0;
+    private int senderID_;
     /**
      * <code>int32 senderID = 2;</code>
-     * @return The senderID.
      */
-    @java.lang.Override
     public int getSenderID() {
       return senderID_;
     }
 
     public static final int PASSLOCX_FIELD_NUMBER = 3;
-    private float passLocX_ = 0F;
+    private float passLocX_;
     /**
      * <code>float passLocX = 3;</code>
-     * @return The passLocX.
      */
-    @java.lang.Override
     public float getPassLocX() {
       return passLocX_;
     }
 
     public static final int PASSLOCY_FIELD_NUMBER = 4;
-    private float passLocY_ = 0F;
+    private float passLocY_;
     /**
      * <code>float passLocY = 4;</code>
-     * @return The passLocY.
      */
-    @java.lang.Override
     public float getPassLocY() {
       return passLocY_;
     }
@@ -146,13 +189,13 @@ public final class CoordinatedPassInfo {
       if (senderID_ != 0) {
         output.writeInt32(2, senderID_);
       }
-      if (java.lang.Float.floatToRawIntBits(passLocX_) != 0) {
+      if (passLocX_ != 0F) {
         output.writeFloat(3, passLocX_);
       }
-      if (java.lang.Float.floatToRawIntBits(passLocY_) != 0) {
+      if (passLocY_ != 0F) {
         output.writeFloat(4, passLocY_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -169,15 +212,15 @@ public final class CoordinatedPassInfo {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, senderID_);
       }
-      if (java.lang.Float.floatToRawIntBits(passLocX_) != 0) {
+      if (passLocX_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, passLocX_);
       }
-      if (java.lang.Float.floatToRawIntBits(passLocY_) != 0) {
+      if (passLocY_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, passLocY_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -192,18 +235,21 @@ public final class CoordinatedPassInfo {
       }
       proto.triton.CoordinatedPassInfo.CoordinatedPass other = (proto.triton.CoordinatedPassInfo.CoordinatedPass) obj;
 
-      if (getReceiverID()
-          != other.getReceiverID()) return false;
-      if (getSenderID()
-          != other.getSenderID()) return false;
-      if (java.lang.Float.floatToIntBits(getPassLocX())
-          != java.lang.Float.floatToIntBits(
-              other.getPassLocX())) return false;
-      if (java.lang.Float.floatToIntBits(getPassLocY())
-          != java.lang.Float.floatToIntBits(
-              other.getPassLocY())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      boolean result = true;
+      result = result && (getReceiverID()
+          == other.getReceiverID());
+      result = result && (getSenderID()
+          == other.getSenderID());
+      result = result && (
+          java.lang.Float.floatToIntBits(getPassLocX())
+          == java.lang.Float.floatToIntBits(
+              other.getPassLocX()));
+      result = result && (
+          java.lang.Float.floatToIntBits(getPassLocY())
+          == java.lang.Float.floatToIntBits(
+              other.getPassLocY()));
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -223,7 +269,7 @@ public final class CoordinatedPassInfo {
       hash = (37 * hash) + PASSLOCY_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getPassLocY());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -340,22 +386,30 @@ public final class CoordinatedPassInfo {
 
       // Construct using proto.triton.CoordinatedPassInfo.CoordinatedPass.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         receiverID_ = 0;
+
         senderID_ = 0;
+
         passLocX_ = 0F;
+
         passLocY_ = 0F;
+
         return this;
       }
 
@@ -382,58 +436,45 @@ public final class CoordinatedPassInfo {
       @java.lang.Override
       public proto.triton.CoordinatedPassInfo.CoordinatedPass buildPartial() {
         proto.triton.CoordinatedPassInfo.CoordinatedPass result = new proto.triton.CoordinatedPassInfo.CoordinatedPass(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.receiverID_ = receiverID_;
+        result.senderID_ = senderID_;
+        result.passLocX_ = passLocX_;
+        result.passLocY_ = passLocY_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.triton.CoordinatedPassInfo.CoordinatedPass result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.receiverID_ = receiverID_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.senderID_ = senderID_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.passLocX_ = passLocX_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.passLocY_ = passLocY_;
-        }
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -459,7 +500,7 @@ public final class CoordinatedPassInfo {
         if (other.getPassLocY() != 0F) {
           setPassLocY(other.getPassLocY());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -474,81 +515,41 @@ public final class CoordinatedPassInfo {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.triton.CoordinatedPassInfo.CoordinatedPass parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                receiverID_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                senderID_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 29: {
-                passLocX_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 29
-              case 37: {
-                passLocY_ = input.readFloat();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 37
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.triton.CoordinatedPassInfo.CoordinatedPass) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private int receiverID_ ;
       /**
        * <code>int32 receiverID = 1;</code>
-       * @return The receiverID.
        */
-      @java.lang.Override
       public int getReceiverID() {
         return receiverID_;
       }
       /**
        * <code>int32 receiverID = 1;</code>
-       * @param value The receiverID to set.
-       * @return This builder for chaining.
        */
       public Builder setReceiverID(int value) {
         
         receiverID_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
        * <code>int32 receiverID = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearReceiverID() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         receiverID_ = 0;
         onChanged();
         return this;
@@ -557,30 +558,24 @@ public final class CoordinatedPassInfo {
       private int senderID_ ;
       /**
        * <code>int32 senderID = 2;</code>
-       * @return The senderID.
        */
-      @java.lang.Override
       public int getSenderID() {
         return senderID_;
       }
       /**
        * <code>int32 senderID = 2;</code>
-       * @param value The senderID to set.
-       * @return This builder for chaining.
        */
       public Builder setSenderID(int value) {
         
         senderID_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
        * <code>int32 senderID = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearSenderID() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         senderID_ = 0;
         onChanged();
         return this;
@@ -589,30 +584,24 @@ public final class CoordinatedPassInfo {
       private float passLocX_ ;
       /**
        * <code>float passLocX = 3;</code>
-       * @return The passLocX.
        */
-      @java.lang.Override
       public float getPassLocX() {
         return passLocX_;
       }
       /**
        * <code>float passLocX = 3;</code>
-       * @param value The passLocX to set.
-       * @return This builder for chaining.
        */
       public Builder setPassLocX(float value) {
         
         passLocX_ = value;
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
        * <code>float passLocX = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearPassLocX() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         passLocX_ = 0F;
         onChanged();
         return this;
@@ -621,30 +610,24 @@ public final class CoordinatedPassInfo {
       private float passLocY_ ;
       /**
        * <code>float passLocY = 4;</code>
-       * @return The passLocY.
        */
-      @java.lang.Override
       public float getPassLocY() {
         return passLocY_;
       }
       /**
        * <code>float passLocY = 4;</code>
-       * @param value The passLocY to set.
-       * @return This builder for chaining.
        */
       public Builder setPassLocY(float value) {
         
         passLocY_ = value;
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
        * <code>float passLocY = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearPassLocY() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         passLocY_ = 0F;
         onChanged();
         return this;
@@ -652,7 +635,7 @@ public final class CoordinatedPassInfo {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -682,18 +665,7 @@ public final class CoordinatedPassInfo {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new CoordinatedPass(input, extensionRegistry);
       }
     };
 
@@ -719,20 +691,18 @@ public final class CoordinatedPassInfo {
 
     /**
      * <code>float moveVectorX = 1;</code>
-     * @return The moveVectorX.
      */
     float getMoveVectorX();
 
     /**
      * <code>float moveVectorY = 2;</code>
-     * @return The moveVectorY.
      */
     float getMoveVectorY();
   }
   /**
    * Protobuf type {@code proto.triton.MoveRobot}
    */
-  public static final class MoveRobot extends
+  public  static final class MoveRobot extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.triton.MoveRobot)
       MoveRobotOrBuilder {
@@ -742,19 +712,62 @@ public final class CoordinatedPassInfo {
       super(builder);
     }
     private MoveRobot() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new MoveRobot();
+      moveVectorX_ = 0F;
+      moveVectorY_ = 0F;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private MoveRobot(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+
+              moveVectorX_ = input.readFloat();
+              break;
+            }
+            case 21: {
+
+              moveVectorY_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -770,23 +783,19 @@ public final class CoordinatedPassInfo {
     }
 
     public static final int MOVEVECTORX_FIELD_NUMBER = 1;
-    private float moveVectorX_ = 0F;
+    private float moveVectorX_;
     /**
      * <code>float moveVectorX = 1;</code>
-     * @return The moveVectorX.
      */
-    @java.lang.Override
     public float getMoveVectorX() {
       return moveVectorX_;
     }
 
     public static final int MOVEVECTORY_FIELD_NUMBER = 2;
-    private float moveVectorY_ = 0F;
+    private float moveVectorY_;
     /**
      * <code>float moveVectorY = 2;</code>
-     * @return The moveVectorY.
      */
-    @java.lang.Override
     public float getMoveVectorY() {
       return moveVectorY_;
     }
@@ -805,13 +814,13 @@ public final class CoordinatedPassInfo {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (java.lang.Float.floatToRawIntBits(moveVectorX_) != 0) {
+      if (moveVectorX_ != 0F) {
         output.writeFloat(1, moveVectorX_);
       }
-      if (java.lang.Float.floatToRawIntBits(moveVectorY_) != 0) {
+      if (moveVectorY_ != 0F) {
         output.writeFloat(2, moveVectorY_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -820,15 +829,15 @@ public final class CoordinatedPassInfo {
       if (size != -1) return size;
 
       size = 0;
-      if (java.lang.Float.floatToRawIntBits(moveVectorX_) != 0) {
+      if (moveVectorX_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, moveVectorX_);
       }
-      if (java.lang.Float.floatToRawIntBits(moveVectorY_) != 0) {
+      if (moveVectorY_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, moveVectorY_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -843,14 +852,17 @@ public final class CoordinatedPassInfo {
       }
       proto.triton.CoordinatedPassInfo.MoveRobot other = (proto.triton.CoordinatedPassInfo.MoveRobot) obj;
 
-      if (java.lang.Float.floatToIntBits(getMoveVectorX())
-          != java.lang.Float.floatToIntBits(
-              other.getMoveVectorX())) return false;
-      if (java.lang.Float.floatToIntBits(getMoveVectorY())
-          != java.lang.Float.floatToIntBits(
-              other.getMoveVectorY())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      boolean result = true;
+      result = result && (
+          java.lang.Float.floatToIntBits(getMoveVectorX())
+          == java.lang.Float.floatToIntBits(
+              other.getMoveVectorX()));
+      result = result && (
+          java.lang.Float.floatToIntBits(getMoveVectorY())
+          == java.lang.Float.floatToIntBits(
+              other.getMoveVectorY()));
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -866,7 +878,7 @@ public final class CoordinatedPassInfo {
       hash = (37 * hash) + MOVEVECTORY_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getMoveVectorY());
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -983,20 +995,26 @@ public final class CoordinatedPassInfo {
 
       // Construct using proto.triton.CoordinatedPassInfo.MoveRobot.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         moveVectorX_ = 0F;
+
         moveVectorY_ = 0F;
+
         return this;
       }
 
@@ -1023,52 +1041,43 @@ public final class CoordinatedPassInfo {
       @java.lang.Override
       public proto.triton.CoordinatedPassInfo.MoveRobot buildPartial() {
         proto.triton.CoordinatedPassInfo.MoveRobot result = new proto.triton.CoordinatedPassInfo.MoveRobot(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        result.moveVectorX_ = moveVectorX_;
+        result.moveVectorY_ = moveVectorY_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.triton.CoordinatedPassInfo.MoveRobot result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.moveVectorX_ = moveVectorX_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.moveVectorY_ = moveVectorY_;
-        }
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1088,7 +1097,7 @@ public final class CoordinatedPassInfo {
         if (other.getMoveVectorY() != 0F) {
           setMoveVectorY(other.getMoveVectorY());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1103,71 +1112,41 @@ public final class CoordinatedPassInfo {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.triton.CoordinatedPassInfo.MoveRobot parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                moveVectorX_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 13
-              case 21: {
-                moveVectorY_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 21
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.triton.CoordinatedPassInfo.MoveRobot) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
-      private int bitField0_;
 
       private float moveVectorX_ ;
       /**
        * <code>float moveVectorX = 1;</code>
-       * @return The moveVectorX.
        */
-      @java.lang.Override
       public float getMoveVectorX() {
         return moveVectorX_;
       }
       /**
        * <code>float moveVectorX = 1;</code>
-       * @param value The moveVectorX to set.
-       * @return This builder for chaining.
        */
       public Builder setMoveVectorX(float value) {
         
         moveVectorX_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
        * <code>float moveVectorX = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearMoveVectorX() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         moveVectorX_ = 0F;
         onChanged();
         return this;
@@ -1176,30 +1155,24 @@ public final class CoordinatedPassInfo {
       private float moveVectorY_ ;
       /**
        * <code>float moveVectorY = 2;</code>
-       * @return The moveVectorY.
        */
-      @java.lang.Override
       public float getMoveVectorY() {
         return moveVectorY_;
       }
       /**
        * <code>float moveVectorY = 2;</code>
-       * @param value The moveVectorY to set.
-       * @return This builder for chaining.
        */
       public Builder setMoveVectorY(float value) {
         
         moveVectorY_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
        * <code>float moveVectorY = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearMoveVectorY() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         moveVectorY_ = 0F;
         onChanged();
         return this;
@@ -1207,7 +1180,7 @@ public final class CoordinatedPassInfo {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -1237,18 +1210,7 @@ public final class CoordinatedPassInfo {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MoveRobot(input, extensionRegistry);
       }
     };
 
@@ -1293,10 +1255,18 @@ public final class CoordinatedPassInfo {
       "\n\010passLocY\030\004 \001(\002\"5\n\tMoveRobot\022\023\n\013moveVec" +
       "torX\030\001 \001(\002\022\023\n\013moveVectorY\030\002 \001(\002b\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_proto_triton_CoordinatedPass_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_triton_CoordinatedPass_fieldAccessorTable = new

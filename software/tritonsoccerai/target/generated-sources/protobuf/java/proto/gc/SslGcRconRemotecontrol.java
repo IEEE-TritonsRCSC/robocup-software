@@ -88,8 +88,6 @@ public final class SslGcRconRemotecontrol {
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -97,10 +95,6 @@ public final class SslGcRconRemotecontrol {
       return forNumber(value);
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
     public static RemoteControlRequestType forNumber(int value) {
       switch (value) {
         case 0: return UNKNOWN_REQUEST_TYPE;
@@ -169,7 +163,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>required .proto.simulation.Team team = 1;</code>
-     * @return Whether the team field is set.
      */
     boolean hasTeam();
     /**
@@ -178,7 +171,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>required .proto.simulation.Team team = 1;</code>
-     * @return The team.
      */
     proto.simulation.SslGcCommon.Team getTeam();
 
@@ -188,7 +180,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 2;</code>
-     * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
@@ -197,7 +188,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 2;</code>
-     * @return The signature.
      */
     proto.gc.SslGcRcon.Signature getSignature();
     /**
@@ -216,7 +206,7 @@ public final class SslGcRconRemotecontrol {
    *
    * Protobuf type {@code proto.gc.RemoteControlRegistration}
    */
-  public static final class RemoteControlRegistration extends
+  public  static final class RemoteControlRegistration extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.RemoteControlRegistration)
       RemoteControlRegistrationOrBuilder {
@@ -230,16 +220,72 @@ public final class SslGcRconRemotecontrol {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new RemoteControlRegistration();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private RemoteControlRegistration(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                team_ = rawValue;
+              }
+              break;
+            }
+            case 18: {
+              proto.gc.SslGcRcon.Signature.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(proto.gc.SslGcRcon.Signature.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -256,17 +302,16 @@ public final class SslGcRconRemotecontrol {
 
     private int bitField0_;
     public static final int TEAM_FIELD_NUMBER = 1;
-    private int team_ = 0;
+    private int team_;
     /**
      * <pre>
      * the team to be controlled
      * </pre>
      *
      * <code>required .proto.simulation.Team team = 1;</code>
-     * @return Whether the team field is set.
      */
-    @java.lang.Override public boolean hasTeam() {
-      return ((bitField0_ & 0x00000001) != 0);
+    public boolean hasTeam() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -274,10 +319,10 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>required .proto.simulation.Team team = 1;</code>
-     * @return The team.
      */
-    @java.lang.Override public proto.simulation.SslGcCommon.Team getTeam() {
-      proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(team_);
+    public proto.simulation.SslGcCommon.Team getTeam() {
+      @SuppressWarnings("deprecation")
+      proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(team_);
       return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
     }
 
@@ -289,11 +334,9 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 2;</code>
-     * @return Whether the signature field is set.
      */
-    @java.lang.Override
     public boolean hasSignature() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -301,9 +344,7 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 2;</code>
-     * @return The signature.
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.Signature getSignature() {
       return signature_ == null ? proto.gc.SslGcRcon.Signature.getDefaultInstance() : signature_;
     }
@@ -314,7 +355,6 @@ public final class SslGcRconRemotecontrol {
      *
      * <code>optional .proto.gc.Signature signature = 2;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.SignatureOrBuilder getSignatureOrBuilder() {
       return signature_ == null ? proto.gc.SslGcRcon.Signature.getDefaultInstance() : signature_;
     }
@@ -343,13 +383,13 @@ public final class SslGcRconRemotecontrol {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeEnum(1, team_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, getSignature());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -358,15 +398,15 @@ public final class SslGcRconRemotecontrol {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, team_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getSignature());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -381,17 +421,18 @@ public final class SslGcRconRemotecontrol {
       }
       proto.gc.SslGcRconRemotecontrol.RemoteControlRegistration other = (proto.gc.SslGcRconRemotecontrol.RemoteControlRegistration) obj;
 
-      if (hasTeam() != other.hasTeam()) return false;
+      boolean result = true;
+      result = result && (hasTeam() == other.hasTeam());
       if (hasTeam()) {
-        if (team_ != other.team_) return false;
+        result = result && team_ == other.team_;
       }
-      if (hasSignature() != other.hasSignature()) return false;
+      result = result && (hasSignature() == other.hasSignature());
       if (hasSignature()) {
-        if (!getSignature()
-            .equals(other.getSignature())) return false;
+        result = result && getSignature()
+            .equals(other.getSignature());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -409,7 +450,7 @@ public final class SslGcRconRemotecontrol {
         hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
         hash = (53 * hash) + getSignature().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -547,13 +588,14 @@ public final class SslGcRconRemotecontrol {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         team_ = 0;
-        signature_ = null;
-        if (signatureBuilder_ != null) {
-          signatureBuilder_.dispose();
-          signatureBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signatureBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -580,58 +622,56 @@ public final class SslGcRconRemotecontrol {
       @java.lang.Override
       public proto.gc.SslGcRconRemotecontrol.RemoteControlRegistration buildPartial() {
         proto.gc.SslGcRconRemotecontrol.RemoteControlRegistration result = new proto.gc.SslGcRconRemotecontrol.RemoteControlRegistration(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.team_ = team_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcRconRemotecontrol.RemoteControlRegistration result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.team_ = team_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.signature_ = signatureBuilder_ == null
-              ? signature_
-              : signatureBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -651,7 +691,7 @@ public final class SslGcRconRemotecontrol {
         if (other.hasSignature()) {
           mergeSignature(other.getSignature());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -674,49 +714,17 @@ public final class SslGcRconRemotecontrol {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcRconRemotecontrol.RemoteControlRegistration parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int tmpRaw = input.readEnum();
-                proto.simulation.SslGcCommon.Team tmpValue =
-                    proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(1, tmpRaw);
-                } else {
-                  team_ = tmpRaw;
-                  bitField0_ |= 0x00000001;
-                }
-                break;
-              } // case 8
-              case 18: {
-                input.readMessage(
-                    getSignatureFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcRconRemotecontrol.RemoteControlRegistration) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -728,10 +736,9 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>required .proto.simulation.Team team = 1;</code>
-       * @return Whether the team field is set.
        */
-      @java.lang.Override public boolean hasTeam() {
-        return ((bitField0_ & 0x00000001) != 0);
+      public boolean hasTeam() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -739,11 +746,10 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>required .proto.simulation.Team team = 1;</code>
-       * @return The team.
        */
-      @java.lang.Override
       public proto.simulation.SslGcCommon.Team getTeam() {
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(team_);
+        @SuppressWarnings("deprecation")
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(team_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
       /**
@@ -752,8 +758,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>required .proto.simulation.Team team = 1;</code>
-       * @param value The team to set.
-       * @return This builder for chaining.
        */
       public Builder setTeam(proto.simulation.SslGcCommon.Team value) {
         if (value == null) {
@@ -770,7 +774,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>required .proto.simulation.Team team = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTeam() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -779,7 +782,7 @@ public final class SslGcRconRemotecontrol {
         return this;
       }
 
-      private proto.gc.SslGcRcon.Signature signature_;
+      private proto.gc.SslGcRcon.Signature signature_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcRcon.Signature, proto.gc.SslGcRcon.Signature.Builder, proto.gc.SslGcRcon.SignatureOrBuilder> signatureBuilder_;
       /**
@@ -788,10 +791,9 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional .proto.gc.Signature signature = 2;</code>
-       * @return Whether the signature field is set.
        */
       public boolean hasSignature() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -799,7 +801,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional .proto.gc.Signature signature = 2;</code>
-       * @return The signature.
        */
       public proto.gc.SslGcRcon.Signature getSignature() {
         if (signatureBuilder_ == null) {
@@ -821,11 +822,11 @@ public final class SslGcRconRemotecontrol {
             throw new NullPointerException();
           }
           signature_ = value;
+          onChanged();
         } else {
           signatureBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -839,11 +840,11 @@ public final class SslGcRconRemotecontrol {
           proto.gc.SslGcRcon.Signature.Builder builderForValue) {
         if (signatureBuilder_ == null) {
           signature_ = builderForValue.build();
+          onChanged();
         } else {
           signatureBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -855,18 +856,19 @@ public final class SslGcRconRemotecontrol {
        */
       public Builder mergeSignature(proto.gc.SslGcRcon.Signature value) {
         if (signatureBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            signature_ != null &&
-            signature_ != proto.gc.SslGcRcon.Signature.getDefaultInstance()) {
-            getSignatureBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              signature_ != null &&
+              signature_ != proto.gc.SslGcRcon.Signature.getDefaultInstance()) {
+            signature_ =
+              proto.gc.SslGcRcon.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
           } else {
             signature_ = value;
           }
+          onChanged();
         } else {
           signatureBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -877,13 +879,13 @@ public final class SslGcRconRemotecontrol {
        * <code>optional .proto.gc.Signature signature = 2;</code>
        */
       public Builder clearSignature() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        signature_ = null;
-        if (signatureBuilder_ != null) {
-          signatureBuilder_.dispose();
-          signatureBuilder_ = null;
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signatureBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
@@ -966,18 +968,7 @@ public final class SslGcRconRemotecontrol {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RemoteControlRegistration(input, extensionRegistry);
       }
     };
 
@@ -1007,7 +998,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 1;</code>
-     * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
@@ -1016,7 +1006,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 1;</code>
-     * @return The signature.
      */
     proto.gc.SslGcRcon.Signature getSignature();
     /**
@@ -1034,8 +1023,7 @@ public final class SslGcRconRemotecontrol {
      * the value is ignored and a reply is sent back
      * </pre>
      *
-     * <code>.proto.gc.RemoteControlToController.Request request = 2;</code>
-     * @return Whether the request field is set.
+     * <code>optional .proto.gc.RemoteControlToController.Request request = 2;</code>
      */
     boolean hasRequest();
     /**
@@ -1044,8 +1032,7 @@ public final class SslGcRconRemotecontrol {
      * the value is ignored and a reply is sent back
      * </pre>
      *
-     * <code>.proto.gc.RemoteControlToController.Request request = 2;</code>
-     * @return The request.
+     * <code>optional .proto.gc.RemoteControlToController.Request request = 2;</code>
      */
     proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request getRequest();
 
@@ -1054,8 +1041,7 @@ public final class SslGcRconRemotecontrol {
      * request a new desired keeper id
      * </pre>
      *
-     * <code>int32 desired_keeper = 3;</code>
-     * @return Whether the desiredKeeper field is set.
+     * <code>optional int32 desired_keeper = 3;</code>
      */
     boolean hasDesiredKeeper();
     /**
@@ -1063,8 +1049,7 @@ public final class SslGcRconRemotecontrol {
      * request a new desired keeper id
      * </pre>
      *
-     * <code>int32 desired_keeper = 3;</code>
-     * @return The desiredKeeper.
+     * <code>optional int32 desired_keeper = 3;</code>
      */
     int getDesiredKeeper();
 
@@ -1074,8 +1059,7 @@ public final class SslGcRconRemotecontrol {
      * false: cancel request
      * </pre>
      *
-     * <code>bool request_robot_substitution = 4;</code>
-     * @return Whether the requestRobotSubstitution field is set.
+     * <code>optional bool request_robot_substitution = 4;</code>
      */
     boolean hasRequestRobotSubstitution();
     /**
@@ -1084,8 +1068,7 @@ public final class SslGcRconRemotecontrol {
      * false: cancel request
      * </pre>
      *
-     * <code>bool request_robot_substitution = 4;</code>
-     * @return The requestRobotSubstitution.
+     * <code>optional bool request_robot_substitution = 4;</code>
      */
     boolean getRequestRobotSubstitution();
 
@@ -1095,8 +1078,7 @@ public final class SslGcRconRemotecontrol {
      * false: cancel the request
      * </pre>
      *
-     * <code>bool request_timeout = 5;</code>
-     * @return Whether the requestTimeout field is set.
+     * <code>optional bool request_timeout = 5;</code>
      */
     boolean hasRequestTimeout();
     /**
@@ -1105,8 +1087,7 @@ public final class SslGcRconRemotecontrol {
      * false: cancel the request
      * </pre>
      *
-     * <code>bool request_timeout = 5;</code>
-     * @return The requestTimeout.
+     * <code>optional bool request_timeout = 5;</code>
      */
     boolean getRequestTimeout();
 
@@ -1116,8 +1097,7 @@ public final class SslGcRconRemotecontrol {
      * false: cancel the request
      * </pre>
      *
-     * <code>bool request_emergency_stop = 6;</code>
-     * @return Whether the requestEmergencyStop field is set.
+     * <code>optional bool request_emergency_stop = 6;</code>
      */
     boolean hasRequestEmergencyStop();
     /**
@@ -1126,8 +1106,7 @@ public final class SslGcRconRemotecontrol {
      * false: cancel the request
      * </pre>
      *
-     * <code>bool request_emergency_stop = 6;</code>
-     * @return The requestEmergencyStop.
+     * <code>optional bool request_emergency_stop = 6;</code>
      */
     boolean getRequestEmergencyStop();
 
@@ -1140,7 +1119,7 @@ public final class SslGcRconRemotecontrol {
    *
    * Protobuf type {@code proto.gc.RemoteControlToController}
    */
-  public static final class RemoteControlToController extends
+  public  static final class RemoteControlToController extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.RemoteControlToController)
       RemoteControlToControllerOrBuilder {
@@ -1153,16 +1132,92 @@ public final class SslGcRconRemotecontrol {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new RemoteControlToController();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private RemoteControlToController(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              proto.gc.SslGcRcon.Signature.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(proto.gc.SslGcRcon.Signature.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+              @SuppressWarnings("deprecation")
+              proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request value = proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(2, rawValue);
+              } else {
+                msgCase_ = 2;
+                msg_ = rawValue;
+              }
+              break;
+            }
+            case 24: {
+              msgCase_ = 3;
+              msg_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              msgCase_ = 4;
+              msg_ = input.readBool();
+              break;
+            }
+            case 40: {
+              msgCase_ = 5;
+              msg_ = input.readBool();
+              break;
+            }
+            case 48: {
+              msgCase_ = 6;
+              msg_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1247,8 +1302,6 @@ public final class SslGcRconRemotecontrol {
       }
 
       /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -1256,10 +1309,6 @@ public final class SslGcRconRemotecontrol {
         return forNumber(value);
       }
 
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
       public static Request forNumber(int value) {
         switch (value) {
           case 0: return UNKNOWN;
@@ -1319,8 +1368,7 @@ public final class SslGcRconRemotecontrol {
     private int msgCase_ = 0;
     private java.lang.Object msg_;
     public enum MsgCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       REQUEST(2),
       DESIRED_KEEPER(3),
       REQUEST_ROBOT_SUBSTITUTION(4),
@@ -1332,8 +1380,6 @@ public final class SslGcRconRemotecontrol {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -1371,11 +1417,9 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 1;</code>
-     * @return Whether the signature field is set.
      */
-    @java.lang.Override
     public boolean hasSignature() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -1383,9 +1427,7 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.gc.Signature signature = 1;</code>
-     * @return The signature.
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.Signature getSignature() {
       return signature_ == null ? proto.gc.SslGcRcon.Signature.getDefaultInstance() : signature_;
     }
@@ -1396,7 +1438,6 @@ public final class SslGcRconRemotecontrol {
      *
      * <code>optional .proto.gc.Signature signature = 1;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.SignatureOrBuilder getSignatureOrBuilder() {
       return signature_ == null ? proto.gc.SslGcRcon.Signature.getDefaultInstance() : signature_;
     }
@@ -1408,8 +1449,7 @@ public final class SslGcRconRemotecontrol {
      * the value is ignored and a reply is sent back
      * </pre>
      *
-     * <code>.proto.gc.RemoteControlToController.Request request = 2;</code>
-     * @return Whether the request field is set.
+     * <code>optional .proto.gc.RemoteControlToController.Request request = 2;</code>
      */
     public boolean hasRequest() {
       return msgCase_ == 2;
@@ -1420,12 +1460,12 @@ public final class SslGcRconRemotecontrol {
      * the value is ignored and a reply is sent back
      * </pre>
      *
-     * <code>.proto.gc.RemoteControlToController.Request request = 2;</code>
-     * @return The request.
+     * <code>optional .proto.gc.RemoteControlToController.Request request = 2;</code>
      */
     public proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request getRequest() {
       if (msgCase_ == 2) {
-        proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request result = proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request.forNumber(
+        @SuppressWarnings("deprecation")
+        proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request result = proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request.valueOf(
             (java.lang.Integer) msg_);
         return result == null ? proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request.UNKNOWN : result;
       }
@@ -1438,10 +1478,8 @@ public final class SslGcRconRemotecontrol {
      * request a new desired keeper id
      * </pre>
      *
-     * <code>int32 desired_keeper = 3;</code>
-     * @return Whether the desiredKeeper field is set.
+     * <code>optional int32 desired_keeper = 3;</code>
      */
-    @java.lang.Override
     public boolean hasDesiredKeeper() {
       return msgCase_ == 3;
     }
@@ -1450,10 +1488,8 @@ public final class SslGcRconRemotecontrol {
      * request a new desired keeper id
      * </pre>
      *
-     * <code>int32 desired_keeper = 3;</code>
-     * @return The desiredKeeper.
+     * <code>optional int32 desired_keeper = 3;</code>
      */
-    @java.lang.Override
     public int getDesiredKeeper() {
       if (msgCase_ == 3) {
         return (java.lang.Integer) msg_;
@@ -1468,10 +1504,8 @@ public final class SslGcRconRemotecontrol {
      * false: cancel request
      * </pre>
      *
-     * <code>bool request_robot_substitution = 4;</code>
-     * @return Whether the requestRobotSubstitution field is set.
+     * <code>optional bool request_robot_substitution = 4;</code>
      */
-    @java.lang.Override
     public boolean hasRequestRobotSubstitution() {
       return msgCase_ == 4;
     }
@@ -1481,10 +1515,8 @@ public final class SslGcRconRemotecontrol {
      * false: cancel request
      * </pre>
      *
-     * <code>bool request_robot_substitution = 4;</code>
-     * @return The requestRobotSubstitution.
+     * <code>optional bool request_robot_substitution = 4;</code>
      */
-    @java.lang.Override
     public boolean getRequestRobotSubstitution() {
       if (msgCase_ == 4) {
         return (java.lang.Boolean) msg_;
@@ -1499,10 +1531,8 @@ public final class SslGcRconRemotecontrol {
      * false: cancel the request
      * </pre>
      *
-     * <code>bool request_timeout = 5;</code>
-     * @return Whether the requestTimeout field is set.
+     * <code>optional bool request_timeout = 5;</code>
      */
-    @java.lang.Override
     public boolean hasRequestTimeout() {
       return msgCase_ == 5;
     }
@@ -1512,10 +1542,8 @@ public final class SslGcRconRemotecontrol {
      * false: cancel the request
      * </pre>
      *
-     * <code>bool request_timeout = 5;</code>
-     * @return The requestTimeout.
+     * <code>optional bool request_timeout = 5;</code>
      */
-    @java.lang.Override
     public boolean getRequestTimeout() {
       if (msgCase_ == 5) {
         return (java.lang.Boolean) msg_;
@@ -1530,10 +1558,8 @@ public final class SslGcRconRemotecontrol {
      * false: cancel the request
      * </pre>
      *
-     * <code>bool request_emergency_stop = 6;</code>
-     * @return Whether the requestEmergencyStop field is set.
+     * <code>optional bool request_emergency_stop = 6;</code>
      */
-    @java.lang.Override
     public boolean hasRequestEmergencyStop() {
       return msgCase_ == 6;
     }
@@ -1543,10 +1569,8 @@ public final class SslGcRconRemotecontrol {
      * false: cancel the request
      * </pre>
      *
-     * <code>bool request_emergency_stop = 6;</code>
-     * @return The requestEmergencyStop.
+     * <code>optional bool request_emergency_stop = 6;</code>
      */
-    @java.lang.Override
     public boolean getRequestEmergencyStop() {
       if (msgCase_ == 6) {
         return (java.lang.Boolean) msg_;
@@ -1574,7 +1598,7 @@ public final class SslGcRconRemotecontrol {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, getSignature());
       }
       if (msgCase_ == 2) {
@@ -1596,7 +1620,7 @@ public final class SslGcRconRemotecontrol {
         output.writeBool(
             6, (boolean)((java.lang.Boolean) msg_));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1605,7 +1629,7 @@ public final class SslGcRconRemotecontrol {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getSignature());
       }
@@ -1633,7 +1657,7 @@ public final class SslGcRconRemotecontrol {
           .computeBoolSize(
               6, (boolean)((java.lang.Boolean) msg_));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1648,38 +1672,41 @@ public final class SslGcRconRemotecontrol {
       }
       proto.gc.SslGcRconRemotecontrol.RemoteControlToController other = (proto.gc.SslGcRconRemotecontrol.RemoteControlToController) obj;
 
-      if (hasSignature() != other.hasSignature()) return false;
+      boolean result = true;
+      result = result && (hasSignature() == other.hasSignature());
       if (hasSignature()) {
-        if (!getSignature()
-            .equals(other.getSignature())) return false;
+        result = result && getSignature()
+            .equals(other.getSignature());
       }
-      if (!getMsgCase().equals(other.getMsgCase())) return false;
+      result = result && getMsgCase().equals(
+          other.getMsgCase());
+      if (!result) return false;
       switch (msgCase_) {
         case 2:
-          if (!getRequest()
-              .equals(other.getRequest())) return false;
+          result = result && getRequest()
+              .equals(other.getRequest());
           break;
         case 3:
-          if (getDesiredKeeper()
-              != other.getDesiredKeeper()) return false;
+          result = result && (getDesiredKeeper()
+              == other.getDesiredKeeper());
           break;
         case 4:
-          if (getRequestRobotSubstitution()
-              != other.getRequestRobotSubstitution()) return false;
+          result = result && (getRequestRobotSubstitution()
+              == other.getRequestRobotSubstitution());
           break;
         case 5:
-          if (getRequestTimeout()
-              != other.getRequestTimeout()) return false;
+          result = result && (getRequestTimeout()
+              == other.getRequestTimeout());
           break;
         case 6:
-          if (getRequestEmergencyStop()
-              != other.getRequestEmergencyStop()) return false;
+          result = result && (getRequestEmergencyStop()
+              == other.getRequestEmergencyStop());
           break;
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1720,7 +1747,7 @@ public final class SslGcRconRemotecontrol {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1858,12 +1885,12 @@ public final class SslGcRconRemotecontrol {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        signature_ = null;
-        if (signatureBuilder_ != null) {
-          signatureBuilder_.dispose();
-          signatureBuilder_ = null;
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signatureBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         msgCase_ = 0;
         msg_ = null;
         return this;
@@ -1892,60 +1919,68 @@ public final class SslGcRconRemotecontrol {
       @java.lang.Override
       public proto.gc.SslGcRconRemotecontrol.RemoteControlToController buildPartial() {
         proto.gc.SslGcRconRemotecontrol.RemoteControlToController result = new proto.gc.SslGcRconRemotecontrol.RemoteControlToController(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (msgCase_ == 2) {
+          result.msg_ = msg_;
+        }
+        if (msgCase_ == 3) {
+          result.msg_ = msg_;
+        }
+        if (msgCase_ == 4) {
+          result.msg_ = msg_;
+        }
+        if (msgCase_ == 5) {
+          result.msg_ = msg_;
+        }
+        if (msgCase_ == 6) {
+          result.msg_ = msg_;
+        }
+        result.bitField0_ = to_bitField0_;
+        result.msgCase_ = msgCase_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcRconRemotecontrol.RemoteControlToController result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.signature_ = signatureBuilder_ == null
-              ? signature_
-              : signatureBuilder_.build();
-          to_bitField0_ |= 0x00000001;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
-      private void buildPartialOneofs(proto.gc.SslGcRconRemotecontrol.RemoteControlToController result) {
-        result.msgCase_ = msgCase_;
-        result.msg_ = this.msg_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1987,7 +2022,7 @@ public final class SslGcRconRemotecontrol {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2007,69 +2042,17 @@ public final class SslGcRconRemotecontrol {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcRconRemotecontrol.RemoteControlToController parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getSignatureFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 16: {
-                int rawValue = input.readEnum();
-                proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request value =
-                    proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request.forNumber(rawValue);
-                if (value == null) {
-                  mergeUnknownVarintField(2, rawValue);
-                } else {
-                  msgCase_ = 2;
-                  msg_ = rawValue;
-                }
-                break;
-              } // case 16
-              case 24: {
-                msg_ = input.readInt32();
-                msgCase_ = 3;
-                break;
-              } // case 24
-              case 32: {
-                msg_ = input.readBool();
-                msgCase_ = 4;
-                break;
-              } // case 32
-              case 40: {
-                msg_ = input.readBool();
-                msgCase_ = 5;
-                break;
-              } // case 40
-              case 48: {
-                msg_ = input.readBool();
-                msgCase_ = 6;
-                break;
-              } // case 48
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcRconRemotecontrol.RemoteControlToController) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int msgCase_ = 0;
@@ -2089,7 +2072,7 @@ public final class SslGcRconRemotecontrol {
 
       private int bitField0_;
 
-      private proto.gc.SslGcRcon.Signature signature_;
+      private proto.gc.SslGcRcon.Signature signature_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcRcon.Signature, proto.gc.SslGcRcon.Signature.Builder, proto.gc.SslGcRcon.SignatureOrBuilder> signatureBuilder_;
       /**
@@ -2098,10 +2081,9 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional .proto.gc.Signature signature = 1;</code>
-       * @return Whether the signature field is set.
        */
       public boolean hasSignature() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -2109,7 +2091,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional .proto.gc.Signature signature = 1;</code>
-       * @return The signature.
        */
       public proto.gc.SslGcRcon.Signature getSignature() {
         if (signatureBuilder_ == null) {
@@ -2131,11 +2112,11 @@ public final class SslGcRconRemotecontrol {
             throw new NullPointerException();
           }
           signature_ = value;
+          onChanged();
         } else {
           signatureBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -2149,11 +2130,11 @@ public final class SslGcRconRemotecontrol {
           proto.gc.SslGcRcon.Signature.Builder builderForValue) {
         if (signatureBuilder_ == null) {
           signature_ = builderForValue.build();
+          onChanged();
         } else {
           signatureBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -2165,18 +2146,19 @@ public final class SslGcRconRemotecontrol {
        */
       public Builder mergeSignature(proto.gc.SslGcRcon.Signature value) {
         if (signatureBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            signature_ != null &&
-            signature_ != proto.gc.SslGcRcon.Signature.getDefaultInstance()) {
-            getSignatureBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              signature_ != null &&
+              signature_ != proto.gc.SslGcRcon.Signature.getDefaultInstance()) {
+            signature_ =
+              proto.gc.SslGcRcon.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
           } else {
             signature_ = value;
           }
+          onChanged();
         } else {
           signatureBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -2187,13 +2169,13 @@ public final class SslGcRconRemotecontrol {
        * <code>optional .proto.gc.Signature signature = 1;</code>
        */
       public Builder clearSignature() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        signature_ = null;
-        if (signatureBuilder_ != null) {
-          signatureBuilder_.dispose();
-          signatureBuilder_ = null;
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signatureBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
       /**
@@ -2250,10 +2232,8 @@ public final class SslGcRconRemotecontrol {
        * the value is ignored and a reply is sent back
        * </pre>
        *
-       * <code>.proto.gc.RemoteControlToController.Request request = 2;</code>
-       * @return Whether the request field is set.
+       * <code>optional .proto.gc.RemoteControlToController.Request request = 2;</code>
        */
-      @java.lang.Override
       public boolean hasRequest() {
         return msgCase_ == 2;
       }
@@ -2263,13 +2243,12 @@ public final class SslGcRconRemotecontrol {
        * the value is ignored and a reply is sent back
        * </pre>
        *
-       * <code>.proto.gc.RemoteControlToController.Request request = 2;</code>
-       * @return The request.
+       * <code>optional .proto.gc.RemoteControlToController.Request request = 2;</code>
        */
-      @java.lang.Override
       public proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request getRequest() {
         if (msgCase_ == 2) {
-          proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request result = proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request.forNumber(
+          @SuppressWarnings("deprecation")
+          proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request result = proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request.valueOf(
               (java.lang.Integer) msg_);
           return result == null ? proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request.UNKNOWN : result;
         }
@@ -2281,9 +2260,7 @@ public final class SslGcRconRemotecontrol {
        * the value is ignored and a reply is sent back
        * </pre>
        *
-       * <code>.proto.gc.RemoteControlToController.Request request = 2;</code>
-       * @param value The request to set.
-       * @return This builder for chaining.
+       * <code>optional .proto.gc.RemoteControlToController.Request request = 2;</code>
        */
       public Builder setRequest(proto.gc.SslGcRconRemotecontrol.RemoteControlToController.Request value) {
         if (value == null) {
@@ -2300,8 +2277,7 @@ public final class SslGcRconRemotecontrol {
        * the value is ignored and a reply is sent back
        * </pre>
        *
-       * <code>.proto.gc.RemoteControlToController.Request request = 2;</code>
-       * @return This builder for chaining.
+       * <code>optional .proto.gc.RemoteControlToController.Request request = 2;</code>
        */
       public Builder clearRequest() {
         if (msgCase_ == 2) {
@@ -2317,8 +2293,7 @@ public final class SslGcRconRemotecontrol {
        * request a new desired keeper id
        * </pre>
        *
-       * <code>int32 desired_keeper = 3;</code>
-       * @return Whether the desiredKeeper field is set.
+       * <code>optional int32 desired_keeper = 3;</code>
        */
       public boolean hasDesiredKeeper() {
         return msgCase_ == 3;
@@ -2328,8 +2303,7 @@ public final class SslGcRconRemotecontrol {
        * request a new desired keeper id
        * </pre>
        *
-       * <code>int32 desired_keeper = 3;</code>
-       * @return The desiredKeeper.
+       * <code>optional int32 desired_keeper = 3;</code>
        */
       public int getDesiredKeeper() {
         if (msgCase_ == 3) {
@@ -2342,12 +2316,9 @@ public final class SslGcRconRemotecontrol {
        * request a new desired keeper id
        * </pre>
        *
-       * <code>int32 desired_keeper = 3;</code>
-       * @param value The desiredKeeper to set.
-       * @return This builder for chaining.
+       * <code>optional int32 desired_keeper = 3;</code>
        */
       public Builder setDesiredKeeper(int value) {
-        
         msgCase_ = 3;
         msg_ = value;
         onChanged();
@@ -2358,8 +2329,7 @@ public final class SslGcRconRemotecontrol {
        * request a new desired keeper id
        * </pre>
        *
-       * <code>int32 desired_keeper = 3;</code>
-       * @return This builder for chaining.
+       * <code>optional int32 desired_keeper = 3;</code>
        */
       public Builder clearDesiredKeeper() {
         if (msgCase_ == 3) {
@@ -2376,8 +2346,7 @@ public final class SslGcRconRemotecontrol {
        * false: cancel request
        * </pre>
        *
-       * <code>bool request_robot_substitution = 4;</code>
-       * @return Whether the requestRobotSubstitution field is set.
+       * <code>optional bool request_robot_substitution = 4;</code>
        */
       public boolean hasRequestRobotSubstitution() {
         return msgCase_ == 4;
@@ -2388,8 +2357,7 @@ public final class SslGcRconRemotecontrol {
        * false: cancel request
        * </pre>
        *
-       * <code>bool request_robot_substitution = 4;</code>
-       * @return The requestRobotSubstitution.
+       * <code>optional bool request_robot_substitution = 4;</code>
        */
       public boolean getRequestRobotSubstitution() {
         if (msgCase_ == 4) {
@@ -2403,12 +2371,9 @@ public final class SslGcRconRemotecontrol {
        * false: cancel request
        * </pre>
        *
-       * <code>bool request_robot_substitution = 4;</code>
-       * @param value The requestRobotSubstitution to set.
-       * @return This builder for chaining.
+       * <code>optional bool request_robot_substitution = 4;</code>
        */
       public Builder setRequestRobotSubstitution(boolean value) {
-        
         msgCase_ = 4;
         msg_ = value;
         onChanged();
@@ -2420,8 +2385,7 @@ public final class SslGcRconRemotecontrol {
        * false: cancel request
        * </pre>
        *
-       * <code>bool request_robot_substitution = 4;</code>
-       * @return This builder for chaining.
+       * <code>optional bool request_robot_substitution = 4;</code>
        */
       public Builder clearRequestRobotSubstitution() {
         if (msgCase_ == 4) {
@@ -2438,8 +2402,7 @@ public final class SslGcRconRemotecontrol {
        * false: cancel the request
        * </pre>
        *
-       * <code>bool request_timeout = 5;</code>
-       * @return Whether the requestTimeout field is set.
+       * <code>optional bool request_timeout = 5;</code>
        */
       public boolean hasRequestTimeout() {
         return msgCase_ == 5;
@@ -2450,8 +2413,7 @@ public final class SslGcRconRemotecontrol {
        * false: cancel the request
        * </pre>
        *
-       * <code>bool request_timeout = 5;</code>
-       * @return The requestTimeout.
+       * <code>optional bool request_timeout = 5;</code>
        */
       public boolean getRequestTimeout() {
         if (msgCase_ == 5) {
@@ -2465,12 +2427,9 @@ public final class SslGcRconRemotecontrol {
        * false: cancel the request
        * </pre>
        *
-       * <code>bool request_timeout = 5;</code>
-       * @param value The requestTimeout to set.
-       * @return This builder for chaining.
+       * <code>optional bool request_timeout = 5;</code>
        */
       public Builder setRequestTimeout(boolean value) {
-        
         msgCase_ = 5;
         msg_ = value;
         onChanged();
@@ -2482,8 +2441,7 @@ public final class SslGcRconRemotecontrol {
        * false: cancel the request
        * </pre>
        *
-       * <code>bool request_timeout = 5;</code>
-       * @return This builder for chaining.
+       * <code>optional bool request_timeout = 5;</code>
        */
       public Builder clearRequestTimeout() {
         if (msgCase_ == 5) {
@@ -2500,8 +2458,7 @@ public final class SslGcRconRemotecontrol {
        * false: cancel the request
        * </pre>
        *
-       * <code>bool request_emergency_stop = 6;</code>
-       * @return Whether the requestEmergencyStop field is set.
+       * <code>optional bool request_emergency_stop = 6;</code>
        */
       public boolean hasRequestEmergencyStop() {
         return msgCase_ == 6;
@@ -2512,8 +2469,7 @@ public final class SslGcRconRemotecontrol {
        * false: cancel the request
        * </pre>
        *
-       * <code>bool request_emergency_stop = 6;</code>
-       * @return The requestEmergencyStop.
+       * <code>optional bool request_emergency_stop = 6;</code>
        */
       public boolean getRequestEmergencyStop() {
         if (msgCase_ == 6) {
@@ -2527,12 +2483,9 @@ public final class SslGcRconRemotecontrol {
        * false: cancel the request
        * </pre>
        *
-       * <code>bool request_emergency_stop = 6;</code>
-       * @param value The requestEmergencyStop to set.
-       * @return This builder for chaining.
+       * <code>optional bool request_emergency_stop = 6;</code>
        */
       public Builder setRequestEmergencyStop(boolean value) {
-        
         msgCase_ = 6;
         msg_ = value;
         onChanged();
@@ -2544,8 +2497,7 @@ public final class SslGcRconRemotecontrol {
        * false: cancel the request
        * </pre>
        *
-       * <code>bool request_emergency_stop = 6;</code>
-       * @return This builder for chaining.
+       * <code>optional bool request_emergency_stop = 6;</code>
        */
       public Builder clearRequestEmergencyStop() {
         if (msgCase_ == 6) {
@@ -2588,18 +2540,7 @@ public final class SslGcRconRemotecontrol {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RemoteControlToController(input, extensionRegistry);
       }
     };
 
@@ -2629,7 +2570,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
-     * @return Whether the controllerReply field is set.
      */
     boolean hasControllerReply();
     /**
@@ -2638,7 +2578,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
-     * @return The controllerReply.
      */
     proto.gc.SslGcRcon.ControllerReply getControllerReply();
     /**
@@ -2656,7 +2595,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.gc.RemoteControlTeamState state = 2;</code>
-     * @return Whether the state field is set.
      */
     boolean hasState();
     /**
@@ -2665,7 +2603,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.gc.RemoteControlTeamState state = 2;</code>
-     * @return The state.
      */
     proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState getState();
     /**
@@ -2684,7 +2621,7 @@ public final class SslGcRconRemotecontrol {
    *
    * Protobuf type {@code proto.gc.ControllerToRemoteControl}
    */
-  public static final class ControllerToRemoteControl extends
+  public  static final class ControllerToRemoteControl extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.ControllerToRemoteControl)
       ControllerToRemoteControlOrBuilder {
@@ -2697,16 +2634,73 @@ public final class SslGcRconRemotecontrol {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ControllerToRemoteControl();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private ControllerToRemoteControl(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              proto.gc.SslGcRcon.ControllerReply.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = controllerReply_.toBuilder();
+              }
+              controllerReply_ = input.readMessage(proto.gc.SslGcRcon.ControllerReply.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(controllerReply_);
+                controllerReply_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 18: {
+              proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = state_.toBuilder();
+              }
+              state_ = input.readMessage(proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(state_);
+                state_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2730,11 +2724,9 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
-     * @return Whether the controllerReply field is set.
      */
-    @java.lang.Override
     public boolean hasControllerReply() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -2742,9 +2734,7 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
-     * @return The controllerReply.
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.ControllerReply getControllerReply() {
       return controllerReply_ == null ? proto.gc.SslGcRcon.ControllerReply.getDefaultInstance() : controllerReply_;
     }
@@ -2755,7 +2745,6 @@ public final class SslGcRconRemotecontrol {
      *
      * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcRcon.ControllerReplyOrBuilder getControllerReplyOrBuilder() {
       return controllerReply_ == null ? proto.gc.SslGcRcon.ControllerReply.getDefaultInstance() : controllerReply_;
     }
@@ -2768,11 +2757,9 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.gc.RemoteControlTeamState state = 2;</code>
-     * @return Whether the state field is set.
      */
-    @java.lang.Override
     public boolean hasState() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -2780,9 +2767,7 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.gc.RemoteControlTeamState state = 2;</code>
-     * @return The state.
      */
-    @java.lang.Override
     public proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState getState() {
       return state_ == null ? proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState.getDefaultInstance() : state_;
     }
@@ -2793,7 +2778,6 @@ public final class SslGcRconRemotecontrol {
      *
      * <code>optional .proto.gc.RemoteControlTeamState state = 2;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcRconRemotecontrol.RemoteControlTeamStateOrBuilder getStateOrBuilder() {
       return state_ == null ? proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState.getDefaultInstance() : state_;
     }
@@ -2812,13 +2796,13 @@ public final class SslGcRconRemotecontrol {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, getControllerReply());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, getState());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2827,15 +2811,15 @@ public final class SslGcRconRemotecontrol {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getControllerReply());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getState());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2850,18 +2834,19 @@ public final class SslGcRconRemotecontrol {
       }
       proto.gc.SslGcRconRemotecontrol.ControllerToRemoteControl other = (proto.gc.SslGcRconRemotecontrol.ControllerToRemoteControl) obj;
 
-      if (hasControllerReply() != other.hasControllerReply()) return false;
+      boolean result = true;
+      result = result && (hasControllerReply() == other.hasControllerReply());
       if (hasControllerReply()) {
-        if (!getControllerReply()
-            .equals(other.getControllerReply())) return false;
+        result = result && getControllerReply()
+            .equals(other.getControllerReply());
       }
-      if (hasState() != other.hasState()) return false;
+      result = result && (hasState() == other.hasState());
       if (hasState()) {
-        if (!getState()
-            .equals(other.getState())) return false;
+        result = result && getState()
+            .equals(other.getState());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2879,7 +2864,7 @@ public final class SslGcRconRemotecontrol {
         hash = (37 * hash) + STATE_FIELD_NUMBER;
         hash = (53 * hash) + getState().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3018,17 +3003,18 @@ public final class SslGcRconRemotecontrol {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        controllerReply_ = null;
-        if (controllerReplyBuilder_ != null) {
-          controllerReplyBuilder_.dispose();
-          controllerReplyBuilder_ = null;
+        if (controllerReplyBuilder_ == null) {
+          controllerReply_ = null;
+        } else {
+          controllerReplyBuilder_.clear();
         }
-        state_ = null;
-        if (stateBuilder_ != null) {
-          stateBuilder_.dispose();
-          stateBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (stateBuilder_ == null) {
+          state_ = null;
+        } else {
+          stateBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -3055,60 +3041,60 @@ public final class SslGcRconRemotecontrol {
       @java.lang.Override
       public proto.gc.SslGcRconRemotecontrol.ControllerToRemoteControl buildPartial() {
         proto.gc.SslGcRconRemotecontrol.ControllerToRemoteControl result = new proto.gc.SslGcRconRemotecontrol.ControllerToRemoteControl(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (controllerReplyBuilder_ == null) {
+          result.controllerReply_ = controllerReply_;
+        } else {
+          result.controllerReply_ = controllerReplyBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (stateBuilder_ == null) {
+          result.state_ = state_;
+        } else {
+          result.state_ = stateBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcRconRemotecontrol.ControllerToRemoteControl result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.controllerReply_ = controllerReplyBuilder_ == null
-              ? controllerReply_
-              : controllerReplyBuilder_.build();
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.state_ = stateBuilder_ == null
-              ? state_
-              : stateBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3128,7 +3114,7 @@ public final class SslGcRconRemotecontrol {
         if (other.hasState()) {
           mergeState(other.getState());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3143,49 +3129,22 @@ public final class SslGcRconRemotecontrol {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcRconRemotecontrol.ControllerToRemoteControl parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getControllerReplyFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getStateFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcRconRemotecontrol.ControllerToRemoteControl) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
 
-      private proto.gc.SslGcRcon.ControllerReply controllerReply_;
+      private proto.gc.SslGcRcon.ControllerReply controllerReply_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcRcon.ControllerReply, proto.gc.SslGcRcon.ControllerReply.Builder, proto.gc.SslGcRcon.ControllerReplyOrBuilder> controllerReplyBuilder_;
       /**
@@ -3194,10 +3153,9 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
-       * @return Whether the controllerReply field is set.
        */
       public boolean hasControllerReply() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -3205,7 +3163,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
-       * @return The controllerReply.
        */
       public proto.gc.SslGcRcon.ControllerReply getControllerReply() {
         if (controllerReplyBuilder_ == null) {
@@ -3227,11 +3184,11 @@ public final class SslGcRconRemotecontrol {
             throw new NullPointerException();
           }
           controllerReply_ = value;
+          onChanged();
         } else {
           controllerReplyBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -3245,11 +3202,11 @@ public final class SslGcRconRemotecontrol {
           proto.gc.SslGcRcon.ControllerReply.Builder builderForValue) {
         if (controllerReplyBuilder_ == null) {
           controllerReply_ = builderForValue.build();
+          onChanged();
         } else {
           controllerReplyBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -3261,18 +3218,19 @@ public final class SslGcRconRemotecontrol {
        */
       public Builder mergeControllerReply(proto.gc.SslGcRcon.ControllerReply value) {
         if (controllerReplyBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            controllerReply_ != null &&
-            controllerReply_ != proto.gc.SslGcRcon.ControllerReply.getDefaultInstance()) {
-            getControllerReplyBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              controllerReply_ != null &&
+              controllerReply_ != proto.gc.SslGcRcon.ControllerReply.getDefaultInstance()) {
+            controllerReply_ =
+              proto.gc.SslGcRcon.ControllerReply.newBuilder(controllerReply_).mergeFrom(value).buildPartial();
           } else {
             controllerReply_ = value;
           }
+          onChanged();
         } else {
           controllerReplyBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -3283,13 +3241,13 @@ public final class SslGcRconRemotecontrol {
        * <code>optional .proto.gc.ControllerReply controller_reply = 1;</code>
        */
       public Builder clearControllerReply() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        controllerReply_ = null;
-        if (controllerReplyBuilder_ != null) {
-          controllerReplyBuilder_.dispose();
-          controllerReplyBuilder_ = null;
+        if (controllerReplyBuilder_ == null) {
+          controllerReply_ = null;
+          onChanged();
+        } else {
+          controllerReplyBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
       /**
@@ -3340,7 +3298,7 @@ public final class SslGcRconRemotecontrol {
         return controllerReplyBuilder_;
       }
 
-      private proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState state_;
+      private proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState state_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState, proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState.Builder, proto.gc.SslGcRconRemotecontrol.RemoteControlTeamStateOrBuilder> stateBuilder_;
       /**
@@ -3349,10 +3307,9 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional .proto.gc.RemoteControlTeamState state = 2;</code>
-       * @return Whether the state field is set.
        */
       public boolean hasState() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -3360,7 +3317,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional .proto.gc.RemoteControlTeamState state = 2;</code>
-       * @return The state.
        */
       public proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState getState() {
         if (stateBuilder_ == null) {
@@ -3382,11 +3338,11 @@ public final class SslGcRconRemotecontrol {
             throw new NullPointerException();
           }
           state_ = value;
+          onChanged();
         } else {
           stateBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -3400,11 +3356,11 @@ public final class SslGcRconRemotecontrol {
           proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState.Builder builderForValue) {
         if (stateBuilder_ == null) {
           state_ = builderForValue.build();
+          onChanged();
         } else {
           stateBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -3416,18 +3372,19 @@ public final class SslGcRconRemotecontrol {
        */
       public Builder mergeState(proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState value) {
         if (stateBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            state_ != null &&
-            state_ != proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState.getDefaultInstance()) {
-            getStateBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              state_ != null &&
+              state_ != proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState.getDefaultInstance()) {
+            state_ =
+              proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState.newBuilder(state_).mergeFrom(value).buildPartial();
           } else {
             state_ = value;
           }
+          onChanged();
         } else {
           stateBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -3438,13 +3395,13 @@ public final class SslGcRconRemotecontrol {
        * <code>optional .proto.gc.RemoteControlTeamState state = 2;</code>
        */
       public Builder clearState() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        state_ = null;
-        if (stateBuilder_ != null) {
-          stateBuilder_.dispose();
-          stateBuilder_ = null;
+        if (stateBuilder_ == null) {
+          state_ = null;
+          onChanged();
+        } else {
+          stateBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
@@ -3527,18 +3484,7 @@ public final class SslGcRconRemotecontrol {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ControllerToRemoteControl(input, extensionRegistry);
       }
     };
 
@@ -3568,7 +3514,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.simulation.Team team = 12;</code>
-     * @return Whether the team field is set.
      */
     boolean hasTeam();
     /**
@@ -3577,7 +3522,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.simulation.Team team = 12;</code>
-     * @return The team.
      */
     proto.simulation.SslGcCommon.Team getTeam();
 
@@ -3587,7 +3531,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>repeated .proto.gc.RemoteControlRequestType available_requests = 1;</code>
-     * @return A list containing the availableRequests.
      */
     java.util.List<proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType> getAvailableRequestsList();
     /**
@@ -3596,7 +3539,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>repeated .proto.gc.RemoteControlRequestType available_requests = 1;</code>
-     * @return The count of availableRequests.
      */
     int getAvailableRequestsCount();
     /**
@@ -3605,8 +3547,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>repeated .proto.gc.RemoteControlRequestType available_requests = 1;</code>
-     * @param index The index of the element to return.
-     * @return The availableRequests at the given index.
      */
     proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType getAvailableRequests(int index);
 
@@ -3616,7 +3556,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>repeated .proto.gc.RemoteControlRequestType active_requests = 2;</code>
-     * @return A list containing the activeRequests.
      */
     java.util.List<proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType> getActiveRequestsList();
     /**
@@ -3625,7 +3564,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>repeated .proto.gc.RemoteControlRequestType active_requests = 2;</code>
-     * @return The count of activeRequests.
      */
     int getActiveRequestsCount();
     /**
@@ -3634,8 +3572,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>repeated .proto.gc.RemoteControlRequestType active_requests = 2;</code>
-     * @param index The index of the element to return.
-     * @return The activeRequests at the given index.
      */
     proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType getActiveRequests(int index);
 
@@ -3645,7 +3581,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional int32 keeper_id = 3;</code>
-     * @return Whether the keeperId field is set.
      */
     boolean hasKeeperId();
     /**
@@ -3654,7 +3589,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional int32 keeper_id = 3;</code>
-     * @return The keeperId.
      */
     int getKeeperId();
 
@@ -3665,7 +3599,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional float emergency_stop_in = 4;</code>
-     * @return Whether the emergencyStopIn field is set.
      */
     boolean hasEmergencyStopIn();
     /**
@@ -3675,7 +3608,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional float emergency_stop_in = 4;</code>
-     * @return The emergencyStopIn.
      */
     float getEmergencyStopIn();
 
@@ -3685,7 +3617,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional int32 timeouts_left = 5;</code>
-     * @return Whether the timeoutsLeft field is set.
      */
     boolean hasTimeoutsLeft();
     /**
@@ -3694,7 +3625,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional int32 timeouts_left = 5;</code>
-     * @return The timeoutsLeft.
      */
     int getTimeoutsLeft();
 
@@ -3704,7 +3634,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional float timeout_time_left = 10;</code>
-     * @return Whether the timeoutTimeLeft field is set.
      */
     boolean hasTimeoutTimeLeft();
     /**
@@ -3713,7 +3642,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional float timeout_time_left = 10;</code>
-     * @return The timeoutTimeLeft.
      */
     float getTimeoutTimeLeft();
 
@@ -3723,7 +3651,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional int32 challenge_flags_left = 6;</code>
-     * @return Whether the challengeFlagsLeft field is set.
      */
     boolean hasChallengeFlagsLeft();
     /**
@@ -3732,7 +3659,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional int32 challenge_flags_left = 6;</code>
-     * @return The challengeFlagsLeft.
      */
     int getChallengeFlagsLeft();
 
@@ -3742,7 +3668,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional int32 max_robots = 7;</code>
-     * @return Whether the maxRobots field is set.
      */
     boolean hasMaxRobots();
     /**
@@ -3751,7 +3676,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional int32 max_robots = 7;</code>
-     * @return The maxRobots.
      */
     int getMaxRobots();
 
@@ -3761,7 +3685,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional int32 robots_on_field = 9;</code>
-     * @return Whether the robotsOnField field is set.
      */
     boolean hasRobotsOnField();
     /**
@@ -3770,7 +3693,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional int32 robots_on_field = 9;</code>
-     * @return The robotsOnField.
      */
     int getRobotsOnField();
 
@@ -3780,7 +3702,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>repeated float yellow_cards_due = 8;</code>
-     * @return A list containing the yellowCardsDue.
      */
     java.util.List<java.lang.Float> getYellowCardsDueList();
     /**
@@ -3789,7 +3710,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>repeated float yellow_cards_due = 8;</code>
-     * @return The count of yellowCardsDue.
      */
     int getYellowCardsDueCount();
     /**
@@ -3798,8 +3718,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>repeated float yellow_cards_due = 8;</code>
-     * @param index The index of the element to return.
-     * @return The yellowCardsDue at the given index.
      */
     float getYellowCardsDue(int index);
 
@@ -3809,7 +3727,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional bool can_substitute_robot = 11;</code>
-     * @return Whether the canSubstituteRobot field is set.
      */
     boolean hasCanSubstituteRobot();
     /**
@@ -3818,7 +3735,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional bool can_substitute_robot = 11;</code>
-     * @return The canSubstituteRobot.
      */
     boolean getCanSubstituteRobot();
   }
@@ -3829,7 +3745,7 @@ public final class SslGcRconRemotecontrol {
    *
    * Protobuf type {@code proto.gc.RemoteControlTeamState}
    */
-  public static final class RemoteControlTeamState extends
+  public  static final class RemoteControlTeamState extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.RemoteControlTeamState)
       RemoteControlTeamStateOrBuilder {
@@ -3842,20 +3758,211 @@ public final class SslGcRconRemotecontrol {
       team_ = 0;
       availableRequests_ = java.util.Collections.emptyList();
       activeRequests_ = java.util.Collections.emptyList();
-      yellowCardsDue_ = emptyFloatList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new RemoteControlTeamState();
+      keeperId_ = 0;
+      emergencyStopIn_ = 0F;
+      timeoutsLeft_ = 0;
+      timeoutTimeLeft_ = 0F;
+      challengeFlagsLeft_ = 0;
+      maxRobots_ = 0;
+      robotsOnField_ = 0;
+      yellowCardsDue_ = java.util.Collections.emptyList();
+      canSubstituteRobot_ = false;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private RemoteControlTeamState(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+              @SuppressWarnings("deprecation")
+              proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType value = proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                  availableRequests_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                availableRequests_.add(rawValue);
+              }
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while(input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+                proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType value = proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType.valueOf(rawValue);
+                if (value == null) {
+                  unknownFields.mergeVarintField(1, rawValue);
+                } else {
+                  if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                    availableRequests_ = new java.util.ArrayList<java.lang.Integer>();
+                    mutable_bitField0_ |= 0x00000002;
+                  }
+                  availableRequests_.add(rawValue);
+                }
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+              @SuppressWarnings("deprecation")
+              proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType value = proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(2, rawValue);
+              } else {
+                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                  activeRequests_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                activeRequests_.add(rawValue);
+              }
+              break;
+            }
+            case 18: {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while(input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+                proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType value = proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType.valueOf(rawValue);
+                if (value == null) {
+                  unknownFields.mergeVarintField(2, rawValue);
+                } else {
+                  if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                    activeRequests_ = new java.util.ArrayList<java.lang.Integer>();
+                    mutable_bitField0_ |= 0x00000004;
+                  }
+                  activeRequests_.add(rawValue);
+                }
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000002;
+              keeperId_ = input.readInt32();
+              break;
+            }
+            case 37: {
+              bitField0_ |= 0x00000004;
+              emergencyStopIn_ = input.readFloat();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000008;
+              timeoutsLeft_ = input.readInt32();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000020;
+              challengeFlagsLeft_ = input.readInt32();
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000040;
+              maxRobots_ = input.readInt32();
+              break;
+            }
+            case 69: {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+                yellowCardsDue_ = new java.util.ArrayList<java.lang.Float>();
+                mutable_bitField0_ |= 0x00000400;
+              }
+              yellowCardsDue_.add(input.readFloat());
+              break;
+            }
+            case 66: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400) && input.getBytesUntilLimit() > 0) {
+                yellowCardsDue_ = new java.util.ArrayList<java.lang.Float>();
+                mutable_bitField0_ |= 0x00000400;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                yellowCardsDue_.add(input.readFloat());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 72: {
+              bitField0_ |= 0x00000080;
+              robotsOnField_ = input.readInt32();
+              break;
+            }
+            case 85: {
+              bitField0_ |= 0x00000010;
+              timeoutTimeLeft_ = input.readFloat();
+              break;
+            }
+            case 88: {
+              bitField0_ |= 0x00000100;
+              canSubstituteRobot_ = input.readBool();
+              break;
+            }
+            case 96: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(12, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                team_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          availableRequests_ = java.util.Collections.unmodifiableList(availableRequests_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          activeRequests_ = java.util.Collections.unmodifiableList(activeRequests_);
+        }
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+          yellowCardsDue_ = java.util.Collections.unmodifiableList(yellowCardsDue_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3872,17 +3979,16 @@ public final class SslGcRconRemotecontrol {
 
     private int bitField0_;
     public static final int TEAM_FIELD_NUMBER = 12;
-    private int team_ = 0;
+    private int team_;
     /**
      * <pre>
      * the team that is controlled
      * </pre>
      *
      * <code>optional .proto.simulation.Team team = 12;</code>
-     * @return Whether the team field is set.
      */
-    @java.lang.Override public boolean hasTeam() {
-      return ((bitField0_ & 0x00000001) != 0);
+    public boolean hasTeam() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -3890,22 +3996,22 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional .proto.simulation.Team team = 12;</code>
-     * @return The team.
      */
-    @java.lang.Override public proto.simulation.SslGcCommon.Team getTeam() {
-      proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(team_);
+    public proto.simulation.SslGcCommon.Team getTeam() {
+      @SuppressWarnings("deprecation")
+      proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(team_);
       return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
     }
 
     public static final int AVAILABLE_REQUESTS_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<java.lang.Integer> availableRequests_;
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
         java.lang.Integer, proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType> availableRequests_converter_ =
             new com.google.protobuf.Internal.ListAdapter.Converter<
                 java.lang.Integer, proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType>() {
               public proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType convert(java.lang.Integer from) {
-                proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType result = proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType.forNumber(from);
+                @SuppressWarnings("deprecation")
+                proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType result = proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType.valueOf(from);
                 return result == null ? proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType.UNKNOWN_REQUEST_TYPE : result;
               }
             };
@@ -3915,9 +4021,7 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>repeated .proto.gc.RemoteControlRequestType available_requests = 1;</code>
-     * @return A list containing the availableRequests.
      */
-    @java.lang.Override
     public java.util.List<proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType> getAvailableRequestsList() {
       return new com.google.protobuf.Internal.ListAdapter<
           java.lang.Integer, proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType>(availableRequests_, availableRequests_converter_);
@@ -3928,9 +4032,7 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>repeated .proto.gc.RemoteControlRequestType available_requests = 1;</code>
-     * @return The count of availableRequests.
      */
-    @java.lang.Override
     public int getAvailableRequestsCount() {
       return availableRequests_.size();
     }
@@ -3940,23 +4042,20 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>repeated .proto.gc.RemoteControlRequestType available_requests = 1;</code>
-     * @param index The index of the element to return.
-     * @return The availableRequests at the given index.
      */
-    @java.lang.Override
     public proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType getAvailableRequests(int index) {
       return availableRequests_converter_.convert(availableRequests_.get(index));
     }
 
     public static final int ACTIVE_REQUESTS_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private java.util.List<java.lang.Integer> activeRequests_;
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
         java.lang.Integer, proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType> activeRequests_converter_ =
             new com.google.protobuf.Internal.ListAdapter.Converter<
                 java.lang.Integer, proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType>() {
               public proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType convert(java.lang.Integer from) {
-                proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType result = proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType.forNumber(from);
+                @SuppressWarnings("deprecation")
+                proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType result = proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType.valueOf(from);
                 return result == null ? proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType.UNKNOWN_REQUEST_TYPE : result;
               }
             };
@@ -3966,9 +4065,7 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>repeated .proto.gc.RemoteControlRequestType active_requests = 2;</code>
-     * @return A list containing the activeRequests.
      */
-    @java.lang.Override
     public java.util.List<proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType> getActiveRequestsList() {
       return new com.google.protobuf.Internal.ListAdapter<
           java.lang.Integer, proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType>(activeRequests_, activeRequests_converter_);
@@ -3979,9 +4076,7 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>repeated .proto.gc.RemoteControlRequestType active_requests = 2;</code>
-     * @return The count of activeRequests.
      */
-    @java.lang.Override
     public int getActiveRequestsCount() {
       return activeRequests_.size();
     }
@@ -3991,27 +4086,22 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>repeated .proto.gc.RemoteControlRequestType active_requests = 2;</code>
-     * @param index The index of the element to return.
-     * @return The activeRequests at the given index.
      */
-    @java.lang.Override
     public proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType getActiveRequests(int index) {
       return activeRequests_converter_.convert(activeRequests_.get(index));
     }
 
     public static final int KEEPER_ID_FIELD_NUMBER = 3;
-    private int keeperId_ = 0;
+    private int keeperId_;
     /**
      * <pre>
      * currently set keeper id
      * </pre>
      *
      * <code>optional int32 keeper_id = 3;</code>
-     * @return Whether the keeperId field is set.
      */
-    @java.lang.Override
     public boolean hasKeeperId() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -4019,15 +4109,13 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional int32 keeper_id = 3;</code>
-     * @return The keeperId.
      */
-    @java.lang.Override
     public int getKeeperId() {
       return keeperId_;
     }
 
     public static final int EMERGENCY_STOP_IN_FIELD_NUMBER = 4;
-    private float emergencyStopIn_ = 0F;
+    private float emergencyStopIn_;
     /**
      * <pre>
      * number of seconds till emergency stop is executed
@@ -4035,11 +4123,9 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional float emergency_stop_in = 4;</code>
-     * @return Whether the emergencyStopIn field is set.
      */
-    @java.lang.Override
     public boolean hasEmergencyStopIn() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -4048,26 +4134,22 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional float emergency_stop_in = 4;</code>
-     * @return The emergencyStopIn.
      */
-    @java.lang.Override
     public float getEmergencyStopIn() {
       return emergencyStopIn_;
     }
 
     public static final int TIMEOUTS_LEFT_FIELD_NUMBER = 5;
-    private int timeoutsLeft_ = 0;
+    private int timeoutsLeft_;
     /**
      * <pre>
      * number of timeouts left for the team
      * </pre>
      *
      * <code>optional int32 timeouts_left = 5;</code>
-     * @return Whether the timeoutsLeft field is set.
      */
-    @java.lang.Override
     public boolean hasTimeoutsLeft() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <pre>
@@ -4075,26 +4157,22 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional int32 timeouts_left = 5;</code>
-     * @return The timeoutsLeft.
      */
-    @java.lang.Override
     public int getTimeoutsLeft() {
       return timeoutsLeft_;
     }
 
     public static final int TIMEOUT_TIME_LEFT_FIELD_NUMBER = 10;
-    private float timeoutTimeLeft_ = 0F;
+    private float timeoutTimeLeft_;
     /**
      * <pre>
      * number of seconds left for timeout for the team
      * </pre>
      *
      * <code>optional float timeout_time_left = 10;</code>
-     * @return Whether the timeoutTimeLeft field is set.
      */
-    @java.lang.Override
     public boolean hasTimeoutTimeLeft() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <pre>
@@ -4102,26 +4180,22 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional float timeout_time_left = 10;</code>
-     * @return The timeoutTimeLeft.
      */
-    @java.lang.Override
     public float getTimeoutTimeLeft() {
       return timeoutTimeLeft_;
     }
 
     public static final int CHALLENGE_FLAGS_LEFT_FIELD_NUMBER = 6;
-    private int challengeFlagsLeft_ = 0;
+    private int challengeFlagsLeft_;
     /**
      * <pre>
      * number of challenge flags left for the team
      * </pre>
      *
      * <code>optional int32 challenge_flags_left = 6;</code>
-     * @return Whether the challengeFlagsLeft field is set.
      */
-    @java.lang.Override
     public boolean hasChallengeFlagsLeft() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <pre>
@@ -4129,26 +4203,22 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional int32 challenge_flags_left = 6;</code>
-     * @return The challengeFlagsLeft.
      */
-    @java.lang.Override
     public int getChallengeFlagsLeft() {
       return challengeFlagsLeft_;
     }
 
     public static final int MAX_ROBOTS_FIELD_NUMBER = 7;
-    private int maxRobots_ = 0;
+    private int maxRobots_;
     /**
      * <pre>
      * max number of robots currently allowed
      * </pre>
      *
      * <code>optional int32 max_robots = 7;</code>
-     * @return Whether the maxRobots field is set.
      */
-    @java.lang.Override
     public boolean hasMaxRobots() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <pre>
@@ -4156,26 +4226,22 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional int32 max_robots = 7;</code>
-     * @return The maxRobots.
      */
-    @java.lang.Override
     public int getMaxRobots() {
       return maxRobots_;
     }
 
     public static final int ROBOTS_ON_FIELD_FIELD_NUMBER = 9;
-    private int robotsOnField_ = 0;
+    private int robotsOnField_;
     /**
      * <pre>
      * current number of robots visible on field
      * </pre>
      *
      * <code>optional int32 robots_on_field = 9;</code>
-     * @return Whether the robotsOnField field is set.
      */
-    @java.lang.Override
     public boolean hasRobotsOnField() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
      * <pre>
@@ -4183,25 +4249,20 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional int32 robots_on_field = 9;</code>
-     * @return The robotsOnField.
      */
-    @java.lang.Override
     public int getRobotsOnField() {
       return robotsOnField_;
     }
 
     public static final int YELLOW_CARDS_DUE_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
-    private com.google.protobuf.Internal.FloatList yellowCardsDue_;
+    private java.util.List<java.lang.Float> yellowCardsDue_;
     /**
      * <pre>
      * list of due times for each active yellow card (in seconds)
      * </pre>
      *
      * <code>repeated float yellow_cards_due = 8;</code>
-     * @return A list containing the yellowCardsDue.
      */
-    @java.lang.Override
     public java.util.List<java.lang.Float>
         getYellowCardsDueList() {
       return yellowCardsDue_;
@@ -4212,7 +4273,6 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>repeated float yellow_cards_due = 8;</code>
-     * @return The count of yellowCardsDue.
      */
     public int getYellowCardsDueCount() {
       return yellowCardsDue_.size();
@@ -4223,26 +4283,22 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>repeated float yellow_cards_due = 8;</code>
-     * @param index The index of the element to return.
-     * @return The yellowCardsDue at the given index.
      */
     public float getYellowCardsDue(int index) {
-      return yellowCardsDue_.getFloat(index);
+      return yellowCardsDue_.get(index);
     }
 
     public static final int CAN_SUBSTITUTE_ROBOT_FIELD_NUMBER = 11;
-    private boolean canSubstituteRobot_ = false;
+    private boolean canSubstituteRobot_;
     /**
      * <pre>
      * if true, team is allowed to substitute robots
      * </pre>
      *
      * <code>optional bool can_substitute_robot = 11;</code>
-     * @return Whether the canSubstituteRobot field is set.
      */
-    @java.lang.Override
     public boolean hasCanSubstituteRobot() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
      * <pre>
@@ -4250,9 +4306,7 @@ public final class SslGcRconRemotecontrol {
      * </pre>
      *
      * <code>optional bool can_substitute_robot = 11;</code>
-     * @return The canSubstituteRobot.
      */
-    @java.lang.Override
     public boolean getCanSubstituteRobot() {
       return canSubstituteRobot_;
     }
@@ -4277,37 +4331,37 @@ public final class SslGcRconRemotecontrol {
       for (int i = 0; i < activeRequests_.size(); i++) {
         output.writeEnum(2, activeRequests_.get(i));
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt32(3, keeperId_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeFloat(4, emergencyStopIn_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeInt32(5, timeoutsLeft_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeInt32(6, challengeFlagsLeft_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeInt32(7, maxRobots_);
       }
       for (int i = 0; i < yellowCardsDue_.size(); i++) {
-        output.writeFloat(8, yellowCardsDue_.getFloat(i));
+        output.writeFloat(8, yellowCardsDue_.get(i));
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeInt32(9, robotsOnField_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeFloat(10, timeoutTimeLeft_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeBool(11, canSubstituteRobot_);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeEnum(12, team_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -4334,23 +4388,23 @@ public final class SslGcRconRemotecontrol {
         size += dataSize;
         size += 1 * activeRequests_.size();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, keeperId_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, emergencyStopIn_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, timeoutsLeft_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(6, challengeFlagsLeft_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(7, maxRobots_);
       }
@@ -4360,23 +4414,23 @@ public final class SslGcRconRemotecontrol {
         size += dataSize;
         size += 1 * getYellowCardsDueList().size();
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(9, robotsOnField_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(10, timeoutTimeLeft_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(11, canSubstituteRobot_);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(12, team_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4391,58 +4445,61 @@ public final class SslGcRconRemotecontrol {
       }
       proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState other = (proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState) obj;
 
-      if (hasTeam() != other.hasTeam()) return false;
+      boolean result = true;
+      result = result && (hasTeam() == other.hasTeam());
       if (hasTeam()) {
-        if (team_ != other.team_) return false;
+        result = result && team_ == other.team_;
       }
-      if (!availableRequests_.equals(other.availableRequests_)) return false;
-      if (!activeRequests_.equals(other.activeRequests_)) return false;
-      if (hasKeeperId() != other.hasKeeperId()) return false;
+      result = result && availableRequests_.equals(other.availableRequests_);
+      result = result && activeRequests_.equals(other.activeRequests_);
+      result = result && (hasKeeperId() == other.hasKeeperId());
       if (hasKeeperId()) {
-        if (getKeeperId()
-            != other.getKeeperId()) return false;
+        result = result && (getKeeperId()
+            == other.getKeeperId());
       }
-      if (hasEmergencyStopIn() != other.hasEmergencyStopIn()) return false;
+      result = result && (hasEmergencyStopIn() == other.hasEmergencyStopIn());
       if (hasEmergencyStopIn()) {
-        if (java.lang.Float.floatToIntBits(getEmergencyStopIn())
-            != java.lang.Float.floatToIntBits(
-                other.getEmergencyStopIn())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getEmergencyStopIn())
+            == java.lang.Float.floatToIntBits(
+                other.getEmergencyStopIn()));
       }
-      if (hasTimeoutsLeft() != other.hasTimeoutsLeft()) return false;
+      result = result && (hasTimeoutsLeft() == other.hasTimeoutsLeft());
       if (hasTimeoutsLeft()) {
-        if (getTimeoutsLeft()
-            != other.getTimeoutsLeft()) return false;
+        result = result && (getTimeoutsLeft()
+            == other.getTimeoutsLeft());
       }
-      if (hasTimeoutTimeLeft() != other.hasTimeoutTimeLeft()) return false;
+      result = result && (hasTimeoutTimeLeft() == other.hasTimeoutTimeLeft());
       if (hasTimeoutTimeLeft()) {
-        if (java.lang.Float.floatToIntBits(getTimeoutTimeLeft())
-            != java.lang.Float.floatToIntBits(
-                other.getTimeoutTimeLeft())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getTimeoutTimeLeft())
+            == java.lang.Float.floatToIntBits(
+                other.getTimeoutTimeLeft()));
       }
-      if (hasChallengeFlagsLeft() != other.hasChallengeFlagsLeft()) return false;
+      result = result && (hasChallengeFlagsLeft() == other.hasChallengeFlagsLeft());
       if (hasChallengeFlagsLeft()) {
-        if (getChallengeFlagsLeft()
-            != other.getChallengeFlagsLeft()) return false;
+        result = result && (getChallengeFlagsLeft()
+            == other.getChallengeFlagsLeft());
       }
-      if (hasMaxRobots() != other.hasMaxRobots()) return false;
+      result = result && (hasMaxRobots() == other.hasMaxRobots());
       if (hasMaxRobots()) {
-        if (getMaxRobots()
-            != other.getMaxRobots()) return false;
+        result = result && (getMaxRobots()
+            == other.getMaxRobots());
       }
-      if (hasRobotsOnField() != other.hasRobotsOnField()) return false;
+      result = result && (hasRobotsOnField() == other.hasRobotsOnField());
       if (hasRobotsOnField()) {
-        if (getRobotsOnField()
-            != other.getRobotsOnField()) return false;
+        result = result && (getRobotsOnField()
+            == other.getRobotsOnField());
       }
-      if (!getYellowCardsDueList()
-          .equals(other.getYellowCardsDueList())) return false;
-      if (hasCanSubstituteRobot() != other.hasCanSubstituteRobot()) return false;
+      result = result && getYellowCardsDueList()
+          .equals(other.getYellowCardsDueList());
+      result = result && (hasCanSubstituteRobot() == other.hasCanSubstituteRobot());
       if (hasCanSubstituteRobot()) {
-        if (getCanSubstituteRobot()
-            != other.getCanSubstituteRobot()) return false;
+        result = result && (getCanSubstituteRobot()
+            == other.getCanSubstituteRobot());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -4503,7 +4560,7 @@ public final class SslGcRconRemotecontrol {
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getCanSubstituteRobot());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4624,32 +4681,46 @@ public final class SslGcRconRemotecontrol {
 
       // Construct using proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         team_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
         availableRequests_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
         activeRequests_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
         keeperId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
         emergencyStopIn_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000010);
         timeoutsLeft_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000020);
         timeoutTimeLeft_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000040);
         challengeFlagsLeft_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000080);
         maxRobots_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000100);
         robotsOnField_ = 0;
-        yellowCardsDue_ = emptyFloatList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        yellowCardsDue_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
         canSubstituteRobot_ = false;
+        bitField0_ = (bitField0_ & ~0x00000800);
         return this;
       }
 
@@ -4676,103 +4747,95 @@ public final class SslGcRconRemotecontrol {
       @java.lang.Override
       public proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState buildPartial() {
         proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState result = new proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.team_ = team_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
           availableRequests_ = java.util.Collections.unmodifiableList(availableRequests_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.availableRequests_ = availableRequests_;
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
           activeRequests_ = java.util.Collections.unmodifiableList(activeRequests_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.activeRequests_ = activeRequests_;
-        if (((bitField0_ & 0x00000400) != 0)) {
-          yellowCardsDue_.makeImmutable();
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.keeperId_ = keeperId_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.emergencyStopIn_ = emergencyStopIn_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.timeoutsLeft_ = timeoutsLeft_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.timeoutTimeLeft_ = timeoutTimeLeft_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.challengeFlagsLeft_ = challengeFlagsLeft_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.maxRobots_ = maxRobots_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.robotsOnField_ = robotsOnField_;
+        if (((bitField0_ & 0x00000400) == 0x00000400)) {
+          yellowCardsDue_ = java.util.Collections.unmodifiableList(yellowCardsDue_);
           bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.yellowCardsDue_ = yellowCardsDue_;
-      }
-
-      private void buildPartial0(proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.team_ = team_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.keeperId_ = keeperId_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.emergencyStopIn_ = emergencyStopIn_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.timeoutsLeft_ = timeoutsLeft_;
-          to_bitField0_ |= 0x00000008;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.timeoutTimeLeft_ = timeoutTimeLeft_;
-          to_bitField0_ |= 0x00000010;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.challengeFlagsLeft_ = challengeFlagsLeft_;
-          to_bitField0_ |= 0x00000020;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.maxRobots_ = maxRobots_;
-          to_bitField0_ |= 0x00000040;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.robotsOnField_ = robotsOnField_;
-          to_bitField0_ |= 0x00000080;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.canSubstituteRobot_ = canSubstituteRobot_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
           to_bitField0_ |= 0x00000100;
         }
-        result.bitField0_ |= to_bitField0_;
+        result.canSubstituteRobot_ = canSubstituteRobot_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -4843,7 +4906,7 @@ public final class SslGcRconRemotecontrol {
         if (other.hasCanSubstituteRobot()) {
           setCanSubstituteRobot(other.getCanSubstituteRobot());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -4858,156 +4921,17 @@ public final class SslGcRconRemotecontrol {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int tmpRaw = input.readEnum();
-                proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType tmpValue =
-                    proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(1, tmpRaw);
-                } else {
-                  ensureAvailableRequestsIsMutable();
-                  availableRequests_.add(tmpRaw);
-                }
-                break;
-              } // case 8
-              case 10: {
-                int length = input.readRawVarint32();
-                int oldLimit = input.pushLimit(length);
-                while(input.getBytesUntilLimit() > 0) {
-                  int tmpRaw = input.readEnum();
-                  proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType tmpValue =
-                      proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType.forNumber(tmpRaw);
-                  if (tmpValue == null) {
-                    mergeUnknownVarintField(1, tmpRaw);
-                  } else {
-                    ensureAvailableRequestsIsMutable();
-                    availableRequests_.add(tmpRaw);
-                  }
-                }
-                input.popLimit(oldLimit);
-                break;
-              } // case 10
-              case 16: {
-                int tmpRaw = input.readEnum();
-                proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType tmpValue =
-                    proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(2, tmpRaw);
-                } else {
-                  ensureActiveRequestsIsMutable();
-                  activeRequests_.add(tmpRaw);
-                }
-                break;
-              } // case 16
-              case 18: {
-                int length = input.readRawVarint32();
-                int oldLimit = input.pushLimit(length);
-                while(input.getBytesUntilLimit() > 0) {
-                  int tmpRaw = input.readEnum();
-                  proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType tmpValue =
-                      proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType.forNumber(tmpRaw);
-                  if (tmpValue == null) {
-                    mergeUnknownVarintField(2, tmpRaw);
-                  } else {
-                    ensureActiveRequestsIsMutable();
-                    activeRequests_.add(tmpRaw);
-                  }
-                }
-                input.popLimit(oldLimit);
-                break;
-              } // case 18
-              case 24: {
-                keeperId_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 24
-              case 37: {
-                emergencyStopIn_ = input.readFloat();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 37
-              case 40: {
-                timeoutsLeft_ = input.readInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 40
-              case 48: {
-                challengeFlagsLeft_ = input.readInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 48
-              case 56: {
-                maxRobots_ = input.readInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 56
-              case 69: {
-                float v = input.readFloat();
-                ensureYellowCardsDueIsMutable();
-                yellowCardsDue_.addFloat(v);
-                break;
-              } // case 69
-              case 66: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureYellowCardsDueIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  yellowCardsDue_.addFloat(input.readFloat());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 66
-              case 72: {
-                robotsOnField_ = input.readInt32();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 72
-              case 85: {
-                timeoutTimeLeft_ = input.readFloat();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 85
-              case 88: {
-                canSubstituteRobot_ = input.readBool();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 88
-              case 96: {
-                int tmpRaw = input.readEnum();
-                proto.simulation.SslGcCommon.Team tmpValue =
-                    proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(12, tmpRaw);
-                } else {
-                  team_ = tmpRaw;
-                  bitField0_ |= 0x00000001;
-                }
-                break;
-              } // case 96
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcRconRemotecontrol.RemoteControlTeamState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -5019,10 +4943,9 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional .proto.simulation.Team team = 12;</code>
-       * @return Whether the team field is set.
        */
-      @java.lang.Override public boolean hasTeam() {
-        return ((bitField0_ & 0x00000001) != 0);
+      public boolean hasTeam() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -5030,11 +4953,10 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional .proto.simulation.Team team = 12;</code>
-       * @return The team.
        */
-      @java.lang.Override
       public proto.simulation.SslGcCommon.Team getTeam() {
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(team_);
+        @SuppressWarnings("deprecation")
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(team_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
       /**
@@ -5043,8 +4965,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional .proto.simulation.Team team = 12;</code>
-       * @param value The team to set.
-       * @return This builder for chaining.
        */
       public Builder setTeam(proto.simulation.SslGcCommon.Team value) {
         if (value == null) {
@@ -5061,7 +4981,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional .proto.simulation.Team team = 12;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTeam() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -5073,7 +4992,7 @@ public final class SslGcRconRemotecontrol {
       private java.util.List<java.lang.Integer> availableRequests_ =
         java.util.Collections.emptyList();
       private void ensureAvailableRequestsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
           availableRequests_ = new java.util.ArrayList<java.lang.Integer>(availableRequests_);
           bitField0_ |= 0x00000002;
         }
@@ -5084,7 +5003,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated .proto.gc.RemoteControlRequestType available_requests = 1;</code>
-       * @return A list containing the availableRequests.
        */
       public java.util.List<proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType> getAvailableRequestsList() {
         return new com.google.protobuf.Internal.ListAdapter<
@@ -5096,7 +5014,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated .proto.gc.RemoteControlRequestType available_requests = 1;</code>
-       * @return The count of availableRequests.
        */
       public int getAvailableRequestsCount() {
         return availableRequests_.size();
@@ -5107,8 +5024,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated .proto.gc.RemoteControlRequestType available_requests = 1;</code>
-       * @param index The index of the element to return.
-       * @return The availableRequests at the given index.
        */
       public proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType getAvailableRequests(int index) {
         return availableRequests_converter_.convert(availableRequests_.get(index));
@@ -5119,9 +5034,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated .proto.gc.RemoteControlRequestType available_requests = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The availableRequests to set.
-       * @return This builder for chaining.
        */
       public Builder setAvailableRequests(
           int index, proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType value) {
@@ -5139,8 +5051,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated .proto.gc.RemoteControlRequestType available_requests = 1;</code>
-       * @param value The availableRequests to add.
-       * @return This builder for chaining.
        */
       public Builder addAvailableRequests(proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType value) {
         if (value == null) {
@@ -5157,8 +5067,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated .proto.gc.RemoteControlRequestType available_requests = 1;</code>
-       * @param values The availableRequests to add.
-       * @return This builder for chaining.
        */
       public Builder addAllAvailableRequests(
           java.lang.Iterable<? extends proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType> values) {
@@ -5175,7 +5083,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated .proto.gc.RemoteControlRequestType available_requests = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearAvailableRequests() {
         availableRequests_ = java.util.Collections.emptyList();
@@ -5187,7 +5094,7 @@ public final class SslGcRconRemotecontrol {
       private java.util.List<java.lang.Integer> activeRequests_ =
         java.util.Collections.emptyList();
       private void ensureActiveRequestsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
           activeRequests_ = new java.util.ArrayList<java.lang.Integer>(activeRequests_);
           bitField0_ |= 0x00000004;
         }
@@ -5198,7 +5105,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated .proto.gc.RemoteControlRequestType active_requests = 2;</code>
-       * @return A list containing the activeRequests.
        */
       public java.util.List<proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType> getActiveRequestsList() {
         return new com.google.protobuf.Internal.ListAdapter<
@@ -5210,7 +5116,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated .proto.gc.RemoteControlRequestType active_requests = 2;</code>
-       * @return The count of activeRequests.
        */
       public int getActiveRequestsCount() {
         return activeRequests_.size();
@@ -5221,8 +5126,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated .proto.gc.RemoteControlRequestType active_requests = 2;</code>
-       * @param index The index of the element to return.
-       * @return The activeRequests at the given index.
        */
       public proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType getActiveRequests(int index) {
         return activeRequests_converter_.convert(activeRequests_.get(index));
@@ -5233,9 +5136,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated .proto.gc.RemoteControlRequestType active_requests = 2;</code>
-       * @param index The index to set the value at.
-       * @param value The activeRequests to set.
-       * @return This builder for chaining.
        */
       public Builder setActiveRequests(
           int index, proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType value) {
@@ -5253,8 +5153,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated .proto.gc.RemoteControlRequestType active_requests = 2;</code>
-       * @param value The activeRequests to add.
-       * @return This builder for chaining.
        */
       public Builder addActiveRequests(proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType value) {
         if (value == null) {
@@ -5271,8 +5169,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated .proto.gc.RemoteControlRequestType active_requests = 2;</code>
-       * @param values The activeRequests to add.
-       * @return This builder for chaining.
        */
       public Builder addAllActiveRequests(
           java.lang.Iterable<? extends proto.gc.SslGcRconRemotecontrol.RemoteControlRequestType> values) {
@@ -5289,7 +5185,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated .proto.gc.RemoteControlRequestType active_requests = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearActiveRequests() {
         activeRequests_ = java.util.Collections.emptyList();
@@ -5305,11 +5200,9 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 keeper_id = 3;</code>
-       * @return Whether the keeperId field is set.
        */
-      @java.lang.Override
       public boolean hasKeeperId() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <pre>
@@ -5317,9 +5210,7 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 keeper_id = 3;</code>
-       * @return The keeperId.
        */
-      @java.lang.Override
       public int getKeeperId() {
         return keeperId_;
       }
@@ -5329,13 +5220,10 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 keeper_id = 3;</code>
-       * @param value The keeperId to set.
-       * @return This builder for chaining.
        */
       public Builder setKeeperId(int value) {
-        
-        keeperId_ = value;
         bitField0_ |= 0x00000008;
+        keeperId_ = value;
         onChanged();
         return this;
       }
@@ -5345,7 +5233,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 keeper_id = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearKeeperId() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -5362,11 +5249,9 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional float emergency_stop_in = 4;</code>
-       * @return Whether the emergencyStopIn field is set.
        */
-      @java.lang.Override
       public boolean hasEmergencyStopIn() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <pre>
@@ -5375,9 +5260,7 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional float emergency_stop_in = 4;</code>
-       * @return The emergencyStopIn.
        */
-      @java.lang.Override
       public float getEmergencyStopIn() {
         return emergencyStopIn_;
       }
@@ -5388,13 +5271,10 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional float emergency_stop_in = 4;</code>
-       * @param value The emergencyStopIn to set.
-       * @return This builder for chaining.
        */
       public Builder setEmergencyStopIn(float value) {
-        
-        emergencyStopIn_ = value;
         bitField0_ |= 0x00000010;
+        emergencyStopIn_ = value;
         onChanged();
         return this;
       }
@@ -5405,7 +5285,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional float emergency_stop_in = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearEmergencyStopIn() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -5421,11 +5300,9 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 timeouts_left = 5;</code>
-       * @return Whether the timeoutsLeft field is set.
        */
-      @java.lang.Override
       public boolean hasTimeoutsLeft() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <pre>
@@ -5433,9 +5310,7 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 timeouts_left = 5;</code>
-       * @return The timeoutsLeft.
        */
-      @java.lang.Override
       public int getTimeoutsLeft() {
         return timeoutsLeft_;
       }
@@ -5445,13 +5320,10 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 timeouts_left = 5;</code>
-       * @param value The timeoutsLeft to set.
-       * @return This builder for chaining.
        */
       public Builder setTimeoutsLeft(int value) {
-        
-        timeoutsLeft_ = value;
         bitField0_ |= 0x00000020;
+        timeoutsLeft_ = value;
         onChanged();
         return this;
       }
@@ -5461,7 +5333,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 timeouts_left = 5;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTimeoutsLeft() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -5477,11 +5348,9 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional float timeout_time_left = 10;</code>
-       * @return Whether the timeoutTimeLeft field is set.
        */
-      @java.lang.Override
       public boolean hasTimeoutTimeLeft() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <pre>
@@ -5489,9 +5358,7 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional float timeout_time_left = 10;</code>
-       * @return The timeoutTimeLeft.
        */
-      @java.lang.Override
       public float getTimeoutTimeLeft() {
         return timeoutTimeLeft_;
       }
@@ -5501,13 +5368,10 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional float timeout_time_left = 10;</code>
-       * @param value The timeoutTimeLeft to set.
-       * @return This builder for chaining.
        */
       public Builder setTimeoutTimeLeft(float value) {
-        
-        timeoutTimeLeft_ = value;
         bitField0_ |= 0x00000040;
+        timeoutTimeLeft_ = value;
         onChanged();
         return this;
       }
@@ -5517,7 +5381,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional float timeout_time_left = 10;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTimeoutTimeLeft() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -5533,11 +5396,9 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 challenge_flags_left = 6;</code>
-       * @return Whether the challengeFlagsLeft field is set.
        */
-      @java.lang.Override
       public boolean hasChallengeFlagsLeft() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
        * <pre>
@@ -5545,9 +5406,7 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 challenge_flags_left = 6;</code>
-       * @return The challengeFlagsLeft.
        */
-      @java.lang.Override
       public int getChallengeFlagsLeft() {
         return challengeFlagsLeft_;
       }
@@ -5557,13 +5416,10 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 challenge_flags_left = 6;</code>
-       * @param value The challengeFlagsLeft to set.
-       * @return This builder for chaining.
        */
       public Builder setChallengeFlagsLeft(int value) {
-        
-        challengeFlagsLeft_ = value;
         bitField0_ |= 0x00000080;
+        challengeFlagsLeft_ = value;
         onChanged();
         return this;
       }
@@ -5573,7 +5429,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 challenge_flags_left = 6;</code>
-       * @return This builder for chaining.
        */
       public Builder clearChallengeFlagsLeft() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -5589,11 +5444,9 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 max_robots = 7;</code>
-       * @return Whether the maxRobots field is set.
        */
-      @java.lang.Override
       public boolean hasMaxRobots() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
        * <pre>
@@ -5601,9 +5454,7 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 max_robots = 7;</code>
-       * @return The maxRobots.
        */
-      @java.lang.Override
       public int getMaxRobots() {
         return maxRobots_;
       }
@@ -5613,13 +5464,10 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 max_robots = 7;</code>
-       * @param value The maxRobots to set.
-       * @return This builder for chaining.
        */
       public Builder setMaxRobots(int value) {
-        
-        maxRobots_ = value;
         bitField0_ |= 0x00000100;
+        maxRobots_ = value;
         onChanged();
         return this;
       }
@@ -5629,7 +5477,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 max_robots = 7;</code>
-       * @return This builder for chaining.
        */
       public Builder clearMaxRobots() {
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -5645,11 +5492,9 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 robots_on_field = 9;</code>
-       * @return Whether the robotsOnField field is set.
        */
-      @java.lang.Override
       public boolean hasRobotsOnField() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
        * <pre>
@@ -5657,9 +5502,7 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 robots_on_field = 9;</code>
-       * @return The robotsOnField.
        */
-      @java.lang.Override
       public int getRobotsOnField() {
         return robotsOnField_;
       }
@@ -5669,13 +5512,10 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 robots_on_field = 9;</code>
-       * @param value The robotsOnField to set.
-       * @return This builder for chaining.
        */
       public Builder setRobotsOnField(int value) {
-        
-        robotsOnField_ = value;
         bitField0_ |= 0x00000200;
+        robotsOnField_ = value;
         onChanged();
         return this;
       }
@@ -5685,7 +5525,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional int32 robots_on_field = 9;</code>
-       * @return This builder for chaining.
        */
       public Builder clearRobotsOnField() {
         bitField0_ = (bitField0_ & ~0x00000200);
@@ -5694,12 +5533,12 @@ public final class SslGcRconRemotecontrol {
         return this;
       }
 
-      private com.google.protobuf.Internal.FloatList yellowCardsDue_ = emptyFloatList();
+      private java.util.List<java.lang.Float> yellowCardsDue_ = java.util.Collections.emptyList();
       private void ensureYellowCardsDueIsMutable() {
-        if (!((bitField0_ & 0x00000400) != 0)) {
-          yellowCardsDue_ = mutableCopy(yellowCardsDue_);
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+          yellowCardsDue_ = new java.util.ArrayList<java.lang.Float>(yellowCardsDue_);
           bitField0_ |= 0x00000400;
-        }
+         }
       }
       /**
        * <pre>
@@ -5707,12 +5546,10 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated float yellow_cards_due = 8;</code>
-       * @return A list containing the yellowCardsDue.
        */
       public java.util.List<java.lang.Float>
           getYellowCardsDueList() {
-        return ((bitField0_ & 0x00000400) != 0) ?
-                 java.util.Collections.unmodifiableList(yellowCardsDue_) : yellowCardsDue_;
+        return java.util.Collections.unmodifiableList(yellowCardsDue_);
       }
       /**
        * <pre>
@@ -5720,7 +5557,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated float yellow_cards_due = 8;</code>
-       * @return The count of yellowCardsDue.
        */
       public int getYellowCardsDueCount() {
         return yellowCardsDue_.size();
@@ -5731,11 +5567,9 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated float yellow_cards_due = 8;</code>
-       * @param index The index of the element to return.
-       * @return The yellowCardsDue at the given index.
        */
       public float getYellowCardsDue(int index) {
-        return yellowCardsDue_.getFloat(index);
+        return yellowCardsDue_.get(index);
       }
       /**
        * <pre>
@@ -5743,15 +5577,11 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated float yellow_cards_due = 8;</code>
-       * @param index The index to set the value at.
-       * @param value The yellowCardsDue to set.
-       * @return This builder for chaining.
        */
       public Builder setYellowCardsDue(
           int index, float value) {
-        
         ensureYellowCardsDueIsMutable();
-        yellowCardsDue_.setFloat(index, value);
+        yellowCardsDue_.set(index, value);
         onChanged();
         return this;
       }
@@ -5761,13 +5591,10 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated float yellow_cards_due = 8;</code>
-       * @param value The yellowCardsDue to add.
-       * @return This builder for chaining.
        */
       public Builder addYellowCardsDue(float value) {
-        
         ensureYellowCardsDueIsMutable();
-        yellowCardsDue_.addFloat(value);
+        yellowCardsDue_.add(value);
         onChanged();
         return this;
       }
@@ -5777,8 +5604,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated float yellow_cards_due = 8;</code>
-       * @param values The yellowCardsDue to add.
-       * @return This builder for chaining.
        */
       public Builder addAllYellowCardsDue(
           java.lang.Iterable<? extends java.lang.Float> values) {
@@ -5794,10 +5619,9 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>repeated float yellow_cards_due = 8;</code>
-       * @return This builder for chaining.
        */
       public Builder clearYellowCardsDue() {
-        yellowCardsDue_ = emptyFloatList();
+        yellowCardsDue_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
@@ -5810,11 +5634,9 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional bool can_substitute_robot = 11;</code>
-       * @return Whether the canSubstituteRobot field is set.
        */
-      @java.lang.Override
       public boolean hasCanSubstituteRobot() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
        * <pre>
@@ -5822,9 +5644,7 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional bool can_substitute_robot = 11;</code>
-       * @return The canSubstituteRobot.
        */
-      @java.lang.Override
       public boolean getCanSubstituteRobot() {
         return canSubstituteRobot_;
       }
@@ -5834,13 +5654,10 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional bool can_substitute_robot = 11;</code>
-       * @param value The canSubstituteRobot to set.
-       * @return This builder for chaining.
        */
       public Builder setCanSubstituteRobot(boolean value) {
-        
-        canSubstituteRobot_ = value;
         bitField0_ |= 0x00000800;
+        canSubstituteRobot_ = value;
         onChanged();
         return this;
       }
@@ -5850,7 +5667,6 @@ public final class SslGcRconRemotecontrol {
        * </pre>
        *
        * <code>optional bool can_substitute_robot = 11;</code>
-       * @return This builder for chaining.
        */
       public Builder clearCanSubstituteRobot() {
         bitField0_ = (bitField0_ & ~0x00000800);
@@ -5891,18 +5707,7 @@ public final class SslGcRconRemotecontrol {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RemoteControlTeamState(input, extensionRegistry);
       }
     };
 
@@ -5985,12 +5790,20 @@ public final class SslGcRconRemotecontrol {
       "TIMEOUT\020\006B>Z<github.com/RoboCup-SSL/ssl-" +
       "game-controller/internal/app/rcon"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           proto.simulation.SslGcCommon.getDescriptor(),
           proto.gc.SslGcRcon.getDescriptor(),
-        });
+        }, assigner);
     internal_static_proto_gc_RemoteControlRegistration_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_gc_RemoteControlRegistration_fieldAccessorTable = new

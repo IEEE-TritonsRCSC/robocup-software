@@ -140,8 +140,6 @@ public final class SslVisionGeometry {
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -149,10 +147,6 @@ public final class SslVisionGeometry {
       return forNumber(value);
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
     public static SSL_FieldShapeType forNumber(int value) {
       switch (value) {
         case 0: return Undefined;
@@ -224,23 +218,19 @@ public final class SslVisionGeometry {
 
     /**
      * <code>required float x = 1;</code>
-     * @return Whether the x field is set.
      */
     boolean hasX();
     /**
      * <code>required float x = 1;</code>
-     * @return The x.
      */
     float getX();
 
     /**
      * <code>required float y = 2;</code>
-     * @return Whether the y field is set.
      */
     boolean hasY();
     /**
      * <code>required float y = 2;</code>
-     * @return The y.
      */
     float getY();
   }
@@ -251,7 +241,7 @@ public final class SslVisionGeometry {
    *
    * Protobuf type {@code proto.simulation.Vector2f}
    */
-  public static final class Vector2f extends
+  public  static final class Vector2f extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.simulation.Vector2f)
       Vector2fOrBuilder {
@@ -261,19 +251,62 @@ public final class SslVisionGeometry {
       super(builder);
     }
     private Vector2f() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Vector2f();
+      x_ = 0F;
+      y_ = 0F;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Vector2f(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+              bitField0_ |= 0x00000001;
+              x_ = input.readFloat();
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              y_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -290,39 +323,31 @@ public final class SslVisionGeometry {
 
     private int bitField0_;
     public static final int X_FIELD_NUMBER = 1;
-    private float x_ = 0F;
+    private float x_;
     /**
      * <code>required float x = 1;</code>
-     * @return Whether the x field is set.
      */
-    @java.lang.Override
     public boolean hasX() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required float x = 1;</code>
-     * @return The x.
      */
-    @java.lang.Override
     public float getX() {
       return x_;
     }
 
     public static final int Y_FIELD_NUMBER = 2;
-    private float y_ = 0F;
+    private float y_;
     /**
      * <code>required float y = 2;</code>
-     * @return Whether the y field is set.
      */
-    @java.lang.Override
     public boolean hasY() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>required float y = 2;</code>
-     * @return The y.
      */
-    @java.lang.Override
     public float getY() {
       return y_;
     }
@@ -349,13 +374,13 @@ public final class SslVisionGeometry {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeFloat(1, x_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeFloat(2, y_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -364,15 +389,15 @@ public final class SslVisionGeometry {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, x_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, y_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -387,20 +412,23 @@ public final class SslVisionGeometry {
       }
       proto.simulation.SslVisionGeometry.Vector2f other = (proto.simulation.SslVisionGeometry.Vector2f) obj;
 
-      if (hasX() != other.hasX()) return false;
+      boolean result = true;
+      result = result && (hasX() == other.hasX());
       if (hasX()) {
-        if (java.lang.Float.floatToIntBits(getX())
-            != java.lang.Float.floatToIntBits(
-                other.getX())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getX())
+            == java.lang.Float.floatToIntBits(
+                other.getX()));
       }
-      if (hasY() != other.hasY()) return false;
+      result = result && (hasY() == other.hasY());
       if (hasY()) {
-        if (java.lang.Float.floatToIntBits(getY())
-            != java.lang.Float.floatToIntBits(
-                other.getY())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getY())
+            == java.lang.Float.floatToIntBits(
+                other.getY()));
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -420,7 +448,7 @@ public final class SslVisionGeometry {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getY());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -541,20 +569,26 @@ public final class SslVisionGeometry {
 
       // Construct using proto.simulation.SslVisionGeometry.Vector2f.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         x_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000001);
         y_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -581,56 +615,52 @@ public final class SslVisionGeometry {
       @java.lang.Override
       public proto.simulation.SslVisionGeometry.Vector2f buildPartial() {
         proto.simulation.SslVisionGeometry.Vector2f result = new proto.simulation.SslVisionGeometry.Vector2f(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.x_ = x_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.y_ = y_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.simulation.SslVisionGeometry.Vector2f result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.x_ = x_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.y_ = y_;
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -650,7 +680,7 @@ public final class SslVisionGeometry {
         if (other.hasY()) {
           setY(other.getY());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -671,40 +701,17 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.simulation.SslVisionGeometry.Vector2f parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                x_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 13
-              case 21: {
-                y_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 21
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.simulation.SslVisionGeometry.Vector2f) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -712,35 +719,27 @@ public final class SslVisionGeometry {
       private float x_ ;
       /**
        * <code>required float x = 1;</code>
-       * @return Whether the x field is set.
        */
-      @java.lang.Override
       public boolean hasX() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required float x = 1;</code>
-       * @return The x.
        */
-      @java.lang.Override
       public float getX() {
         return x_;
       }
       /**
        * <code>required float x = 1;</code>
-       * @param value The x to set.
-       * @return This builder for chaining.
        */
       public Builder setX(float value) {
-        
-        x_ = value;
         bitField0_ |= 0x00000001;
+        x_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float x = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearX() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -752,35 +751,27 @@ public final class SslVisionGeometry {
       private float y_ ;
       /**
        * <code>required float y = 2;</code>
-       * @return Whether the y field is set.
        */
-      @java.lang.Override
       public boolean hasY() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required float y = 2;</code>
-       * @return The y.
        */
-      @java.lang.Override
       public float getY() {
         return y_;
       }
       /**
        * <code>required float y = 2;</code>
-       * @param value The y to set.
-       * @return This builder for chaining.
        */
       public Builder setY(float value) {
-        
-        y_ = value;
         bitField0_ |= 0x00000002;
+        y_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float y = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearY() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -821,18 +812,7 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Vector2f(input, extensionRegistry);
       }
     };
 
@@ -862,7 +842,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required string name = 1;</code>
-     * @return Whether the name field is set.
      */
     boolean hasName();
     /**
@@ -871,7 +850,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required string name = 1;</code>
-     * @return The name.
      */
     java.lang.String getName();
     /**
@@ -880,7 +858,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required string name = 1;</code>
-     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -891,7 +868,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required .proto.simulation.Vector2f p1 = 2;</code>
-     * @return Whether the p1 field is set.
      */
     boolean hasP1();
     /**
@@ -900,7 +876,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required .proto.simulation.Vector2f p1 = 2;</code>
-     * @return The p1.
      */
     proto.simulation.SslVisionGeometry.Vector2f getP1();
     /**
@@ -918,7 +893,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required .proto.simulation.Vector2f p2 = 3;</code>
-     * @return Whether the p2 field is set.
      */
     boolean hasP2();
     /**
@@ -927,7 +901,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required .proto.simulation.Vector2f p2 = 3;</code>
-     * @return The p2.
      */
     proto.simulation.SslVisionGeometry.Vector2f getP2();
     /**
@@ -945,7 +918,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required float thickness = 4;</code>
-     * @return Whether the thickness field is set.
      */
     boolean hasThickness();
     /**
@@ -954,7 +926,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required float thickness = 4;</code>
-     * @return The thickness.
      */
     float getThickness();
 
@@ -964,7 +935,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>optional .proto.simulation.SSL_FieldShapeType type = 5;</code>
-     * @return Whether the type field is set.
      */
     boolean hasType();
     /**
@@ -973,7 +943,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>optional .proto.simulation.SSL_FieldShapeType type = 5;</code>
-     * @return The type.
      */
     proto.simulation.SslVisionGeometry.SSL_FieldShapeType getType();
   }
@@ -987,7 +956,7 @@ public final class SslVisionGeometry {
    *
    * Protobuf type {@code proto.simulation.SSL_FieldLineSegment}
    */
-  public static final class SSL_FieldLineSegment extends
+  public  static final class SSL_FieldLineSegment extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.simulation.SSL_FieldLineSegment)
       SSL_FieldLineSegmentOrBuilder {
@@ -998,20 +967,101 @@ public final class SslVisionGeometry {
     }
     private SSL_FieldLineSegment() {
       name_ = "";
+      thickness_ = 0F;
       type_ = 0;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SSL_FieldLineSegment();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private SSL_FieldLineSegment(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              name_ = bs;
+              break;
+            }
+            case 18: {
+              proto.simulation.SslVisionGeometry.Vector2f.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = p1_.toBuilder();
+              }
+              p1_ = input.readMessage(proto.simulation.SslVisionGeometry.Vector2f.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(p1_);
+                p1_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 26: {
+              proto.simulation.SslVisionGeometry.Vector2f.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                subBuilder = p2_.toBuilder();
+              }
+              p2_ = input.readMessage(proto.simulation.SslVisionGeometry.Vector2f.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(p2_);
+                p2_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+            case 37: {
+              bitField0_ |= 0x00000008;
+              thickness_ = input.readFloat();
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              proto.simulation.SslVisionGeometry.SSL_FieldShapeType value = proto.simulation.SslVisionGeometry.SSL_FieldShapeType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(5, rawValue);
+              } else {
+                bitField0_ |= 0x00000010;
+                type_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1028,19 +1078,16 @@ public final class SslVisionGeometry {
 
     private int bitField0_;
     public static final int NAME_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object name_ = "";
+    private volatile java.lang.Object name_;
     /**
      * <pre>
      * Name of this field marking.
      * </pre>
      *
      * <code>required string name = 1;</code>
-     * @return Whether the name field is set.
      */
-    @java.lang.Override
     public boolean hasName() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -1048,9 +1095,7 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required string name = 1;</code>
-     * @return The name.
      */
-    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -1071,9 +1116,7 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required string name = 1;</code>
-     * @return The bytes for name.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -1096,11 +1139,9 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required .proto.simulation.Vector2f p1 = 2;</code>
-     * @return Whether the p1 field is set.
      */
-    @java.lang.Override
     public boolean hasP1() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -1108,9 +1149,7 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required .proto.simulation.Vector2f p1 = 2;</code>
-     * @return The p1.
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.Vector2f getP1() {
       return p1_ == null ? proto.simulation.SslVisionGeometry.Vector2f.getDefaultInstance() : p1_;
     }
@@ -1121,7 +1160,6 @@ public final class SslVisionGeometry {
      *
      * <code>required .proto.simulation.Vector2f p1 = 2;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.Vector2fOrBuilder getP1OrBuilder() {
       return p1_ == null ? proto.simulation.SslVisionGeometry.Vector2f.getDefaultInstance() : p1_;
     }
@@ -1134,11 +1172,9 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required .proto.simulation.Vector2f p2 = 3;</code>
-     * @return Whether the p2 field is set.
      */
-    @java.lang.Override
     public boolean hasP2() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -1146,9 +1182,7 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required .proto.simulation.Vector2f p2 = 3;</code>
-     * @return The p2.
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.Vector2f getP2() {
       return p2_ == null ? proto.simulation.SslVisionGeometry.Vector2f.getDefaultInstance() : p2_;
     }
@@ -1159,24 +1193,21 @@ public final class SslVisionGeometry {
      *
      * <code>required .proto.simulation.Vector2f p2 = 3;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.Vector2fOrBuilder getP2OrBuilder() {
       return p2_ == null ? proto.simulation.SslVisionGeometry.Vector2f.getDefaultInstance() : p2_;
     }
 
     public static final int THICKNESS_FIELD_NUMBER = 4;
-    private float thickness_ = 0F;
+    private float thickness_;
     /**
      * <pre>
      * Thickness of the line segment.
      * </pre>
      *
      * <code>required float thickness = 4;</code>
-     * @return Whether the thickness field is set.
      */
-    @java.lang.Override
     public boolean hasThickness() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <pre>
@@ -1184,25 +1215,22 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required float thickness = 4;</code>
-     * @return The thickness.
      */
-    @java.lang.Override
     public float getThickness() {
       return thickness_;
     }
 
     public static final int TYPE_FIELD_NUMBER = 5;
-    private int type_ = 0;
+    private int type_;
     /**
      * <pre>
      * The type of this shape
      * </pre>
      *
      * <code>optional .proto.simulation.SSL_FieldShapeType type = 5;</code>
-     * @return Whether the type field is set.
      */
-    @java.lang.Override public boolean hasType() {
-      return ((bitField0_ & 0x00000010) != 0);
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <pre>
@@ -1210,10 +1238,10 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>optional .proto.simulation.SSL_FieldShapeType type = 5;</code>
-     * @return The type.
      */
-    @java.lang.Override public proto.simulation.SslVisionGeometry.SSL_FieldShapeType getType() {
-      proto.simulation.SslVisionGeometry.SSL_FieldShapeType result = proto.simulation.SslVisionGeometry.SSL_FieldShapeType.forNumber(type_);
+    public proto.simulation.SslVisionGeometry.SSL_FieldShapeType getType() {
+      @SuppressWarnings("deprecation")
+      proto.simulation.SslVisionGeometry.SSL_FieldShapeType result = proto.simulation.SslVisionGeometry.SSL_FieldShapeType.valueOf(type_);
       return result == null ? proto.simulation.SslVisionGeometry.SSL_FieldShapeType.Undefined : result;
     }
 
@@ -1255,22 +1283,22 @@ public final class SslVisionGeometry {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, getP1());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeMessage(3, getP2());
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeFloat(4, thickness_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeEnum(5, type_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1279,26 +1307,26 @@ public final class SslVisionGeometry {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getP1());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getP2());
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, thickness_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, type_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1313,33 +1341,35 @@ public final class SslVisionGeometry {
       }
       proto.simulation.SslVisionGeometry.SSL_FieldLineSegment other = (proto.simulation.SslVisionGeometry.SSL_FieldLineSegment) obj;
 
-      if (hasName() != other.hasName()) return false;
+      boolean result = true;
+      result = result && (hasName() == other.hasName());
       if (hasName()) {
-        if (!getName()
-            .equals(other.getName())) return false;
+        result = result && getName()
+            .equals(other.getName());
       }
-      if (hasP1() != other.hasP1()) return false;
+      result = result && (hasP1() == other.hasP1());
       if (hasP1()) {
-        if (!getP1()
-            .equals(other.getP1())) return false;
+        result = result && getP1()
+            .equals(other.getP1());
       }
-      if (hasP2() != other.hasP2()) return false;
+      result = result && (hasP2() == other.hasP2());
       if (hasP2()) {
-        if (!getP2()
-            .equals(other.getP2())) return false;
+        result = result && getP2()
+            .equals(other.getP2());
       }
-      if (hasThickness() != other.hasThickness()) return false;
+      result = result && (hasThickness() == other.hasThickness());
       if (hasThickness()) {
-        if (java.lang.Float.floatToIntBits(getThickness())
-            != java.lang.Float.floatToIntBits(
-                other.getThickness())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getThickness())
+            == java.lang.Float.floatToIntBits(
+                other.getThickness()));
       }
-      if (hasType() != other.hasType()) return false;
+      result = result && (hasType() == other.hasType());
       if (hasType()) {
-        if (type_ != other.type_) return false;
+        result = result && type_ == other.type_;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1370,7 +1400,7 @@ public final class SslVisionGeometry {
         hash = (37 * hash) + TYPE_FIELD_NUMBER;
         hash = (53 * hash) + type_;
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1512,20 +1542,24 @@ public final class SslVisionGeometry {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         name_ = "";
-        p1_ = null;
-        if (p1Builder_ != null) {
-          p1Builder_.dispose();
-          p1Builder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (p1Builder_ == null) {
+          p1_ = null;
+        } else {
+          p1Builder_.clear();
         }
-        p2_ = null;
-        if (p2Builder_ != null) {
-          p2Builder_.dispose();
-          p2Builder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (p2Builder_ == null) {
+          p2_ = null;
+        } else {
+          p2Builder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         thickness_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000008);
         type_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1552,72 +1586,72 @@ public final class SslVisionGeometry {
       @java.lang.Override
       public proto.simulation.SslVisionGeometry.SSL_FieldLineSegment buildPartial() {
         proto.simulation.SslVisionGeometry.SSL_FieldLineSegment result = new proto.simulation.SslVisionGeometry.SSL_FieldLineSegment(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.name_ = name_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (p1Builder_ == null) {
+          result.p1_ = p1_;
+        } else {
+          result.p1_ = p1Builder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        if (p2Builder_ == null) {
+          result.p2_ = p2_;
+        } else {
+          result.p2_ = p2Builder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.thickness_ = thickness_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.type_ = type_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.simulation.SslVisionGeometry.SSL_FieldLineSegment result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.name_ = name_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.p1_ = p1Builder_ == null
-              ? p1_
-              : p1Builder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.p2_ = p2Builder_ == null
-              ? p2_
-              : p2Builder_.build();
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.thickness_ = thickness_;
-          to_bitField0_ |= 0x00000008;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.type_ = type_;
-          to_bitField0_ |= 0x00000010;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1632,8 +1666,8 @@ public final class SslVisionGeometry {
       public Builder mergeFrom(proto.simulation.SslVisionGeometry.SSL_FieldLineSegment other) {
         if (other == proto.simulation.SslVisionGeometry.SSL_FieldLineSegment.getDefaultInstance()) return this;
         if (other.hasName()) {
-          name_ = other.name_;
           bitField0_ |= 0x00000001;
+          name_ = other.name_;
           onChanged();
         }
         if (other.hasP1()) {
@@ -1648,7 +1682,7 @@ public final class SslVisionGeometry {
         if (other.hasType()) {
           setType(other.getType());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1681,66 +1715,17 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.simulation.SslVisionGeometry.SSL_FieldLineSegment parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                name_ = input.readBytes();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getP1FieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getP2FieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 37: {
-                thickness_ = input.readFloat();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 37
-              case 40: {
-                int tmpRaw = input.readEnum();
-                proto.simulation.SslVisionGeometry.SSL_FieldShapeType tmpValue =
-                    proto.simulation.SslVisionGeometry.SSL_FieldShapeType.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(5, tmpRaw);
-                } else {
-                  type_ = tmpRaw;
-                  bitField0_ |= 0x00000010;
-                }
-                break;
-              } // case 40
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.simulation.SslVisionGeometry.SSL_FieldLineSegment) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1752,10 +1737,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @return Whether the name field is set.
        */
       public boolean hasName() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -1763,7 +1747,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1785,7 +1768,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1806,14 +1788,14 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         name_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1823,11 +1805,10 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearName() {
-        name_ = getDefaultInstance().getName();
         bitField0_ = (bitField0_ & ~0x00000001);
+        name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
@@ -1837,19 +1818,19 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         name_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private proto.simulation.SslVisionGeometry.Vector2f p1_;
+      private proto.simulation.SslVisionGeometry.Vector2f p1_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.simulation.SslVisionGeometry.Vector2f, proto.simulation.SslVisionGeometry.Vector2f.Builder, proto.simulation.SslVisionGeometry.Vector2fOrBuilder> p1Builder_;
       /**
@@ -1858,10 +1839,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required .proto.simulation.Vector2f p1 = 2;</code>
-       * @return Whether the p1 field is set.
        */
       public boolean hasP1() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -1869,7 +1849,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required .proto.simulation.Vector2f p1 = 2;</code>
-       * @return The p1.
        */
       public proto.simulation.SslVisionGeometry.Vector2f getP1() {
         if (p1Builder_ == null) {
@@ -1891,11 +1870,11 @@ public final class SslVisionGeometry {
             throw new NullPointerException();
           }
           p1_ = value;
+          onChanged();
         } else {
           p1Builder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -1909,11 +1888,11 @@ public final class SslVisionGeometry {
           proto.simulation.SslVisionGeometry.Vector2f.Builder builderForValue) {
         if (p1Builder_ == null) {
           p1_ = builderForValue.build();
+          onChanged();
         } else {
           p1Builder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -1925,18 +1904,19 @@ public final class SslVisionGeometry {
        */
       public Builder mergeP1(proto.simulation.SslVisionGeometry.Vector2f value) {
         if (p1Builder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            p1_ != null &&
-            p1_ != proto.simulation.SslVisionGeometry.Vector2f.getDefaultInstance()) {
-            getP1Builder().mergeFrom(value);
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              p1_ != null &&
+              p1_ != proto.simulation.SslVisionGeometry.Vector2f.getDefaultInstance()) {
+            p1_ =
+              proto.simulation.SslVisionGeometry.Vector2f.newBuilder(p1_).mergeFrom(value).buildPartial();
           } else {
             p1_ = value;
           }
+          onChanged();
         } else {
           p1Builder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -1947,13 +1927,13 @@ public final class SslVisionGeometry {
        * <code>required .proto.simulation.Vector2f p1 = 2;</code>
        */
       public Builder clearP1() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        p1_ = null;
-        if (p1Builder_ != null) {
-          p1Builder_.dispose();
-          p1Builder_ = null;
+        if (p1Builder_ == null) {
+          p1_ = null;
+          onChanged();
+        } else {
+          p1Builder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
@@ -2004,7 +1984,7 @@ public final class SslVisionGeometry {
         return p1Builder_;
       }
 
-      private proto.simulation.SslVisionGeometry.Vector2f p2_;
+      private proto.simulation.SslVisionGeometry.Vector2f p2_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.simulation.SslVisionGeometry.Vector2f, proto.simulation.SslVisionGeometry.Vector2f.Builder, proto.simulation.SslVisionGeometry.Vector2fOrBuilder> p2Builder_;
       /**
@@ -2013,10 +1993,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required .proto.simulation.Vector2f p2 = 3;</code>
-       * @return Whether the p2 field is set.
        */
       public boolean hasP2() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -2024,7 +2003,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required .proto.simulation.Vector2f p2 = 3;</code>
-       * @return The p2.
        */
       public proto.simulation.SslVisionGeometry.Vector2f getP2() {
         if (p2Builder_ == null) {
@@ -2046,11 +2024,11 @@ public final class SslVisionGeometry {
             throw new NullPointerException();
           }
           p2_ = value;
+          onChanged();
         } else {
           p2Builder_.setMessage(value);
         }
         bitField0_ |= 0x00000004;
-        onChanged();
         return this;
       }
       /**
@@ -2064,11 +2042,11 @@ public final class SslVisionGeometry {
           proto.simulation.SslVisionGeometry.Vector2f.Builder builderForValue) {
         if (p2Builder_ == null) {
           p2_ = builderForValue.build();
+          onChanged();
         } else {
           p2Builder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000004;
-        onChanged();
         return this;
       }
       /**
@@ -2080,18 +2058,19 @@ public final class SslVisionGeometry {
        */
       public Builder mergeP2(proto.simulation.SslVisionGeometry.Vector2f value) {
         if (p2Builder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            p2_ != null &&
-            p2_ != proto.simulation.SslVisionGeometry.Vector2f.getDefaultInstance()) {
-            getP2Builder().mergeFrom(value);
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              p2_ != null &&
+              p2_ != proto.simulation.SslVisionGeometry.Vector2f.getDefaultInstance()) {
+            p2_ =
+              proto.simulation.SslVisionGeometry.Vector2f.newBuilder(p2_).mergeFrom(value).buildPartial();
           } else {
             p2_ = value;
           }
+          onChanged();
         } else {
           p2Builder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000004;
-        onChanged();
         return this;
       }
       /**
@@ -2102,13 +2081,13 @@ public final class SslVisionGeometry {
        * <code>required .proto.simulation.Vector2f p2 = 3;</code>
        */
       public Builder clearP2() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        p2_ = null;
-        if (p2Builder_ != null) {
-          p2Builder_.dispose();
-          p2Builder_ = null;
+        if (p2Builder_ == null) {
+          p2_ = null;
+          onChanged();
+        } else {
+          p2Builder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
       /**
@@ -2166,11 +2145,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float thickness = 4;</code>
-       * @return Whether the thickness field is set.
        */
-      @java.lang.Override
       public boolean hasThickness() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <pre>
@@ -2178,9 +2155,7 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float thickness = 4;</code>
-       * @return The thickness.
        */
-      @java.lang.Override
       public float getThickness() {
         return thickness_;
       }
@@ -2190,13 +2165,10 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float thickness = 4;</code>
-       * @param value The thickness to set.
-       * @return This builder for chaining.
        */
       public Builder setThickness(float value) {
-        
-        thickness_ = value;
         bitField0_ |= 0x00000008;
+        thickness_ = value;
         onChanged();
         return this;
       }
@@ -2206,7 +2178,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float thickness = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearThickness() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -2222,10 +2193,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>optional .proto.simulation.SSL_FieldShapeType type = 5;</code>
-       * @return Whether the type field is set.
        */
-      @java.lang.Override public boolean hasType() {
-        return ((bitField0_ & 0x00000010) != 0);
+      public boolean hasType() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <pre>
@@ -2233,11 +2203,10 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>optional .proto.simulation.SSL_FieldShapeType type = 5;</code>
-       * @return The type.
        */
-      @java.lang.Override
       public proto.simulation.SslVisionGeometry.SSL_FieldShapeType getType() {
-        proto.simulation.SslVisionGeometry.SSL_FieldShapeType result = proto.simulation.SslVisionGeometry.SSL_FieldShapeType.forNumber(type_);
+        @SuppressWarnings("deprecation")
+        proto.simulation.SslVisionGeometry.SSL_FieldShapeType result = proto.simulation.SslVisionGeometry.SSL_FieldShapeType.valueOf(type_);
         return result == null ? proto.simulation.SslVisionGeometry.SSL_FieldShapeType.Undefined : result;
       }
       /**
@@ -2246,8 +2215,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>optional .proto.simulation.SSL_FieldShapeType type = 5;</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
        */
       public Builder setType(proto.simulation.SslVisionGeometry.SSL_FieldShapeType value) {
         if (value == null) {
@@ -2264,7 +2231,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>optional .proto.simulation.SSL_FieldShapeType type = 5;</code>
-       * @return This builder for chaining.
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -2305,18 +2271,7 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SSL_FieldLineSegment(input, extensionRegistry);
       }
     };
 
@@ -2346,7 +2301,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required string name = 1;</code>
-     * @return Whether the name field is set.
      */
     boolean hasName();
     /**
@@ -2355,7 +2309,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required string name = 1;</code>
-     * @return The name.
      */
     java.lang.String getName();
     /**
@@ -2364,7 +2317,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required string name = 1;</code>
-     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -2375,7 +2327,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required .proto.simulation.Vector2f center = 2;</code>
-     * @return Whether the center field is set.
      */
     boolean hasCenter();
     /**
@@ -2384,7 +2335,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required .proto.simulation.Vector2f center = 2;</code>
-     * @return The center.
      */
     proto.simulation.SslVisionGeometry.Vector2f getCenter();
     /**
@@ -2402,7 +2352,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required float radius = 3;</code>
-     * @return Whether the radius field is set.
      */
     boolean hasRadius();
     /**
@@ -2411,7 +2360,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required float radius = 3;</code>
-     * @return The radius.
      */
     float getRadius();
 
@@ -2421,7 +2369,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required float a1 = 4;</code>
-     * @return Whether the a1 field is set.
      */
     boolean hasA1();
     /**
@@ -2430,7 +2377,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required float a1 = 4;</code>
-     * @return The a1.
      */
     float getA1();
 
@@ -2440,7 +2386,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required float a2 = 5;</code>
-     * @return Whether the a2 field is set.
      */
     boolean hasA2();
     /**
@@ -2449,7 +2394,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required float a2 = 5;</code>
-     * @return The a2.
      */
     float getA2();
 
@@ -2459,7 +2403,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required float thickness = 6;</code>
-     * @return Whether the thickness field is set.
      */
     boolean hasThickness();
     /**
@@ -2468,7 +2411,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required float thickness = 6;</code>
-     * @return The thickness.
      */
     float getThickness();
 
@@ -2478,7 +2420,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>optional .proto.simulation.SSL_FieldShapeType type = 7;</code>
-     * @return Whether the type field is set.
      */
     boolean hasType();
     /**
@@ -2487,7 +2428,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>optional .proto.simulation.SSL_FieldShapeType type = 7;</code>
-     * @return The type.
      */
     proto.simulation.SslVisionGeometry.SSL_FieldShapeType getType();
   }
@@ -2499,7 +2439,7 @@ public final class SslVisionGeometry {
    *
    * Protobuf type {@code proto.simulation.SSL_FieldCircularArc}
    */
-  public static final class SSL_FieldCircularArc extends
+  public  static final class SSL_FieldCircularArc extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.simulation.SSL_FieldCircularArc)
       SSL_FieldCircularArcOrBuilder {
@@ -2510,20 +2450,106 @@ public final class SslVisionGeometry {
     }
     private SSL_FieldCircularArc() {
       name_ = "";
+      radius_ = 0F;
+      a1_ = 0F;
+      a2_ = 0F;
+      thickness_ = 0F;
       type_ = 0;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SSL_FieldCircularArc();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private SSL_FieldCircularArc(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              name_ = bs;
+              break;
+            }
+            case 18: {
+              proto.simulation.SslVisionGeometry.Vector2f.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = center_.toBuilder();
+              }
+              center_ = input.readMessage(proto.simulation.SslVisionGeometry.Vector2f.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(center_);
+                center_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              radius_ = input.readFloat();
+              break;
+            }
+            case 37: {
+              bitField0_ |= 0x00000008;
+              a1_ = input.readFloat();
+              break;
+            }
+            case 45: {
+              bitField0_ |= 0x00000010;
+              a2_ = input.readFloat();
+              break;
+            }
+            case 53: {
+              bitField0_ |= 0x00000020;
+              thickness_ = input.readFloat();
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              proto.simulation.SslVisionGeometry.SSL_FieldShapeType value = proto.simulation.SslVisionGeometry.SSL_FieldShapeType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(7, rawValue);
+              } else {
+                bitField0_ |= 0x00000040;
+                type_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2540,19 +2566,16 @@ public final class SslVisionGeometry {
 
     private int bitField0_;
     public static final int NAME_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object name_ = "";
+    private volatile java.lang.Object name_;
     /**
      * <pre>
      * Name of this field marking.
      * </pre>
      *
      * <code>required string name = 1;</code>
-     * @return Whether the name field is set.
      */
-    @java.lang.Override
     public boolean hasName() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -2560,9 +2583,7 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required string name = 1;</code>
-     * @return The name.
      */
-    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -2583,9 +2604,7 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required string name = 1;</code>
-     * @return The bytes for name.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -2608,11 +2627,9 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required .proto.simulation.Vector2f center = 2;</code>
-     * @return Whether the center field is set.
      */
-    @java.lang.Override
     public boolean hasCenter() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -2620,9 +2637,7 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required .proto.simulation.Vector2f center = 2;</code>
-     * @return The center.
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.Vector2f getCenter() {
       return center_ == null ? proto.simulation.SslVisionGeometry.Vector2f.getDefaultInstance() : center_;
     }
@@ -2633,24 +2648,21 @@ public final class SslVisionGeometry {
      *
      * <code>required .proto.simulation.Vector2f center = 2;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.Vector2fOrBuilder getCenterOrBuilder() {
       return center_ == null ? proto.simulation.SslVisionGeometry.Vector2f.getDefaultInstance() : center_;
     }
 
     public static final int RADIUS_FIELD_NUMBER = 3;
-    private float radius_ = 0F;
+    private float radius_;
     /**
      * <pre>
      * Radius of the arc.
      * </pre>
      *
      * <code>required float radius = 3;</code>
-     * @return Whether the radius field is set.
      */
-    @java.lang.Override
     public boolean hasRadius() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -2658,26 +2670,22 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required float radius = 3;</code>
-     * @return The radius.
      */
-    @java.lang.Override
     public float getRadius() {
       return radius_;
     }
 
     public static final int A1_FIELD_NUMBER = 4;
-    private float a1_ = 0F;
+    private float a1_;
     /**
      * <pre>
      * Start angle in counter-clockwise order.
      * </pre>
      *
      * <code>required float a1 = 4;</code>
-     * @return Whether the a1 field is set.
      */
-    @java.lang.Override
     public boolean hasA1() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <pre>
@@ -2685,26 +2693,22 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required float a1 = 4;</code>
-     * @return The a1.
      */
-    @java.lang.Override
     public float getA1() {
       return a1_;
     }
 
     public static final int A2_FIELD_NUMBER = 5;
-    private float a2_ = 0F;
+    private float a2_;
     /**
      * <pre>
      * End angle in counter-clockwise order.
      * </pre>
      *
      * <code>required float a2 = 5;</code>
-     * @return Whether the a2 field is set.
      */
-    @java.lang.Override
     public boolean hasA2() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <pre>
@@ -2712,26 +2716,22 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required float a2 = 5;</code>
-     * @return The a2.
      */
-    @java.lang.Override
     public float getA2() {
       return a2_;
     }
 
     public static final int THICKNESS_FIELD_NUMBER = 6;
-    private float thickness_ = 0F;
+    private float thickness_;
     /**
      * <pre>
      * Thickness of the arc.
      * </pre>
      *
      * <code>required float thickness = 6;</code>
-     * @return Whether the thickness field is set.
      */
-    @java.lang.Override
     public boolean hasThickness() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <pre>
@@ -2739,25 +2739,22 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required float thickness = 6;</code>
-     * @return The thickness.
      */
-    @java.lang.Override
     public float getThickness() {
       return thickness_;
     }
 
     public static final int TYPE_FIELD_NUMBER = 7;
-    private int type_ = 0;
+    private int type_;
     /**
      * <pre>
      * The type of this shape
      * </pre>
      *
      * <code>optional .proto.simulation.SSL_FieldShapeType type = 7;</code>
-     * @return Whether the type field is set.
      */
-    @java.lang.Override public boolean hasType() {
-      return ((bitField0_ & 0x00000040) != 0);
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <pre>
@@ -2765,10 +2762,10 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>optional .proto.simulation.SSL_FieldShapeType type = 7;</code>
-     * @return The type.
      */
-    @java.lang.Override public proto.simulation.SslVisionGeometry.SSL_FieldShapeType getType() {
-      proto.simulation.SslVisionGeometry.SSL_FieldShapeType result = proto.simulation.SslVisionGeometry.SSL_FieldShapeType.forNumber(type_);
+    public proto.simulation.SslVisionGeometry.SSL_FieldShapeType getType() {
+      @SuppressWarnings("deprecation")
+      proto.simulation.SslVisionGeometry.SSL_FieldShapeType result = proto.simulation.SslVisionGeometry.SSL_FieldShapeType.valueOf(type_);
       return result == null ? proto.simulation.SslVisionGeometry.SSL_FieldShapeType.Undefined : result;
     }
 
@@ -2814,28 +2811,28 @@ public final class SslVisionGeometry {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, getCenter());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeFloat(3, radius_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeFloat(4, a1_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeFloat(5, a2_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeFloat(6, thickness_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeEnum(7, type_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2844,34 +2841,34 @@ public final class SslVisionGeometry {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getCenter());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, radius_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, a1_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(5, a2_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(6, thickness_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, type_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2886,46 +2883,51 @@ public final class SslVisionGeometry {
       }
       proto.simulation.SslVisionGeometry.SSL_FieldCircularArc other = (proto.simulation.SslVisionGeometry.SSL_FieldCircularArc) obj;
 
-      if (hasName() != other.hasName()) return false;
+      boolean result = true;
+      result = result && (hasName() == other.hasName());
       if (hasName()) {
-        if (!getName()
-            .equals(other.getName())) return false;
+        result = result && getName()
+            .equals(other.getName());
       }
-      if (hasCenter() != other.hasCenter()) return false;
+      result = result && (hasCenter() == other.hasCenter());
       if (hasCenter()) {
-        if (!getCenter()
-            .equals(other.getCenter())) return false;
+        result = result && getCenter()
+            .equals(other.getCenter());
       }
-      if (hasRadius() != other.hasRadius()) return false;
+      result = result && (hasRadius() == other.hasRadius());
       if (hasRadius()) {
-        if (java.lang.Float.floatToIntBits(getRadius())
-            != java.lang.Float.floatToIntBits(
-                other.getRadius())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getRadius())
+            == java.lang.Float.floatToIntBits(
+                other.getRadius()));
       }
-      if (hasA1() != other.hasA1()) return false;
+      result = result && (hasA1() == other.hasA1());
       if (hasA1()) {
-        if (java.lang.Float.floatToIntBits(getA1())
-            != java.lang.Float.floatToIntBits(
-                other.getA1())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getA1())
+            == java.lang.Float.floatToIntBits(
+                other.getA1()));
       }
-      if (hasA2() != other.hasA2()) return false;
+      result = result && (hasA2() == other.hasA2());
       if (hasA2()) {
-        if (java.lang.Float.floatToIntBits(getA2())
-            != java.lang.Float.floatToIntBits(
-                other.getA2())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getA2())
+            == java.lang.Float.floatToIntBits(
+                other.getA2()));
       }
-      if (hasThickness() != other.hasThickness()) return false;
+      result = result && (hasThickness() == other.hasThickness());
       if (hasThickness()) {
-        if (java.lang.Float.floatToIntBits(getThickness())
-            != java.lang.Float.floatToIntBits(
-                other.getThickness())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getThickness())
+            == java.lang.Float.floatToIntBits(
+                other.getThickness()));
       }
-      if (hasType() != other.hasType()) return false;
+      result = result && (hasType() == other.hasType());
       if (hasType()) {
-        if (type_ != other.type_) return false;
+        result = result && type_ == other.type_;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2967,7 +2969,7 @@ public final class SslVisionGeometry {
         hash = (37 * hash) + TYPE_FIELD_NUMBER;
         hash = (53 * hash) + type_;
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3106,18 +3108,24 @@ public final class SslVisionGeometry {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         name_ = "";
-        center_ = null;
-        if (centerBuilder_ != null) {
-          centerBuilder_.dispose();
-          centerBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (centerBuilder_ == null) {
+          center_ = null;
+        } else {
+          centerBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         radius_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000004);
         a1_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000008);
         a2_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000010);
         thickness_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000020);
         type_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -3144,78 +3152,76 @@ public final class SslVisionGeometry {
       @java.lang.Override
       public proto.simulation.SslVisionGeometry.SSL_FieldCircularArc buildPartial() {
         proto.simulation.SslVisionGeometry.SSL_FieldCircularArc result = new proto.simulation.SslVisionGeometry.SSL_FieldCircularArc(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.name_ = name_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (centerBuilder_ == null) {
+          result.center_ = center_;
+        } else {
+          result.center_ = centerBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.radius_ = radius_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.a1_ = a1_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.a2_ = a2_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.thickness_ = thickness_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.type_ = type_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.simulation.SslVisionGeometry.SSL_FieldCircularArc result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.name_ = name_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.center_ = centerBuilder_ == null
-              ? center_
-              : centerBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.radius_ = radius_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.a1_ = a1_;
-          to_bitField0_ |= 0x00000008;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.a2_ = a2_;
-          to_bitField0_ |= 0x00000010;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.thickness_ = thickness_;
-          to_bitField0_ |= 0x00000020;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.type_ = type_;
-          to_bitField0_ |= 0x00000040;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3230,8 +3236,8 @@ public final class SslVisionGeometry {
       public Builder mergeFrom(proto.simulation.SslVisionGeometry.SSL_FieldCircularArc other) {
         if (other == proto.simulation.SslVisionGeometry.SSL_FieldCircularArc.getDefaultInstance()) return this;
         if (other.hasName()) {
-          name_ = other.name_;
           bitField0_ |= 0x00000001;
+          name_ = other.name_;
           onChanged();
         }
         if (other.hasCenter()) {
@@ -3252,7 +3258,7 @@ public final class SslVisionGeometry {
         if (other.hasType()) {
           setType(other.getType());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3288,74 +3294,17 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.simulation.SslVisionGeometry.SSL_FieldCircularArc parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                name_ = input.readBytes();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getCenterFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 29: {
-                radius_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 29
-              case 37: {
-                a1_ = input.readFloat();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 37
-              case 45: {
-                a2_ = input.readFloat();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 45
-              case 53: {
-                thickness_ = input.readFloat();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 53
-              case 56: {
-                int tmpRaw = input.readEnum();
-                proto.simulation.SslVisionGeometry.SSL_FieldShapeType tmpValue =
-                    proto.simulation.SslVisionGeometry.SSL_FieldShapeType.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(7, tmpRaw);
-                } else {
-                  type_ = tmpRaw;
-                  bitField0_ |= 0x00000040;
-                }
-                break;
-              } // case 56
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.simulation.SslVisionGeometry.SSL_FieldCircularArc) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -3367,10 +3316,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @return Whether the name field is set.
        */
       public boolean hasName() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -3378,7 +3326,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -3400,7 +3347,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -3421,14 +3367,14 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         name_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3438,11 +3384,10 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearName() {
-        name_ = getDefaultInstance().getName();
         bitField0_ = (bitField0_ & ~0x00000001);
+        name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
@@ -3452,19 +3397,19 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required string name = 1;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         name_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private proto.simulation.SslVisionGeometry.Vector2f center_;
+      private proto.simulation.SslVisionGeometry.Vector2f center_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.simulation.SslVisionGeometry.Vector2f, proto.simulation.SslVisionGeometry.Vector2f.Builder, proto.simulation.SslVisionGeometry.Vector2fOrBuilder> centerBuilder_;
       /**
@@ -3473,10 +3418,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required .proto.simulation.Vector2f center = 2;</code>
-       * @return Whether the center field is set.
        */
       public boolean hasCenter() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -3484,7 +3428,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required .proto.simulation.Vector2f center = 2;</code>
-       * @return The center.
        */
       public proto.simulation.SslVisionGeometry.Vector2f getCenter() {
         if (centerBuilder_ == null) {
@@ -3506,11 +3449,11 @@ public final class SslVisionGeometry {
             throw new NullPointerException();
           }
           center_ = value;
+          onChanged();
         } else {
           centerBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -3524,11 +3467,11 @@ public final class SslVisionGeometry {
           proto.simulation.SslVisionGeometry.Vector2f.Builder builderForValue) {
         if (centerBuilder_ == null) {
           center_ = builderForValue.build();
+          onChanged();
         } else {
           centerBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -3540,18 +3483,19 @@ public final class SslVisionGeometry {
        */
       public Builder mergeCenter(proto.simulation.SslVisionGeometry.Vector2f value) {
         if (centerBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            center_ != null &&
-            center_ != proto.simulation.SslVisionGeometry.Vector2f.getDefaultInstance()) {
-            getCenterBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              center_ != null &&
+              center_ != proto.simulation.SslVisionGeometry.Vector2f.getDefaultInstance()) {
+            center_ =
+              proto.simulation.SslVisionGeometry.Vector2f.newBuilder(center_).mergeFrom(value).buildPartial();
           } else {
             center_ = value;
           }
+          onChanged();
         } else {
           centerBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -3562,13 +3506,13 @@ public final class SslVisionGeometry {
        * <code>required .proto.simulation.Vector2f center = 2;</code>
        */
       public Builder clearCenter() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        center_ = null;
-        if (centerBuilder_ != null) {
-          centerBuilder_.dispose();
-          centerBuilder_ = null;
+        if (centerBuilder_ == null) {
+          center_ = null;
+          onChanged();
+        } else {
+          centerBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
@@ -3626,11 +3570,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float radius = 3;</code>
-       * @return Whether the radius field is set.
        */
-      @java.lang.Override
       public boolean hasRadius() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -3638,9 +3580,7 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float radius = 3;</code>
-       * @return The radius.
        */
-      @java.lang.Override
       public float getRadius() {
         return radius_;
       }
@@ -3650,13 +3590,10 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float radius = 3;</code>
-       * @param value The radius to set.
-       * @return This builder for chaining.
        */
       public Builder setRadius(float value) {
-        
-        radius_ = value;
         bitField0_ |= 0x00000004;
+        radius_ = value;
         onChanged();
         return this;
       }
@@ -3666,7 +3603,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float radius = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearRadius() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -3682,11 +3618,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float a1 = 4;</code>
-       * @return Whether the a1 field is set.
        */
-      @java.lang.Override
       public boolean hasA1() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <pre>
@@ -3694,9 +3628,7 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float a1 = 4;</code>
-       * @return The a1.
        */
-      @java.lang.Override
       public float getA1() {
         return a1_;
       }
@@ -3706,13 +3638,10 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float a1 = 4;</code>
-       * @param value The a1 to set.
-       * @return This builder for chaining.
        */
       public Builder setA1(float value) {
-        
-        a1_ = value;
         bitField0_ |= 0x00000008;
+        a1_ = value;
         onChanged();
         return this;
       }
@@ -3722,7 +3651,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float a1 = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearA1() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -3738,11 +3666,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float a2 = 5;</code>
-       * @return Whether the a2 field is set.
        */
-      @java.lang.Override
       public boolean hasA2() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <pre>
@@ -3750,9 +3676,7 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float a2 = 5;</code>
-       * @return The a2.
        */
-      @java.lang.Override
       public float getA2() {
         return a2_;
       }
@@ -3762,13 +3686,10 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float a2 = 5;</code>
-       * @param value The a2 to set.
-       * @return This builder for chaining.
        */
       public Builder setA2(float value) {
-        
-        a2_ = value;
         bitField0_ |= 0x00000010;
+        a2_ = value;
         onChanged();
         return this;
       }
@@ -3778,7 +3699,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float a2 = 5;</code>
-       * @return This builder for chaining.
        */
       public Builder clearA2() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -3794,11 +3714,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float thickness = 6;</code>
-       * @return Whether the thickness field is set.
        */
-      @java.lang.Override
       public boolean hasThickness() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <pre>
@@ -3806,9 +3724,7 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float thickness = 6;</code>
-       * @return The thickness.
        */
-      @java.lang.Override
       public float getThickness() {
         return thickness_;
       }
@@ -3818,13 +3734,10 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float thickness = 6;</code>
-       * @param value The thickness to set.
-       * @return This builder for chaining.
        */
       public Builder setThickness(float value) {
-        
-        thickness_ = value;
         bitField0_ |= 0x00000020;
+        thickness_ = value;
         onChanged();
         return this;
       }
@@ -3834,7 +3747,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required float thickness = 6;</code>
-       * @return This builder for chaining.
        */
       public Builder clearThickness() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -3850,10 +3762,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>optional .proto.simulation.SSL_FieldShapeType type = 7;</code>
-       * @return Whether the type field is set.
        */
-      @java.lang.Override public boolean hasType() {
-        return ((bitField0_ & 0x00000040) != 0);
+      public boolean hasType() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <pre>
@@ -3861,11 +3772,10 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>optional .proto.simulation.SSL_FieldShapeType type = 7;</code>
-       * @return The type.
        */
-      @java.lang.Override
       public proto.simulation.SslVisionGeometry.SSL_FieldShapeType getType() {
-        proto.simulation.SslVisionGeometry.SSL_FieldShapeType result = proto.simulation.SslVisionGeometry.SSL_FieldShapeType.forNumber(type_);
+        @SuppressWarnings("deprecation")
+        proto.simulation.SslVisionGeometry.SSL_FieldShapeType result = proto.simulation.SslVisionGeometry.SSL_FieldShapeType.valueOf(type_);
         return result == null ? proto.simulation.SslVisionGeometry.SSL_FieldShapeType.Undefined : result;
       }
       /**
@@ -3874,8 +3784,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>optional .proto.simulation.SSL_FieldShapeType type = 7;</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
        */
       public Builder setType(proto.simulation.SslVisionGeometry.SSL_FieldShapeType value) {
         if (value == null) {
@@ -3892,7 +3800,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>optional .proto.simulation.SSL_FieldShapeType type = 7;</code>
-       * @return This builder for chaining.
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -3933,18 +3840,7 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SSL_FieldCircularArc(input, extensionRegistry);
       }
     };
 
@@ -3970,56 +3866,46 @@ public final class SslVisionGeometry {
 
     /**
      * <code>required int32 field_length = 1;</code>
-     * @return Whether the fieldLength field is set.
      */
     boolean hasFieldLength();
     /**
      * <code>required int32 field_length = 1;</code>
-     * @return The fieldLength.
      */
     int getFieldLength();
 
     /**
      * <code>required int32 field_width = 2;</code>
-     * @return Whether the fieldWidth field is set.
      */
     boolean hasFieldWidth();
     /**
      * <code>required int32 field_width = 2;</code>
-     * @return The fieldWidth.
      */
     int getFieldWidth();
 
     /**
      * <code>required int32 goal_width = 3;</code>
-     * @return Whether the goalWidth field is set.
      */
     boolean hasGoalWidth();
     /**
      * <code>required int32 goal_width = 3;</code>
-     * @return The goalWidth.
      */
     int getGoalWidth();
 
     /**
      * <code>required int32 goal_depth = 4;</code>
-     * @return Whether the goalDepth field is set.
      */
     boolean hasGoalDepth();
     /**
      * <code>required int32 goal_depth = 4;</code>
-     * @return The goalDepth.
      */
     int getGoalDepth();
 
     /**
      * <code>required int32 boundary_width = 5;</code>
-     * @return Whether the boundaryWidth field is set.
      */
     boolean hasBoundaryWidth();
     /**
      * <code>required int32 boundary_width = 5;</code>
-     * @return The boundaryWidth.
      */
     int getBoundaryWidth();
 
@@ -4073,30 +3959,26 @@ public final class SslVisionGeometry {
 
     /**
      * <code>optional int32 penalty_area_depth = 8;</code>
-     * @return Whether the penaltyAreaDepth field is set.
      */
     boolean hasPenaltyAreaDepth();
     /**
      * <code>optional int32 penalty_area_depth = 8;</code>
-     * @return The penaltyAreaDepth.
      */
     int getPenaltyAreaDepth();
 
     /**
      * <code>optional int32 penalty_area_width = 9;</code>
-     * @return Whether the penaltyAreaWidth field is set.
      */
     boolean hasPenaltyAreaWidth();
     /**
      * <code>optional int32 penalty_area_width = 9;</code>
-     * @return The penaltyAreaWidth.
      */
     int getPenaltyAreaWidth();
   }
   /**
    * Protobuf type {@code proto.simulation.SSL_GeometryFieldSize}
    */
-  public static final class SSL_GeometryFieldSize extends
+  public  static final class SSL_GeometryFieldSize extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.simulation.SSL_GeometryFieldSize)
       SSL_GeometryFieldSizeOrBuilder {
@@ -4106,21 +3988,118 @@ public final class SslVisionGeometry {
       super(builder);
     }
     private SSL_GeometryFieldSize() {
+      fieldLength_ = 0;
+      fieldWidth_ = 0;
+      goalWidth_ = 0;
+      goalDepth_ = 0;
+      boundaryWidth_ = 0;
       fieldLines_ = java.util.Collections.emptyList();
       fieldArcs_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SSL_GeometryFieldSize();
+      penaltyAreaDepth_ = 0;
+      penaltyAreaWidth_ = 0;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private SSL_GeometryFieldSize(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              fieldLength_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              fieldWidth_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              goalWidth_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              goalDepth_ = input.readInt32();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              boundaryWidth_ = input.readInt32();
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                fieldLines_ = new java.util.ArrayList<proto.simulation.SslVisionGeometry.SSL_FieldLineSegment>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              fieldLines_.add(
+                  input.readMessage(proto.simulation.SslVisionGeometry.SSL_FieldLineSegment.PARSER, extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                fieldArcs_ = new java.util.ArrayList<proto.simulation.SslVisionGeometry.SSL_FieldCircularArc>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              fieldArcs_.add(
+                  input.readMessage(proto.simulation.SslVisionGeometry.SSL_FieldCircularArc.PARSER, extensionRegistry));
+              break;
+            }
+            case 64: {
+              bitField0_ |= 0x00000020;
+              penaltyAreaDepth_ = input.readInt32();
+              break;
+            }
+            case 72: {
+              bitField0_ |= 0x00000040;
+              penaltyAreaWidth_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          fieldLines_ = java.util.Collections.unmodifiableList(fieldLines_);
+        }
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+          fieldArcs_ = java.util.Collections.unmodifiableList(fieldArcs_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -4137,114 +4116,91 @@ public final class SslVisionGeometry {
 
     private int bitField0_;
     public static final int FIELD_LENGTH_FIELD_NUMBER = 1;
-    private int fieldLength_ = 0;
+    private int fieldLength_;
     /**
      * <code>required int32 field_length = 1;</code>
-     * @return Whether the fieldLength field is set.
      */
-    @java.lang.Override
     public boolean hasFieldLength() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required int32 field_length = 1;</code>
-     * @return The fieldLength.
      */
-    @java.lang.Override
     public int getFieldLength() {
       return fieldLength_;
     }
 
     public static final int FIELD_WIDTH_FIELD_NUMBER = 2;
-    private int fieldWidth_ = 0;
+    private int fieldWidth_;
     /**
      * <code>required int32 field_width = 2;</code>
-     * @return Whether the fieldWidth field is set.
      */
-    @java.lang.Override
     public boolean hasFieldWidth() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>required int32 field_width = 2;</code>
-     * @return The fieldWidth.
      */
-    @java.lang.Override
     public int getFieldWidth() {
       return fieldWidth_;
     }
 
     public static final int GOAL_WIDTH_FIELD_NUMBER = 3;
-    private int goalWidth_ = 0;
+    private int goalWidth_;
     /**
      * <code>required int32 goal_width = 3;</code>
-     * @return Whether the goalWidth field is set.
      */
-    @java.lang.Override
     public boolean hasGoalWidth() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>required int32 goal_width = 3;</code>
-     * @return The goalWidth.
      */
-    @java.lang.Override
     public int getGoalWidth() {
       return goalWidth_;
     }
 
     public static final int GOAL_DEPTH_FIELD_NUMBER = 4;
-    private int goalDepth_ = 0;
+    private int goalDepth_;
     /**
      * <code>required int32 goal_depth = 4;</code>
-     * @return Whether the goalDepth field is set.
      */
-    @java.lang.Override
     public boolean hasGoalDepth() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>required int32 goal_depth = 4;</code>
-     * @return The goalDepth.
      */
-    @java.lang.Override
     public int getGoalDepth() {
       return goalDepth_;
     }
 
     public static final int BOUNDARY_WIDTH_FIELD_NUMBER = 5;
-    private int boundaryWidth_ = 0;
+    private int boundaryWidth_;
     /**
      * <code>required int32 boundary_width = 5;</code>
-     * @return Whether the boundaryWidth field is set.
      */
-    @java.lang.Override
     public boolean hasBoundaryWidth() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <code>required int32 boundary_width = 5;</code>
-     * @return The boundaryWidth.
      */
-    @java.lang.Override
     public int getBoundaryWidth() {
       return boundaryWidth_;
     }
 
     public static final int FIELD_LINES_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private java.util.List<proto.simulation.SslVisionGeometry.SSL_FieldLineSegment> fieldLines_;
     /**
      * <code>repeated .proto.simulation.SSL_FieldLineSegment field_lines = 6;</code>
      */
-    @java.lang.Override
     public java.util.List<proto.simulation.SslVisionGeometry.SSL_FieldLineSegment> getFieldLinesList() {
       return fieldLines_;
     }
     /**
      * <code>repeated .proto.simulation.SSL_FieldLineSegment field_lines = 6;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends proto.simulation.SslVisionGeometry.SSL_FieldLineSegmentOrBuilder> 
         getFieldLinesOrBuilderList() {
       return fieldLines_;
@@ -4252,40 +4208,34 @@ public final class SslVisionGeometry {
     /**
      * <code>repeated .proto.simulation.SSL_FieldLineSegment field_lines = 6;</code>
      */
-    @java.lang.Override
     public int getFieldLinesCount() {
       return fieldLines_.size();
     }
     /**
      * <code>repeated .proto.simulation.SSL_FieldLineSegment field_lines = 6;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.SSL_FieldLineSegment getFieldLines(int index) {
       return fieldLines_.get(index);
     }
     /**
      * <code>repeated .proto.simulation.SSL_FieldLineSegment field_lines = 6;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.SSL_FieldLineSegmentOrBuilder getFieldLinesOrBuilder(
         int index) {
       return fieldLines_.get(index);
     }
 
     public static final int FIELD_ARCS_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
     private java.util.List<proto.simulation.SslVisionGeometry.SSL_FieldCircularArc> fieldArcs_;
     /**
      * <code>repeated .proto.simulation.SSL_FieldCircularArc field_arcs = 7;</code>
      */
-    @java.lang.Override
     public java.util.List<proto.simulation.SslVisionGeometry.SSL_FieldCircularArc> getFieldArcsList() {
       return fieldArcs_;
     }
     /**
      * <code>repeated .proto.simulation.SSL_FieldCircularArc field_arcs = 7;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends proto.simulation.SslVisionGeometry.SSL_FieldCircularArcOrBuilder> 
         getFieldArcsOrBuilderList() {
       return fieldArcs_;
@@ -4293,60 +4243,49 @@ public final class SslVisionGeometry {
     /**
      * <code>repeated .proto.simulation.SSL_FieldCircularArc field_arcs = 7;</code>
      */
-    @java.lang.Override
     public int getFieldArcsCount() {
       return fieldArcs_.size();
     }
     /**
      * <code>repeated .proto.simulation.SSL_FieldCircularArc field_arcs = 7;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.SSL_FieldCircularArc getFieldArcs(int index) {
       return fieldArcs_.get(index);
     }
     /**
      * <code>repeated .proto.simulation.SSL_FieldCircularArc field_arcs = 7;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.SSL_FieldCircularArcOrBuilder getFieldArcsOrBuilder(
         int index) {
       return fieldArcs_.get(index);
     }
 
     public static final int PENALTY_AREA_DEPTH_FIELD_NUMBER = 8;
-    private int penaltyAreaDepth_ = 0;
+    private int penaltyAreaDepth_;
     /**
      * <code>optional int32 penalty_area_depth = 8;</code>
-     * @return Whether the penaltyAreaDepth field is set.
      */
-    @java.lang.Override
     public boolean hasPenaltyAreaDepth() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>optional int32 penalty_area_depth = 8;</code>
-     * @return The penaltyAreaDepth.
      */
-    @java.lang.Override
     public int getPenaltyAreaDepth() {
       return penaltyAreaDepth_;
     }
 
     public static final int PENALTY_AREA_WIDTH_FIELD_NUMBER = 9;
-    private int penaltyAreaWidth_ = 0;
+    private int penaltyAreaWidth_;
     /**
      * <code>optional int32 penalty_area_width = 9;</code>
-     * @return Whether the penaltyAreaWidth field is set.
      */
-    @java.lang.Override
     public boolean hasPenaltyAreaWidth() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <code>optional int32 penalty_area_width = 9;</code>
-     * @return The penaltyAreaWidth.
      */
-    @java.lang.Override
     public int getPenaltyAreaWidth() {
       return penaltyAreaWidth_;
     }
@@ -4397,19 +4336,19 @@ public final class SslVisionGeometry {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt32(1, fieldLength_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt32(2, fieldWidth_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeInt32(3, goalWidth_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeInt32(4, goalDepth_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeInt32(5, boundaryWidth_);
       }
       for (int i = 0; i < fieldLines_.size(); i++) {
@@ -4418,13 +4357,13 @@ public final class SslVisionGeometry {
       for (int i = 0; i < fieldArcs_.size(); i++) {
         output.writeMessage(7, fieldArcs_.get(i));
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeInt32(8, penaltyAreaDepth_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeInt32(9, penaltyAreaWidth_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -4433,23 +4372,23 @@ public final class SslVisionGeometry {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, fieldLength_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, fieldWidth_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, goalWidth_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, goalDepth_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, boundaryWidth_);
       }
@@ -4461,15 +4400,15 @@ public final class SslVisionGeometry {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, fieldArcs_.get(i));
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(8, penaltyAreaDepth_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(9, penaltyAreaWidth_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4484,47 +4423,48 @@ public final class SslVisionGeometry {
       }
       proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize other = (proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize) obj;
 
-      if (hasFieldLength() != other.hasFieldLength()) return false;
+      boolean result = true;
+      result = result && (hasFieldLength() == other.hasFieldLength());
       if (hasFieldLength()) {
-        if (getFieldLength()
-            != other.getFieldLength()) return false;
+        result = result && (getFieldLength()
+            == other.getFieldLength());
       }
-      if (hasFieldWidth() != other.hasFieldWidth()) return false;
+      result = result && (hasFieldWidth() == other.hasFieldWidth());
       if (hasFieldWidth()) {
-        if (getFieldWidth()
-            != other.getFieldWidth()) return false;
+        result = result && (getFieldWidth()
+            == other.getFieldWidth());
       }
-      if (hasGoalWidth() != other.hasGoalWidth()) return false;
+      result = result && (hasGoalWidth() == other.hasGoalWidth());
       if (hasGoalWidth()) {
-        if (getGoalWidth()
-            != other.getGoalWidth()) return false;
+        result = result && (getGoalWidth()
+            == other.getGoalWidth());
       }
-      if (hasGoalDepth() != other.hasGoalDepth()) return false;
+      result = result && (hasGoalDepth() == other.hasGoalDepth());
       if (hasGoalDepth()) {
-        if (getGoalDepth()
-            != other.getGoalDepth()) return false;
+        result = result && (getGoalDepth()
+            == other.getGoalDepth());
       }
-      if (hasBoundaryWidth() != other.hasBoundaryWidth()) return false;
+      result = result && (hasBoundaryWidth() == other.hasBoundaryWidth());
       if (hasBoundaryWidth()) {
-        if (getBoundaryWidth()
-            != other.getBoundaryWidth()) return false;
+        result = result && (getBoundaryWidth()
+            == other.getBoundaryWidth());
       }
-      if (!getFieldLinesList()
-          .equals(other.getFieldLinesList())) return false;
-      if (!getFieldArcsList()
-          .equals(other.getFieldArcsList())) return false;
-      if (hasPenaltyAreaDepth() != other.hasPenaltyAreaDepth()) return false;
+      result = result && getFieldLinesList()
+          .equals(other.getFieldLinesList());
+      result = result && getFieldArcsList()
+          .equals(other.getFieldArcsList());
+      result = result && (hasPenaltyAreaDepth() == other.hasPenaltyAreaDepth());
       if (hasPenaltyAreaDepth()) {
-        if (getPenaltyAreaDepth()
-            != other.getPenaltyAreaDepth()) return false;
+        result = result && (getPenaltyAreaDepth()
+            == other.getPenaltyAreaDepth());
       }
-      if (hasPenaltyAreaWidth() != other.hasPenaltyAreaWidth()) return false;
+      result = result && (hasPenaltyAreaWidth() == other.hasPenaltyAreaWidth());
       if (hasPenaltyAreaWidth()) {
-        if (getPenaltyAreaWidth()
-            != other.getPenaltyAreaWidth()) return false;
+        result = result && (getPenaltyAreaWidth()
+            == other.getPenaltyAreaWidth());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -4570,7 +4510,7 @@ public final class SslVisionGeometry {
         hash = (37 * hash) + PENALTY_AREA_WIDTH_FIELD_NUMBER;
         hash = (53 * hash) + getPenaltyAreaWidth();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4687,39 +4627,50 @@ public final class SslVisionGeometry {
 
       // Construct using proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getFieldLinesFieldBuilder();
+          getFieldArcsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         fieldLength_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
         fieldWidth_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
         goalWidth_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
         goalDepth_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
         boundaryWidth_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (fieldLinesBuilder_ == null) {
           fieldLines_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
-          fieldLines_ = null;
           fieldLinesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
         if (fieldArcsBuilder_ == null) {
           fieldArcs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
-          fieldArcs_ = null;
           fieldArcsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000040);
         penaltyAreaDepth_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000080);
         penaltyAreaWidth_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
 
@@ -4746,15 +4697,30 @@ public final class SslVisionGeometry {
       @java.lang.Override
       public proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize buildPartial() {
         proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize result = new proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.fieldLength_ = fieldLength_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.fieldWidth_ = fieldWidth_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.goalWidth_ = goalWidth_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.goalDepth_ = goalDepth_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.boundaryWidth_ = boundaryWidth_;
         if (fieldLinesBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
             fieldLines_ = java.util.Collections.unmodifiableList(fieldLines_);
             bitField0_ = (bitField0_ & ~0x00000020);
           }
@@ -4763,7 +4729,7 @@ public final class SslVisionGeometry {
           result.fieldLines_ = fieldLinesBuilder_.build();
         }
         if (fieldArcsBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0)) {
+          if (((bitField0_ & 0x00000040) == 0x00000040)) {
             fieldArcs_ = java.util.Collections.unmodifiableList(fieldArcs_);
             bitField0_ = (bitField0_ & ~0x00000040);
           }
@@ -4771,73 +4737,50 @@ public final class SslVisionGeometry {
         } else {
           result.fieldArcs_ = fieldArcsBuilder_.build();
         }
-      }
-
-      private void buildPartial0(proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.fieldLength_ = fieldLength_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.fieldWidth_ = fieldWidth_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.goalWidth_ = goalWidth_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.goalDepth_ = goalDepth_;
-          to_bitField0_ |= 0x00000008;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.boundaryWidth_ = boundaryWidth_;
-          to_bitField0_ |= 0x00000010;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.penaltyAreaDepth_ = penaltyAreaDepth_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000020;
         }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.penaltyAreaWidth_ = penaltyAreaWidth_;
+        result.penaltyAreaDepth_ = penaltyAreaDepth_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.bitField0_ |= to_bitField0_;
+        result.penaltyAreaWidth_ = penaltyAreaWidth_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -4924,7 +4867,7 @@ public final class SslVisionGeometry {
         if (other.hasPenaltyAreaWidth()) {
           setPenaltyAreaWidth(other.getPenaltyAreaWidth());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -4964,91 +4907,17 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                fieldLength_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                fieldWidth_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 24: {
-                goalWidth_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 32: {
-                goalDepth_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 40: {
-                boundaryWidth_ = input.readInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              case 50: {
-                proto.simulation.SslVisionGeometry.SSL_FieldLineSegment m =
-                    input.readMessage(
-                        proto.simulation.SslVisionGeometry.SSL_FieldLineSegment.PARSER,
-                        extensionRegistry);
-                if (fieldLinesBuilder_ == null) {
-                  ensureFieldLinesIsMutable();
-                  fieldLines_.add(m);
-                } else {
-                  fieldLinesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 58: {
-                proto.simulation.SslVisionGeometry.SSL_FieldCircularArc m =
-                    input.readMessage(
-                        proto.simulation.SslVisionGeometry.SSL_FieldCircularArc.PARSER,
-                        extensionRegistry);
-                if (fieldArcsBuilder_ == null) {
-                  ensureFieldArcsIsMutable();
-                  fieldArcs_.add(m);
-                } else {
-                  fieldArcsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 58
-              case 64: {
-                penaltyAreaDepth_ = input.readInt32();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 64
-              case 72: {
-                penaltyAreaWidth_ = input.readInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 72
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -5056,35 +4925,27 @@ public final class SslVisionGeometry {
       private int fieldLength_ ;
       /**
        * <code>required int32 field_length = 1;</code>
-       * @return Whether the fieldLength field is set.
        */
-      @java.lang.Override
       public boolean hasFieldLength() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required int32 field_length = 1;</code>
-       * @return The fieldLength.
        */
-      @java.lang.Override
       public int getFieldLength() {
         return fieldLength_;
       }
       /**
        * <code>required int32 field_length = 1;</code>
-       * @param value The fieldLength to set.
-       * @return This builder for chaining.
        */
       public Builder setFieldLength(int value) {
-        
-        fieldLength_ = value;
         bitField0_ |= 0x00000001;
+        fieldLength_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required int32 field_length = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearFieldLength() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -5096,35 +4957,27 @@ public final class SslVisionGeometry {
       private int fieldWidth_ ;
       /**
        * <code>required int32 field_width = 2;</code>
-       * @return Whether the fieldWidth field is set.
        */
-      @java.lang.Override
       public boolean hasFieldWidth() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required int32 field_width = 2;</code>
-       * @return The fieldWidth.
        */
-      @java.lang.Override
       public int getFieldWidth() {
         return fieldWidth_;
       }
       /**
        * <code>required int32 field_width = 2;</code>
-       * @param value The fieldWidth to set.
-       * @return This builder for chaining.
        */
       public Builder setFieldWidth(int value) {
-        
-        fieldWidth_ = value;
         bitField0_ |= 0x00000002;
+        fieldWidth_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required int32 field_width = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearFieldWidth() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -5136,35 +4989,27 @@ public final class SslVisionGeometry {
       private int goalWidth_ ;
       /**
        * <code>required int32 goal_width = 3;</code>
-       * @return Whether the goalWidth field is set.
        */
-      @java.lang.Override
       public boolean hasGoalWidth() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>required int32 goal_width = 3;</code>
-       * @return The goalWidth.
        */
-      @java.lang.Override
       public int getGoalWidth() {
         return goalWidth_;
       }
       /**
        * <code>required int32 goal_width = 3;</code>
-       * @param value The goalWidth to set.
-       * @return This builder for chaining.
        */
       public Builder setGoalWidth(int value) {
-        
-        goalWidth_ = value;
         bitField0_ |= 0x00000004;
+        goalWidth_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required int32 goal_width = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearGoalWidth() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -5176,35 +5021,27 @@ public final class SslVisionGeometry {
       private int goalDepth_ ;
       /**
        * <code>required int32 goal_depth = 4;</code>
-       * @return Whether the goalDepth field is set.
        */
-      @java.lang.Override
       public boolean hasGoalDepth() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>required int32 goal_depth = 4;</code>
-       * @return The goalDepth.
        */
-      @java.lang.Override
       public int getGoalDepth() {
         return goalDepth_;
       }
       /**
        * <code>required int32 goal_depth = 4;</code>
-       * @param value The goalDepth to set.
-       * @return This builder for chaining.
        */
       public Builder setGoalDepth(int value) {
-        
-        goalDepth_ = value;
         bitField0_ |= 0x00000008;
+        goalDepth_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required int32 goal_depth = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearGoalDepth() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -5216,35 +5053,27 @@ public final class SslVisionGeometry {
       private int boundaryWidth_ ;
       /**
        * <code>required int32 boundary_width = 5;</code>
-       * @return Whether the boundaryWidth field is set.
        */
-      @java.lang.Override
       public boolean hasBoundaryWidth() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <code>required int32 boundary_width = 5;</code>
-       * @return The boundaryWidth.
        */
-      @java.lang.Override
       public int getBoundaryWidth() {
         return boundaryWidth_;
       }
       /**
        * <code>required int32 boundary_width = 5;</code>
-       * @param value The boundaryWidth to set.
-       * @return This builder for chaining.
        */
       public Builder setBoundaryWidth(int value) {
-        
-        boundaryWidth_ = value;
         bitField0_ |= 0x00000010;
+        boundaryWidth_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required int32 boundary_width = 5;</code>
-       * @return This builder for chaining.
        */
       public Builder clearBoundaryWidth() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -5256,7 +5085,7 @@ public final class SslVisionGeometry {
       private java.util.List<proto.simulation.SslVisionGeometry.SSL_FieldLineSegment> fieldLines_ =
         java.util.Collections.emptyList();
       private void ensureFieldLinesIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
           fieldLines_ = new java.util.ArrayList<proto.simulation.SslVisionGeometry.SSL_FieldLineSegment>(fieldLines_);
           bitField0_ |= 0x00000020;
          }
@@ -5485,7 +5314,7 @@ public final class SslVisionGeometry {
           fieldLinesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               proto.simulation.SslVisionGeometry.SSL_FieldLineSegment, proto.simulation.SslVisionGeometry.SSL_FieldLineSegment.Builder, proto.simulation.SslVisionGeometry.SSL_FieldLineSegmentOrBuilder>(
                   fieldLines_,
-                  ((bitField0_ & 0x00000020) != 0),
+                  ((bitField0_ & 0x00000020) == 0x00000020),
                   getParentForChildren(),
                   isClean());
           fieldLines_ = null;
@@ -5496,7 +5325,7 @@ public final class SslVisionGeometry {
       private java.util.List<proto.simulation.SslVisionGeometry.SSL_FieldCircularArc> fieldArcs_ =
         java.util.Collections.emptyList();
       private void ensureFieldArcsIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
           fieldArcs_ = new java.util.ArrayList<proto.simulation.SslVisionGeometry.SSL_FieldCircularArc>(fieldArcs_);
           bitField0_ |= 0x00000040;
          }
@@ -5725,7 +5554,7 @@ public final class SslVisionGeometry {
           fieldArcsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               proto.simulation.SslVisionGeometry.SSL_FieldCircularArc, proto.simulation.SslVisionGeometry.SSL_FieldCircularArc.Builder, proto.simulation.SslVisionGeometry.SSL_FieldCircularArcOrBuilder>(
                   fieldArcs_,
-                  ((bitField0_ & 0x00000040) != 0),
+                  ((bitField0_ & 0x00000040) == 0x00000040),
                   getParentForChildren(),
                   isClean());
           fieldArcs_ = null;
@@ -5736,35 +5565,27 @@ public final class SslVisionGeometry {
       private int penaltyAreaDepth_ ;
       /**
        * <code>optional int32 penalty_area_depth = 8;</code>
-       * @return Whether the penaltyAreaDepth field is set.
        */
-      @java.lang.Override
       public boolean hasPenaltyAreaDepth() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
        * <code>optional int32 penalty_area_depth = 8;</code>
-       * @return The penaltyAreaDepth.
        */
-      @java.lang.Override
       public int getPenaltyAreaDepth() {
         return penaltyAreaDepth_;
       }
       /**
        * <code>optional int32 penalty_area_depth = 8;</code>
-       * @param value The penaltyAreaDepth to set.
-       * @return This builder for chaining.
        */
       public Builder setPenaltyAreaDepth(int value) {
-        
-        penaltyAreaDepth_ = value;
         bitField0_ |= 0x00000080;
+        penaltyAreaDepth_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>optional int32 penalty_area_depth = 8;</code>
-       * @return This builder for chaining.
        */
       public Builder clearPenaltyAreaDepth() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -5776,35 +5597,27 @@ public final class SslVisionGeometry {
       private int penaltyAreaWidth_ ;
       /**
        * <code>optional int32 penalty_area_width = 9;</code>
-       * @return Whether the penaltyAreaWidth field is set.
        */
-      @java.lang.Override
       public boolean hasPenaltyAreaWidth() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
        * <code>optional int32 penalty_area_width = 9;</code>
-       * @return The penaltyAreaWidth.
        */
-      @java.lang.Override
       public int getPenaltyAreaWidth() {
         return penaltyAreaWidth_;
       }
       /**
        * <code>optional int32 penalty_area_width = 9;</code>
-       * @param value The penaltyAreaWidth to set.
-       * @return This builder for chaining.
        */
       public Builder setPenaltyAreaWidth(int value) {
-        
-        penaltyAreaWidth_ = value;
         bitField0_ |= 0x00000100;
+        penaltyAreaWidth_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>optional int32 penalty_area_width = 9;</code>
-       * @return This builder for chaining.
        */
       public Builder clearPenaltyAreaWidth() {
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -5845,18 +5658,7 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SSL_GeometryFieldSize(input, extensionRegistry);
       }
     };
 
@@ -5882,195 +5684,161 @@ public final class SslVisionGeometry {
 
     /**
      * <code>required uint32 camera_id = 1;</code>
-     * @return Whether the cameraId field is set.
      */
     boolean hasCameraId();
     /**
      * <code>required uint32 camera_id = 1;</code>
-     * @return The cameraId.
      */
     int getCameraId();
 
     /**
      * <code>required float focal_length = 2;</code>
-     * @return Whether the focalLength field is set.
      */
     boolean hasFocalLength();
     /**
      * <code>required float focal_length = 2;</code>
-     * @return The focalLength.
      */
     float getFocalLength();
 
     /**
      * <code>required float principal_point_x = 3;</code>
-     * @return Whether the principalPointX field is set.
      */
     boolean hasPrincipalPointX();
     /**
      * <code>required float principal_point_x = 3;</code>
-     * @return The principalPointX.
      */
     float getPrincipalPointX();
 
     /**
      * <code>required float principal_point_y = 4;</code>
-     * @return Whether the principalPointY field is set.
      */
     boolean hasPrincipalPointY();
     /**
      * <code>required float principal_point_y = 4;</code>
-     * @return The principalPointY.
      */
     float getPrincipalPointY();
 
     /**
      * <code>required float distortion = 5;</code>
-     * @return Whether the distortion field is set.
      */
     boolean hasDistortion();
     /**
      * <code>required float distortion = 5;</code>
-     * @return The distortion.
      */
     float getDistortion();
 
     /**
      * <code>required float q0 = 6;</code>
-     * @return Whether the q0 field is set.
      */
     boolean hasQ0();
     /**
      * <code>required float q0 = 6;</code>
-     * @return The q0.
      */
     float getQ0();
 
     /**
      * <code>required float q1 = 7;</code>
-     * @return Whether the q1 field is set.
      */
     boolean hasQ1();
     /**
      * <code>required float q1 = 7;</code>
-     * @return The q1.
      */
     float getQ1();
 
     /**
      * <code>required float q2 = 8;</code>
-     * @return Whether the q2 field is set.
      */
     boolean hasQ2();
     /**
      * <code>required float q2 = 8;</code>
-     * @return The q2.
      */
     float getQ2();
 
     /**
      * <code>required float q3 = 9;</code>
-     * @return Whether the q3 field is set.
      */
     boolean hasQ3();
     /**
      * <code>required float q3 = 9;</code>
-     * @return The q3.
      */
     float getQ3();
 
     /**
      * <code>required float tx = 10;</code>
-     * @return Whether the tx field is set.
      */
     boolean hasTx();
     /**
      * <code>required float tx = 10;</code>
-     * @return The tx.
      */
     float getTx();
 
     /**
      * <code>required float ty = 11;</code>
-     * @return Whether the ty field is set.
      */
     boolean hasTy();
     /**
      * <code>required float ty = 11;</code>
-     * @return The ty.
      */
     float getTy();
 
     /**
      * <code>required float tz = 12;</code>
-     * @return Whether the tz field is set.
      */
     boolean hasTz();
     /**
      * <code>required float tz = 12;</code>
-     * @return The tz.
      */
     float getTz();
 
     /**
      * <code>optional float derived_camera_world_tx = 13;</code>
-     * @return Whether the derivedCameraWorldTx field is set.
      */
     boolean hasDerivedCameraWorldTx();
     /**
      * <code>optional float derived_camera_world_tx = 13;</code>
-     * @return The derivedCameraWorldTx.
      */
     float getDerivedCameraWorldTx();
 
     /**
      * <code>optional float derived_camera_world_ty = 14;</code>
-     * @return Whether the derivedCameraWorldTy field is set.
      */
     boolean hasDerivedCameraWorldTy();
     /**
      * <code>optional float derived_camera_world_ty = 14;</code>
-     * @return The derivedCameraWorldTy.
      */
     float getDerivedCameraWorldTy();
 
     /**
      * <code>optional float derived_camera_world_tz = 15;</code>
-     * @return Whether the derivedCameraWorldTz field is set.
      */
     boolean hasDerivedCameraWorldTz();
     /**
      * <code>optional float derived_camera_world_tz = 15;</code>
-     * @return The derivedCameraWorldTz.
      */
     float getDerivedCameraWorldTz();
 
     /**
      * <code>optional uint32 pixel_image_width = 16;</code>
-     * @return Whether the pixelImageWidth field is set.
      */
     boolean hasPixelImageWidth();
     /**
      * <code>optional uint32 pixel_image_width = 16;</code>
-     * @return The pixelImageWidth.
      */
     int getPixelImageWidth();
 
     /**
      * <code>optional uint32 pixel_image_height = 17;</code>
-     * @return Whether the pixelImageHeight field is set.
      */
     boolean hasPixelImageHeight();
     /**
      * <code>optional uint32 pixel_image_height = 17;</code>
-     * @return The pixelImageHeight.
      */
     int getPixelImageHeight();
   }
   /**
    * Protobuf type {@code proto.simulation.SSL_GeometryCameraCalibration}
    */
-  public static final class SSL_GeometryCameraCalibration extends
+  public  static final class SSL_GeometryCameraCalibration extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.simulation.SSL_GeometryCameraCalibration)
       SSL_GeometryCameraCalibrationOrBuilder {
@@ -6080,19 +5848,152 @@ public final class SslVisionGeometry {
       super(builder);
     }
     private SSL_GeometryCameraCalibration() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SSL_GeometryCameraCalibration();
+      cameraId_ = 0;
+      focalLength_ = 0F;
+      principalPointX_ = 0F;
+      principalPointY_ = 0F;
+      distortion_ = 0F;
+      q0_ = 0F;
+      q1_ = 0F;
+      q2_ = 0F;
+      q3_ = 0F;
+      tx_ = 0F;
+      ty_ = 0F;
+      tz_ = 0F;
+      derivedCameraWorldTx_ = 0F;
+      derivedCameraWorldTy_ = 0F;
+      derivedCameraWorldTz_ = 0F;
+      pixelImageWidth_ = 0;
+      pixelImageHeight_ = 0;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private SSL_GeometryCameraCalibration(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              cameraId_ = input.readUInt32();
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              focalLength_ = input.readFloat();
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              principalPointX_ = input.readFloat();
+              break;
+            }
+            case 37: {
+              bitField0_ |= 0x00000008;
+              principalPointY_ = input.readFloat();
+              break;
+            }
+            case 45: {
+              bitField0_ |= 0x00000010;
+              distortion_ = input.readFloat();
+              break;
+            }
+            case 53: {
+              bitField0_ |= 0x00000020;
+              q0_ = input.readFloat();
+              break;
+            }
+            case 61: {
+              bitField0_ |= 0x00000040;
+              q1_ = input.readFloat();
+              break;
+            }
+            case 69: {
+              bitField0_ |= 0x00000080;
+              q2_ = input.readFloat();
+              break;
+            }
+            case 77: {
+              bitField0_ |= 0x00000100;
+              q3_ = input.readFloat();
+              break;
+            }
+            case 85: {
+              bitField0_ |= 0x00000200;
+              tx_ = input.readFloat();
+              break;
+            }
+            case 93: {
+              bitField0_ |= 0x00000400;
+              ty_ = input.readFloat();
+              break;
+            }
+            case 101: {
+              bitField0_ |= 0x00000800;
+              tz_ = input.readFloat();
+              break;
+            }
+            case 109: {
+              bitField0_ |= 0x00001000;
+              derivedCameraWorldTx_ = input.readFloat();
+              break;
+            }
+            case 117: {
+              bitField0_ |= 0x00002000;
+              derivedCameraWorldTy_ = input.readFloat();
+              break;
+            }
+            case 125: {
+              bitField0_ |= 0x00004000;
+              derivedCameraWorldTz_ = input.readFloat();
+              break;
+            }
+            case 128: {
+              bitField0_ |= 0x00008000;
+              pixelImageWidth_ = input.readUInt32();
+              break;
+            }
+            case 136: {
+              bitField0_ |= 0x00010000;
+              pixelImageHeight_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -6109,324 +6010,256 @@ public final class SslVisionGeometry {
 
     private int bitField0_;
     public static final int CAMERA_ID_FIELD_NUMBER = 1;
-    private int cameraId_ = 0;
+    private int cameraId_;
     /**
      * <code>required uint32 camera_id = 1;</code>
-     * @return Whether the cameraId field is set.
      */
-    @java.lang.Override
     public boolean hasCameraId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required uint32 camera_id = 1;</code>
-     * @return The cameraId.
      */
-    @java.lang.Override
     public int getCameraId() {
       return cameraId_;
     }
 
     public static final int FOCAL_LENGTH_FIELD_NUMBER = 2;
-    private float focalLength_ = 0F;
+    private float focalLength_;
     /**
      * <code>required float focal_length = 2;</code>
-     * @return Whether the focalLength field is set.
      */
-    @java.lang.Override
     public boolean hasFocalLength() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>required float focal_length = 2;</code>
-     * @return The focalLength.
      */
-    @java.lang.Override
     public float getFocalLength() {
       return focalLength_;
     }
 
     public static final int PRINCIPAL_POINT_X_FIELD_NUMBER = 3;
-    private float principalPointX_ = 0F;
+    private float principalPointX_;
     /**
      * <code>required float principal_point_x = 3;</code>
-     * @return Whether the principalPointX field is set.
      */
-    @java.lang.Override
     public boolean hasPrincipalPointX() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>required float principal_point_x = 3;</code>
-     * @return The principalPointX.
      */
-    @java.lang.Override
     public float getPrincipalPointX() {
       return principalPointX_;
     }
 
     public static final int PRINCIPAL_POINT_Y_FIELD_NUMBER = 4;
-    private float principalPointY_ = 0F;
+    private float principalPointY_;
     /**
      * <code>required float principal_point_y = 4;</code>
-     * @return Whether the principalPointY field is set.
      */
-    @java.lang.Override
     public boolean hasPrincipalPointY() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>required float principal_point_y = 4;</code>
-     * @return The principalPointY.
      */
-    @java.lang.Override
     public float getPrincipalPointY() {
       return principalPointY_;
     }
 
     public static final int DISTORTION_FIELD_NUMBER = 5;
-    private float distortion_ = 0F;
+    private float distortion_;
     /**
      * <code>required float distortion = 5;</code>
-     * @return Whether the distortion field is set.
      */
-    @java.lang.Override
     public boolean hasDistortion() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <code>required float distortion = 5;</code>
-     * @return The distortion.
      */
-    @java.lang.Override
     public float getDistortion() {
       return distortion_;
     }
 
     public static final int Q0_FIELD_NUMBER = 6;
-    private float q0_ = 0F;
+    private float q0_;
     /**
      * <code>required float q0 = 6;</code>
-     * @return Whether the q0 field is set.
      */
-    @java.lang.Override
     public boolean hasQ0() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>required float q0 = 6;</code>
-     * @return The q0.
      */
-    @java.lang.Override
     public float getQ0() {
       return q0_;
     }
 
     public static final int Q1_FIELD_NUMBER = 7;
-    private float q1_ = 0F;
+    private float q1_;
     /**
      * <code>required float q1 = 7;</code>
-     * @return Whether the q1 field is set.
      */
-    @java.lang.Override
     public boolean hasQ1() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <code>required float q1 = 7;</code>
-     * @return The q1.
      */
-    @java.lang.Override
     public float getQ1() {
       return q1_;
     }
 
     public static final int Q2_FIELD_NUMBER = 8;
-    private float q2_ = 0F;
+    private float q2_;
     /**
      * <code>required float q2 = 8;</code>
-     * @return Whether the q2 field is set.
      */
-    @java.lang.Override
     public boolean hasQ2() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
      * <code>required float q2 = 8;</code>
-     * @return The q2.
      */
-    @java.lang.Override
     public float getQ2() {
       return q2_;
     }
 
     public static final int Q3_FIELD_NUMBER = 9;
-    private float q3_ = 0F;
+    private float q3_;
     /**
      * <code>required float q3 = 9;</code>
-     * @return Whether the q3 field is set.
      */
-    @java.lang.Override
     public boolean hasQ3() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
      * <code>required float q3 = 9;</code>
-     * @return The q3.
      */
-    @java.lang.Override
     public float getQ3() {
       return q3_;
     }
 
     public static final int TX_FIELD_NUMBER = 10;
-    private float tx_ = 0F;
+    private float tx_;
     /**
      * <code>required float tx = 10;</code>
-     * @return Whether the tx field is set.
      */
-    @java.lang.Override
     public boolean hasTx() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
      * <code>required float tx = 10;</code>
-     * @return The tx.
      */
-    @java.lang.Override
     public float getTx() {
       return tx_;
     }
 
     public static final int TY_FIELD_NUMBER = 11;
-    private float ty_ = 0F;
+    private float ty_;
     /**
      * <code>required float ty = 11;</code>
-     * @return Whether the ty field is set.
      */
-    @java.lang.Override
     public boolean hasTy() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
      * <code>required float ty = 11;</code>
-     * @return The ty.
      */
-    @java.lang.Override
     public float getTy() {
       return ty_;
     }
 
     public static final int TZ_FIELD_NUMBER = 12;
-    private float tz_ = 0F;
+    private float tz_;
     /**
      * <code>required float tz = 12;</code>
-     * @return Whether the tz field is set.
      */
-    @java.lang.Override
     public boolean hasTz() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
      * <code>required float tz = 12;</code>
-     * @return The tz.
      */
-    @java.lang.Override
     public float getTz() {
       return tz_;
     }
 
     public static final int DERIVED_CAMERA_WORLD_TX_FIELD_NUMBER = 13;
-    private float derivedCameraWorldTx_ = 0F;
+    private float derivedCameraWorldTx_;
     /**
      * <code>optional float derived_camera_world_tx = 13;</code>
-     * @return Whether the derivedCameraWorldTx field is set.
      */
-    @java.lang.Override
     public boolean hasDerivedCameraWorldTx() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
      * <code>optional float derived_camera_world_tx = 13;</code>
-     * @return The derivedCameraWorldTx.
      */
-    @java.lang.Override
     public float getDerivedCameraWorldTx() {
       return derivedCameraWorldTx_;
     }
 
     public static final int DERIVED_CAMERA_WORLD_TY_FIELD_NUMBER = 14;
-    private float derivedCameraWorldTy_ = 0F;
+    private float derivedCameraWorldTy_;
     /**
      * <code>optional float derived_camera_world_ty = 14;</code>
-     * @return Whether the derivedCameraWorldTy field is set.
      */
-    @java.lang.Override
     public boolean hasDerivedCameraWorldTy() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     /**
      * <code>optional float derived_camera_world_ty = 14;</code>
-     * @return The derivedCameraWorldTy.
      */
-    @java.lang.Override
     public float getDerivedCameraWorldTy() {
       return derivedCameraWorldTy_;
     }
 
     public static final int DERIVED_CAMERA_WORLD_TZ_FIELD_NUMBER = 15;
-    private float derivedCameraWorldTz_ = 0F;
+    private float derivedCameraWorldTz_;
     /**
      * <code>optional float derived_camera_world_tz = 15;</code>
-     * @return Whether the derivedCameraWorldTz field is set.
      */
-    @java.lang.Override
     public boolean hasDerivedCameraWorldTz() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00004000) == 0x00004000);
     }
     /**
      * <code>optional float derived_camera_world_tz = 15;</code>
-     * @return The derivedCameraWorldTz.
      */
-    @java.lang.Override
     public float getDerivedCameraWorldTz() {
       return derivedCameraWorldTz_;
     }
 
     public static final int PIXEL_IMAGE_WIDTH_FIELD_NUMBER = 16;
-    private int pixelImageWidth_ = 0;
+    private int pixelImageWidth_;
     /**
      * <code>optional uint32 pixel_image_width = 16;</code>
-     * @return Whether the pixelImageWidth field is set.
      */
-    @java.lang.Override
     public boolean hasPixelImageWidth() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00008000) == 0x00008000);
     }
     /**
      * <code>optional uint32 pixel_image_width = 16;</code>
-     * @return The pixelImageWidth.
      */
-    @java.lang.Override
     public int getPixelImageWidth() {
       return pixelImageWidth_;
     }
 
     public static final int PIXEL_IMAGE_HEIGHT_FIELD_NUMBER = 17;
-    private int pixelImageHeight_ = 0;
+    private int pixelImageHeight_;
     /**
      * <code>optional uint32 pixel_image_height = 17;</code>
-     * @return Whether the pixelImageHeight field is set.
      */
-    @java.lang.Override
     public boolean hasPixelImageHeight() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00010000) == 0x00010000);
     }
     /**
      * <code>optional uint32 pixel_image_height = 17;</code>
-     * @return The pixelImageHeight.
      */
-    @java.lang.Override
     public int getPixelImageHeight() {
       return pixelImageHeight_;
     }
@@ -6493,58 +6326,58 @@ public final class SslVisionGeometry {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeUInt32(1, cameraId_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeFloat(2, focalLength_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeFloat(3, principalPointX_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeFloat(4, principalPointY_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeFloat(5, distortion_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeFloat(6, q0_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeFloat(7, q1_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeFloat(8, q2_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeFloat(9, q3_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         output.writeFloat(10, tx_);
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         output.writeFloat(11, ty_);
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeFloat(12, tz_);
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         output.writeFloat(13, derivedCameraWorldTx_);
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         output.writeFloat(14, derivedCameraWorldTy_);
       }
-      if (((bitField0_ & 0x00004000) != 0)) {
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
         output.writeFloat(15, derivedCameraWorldTz_);
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
         output.writeUInt32(16, pixelImageWidth_);
       }
-      if (((bitField0_ & 0x00010000) != 0)) {
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
         output.writeUInt32(17, pixelImageHeight_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -6553,75 +6386,75 @@ public final class SslVisionGeometry {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, cameraId_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, focalLength_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, principalPointX_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, principalPointY_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(5, distortion_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(6, q0_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(7, q1_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(8, q2_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(9, q3_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(10, tx_);
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(11, ty_);
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(12, tz_);
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(13, derivedCameraWorldTx_);
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(14, derivedCameraWorldTy_);
       }
-      if (((bitField0_ & 0x00004000) != 0)) {
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(15, derivedCameraWorldTz_);
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(16, pixelImageWidth_);
       }
-      if (((bitField0_ & 0x00010000) != 0)) {
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(17, pixelImageHeight_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6636,107 +6469,122 @@ public final class SslVisionGeometry {
       }
       proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration other = (proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration) obj;
 
-      if (hasCameraId() != other.hasCameraId()) return false;
+      boolean result = true;
+      result = result && (hasCameraId() == other.hasCameraId());
       if (hasCameraId()) {
-        if (getCameraId()
-            != other.getCameraId()) return false;
+        result = result && (getCameraId()
+            == other.getCameraId());
       }
-      if (hasFocalLength() != other.hasFocalLength()) return false;
+      result = result && (hasFocalLength() == other.hasFocalLength());
       if (hasFocalLength()) {
-        if (java.lang.Float.floatToIntBits(getFocalLength())
-            != java.lang.Float.floatToIntBits(
-                other.getFocalLength())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getFocalLength())
+            == java.lang.Float.floatToIntBits(
+                other.getFocalLength()));
       }
-      if (hasPrincipalPointX() != other.hasPrincipalPointX()) return false;
+      result = result && (hasPrincipalPointX() == other.hasPrincipalPointX());
       if (hasPrincipalPointX()) {
-        if (java.lang.Float.floatToIntBits(getPrincipalPointX())
-            != java.lang.Float.floatToIntBits(
-                other.getPrincipalPointX())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getPrincipalPointX())
+            == java.lang.Float.floatToIntBits(
+                other.getPrincipalPointX()));
       }
-      if (hasPrincipalPointY() != other.hasPrincipalPointY()) return false;
+      result = result && (hasPrincipalPointY() == other.hasPrincipalPointY());
       if (hasPrincipalPointY()) {
-        if (java.lang.Float.floatToIntBits(getPrincipalPointY())
-            != java.lang.Float.floatToIntBits(
-                other.getPrincipalPointY())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getPrincipalPointY())
+            == java.lang.Float.floatToIntBits(
+                other.getPrincipalPointY()));
       }
-      if (hasDistortion() != other.hasDistortion()) return false;
+      result = result && (hasDistortion() == other.hasDistortion());
       if (hasDistortion()) {
-        if (java.lang.Float.floatToIntBits(getDistortion())
-            != java.lang.Float.floatToIntBits(
-                other.getDistortion())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getDistortion())
+            == java.lang.Float.floatToIntBits(
+                other.getDistortion()));
       }
-      if (hasQ0() != other.hasQ0()) return false;
+      result = result && (hasQ0() == other.hasQ0());
       if (hasQ0()) {
-        if (java.lang.Float.floatToIntBits(getQ0())
-            != java.lang.Float.floatToIntBits(
-                other.getQ0())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getQ0())
+            == java.lang.Float.floatToIntBits(
+                other.getQ0()));
       }
-      if (hasQ1() != other.hasQ1()) return false;
+      result = result && (hasQ1() == other.hasQ1());
       if (hasQ1()) {
-        if (java.lang.Float.floatToIntBits(getQ1())
-            != java.lang.Float.floatToIntBits(
-                other.getQ1())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getQ1())
+            == java.lang.Float.floatToIntBits(
+                other.getQ1()));
       }
-      if (hasQ2() != other.hasQ2()) return false;
+      result = result && (hasQ2() == other.hasQ2());
       if (hasQ2()) {
-        if (java.lang.Float.floatToIntBits(getQ2())
-            != java.lang.Float.floatToIntBits(
-                other.getQ2())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getQ2())
+            == java.lang.Float.floatToIntBits(
+                other.getQ2()));
       }
-      if (hasQ3() != other.hasQ3()) return false;
+      result = result && (hasQ3() == other.hasQ3());
       if (hasQ3()) {
-        if (java.lang.Float.floatToIntBits(getQ3())
-            != java.lang.Float.floatToIntBits(
-                other.getQ3())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getQ3())
+            == java.lang.Float.floatToIntBits(
+                other.getQ3()));
       }
-      if (hasTx() != other.hasTx()) return false;
+      result = result && (hasTx() == other.hasTx());
       if (hasTx()) {
-        if (java.lang.Float.floatToIntBits(getTx())
-            != java.lang.Float.floatToIntBits(
-                other.getTx())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getTx())
+            == java.lang.Float.floatToIntBits(
+                other.getTx()));
       }
-      if (hasTy() != other.hasTy()) return false;
+      result = result && (hasTy() == other.hasTy());
       if (hasTy()) {
-        if (java.lang.Float.floatToIntBits(getTy())
-            != java.lang.Float.floatToIntBits(
-                other.getTy())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getTy())
+            == java.lang.Float.floatToIntBits(
+                other.getTy()));
       }
-      if (hasTz() != other.hasTz()) return false;
+      result = result && (hasTz() == other.hasTz());
       if (hasTz()) {
-        if (java.lang.Float.floatToIntBits(getTz())
-            != java.lang.Float.floatToIntBits(
-                other.getTz())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getTz())
+            == java.lang.Float.floatToIntBits(
+                other.getTz()));
       }
-      if (hasDerivedCameraWorldTx() != other.hasDerivedCameraWorldTx()) return false;
+      result = result && (hasDerivedCameraWorldTx() == other.hasDerivedCameraWorldTx());
       if (hasDerivedCameraWorldTx()) {
-        if (java.lang.Float.floatToIntBits(getDerivedCameraWorldTx())
-            != java.lang.Float.floatToIntBits(
-                other.getDerivedCameraWorldTx())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getDerivedCameraWorldTx())
+            == java.lang.Float.floatToIntBits(
+                other.getDerivedCameraWorldTx()));
       }
-      if (hasDerivedCameraWorldTy() != other.hasDerivedCameraWorldTy()) return false;
+      result = result && (hasDerivedCameraWorldTy() == other.hasDerivedCameraWorldTy());
       if (hasDerivedCameraWorldTy()) {
-        if (java.lang.Float.floatToIntBits(getDerivedCameraWorldTy())
-            != java.lang.Float.floatToIntBits(
-                other.getDerivedCameraWorldTy())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getDerivedCameraWorldTy())
+            == java.lang.Float.floatToIntBits(
+                other.getDerivedCameraWorldTy()));
       }
-      if (hasDerivedCameraWorldTz() != other.hasDerivedCameraWorldTz()) return false;
+      result = result && (hasDerivedCameraWorldTz() == other.hasDerivedCameraWorldTz());
       if (hasDerivedCameraWorldTz()) {
-        if (java.lang.Float.floatToIntBits(getDerivedCameraWorldTz())
-            != java.lang.Float.floatToIntBits(
-                other.getDerivedCameraWorldTz())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getDerivedCameraWorldTz())
+            == java.lang.Float.floatToIntBits(
+                other.getDerivedCameraWorldTz()));
       }
-      if (hasPixelImageWidth() != other.hasPixelImageWidth()) return false;
+      result = result && (hasPixelImageWidth() == other.hasPixelImageWidth());
       if (hasPixelImageWidth()) {
-        if (getPixelImageWidth()
-            != other.getPixelImageWidth()) return false;
+        result = result && (getPixelImageWidth()
+            == other.getPixelImageWidth());
       }
-      if (hasPixelImageHeight() != other.hasPixelImageHeight()) return false;
+      result = result && (hasPixelImageHeight() == other.hasPixelImageHeight());
       if (hasPixelImageHeight()) {
-        if (getPixelImageHeight()
-            != other.getPixelImageHeight()) return false;
+        result = result && (getPixelImageHeight()
+            == other.getPixelImageHeight());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -6828,7 +6676,7 @@ public final class SslVisionGeometry {
         hash = (37 * hash) + PIXEL_IMAGE_HEIGHT_FIELD_NUMBER;
         hash = (53 * hash) + getPixelImageHeight();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -6945,35 +6793,56 @@ public final class SslVisionGeometry {
 
       // Construct using proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         cameraId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
         focalLength_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
         principalPointX_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000004);
         principalPointY_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000008);
         distortion_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000010);
         q0_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000020);
         q1_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000040);
         q2_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000080);
         q3_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000100);
         tx_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000200);
         ty_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000400);
         tz_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000800);
         derivedCameraWorldTx_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00001000);
         derivedCameraWorldTy_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00002000);
         derivedCameraWorldTz_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00004000);
         pixelImageWidth_ = 0;
+        bitField0_ = (bitField0_ & ~0x00008000);
         pixelImageHeight_ = 0;
+        bitField0_ = (bitField0_ & ~0x00010000);
         return this;
       }
 
@@ -7000,116 +6869,112 @@ public final class SslVisionGeometry {
       @java.lang.Override
       public proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration buildPartial() {
         proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration result = new proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.cameraId_ = cameraId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.focalLength_ = focalLength_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.principalPointX_ = principalPointX_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.principalPointY_ = principalPointY_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.distortion_ = distortion_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.q0_ = q0_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.q1_ = q1_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.q2_ = q2_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        result.q3_ = q3_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000200;
+        }
+        result.tx_ = tx_;
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000400;
+        }
+        result.ty_ = ty_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000800;
+        }
+        result.tz_ = tz_;
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00001000;
+        }
+        result.derivedCameraWorldTx_ = derivedCameraWorldTx_;
+        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+          to_bitField0_ |= 0x00002000;
+        }
+        result.derivedCameraWorldTy_ = derivedCameraWorldTy_;
+        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+          to_bitField0_ |= 0x00004000;
+        }
+        result.derivedCameraWorldTz_ = derivedCameraWorldTz_;
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+          to_bitField0_ |= 0x00008000;
+        }
+        result.pixelImageWidth_ = pixelImageWidth_;
+        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
+          to_bitField0_ |= 0x00010000;
+        }
+        result.pixelImageHeight_ = pixelImageHeight_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.cameraId_ = cameraId_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.focalLength_ = focalLength_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.principalPointX_ = principalPointX_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.principalPointY_ = principalPointY_;
-          to_bitField0_ |= 0x00000008;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.distortion_ = distortion_;
-          to_bitField0_ |= 0x00000010;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.q0_ = q0_;
-          to_bitField0_ |= 0x00000020;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.q1_ = q1_;
-          to_bitField0_ |= 0x00000040;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.q2_ = q2_;
-          to_bitField0_ |= 0x00000080;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.q3_ = q3_;
-          to_bitField0_ |= 0x00000100;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.tx_ = tx_;
-          to_bitField0_ |= 0x00000200;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.ty_ = ty_;
-          to_bitField0_ |= 0x00000400;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.tz_ = tz_;
-          to_bitField0_ |= 0x00000800;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.derivedCameraWorldTx_ = derivedCameraWorldTx_;
-          to_bitField0_ |= 0x00001000;
-        }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.derivedCameraWorldTy_ = derivedCameraWorldTy_;
-          to_bitField0_ |= 0x00002000;
-        }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.derivedCameraWorldTz_ = derivedCameraWorldTz_;
-          to_bitField0_ |= 0x00004000;
-        }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.pixelImageWidth_ = pixelImageWidth_;
-          to_bitField0_ |= 0x00008000;
-        }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.pixelImageHeight_ = pixelImageHeight_;
-          to_bitField0_ |= 0x00010000;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -7174,7 +7039,7 @@ public final class SslVisionGeometry {
         if (other.hasPixelImageHeight()) {
           setPixelImageHeight(other.getPixelImageHeight());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -7225,115 +7090,17 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                cameraId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 21: {
-                focalLength_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 21
-              case 29: {
-                principalPointX_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 29
-              case 37: {
-                principalPointY_ = input.readFloat();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 37
-              case 45: {
-                distortion_ = input.readFloat();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 45
-              case 53: {
-                q0_ = input.readFloat();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 53
-              case 61: {
-                q1_ = input.readFloat();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 61
-              case 69: {
-                q2_ = input.readFloat();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 69
-              case 77: {
-                q3_ = input.readFloat();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 77
-              case 85: {
-                tx_ = input.readFloat();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 85
-              case 93: {
-                ty_ = input.readFloat();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 93
-              case 101: {
-                tz_ = input.readFloat();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 101
-              case 109: {
-                derivedCameraWorldTx_ = input.readFloat();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 109
-              case 117: {
-                derivedCameraWorldTy_ = input.readFloat();
-                bitField0_ |= 0x00002000;
-                break;
-              } // case 117
-              case 125: {
-                derivedCameraWorldTz_ = input.readFloat();
-                bitField0_ |= 0x00004000;
-                break;
-              } // case 125
-              case 128: {
-                pixelImageWidth_ = input.readUInt32();
-                bitField0_ |= 0x00008000;
-                break;
-              } // case 128
-              case 136: {
-                pixelImageHeight_ = input.readUInt32();
-                bitField0_ |= 0x00010000;
-                break;
-              } // case 136
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -7341,35 +7108,27 @@ public final class SslVisionGeometry {
       private int cameraId_ ;
       /**
        * <code>required uint32 camera_id = 1;</code>
-       * @return Whether the cameraId field is set.
        */
-      @java.lang.Override
       public boolean hasCameraId() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required uint32 camera_id = 1;</code>
-       * @return The cameraId.
        */
-      @java.lang.Override
       public int getCameraId() {
         return cameraId_;
       }
       /**
        * <code>required uint32 camera_id = 1;</code>
-       * @param value The cameraId to set.
-       * @return This builder for chaining.
        */
       public Builder setCameraId(int value) {
-        
-        cameraId_ = value;
         bitField0_ |= 0x00000001;
+        cameraId_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required uint32 camera_id = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearCameraId() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -7381,35 +7140,27 @@ public final class SslVisionGeometry {
       private float focalLength_ ;
       /**
        * <code>required float focal_length = 2;</code>
-       * @return Whether the focalLength field is set.
        */
-      @java.lang.Override
       public boolean hasFocalLength() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required float focal_length = 2;</code>
-       * @return The focalLength.
        */
-      @java.lang.Override
       public float getFocalLength() {
         return focalLength_;
       }
       /**
        * <code>required float focal_length = 2;</code>
-       * @param value The focalLength to set.
-       * @return This builder for chaining.
        */
       public Builder setFocalLength(float value) {
-        
-        focalLength_ = value;
         bitField0_ |= 0x00000002;
+        focalLength_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float focal_length = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearFocalLength() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -7421,35 +7172,27 @@ public final class SslVisionGeometry {
       private float principalPointX_ ;
       /**
        * <code>required float principal_point_x = 3;</code>
-       * @return Whether the principalPointX field is set.
        */
-      @java.lang.Override
       public boolean hasPrincipalPointX() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>required float principal_point_x = 3;</code>
-       * @return The principalPointX.
        */
-      @java.lang.Override
       public float getPrincipalPointX() {
         return principalPointX_;
       }
       /**
        * <code>required float principal_point_x = 3;</code>
-       * @param value The principalPointX to set.
-       * @return This builder for chaining.
        */
       public Builder setPrincipalPointX(float value) {
-        
-        principalPointX_ = value;
         bitField0_ |= 0x00000004;
+        principalPointX_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float principal_point_x = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearPrincipalPointX() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -7461,35 +7204,27 @@ public final class SslVisionGeometry {
       private float principalPointY_ ;
       /**
        * <code>required float principal_point_y = 4;</code>
-       * @return Whether the principalPointY field is set.
        */
-      @java.lang.Override
       public boolean hasPrincipalPointY() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>required float principal_point_y = 4;</code>
-       * @return The principalPointY.
        */
-      @java.lang.Override
       public float getPrincipalPointY() {
         return principalPointY_;
       }
       /**
        * <code>required float principal_point_y = 4;</code>
-       * @param value The principalPointY to set.
-       * @return This builder for chaining.
        */
       public Builder setPrincipalPointY(float value) {
-        
-        principalPointY_ = value;
         bitField0_ |= 0x00000008;
+        principalPointY_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float principal_point_y = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearPrincipalPointY() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -7501,35 +7236,27 @@ public final class SslVisionGeometry {
       private float distortion_ ;
       /**
        * <code>required float distortion = 5;</code>
-       * @return Whether the distortion field is set.
        */
-      @java.lang.Override
       public boolean hasDistortion() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <code>required float distortion = 5;</code>
-       * @return The distortion.
        */
-      @java.lang.Override
       public float getDistortion() {
         return distortion_;
       }
       /**
        * <code>required float distortion = 5;</code>
-       * @param value The distortion to set.
-       * @return This builder for chaining.
        */
       public Builder setDistortion(float value) {
-        
-        distortion_ = value;
         bitField0_ |= 0x00000010;
+        distortion_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float distortion = 5;</code>
-       * @return This builder for chaining.
        */
       public Builder clearDistortion() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -7541,35 +7268,27 @@ public final class SslVisionGeometry {
       private float q0_ ;
       /**
        * <code>required float q0 = 6;</code>
-       * @return Whether the q0 field is set.
        */
-      @java.lang.Override
       public boolean hasQ0() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>required float q0 = 6;</code>
-       * @return The q0.
        */
-      @java.lang.Override
       public float getQ0() {
         return q0_;
       }
       /**
        * <code>required float q0 = 6;</code>
-       * @param value The q0 to set.
-       * @return This builder for chaining.
        */
       public Builder setQ0(float value) {
-        
-        q0_ = value;
         bitField0_ |= 0x00000020;
+        q0_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float q0 = 6;</code>
-       * @return This builder for chaining.
        */
       public Builder clearQ0() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -7581,35 +7300,27 @@ public final class SslVisionGeometry {
       private float q1_ ;
       /**
        * <code>required float q1 = 7;</code>
-       * @return Whether the q1 field is set.
        */
-      @java.lang.Override
       public boolean hasQ1() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <code>required float q1 = 7;</code>
-       * @return The q1.
        */
-      @java.lang.Override
       public float getQ1() {
         return q1_;
       }
       /**
        * <code>required float q1 = 7;</code>
-       * @param value The q1 to set.
-       * @return This builder for chaining.
        */
       public Builder setQ1(float value) {
-        
-        q1_ = value;
         bitField0_ |= 0x00000040;
+        q1_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float q1 = 7;</code>
-       * @return This builder for chaining.
        */
       public Builder clearQ1() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -7621,35 +7332,27 @@ public final class SslVisionGeometry {
       private float q2_ ;
       /**
        * <code>required float q2 = 8;</code>
-       * @return Whether the q2 field is set.
        */
-      @java.lang.Override
       public boolean hasQ2() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
        * <code>required float q2 = 8;</code>
-       * @return The q2.
        */
-      @java.lang.Override
       public float getQ2() {
         return q2_;
       }
       /**
        * <code>required float q2 = 8;</code>
-       * @param value The q2 to set.
-       * @return This builder for chaining.
        */
       public Builder setQ2(float value) {
-        
-        q2_ = value;
         bitField0_ |= 0x00000080;
+        q2_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float q2 = 8;</code>
-       * @return This builder for chaining.
        */
       public Builder clearQ2() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -7661,35 +7364,27 @@ public final class SslVisionGeometry {
       private float q3_ ;
       /**
        * <code>required float q3 = 9;</code>
-       * @return Whether the q3 field is set.
        */
-      @java.lang.Override
       public boolean hasQ3() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
        * <code>required float q3 = 9;</code>
-       * @return The q3.
        */
-      @java.lang.Override
       public float getQ3() {
         return q3_;
       }
       /**
        * <code>required float q3 = 9;</code>
-       * @param value The q3 to set.
-       * @return This builder for chaining.
        */
       public Builder setQ3(float value) {
-        
-        q3_ = value;
         bitField0_ |= 0x00000100;
+        q3_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float q3 = 9;</code>
-       * @return This builder for chaining.
        */
       public Builder clearQ3() {
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -7701,35 +7396,27 @@ public final class SslVisionGeometry {
       private float tx_ ;
       /**
        * <code>required float tx = 10;</code>
-       * @return Whether the tx field is set.
        */
-      @java.lang.Override
       public boolean hasTx() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
        * <code>required float tx = 10;</code>
-       * @return The tx.
        */
-      @java.lang.Override
       public float getTx() {
         return tx_;
       }
       /**
        * <code>required float tx = 10;</code>
-       * @param value The tx to set.
-       * @return This builder for chaining.
        */
       public Builder setTx(float value) {
-        
-        tx_ = value;
         bitField0_ |= 0x00000200;
+        tx_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float tx = 10;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTx() {
         bitField0_ = (bitField0_ & ~0x00000200);
@@ -7741,35 +7428,27 @@ public final class SslVisionGeometry {
       private float ty_ ;
       /**
        * <code>required float ty = 11;</code>
-       * @return Whether the ty field is set.
        */
-      @java.lang.Override
       public boolean hasTy() {
-        return ((bitField0_ & 0x00000400) != 0);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
        * <code>required float ty = 11;</code>
-       * @return The ty.
        */
-      @java.lang.Override
       public float getTy() {
         return ty_;
       }
       /**
        * <code>required float ty = 11;</code>
-       * @param value The ty to set.
-       * @return This builder for chaining.
        */
       public Builder setTy(float value) {
-        
-        ty_ = value;
         bitField0_ |= 0x00000400;
+        ty_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float ty = 11;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTy() {
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -7781,35 +7460,27 @@ public final class SslVisionGeometry {
       private float tz_ ;
       /**
        * <code>required float tz = 12;</code>
-       * @return Whether the tz field is set.
        */
-      @java.lang.Override
       public boolean hasTz() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
        * <code>required float tz = 12;</code>
-       * @return The tz.
        */
-      @java.lang.Override
       public float getTz() {
         return tz_;
       }
       /**
        * <code>required float tz = 12;</code>
-       * @param value The tz to set.
-       * @return This builder for chaining.
        */
       public Builder setTz(float value) {
-        
-        tz_ = value;
         bitField0_ |= 0x00000800;
+        tz_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float tz = 12;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTz() {
         bitField0_ = (bitField0_ & ~0x00000800);
@@ -7821,35 +7492,27 @@ public final class SslVisionGeometry {
       private float derivedCameraWorldTx_ ;
       /**
        * <code>optional float derived_camera_world_tx = 13;</code>
-       * @return Whether the derivedCameraWorldTx field is set.
        */
-      @java.lang.Override
       public boolean hasDerivedCameraWorldTx() {
-        return ((bitField0_ & 0x00001000) != 0);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
        * <code>optional float derived_camera_world_tx = 13;</code>
-       * @return The derivedCameraWorldTx.
        */
-      @java.lang.Override
       public float getDerivedCameraWorldTx() {
         return derivedCameraWorldTx_;
       }
       /**
        * <code>optional float derived_camera_world_tx = 13;</code>
-       * @param value The derivedCameraWorldTx to set.
-       * @return This builder for chaining.
        */
       public Builder setDerivedCameraWorldTx(float value) {
-        
-        derivedCameraWorldTx_ = value;
         bitField0_ |= 0x00001000;
+        derivedCameraWorldTx_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>optional float derived_camera_world_tx = 13;</code>
-       * @return This builder for chaining.
        */
       public Builder clearDerivedCameraWorldTx() {
         bitField0_ = (bitField0_ & ~0x00001000);
@@ -7861,35 +7524,27 @@ public final class SslVisionGeometry {
       private float derivedCameraWorldTy_ ;
       /**
        * <code>optional float derived_camera_world_ty = 14;</code>
-       * @return Whether the derivedCameraWorldTy field is set.
        */
-      @java.lang.Override
       public boolean hasDerivedCameraWorldTy() {
-        return ((bitField0_ & 0x00002000) != 0);
+        return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
        * <code>optional float derived_camera_world_ty = 14;</code>
-       * @return The derivedCameraWorldTy.
        */
-      @java.lang.Override
       public float getDerivedCameraWorldTy() {
         return derivedCameraWorldTy_;
       }
       /**
        * <code>optional float derived_camera_world_ty = 14;</code>
-       * @param value The derivedCameraWorldTy to set.
-       * @return This builder for chaining.
        */
       public Builder setDerivedCameraWorldTy(float value) {
-        
-        derivedCameraWorldTy_ = value;
         bitField0_ |= 0x00002000;
+        derivedCameraWorldTy_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>optional float derived_camera_world_ty = 14;</code>
-       * @return This builder for chaining.
        */
       public Builder clearDerivedCameraWorldTy() {
         bitField0_ = (bitField0_ & ~0x00002000);
@@ -7901,35 +7556,27 @@ public final class SslVisionGeometry {
       private float derivedCameraWorldTz_ ;
       /**
        * <code>optional float derived_camera_world_tz = 15;</code>
-       * @return Whether the derivedCameraWorldTz field is set.
        */
-      @java.lang.Override
       public boolean hasDerivedCameraWorldTz() {
-        return ((bitField0_ & 0x00004000) != 0);
+        return ((bitField0_ & 0x00004000) == 0x00004000);
       }
       /**
        * <code>optional float derived_camera_world_tz = 15;</code>
-       * @return The derivedCameraWorldTz.
        */
-      @java.lang.Override
       public float getDerivedCameraWorldTz() {
         return derivedCameraWorldTz_;
       }
       /**
        * <code>optional float derived_camera_world_tz = 15;</code>
-       * @param value The derivedCameraWorldTz to set.
-       * @return This builder for chaining.
        */
       public Builder setDerivedCameraWorldTz(float value) {
-        
-        derivedCameraWorldTz_ = value;
         bitField0_ |= 0x00004000;
+        derivedCameraWorldTz_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>optional float derived_camera_world_tz = 15;</code>
-       * @return This builder for chaining.
        */
       public Builder clearDerivedCameraWorldTz() {
         bitField0_ = (bitField0_ & ~0x00004000);
@@ -7941,35 +7588,27 @@ public final class SslVisionGeometry {
       private int pixelImageWidth_ ;
       /**
        * <code>optional uint32 pixel_image_width = 16;</code>
-       * @return Whether the pixelImageWidth field is set.
        */
-      @java.lang.Override
       public boolean hasPixelImageWidth() {
-        return ((bitField0_ & 0x00008000) != 0);
+        return ((bitField0_ & 0x00008000) == 0x00008000);
       }
       /**
        * <code>optional uint32 pixel_image_width = 16;</code>
-       * @return The pixelImageWidth.
        */
-      @java.lang.Override
       public int getPixelImageWidth() {
         return pixelImageWidth_;
       }
       /**
        * <code>optional uint32 pixel_image_width = 16;</code>
-       * @param value The pixelImageWidth to set.
-       * @return This builder for chaining.
        */
       public Builder setPixelImageWidth(int value) {
-        
-        pixelImageWidth_ = value;
         bitField0_ |= 0x00008000;
+        pixelImageWidth_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>optional uint32 pixel_image_width = 16;</code>
-       * @return This builder for chaining.
        */
       public Builder clearPixelImageWidth() {
         bitField0_ = (bitField0_ & ~0x00008000);
@@ -7981,35 +7620,27 @@ public final class SslVisionGeometry {
       private int pixelImageHeight_ ;
       /**
        * <code>optional uint32 pixel_image_height = 17;</code>
-       * @return Whether the pixelImageHeight field is set.
        */
-      @java.lang.Override
       public boolean hasPixelImageHeight() {
-        return ((bitField0_ & 0x00010000) != 0);
+        return ((bitField0_ & 0x00010000) == 0x00010000);
       }
       /**
        * <code>optional uint32 pixel_image_height = 17;</code>
-       * @return The pixelImageHeight.
        */
-      @java.lang.Override
       public int getPixelImageHeight() {
         return pixelImageHeight_;
       }
       /**
        * <code>optional uint32 pixel_image_height = 17;</code>
-       * @param value The pixelImageHeight to set.
-       * @return This builder for chaining.
        */
       public Builder setPixelImageHeight(int value) {
-        
-        pixelImageHeight_ = value;
         bitField0_ |= 0x00010000;
+        pixelImageHeight_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>optional uint32 pixel_image_height = 17;</code>
-       * @return This builder for chaining.
        */
       public Builder clearPixelImageHeight() {
         bitField0_ = (bitField0_ & ~0x00010000);
@@ -8050,18 +7681,7 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SSL_GeometryCameraCalibration(input, extensionRegistry);
       }
     };
 
@@ -8091,7 +7711,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double acc_slide = 1;</code>
-     * @return Whether the accSlide field is set.
      */
     boolean hasAccSlide();
     /**
@@ -8100,7 +7719,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double acc_slide = 1;</code>
-     * @return The accSlide.
      */
     double getAccSlide();
 
@@ -8110,7 +7728,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double acc_roll = 2;</code>
-     * @return Whether the accRoll field is set.
      */
     boolean hasAccRoll();
     /**
@@ -8119,7 +7736,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double acc_roll = 2;</code>
-     * @return The accRoll.
      */
     double getAccRoll();
 
@@ -8129,7 +7745,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double k_switch = 3;</code>
-     * @return Whether the kSwitch field is set.
      */
     boolean hasKSwitch();
     /**
@@ -8138,7 +7753,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double k_switch = 3;</code>
-     * @return The kSwitch.
      */
     double getKSwitch();
   }
@@ -8154,7 +7768,7 @@ public final class SslVisionGeometry {
    *
    * Protobuf type {@code proto.simulation.SSL_BallModelStraightTwoPhase}
    */
-  public static final class SSL_BallModelStraightTwoPhase extends
+  public  static final class SSL_BallModelStraightTwoPhase extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.simulation.SSL_BallModelStraightTwoPhase)
       SSL_BallModelStraightTwoPhaseOrBuilder {
@@ -8164,19 +7778,68 @@ public final class SslVisionGeometry {
       super(builder);
     }
     private SSL_BallModelStraightTwoPhase() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SSL_BallModelStraightTwoPhase();
+      accSlide_ = 0D;
+      accRoll_ = 0D;
+      kSwitch_ = 0D;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private SSL_BallModelStraightTwoPhase(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9: {
+              bitField0_ |= 0x00000001;
+              accSlide_ = input.readDouble();
+              break;
+            }
+            case 17: {
+              bitField0_ |= 0x00000002;
+              accRoll_ = input.readDouble();
+              break;
+            }
+            case 25: {
+              bitField0_ |= 0x00000004;
+              kSwitch_ = input.readDouble();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -8193,18 +7856,16 @@ public final class SslVisionGeometry {
 
     private int bitField0_;
     public static final int ACC_SLIDE_FIELD_NUMBER = 1;
-    private double accSlide_ = 0D;
+    private double accSlide_;
     /**
      * <pre>
      * Ball sliding acceleration [m/s^2] (should be negative)
      * </pre>
      *
      * <code>required double acc_slide = 1;</code>
-     * @return Whether the accSlide field is set.
      */
-    @java.lang.Override
     public boolean hasAccSlide() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -8212,26 +7873,22 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double acc_slide = 1;</code>
-     * @return The accSlide.
      */
-    @java.lang.Override
     public double getAccSlide() {
       return accSlide_;
     }
 
     public static final int ACC_ROLL_FIELD_NUMBER = 2;
-    private double accRoll_ = 0D;
+    private double accRoll_;
     /**
      * <pre>
      * Ball rolling acceleration [m/s^2] (should be negative)
      * </pre>
      *
      * <code>required double acc_roll = 2;</code>
-     * @return Whether the accRoll field is set.
      */
-    @java.lang.Override
     public boolean hasAccRoll() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -8239,26 +7896,22 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double acc_roll = 2;</code>
-     * @return The accRoll.
      */
-    @java.lang.Override
     public double getAccRoll() {
       return accRoll_;
     }
 
     public static final int K_SWITCH_FIELD_NUMBER = 3;
-    private double kSwitch_ = 0D;
+    private double kSwitch_;
     /**
      * <pre>
      * Fraction of the initial velocity where the ball starts to roll
      * </pre>
      *
      * <code>required double k_switch = 3;</code>
-     * @return Whether the kSwitch field is set.
      */
-    @java.lang.Override
     public boolean hasKSwitch() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -8266,9 +7919,7 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double k_switch = 3;</code>
-     * @return The kSwitch.
      */
-    @java.lang.Override
     public double getKSwitch() {
       return kSwitch_;
     }
@@ -8299,16 +7950,16 @@ public final class SslVisionGeometry {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeDouble(1, accSlide_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeDouble(2, accRoll_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeDouble(3, kSwitch_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -8317,19 +7968,19 @@ public final class SslVisionGeometry {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(1, accSlide_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(2, accRoll_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(3, kSwitch_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -8344,26 +7995,30 @@ public final class SslVisionGeometry {
       }
       proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase other = (proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase) obj;
 
-      if (hasAccSlide() != other.hasAccSlide()) return false;
+      boolean result = true;
+      result = result && (hasAccSlide() == other.hasAccSlide());
       if (hasAccSlide()) {
-        if (java.lang.Double.doubleToLongBits(getAccSlide())
-            != java.lang.Double.doubleToLongBits(
-                other.getAccSlide())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getAccSlide())
+            == java.lang.Double.doubleToLongBits(
+                other.getAccSlide()));
       }
-      if (hasAccRoll() != other.hasAccRoll()) return false;
+      result = result && (hasAccRoll() == other.hasAccRoll());
       if (hasAccRoll()) {
-        if (java.lang.Double.doubleToLongBits(getAccRoll())
-            != java.lang.Double.doubleToLongBits(
-                other.getAccRoll())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getAccRoll())
+            == java.lang.Double.doubleToLongBits(
+                other.getAccRoll()));
       }
-      if (hasKSwitch() != other.hasKSwitch()) return false;
+      result = result && (hasKSwitch() == other.hasKSwitch());
       if (hasKSwitch()) {
-        if (java.lang.Double.doubleToLongBits(getKSwitch())
-            != java.lang.Double.doubleToLongBits(
-                other.getKSwitch())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getKSwitch())
+            == java.lang.Double.doubleToLongBits(
+                other.getKSwitch()));
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -8388,7 +8043,7 @@ public final class SslVisionGeometry {
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             java.lang.Double.doubleToLongBits(getKSwitch()));
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8514,21 +8169,28 @@ public final class SslVisionGeometry {
 
       // Construct using proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         accSlide_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000001);
         accRoll_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000002);
         kSwitch_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -8555,60 +8217,56 @@ public final class SslVisionGeometry {
       @java.lang.Override
       public proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase buildPartial() {
         proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase result = new proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.accSlide_ = accSlide_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.accRoll_ = accRoll_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.kSwitch_ = kSwitch_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.accSlide_ = accSlide_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.accRoll_ = accRoll_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.kSwitch_ = kSwitch_;
-          to_bitField0_ |= 0x00000004;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -8631,7 +8289,7 @@ public final class SslVisionGeometry {
         if (other.hasKSwitch()) {
           setKSwitch(other.getKSwitch());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -8655,45 +8313,17 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 9: {
-                accSlide_ = input.readDouble();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 9
-              case 17: {
-                accRoll_ = input.readDouble();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 17
-              case 25: {
-                kSwitch_ = input.readDouble();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 25
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -8705,11 +8335,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double acc_slide = 1;</code>
-       * @return Whether the accSlide field is set.
        */
-      @java.lang.Override
       public boolean hasAccSlide() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -8717,9 +8345,7 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double acc_slide = 1;</code>
-       * @return The accSlide.
        */
-      @java.lang.Override
       public double getAccSlide() {
         return accSlide_;
       }
@@ -8729,13 +8355,10 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double acc_slide = 1;</code>
-       * @param value The accSlide to set.
-       * @return This builder for chaining.
        */
       public Builder setAccSlide(double value) {
-        
-        accSlide_ = value;
         bitField0_ |= 0x00000001;
+        accSlide_ = value;
         onChanged();
         return this;
       }
@@ -8745,7 +8368,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double acc_slide = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearAccSlide() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -8761,11 +8383,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double acc_roll = 2;</code>
-       * @return Whether the accRoll field is set.
        */
-      @java.lang.Override
       public boolean hasAccRoll() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -8773,9 +8393,7 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double acc_roll = 2;</code>
-       * @return The accRoll.
        */
-      @java.lang.Override
       public double getAccRoll() {
         return accRoll_;
       }
@@ -8785,13 +8403,10 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double acc_roll = 2;</code>
-       * @param value The accRoll to set.
-       * @return This builder for chaining.
        */
       public Builder setAccRoll(double value) {
-        
-        accRoll_ = value;
         bitField0_ |= 0x00000002;
+        accRoll_ = value;
         onChanged();
         return this;
       }
@@ -8801,7 +8416,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double acc_roll = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearAccRoll() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -8817,11 +8431,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double k_switch = 3;</code>
-       * @return Whether the kSwitch field is set.
        */
-      @java.lang.Override
       public boolean hasKSwitch() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -8829,9 +8441,7 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double k_switch = 3;</code>
-       * @return The kSwitch.
        */
-      @java.lang.Override
       public double getKSwitch() {
         return kSwitch_;
       }
@@ -8841,13 +8451,10 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double k_switch = 3;</code>
-       * @param value The kSwitch to set.
-       * @return This builder for chaining.
        */
       public Builder setKSwitch(double value) {
-        
-        kSwitch_ = value;
         bitField0_ |= 0x00000004;
+        kSwitch_ = value;
         onChanged();
         return this;
       }
@@ -8857,7 +8464,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double k_switch = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearKSwitch() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -8898,18 +8504,7 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SSL_BallModelStraightTwoPhase(input, extensionRegistry);
       }
     };
 
@@ -8939,7 +8534,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double damping_xy_first_hop = 1;</code>
-     * @return Whether the dampingXyFirstHop field is set.
      */
     boolean hasDampingXyFirstHop();
     /**
@@ -8948,7 +8542,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double damping_xy_first_hop = 1;</code>
-     * @return The dampingXyFirstHop.
      */
     double getDampingXyFirstHop();
 
@@ -8958,7 +8551,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double damping_xy_other_hops = 2;</code>
-     * @return Whether the dampingXyOtherHops field is set.
      */
     boolean hasDampingXyOtherHops();
     /**
@@ -8967,7 +8559,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double damping_xy_other_hops = 2;</code>
-     * @return The dampingXyOtherHops.
      */
     double getDampingXyOtherHops();
 
@@ -8977,7 +8568,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double damping_z = 3;</code>
-     * @return Whether the dampingZ field is set.
      */
     boolean hasDampingZ();
     /**
@@ -8986,7 +8576,6 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double damping_z = 3;</code>
-     * @return The dampingZ.
      */
     double getDampingZ();
   }
@@ -8998,7 +8587,7 @@ public final class SslVisionGeometry {
    *
    * Protobuf type {@code proto.simulation.SSL_BallModelChipFixedLoss}
    */
-  public static final class SSL_BallModelChipFixedLoss extends
+  public  static final class SSL_BallModelChipFixedLoss extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.simulation.SSL_BallModelChipFixedLoss)
       SSL_BallModelChipFixedLossOrBuilder {
@@ -9008,19 +8597,68 @@ public final class SslVisionGeometry {
       super(builder);
     }
     private SSL_BallModelChipFixedLoss() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SSL_BallModelChipFixedLoss();
+      dampingXyFirstHop_ = 0D;
+      dampingXyOtherHops_ = 0D;
+      dampingZ_ = 0D;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private SSL_BallModelChipFixedLoss(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9: {
+              bitField0_ |= 0x00000001;
+              dampingXyFirstHop_ = input.readDouble();
+              break;
+            }
+            case 17: {
+              bitField0_ |= 0x00000002;
+              dampingXyOtherHops_ = input.readDouble();
+              break;
+            }
+            case 25: {
+              bitField0_ |= 0x00000004;
+              dampingZ_ = input.readDouble();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -9037,18 +8675,16 @@ public final class SslVisionGeometry {
 
     private int bitField0_;
     public static final int DAMPING_XY_FIRST_HOP_FIELD_NUMBER = 1;
-    private double dampingXyFirstHop_ = 0D;
+    private double dampingXyFirstHop_;
     /**
      * <pre>
      * Chip kick velocity damping factor in XY direction for the first hop
      * </pre>
      *
      * <code>required double damping_xy_first_hop = 1;</code>
-     * @return Whether the dampingXyFirstHop field is set.
      */
-    @java.lang.Override
     public boolean hasDampingXyFirstHop() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -9056,26 +8692,22 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double damping_xy_first_hop = 1;</code>
-     * @return The dampingXyFirstHop.
      */
-    @java.lang.Override
     public double getDampingXyFirstHop() {
       return dampingXyFirstHop_;
     }
 
     public static final int DAMPING_XY_OTHER_HOPS_FIELD_NUMBER = 2;
-    private double dampingXyOtherHops_ = 0D;
+    private double dampingXyOtherHops_;
     /**
      * <pre>
      * Chip kick velocity damping factor in XY direction for all following hops
      * </pre>
      *
      * <code>required double damping_xy_other_hops = 2;</code>
-     * @return Whether the dampingXyOtherHops field is set.
      */
-    @java.lang.Override
     public boolean hasDampingXyOtherHops() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -9083,26 +8715,22 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double damping_xy_other_hops = 2;</code>
-     * @return The dampingXyOtherHops.
      */
-    @java.lang.Override
     public double getDampingXyOtherHops() {
       return dampingXyOtherHops_;
     }
 
     public static final int DAMPING_Z_FIELD_NUMBER = 3;
-    private double dampingZ_ = 0D;
+    private double dampingZ_;
     /**
      * <pre>
      * Chip kick velocity damping factor in Z direction for all hops
      * </pre>
      *
      * <code>required double damping_z = 3;</code>
-     * @return Whether the dampingZ field is set.
      */
-    @java.lang.Override
     public boolean hasDampingZ() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -9110,9 +8738,7 @@ public final class SslVisionGeometry {
      * </pre>
      *
      * <code>required double damping_z = 3;</code>
-     * @return The dampingZ.
      */
-    @java.lang.Override
     public double getDampingZ() {
       return dampingZ_;
     }
@@ -9143,16 +8769,16 @@ public final class SslVisionGeometry {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeDouble(1, dampingXyFirstHop_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeDouble(2, dampingXyOtherHops_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeDouble(3, dampingZ_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -9161,19 +8787,19 @@ public final class SslVisionGeometry {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(1, dampingXyFirstHop_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(2, dampingXyOtherHops_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(3, dampingZ_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9188,26 +8814,30 @@ public final class SslVisionGeometry {
       }
       proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss other = (proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss) obj;
 
-      if (hasDampingXyFirstHop() != other.hasDampingXyFirstHop()) return false;
+      boolean result = true;
+      result = result && (hasDampingXyFirstHop() == other.hasDampingXyFirstHop());
       if (hasDampingXyFirstHop()) {
-        if (java.lang.Double.doubleToLongBits(getDampingXyFirstHop())
-            != java.lang.Double.doubleToLongBits(
-                other.getDampingXyFirstHop())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getDampingXyFirstHop())
+            == java.lang.Double.doubleToLongBits(
+                other.getDampingXyFirstHop()));
       }
-      if (hasDampingXyOtherHops() != other.hasDampingXyOtherHops()) return false;
+      result = result && (hasDampingXyOtherHops() == other.hasDampingXyOtherHops());
       if (hasDampingXyOtherHops()) {
-        if (java.lang.Double.doubleToLongBits(getDampingXyOtherHops())
-            != java.lang.Double.doubleToLongBits(
-                other.getDampingXyOtherHops())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getDampingXyOtherHops())
+            == java.lang.Double.doubleToLongBits(
+                other.getDampingXyOtherHops()));
       }
-      if (hasDampingZ() != other.hasDampingZ()) return false;
+      result = result && (hasDampingZ() == other.hasDampingZ());
       if (hasDampingZ()) {
-        if (java.lang.Double.doubleToLongBits(getDampingZ())
-            != java.lang.Double.doubleToLongBits(
-                other.getDampingZ())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getDampingZ())
+            == java.lang.Double.doubleToLongBits(
+                other.getDampingZ()));
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -9232,7 +8862,7 @@ public final class SslVisionGeometry {
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             java.lang.Double.doubleToLongBits(getDampingZ()));
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9354,21 +8984,28 @@ public final class SslVisionGeometry {
 
       // Construct using proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         dampingXyFirstHop_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000001);
         dampingXyOtherHops_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000002);
         dampingZ_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -9395,60 +9032,56 @@ public final class SslVisionGeometry {
       @java.lang.Override
       public proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss buildPartial() {
         proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss result = new proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.dampingXyFirstHop_ = dampingXyFirstHop_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.dampingXyOtherHops_ = dampingXyOtherHops_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.dampingZ_ = dampingZ_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.dampingXyFirstHop_ = dampingXyFirstHop_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.dampingXyOtherHops_ = dampingXyOtherHops_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.dampingZ_ = dampingZ_;
-          to_bitField0_ |= 0x00000004;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -9471,7 +9104,7 @@ public final class SslVisionGeometry {
         if (other.hasDampingZ()) {
           setDampingZ(other.getDampingZ());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -9495,45 +9128,17 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 9: {
-                dampingXyFirstHop_ = input.readDouble();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 9
-              case 17: {
-                dampingXyOtherHops_ = input.readDouble();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 17
-              case 25: {
-                dampingZ_ = input.readDouble();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 25
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -9545,11 +9150,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double damping_xy_first_hop = 1;</code>
-       * @return Whether the dampingXyFirstHop field is set.
        */
-      @java.lang.Override
       public boolean hasDampingXyFirstHop() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -9557,9 +9160,7 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double damping_xy_first_hop = 1;</code>
-       * @return The dampingXyFirstHop.
        */
-      @java.lang.Override
       public double getDampingXyFirstHop() {
         return dampingXyFirstHop_;
       }
@@ -9569,13 +9170,10 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double damping_xy_first_hop = 1;</code>
-       * @param value The dampingXyFirstHop to set.
-       * @return This builder for chaining.
        */
       public Builder setDampingXyFirstHop(double value) {
-        
-        dampingXyFirstHop_ = value;
         bitField0_ |= 0x00000001;
+        dampingXyFirstHop_ = value;
         onChanged();
         return this;
       }
@@ -9585,7 +9183,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double damping_xy_first_hop = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearDampingXyFirstHop() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -9601,11 +9198,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double damping_xy_other_hops = 2;</code>
-       * @return Whether the dampingXyOtherHops field is set.
        */
-      @java.lang.Override
       public boolean hasDampingXyOtherHops() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -9613,9 +9208,7 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double damping_xy_other_hops = 2;</code>
-       * @return The dampingXyOtherHops.
        */
-      @java.lang.Override
       public double getDampingXyOtherHops() {
         return dampingXyOtherHops_;
       }
@@ -9625,13 +9218,10 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double damping_xy_other_hops = 2;</code>
-       * @param value The dampingXyOtherHops to set.
-       * @return This builder for chaining.
        */
       public Builder setDampingXyOtherHops(double value) {
-        
-        dampingXyOtherHops_ = value;
         bitField0_ |= 0x00000002;
+        dampingXyOtherHops_ = value;
         onChanged();
         return this;
       }
@@ -9641,7 +9231,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double damping_xy_other_hops = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearDampingXyOtherHops() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -9657,11 +9246,9 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double damping_z = 3;</code>
-       * @return Whether the dampingZ field is set.
        */
-      @java.lang.Override
       public boolean hasDampingZ() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -9669,9 +9256,7 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double damping_z = 3;</code>
-       * @return The dampingZ.
        */
-      @java.lang.Override
       public double getDampingZ() {
         return dampingZ_;
       }
@@ -9681,13 +9266,10 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double damping_z = 3;</code>
-       * @param value The dampingZ to set.
-       * @return This builder for chaining.
        */
       public Builder setDampingZ(double value) {
-        
-        dampingZ_ = value;
         bitField0_ |= 0x00000004;
+        dampingZ_ = value;
         onChanged();
         return this;
       }
@@ -9697,7 +9279,6 @@ public final class SslVisionGeometry {
        * </pre>
        *
        * <code>required double damping_z = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearDampingZ() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -9738,18 +9319,7 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SSL_BallModelChipFixedLoss(input, extensionRegistry);
       }
     };
 
@@ -9775,12 +9345,10 @@ public final class SslVisionGeometry {
 
     /**
      * <code>optional .proto.simulation.SSL_BallModelStraightTwoPhase straight_two_phase = 1;</code>
-     * @return Whether the straightTwoPhase field is set.
      */
     boolean hasStraightTwoPhase();
     /**
      * <code>optional .proto.simulation.SSL_BallModelStraightTwoPhase straight_two_phase = 1;</code>
-     * @return The straightTwoPhase.
      */
     proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase getStraightTwoPhase();
     /**
@@ -9790,12 +9358,10 @@ public final class SslVisionGeometry {
 
     /**
      * <code>optional .proto.simulation.SSL_BallModelChipFixedLoss chip_fixed_loss = 2;</code>
-     * @return Whether the chipFixedLoss field is set.
      */
     boolean hasChipFixedLoss();
     /**
      * <code>optional .proto.simulation.SSL_BallModelChipFixedLoss chip_fixed_loss = 2;</code>
-     * @return The chipFixedLoss.
      */
     proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss getChipFixedLoss();
     /**
@@ -9806,7 +9372,7 @@ public final class SslVisionGeometry {
   /**
    * Protobuf type {@code proto.simulation.SSL_GeometryModels}
    */
-  public static final class SSL_GeometryModels extends
+  public  static final class SSL_GeometryModels extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.simulation.SSL_GeometryModels)
       SSL_GeometryModelsOrBuilder {
@@ -9819,16 +9385,73 @@ public final class SslVisionGeometry {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SSL_GeometryModels();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private SSL_GeometryModels(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = straightTwoPhase_.toBuilder();
+              }
+              straightTwoPhase_ = input.readMessage(proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(straightTwoPhase_);
+                straightTwoPhase_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 18: {
+              proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = chipFixedLoss_.toBuilder();
+              }
+              chipFixedLoss_ = input.readMessage(proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(chipFixedLoss_);
+                chipFixedLoss_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -9848,24 +9471,19 @@ public final class SslVisionGeometry {
     private proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase straightTwoPhase_;
     /**
      * <code>optional .proto.simulation.SSL_BallModelStraightTwoPhase straight_two_phase = 1;</code>
-     * @return Whether the straightTwoPhase field is set.
      */
-    @java.lang.Override
     public boolean hasStraightTwoPhase() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>optional .proto.simulation.SSL_BallModelStraightTwoPhase straight_two_phase = 1;</code>
-     * @return The straightTwoPhase.
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase getStraightTwoPhase() {
       return straightTwoPhase_ == null ? proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase.getDefaultInstance() : straightTwoPhase_;
     }
     /**
      * <code>optional .proto.simulation.SSL_BallModelStraightTwoPhase straight_two_phase = 1;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhaseOrBuilder getStraightTwoPhaseOrBuilder() {
       return straightTwoPhase_ == null ? proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase.getDefaultInstance() : straightTwoPhase_;
     }
@@ -9874,24 +9492,19 @@ public final class SslVisionGeometry {
     private proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss chipFixedLoss_;
     /**
      * <code>optional .proto.simulation.SSL_BallModelChipFixedLoss chip_fixed_loss = 2;</code>
-     * @return Whether the chipFixedLoss field is set.
      */
-    @java.lang.Override
     public boolean hasChipFixedLoss() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>optional .proto.simulation.SSL_BallModelChipFixedLoss chip_fixed_loss = 2;</code>
-     * @return The chipFixedLoss.
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss getChipFixedLoss() {
       return chipFixedLoss_ == null ? proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss.getDefaultInstance() : chipFixedLoss_;
     }
     /**
      * <code>optional .proto.simulation.SSL_BallModelChipFixedLoss chip_fixed_loss = 2;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLossOrBuilder getChipFixedLossOrBuilder() {
       return chipFixedLoss_ == null ? proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss.getDefaultInstance() : chipFixedLoss_;
     }
@@ -9922,13 +9535,13 @@ public final class SslVisionGeometry {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, getStraightTwoPhase());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, getChipFixedLoss());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -9937,15 +9550,15 @@ public final class SslVisionGeometry {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getStraightTwoPhase());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getChipFixedLoss());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9960,18 +9573,19 @@ public final class SslVisionGeometry {
       }
       proto.simulation.SslVisionGeometry.SSL_GeometryModels other = (proto.simulation.SslVisionGeometry.SSL_GeometryModels) obj;
 
-      if (hasStraightTwoPhase() != other.hasStraightTwoPhase()) return false;
+      boolean result = true;
+      result = result && (hasStraightTwoPhase() == other.hasStraightTwoPhase());
       if (hasStraightTwoPhase()) {
-        if (!getStraightTwoPhase()
-            .equals(other.getStraightTwoPhase())) return false;
+        result = result && getStraightTwoPhase()
+            .equals(other.getStraightTwoPhase());
       }
-      if (hasChipFixedLoss() != other.hasChipFixedLoss()) return false;
+      result = result && (hasChipFixedLoss() == other.hasChipFixedLoss());
       if (hasChipFixedLoss()) {
-        if (!getChipFixedLoss()
-            .equals(other.getChipFixedLoss())) return false;
+        result = result && getChipFixedLoss()
+            .equals(other.getChipFixedLoss());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -9989,7 +9603,7 @@ public final class SslVisionGeometry {
         hash = (37 * hash) + CHIP_FIXED_LOSS_FIELD_NUMBER;
         hash = (53 * hash) + getChipFixedLoss().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -10124,17 +9738,18 @@ public final class SslVisionGeometry {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        straightTwoPhase_ = null;
-        if (straightTwoPhaseBuilder_ != null) {
-          straightTwoPhaseBuilder_.dispose();
-          straightTwoPhaseBuilder_ = null;
+        if (straightTwoPhaseBuilder_ == null) {
+          straightTwoPhase_ = null;
+        } else {
+          straightTwoPhaseBuilder_.clear();
         }
-        chipFixedLoss_ = null;
-        if (chipFixedLossBuilder_ != null) {
-          chipFixedLossBuilder_.dispose();
-          chipFixedLossBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (chipFixedLossBuilder_ == null) {
+          chipFixedLoss_ = null;
+        } else {
+          chipFixedLossBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -10161,60 +9776,60 @@ public final class SslVisionGeometry {
       @java.lang.Override
       public proto.simulation.SslVisionGeometry.SSL_GeometryModels buildPartial() {
         proto.simulation.SslVisionGeometry.SSL_GeometryModels result = new proto.simulation.SslVisionGeometry.SSL_GeometryModels(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (straightTwoPhaseBuilder_ == null) {
+          result.straightTwoPhase_ = straightTwoPhase_;
+        } else {
+          result.straightTwoPhase_ = straightTwoPhaseBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (chipFixedLossBuilder_ == null) {
+          result.chipFixedLoss_ = chipFixedLoss_;
+        } else {
+          result.chipFixedLoss_ = chipFixedLossBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.simulation.SslVisionGeometry.SSL_GeometryModels result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.straightTwoPhase_ = straightTwoPhaseBuilder_ == null
-              ? straightTwoPhase_
-              : straightTwoPhaseBuilder_.build();
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.chipFixedLoss_ = chipFixedLossBuilder_ == null
-              ? chipFixedLoss_
-              : chipFixedLossBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -10234,7 +9849,7 @@ public final class SslVisionGeometry {
         if (other.hasChipFixedLoss()) {
           mergeChipFixedLoss(other.getChipFixedLoss());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -10259,61 +9874,32 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.simulation.SslVisionGeometry.SSL_GeometryModels parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getStraightTwoPhaseFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getChipFixedLossFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.simulation.SslVisionGeometry.SSL_GeometryModels) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
 
-      private proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase straightTwoPhase_;
+      private proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase straightTwoPhase_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase, proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase.Builder, proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhaseOrBuilder> straightTwoPhaseBuilder_;
       /**
        * <code>optional .proto.simulation.SSL_BallModelStraightTwoPhase straight_two_phase = 1;</code>
-       * @return Whether the straightTwoPhase field is set.
        */
       public boolean hasStraightTwoPhase() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>optional .proto.simulation.SSL_BallModelStraightTwoPhase straight_two_phase = 1;</code>
-       * @return The straightTwoPhase.
        */
       public proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase getStraightTwoPhase() {
         if (straightTwoPhaseBuilder_ == null) {
@@ -10331,11 +9917,11 @@ public final class SslVisionGeometry {
             throw new NullPointerException();
           }
           straightTwoPhase_ = value;
+          onChanged();
         } else {
           straightTwoPhaseBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -10345,11 +9931,11 @@ public final class SslVisionGeometry {
           proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase.Builder builderForValue) {
         if (straightTwoPhaseBuilder_ == null) {
           straightTwoPhase_ = builderForValue.build();
+          onChanged();
         } else {
           straightTwoPhaseBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -10357,31 +9943,32 @@ public final class SslVisionGeometry {
        */
       public Builder mergeStraightTwoPhase(proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase value) {
         if (straightTwoPhaseBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            straightTwoPhase_ != null &&
-            straightTwoPhase_ != proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase.getDefaultInstance()) {
-            getStraightTwoPhaseBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              straightTwoPhase_ != null &&
+              straightTwoPhase_ != proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase.getDefaultInstance()) {
+            straightTwoPhase_ =
+              proto.simulation.SslVisionGeometry.SSL_BallModelStraightTwoPhase.newBuilder(straightTwoPhase_).mergeFrom(value).buildPartial();
           } else {
             straightTwoPhase_ = value;
           }
+          onChanged();
         } else {
           straightTwoPhaseBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
        * <code>optional .proto.simulation.SSL_BallModelStraightTwoPhase straight_two_phase = 1;</code>
        */
       public Builder clearStraightTwoPhase() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        straightTwoPhase_ = null;
-        if (straightTwoPhaseBuilder_ != null) {
-          straightTwoPhaseBuilder_.dispose();
-          straightTwoPhaseBuilder_ = null;
+        if (straightTwoPhaseBuilder_ == null) {
+          straightTwoPhase_ = null;
+          onChanged();
+        } else {
+          straightTwoPhaseBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
       /**
@@ -10420,19 +10007,17 @@ public final class SslVisionGeometry {
         return straightTwoPhaseBuilder_;
       }
 
-      private proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss chipFixedLoss_;
+      private proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss chipFixedLoss_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss, proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss.Builder, proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLossOrBuilder> chipFixedLossBuilder_;
       /**
        * <code>optional .proto.simulation.SSL_BallModelChipFixedLoss chip_fixed_loss = 2;</code>
-       * @return Whether the chipFixedLoss field is set.
        */
       public boolean hasChipFixedLoss() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>optional .proto.simulation.SSL_BallModelChipFixedLoss chip_fixed_loss = 2;</code>
-       * @return The chipFixedLoss.
        */
       public proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss getChipFixedLoss() {
         if (chipFixedLossBuilder_ == null) {
@@ -10450,11 +10035,11 @@ public final class SslVisionGeometry {
             throw new NullPointerException();
           }
           chipFixedLoss_ = value;
+          onChanged();
         } else {
           chipFixedLossBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -10464,11 +10049,11 @@ public final class SslVisionGeometry {
           proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss.Builder builderForValue) {
         if (chipFixedLossBuilder_ == null) {
           chipFixedLoss_ = builderForValue.build();
+          onChanged();
         } else {
           chipFixedLossBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -10476,31 +10061,32 @@ public final class SslVisionGeometry {
        */
       public Builder mergeChipFixedLoss(proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss value) {
         if (chipFixedLossBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            chipFixedLoss_ != null &&
-            chipFixedLoss_ != proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss.getDefaultInstance()) {
-            getChipFixedLossBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              chipFixedLoss_ != null &&
+              chipFixedLoss_ != proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss.getDefaultInstance()) {
+            chipFixedLoss_ =
+              proto.simulation.SslVisionGeometry.SSL_BallModelChipFixedLoss.newBuilder(chipFixedLoss_).mergeFrom(value).buildPartial();
           } else {
             chipFixedLoss_ = value;
           }
+          onChanged();
         } else {
           chipFixedLossBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
        * <code>optional .proto.simulation.SSL_BallModelChipFixedLoss chip_fixed_loss = 2;</code>
        */
       public Builder clearChipFixedLoss() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        chipFixedLoss_ = null;
-        if (chipFixedLossBuilder_ != null) {
-          chipFixedLossBuilder_.dispose();
-          chipFixedLossBuilder_ = null;
+        if (chipFixedLossBuilder_ == null) {
+          chipFixedLoss_ = null;
+          onChanged();
+        } else {
+          chipFixedLossBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
@@ -10571,18 +10157,7 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SSL_GeometryModels(input, extensionRegistry);
       }
     };
 
@@ -10608,12 +10183,10 @@ public final class SslVisionGeometry {
 
     /**
      * <code>required .proto.simulation.SSL_GeometryFieldSize field = 1;</code>
-     * @return Whether the field field is set.
      */
     boolean hasField();
     /**
      * <code>required .proto.simulation.SSL_GeometryFieldSize field = 1;</code>
-     * @return The field.
      */
     proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize getField();
     /**
@@ -10647,12 +10220,10 @@ public final class SslVisionGeometry {
 
     /**
      * <code>optional .proto.simulation.SSL_GeometryModels models = 3;</code>
-     * @return Whether the models field is set.
      */
     boolean hasModels();
     /**
      * <code>optional .proto.simulation.SSL_GeometryModels models = 3;</code>
-     * @return The models.
      */
     proto.simulation.SslVisionGeometry.SSL_GeometryModels getModels();
     /**
@@ -10663,7 +10234,7 @@ public final class SslVisionGeometry {
   /**
    * Protobuf type {@code proto.simulation.SSL_GeometryData}
    */
-  public static final class SSL_GeometryData extends
+  public  static final class SSL_GeometryData extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.simulation.SSL_GeometryData)
       SSL_GeometryDataOrBuilder {
@@ -10677,16 +10248,85 @@ public final class SslVisionGeometry {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SSL_GeometryData();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private SSL_GeometryData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = field_.toBuilder();
+              }
+              field_ = input.readMessage(proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(field_);
+                field_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                calib_ = new java.util.ArrayList<proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              calib_.add(
+                  input.readMessage(proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration.PARSER, extensionRegistry));
+              break;
+            }
+            case 26: {
+              proto.simulation.SslVisionGeometry.SSL_GeometryModels.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = models_.toBuilder();
+              }
+              models_ = input.readMessage(proto.simulation.SslVisionGeometry.SSL_GeometryModels.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(models_);
+                models_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          calib_ = java.util.Collections.unmodifiableList(calib_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -10706,42 +10346,34 @@ public final class SslVisionGeometry {
     private proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize field_;
     /**
      * <code>required .proto.simulation.SSL_GeometryFieldSize field = 1;</code>
-     * @return Whether the field field is set.
      */
-    @java.lang.Override
     public boolean hasField() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required .proto.simulation.SSL_GeometryFieldSize field = 1;</code>
-     * @return The field.
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize getField() {
       return field_ == null ? proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize.getDefaultInstance() : field_;
     }
     /**
      * <code>required .proto.simulation.SSL_GeometryFieldSize field = 1;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.SSL_GeometryFieldSizeOrBuilder getFieldOrBuilder() {
       return field_ == null ? proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize.getDefaultInstance() : field_;
     }
 
     public static final int CALIB_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
     private java.util.List<proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration> calib_;
     /**
      * <code>repeated .proto.simulation.SSL_GeometryCameraCalibration calib = 2;</code>
      */
-    @java.lang.Override
     public java.util.List<proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration> getCalibList() {
       return calib_;
     }
     /**
      * <code>repeated .proto.simulation.SSL_GeometryCameraCalibration calib = 2;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibrationOrBuilder> 
         getCalibOrBuilderList() {
       return calib_;
@@ -10749,21 +10381,18 @@ public final class SslVisionGeometry {
     /**
      * <code>repeated .proto.simulation.SSL_GeometryCameraCalibration calib = 2;</code>
      */
-    @java.lang.Override
     public int getCalibCount() {
       return calib_.size();
     }
     /**
      * <code>repeated .proto.simulation.SSL_GeometryCameraCalibration calib = 2;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration getCalib(int index) {
       return calib_.get(index);
     }
     /**
      * <code>repeated .proto.simulation.SSL_GeometryCameraCalibration calib = 2;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibrationOrBuilder getCalibOrBuilder(
         int index) {
       return calib_.get(index);
@@ -10773,24 +10402,19 @@ public final class SslVisionGeometry {
     private proto.simulation.SslVisionGeometry.SSL_GeometryModels models_;
     /**
      * <code>optional .proto.simulation.SSL_GeometryModels models = 3;</code>
-     * @return Whether the models field is set.
      */
-    @java.lang.Override
     public boolean hasModels() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>optional .proto.simulation.SSL_GeometryModels models = 3;</code>
-     * @return The models.
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.SSL_GeometryModels getModels() {
       return models_ == null ? proto.simulation.SslVisionGeometry.SSL_GeometryModels.getDefaultInstance() : models_;
     }
     /**
      * <code>optional .proto.simulation.SSL_GeometryModels models = 3;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslVisionGeometry.SSL_GeometryModelsOrBuilder getModelsOrBuilder() {
       return models_ == null ? proto.simulation.SslVisionGeometry.SSL_GeometryModels.getDefaultInstance() : models_;
     }
@@ -10829,16 +10453,16 @@ public final class SslVisionGeometry {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, getField());
       }
       for (int i = 0; i < calib_.size(); i++) {
         output.writeMessage(2, calib_.get(i));
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(3, getModels());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -10847,7 +10471,7 @@ public final class SslVisionGeometry {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getField());
       }
@@ -10855,11 +10479,11 @@ public final class SslVisionGeometry {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, calib_.get(i));
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getModels());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -10874,20 +10498,21 @@ public final class SslVisionGeometry {
       }
       proto.simulation.SslVisionGeometry.SSL_GeometryData other = (proto.simulation.SslVisionGeometry.SSL_GeometryData) obj;
 
-      if (hasField() != other.hasField()) return false;
+      boolean result = true;
+      result = result && (hasField() == other.hasField());
       if (hasField()) {
-        if (!getField()
-            .equals(other.getField())) return false;
+        result = result && getField()
+            .equals(other.getField());
       }
-      if (!getCalibList()
-          .equals(other.getCalibList())) return false;
-      if (hasModels() != other.hasModels()) return false;
+      result = result && getCalibList()
+          .equals(other.getCalibList());
+      result = result && (hasModels() == other.hasModels());
       if (hasModels()) {
-        if (!getModels()
-            .equals(other.getModels())) return false;
+        result = result && getModels()
+            .equals(other.getModels());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -10909,7 +10534,7 @@ public final class SslVisionGeometry {
         hash = (37 * hash) + MODELS_FIELD_NUMBER;
         hash = (53 * hash) + getModels().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -11045,24 +10670,24 @@ public final class SslVisionGeometry {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        field_ = null;
-        if (fieldBuilder_ != null) {
-          fieldBuilder_.dispose();
-          fieldBuilder_ = null;
+        if (fieldBuilder_ == null) {
+          field_ = null;
+        } else {
+          fieldBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (calibBuilder_ == null) {
           calib_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          calib_ = null;
           calibBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        models_ = null;
-        if (modelsBuilder_ != null) {
-          modelsBuilder_.dispose();
-          modelsBuilder_ = null;
+        if (modelsBuilder_ == null) {
+          models_ = null;
+        } else {
+          modelsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -11089,15 +10714,18 @@ public final class SslVisionGeometry {
       @java.lang.Override
       public proto.simulation.SslVisionGeometry.SSL_GeometryData buildPartial() {
         proto.simulation.SslVisionGeometry.SSL_GeometryData result = new proto.simulation.SslVisionGeometry.SSL_GeometryData(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(proto.simulation.SslVisionGeometry.SSL_GeometryData result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (fieldBuilder_ == null) {
+          result.field_ = field_;
+        } else {
+          result.field_ = fieldBuilder_.build();
+        }
         if (calibBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
             calib_ = java.util.Collections.unmodifiableList(calib_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
@@ -11105,57 +10733,50 @@ public final class SslVisionGeometry {
         } else {
           result.calib_ = calibBuilder_.build();
         }
-      }
-
-      private void buildPartial0(proto.simulation.SslVisionGeometry.SSL_GeometryData result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.field_ = fieldBuilder_ == null
-              ? field_
-              : fieldBuilder_.build();
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.models_ = modelsBuilder_ == null
-              ? models_
-              : modelsBuilder_.build();
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.bitField0_ |= to_bitField0_;
+        if (modelsBuilder_ == null) {
+          result.models_ = models_;
+        } else {
+          result.models_ = modelsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -11201,7 +10822,7 @@ public final class SslVisionGeometry {
         if (other.hasModels()) {
           mergeModels(other.getModels());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -11232,74 +10853,32 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.simulation.SslVisionGeometry.SSL_GeometryData parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getFieldFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration m =
-                    input.readMessage(
-                        proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration.PARSER,
-                        extensionRegistry);
-                if (calibBuilder_ == null) {
-                  ensureCalibIsMutable();
-                  calib_.add(m);
-                } else {
-                  calibBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getModelsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.simulation.SslVisionGeometry.SSL_GeometryData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
 
-      private proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize field_;
+      private proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize field_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize, proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize.Builder, proto.simulation.SslVisionGeometry.SSL_GeometryFieldSizeOrBuilder> fieldBuilder_;
       /**
        * <code>required .proto.simulation.SSL_GeometryFieldSize field = 1;</code>
-       * @return Whether the field field is set.
        */
       public boolean hasField() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required .proto.simulation.SSL_GeometryFieldSize field = 1;</code>
-       * @return The field.
        */
       public proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize getField() {
         if (fieldBuilder_ == null) {
@@ -11317,11 +10896,11 @@ public final class SslVisionGeometry {
             throw new NullPointerException();
           }
           field_ = value;
+          onChanged();
         } else {
           fieldBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -11331,11 +10910,11 @@ public final class SslVisionGeometry {
           proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize.Builder builderForValue) {
         if (fieldBuilder_ == null) {
           field_ = builderForValue.build();
+          onChanged();
         } else {
           fieldBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -11343,31 +10922,32 @@ public final class SslVisionGeometry {
        */
       public Builder mergeField(proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize value) {
         if (fieldBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            field_ != null &&
-            field_ != proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize.getDefaultInstance()) {
-            getFieldBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              field_ != null &&
+              field_ != proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize.getDefaultInstance()) {
+            field_ =
+              proto.simulation.SslVisionGeometry.SSL_GeometryFieldSize.newBuilder(field_).mergeFrom(value).buildPartial();
           } else {
             field_ = value;
           }
+          onChanged();
         } else {
           fieldBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
        * <code>required .proto.simulation.SSL_GeometryFieldSize field = 1;</code>
        */
       public Builder clearField() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        field_ = null;
-        if (fieldBuilder_ != null) {
-          fieldBuilder_.dispose();
-          fieldBuilder_ = null;
+        if (fieldBuilder_ == null) {
+          field_ = null;
+          onChanged();
+        } else {
+          fieldBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
       /**
@@ -11409,7 +10989,7 @@ public final class SslVisionGeometry {
       private java.util.List<proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration> calib_ =
         java.util.Collections.emptyList();
       private void ensureCalibIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
           calib_ = new java.util.ArrayList<proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration>(calib_);
           bitField0_ |= 0x00000002;
          }
@@ -11638,7 +11218,7 @@ public final class SslVisionGeometry {
           calibBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration, proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibration.Builder, proto.simulation.SslVisionGeometry.SSL_GeometryCameraCalibrationOrBuilder>(
                   calib_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
                   isClean());
           calib_ = null;
@@ -11646,19 +11226,17 @@ public final class SslVisionGeometry {
         return calibBuilder_;
       }
 
-      private proto.simulation.SslVisionGeometry.SSL_GeometryModels models_;
+      private proto.simulation.SslVisionGeometry.SSL_GeometryModels models_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.simulation.SslVisionGeometry.SSL_GeometryModels, proto.simulation.SslVisionGeometry.SSL_GeometryModels.Builder, proto.simulation.SslVisionGeometry.SSL_GeometryModelsOrBuilder> modelsBuilder_;
       /**
        * <code>optional .proto.simulation.SSL_GeometryModels models = 3;</code>
-       * @return Whether the models field is set.
        */
       public boolean hasModels() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>optional .proto.simulation.SSL_GeometryModels models = 3;</code>
-       * @return The models.
        */
       public proto.simulation.SslVisionGeometry.SSL_GeometryModels getModels() {
         if (modelsBuilder_ == null) {
@@ -11676,11 +11254,11 @@ public final class SslVisionGeometry {
             throw new NullPointerException();
           }
           models_ = value;
+          onChanged();
         } else {
           modelsBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000004;
-        onChanged();
         return this;
       }
       /**
@@ -11690,11 +11268,11 @@ public final class SslVisionGeometry {
           proto.simulation.SslVisionGeometry.SSL_GeometryModels.Builder builderForValue) {
         if (modelsBuilder_ == null) {
           models_ = builderForValue.build();
+          onChanged();
         } else {
           modelsBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000004;
-        onChanged();
         return this;
       }
       /**
@@ -11702,31 +11280,32 @@ public final class SslVisionGeometry {
        */
       public Builder mergeModels(proto.simulation.SslVisionGeometry.SSL_GeometryModels value) {
         if (modelsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            models_ != null &&
-            models_ != proto.simulation.SslVisionGeometry.SSL_GeometryModels.getDefaultInstance()) {
-            getModelsBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              models_ != null &&
+              models_ != proto.simulation.SslVisionGeometry.SSL_GeometryModels.getDefaultInstance()) {
+            models_ =
+              proto.simulation.SslVisionGeometry.SSL_GeometryModels.newBuilder(models_).mergeFrom(value).buildPartial();
           } else {
             models_ = value;
           }
+          onChanged();
         } else {
           modelsBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000004;
-        onChanged();
         return this;
       }
       /**
        * <code>optional .proto.simulation.SSL_GeometryModels models = 3;</code>
        */
       public Builder clearModels() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        models_ = null;
-        if (modelsBuilder_ != null) {
-          modelsBuilder_.dispose();
-          modelsBuilder_ = null;
+        if (modelsBuilder_ == null) {
+          models_ = null;
+          onChanged();
+        } else {
+          modelsBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
       /**
@@ -11797,18 +11376,7 @@ public final class SslVisionGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SSL_GeometryData(input, extensionRegistry);
       }
     };
 
@@ -11937,10 +11505,18 @@ public final class SslVisionGeometry {
       "thub.com/RoboCup-SSL/ssl-simulation-prot" +
       "ocol/pkg/sim"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_proto_simulation_Vector2f_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_simulation_Vector2f_fieldAccessorTable = new

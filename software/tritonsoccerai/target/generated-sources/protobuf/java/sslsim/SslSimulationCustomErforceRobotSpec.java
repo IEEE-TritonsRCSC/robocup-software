@@ -25,7 +25,6 @@ public final class SslSimulationCustomErforceRobotSpec {
      * </pre>
      *
      * <code>optional float shoot_radius = 1;</code>
-     * @return Whether the shootRadius field is set.
      */
     boolean hasShootRadius();
     /**
@@ -35,7 +34,6 @@ public final class SslSimulationCustomErforceRobotSpec {
      * </pre>
      *
      * <code>optional float shoot_radius = 1;</code>
-     * @return The shootRadius.
      */
     float getShootRadius();
 
@@ -45,7 +43,6 @@ public final class SslSimulationCustomErforceRobotSpec {
      * </pre>
      *
      * <code>optional float dribbler_height = 2;</code>
-     * @return Whether the dribblerHeight field is set.
      */
     boolean hasDribblerHeight();
     /**
@@ -54,7 +51,6 @@ public final class SslSimulationCustomErforceRobotSpec {
      * </pre>
      *
      * <code>optional float dribbler_height = 2;</code>
-     * @return The dribblerHeight.
      */
     float getDribblerHeight();
 
@@ -64,7 +60,6 @@ public final class SslSimulationCustomErforceRobotSpec {
      * </pre>
      *
      * <code>optional float dribbler_width = 3;</code>
-     * @return Whether the dribblerWidth field is set.
      */
     boolean hasDribblerWidth();
     /**
@@ -73,7 +68,6 @@ public final class SslSimulationCustomErforceRobotSpec {
      * </pre>
      *
      * <code>optional float dribbler_width = 3;</code>
-     * @return The dribblerWidth.
      */
     float getDribblerWidth();
   }
@@ -84,7 +78,7 @@ public final class SslSimulationCustomErforceRobotSpec {
    *
    * Protobuf type {@code sslsim.RobotSpecErForce}
    */
-  public static final class RobotSpecErForce extends
+  public  static final class RobotSpecErForce extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:sslsim.RobotSpecErForce)
       RobotSpecErForceOrBuilder {
@@ -94,19 +88,68 @@ public final class SslSimulationCustomErforceRobotSpec {
       super(builder);
     }
     private RobotSpecErForce() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new RobotSpecErForce();
+      shootRadius_ = 0F;
+      dribblerHeight_ = 0F;
+      dribblerWidth_ = 0F;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private RobotSpecErForce(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+              bitField0_ |= 0x00000001;
+              shootRadius_ = input.readFloat();
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              dribblerHeight_ = input.readFloat();
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              dribblerWidth_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -123,7 +166,7 @@ public final class SslSimulationCustomErforceRobotSpec {
 
     private int bitField0_;
     public static final int SHOOT_RADIUS_FIELD_NUMBER = 1;
-    private float shootRadius_ = 0F;
+    private float shootRadius_;
     /**
      * <pre>
      * The distance [m] from the robot center to the ball, when the ball is as close as possible to the robot.
@@ -131,11 +174,9 @@ public final class SslSimulationCustomErforceRobotSpec {
      * </pre>
      *
      * <code>optional float shoot_radius = 1;</code>
-     * @return Whether the shootRadius field is set.
      */
-    @java.lang.Override
     public boolean hasShootRadius() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -144,26 +185,22 @@ public final class SslSimulationCustomErforceRobotSpec {
      * </pre>
      *
      * <code>optional float shoot_radius = 1;</code>
-     * @return The shootRadius.
      */
-    @java.lang.Override
     public float getShootRadius() {
       return shootRadius_;
     }
 
     public static final int DRIBBLER_HEIGHT_FIELD_NUMBER = 2;
-    private float dribblerHeight_ = 0F;
+    private float dribblerHeight_;
     /**
      * <pre>
      * The height of the dribbling bar from the ground [m]
      * </pre>
      *
      * <code>optional float dribbler_height = 2;</code>
-     * @return Whether the dribblerHeight field is set.
      */
-    @java.lang.Override
     public boolean hasDribblerHeight() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -171,26 +208,22 @@ public final class SslSimulationCustomErforceRobotSpec {
      * </pre>
      *
      * <code>optional float dribbler_height = 2;</code>
-     * @return The dribblerHeight.
      */
-    @java.lang.Override
     public float getDribblerHeight() {
       return dribblerHeight_;
     }
 
     public static final int DRIBBLER_WIDTH_FIELD_NUMBER = 3;
-    private float dribblerWidth_ = 0F;
+    private float dribblerWidth_;
     /**
      * <pre>
      * The width of the dribbler itself (where the ball can be controlled), without the mechanical frame [m].
      * </pre>
      *
      * <code>optional float dribbler_width = 3;</code>
-     * @return Whether the dribblerWidth field is set.
      */
-    @java.lang.Override
     public boolean hasDribblerWidth() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -198,9 +231,7 @@ public final class SslSimulationCustomErforceRobotSpec {
      * </pre>
      *
      * <code>optional float dribbler_width = 3;</code>
-     * @return The dribblerWidth.
      */
-    @java.lang.Override
     public float getDribblerWidth() {
       return dribblerWidth_;
     }
@@ -219,16 +250,16 @@ public final class SslSimulationCustomErforceRobotSpec {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeFloat(1, shootRadius_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeFloat(2, dribblerHeight_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeFloat(3, dribblerWidth_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -237,19 +268,19 @@ public final class SslSimulationCustomErforceRobotSpec {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, shootRadius_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, dribblerHeight_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, dribblerWidth_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -264,26 +295,30 @@ public final class SslSimulationCustomErforceRobotSpec {
       }
       sslsim.SslSimulationCustomErforceRobotSpec.RobotSpecErForce other = (sslsim.SslSimulationCustomErforceRobotSpec.RobotSpecErForce) obj;
 
-      if (hasShootRadius() != other.hasShootRadius()) return false;
+      boolean result = true;
+      result = result && (hasShootRadius() == other.hasShootRadius());
       if (hasShootRadius()) {
-        if (java.lang.Float.floatToIntBits(getShootRadius())
-            != java.lang.Float.floatToIntBits(
-                other.getShootRadius())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getShootRadius())
+            == java.lang.Float.floatToIntBits(
+                other.getShootRadius()));
       }
-      if (hasDribblerHeight() != other.hasDribblerHeight()) return false;
+      result = result && (hasDribblerHeight() == other.hasDribblerHeight());
       if (hasDribblerHeight()) {
-        if (java.lang.Float.floatToIntBits(getDribblerHeight())
-            != java.lang.Float.floatToIntBits(
-                other.getDribblerHeight())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getDribblerHeight())
+            == java.lang.Float.floatToIntBits(
+                other.getDribblerHeight()));
       }
-      if (hasDribblerWidth() != other.hasDribblerWidth()) return false;
+      result = result && (hasDribblerWidth() == other.hasDribblerWidth());
       if (hasDribblerWidth()) {
-        if (java.lang.Float.floatToIntBits(getDribblerWidth())
-            != java.lang.Float.floatToIntBits(
-                other.getDribblerWidth())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getDribblerWidth())
+            == java.lang.Float.floatToIntBits(
+                other.getDribblerWidth()));
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -308,7 +343,7 @@ public final class SslSimulationCustomErforceRobotSpec {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getDribblerWidth());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -429,21 +464,28 @@ public final class SslSimulationCustomErforceRobotSpec {
 
       // Construct using sslsim.SslSimulationCustomErforceRobotSpec.RobotSpecErForce.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         shootRadius_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000001);
         dribblerHeight_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
         dribblerWidth_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -470,60 +512,56 @@ public final class SslSimulationCustomErforceRobotSpec {
       @java.lang.Override
       public sslsim.SslSimulationCustomErforceRobotSpec.RobotSpecErForce buildPartial() {
         sslsim.SslSimulationCustomErforceRobotSpec.RobotSpecErForce result = new sslsim.SslSimulationCustomErforceRobotSpec.RobotSpecErForce(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.shootRadius_ = shootRadius_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.dribblerHeight_ = dribblerHeight_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.dribblerWidth_ = dribblerWidth_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(sslsim.SslSimulationCustomErforceRobotSpec.RobotSpecErForce result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.shootRadius_ = shootRadius_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.dribblerHeight_ = dribblerHeight_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.dribblerWidth_ = dribblerWidth_;
-          to_bitField0_ |= 0x00000004;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -546,7 +584,7 @@ public final class SslSimulationCustomErforceRobotSpec {
         if (other.hasDribblerWidth()) {
           setDribblerWidth(other.getDribblerWidth());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -561,45 +599,17 @@ public final class SslSimulationCustomErforceRobotSpec {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        sslsim.SslSimulationCustomErforceRobotSpec.RobotSpecErForce parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                shootRadius_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 13
-              case 21: {
-                dribblerHeight_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 21
-              case 29: {
-                dribblerWidth_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 29
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (sslsim.SslSimulationCustomErforceRobotSpec.RobotSpecErForce) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -612,11 +622,9 @@ public final class SslSimulationCustomErforceRobotSpec {
        * </pre>
        *
        * <code>optional float shoot_radius = 1;</code>
-       * @return Whether the shootRadius field is set.
        */
-      @java.lang.Override
       public boolean hasShootRadius() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -625,9 +633,7 @@ public final class SslSimulationCustomErforceRobotSpec {
        * </pre>
        *
        * <code>optional float shoot_radius = 1;</code>
-       * @return The shootRadius.
        */
-      @java.lang.Override
       public float getShootRadius() {
         return shootRadius_;
       }
@@ -638,13 +644,10 @@ public final class SslSimulationCustomErforceRobotSpec {
        * </pre>
        *
        * <code>optional float shoot_radius = 1;</code>
-       * @param value The shootRadius to set.
-       * @return This builder for chaining.
        */
       public Builder setShootRadius(float value) {
-        
-        shootRadius_ = value;
         bitField0_ |= 0x00000001;
+        shootRadius_ = value;
         onChanged();
         return this;
       }
@@ -655,7 +658,6 @@ public final class SslSimulationCustomErforceRobotSpec {
        * </pre>
        *
        * <code>optional float shoot_radius = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearShootRadius() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -671,11 +673,9 @@ public final class SslSimulationCustomErforceRobotSpec {
        * </pre>
        *
        * <code>optional float dribbler_height = 2;</code>
-       * @return Whether the dribblerHeight field is set.
        */
-      @java.lang.Override
       public boolean hasDribblerHeight() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -683,9 +683,7 @@ public final class SslSimulationCustomErforceRobotSpec {
        * </pre>
        *
        * <code>optional float dribbler_height = 2;</code>
-       * @return The dribblerHeight.
        */
-      @java.lang.Override
       public float getDribblerHeight() {
         return dribblerHeight_;
       }
@@ -695,13 +693,10 @@ public final class SslSimulationCustomErforceRobotSpec {
        * </pre>
        *
        * <code>optional float dribbler_height = 2;</code>
-       * @param value The dribblerHeight to set.
-       * @return This builder for chaining.
        */
       public Builder setDribblerHeight(float value) {
-        
-        dribblerHeight_ = value;
         bitField0_ |= 0x00000002;
+        dribblerHeight_ = value;
         onChanged();
         return this;
       }
@@ -711,7 +706,6 @@ public final class SslSimulationCustomErforceRobotSpec {
        * </pre>
        *
        * <code>optional float dribbler_height = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearDribblerHeight() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -727,11 +721,9 @@ public final class SslSimulationCustomErforceRobotSpec {
        * </pre>
        *
        * <code>optional float dribbler_width = 3;</code>
-       * @return Whether the dribblerWidth field is set.
        */
-      @java.lang.Override
       public boolean hasDribblerWidth() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -739,9 +731,7 @@ public final class SslSimulationCustomErforceRobotSpec {
        * </pre>
        *
        * <code>optional float dribbler_width = 3;</code>
-       * @return The dribblerWidth.
        */
-      @java.lang.Override
       public float getDribblerWidth() {
         return dribblerWidth_;
       }
@@ -751,13 +741,10 @@ public final class SslSimulationCustomErforceRobotSpec {
        * </pre>
        *
        * <code>optional float dribbler_width = 3;</code>
-       * @param value The dribblerWidth to set.
-       * @return This builder for chaining.
        */
       public Builder setDribblerWidth(float value) {
-        
-        dribblerWidth_ = value;
         bitField0_ |= 0x00000004;
+        dribblerWidth_ = value;
         onChanged();
         return this;
       }
@@ -767,7 +754,6 @@ public final class SslSimulationCustomErforceRobotSpec {
        * </pre>
        *
        * <code>optional float dribbler_width = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearDribblerWidth() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -808,18 +794,7 @@ public final class SslSimulationCustomErforceRobotSpec {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RobotSpecErForce(input, extensionRegistry);
       }
     };
 
@@ -860,10 +835,18 @@ public final class SslSimulationCustomErforceRobotSpec {
       "m/RoboCup-SSL/ssl-simulation-protocol/pk" +
       "g/sim"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_sslsim_RobotSpecErForce_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_sslsim_RobotSpecErForce_fieldAccessorTable = new

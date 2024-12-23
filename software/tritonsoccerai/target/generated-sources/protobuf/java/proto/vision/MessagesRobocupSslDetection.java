@@ -20,85 +20,71 @@ public final class MessagesRobocupSslDetection {
 
     /**
      * <code>required float confidence = 1;</code>
-     * @return Whether the confidence field is set.
      */
     boolean hasConfidence();
     /**
      * <code>required float confidence = 1;</code>
-     * @return The confidence.
      */
     float getConfidence();
 
     /**
      * <code>optional uint32 area = 2;</code>
-     * @return Whether the area field is set.
      */
     boolean hasArea();
     /**
      * <code>optional uint32 area = 2;</code>
-     * @return The area.
      */
     int getArea();
 
     /**
      * <code>required float x = 3;</code>
-     * @return Whether the x field is set.
      */
     boolean hasX();
     /**
      * <code>required float x = 3;</code>
-     * @return The x.
      */
     float getX();
 
     /**
      * <code>required float y = 4;</code>
-     * @return Whether the y field is set.
      */
     boolean hasY();
     /**
      * <code>required float y = 4;</code>
-     * @return The y.
      */
     float getY();
 
     /**
      * <code>optional float z = 5;</code>
-     * @return Whether the z field is set.
      */
     boolean hasZ();
     /**
      * <code>optional float z = 5;</code>
-     * @return The z.
      */
     float getZ();
 
     /**
      * <code>required float pixel_x = 6;</code>
-     * @return Whether the pixelX field is set.
      */
     boolean hasPixelX();
     /**
      * <code>required float pixel_x = 6;</code>
-     * @return The pixelX.
      */
     float getPixelX();
 
     /**
      * <code>required float pixel_y = 7;</code>
-     * @return Whether the pixelY field is set.
      */
     boolean hasPixelY();
     /**
      * <code>required float pixel_y = 7;</code>
-     * @return The pixelY.
      */
     float getPixelY();
   }
   /**
    * Protobuf type {@code proto.vision.SSL_DetectionBall}
    */
-  public static final class SSL_DetectionBall extends
+  public  static final class SSL_DetectionBall extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.vision.SSL_DetectionBall)
       SSL_DetectionBallOrBuilder {
@@ -108,19 +94,92 @@ public final class MessagesRobocupSslDetection {
       super(builder);
     }
     private SSL_DetectionBall() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SSL_DetectionBall();
+      confidence_ = 0F;
+      area_ = 0;
+      x_ = 0F;
+      y_ = 0F;
+      z_ = 0F;
+      pixelX_ = 0F;
+      pixelY_ = 0F;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private SSL_DetectionBall(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+              bitField0_ |= 0x00000001;
+              confidence_ = input.readFloat();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              area_ = input.readUInt32();
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              x_ = input.readFloat();
+              break;
+            }
+            case 37: {
+              bitField0_ |= 0x00000008;
+              y_ = input.readFloat();
+              break;
+            }
+            case 45: {
+              bitField0_ |= 0x00000010;
+              z_ = input.readFloat();
+              break;
+            }
+            case 53: {
+              bitField0_ |= 0x00000020;
+              pixelX_ = input.readFloat();
+              break;
+            }
+            case 61: {
+              bitField0_ |= 0x00000040;
+              pixelY_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -137,134 +196,106 @@ public final class MessagesRobocupSslDetection {
 
     private int bitField0_;
     public static final int CONFIDENCE_FIELD_NUMBER = 1;
-    private float confidence_ = 0F;
+    private float confidence_;
     /**
      * <code>required float confidence = 1;</code>
-     * @return Whether the confidence field is set.
      */
-    @java.lang.Override
     public boolean hasConfidence() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required float confidence = 1;</code>
-     * @return The confidence.
      */
-    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }
 
     public static final int AREA_FIELD_NUMBER = 2;
-    private int area_ = 0;
+    private int area_;
     /**
      * <code>optional uint32 area = 2;</code>
-     * @return Whether the area field is set.
      */
-    @java.lang.Override
     public boolean hasArea() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>optional uint32 area = 2;</code>
-     * @return The area.
      */
-    @java.lang.Override
     public int getArea() {
       return area_;
     }
 
     public static final int X_FIELD_NUMBER = 3;
-    private float x_ = 0F;
+    private float x_;
     /**
      * <code>required float x = 3;</code>
-     * @return Whether the x field is set.
      */
-    @java.lang.Override
     public boolean hasX() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>required float x = 3;</code>
-     * @return The x.
      */
-    @java.lang.Override
     public float getX() {
       return x_;
     }
 
     public static final int Y_FIELD_NUMBER = 4;
-    private float y_ = 0F;
+    private float y_;
     /**
      * <code>required float y = 4;</code>
-     * @return Whether the y field is set.
      */
-    @java.lang.Override
     public boolean hasY() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>required float y = 4;</code>
-     * @return The y.
      */
-    @java.lang.Override
     public float getY() {
       return y_;
     }
 
     public static final int Z_FIELD_NUMBER = 5;
-    private float z_ = 0F;
+    private float z_;
     /**
      * <code>optional float z = 5;</code>
-     * @return Whether the z field is set.
      */
-    @java.lang.Override
     public boolean hasZ() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <code>optional float z = 5;</code>
-     * @return The z.
      */
-    @java.lang.Override
     public float getZ() {
       return z_;
     }
 
     public static final int PIXEL_X_FIELD_NUMBER = 6;
-    private float pixelX_ = 0F;
+    private float pixelX_;
     /**
      * <code>required float pixel_x = 6;</code>
-     * @return Whether the pixelX field is set.
      */
-    @java.lang.Override
     public boolean hasPixelX() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>required float pixel_x = 6;</code>
-     * @return The pixelX.
      */
-    @java.lang.Override
     public float getPixelX() {
       return pixelX_;
     }
 
     public static final int PIXEL_Y_FIELD_NUMBER = 7;
-    private float pixelY_ = 0F;
+    private float pixelY_;
     /**
      * <code>required float pixel_y = 7;</code>
-     * @return Whether the pixelY field is set.
      */
-    @java.lang.Override
     public boolean hasPixelY() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <code>required float pixel_y = 7;</code>
-     * @return The pixelY.
      */
-    @java.lang.Override
     public float getPixelY() {
       return pixelY_;
     }
@@ -303,28 +334,28 @@ public final class MessagesRobocupSslDetection {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeFloat(1, confidence_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, area_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeFloat(3, x_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeFloat(4, y_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeFloat(5, z_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeFloat(6, pixelX_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeFloat(7, pixelY_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -333,35 +364,35 @@ public final class MessagesRobocupSslDetection {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, confidence_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, area_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, x_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, y_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(5, z_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(6, pixelX_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(7, pixelY_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -376,49 +407,56 @@ public final class MessagesRobocupSslDetection {
       }
       proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall other = (proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall) obj;
 
-      if (hasConfidence() != other.hasConfidence()) return false;
+      boolean result = true;
+      result = result && (hasConfidence() == other.hasConfidence());
       if (hasConfidence()) {
-        if (java.lang.Float.floatToIntBits(getConfidence())
-            != java.lang.Float.floatToIntBits(
-                other.getConfidence())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getConfidence())
+            == java.lang.Float.floatToIntBits(
+                other.getConfidence()));
       }
-      if (hasArea() != other.hasArea()) return false;
+      result = result && (hasArea() == other.hasArea());
       if (hasArea()) {
-        if (getArea()
-            != other.getArea()) return false;
+        result = result && (getArea()
+            == other.getArea());
       }
-      if (hasX() != other.hasX()) return false;
+      result = result && (hasX() == other.hasX());
       if (hasX()) {
-        if (java.lang.Float.floatToIntBits(getX())
-            != java.lang.Float.floatToIntBits(
-                other.getX())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getX())
+            == java.lang.Float.floatToIntBits(
+                other.getX()));
       }
-      if (hasY() != other.hasY()) return false;
+      result = result && (hasY() == other.hasY());
       if (hasY()) {
-        if (java.lang.Float.floatToIntBits(getY())
-            != java.lang.Float.floatToIntBits(
-                other.getY())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getY())
+            == java.lang.Float.floatToIntBits(
+                other.getY()));
       }
-      if (hasZ() != other.hasZ()) return false;
+      result = result && (hasZ() == other.hasZ());
       if (hasZ()) {
-        if (java.lang.Float.floatToIntBits(getZ())
-            != java.lang.Float.floatToIntBits(
-                other.getZ())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getZ())
+            == java.lang.Float.floatToIntBits(
+                other.getZ()));
       }
-      if (hasPixelX() != other.hasPixelX()) return false;
+      result = result && (hasPixelX() == other.hasPixelX());
       if (hasPixelX()) {
-        if (java.lang.Float.floatToIntBits(getPixelX())
-            != java.lang.Float.floatToIntBits(
-                other.getPixelX())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getPixelX())
+            == java.lang.Float.floatToIntBits(
+                other.getPixelX()));
       }
-      if (hasPixelY() != other.hasPixelY()) return false;
+      result = result && (hasPixelY() == other.hasPixelY());
       if (hasPixelY()) {
-        if (java.lang.Float.floatToIntBits(getPixelY())
-            != java.lang.Float.floatToIntBits(
-                other.getPixelY())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getPixelY())
+            == java.lang.Float.floatToIntBits(
+                other.getPixelY()));
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -462,7 +500,7 @@ public final class MessagesRobocupSslDetection {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getPixelY());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -579,25 +617,36 @@ public final class MessagesRobocupSslDetection {
 
       // Construct using proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         confidence_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000001);
         area_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
         x_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000004);
         y_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000008);
         z_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000010);
         pixelX_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000020);
         pixelY_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -624,76 +673,72 @@ public final class MessagesRobocupSslDetection {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall buildPartial() {
         proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall result = new proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.confidence_ = confidence_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.area_ = area_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.x_ = x_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.y_ = y_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.z_ = z_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.pixelX_ = pixelX_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.pixelY_ = pixelY_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.confidence_ = confidence_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.area_ = area_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.x_ = x_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.y_ = y_;
-          to_bitField0_ |= 0x00000008;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.z_ = z_;
-          to_bitField0_ |= 0x00000010;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.pixelX_ = pixelX_;
-          to_bitField0_ |= 0x00000020;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.pixelY_ = pixelY_;
-          to_bitField0_ |= 0x00000040;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -728,7 +773,7 @@ public final class MessagesRobocupSslDetection {
         if (other.hasPixelY()) {
           setPixelY(other.getPixelY());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -758,65 +803,17 @@ public final class MessagesRobocupSslDetection {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                confidence_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 13
-              case 16: {
-                area_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 29: {
-                x_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 29
-              case 37: {
-                y_ = input.readFloat();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 37
-              case 45: {
-                z_ = input.readFloat();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 45
-              case 53: {
-                pixelX_ = input.readFloat();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 53
-              case 61: {
-                pixelY_ = input.readFloat();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 61
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -824,35 +821,27 @@ public final class MessagesRobocupSslDetection {
       private float confidence_ ;
       /**
        * <code>required float confidence = 1;</code>
-       * @return Whether the confidence field is set.
        */
-      @java.lang.Override
       public boolean hasConfidence() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required float confidence = 1;</code>
-       * @return The confidence.
        */
-      @java.lang.Override
       public float getConfidence() {
         return confidence_;
       }
       /**
        * <code>required float confidence = 1;</code>
-       * @param value The confidence to set.
-       * @return This builder for chaining.
        */
       public Builder setConfidence(float value) {
-        
-        confidence_ = value;
         bitField0_ |= 0x00000001;
+        confidence_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float confidence = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearConfidence() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -864,35 +853,27 @@ public final class MessagesRobocupSslDetection {
       private int area_ ;
       /**
        * <code>optional uint32 area = 2;</code>
-       * @return Whether the area field is set.
        */
-      @java.lang.Override
       public boolean hasArea() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>optional uint32 area = 2;</code>
-       * @return The area.
        */
-      @java.lang.Override
       public int getArea() {
         return area_;
       }
       /**
        * <code>optional uint32 area = 2;</code>
-       * @param value The area to set.
-       * @return This builder for chaining.
        */
       public Builder setArea(int value) {
-        
-        area_ = value;
         bitField0_ |= 0x00000002;
+        area_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>optional uint32 area = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearArea() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -904,35 +885,27 @@ public final class MessagesRobocupSslDetection {
       private float x_ ;
       /**
        * <code>required float x = 3;</code>
-       * @return Whether the x field is set.
        */
-      @java.lang.Override
       public boolean hasX() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>required float x = 3;</code>
-       * @return The x.
        */
-      @java.lang.Override
       public float getX() {
         return x_;
       }
       /**
        * <code>required float x = 3;</code>
-       * @param value The x to set.
-       * @return This builder for chaining.
        */
       public Builder setX(float value) {
-        
-        x_ = value;
         bitField0_ |= 0x00000004;
+        x_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float x = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearX() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -944,35 +917,27 @@ public final class MessagesRobocupSslDetection {
       private float y_ ;
       /**
        * <code>required float y = 4;</code>
-       * @return Whether the y field is set.
        */
-      @java.lang.Override
       public boolean hasY() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>required float y = 4;</code>
-       * @return The y.
        */
-      @java.lang.Override
       public float getY() {
         return y_;
       }
       /**
        * <code>required float y = 4;</code>
-       * @param value The y to set.
-       * @return This builder for chaining.
        */
       public Builder setY(float value) {
-        
-        y_ = value;
         bitField0_ |= 0x00000008;
+        y_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float y = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearY() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -984,35 +949,27 @@ public final class MessagesRobocupSslDetection {
       private float z_ ;
       /**
        * <code>optional float z = 5;</code>
-       * @return Whether the z field is set.
        */
-      @java.lang.Override
       public boolean hasZ() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <code>optional float z = 5;</code>
-       * @return The z.
        */
-      @java.lang.Override
       public float getZ() {
         return z_;
       }
       /**
        * <code>optional float z = 5;</code>
-       * @param value The z to set.
-       * @return This builder for chaining.
        */
       public Builder setZ(float value) {
-        
-        z_ = value;
         bitField0_ |= 0x00000010;
+        z_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>optional float z = 5;</code>
-       * @return This builder for chaining.
        */
       public Builder clearZ() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -1024,35 +981,27 @@ public final class MessagesRobocupSslDetection {
       private float pixelX_ ;
       /**
        * <code>required float pixel_x = 6;</code>
-       * @return Whether the pixelX field is set.
        */
-      @java.lang.Override
       public boolean hasPixelX() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>required float pixel_x = 6;</code>
-       * @return The pixelX.
        */
-      @java.lang.Override
       public float getPixelX() {
         return pixelX_;
       }
       /**
        * <code>required float pixel_x = 6;</code>
-       * @param value The pixelX to set.
-       * @return This builder for chaining.
        */
       public Builder setPixelX(float value) {
-        
-        pixelX_ = value;
         bitField0_ |= 0x00000020;
+        pixelX_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float pixel_x = 6;</code>
-       * @return This builder for chaining.
        */
       public Builder clearPixelX() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -1064,35 +1013,27 @@ public final class MessagesRobocupSslDetection {
       private float pixelY_ ;
       /**
        * <code>required float pixel_y = 7;</code>
-       * @return Whether the pixelY field is set.
        */
-      @java.lang.Override
       public boolean hasPixelY() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <code>required float pixel_y = 7;</code>
-       * @return The pixelY.
        */
-      @java.lang.Override
       public float getPixelY() {
         return pixelY_;
       }
       /**
        * <code>required float pixel_y = 7;</code>
-       * @param value The pixelY to set.
-       * @return This builder for chaining.
        */
       public Builder setPixelY(float value) {
-        
-        pixelY_ = value;
         bitField0_ |= 0x00000040;
+        pixelY_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float pixel_y = 7;</code>
-       * @return This builder for chaining.
        */
       public Builder clearPixelY() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -1133,18 +1074,7 @@ public final class MessagesRobocupSslDetection {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SSL_DetectionBall(input, extensionRegistry);
       }
     };
 
@@ -1170,96 +1100,80 @@ public final class MessagesRobocupSslDetection {
 
     /**
      * <code>required float confidence = 1;</code>
-     * @return Whether the confidence field is set.
      */
     boolean hasConfidence();
     /**
      * <code>required float confidence = 1;</code>
-     * @return The confidence.
      */
     float getConfidence();
 
     /**
      * <code>optional uint32 robot_id = 2;</code>
-     * @return Whether the robotId field is set.
      */
     boolean hasRobotId();
     /**
      * <code>optional uint32 robot_id = 2;</code>
-     * @return The robotId.
      */
     int getRobotId();
 
     /**
      * <code>required float x = 3;</code>
-     * @return Whether the x field is set.
      */
     boolean hasX();
     /**
      * <code>required float x = 3;</code>
-     * @return The x.
      */
     float getX();
 
     /**
      * <code>required float y = 4;</code>
-     * @return Whether the y field is set.
      */
     boolean hasY();
     /**
      * <code>required float y = 4;</code>
-     * @return The y.
      */
     float getY();
 
     /**
      * <code>optional float orientation = 5;</code>
-     * @return Whether the orientation field is set.
      */
     boolean hasOrientation();
     /**
      * <code>optional float orientation = 5;</code>
-     * @return The orientation.
      */
     float getOrientation();
 
     /**
      * <code>required float pixel_x = 6;</code>
-     * @return Whether the pixelX field is set.
      */
     boolean hasPixelX();
     /**
      * <code>required float pixel_x = 6;</code>
-     * @return The pixelX.
      */
     float getPixelX();
 
     /**
      * <code>required float pixel_y = 7;</code>
-     * @return Whether the pixelY field is set.
      */
     boolean hasPixelY();
     /**
      * <code>required float pixel_y = 7;</code>
-     * @return The pixelY.
      */
     float getPixelY();
 
     /**
      * <code>optional float height = 8;</code>
-     * @return Whether the height field is set.
      */
     boolean hasHeight();
     /**
      * <code>optional float height = 8;</code>
-     * @return The height.
      */
     float getHeight();
   }
   /**
    * Protobuf type {@code proto.vision.SSL_DetectionRobot}
    */
-  public static final class SSL_DetectionRobot extends
+  public  static final class SSL_DetectionRobot extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.vision.SSL_DetectionRobot)
       SSL_DetectionRobotOrBuilder {
@@ -1269,19 +1183,98 @@ public final class MessagesRobocupSslDetection {
       super(builder);
     }
     private SSL_DetectionRobot() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SSL_DetectionRobot();
+      confidence_ = 0F;
+      robotId_ = 0;
+      x_ = 0F;
+      y_ = 0F;
+      orientation_ = 0F;
+      pixelX_ = 0F;
+      pixelY_ = 0F;
+      height_ = 0F;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private SSL_DetectionRobot(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+              bitField0_ |= 0x00000001;
+              confidence_ = input.readFloat();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              robotId_ = input.readUInt32();
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              x_ = input.readFloat();
+              break;
+            }
+            case 37: {
+              bitField0_ |= 0x00000008;
+              y_ = input.readFloat();
+              break;
+            }
+            case 45: {
+              bitField0_ |= 0x00000010;
+              orientation_ = input.readFloat();
+              break;
+            }
+            case 53: {
+              bitField0_ |= 0x00000020;
+              pixelX_ = input.readFloat();
+              break;
+            }
+            case 61: {
+              bitField0_ |= 0x00000040;
+              pixelY_ = input.readFloat();
+              break;
+            }
+            case 69: {
+              bitField0_ |= 0x00000080;
+              height_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1298,153 +1291,121 @@ public final class MessagesRobocupSslDetection {
 
     private int bitField0_;
     public static final int CONFIDENCE_FIELD_NUMBER = 1;
-    private float confidence_ = 0F;
+    private float confidence_;
     /**
      * <code>required float confidence = 1;</code>
-     * @return Whether the confidence field is set.
      */
-    @java.lang.Override
     public boolean hasConfidence() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required float confidence = 1;</code>
-     * @return The confidence.
      */
-    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }
 
     public static final int ROBOT_ID_FIELD_NUMBER = 2;
-    private int robotId_ = 0;
+    private int robotId_;
     /**
      * <code>optional uint32 robot_id = 2;</code>
-     * @return Whether the robotId field is set.
      */
-    @java.lang.Override
     public boolean hasRobotId() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>optional uint32 robot_id = 2;</code>
-     * @return The robotId.
      */
-    @java.lang.Override
     public int getRobotId() {
       return robotId_;
     }
 
     public static final int X_FIELD_NUMBER = 3;
-    private float x_ = 0F;
+    private float x_;
     /**
      * <code>required float x = 3;</code>
-     * @return Whether the x field is set.
      */
-    @java.lang.Override
     public boolean hasX() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>required float x = 3;</code>
-     * @return The x.
      */
-    @java.lang.Override
     public float getX() {
       return x_;
     }
 
     public static final int Y_FIELD_NUMBER = 4;
-    private float y_ = 0F;
+    private float y_;
     /**
      * <code>required float y = 4;</code>
-     * @return Whether the y field is set.
      */
-    @java.lang.Override
     public boolean hasY() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>required float y = 4;</code>
-     * @return The y.
      */
-    @java.lang.Override
     public float getY() {
       return y_;
     }
 
     public static final int ORIENTATION_FIELD_NUMBER = 5;
-    private float orientation_ = 0F;
+    private float orientation_;
     /**
      * <code>optional float orientation = 5;</code>
-     * @return Whether the orientation field is set.
      */
-    @java.lang.Override
     public boolean hasOrientation() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <code>optional float orientation = 5;</code>
-     * @return The orientation.
      */
-    @java.lang.Override
     public float getOrientation() {
       return orientation_;
     }
 
     public static final int PIXEL_X_FIELD_NUMBER = 6;
-    private float pixelX_ = 0F;
+    private float pixelX_;
     /**
      * <code>required float pixel_x = 6;</code>
-     * @return Whether the pixelX field is set.
      */
-    @java.lang.Override
     public boolean hasPixelX() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>required float pixel_x = 6;</code>
-     * @return The pixelX.
      */
-    @java.lang.Override
     public float getPixelX() {
       return pixelX_;
     }
 
     public static final int PIXEL_Y_FIELD_NUMBER = 7;
-    private float pixelY_ = 0F;
+    private float pixelY_;
     /**
      * <code>required float pixel_y = 7;</code>
-     * @return Whether the pixelY field is set.
      */
-    @java.lang.Override
     public boolean hasPixelY() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <code>required float pixel_y = 7;</code>
-     * @return The pixelY.
      */
-    @java.lang.Override
     public float getPixelY() {
       return pixelY_;
     }
 
     public static final int HEIGHT_FIELD_NUMBER = 8;
-    private float height_ = 0F;
+    private float height_;
     /**
      * <code>optional float height = 8;</code>
-     * @return Whether the height field is set.
      */
-    @java.lang.Override
     public boolean hasHeight() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
      * <code>optional float height = 8;</code>
-     * @return The height.
      */
-    @java.lang.Override
     public float getHeight() {
       return height_;
     }
@@ -1483,31 +1444,31 @@ public final class MessagesRobocupSslDetection {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeFloat(1, confidence_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, robotId_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeFloat(3, x_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeFloat(4, y_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeFloat(5, orientation_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeFloat(6, pixelX_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeFloat(7, pixelY_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeFloat(8, height_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1516,39 +1477,39 @@ public final class MessagesRobocupSslDetection {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, confidence_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, robotId_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, x_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, y_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(5, orientation_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(6, pixelX_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(7, pixelY_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(8, height_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1563,55 +1524,63 @@ public final class MessagesRobocupSslDetection {
       }
       proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot other = (proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot) obj;
 
-      if (hasConfidence() != other.hasConfidence()) return false;
+      boolean result = true;
+      result = result && (hasConfidence() == other.hasConfidence());
       if (hasConfidence()) {
-        if (java.lang.Float.floatToIntBits(getConfidence())
-            != java.lang.Float.floatToIntBits(
-                other.getConfidence())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getConfidence())
+            == java.lang.Float.floatToIntBits(
+                other.getConfidence()));
       }
-      if (hasRobotId() != other.hasRobotId()) return false;
+      result = result && (hasRobotId() == other.hasRobotId());
       if (hasRobotId()) {
-        if (getRobotId()
-            != other.getRobotId()) return false;
+        result = result && (getRobotId()
+            == other.getRobotId());
       }
-      if (hasX() != other.hasX()) return false;
+      result = result && (hasX() == other.hasX());
       if (hasX()) {
-        if (java.lang.Float.floatToIntBits(getX())
-            != java.lang.Float.floatToIntBits(
-                other.getX())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getX())
+            == java.lang.Float.floatToIntBits(
+                other.getX()));
       }
-      if (hasY() != other.hasY()) return false;
+      result = result && (hasY() == other.hasY());
       if (hasY()) {
-        if (java.lang.Float.floatToIntBits(getY())
-            != java.lang.Float.floatToIntBits(
-                other.getY())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getY())
+            == java.lang.Float.floatToIntBits(
+                other.getY()));
       }
-      if (hasOrientation() != other.hasOrientation()) return false;
+      result = result && (hasOrientation() == other.hasOrientation());
       if (hasOrientation()) {
-        if (java.lang.Float.floatToIntBits(getOrientation())
-            != java.lang.Float.floatToIntBits(
-                other.getOrientation())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getOrientation())
+            == java.lang.Float.floatToIntBits(
+                other.getOrientation()));
       }
-      if (hasPixelX() != other.hasPixelX()) return false;
+      result = result && (hasPixelX() == other.hasPixelX());
       if (hasPixelX()) {
-        if (java.lang.Float.floatToIntBits(getPixelX())
-            != java.lang.Float.floatToIntBits(
-                other.getPixelX())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getPixelX())
+            == java.lang.Float.floatToIntBits(
+                other.getPixelX()));
       }
-      if (hasPixelY() != other.hasPixelY()) return false;
+      result = result && (hasPixelY() == other.hasPixelY());
       if (hasPixelY()) {
-        if (java.lang.Float.floatToIntBits(getPixelY())
-            != java.lang.Float.floatToIntBits(
-                other.getPixelY())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getPixelY())
+            == java.lang.Float.floatToIntBits(
+                other.getPixelY()));
       }
-      if (hasHeight() != other.hasHeight()) return false;
+      result = result && (hasHeight() == other.hasHeight());
       if (hasHeight()) {
-        if (java.lang.Float.floatToIntBits(getHeight())
-            != java.lang.Float.floatToIntBits(
-                other.getHeight())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getHeight())
+            == java.lang.Float.floatToIntBits(
+                other.getHeight()));
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1660,7 +1629,7 @@ public final class MessagesRobocupSslDetection {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getHeight());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1777,26 +1746,38 @@ public final class MessagesRobocupSslDetection {
 
       // Construct using proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         confidence_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000001);
         robotId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
         x_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000004);
         y_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000008);
         orientation_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000010);
         pixelX_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000020);
         pixelY_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000040);
         height_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -1823,80 +1804,76 @@ public final class MessagesRobocupSslDetection {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot buildPartial() {
         proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot result = new proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.confidence_ = confidence_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.robotId_ = robotId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.x_ = x_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.y_ = y_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.orientation_ = orientation_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.pixelX_ = pixelX_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.pixelY_ = pixelY_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.height_ = height_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.confidence_ = confidence_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.robotId_ = robotId_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.x_ = x_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.y_ = y_;
-          to_bitField0_ |= 0x00000008;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.orientation_ = orientation_;
-          to_bitField0_ |= 0x00000010;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.pixelX_ = pixelX_;
-          to_bitField0_ |= 0x00000020;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.pixelY_ = pixelY_;
-          to_bitField0_ |= 0x00000040;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.height_ = height_;
-          to_bitField0_ |= 0x00000080;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1934,7 +1911,7 @@ public final class MessagesRobocupSslDetection {
         if (other.hasHeight()) {
           setHeight(other.getHeight());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1964,70 +1941,17 @@ public final class MessagesRobocupSslDetection {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                confidence_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 13
-              case 16: {
-                robotId_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 29: {
-                x_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 29
-              case 37: {
-                y_ = input.readFloat();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 37
-              case 45: {
-                orientation_ = input.readFloat();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 45
-              case 53: {
-                pixelX_ = input.readFloat();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 53
-              case 61: {
-                pixelY_ = input.readFloat();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 61
-              case 69: {
-                height_ = input.readFloat();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 69
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -2035,35 +1959,27 @@ public final class MessagesRobocupSslDetection {
       private float confidence_ ;
       /**
        * <code>required float confidence = 1;</code>
-       * @return Whether the confidence field is set.
        */
-      @java.lang.Override
       public boolean hasConfidence() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required float confidence = 1;</code>
-       * @return The confidence.
        */
-      @java.lang.Override
       public float getConfidence() {
         return confidence_;
       }
       /**
        * <code>required float confidence = 1;</code>
-       * @param value The confidence to set.
-       * @return This builder for chaining.
        */
       public Builder setConfidence(float value) {
-        
-        confidence_ = value;
         bitField0_ |= 0x00000001;
+        confidence_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float confidence = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearConfidence() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -2075,35 +1991,27 @@ public final class MessagesRobocupSslDetection {
       private int robotId_ ;
       /**
        * <code>optional uint32 robot_id = 2;</code>
-       * @return Whether the robotId field is set.
        */
-      @java.lang.Override
       public boolean hasRobotId() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>optional uint32 robot_id = 2;</code>
-       * @return The robotId.
        */
-      @java.lang.Override
       public int getRobotId() {
         return robotId_;
       }
       /**
        * <code>optional uint32 robot_id = 2;</code>
-       * @param value The robotId to set.
-       * @return This builder for chaining.
        */
       public Builder setRobotId(int value) {
-        
-        robotId_ = value;
         bitField0_ |= 0x00000002;
+        robotId_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>optional uint32 robot_id = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearRobotId() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -2115,35 +2023,27 @@ public final class MessagesRobocupSslDetection {
       private float x_ ;
       /**
        * <code>required float x = 3;</code>
-       * @return Whether the x field is set.
        */
-      @java.lang.Override
       public boolean hasX() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>required float x = 3;</code>
-       * @return The x.
        */
-      @java.lang.Override
       public float getX() {
         return x_;
       }
       /**
        * <code>required float x = 3;</code>
-       * @param value The x to set.
-       * @return This builder for chaining.
        */
       public Builder setX(float value) {
-        
-        x_ = value;
         bitField0_ |= 0x00000004;
+        x_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float x = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearX() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -2155,35 +2055,27 @@ public final class MessagesRobocupSslDetection {
       private float y_ ;
       /**
        * <code>required float y = 4;</code>
-       * @return Whether the y field is set.
        */
-      @java.lang.Override
       public boolean hasY() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>required float y = 4;</code>
-       * @return The y.
        */
-      @java.lang.Override
       public float getY() {
         return y_;
       }
       /**
        * <code>required float y = 4;</code>
-       * @param value The y to set.
-       * @return This builder for chaining.
        */
       public Builder setY(float value) {
-        
-        y_ = value;
         bitField0_ |= 0x00000008;
+        y_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float y = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearY() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -2195,35 +2087,27 @@ public final class MessagesRobocupSslDetection {
       private float orientation_ ;
       /**
        * <code>optional float orientation = 5;</code>
-       * @return Whether the orientation field is set.
        */
-      @java.lang.Override
       public boolean hasOrientation() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <code>optional float orientation = 5;</code>
-       * @return The orientation.
        */
-      @java.lang.Override
       public float getOrientation() {
         return orientation_;
       }
       /**
        * <code>optional float orientation = 5;</code>
-       * @param value The orientation to set.
-       * @return This builder for chaining.
        */
       public Builder setOrientation(float value) {
-        
-        orientation_ = value;
         bitField0_ |= 0x00000010;
+        orientation_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>optional float orientation = 5;</code>
-       * @return This builder for chaining.
        */
       public Builder clearOrientation() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -2235,35 +2119,27 @@ public final class MessagesRobocupSslDetection {
       private float pixelX_ ;
       /**
        * <code>required float pixel_x = 6;</code>
-       * @return Whether the pixelX field is set.
        */
-      @java.lang.Override
       public boolean hasPixelX() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>required float pixel_x = 6;</code>
-       * @return The pixelX.
        */
-      @java.lang.Override
       public float getPixelX() {
         return pixelX_;
       }
       /**
        * <code>required float pixel_x = 6;</code>
-       * @param value The pixelX to set.
-       * @return This builder for chaining.
        */
       public Builder setPixelX(float value) {
-        
-        pixelX_ = value;
         bitField0_ |= 0x00000020;
+        pixelX_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float pixel_x = 6;</code>
-       * @return This builder for chaining.
        */
       public Builder clearPixelX() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -2275,35 +2151,27 @@ public final class MessagesRobocupSslDetection {
       private float pixelY_ ;
       /**
        * <code>required float pixel_y = 7;</code>
-       * @return Whether the pixelY field is set.
        */
-      @java.lang.Override
       public boolean hasPixelY() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <code>required float pixel_y = 7;</code>
-       * @return The pixelY.
        */
-      @java.lang.Override
       public float getPixelY() {
         return pixelY_;
       }
       /**
        * <code>required float pixel_y = 7;</code>
-       * @param value The pixelY to set.
-       * @return This builder for chaining.
        */
       public Builder setPixelY(float value) {
-        
-        pixelY_ = value;
         bitField0_ |= 0x00000040;
+        pixelY_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float pixel_y = 7;</code>
-       * @return This builder for chaining.
        */
       public Builder clearPixelY() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -2315,35 +2183,27 @@ public final class MessagesRobocupSslDetection {
       private float height_ ;
       /**
        * <code>optional float height = 8;</code>
-       * @return Whether the height field is set.
        */
-      @java.lang.Override
       public boolean hasHeight() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
        * <code>optional float height = 8;</code>
-       * @return The height.
        */
-      @java.lang.Override
       public float getHeight() {
         return height_;
       }
       /**
        * <code>optional float height = 8;</code>
-       * @param value The height to set.
-       * @return This builder for chaining.
        */
       public Builder setHeight(float value) {
-        
-        height_ = value;
         bitField0_ |= 0x00000080;
+        height_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>optional float height = 8;</code>
-       * @return This builder for chaining.
        */
       public Builder clearHeight() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -2384,18 +2244,7 @@ public final class MessagesRobocupSslDetection {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SSL_DetectionRobot(input, extensionRegistry);
       }
     };
 
@@ -2421,45 +2270,37 @@ public final class MessagesRobocupSslDetection {
 
     /**
      * <code>required uint32 frame_number = 1;</code>
-     * @return Whether the frameNumber field is set.
      */
     boolean hasFrameNumber();
     /**
      * <code>required uint32 frame_number = 1;</code>
-     * @return The frameNumber.
      */
     int getFrameNumber();
 
     /**
      * <code>required double t_capture = 2;</code>
-     * @return Whether the tCapture field is set.
      */
     boolean hasTCapture();
     /**
      * <code>required double t_capture = 2;</code>
-     * @return The tCapture.
      */
     double getTCapture();
 
     /**
      * <code>required double t_sent = 3;</code>
-     * @return Whether the tSent field is set.
      */
     boolean hasTSent();
     /**
      * <code>required double t_sent = 3;</code>
-     * @return The tSent.
      */
     double getTSent();
 
     /**
      * <code>required uint32 camera_id = 4;</code>
-     * @return Whether the cameraId field is set.
      */
     boolean hasCameraId();
     /**
      * <code>required uint32 camera_id = 4;</code>
-     * @return The cameraId.
      */
     int getCameraId();
 
@@ -2538,7 +2379,7 @@ public final class MessagesRobocupSslDetection {
   /**
    * Protobuf type {@code proto.vision.SSL_DetectionFrame}
    */
-  public static final class SSL_DetectionFrame extends
+  public  static final class SSL_DetectionFrame extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.vision.SSL_DetectionFrame)
       SSL_DetectionFrameOrBuilder {
@@ -2548,22 +2389,113 @@ public final class MessagesRobocupSslDetection {
       super(builder);
     }
     private SSL_DetectionFrame() {
+      frameNumber_ = 0;
+      tCapture_ = 0D;
+      tSent_ = 0D;
+      cameraId_ = 0;
       balls_ = java.util.Collections.emptyList();
       robotsYellow_ = java.util.Collections.emptyList();
       robotsBlue_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SSL_DetectionFrame();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private SSL_DetectionFrame(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              frameNumber_ = input.readUInt32();
+              break;
+            }
+            case 17: {
+              bitField0_ |= 0x00000002;
+              tCapture_ = input.readDouble();
+              break;
+            }
+            case 25: {
+              bitField0_ |= 0x00000004;
+              tSent_ = input.readDouble();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              cameraId_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                balls_ = new java.util.ArrayList<proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              balls_.add(
+                  input.readMessage(proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall.PARSER, extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                robotsYellow_ = new java.util.ArrayList<proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              robotsYellow_.add(
+                  input.readMessage(proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot.PARSER, extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                robotsBlue_ = new java.util.ArrayList<proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              robotsBlue_.add(
+                  input.readMessage(proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          balls_ = java.util.Collections.unmodifiableList(balls_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          robotsYellow_ = java.util.Collections.unmodifiableList(robotsYellow_);
+        }
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+          robotsBlue_ = java.util.Collections.unmodifiableList(robotsBlue_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2580,95 +2512,76 @@ public final class MessagesRobocupSslDetection {
 
     private int bitField0_;
     public static final int FRAME_NUMBER_FIELD_NUMBER = 1;
-    private int frameNumber_ = 0;
+    private int frameNumber_;
     /**
      * <code>required uint32 frame_number = 1;</code>
-     * @return Whether the frameNumber field is set.
      */
-    @java.lang.Override
     public boolean hasFrameNumber() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required uint32 frame_number = 1;</code>
-     * @return The frameNumber.
      */
-    @java.lang.Override
     public int getFrameNumber() {
       return frameNumber_;
     }
 
     public static final int T_CAPTURE_FIELD_NUMBER = 2;
-    private double tCapture_ = 0D;
+    private double tCapture_;
     /**
      * <code>required double t_capture = 2;</code>
-     * @return Whether the tCapture field is set.
      */
-    @java.lang.Override
     public boolean hasTCapture() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>required double t_capture = 2;</code>
-     * @return The tCapture.
      */
-    @java.lang.Override
     public double getTCapture() {
       return tCapture_;
     }
 
     public static final int T_SENT_FIELD_NUMBER = 3;
-    private double tSent_ = 0D;
+    private double tSent_;
     /**
      * <code>required double t_sent = 3;</code>
-     * @return Whether the tSent field is set.
      */
-    @java.lang.Override
     public boolean hasTSent() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>required double t_sent = 3;</code>
-     * @return The tSent.
      */
-    @java.lang.Override
     public double getTSent() {
       return tSent_;
     }
 
     public static final int CAMERA_ID_FIELD_NUMBER = 4;
-    private int cameraId_ = 0;
+    private int cameraId_;
     /**
      * <code>required uint32 camera_id = 4;</code>
-     * @return Whether the cameraId field is set.
      */
-    @java.lang.Override
     public boolean hasCameraId() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>required uint32 camera_id = 4;</code>
-     * @return The cameraId.
      */
-    @java.lang.Override
     public int getCameraId() {
       return cameraId_;
     }
 
     public static final int BALLS_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private java.util.List<proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall> balls_;
     /**
      * <code>repeated .proto.vision.SSL_DetectionBall balls = 5;</code>
      */
-    @java.lang.Override
     public java.util.List<proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall> getBallsList() {
       return balls_;
     }
     /**
      * <code>repeated .proto.vision.SSL_DetectionBall balls = 5;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends proto.vision.MessagesRobocupSslDetection.SSL_DetectionBallOrBuilder> 
         getBallsOrBuilderList() {
       return balls_;
@@ -2676,40 +2589,34 @@ public final class MessagesRobocupSslDetection {
     /**
      * <code>repeated .proto.vision.SSL_DetectionBall balls = 5;</code>
      */
-    @java.lang.Override
     public int getBallsCount() {
       return balls_.size();
     }
     /**
      * <code>repeated .proto.vision.SSL_DetectionBall balls = 5;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall getBalls(int index) {
       return balls_.get(index);
     }
     /**
      * <code>repeated .proto.vision.SSL_DetectionBall balls = 5;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetection.SSL_DetectionBallOrBuilder getBallsOrBuilder(
         int index) {
       return balls_.get(index);
     }
 
     public static final int ROBOTS_YELLOW_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
     private java.util.List<proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot> robotsYellow_;
     /**
      * <code>repeated .proto.vision.SSL_DetectionRobot robots_yellow = 6;</code>
      */
-    @java.lang.Override
     public java.util.List<proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot> getRobotsYellowList() {
       return robotsYellow_;
     }
     /**
      * <code>repeated .proto.vision.SSL_DetectionRobot robots_yellow = 6;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobotOrBuilder> 
         getRobotsYellowOrBuilderList() {
       return robotsYellow_;
@@ -2717,40 +2624,34 @@ public final class MessagesRobocupSslDetection {
     /**
      * <code>repeated .proto.vision.SSL_DetectionRobot robots_yellow = 6;</code>
      */
-    @java.lang.Override
     public int getRobotsYellowCount() {
       return robotsYellow_.size();
     }
     /**
      * <code>repeated .proto.vision.SSL_DetectionRobot robots_yellow = 6;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot getRobotsYellow(int index) {
       return robotsYellow_.get(index);
     }
     /**
      * <code>repeated .proto.vision.SSL_DetectionRobot robots_yellow = 6;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobotOrBuilder getRobotsYellowOrBuilder(
         int index) {
       return robotsYellow_.get(index);
     }
 
     public static final int ROBOTS_BLUE_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
     private java.util.List<proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot> robotsBlue_;
     /**
      * <code>repeated .proto.vision.SSL_DetectionRobot robots_blue = 7;</code>
      */
-    @java.lang.Override
     public java.util.List<proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot> getRobotsBlueList() {
       return robotsBlue_;
     }
     /**
      * <code>repeated .proto.vision.SSL_DetectionRobot robots_blue = 7;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobotOrBuilder> 
         getRobotsBlueOrBuilderList() {
       return robotsBlue_;
@@ -2758,21 +2659,18 @@ public final class MessagesRobocupSslDetection {
     /**
      * <code>repeated .proto.vision.SSL_DetectionRobot robots_blue = 7;</code>
      */
-    @java.lang.Override
     public int getRobotsBlueCount() {
       return robotsBlue_.size();
     }
     /**
      * <code>repeated .proto.vision.SSL_DetectionRobot robots_blue = 7;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot getRobotsBlue(int index) {
       return robotsBlue_.get(index);
     }
     /**
      * <code>repeated .proto.vision.SSL_DetectionRobot robots_blue = 7;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobotOrBuilder getRobotsBlueOrBuilder(
         int index) {
       return robotsBlue_.get(index);
@@ -2826,16 +2724,16 @@ public final class MessagesRobocupSslDetection {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeUInt32(1, frameNumber_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeDouble(2, tCapture_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeDouble(3, tSent_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeUInt32(4, cameraId_);
       }
       for (int i = 0; i < balls_.size(); i++) {
@@ -2847,7 +2745,7 @@ public final class MessagesRobocupSslDetection {
       for (int i = 0; i < robotsBlue_.size(); i++) {
         output.writeMessage(7, robotsBlue_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2856,19 +2754,19 @@ public final class MessagesRobocupSslDetection {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, frameNumber_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(2, tCapture_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(3, tSent_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, cameraId_);
       }
@@ -2884,7 +2782,7 @@ public final class MessagesRobocupSslDetection {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, robotsBlue_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2899,36 +2797,39 @@ public final class MessagesRobocupSslDetection {
       }
       proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame other = (proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame) obj;
 
-      if (hasFrameNumber() != other.hasFrameNumber()) return false;
+      boolean result = true;
+      result = result && (hasFrameNumber() == other.hasFrameNumber());
       if (hasFrameNumber()) {
-        if (getFrameNumber()
-            != other.getFrameNumber()) return false;
+        result = result && (getFrameNumber()
+            == other.getFrameNumber());
       }
-      if (hasTCapture() != other.hasTCapture()) return false;
+      result = result && (hasTCapture() == other.hasTCapture());
       if (hasTCapture()) {
-        if (java.lang.Double.doubleToLongBits(getTCapture())
-            != java.lang.Double.doubleToLongBits(
-                other.getTCapture())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getTCapture())
+            == java.lang.Double.doubleToLongBits(
+                other.getTCapture()));
       }
-      if (hasTSent() != other.hasTSent()) return false;
+      result = result && (hasTSent() == other.hasTSent());
       if (hasTSent()) {
-        if (java.lang.Double.doubleToLongBits(getTSent())
-            != java.lang.Double.doubleToLongBits(
-                other.getTSent())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getTSent())
+            == java.lang.Double.doubleToLongBits(
+                other.getTSent()));
       }
-      if (hasCameraId() != other.hasCameraId()) return false;
+      result = result && (hasCameraId() == other.hasCameraId());
       if (hasCameraId()) {
-        if (getCameraId()
-            != other.getCameraId()) return false;
+        result = result && (getCameraId()
+            == other.getCameraId());
       }
-      if (!getBallsList()
-          .equals(other.getBallsList())) return false;
-      if (!getRobotsYellowList()
-          .equals(other.getRobotsYellowList())) return false;
-      if (!getRobotsBlueList()
-          .equals(other.getRobotsBlueList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && getBallsList()
+          .equals(other.getBallsList());
+      result = result && getRobotsYellowList()
+          .equals(other.getRobotsYellowList());
+      result = result && getRobotsBlueList()
+          .equals(other.getRobotsBlueList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2968,7 +2869,7 @@ public final class MessagesRobocupSslDetection {
         hash = (37 * hash) + ROBOTS_BLUE_FIELD_NUMBER;
         hash = (53 * hash) + getRobotsBlueList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3085,43 +2986,51 @@ public final class MessagesRobocupSslDetection {
 
       // Construct using proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getBallsFieldBuilder();
+          getRobotsYellowFieldBuilder();
+          getRobotsBlueFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         frameNumber_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
         tCapture_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000002);
         tSent_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000004);
         cameraId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (ballsBuilder_ == null) {
           balls_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
-          balls_ = null;
           ballsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
         if (robotsYellowBuilder_ == null) {
           robotsYellow_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
-          robotsYellow_ = null;
           robotsYellowBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
         if (robotsBlueBuilder_ == null) {
           robotsBlue_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
-          robotsBlue_ = null;
           robotsBlueBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -3148,15 +3057,26 @@ public final class MessagesRobocupSslDetection {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame buildPartial() {
         proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame result = new proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.frameNumber_ = frameNumber_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.tCapture_ = tCapture_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.tSent_ = tSent_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.cameraId_ = cameraId_;
         if (ballsBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
             balls_ = java.util.Collections.unmodifiableList(balls_);
             bitField0_ = (bitField0_ & ~0x00000010);
           }
@@ -3165,7 +3085,7 @@ public final class MessagesRobocupSslDetection {
           result.balls_ = ballsBuilder_.build();
         }
         if (robotsYellowBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
             robotsYellow_ = java.util.Collections.unmodifiableList(robotsYellow_);
             bitField0_ = (bitField0_ & ~0x00000020);
           }
@@ -3174,7 +3094,7 @@ public final class MessagesRobocupSslDetection {
           result.robotsYellow_ = robotsYellowBuilder_.build();
         }
         if (robotsBlueBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0)) {
+          if (((bitField0_ & 0x00000040) == 0x00000040)) {
             robotsBlue_ = java.util.Collections.unmodifiableList(robotsBlue_);
             bitField0_ = (bitField0_ & ~0x00000040);
           }
@@ -3182,61 +3102,42 @@ public final class MessagesRobocupSslDetection {
         } else {
           result.robotsBlue_ = robotsBlueBuilder_.build();
         }
-      }
-
-      private void buildPartial0(proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.frameNumber_ = frameNumber_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.tCapture_ = tCapture_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.tSent_ = tSent_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.cameraId_ = cameraId_;
-          to_bitField0_ |= 0x00000008;
-        }
-        result.bitField0_ |= to_bitField0_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3340,7 +3241,7 @@ public final class MessagesRobocupSslDetection {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3382,89 +3283,17 @@ public final class MessagesRobocupSslDetection {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                frameNumber_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 17: {
-                tCapture_ = input.readDouble();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 17
-              case 25: {
-                tSent_ = input.readDouble();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 25
-              case 32: {
-                cameraId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 42: {
-                proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall m =
-                    input.readMessage(
-                        proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall.PARSER,
-                        extensionRegistry);
-                if (ballsBuilder_ == null) {
-                  ensureBallsIsMutable();
-                  balls_.add(m);
-                } else {
-                  ballsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              case 50: {
-                proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot m =
-                    input.readMessage(
-                        proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot.PARSER,
-                        extensionRegistry);
-                if (robotsYellowBuilder_ == null) {
-                  ensureRobotsYellowIsMutable();
-                  robotsYellow_.add(m);
-                } else {
-                  robotsYellowBuilder_.addMessage(m);
-                }
-                break;
-              } // case 50
-              case 58: {
-                proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot m =
-                    input.readMessage(
-                        proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot.PARSER,
-                        extensionRegistry);
-                if (robotsBlueBuilder_ == null) {
-                  ensureRobotsBlueIsMutable();
-                  robotsBlue_.add(m);
-                } else {
-                  robotsBlueBuilder_.addMessage(m);
-                }
-                break;
-              } // case 58
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -3472,35 +3301,27 @@ public final class MessagesRobocupSslDetection {
       private int frameNumber_ ;
       /**
        * <code>required uint32 frame_number = 1;</code>
-       * @return Whether the frameNumber field is set.
        */
-      @java.lang.Override
       public boolean hasFrameNumber() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required uint32 frame_number = 1;</code>
-       * @return The frameNumber.
        */
-      @java.lang.Override
       public int getFrameNumber() {
         return frameNumber_;
       }
       /**
        * <code>required uint32 frame_number = 1;</code>
-       * @param value The frameNumber to set.
-       * @return This builder for chaining.
        */
       public Builder setFrameNumber(int value) {
-        
-        frameNumber_ = value;
         bitField0_ |= 0x00000001;
+        frameNumber_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required uint32 frame_number = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearFrameNumber() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -3512,35 +3333,27 @@ public final class MessagesRobocupSslDetection {
       private double tCapture_ ;
       /**
        * <code>required double t_capture = 2;</code>
-       * @return Whether the tCapture field is set.
        */
-      @java.lang.Override
       public boolean hasTCapture() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required double t_capture = 2;</code>
-       * @return The tCapture.
        */
-      @java.lang.Override
       public double getTCapture() {
         return tCapture_;
       }
       /**
        * <code>required double t_capture = 2;</code>
-       * @param value The tCapture to set.
-       * @return This builder for chaining.
        */
       public Builder setTCapture(double value) {
-        
-        tCapture_ = value;
         bitField0_ |= 0x00000002;
+        tCapture_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required double t_capture = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTCapture() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -3552,35 +3365,27 @@ public final class MessagesRobocupSslDetection {
       private double tSent_ ;
       /**
        * <code>required double t_sent = 3;</code>
-       * @return Whether the tSent field is set.
        */
-      @java.lang.Override
       public boolean hasTSent() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>required double t_sent = 3;</code>
-       * @return The tSent.
        */
-      @java.lang.Override
       public double getTSent() {
         return tSent_;
       }
       /**
        * <code>required double t_sent = 3;</code>
-       * @param value The tSent to set.
-       * @return This builder for chaining.
        */
       public Builder setTSent(double value) {
-        
-        tSent_ = value;
         bitField0_ |= 0x00000004;
+        tSent_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required double t_sent = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTSent() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -3592,35 +3397,27 @@ public final class MessagesRobocupSslDetection {
       private int cameraId_ ;
       /**
        * <code>required uint32 camera_id = 4;</code>
-       * @return Whether the cameraId field is set.
        */
-      @java.lang.Override
       public boolean hasCameraId() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>required uint32 camera_id = 4;</code>
-       * @return The cameraId.
        */
-      @java.lang.Override
       public int getCameraId() {
         return cameraId_;
       }
       /**
        * <code>required uint32 camera_id = 4;</code>
-       * @param value The cameraId to set.
-       * @return This builder for chaining.
        */
       public Builder setCameraId(int value) {
-        
-        cameraId_ = value;
         bitField0_ |= 0x00000008;
+        cameraId_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required uint32 camera_id = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearCameraId() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -3632,7 +3429,7 @@ public final class MessagesRobocupSslDetection {
       private java.util.List<proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall> balls_ =
         java.util.Collections.emptyList();
       private void ensureBallsIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
           balls_ = new java.util.ArrayList<proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall>(balls_);
           bitField0_ |= 0x00000010;
          }
@@ -3861,7 +3658,7 @@ public final class MessagesRobocupSslDetection {
           ballsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall, proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall.Builder, proto.vision.MessagesRobocupSslDetection.SSL_DetectionBallOrBuilder>(
                   balls_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
                   isClean());
           balls_ = null;
@@ -3872,7 +3669,7 @@ public final class MessagesRobocupSslDetection {
       private java.util.List<proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot> robotsYellow_ =
         java.util.Collections.emptyList();
       private void ensureRobotsYellowIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
           robotsYellow_ = new java.util.ArrayList<proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot>(robotsYellow_);
           bitField0_ |= 0x00000020;
          }
@@ -4101,7 +3898,7 @@ public final class MessagesRobocupSslDetection {
           robotsYellowBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot, proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot.Builder, proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobotOrBuilder>(
                   robotsYellow_,
-                  ((bitField0_ & 0x00000020) != 0),
+                  ((bitField0_ & 0x00000020) == 0x00000020),
                   getParentForChildren(),
                   isClean());
           robotsYellow_ = null;
@@ -4112,7 +3909,7 @@ public final class MessagesRobocupSslDetection {
       private java.util.List<proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot> robotsBlue_ =
         java.util.Collections.emptyList();
       private void ensureRobotsBlueIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
           robotsBlue_ = new java.util.ArrayList<proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot>(robotsBlue_);
           bitField0_ |= 0x00000040;
          }
@@ -4341,7 +4138,7 @@ public final class MessagesRobocupSslDetection {
           robotsBlueBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot, proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot.Builder, proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobotOrBuilder>(
                   robotsBlue_,
-                  ((bitField0_ & 0x00000040) != 0),
+                  ((bitField0_ & 0x00000040) == 0x00000040),
                   getParentForChildren(),
                   isClean());
           robotsBlue_ = null;
@@ -4381,18 +4178,7 @@ public final class MessagesRobocupSslDetection {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new SSL_DetectionFrame(input, extensionRegistry);
       }
     };
 
@@ -4452,10 +4238,18 @@ public final class MessagesRobocupSslDetection {
       "tectionRobot\0225\n\013robots_blue\030\007 \003(\0132 .prot" +
       "o.vision.SSL_DetectionRobot"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_proto_vision_SSL_DetectionBall_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_vision_SSL_DetectionBall_fieldAccessorTable = new

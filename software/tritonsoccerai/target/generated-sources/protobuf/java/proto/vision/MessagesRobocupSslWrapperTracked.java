@@ -25,7 +25,6 @@ public final class MessagesRobocupSslWrapperTracked {
      * </pre>
      *
      * <code>required string uuid = 1;</code>
-     * @return Whether the uuid field is set.
      */
     boolean hasUuid();
     /**
@@ -35,7 +34,6 @@ public final class MessagesRobocupSslWrapperTracked {
      * </pre>
      *
      * <code>required string uuid = 1;</code>
-     * @return The uuid.
      */
     java.lang.String getUuid();
     /**
@@ -45,7 +43,6 @@ public final class MessagesRobocupSslWrapperTracked {
      * </pre>
      *
      * <code>required string uuid = 1;</code>
-     * @return The bytes for uuid.
      */
     com.google.protobuf.ByteString
         getUuidBytes();
@@ -56,7 +53,6 @@ public final class MessagesRobocupSslWrapperTracked {
      * </pre>
      *
      * <code>optional string source_name = 2;</code>
-     * @return Whether the sourceName field is set.
      */
     boolean hasSourceName();
     /**
@@ -65,7 +61,6 @@ public final class MessagesRobocupSslWrapperTracked {
      * </pre>
      *
      * <code>optional string source_name = 2;</code>
-     * @return The sourceName.
      */
     java.lang.String getSourceName();
     /**
@@ -74,7 +69,6 @@ public final class MessagesRobocupSslWrapperTracked {
      * </pre>
      *
      * <code>optional string source_name = 2;</code>
-     * @return The bytes for sourceName.
      */
     com.google.protobuf.ByteString
         getSourceNameBytes();
@@ -85,7 +79,6 @@ public final class MessagesRobocupSslWrapperTracked {
      * </pre>
      *
      * <code>optional .proto.vision.TrackedFrame tracked_frame = 3;</code>
-     * @return Whether the trackedFrame field is set.
      */
     boolean hasTrackedFrame();
     /**
@@ -94,7 +87,6 @@ public final class MessagesRobocupSslWrapperTracked {
      * </pre>
      *
      * <code>optional .proto.vision.TrackedFrame tracked_frame = 3;</code>
-     * @return The trackedFrame.
      */
     proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame getTrackedFrame();
     /**
@@ -114,7 +106,7 @@ public final class MessagesRobocupSslWrapperTracked {
    *
    * Protobuf type {@code proto.vision.TrackerWrapperPacket}
    */
-  public static final class TrackerWrapperPacket extends
+  public  static final class TrackerWrapperPacket extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.vision.TrackerWrapperPacket)
       TrackerWrapperPacketOrBuilder {
@@ -129,16 +121,72 @@ public final class MessagesRobocupSslWrapperTracked {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TrackerWrapperPacket();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private TrackerWrapperPacket(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              uuid_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              sourceName_ = bs;
+              break;
+            }
+            case 26: {
+              proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                subBuilder = trackedFrame_.toBuilder();
+              }
+              trackedFrame_ = input.readMessage(proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(trackedFrame_);
+                trackedFrame_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -155,8 +203,7 @@ public final class MessagesRobocupSslWrapperTracked {
 
     private int bitField0_;
     public static final int UUID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object uuid_ = "";
+    private volatile java.lang.Object uuid_;
     /**
      * <pre>
      * A random UUID of the source that is kept constant at the source while running
@@ -164,11 +211,9 @@ public final class MessagesRobocupSslWrapperTracked {
      * </pre>
      *
      * <code>required string uuid = 1;</code>
-     * @return Whether the uuid field is set.
      */
-    @java.lang.Override
     public boolean hasUuid() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -177,9 +222,7 @@ public final class MessagesRobocupSslWrapperTracked {
      * </pre>
      *
      * <code>required string uuid = 1;</code>
-     * @return The uuid.
      */
-    @java.lang.Override
     public java.lang.String getUuid() {
       java.lang.Object ref = uuid_;
       if (ref instanceof java.lang.String) {
@@ -201,9 +244,7 @@ public final class MessagesRobocupSslWrapperTracked {
      * </pre>
      *
      * <code>required string uuid = 1;</code>
-     * @return The bytes for uuid.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getUuidBytes() {
       java.lang.Object ref = uuid_;
@@ -219,19 +260,16 @@ public final class MessagesRobocupSslWrapperTracked {
     }
 
     public static final int SOURCE_NAME_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object sourceName_ = "";
+    private volatile java.lang.Object sourceName_;
     /**
      * <pre>
      * The name of the source software that is producing this messages.
      * </pre>
      *
      * <code>optional string source_name = 2;</code>
-     * @return Whether the sourceName field is set.
      */
-    @java.lang.Override
     public boolean hasSourceName() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -239,9 +277,7 @@ public final class MessagesRobocupSslWrapperTracked {
      * </pre>
      *
      * <code>optional string source_name = 2;</code>
-     * @return The sourceName.
      */
-    @java.lang.Override
     public java.lang.String getSourceName() {
       java.lang.Object ref = sourceName_;
       if (ref instanceof java.lang.String) {
@@ -262,9 +298,7 @@ public final class MessagesRobocupSslWrapperTracked {
      * </pre>
      *
      * <code>optional string source_name = 2;</code>
-     * @return The bytes for sourceName.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getSourceNameBytes() {
       java.lang.Object ref = sourceName_;
@@ -287,11 +321,9 @@ public final class MessagesRobocupSslWrapperTracked {
      * </pre>
      *
      * <code>optional .proto.vision.TrackedFrame tracked_frame = 3;</code>
-     * @return Whether the trackedFrame field is set.
      */
-    @java.lang.Override
     public boolean hasTrackedFrame() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -299,9 +331,7 @@ public final class MessagesRobocupSslWrapperTracked {
      * </pre>
      *
      * <code>optional .proto.vision.TrackedFrame tracked_frame = 3;</code>
-     * @return The trackedFrame.
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame getTrackedFrame() {
       return trackedFrame_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame.getDefaultInstance() : trackedFrame_;
     }
@@ -312,7 +342,6 @@ public final class MessagesRobocupSslWrapperTracked {
      *
      * <code>optional .proto.vision.TrackedFrame tracked_frame = 3;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrameOrBuilder getTrackedFrameOrBuilder() {
       return trackedFrame_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame.getDefaultInstance() : trackedFrame_;
     }
@@ -341,16 +370,16 @@ public final class MessagesRobocupSslWrapperTracked {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uuid_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceName_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeMessage(3, getTrackedFrame());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -359,17 +388,17 @@ public final class MessagesRobocupSslWrapperTracked {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uuid_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourceName_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getTrackedFrame());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -384,23 +413,24 @@ public final class MessagesRobocupSslWrapperTracked {
       }
       proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket other = (proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket) obj;
 
-      if (hasUuid() != other.hasUuid()) return false;
+      boolean result = true;
+      result = result && (hasUuid() == other.hasUuid());
       if (hasUuid()) {
-        if (!getUuid()
-            .equals(other.getUuid())) return false;
+        result = result && getUuid()
+            .equals(other.getUuid());
       }
-      if (hasSourceName() != other.hasSourceName()) return false;
+      result = result && (hasSourceName() == other.hasSourceName());
       if (hasSourceName()) {
-        if (!getSourceName()
-            .equals(other.getSourceName())) return false;
+        result = result && getSourceName()
+            .equals(other.getSourceName());
       }
-      if (hasTrackedFrame() != other.hasTrackedFrame()) return false;
+      result = result && (hasTrackedFrame() == other.hasTrackedFrame());
       if (hasTrackedFrame()) {
-        if (!getTrackedFrame()
-            .equals(other.getTrackedFrame())) return false;
+        result = result && getTrackedFrame()
+            .equals(other.getTrackedFrame());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -422,7 +452,7 @@ public final class MessagesRobocupSslWrapperTracked {
         hash = (37 * hash) + TRACKED_FRAME_FIELD_NUMBER;
         hash = (53 * hash) + getTrackedFrame().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -561,14 +591,16 @@ public final class MessagesRobocupSslWrapperTracked {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         uuid_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
         sourceName_ = "";
-        trackedFrame_ = null;
-        if (trackedFrameBuilder_ != null) {
-          trackedFrameBuilder_.dispose();
-          trackedFrameBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (trackedFrameBuilder_ == null) {
+          trackedFrame_ = null;
+        } else {
+          trackedFrameBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -595,62 +627,60 @@ public final class MessagesRobocupSslWrapperTracked {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket buildPartial() {
         proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket result = new proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.uuid_ = uuid_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.sourceName_ = sourceName_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        if (trackedFrameBuilder_ == null) {
+          result.trackedFrame_ = trackedFrame_;
+        } else {
+          result.trackedFrame_ = trackedFrameBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.uuid_ = uuid_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.sourceName_ = sourceName_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.trackedFrame_ = trackedFrameBuilder_ == null
-              ? trackedFrame_
-              : trackedFrameBuilder_.build();
-          to_bitField0_ |= 0x00000004;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -665,19 +695,19 @@ public final class MessagesRobocupSslWrapperTracked {
       public Builder mergeFrom(proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket other) {
         if (other == proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket.getDefaultInstance()) return this;
         if (other.hasUuid()) {
-          uuid_ = other.uuid_;
           bitField0_ |= 0x00000001;
+          uuid_ = other.uuid_;
           onChanged();
         }
         if (other.hasSourceName()) {
-          sourceName_ = other.sourceName_;
           bitField0_ |= 0x00000002;
+          sourceName_ = other.sourceName_;
           onChanged();
         }
         if (other.hasTrackedFrame()) {
           mergeTrackedFrame(other.getTrackedFrame());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -700,47 +730,17 @@ public final class MessagesRobocupSslWrapperTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                uuid_ = input.readBytes();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                sourceName_ = input.readBytes();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getTrackedFrameFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.vision.MessagesRobocupSslWrapperTracked.TrackerWrapperPacket) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -753,10 +753,9 @@ public final class MessagesRobocupSslWrapperTracked {
        * </pre>
        *
        * <code>required string uuid = 1;</code>
-       * @return Whether the uuid field is set.
        */
       public boolean hasUuid() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -765,7 +764,6 @@ public final class MessagesRobocupSslWrapperTracked {
        * </pre>
        *
        * <code>required string uuid = 1;</code>
-       * @return The uuid.
        */
       public java.lang.String getUuid() {
         java.lang.Object ref = uuid_;
@@ -788,7 +786,6 @@ public final class MessagesRobocupSslWrapperTracked {
        * </pre>
        *
        * <code>required string uuid = 1;</code>
-       * @return The bytes for uuid.
        */
       public com.google.protobuf.ByteString
           getUuidBytes() {
@@ -810,14 +807,14 @@ public final class MessagesRobocupSslWrapperTracked {
        * </pre>
        *
        * <code>required string uuid = 1;</code>
-       * @param value The uuid to set.
-       * @return This builder for chaining.
        */
       public Builder setUuid(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         uuid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -828,11 +825,10 @@ public final class MessagesRobocupSslWrapperTracked {
        * </pre>
        *
        * <code>required string uuid = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearUuid() {
-        uuid_ = getDefaultInstance().getUuid();
         bitField0_ = (bitField0_ & ~0x00000001);
+        uuid_ = getDefaultInstance().getUuid();
         onChanged();
         return this;
       }
@@ -843,14 +839,14 @@ public final class MessagesRobocupSslWrapperTracked {
        * </pre>
        *
        * <code>required string uuid = 1;</code>
-       * @param value The bytes for uuid to set.
-       * @return This builder for chaining.
        */
       public Builder setUuidBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         uuid_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -862,10 +858,9 @@ public final class MessagesRobocupSslWrapperTracked {
        * </pre>
        *
        * <code>optional string source_name = 2;</code>
-       * @return Whether the sourceName field is set.
        */
       public boolean hasSourceName() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -873,7 +868,6 @@ public final class MessagesRobocupSslWrapperTracked {
        * </pre>
        *
        * <code>optional string source_name = 2;</code>
-       * @return The sourceName.
        */
       public java.lang.String getSourceName() {
         java.lang.Object ref = sourceName_;
@@ -895,7 +889,6 @@ public final class MessagesRobocupSslWrapperTracked {
        * </pre>
        *
        * <code>optional string source_name = 2;</code>
-       * @return The bytes for sourceName.
        */
       public com.google.protobuf.ByteString
           getSourceNameBytes() {
@@ -916,14 +909,14 @@ public final class MessagesRobocupSslWrapperTracked {
        * </pre>
        *
        * <code>optional string source_name = 2;</code>
-       * @param value The sourceName to set.
-       * @return This builder for chaining.
        */
       public Builder setSourceName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         sourceName_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -933,11 +926,10 @@ public final class MessagesRobocupSslWrapperTracked {
        * </pre>
        *
        * <code>optional string source_name = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearSourceName() {
-        sourceName_ = getDefaultInstance().getSourceName();
         bitField0_ = (bitField0_ & ~0x00000002);
+        sourceName_ = getDefaultInstance().getSourceName();
         onChanged();
         return this;
       }
@@ -947,19 +939,19 @@ public final class MessagesRobocupSslWrapperTracked {
        * </pre>
        *
        * <code>optional string source_name = 2;</code>
-       * @param value The bytes for sourceName to set.
-       * @return This builder for chaining.
        */
       public Builder setSourceNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         sourceName_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame trackedFrame_;
+      private proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame trackedFrame_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame, proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame.Builder, proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrameOrBuilder> trackedFrameBuilder_;
       /**
@@ -968,10 +960,9 @@ public final class MessagesRobocupSslWrapperTracked {
        * </pre>
        *
        * <code>optional .proto.vision.TrackedFrame tracked_frame = 3;</code>
-       * @return Whether the trackedFrame field is set.
        */
       public boolean hasTrackedFrame() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -979,7 +970,6 @@ public final class MessagesRobocupSslWrapperTracked {
        * </pre>
        *
        * <code>optional .proto.vision.TrackedFrame tracked_frame = 3;</code>
-       * @return The trackedFrame.
        */
       public proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame getTrackedFrame() {
         if (trackedFrameBuilder_ == null) {
@@ -1001,11 +991,11 @@ public final class MessagesRobocupSslWrapperTracked {
             throw new NullPointerException();
           }
           trackedFrame_ = value;
+          onChanged();
         } else {
           trackedFrameBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000004;
-        onChanged();
         return this;
       }
       /**
@@ -1019,11 +1009,11 @@ public final class MessagesRobocupSslWrapperTracked {
           proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame.Builder builderForValue) {
         if (trackedFrameBuilder_ == null) {
           trackedFrame_ = builderForValue.build();
+          onChanged();
         } else {
           trackedFrameBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000004;
-        onChanged();
         return this;
       }
       /**
@@ -1035,18 +1025,19 @@ public final class MessagesRobocupSslWrapperTracked {
        */
       public Builder mergeTrackedFrame(proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame value) {
         if (trackedFrameBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            trackedFrame_ != null &&
-            trackedFrame_ != proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame.getDefaultInstance()) {
-            getTrackedFrameBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              trackedFrame_ != null &&
+              trackedFrame_ != proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame.getDefaultInstance()) {
+            trackedFrame_ =
+              proto.vision.MessagesRobocupSslDetectionTracked.TrackedFrame.newBuilder(trackedFrame_).mergeFrom(value).buildPartial();
           } else {
             trackedFrame_ = value;
           }
+          onChanged();
         } else {
           trackedFrameBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000004;
-        onChanged();
         return this;
       }
       /**
@@ -1057,13 +1048,13 @@ public final class MessagesRobocupSslWrapperTracked {
        * <code>optional .proto.vision.TrackedFrame tracked_frame = 3;</code>
        */
       public Builder clearTrackedFrame() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        trackedFrame_ = null;
-        if (trackedFrameBuilder_ != null) {
-          trackedFrameBuilder_.dispose();
-          trackedFrameBuilder_ = null;
+        if (trackedFrameBuilder_ == null) {
+          trackedFrame_ = null;
+          onChanged();
+        } else {
+          trackedFrameBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
       /**
@@ -1146,18 +1137,7 @@ public final class MessagesRobocupSslWrapperTracked {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TrackerWrapperPacket(input, extensionRegistry);
       }
     };
 
@@ -1198,11 +1178,19 @@ public final class MessagesRobocupSslWrapperTracked {
       "\001(\t\0221\n\rtracked_frame\030\003 \001(\0132\032.proto.visio" +
       "n.TrackedFrame"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           proto.vision.MessagesRobocupSslDetectionTracked.getDescriptor(),
-        });
+        }, assigner);
     internal_static_proto_vision_TrackerWrapperPacket_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_vision_TrackerWrapperPacket_fieldAccessorTable = new

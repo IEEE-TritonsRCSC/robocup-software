@@ -1,0 +1,18 @@
+visionAddress: "224.5.23.2"
+visionDetectionPort: 10020
+
+simulationCommandAddress: "localhost"
+simulationCommandPort: 10300
+
+simulationRobotControlAddressBlue: "localhost"
+simulationRobotControlPortBlue: 10301
+simulationRobotControlAddressYellow: "localhost"
+simulationRobotControlPortYellow: 10302
+
+tritonBotAddressBlue: "localhost"
+tritonBotPortBaseBlue: 10500
+tritonBotAddressYellow: "localhost"
+tritonBotPortBaseYellow: 10600
+tritonBotPortIncr: 10
+
+TEST: 0

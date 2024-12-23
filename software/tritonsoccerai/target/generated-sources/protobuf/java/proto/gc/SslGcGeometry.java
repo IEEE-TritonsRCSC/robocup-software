@@ -20,23 +20,19 @@ public final class SslGcGeometry {
 
     /**
      * <code>required float x = 1;</code>
-     * @return Whether the x field is set.
      */
     boolean hasX();
     /**
      * <code>required float x = 1;</code>
-     * @return The x.
      */
     float getX();
 
     /**
      * <code>required float y = 2;</code>
-     * @return Whether the y field is set.
      */
     boolean hasY();
     /**
      * <code>required float y = 2;</code>
-     * @return The y.
      */
     float getY();
   }
@@ -47,7 +43,7 @@ public final class SslGcGeometry {
    *
    * Protobuf type {@code proto.gc.Vector2}
    */
-  public static final class Vector2 extends
+  public  static final class Vector2 extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.Vector2)
       Vector2OrBuilder {
@@ -57,19 +53,62 @@ public final class SslGcGeometry {
       super(builder);
     }
     private Vector2() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Vector2();
+      x_ = 0F;
+      y_ = 0F;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Vector2(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+              bitField0_ |= 0x00000001;
+              x_ = input.readFloat();
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              y_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -86,39 +125,31 @@ public final class SslGcGeometry {
 
     private int bitField0_;
     public static final int X_FIELD_NUMBER = 1;
-    private float x_ = 0F;
+    private float x_;
     /**
      * <code>required float x = 1;</code>
-     * @return Whether the x field is set.
      */
-    @java.lang.Override
     public boolean hasX() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required float x = 1;</code>
-     * @return The x.
      */
-    @java.lang.Override
     public float getX() {
       return x_;
     }
 
     public static final int Y_FIELD_NUMBER = 2;
-    private float y_ = 0F;
+    private float y_;
     /**
      * <code>required float y = 2;</code>
-     * @return Whether the y field is set.
      */
-    @java.lang.Override
     public boolean hasY() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>required float y = 2;</code>
-     * @return The y.
      */
-    @java.lang.Override
     public float getY() {
       return y_;
     }
@@ -145,13 +176,13 @@ public final class SslGcGeometry {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeFloat(1, x_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeFloat(2, y_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -160,15 +191,15 @@ public final class SslGcGeometry {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, x_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, y_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -183,20 +214,23 @@ public final class SslGcGeometry {
       }
       proto.gc.SslGcGeometry.Vector2 other = (proto.gc.SslGcGeometry.Vector2) obj;
 
-      if (hasX() != other.hasX()) return false;
+      boolean result = true;
+      result = result && (hasX() == other.hasX());
       if (hasX()) {
-        if (java.lang.Float.floatToIntBits(getX())
-            != java.lang.Float.floatToIntBits(
-                other.getX())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getX())
+            == java.lang.Float.floatToIntBits(
+                other.getX()));
       }
-      if (hasY() != other.hasY()) return false;
+      result = result && (hasY() == other.hasY());
       if (hasY()) {
-        if (java.lang.Float.floatToIntBits(getY())
-            != java.lang.Float.floatToIntBits(
-                other.getY())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getY())
+            == java.lang.Float.floatToIntBits(
+                other.getY()));
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -216,7 +250,7 @@ public final class SslGcGeometry {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getY());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -337,20 +371,26 @@ public final class SslGcGeometry {
 
       // Construct using proto.gc.SslGcGeometry.Vector2.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         x_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000001);
         y_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -377,56 +417,52 @@ public final class SslGcGeometry {
       @java.lang.Override
       public proto.gc.SslGcGeometry.Vector2 buildPartial() {
         proto.gc.SslGcGeometry.Vector2 result = new proto.gc.SslGcGeometry.Vector2(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.x_ = x_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.y_ = y_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcGeometry.Vector2 result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.x_ = x_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.y_ = y_;
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -446,7 +482,7 @@ public final class SslGcGeometry {
         if (other.hasY()) {
           setY(other.getY());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -467,40 +503,17 @@ public final class SslGcGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcGeometry.Vector2 parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                x_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 13
-              case 21: {
-                y_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 21
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcGeometry.Vector2) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -508,35 +521,27 @@ public final class SslGcGeometry {
       private float x_ ;
       /**
        * <code>required float x = 1;</code>
-       * @return Whether the x field is set.
        */
-      @java.lang.Override
       public boolean hasX() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required float x = 1;</code>
-       * @return The x.
        */
-      @java.lang.Override
       public float getX() {
         return x_;
       }
       /**
        * <code>required float x = 1;</code>
-       * @param value The x to set.
-       * @return This builder for chaining.
        */
       public Builder setX(float value) {
-        
-        x_ = value;
         bitField0_ |= 0x00000001;
+        x_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float x = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearX() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -548,35 +553,27 @@ public final class SslGcGeometry {
       private float y_ ;
       /**
        * <code>required float y = 2;</code>
-       * @return Whether the y field is set.
        */
-      @java.lang.Override
       public boolean hasY() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required float y = 2;</code>
-       * @return The y.
        */
-      @java.lang.Override
       public float getY() {
         return y_;
       }
       /**
        * <code>required float y = 2;</code>
-       * @param value The y to set.
-       * @return This builder for chaining.
        */
       public Builder setY(float value) {
-        
-        y_ = value;
         bitField0_ |= 0x00000002;
+        y_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float y = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearY() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -617,18 +614,7 @@ public final class SslGcGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Vector2(input, extensionRegistry);
       }
     };
 
@@ -654,34 +640,28 @@ public final class SslGcGeometry {
 
     /**
      * <code>required float x = 1;</code>
-     * @return Whether the x field is set.
      */
     boolean hasX();
     /**
      * <code>required float x = 1;</code>
-     * @return The x.
      */
     float getX();
 
     /**
      * <code>required float y = 2;</code>
-     * @return Whether the y field is set.
      */
     boolean hasY();
     /**
      * <code>required float y = 2;</code>
-     * @return The y.
      */
     float getY();
 
     /**
      * <code>required float z = 3;</code>
-     * @return Whether the z field is set.
      */
     boolean hasZ();
     /**
      * <code>required float z = 3;</code>
-     * @return The z.
      */
     float getZ();
   }
@@ -692,7 +672,7 @@ public final class SslGcGeometry {
    *
    * Protobuf type {@code proto.gc.Vector3}
    */
-  public static final class Vector3 extends
+  public  static final class Vector3 extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.Vector3)
       Vector3OrBuilder {
@@ -702,19 +682,68 @@ public final class SslGcGeometry {
       super(builder);
     }
     private Vector3() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Vector3();
+      x_ = 0F;
+      y_ = 0F;
+      z_ = 0F;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Vector3(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+              bitField0_ |= 0x00000001;
+              x_ = input.readFloat();
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              y_ = input.readFloat();
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              z_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -731,58 +760,46 @@ public final class SslGcGeometry {
 
     private int bitField0_;
     public static final int X_FIELD_NUMBER = 1;
-    private float x_ = 0F;
+    private float x_;
     /**
      * <code>required float x = 1;</code>
-     * @return Whether the x field is set.
      */
-    @java.lang.Override
     public boolean hasX() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required float x = 1;</code>
-     * @return The x.
      */
-    @java.lang.Override
     public float getX() {
       return x_;
     }
 
     public static final int Y_FIELD_NUMBER = 2;
-    private float y_ = 0F;
+    private float y_;
     /**
      * <code>required float y = 2;</code>
-     * @return Whether the y field is set.
      */
-    @java.lang.Override
     public boolean hasY() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>required float y = 2;</code>
-     * @return The y.
      */
-    @java.lang.Override
     public float getY() {
       return y_;
     }
 
     public static final int Z_FIELD_NUMBER = 3;
-    private float z_ = 0F;
+    private float z_;
     /**
      * <code>required float z = 3;</code>
-     * @return Whether the z field is set.
      */
-    @java.lang.Override
     public boolean hasZ() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>required float z = 3;</code>
-     * @return The z.
      */
-    @java.lang.Override
     public float getZ() {
       return z_;
     }
@@ -813,16 +830,16 @@ public final class SslGcGeometry {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeFloat(1, x_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeFloat(2, y_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeFloat(3, z_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -831,19 +848,19 @@ public final class SslGcGeometry {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, x_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, y_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, z_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -858,26 +875,30 @@ public final class SslGcGeometry {
       }
       proto.gc.SslGcGeometry.Vector3 other = (proto.gc.SslGcGeometry.Vector3) obj;
 
-      if (hasX() != other.hasX()) return false;
+      boolean result = true;
+      result = result && (hasX() == other.hasX());
       if (hasX()) {
-        if (java.lang.Float.floatToIntBits(getX())
-            != java.lang.Float.floatToIntBits(
-                other.getX())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getX())
+            == java.lang.Float.floatToIntBits(
+                other.getX()));
       }
-      if (hasY() != other.hasY()) return false;
+      result = result && (hasY() == other.hasY());
       if (hasY()) {
-        if (java.lang.Float.floatToIntBits(getY())
-            != java.lang.Float.floatToIntBits(
-                other.getY())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getY())
+            == java.lang.Float.floatToIntBits(
+                other.getY()));
       }
-      if (hasZ() != other.hasZ()) return false;
+      result = result && (hasZ() == other.hasZ());
       if (hasZ()) {
-        if (java.lang.Float.floatToIntBits(getZ())
-            != java.lang.Float.floatToIntBits(
-                other.getZ())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getZ())
+            == java.lang.Float.floatToIntBits(
+                other.getZ()));
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -902,7 +923,7 @@ public final class SslGcGeometry {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getZ());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1023,21 +1044,28 @@ public final class SslGcGeometry {
 
       // Construct using proto.gc.SslGcGeometry.Vector3.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         x_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000001);
         y_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
         z_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -1064,60 +1092,56 @@ public final class SslGcGeometry {
       @java.lang.Override
       public proto.gc.SslGcGeometry.Vector3 buildPartial() {
         proto.gc.SslGcGeometry.Vector3 result = new proto.gc.SslGcGeometry.Vector3(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.x_ = x_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.y_ = y_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.z_ = z_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcGeometry.Vector3 result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.x_ = x_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.y_ = y_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.z_ = z_;
-          to_bitField0_ |= 0x00000004;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1140,7 +1164,7 @@ public final class SslGcGeometry {
         if (other.hasZ()) {
           setZ(other.getZ());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1164,45 +1188,17 @@ public final class SslGcGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcGeometry.Vector3 parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                x_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 13
-              case 21: {
-                y_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 21
-              case 29: {
-                z_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 29
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcGeometry.Vector3) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1210,35 +1206,27 @@ public final class SslGcGeometry {
       private float x_ ;
       /**
        * <code>required float x = 1;</code>
-       * @return Whether the x field is set.
        */
-      @java.lang.Override
       public boolean hasX() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required float x = 1;</code>
-       * @return The x.
        */
-      @java.lang.Override
       public float getX() {
         return x_;
       }
       /**
        * <code>required float x = 1;</code>
-       * @param value The x to set.
-       * @return This builder for chaining.
        */
       public Builder setX(float value) {
-        
-        x_ = value;
         bitField0_ |= 0x00000001;
+        x_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float x = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearX() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1250,35 +1238,27 @@ public final class SslGcGeometry {
       private float y_ ;
       /**
        * <code>required float y = 2;</code>
-       * @return Whether the y field is set.
        */
-      @java.lang.Override
       public boolean hasY() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required float y = 2;</code>
-       * @return The y.
        */
-      @java.lang.Override
       public float getY() {
         return y_;
       }
       /**
        * <code>required float y = 2;</code>
-       * @param value The y to set.
-       * @return This builder for chaining.
        */
       public Builder setY(float value) {
-        
-        y_ = value;
         bitField0_ |= 0x00000002;
+        y_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float y = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearY() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -1290,35 +1270,27 @@ public final class SslGcGeometry {
       private float z_ ;
       /**
        * <code>required float z = 3;</code>
-       * @return Whether the z field is set.
        */
-      @java.lang.Override
       public boolean hasZ() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>required float z = 3;</code>
-       * @return The z.
        */
-      @java.lang.Override
       public float getZ() {
         return z_;
       }
       /**
        * <code>required float z = 3;</code>
-       * @param value The z to set.
-       * @return This builder for chaining.
        */
       public Builder setZ(float value) {
-        
-        z_ = value;
         bitField0_ |= 0x00000004;
+        z_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>required float z = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearZ() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -1359,18 +1331,7 @@ public final class SslGcGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Vector3(input, extensionRegistry);
       }
     };
 
@@ -1415,10 +1376,18 @@ public final class SslGcGeometry {
       ".com/RoboCup-SSL/ssl-game-controller/int" +
       "ernal/app/geom"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_proto_gc_Vector2_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_gc_Vector2_fieldAccessorTable = new

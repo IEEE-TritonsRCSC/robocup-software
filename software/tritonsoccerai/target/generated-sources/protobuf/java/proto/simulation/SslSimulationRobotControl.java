@@ -24,7 +24,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required uint32 id = 1;</code>
-     * @return Whether the id field is set.
      */
     boolean hasId();
     /**
@@ -33,7 +32,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required uint32 id = 1;</code>
-     * @return The id.
      */
     int getId();
 
@@ -43,7 +41,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>optional .proto.simulation.RobotMoveCommand move_command = 2;</code>
-     * @return Whether the moveCommand field is set.
      */
     boolean hasMoveCommand();
     /**
@@ -52,7 +49,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>optional .proto.simulation.RobotMoveCommand move_command = 2;</code>
-     * @return The moveCommand.
      */
     proto.simulation.SslSimulationRobotControl.RobotMoveCommand getMoveCommand();
     /**
@@ -70,7 +66,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>optional float kick_speed = 3;</code>
-     * @return Whether the kickSpeed field is set.
      */
     boolean hasKickSpeed();
     /**
@@ -79,7 +74,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>optional float kick_speed = 3;</code>
-     * @return The kickSpeed.
      */
     float getKickSpeed();
 
@@ -89,7 +83,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>optional float kick_angle = 4 [default = 0];</code>
-     * @return Whether the kickAngle field is set.
      */
     boolean hasKickAngle();
     /**
@@ -98,7 +91,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>optional float kick_angle = 4 [default = 0];</code>
-     * @return The kickAngle.
      */
     float getKickAngle();
 
@@ -108,7 +100,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>optional float dribbler_speed = 5;</code>
-     * @return Whether the dribblerSpeed field is set.
      */
     boolean hasDribblerSpeed();
     /**
@@ -117,7 +108,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>optional float dribbler_speed = 5;</code>
-     * @return The dribblerSpeed.
      */
     float getDribblerSpeed();
   }
@@ -128,7 +118,7 @@ public final class SslSimulationRobotControl {
    *
    * Protobuf type {@code proto.simulation.RobotCommand}
    */
-  public static final class RobotCommand extends
+  public  static final class RobotCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.simulation.RobotCommand)
       RobotCommandOrBuilder {
@@ -138,19 +128,87 @@ public final class SslSimulationRobotControl {
       super(builder);
     }
     private RobotCommand() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new RobotCommand();
+      id_ = 0;
+      kickSpeed_ = 0F;
+      kickAngle_ = 0F;
+      dribblerSpeed_ = 0F;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private RobotCommand(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              proto.simulation.SslSimulationRobotControl.RobotMoveCommand.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = moveCommand_.toBuilder();
+              }
+              moveCommand_ = input.readMessage(proto.simulation.SslSimulationRobotControl.RobotMoveCommand.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(moveCommand_);
+                moveCommand_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              kickSpeed_ = input.readFloat();
+              break;
+            }
+            case 37: {
+              bitField0_ |= 0x00000008;
+              kickAngle_ = input.readFloat();
+              break;
+            }
+            case 45: {
+              bitField0_ |= 0x00000010;
+              dribblerSpeed_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -167,18 +225,16 @@ public final class SslSimulationRobotControl {
 
     private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
-    private int id_ = 0;
+    private int id_;
     /**
      * <pre>
      * Id of the robot
      * </pre>
      *
      * <code>required uint32 id = 1;</code>
-     * @return Whether the id field is set.
      */
-    @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -186,9 +242,7 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required uint32 id = 1;</code>
-     * @return The id.
      */
-    @java.lang.Override
     public int getId() {
       return id_;
     }
@@ -201,11 +255,9 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>optional .proto.simulation.RobotMoveCommand move_command = 2;</code>
-     * @return Whether the moveCommand field is set.
      */
-    @java.lang.Override
     public boolean hasMoveCommand() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -213,9 +265,7 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>optional .proto.simulation.RobotMoveCommand move_command = 2;</code>
-     * @return The moveCommand.
      */
-    @java.lang.Override
     public proto.simulation.SslSimulationRobotControl.RobotMoveCommand getMoveCommand() {
       return moveCommand_ == null ? proto.simulation.SslSimulationRobotControl.RobotMoveCommand.getDefaultInstance() : moveCommand_;
     }
@@ -226,24 +276,21 @@ public final class SslSimulationRobotControl {
      *
      * <code>optional .proto.simulation.RobotMoveCommand move_command = 2;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslSimulationRobotControl.RobotMoveCommandOrBuilder getMoveCommandOrBuilder() {
       return moveCommand_ == null ? proto.simulation.SslSimulationRobotControl.RobotMoveCommand.getDefaultInstance() : moveCommand_;
     }
 
     public static final int KICK_SPEED_FIELD_NUMBER = 3;
-    private float kickSpeed_ = 0F;
+    private float kickSpeed_;
     /**
      * <pre>
      * Absolute (3 dimensional) kick speed [m/s]
      * </pre>
      *
      * <code>optional float kick_speed = 3;</code>
-     * @return Whether the kickSpeed field is set.
      */
-    @java.lang.Override
     public boolean hasKickSpeed() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -251,26 +298,22 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>optional float kick_speed = 3;</code>
-     * @return The kickSpeed.
      */
-    @java.lang.Override
     public float getKickSpeed() {
       return kickSpeed_;
     }
 
     public static final int KICK_ANGLE_FIELD_NUMBER = 4;
-    private float kickAngle_ = 0F;
+    private float kickAngle_;
     /**
      * <pre>
      * Kick angle [degree] (defaults to 0 degrees for a straight kick)
      * </pre>
      *
      * <code>optional float kick_angle = 4 [default = 0];</code>
-     * @return Whether the kickAngle field is set.
      */
-    @java.lang.Override
     public boolean hasKickAngle() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <pre>
@@ -278,26 +321,22 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>optional float kick_angle = 4 [default = 0];</code>
-     * @return The kickAngle.
      */
-    @java.lang.Override
     public float getKickAngle() {
       return kickAngle_;
     }
 
     public static final int DRIBBLER_SPEED_FIELD_NUMBER = 5;
-    private float dribblerSpeed_ = 0F;
+    private float dribblerSpeed_;
     /**
      * <pre>
      * Dribbler speed in rounds per minute [rpm]
      * </pre>
      *
      * <code>optional float dribbler_speed = 5;</code>
-     * @return Whether the dribblerSpeed field is set.
      */
-    @java.lang.Override
     public boolean hasDribblerSpeed() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <pre>
@@ -305,9 +344,7 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>optional float dribbler_speed = 5;</code>
-     * @return The dribblerSpeed.
      */
-    @java.lang.Override
     public float getDribblerSpeed() {
       return dribblerSpeed_;
     }
@@ -336,22 +373,22 @@ public final class SslSimulationRobotControl {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeUInt32(1, id_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, getMoveCommand());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeFloat(3, kickSpeed_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeFloat(4, kickAngle_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeFloat(5, dribblerSpeed_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -360,27 +397,27 @@ public final class SslSimulationRobotControl {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, id_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getMoveCommand());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, kickSpeed_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, kickAngle_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(5, dribblerSpeed_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -395,36 +432,40 @@ public final class SslSimulationRobotControl {
       }
       proto.simulation.SslSimulationRobotControl.RobotCommand other = (proto.simulation.SslSimulationRobotControl.RobotCommand) obj;
 
-      if (hasId() != other.hasId()) return false;
+      boolean result = true;
+      result = result && (hasId() == other.hasId());
       if (hasId()) {
-        if (getId()
-            != other.getId()) return false;
+        result = result && (getId()
+            == other.getId());
       }
-      if (hasMoveCommand() != other.hasMoveCommand()) return false;
+      result = result && (hasMoveCommand() == other.hasMoveCommand());
       if (hasMoveCommand()) {
-        if (!getMoveCommand()
-            .equals(other.getMoveCommand())) return false;
+        result = result && getMoveCommand()
+            .equals(other.getMoveCommand());
       }
-      if (hasKickSpeed() != other.hasKickSpeed()) return false;
+      result = result && (hasKickSpeed() == other.hasKickSpeed());
       if (hasKickSpeed()) {
-        if (java.lang.Float.floatToIntBits(getKickSpeed())
-            != java.lang.Float.floatToIntBits(
-                other.getKickSpeed())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getKickSpeed())
+            == java.lang.Float.floatToIntBits(
+                other.getKickSpeed()));
       }
-      if (hasKickAngle() != other.hasKickAngle()) return false;
+      result = result && (hasKickAngle() == other.hasKickAngle());
       if (hasKickAngle()) {
-        if (java.lang.Float.floatToIntBits(getKickAngle())
-            != java.lang.Float.floatToIntBits(
-                other.getKickAngle())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getKickAngle())
+            == java.lang.Float.floatToIntBits(
+                other.getKickAngle()));
       }
-      if (hasDribblerSpeed() != other.hasDribblerSpeed()) return false;
+      result = result && (hasDribblerSpeed() == other.hasDribblerSpeed());
       if (hasDribblerSpeed()) {
-        if (java.lang.Float.floatToIntBits(getDribblerSpeed())
-            != java.lang.Float.floatToIntBits(
-                other.getDribblerSpeed())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getDribblerSpeed())
+            == java.lang.Float.floatToIntBits(
+                other.getDribblerSpeed()));
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -457,7 +498,7 @@ public final class SslSimulationRobotControl {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getDribblerSpeed());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -595,16 +636,20 @@ public final class SslSimulationRobotControl {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         id_ = 0;
-        moveCommand_ = null;
-        if (moveCommandBuilder_ != null) {
-          moveCommandBuilder_.dispose();
-          moveCommandBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (moveCommandBuilder_ == null) {
+          moveCommand_ = null;
+        } else {
+          moveCommandBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         kickSpeed_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000004);
         kickAngle_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000008);
         dribblerSpeed_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -631,70 +676,68 @@ public final class SslSimulationRobotControl {
       @java.lang.Override
       public proto.simulation.SslSimulationRobotControl.RobotCommand buildPartial() {
         proto.simulation.SslSimulationRobotControl.RobotCommand result = new proto.simulation.SslSimulationRobotControl.RobotCommand(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (moveCommandBuilder_ == null) {
+          result.moveCommand_ = moveCommand_;
+        } else {
+          result.moveCommand_ = moveCommandBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.kickSpeed_ = kickSpeed_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.kickAngle_ = kickAngle_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.dribblerSpeed_ = dribblerSpeed_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.simulation.SslSimulationRobotControl.RobotCommand result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.moveCommand_ = moveCommandBuilder_ == null
-              ? moveCommand_
-              : moveCommandBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.kickSpeed_ = kickSpeed_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.kickAngle_ = kickAngle_;
-          to_bitField0_ |= 0x00000008;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.dribblerSpeed_ = dribblerSpeed_;
-          to_bitField0_ |= 0x00000010;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -723,7 +766,7 @@ public final class SslSimulationRobotControl {
         if (other.hasDribblerSpeed()) {
           setDribblerSpeed(other.getDribblerSpeed());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -746,57 +789,17 @@ public final class SslSimulationRobotControl {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.simulation.SslSimulationRobotControl.RobotCommand parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                id_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 18: {
-                input.readMessage(
-                    getMoveCommandFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 29: {
-                kickSpeed_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 29
-              case 37: {
-                kickAngle_ = input.readFloat();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 37
-              case 45: {
-                dribblerSpeed_ = input.readFloat();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 45
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.simulation.SslSimulationRobotControl.RobotCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -808,11 +811,9 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required uint32 id = 1;</code>
-       * @return Whether the id field is set.
        */
-      @java.lang.Override
       public boolean hasId() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -820,9 +821,7 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required uint32 id = 1;</code>
-       * @return The id.
        */
-      @java.lang.Override
       public int getId() {
         return id_;
       }
@@ -832,13 +831,10 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required uint32 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
        */
       public Builder setId(int value) {
-        
-        id_ = value;
         bitField0_ |= 0x00000001;
+        id_ = value;
         onChanged();
         return this;
       }
@@ -848,7 +844,6 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required uint32 id = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearId() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -857,7 +852,7 @@ public final class SslSimulationRobotControl {
         return this;
       }
 
-      private proto.simulation.SslSimulationRobotControl.RobotMoveCommand moveCommand_;
+      private proto.simulation.SslSimulationRobotControl.RobotMoveCommand moveCommand_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.simulation.SslSimulationRobotControl.RobotMoveCommand, proto.simulation.SslSimulationRobotControl.RobotMoveCommand.Builder, proto.simulation.SslSimulationRobotControl.RobotMoveCommandOrBuilder> moveCommandBuilder_;
       /**
@@ -866,10 +861,9 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>optional .proto.simulation.RobotMoveCommand move_command = 2;</code>
-       * @return Whether the moveCommand field is set.
        */
       public boolean hasMoveCommand() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -877,7 +871,6 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>optional .proto.simulation.RobotMoveCommand move_command = 2;</code>
-       * @return The moveCommand.
        */
       public proto.simulation.SslSimulationRobotControl.RobotMoveCommand getMoveCommand() {
         if (moveCommandBuilder_ == null) {
@@ -899,11 +892,11 @@ public final class SslSimulationRobotControl {
             throw new NullPointerException();
           }
           moveCommand_ = value;
+          onChanged();
         } else {
           moveCommandBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -917,11 +910,11 @@ public final class SslSimulationRobotControl {
           proto.simulation.SslSimulationRobotControl.RobotMoveCommand.Builder builderForValue) {
         if (moveCommandBuilder_ == null) {
           moveCommand_ = builderForValue.build();
+          onChanged();
         } else {
           moveCommandBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -933,18 +926,19 @@ public final class SslSimulationRobotControl {
        */
       public Builder mergeMoveCommand(proto.simulation.SslSimulationRobotControl.RobotMoveCommand value) {
         if (moveCommandBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            moveCommand_ != null &&
-            moveCommand_ != proto.simulation.SslSimulationRobotControl.RobotMoveCommand.getDefaultInstance()) {
-            getMoveCommandBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              moveCommand_ != null &&
+              moveCommand_ != proto.simulation.SslSimulationRobotControl.RobotMoveCommand.getDefaultInstance()) {
+            moveCommand_ =
+              proto.simulation.SslSimulationRobotControl.RobotMoveCommand.newBuilder(moveCommand_).mergeFrom(value).buildPartial();
           } else {
             moveCommand_ = value;
           }
+          onChanged();
         } else {
           moveCommandBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -955,13 +949,13 @@ public final class SslSimulationRobotControl {
        * <code>optional .proto.simulation.RobotMoveCommand move_command = 2;</code>
        */
       public Builder clearMoveCommand() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        moveCommand_ = null;
-        if (moveCommandBuilder_ != null) {
-          moveCommandBuilder_.dispose();
-          moveCommandBuilder_ = null;
+        if (moveCommandBuilder_ == null) {
+          moveCommand_ = null;
+          onChanged();
+        } else {
+          moveCommandBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
@@ -1019,11 +1013,9 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>optional float kick_speed = 3;</code>
-       * @return Whether the kickSpeed field is set.
        */
-      @java.lang.Override
       public boolean hasKickSpeed() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -1031,9 +1023,7 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>optional float kick_speed = 3;</code>
-       * @return The kickSpeed.
        */
-      @java.lang.Override
       public float getKickSpeed() {
         return kickSpeed_;
       }
@@ -1043,13 +1033,10 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>optional float kick_speed = 3;</code>
-       * @param value The kickSpeed to set.
-       * @return This builder for chaining.
        */
       public Builder setKickSpeed(float value) {
-        
-        kickSpeed_ = value;
         bitField0_ |= 0x00000004;
+        kickSpeed_ = value;
         onChanged();
         return this;
       }
@@ -1059,7 +1046,6 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>optional float kick_speed = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearKickSpeed() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -1075,11 +1061,9 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>optional float kick_angle = 4 [default = 0];</code>
-       * @return Whether the kickAngle field is set.
        */
-      @java.lang.Override
       public boolean hasKickAngle() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <pre>
@@ -1087,9 +1071,7 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>optional float kick_angle = 4 [default = 0];</code>
-       * @return The kickAngle.
        */
-      @java.lang.Override
       public float getKickAngle() {
         return kickAngle_;
       }
@@ -1099,13 +1081,10 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>optional float kick_angle = 4 [default = 0];</code>
-       * @param value The kickAngle to set.
-       * @return This builder for chaining.
        */
       public Builder setKickAngle(float value) {
-        
-        kickAngle_ = value;
         bitField0_ |= 0x00000008;
+        kickAngle_ = value;
         onChanged();
         return this;
       }
@@ -1115,7 +1094,6 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>optional float kick_angle = 4 [default = 0];</code>
-       * @return This builder for chaining.
        */
       public Builder clearKickAngle() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -1131,11 +1109,9 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>optional float dribbler_speed = 5;</code>
-       * @return Whether the dribblerSpeed field is set.
        */
-      @java.lang.Override
       public boolean hasDribblerSpeed() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <pre>
@@ -1143,9 +1119,7 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>optional float dribbler_speed = 5;</code>
-       * @return The dribblerSpeed.
        */
-      @java.lang.Override
       public float getDribblerSpeed() {
         return dribblerSpeed_;
       }
@@ -1155,13 +1129,10 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>optional float dribbler_speed = 5;</code>
-       * @param value The dribblerSpeed to set.
-       * @return This builder for chaining.
        */
       public Builder setDribblerSpeed(float value) {
-        
-        dribblerSpeed_ = value;
         bitField0_ |= 0x00000010;
+        dribblerSpeed_ = value;
         onChanged();
         return this;
       }
@@ -1171,7 +1142,6 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>optional float dribbler_speed = 5;</code>
-       * @return This builder for chaining.
        */
       public Builder clearDribblerSpeed() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -1212,18 +1182,7 @@ public final class SslSimulationRobotControl {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RobotCommand(input, extensionRegistry);
       }
     };
 
@@ -1252,8 +1211,7 @@ public final class SslSimulationRobotControl {
      * Move with wheel velocities
      * </pre>
      *
-     * <code>.proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
-     * @return Whether the wheelVelocity field is set.
+     * <code>optional .proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
      */
     boolean hasWheelVelocity();
     /**
@@ -1261,8 +1219,7 @@ public final class SslSimulationRobotControl {
      * Move with wheel velocities
      * </pre>
      *
-     * <code>.proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
-     * @return The wheelVelocity.
+     * <code>optional .proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
      */
     proto.simulation.SslSimulationRobotControl.MoveWheelVelocity getWheelVelocity();
     /**
@@ -1270,7 +1227,7 @@ public final class SslSimulationRobotControl {
      * Move with wheel velocities
      * </pre>
      *
-     * <code>.proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
+     * <code>optional .proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
      */
     proto.simulation.SslSimulationRobotControl.MoveWheelVelocityOrBuilder getWheelVelocityOrBuilder();
 
@@ -1279,8 +1236,7 @@ public final class SslSimulationRobotControl {
      * Move with local velocity
      * </pre>
      *
-     * <code>.proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
-     * @return Whether the localVelocity field is set.
+     * <code>optional .proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
      */
     boolean hasLocalVelocity();
     /**
@@ -1288,8 +1244,7 @@ public final class SslSimulationRobotControl {
      * Move with local velocity
      * </pre>
      *
-     * <code>.proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
-     * @return The localVelocity.
+     * <code>optional .proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
      */
     proto.simulation.SslSimulationRobotControl.MoveLocalVelocity getLocalVelocity();
     /**
@@ -1297,7 +1252,7 @@ public final class SslSimulationRobotControl {
      * Move with local velocity
      * </pre>
      *
-     * <code>.proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
+     * <code>optional .proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
      */
     proto.simulation.SslSimulationRobotControl.MoveLocalVelocityOrBuilder getLocalVelocityOrBuilder();
 
@@ -1306,8 +1261,7 @@ public final class SslSimulationRobotControl {
      * Move with global velocity
      * </pre>
      *
-     * <code>.proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
-     * @return Whether the globalVelocity field is set.
+     * <code>optional .proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
      */
     boolean hasGlobalVelocity();
     /**
@@ -1315,8 +1269,7 @@ public final class SslSimulationRobotControl {
      * Move with global velocity
      * </pre>
      *
-     * <code>.proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
-     * @return The globalVelocity.
+     * <code>optional .proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
      */
     proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity getGlobalVelocity();
     /**
@@ -1324,7 +1277,7 @@ public final class SslSimulationRobotControl {
      * Move with global velocity
      * </pre>
      *
-     * <code>.proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
+     * <code>optional .proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
      */
     proto.simulation.SslSimulationRobotControl.MoveGlobalVelocityOrBuilder getGlobalVelocityOrBuilder();
 
@@ -1337,7 +1290,7 @@ public final class SslSimulationRobotControl {
    *
    * Protobuf type {@code proto.simulation.RobotMoveCommand}
    */
-  public static final class RobotMoveCommand extends
+  public  static final class RobotMoveCommand extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.simulation.RobotMoveCommand)
       RobotMoveCommandOrBuilder {
@@ -1350,16 +1303,89 @@ public final class SslSimulationRobotControl {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new RobotMoveCommand();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private RobotMoveCommand(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              proto.simulation.SslSimulationRobotControl.MoveWheelVelocity.Builder subBuilder = null;
+              if (commandCase_ == 1) {
+                subBuilder = ((proto.simulation.SslSimulationRobotControl.MoveWheelVelocity) command_).toBuilder();
+              }
+              command_ =
+                  input.readMessage(proto.simulation.SslSimulationRobotControl.MoveWheelVelocity.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((proto.simulation.SslSimulationRobotControl.MoveWheelVelocity) command_);
+                command_ = subBuilder.buildPartial();
+              }
+              commandCase_ = 1;
+              break;
+            }
+            case 18: {
+              proto.simulation.SslSimulationRobotControl.MoveLocalVelocity.Builder subBuilder = null;
+              if (commandCase_ == 2) {
+                subBuilder = ((proto.simulation.SslSimulationRobotControl.MoveLocalVelocity) command_).toBuilder();
+              }
+              command_ =
+                  input.readMessage(proto.simulation.SslSimulationRobotControl.MoveLocalVelocity.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((proto.simulation.SslSimulationRobotControl.MoveLocalVelocity) command_);
+                command_ = subBuilder.buildPartial();
+              }
+              commandCase_ = 2;
+              break;
+            }
+            case 26: {
+              proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity.Builder subBuilder = null;
+              if (commandCase_ == 3) {
+                subBuilder = ((proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity) command_).toBuilder();
+              }
+              command_ =
+                  input.readMessage(proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity) command_);
+                command_ = subBuilder.buildPartial();
+              }
+              commandCase_ = 3;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1378,8 +1404,7 @@ public final class SslSimulationRobotControl {
     private int commandCase_ = 0;
     private java.lang.Object command_;
     public enum CommandCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       WHEEL_VELOCITY(1),
       LOCAL_VELOCITY(2),
       GLOBAL_VELOCITY(3),
@@ -1389,8 +1414,6 @@ public final class SslSimulationRobotControl {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -1424,10 +1447,8 @@ public final class SslSimulationRobotControl {
      * Move with wheel velocities
      * </pre>
      *
-     * <code>.proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
-     * @return Whether the wheelVelocity field is set.
+     * <code>optional .proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
      */
-    @java.lang.Override
     public boolean hasWheelVelocity() {
       return commandCase_ == 1;
     }
@@ -1436,10 +1457,8 @@ public final class SslSimulationRobotControl {
      * Move with wheel velocities
      * </pre>
      *
-     * <code>.proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
-     * @return The wheelVelocity.
+     * <code>optional .proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslSimulationRobotControl.MoveWheelVelocity getWheelVelocity() {
       if (commandCase_ == 1) {
          return (proto.simulation.SslSimulationRobotControl.MoveWheelVelocity) command_;
@@ -1451,9 +1470,8 @@ public final class SslSimulationRobotControl {
      * Move with wheel velocities
      * </pre>
      *
-     * <code>.proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
+     * <code>optional .proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslSimulationRobotControl.MoveWheelVelocityOrBuilder getWheelVelocityOrBuilder() {
       if (commandCase_ == 1) {
          return (proto.simulation.SslSimulationRobotControl.MoveWheelVelocity) command_;
@@ -1467,10 +1485,8 @@ public final class SslSimulationRobotControl {
      * Move with local velocity
      * </pre>
      *
-     * <code>.proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
-     * @return Whether the localVelocity field is set.
+     * <code>optional .proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
      */
-    @java.lang.Override
     public boolean hasLocalVelocity() {
       return commandCase_ == 2;
     }
@@ -1479,10 +1495,8 @@ public final class SslSimulationRobotControl {
      * Move with local velocity
      * </pre>
      *
-     * <code>.proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
-     * @return The localVelocity.
+     * <code>optional .proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslSimulationRobotControl.MoveLocalVelocity getLocalVelocity() {
       if (commandCase_ == 2) {
          return (proto.simulation.SslSimulationRobotControl.MoveLocalVelocity) command_;
@@ -1494,9 +1508,8 @@ public final class SslSimulationRobotControl {
      * Move with local velocity
      * </pre>
      *
-     * <code>.proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
+     * <code>optional .proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslSimulationRobotControl.MoveLocalVelocityOrBuilder getLocalVelocityOrBuilder() {
       if (commandCase_ == 2) {
          return (proto.simulation.SslSimulationRobotControl.MoveLocalVelocity) command_;
@@ -1510,10 +1523,8 @@ public final class SslSimulationRobotControl {
      * Move with global velocity
      * </pre>
      *
-     * <code>.proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
-     * @return Whether the globalVelocity field is set.
+     * <code>optional .proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
      */
-    @java.lang.Override
     public boolean hasGlobalVelocity() {
       return commandCase_ == 3;
     }
@@ -1522,10 +1533,8 @@ public final class SslSimulationRobotControl {
      * Move with global velocity
      * </pre>
      *
-     * <code>.proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
-     * @return The globalVelocity.
+     * <code>optional .proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity getGlobalVelocity() {
       if (commandCase_ == 3) {
          return (proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity) command_;
@@ -1537,9 +1546,8 @@ public final class SslSimulationRobotControl {
      * Move with global velocity
      * </pre>
      *
-     * <code>.proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
+     * <code>optional .proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslSimulationRobotControl.MoveGlobalVelocityOrBuilder getGlobalVelocityOrBuilder() {
       if (commandCase_ == 3) {
          return (proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity) command_;
@@ -1588,7 +1596,7 @@ public final class SslSimulationRobotControl {
       if (commandCase_ == 3) {
         output.writeMessage(3, (proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity) command_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -1609,7 +1617,7 @@ public final class SslSimulationRobotControl {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, (proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity) command_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1624,25 +1632,28 @@ public final class SslSimulationRobotControl {
       }
       proto.simulation.SslSimulationRobotControl.RobotMoveCommand other = (proto.simulation.SslSimulationRobotControl.RobotMoveCommand) obj;
 
-      if (!getCommandCase().equals(other.getCommandCase())) return false;
+      boolean result = true;
+      result = result && getCommandCase().equals(
+          other.getCommandCase());
+      if (!result) return false;
       switch (commandCase_) {
         case 1:
-          if (!getWheelVelocity()
-              .equals(other.getWheelVelocity())) return false;
+          result = result && getWheelVelocity()
+              .equals(other.getWheelVelocity());
           break;
         case 2:
-          if (!getLocalVelocity()
-              .equals(other.getLocalVelocity())) return false;
+          result = result && getLocalVelocity()
+              .equals(other.getLocalVelocity());
           break;
         case 3:
-          if (!getGlobalVelocity()
-              .equals(other.getGlobalVelocity())) return false;
+          result = result && getGlobalVelocity()
+              .equals(other.getGlobalVelocity());
           break;
         case 0:
         default:
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1668,7 +1679,7 @@ public final class SslSimulationRobotControl {
         case 0:
         default:
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1789,27 +1800,22 @@ public final class SslSimulationRobotControl {
 
       // Construct using proto.simulation.SslSimulationRobotControl.RobotMoveCommand.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        if (wheelVelocityBuilder_ != null) {
-          wheelVelocityBuilder_.clear();
-        }
-        if (localVelocityBuilder_ != null) {
-          localVelocityBuilder_.clear();
-        }
-        if (globalVelocityBuilder_ != null) {
-          globalVelocityBuilder_.clear();
-        }
         commandCase_ = 0;
         command_ = null;
         return this;
@@ -1838,64 +1844,66 @@ public final class SslSimulationRobotControl {
       @java.lang.Override
       public proto.simulation.SslSimulationRobotControl.RobotMoveCommand buildPartial() {
         proto.simulation.SslSimulationRobotControl.RobotMoveCommand result = new proto.simulation.SslSimulationRobotControl.RobotMoveCommand(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        buildPartialOneofs(result);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (commandCase_ == 1) {
+          if (wheelVelocityBuilder_ == null) {
+            result.command_ = command_;
+          } else {
+            result.command_ = wheelVelocityBuilder_.build();
+          }
+        }
+        if (commandCase_ == 2) {
+          if (localVelocityBuilder_ == null) {
+            result.command_ = command_;
+          } else {
+            result.command_ = localVelocityBuilder_.build();
+          }
+        }
+        if (commandCase_ == 3) {
+          if (globalVelocityBuilder_ == null) {
+            result.command_ = command_;
+          } else {
+            result.command_ = globalVelocityBuilder_.build();
+          }
+        }
+        result.bitField0_ = to_bitField0_;
+        result.commandCase_ = commandCase_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.simulation.SslSimulationRobotControl.RobotMoveCommand result) {
-        int from_bitField0_ = bitField0_;
-      }
-
-      private void buildPartialOneofs(proto.simulation.SslSimulationRobotControl.RobotMoveCommand result) {
-        result.commandCase_ = commandCase_;
-        result.command_ = this.command_;
-        if (commandCase_ == 1 &&
-            wheelVelocityBuilder_ != null) {
-          result.command_ = wheelVelocityBuilder_.build();
-        }
-        if (commandCase_ == 2 &&
-            localVelocityBuilder_ != null) {
-          result.command_ = localVelocityBuilder_.build();
-        }
-        if (commandCase_ == 3 &&
-            globalVelocityBuilder_ != null) {
-          result.command_ = globalVelocityBuilder_.build();
-        }
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1926,7 +1934,7 @@ public final class SslSimulationRobotControl {
             break;
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1956,51 +1964,17 @@ public final class SslSimulationRobotControl {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.simulation.SslSimulationRobotControl.RobotMoveCommand parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getWheelVelocityFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                commandCase_ = 1;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getLocalVelocityFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                commandCase_ = 2;
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getGlobalVelocityFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                commandCase_ = 3;
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.simulation.SslSimulationRobotControl.RobotMoveCommand) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int commandCase_ = 0;
@@ -2027,10 +2001,8 @@ public final class SslSimulationRobotControl {
        * Move with wheel velocities
        * </pre>
        *
-       * <code>.proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
-       * @return Whether the wheelVelocity field is set.
+       * <code>optional .proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
        */
-      @java.lang.Override
       public boolean hasWheelVelocity() {
         return commandCase_ == 1;
       }
@@ -2039,10 +2011,8 @@ public final class SslSimulationRobotControl {
        * Move with wheel velocities
        * </pre>
        *
-       * <code>.proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
-       * @return The wheelVelocity.
+       * <code>optional .proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
        */
-      @java.lang.Override
       public proto.simulation.SslSimulationRobotControl.MoveWheelVelocity getWheelVelocity() {
         if (wheelVelocityBuilder_ == null) {
           if (commandCase_ == 1) {
@@ -2061,7 +2031,7 @@ public final class SslSimulationRobotControl {
        * Move with wheel velocities
        * </pre>
        *
-       * <code>.proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
+       * <code>optional .proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
        */
       public Builder setWheelVelocity(proto.simulation.SslSimulationRobotControl.MoveWheelVelocity value) {
         if (wheelVelocityBuilder_ == null) {
@@ -2081,7 +2051,7 @@ public final class SslSimulationRobotControl {
        * Move with wheel velocities
        * </pre>
        *
-       * <code>.proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
+       * <code>optional .proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
        */
       public Builder setWheelVelocity(
           proto.simulation.SslSimulationRobotControl.MoveWheelVelocity.Builder builderForValue) {
@@ -2099,7 +2069,7 @@ public final class SslSimulationRobotControl {
        * Move with wheel velocities
        * </pre>
        *
-       * <code>.proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
+       * <code>optional .proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
        */
       public Builder mergeWheelVelocity(proto.simulation.SslSimulationRobotControl.MoveWheelVelocity value) {
         if (wheelVelocityBuilder_ == null) {
@@ -2114,9 +2084,8 @@ public final class SslSimulationRobotControl {
         } else {
           if (commandCase_ == 1) {
             wheelVelocityBuilder_.mergeFrom(value);
-          } else {
-            wheelVelocityBuilder_.setMessage(value);
           }
+          wheelVelocityBuilder_.setMessage(value);
         }
         commandCase_ = 1;
         return this;
@@ -2126,7 +2095,7 @@ public final class SslSimulationRobotControl {
        * Move with wheel velocities
        * </pre>
        *
-       * <code>.proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
+       * <code>optional .proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
        */
       public Builder clearWheelVelocity() {
         if (wheelVelocityBuilder_ == null) {
@@ -2149,7 +2118,7 @@ public final class SslSimulationRobotControl {
        * Move with wheel velocities
        * </pre>
        *
-       * <code>.proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
+       * <code>optional .proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
        */
       public proto.simulation.SslSimulationRobotControl.MoveWheelVelocity.Builder getWheelVelocityBuilder() {
         return getWheelVelocityFieldBuilder().getBuilder();
@@ -2159,9 +2128,8 @@ public final class SslSimulationRobotControl {
        * Move with wheel velocities
        * </pre>
        *
-       * <code>.proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
+       * <code>optional .proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
        */
-      @java.lang.Override
       public proto.simulation.SslSimulationRobotControl.MoveWheelVelocityOrBuilder getWheelVelocityOrBuilder() {
         if ((commandCase_ == 1) && (wheelVelocityBuilder_ != null)) {
           return wheelVelocityBuilder_.getMessageOrBuilder();
@@ -2177,7 +2145,7 @@ public final class SslSimulationRobotControl {
        * Move with wheel velocities
        * </pre>
        *
-       * <code>.proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
+       * <code>optional .proto.simulation.MoveWheelVelocity wheel_velocity = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.simulation.SslSimulationRobotControl.MoveWheelVelocity, proto.simulation.SslSimulationRobotControl.MoveWheelVelocity.Builder, proto.simulation.SslSimulationRobotControl.MoveWheelVelocityOrBuilder> 
@@ -2194,7 +2162,7 @@ public final class SslSimulationRobotControl {
           command_ = null;
         }
         commandCase_ = 1;
-        onChanged();
+        onChanged();;
         return wheelVelocityBuilder_;
       }
 
@@ -2205,10 +2173,8 @@ public final class SslSimulationRobotControl {
        * Move with local velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
-       * @return Whether the localVelocity field is set.
+       * <code>optional .proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
        */
-      @java.lang.Override
       public boolean hasLocalVelocity() {
         return commandCase_ == 2;
       }
@@ -2217,10 +2183,8 @@ public final class SslSimulationRobotControl {
        * Move with local velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
-       * @return The localVelocity.
+       * <code>optional .proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
        */
-      @java.lang.Override
       public proto.simulation.SslSimulationRobotControl.MoveLocalVelocity getLocalVelocity() {
         if (localVelocityBuilder_ == null) {
           if (commandCase_ == 2) {
@@ -2239,7 +2203,7 @@ public final class SslSimulationRobotControl {
        * Move with local velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
+       * <code>optional .proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
        */
       public Builder setLocalVelocity(proto.simulation.SslSimulationRobotControl.MoveLocalVelocity value) {
         if (localVelocityBuilder_ == null) {
@@ -2259,7 +2223,7 @@ public final class SslSimulationRobotControl {
        * Move with local velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
+       * <code>optional .proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
        */
       public Builder setLocalVelocity(
           proto.simulation.SslSimulationRobotControl.MoveLocalVelocity.Builder builderForValue) {
@@ -2277,7 +2241,7 @@ public final class SslSimulationRobotControl {
        * Move with local velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
+       * <code>optional .proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
        */
       public Builder mergeLocalVelocity(proto.simulation.SslSimulationRobotControl.MoveLocalVelocity value) {
         if (localVelocityBuilder_ == null) {
@@ -2292,9 +2256,8 @@ public final class SslSimulationRobotControl {
         } else {
           if (commandCase_ == 2) {
             localVelocityBuilder_.mergeFrom(value);
-          } else {
-            localVelocityBuilder_.setMessage(value);
           }
+          localVelocityBuilder_.setMessage(value);
         }
         commandCase_ = 2;
         return this;
@@ -2304,7 +2267,7 @@ public final class SslSimulationRobotControl {
        * Move with local velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
+       * <code>optional .proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
        */
       public Builder clearLocalVelocity() {
         if (localVelocityBuilder_ == null) {
@@ -2327,7 +2290,7 @@ public final class SslSimulationRobotControl {
        * Move with local velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
+       * <code>optional .proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
        */
       public proto.simulation.SslSimulationRobotControl.MoveLocalVelocity.Builder getLocalVelocityBuilder() {
         return getLocalVelocityFieldBuilder().getBuilder();
@@ -2337,9 +2300,8 @@ public final class SslSimulationRobotControl {
        * Move with local velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
+       * <code>optional .proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
        */
-      @java.lang.Override
       public proto.simulation.SslSimulationRobotControl.MoveLocalVelocityOrBuilder getLocalVelocityOrBuilder() {
         if ((commandCase_ == 2) && (localVelocityBuilder_ != null)) {
           return localVelocityBuilder_.getMessageOrBuilder();
@@ -2355,7 +2317,7 @@ public final class SslSimulationRobotControl {
        * Move with local velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
+       * <code>optional .proto.simulation.MoveLocalVelocity local_velocity = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.simulation.SslSimulationRobotControl.MoveLocalVelocity, proto.simulation.SslSimulationRobotControl.MoveLocalVelocity.Builder, proto.simulation.SslSimulationRobotControl.MoveLocalVelocityOrBuilder> 
@@ -2372,7 +2334,7 @@ public final class SslSimulationRobotControl {
           command_ = null;
         }
         commandCase_ = 2;
-        onChanged();
+        onChanged();;
         return localVelocityBuilder_;
       }
 
@@ -2383,10 +2345,8 @@ public final class SslSimulationRobotControl {
        * Move with global velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
-       * @return Whether the globalVelocity field is set.
+       * <code>optional .proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
        */
-      @java.lang.Override
       public boolean hasGlobalVelocity() {
         return commandCase_ == 3;
       }
@@ -2395,10 +2355,8 @@ public final class SslSimulationRobotControl {
        * Move with global velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
-       * @return The globalVelocity.
+       * <code>optional .proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
        */
-      @java.lang.Override
       public proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity getGlobalVelocity() {
         if (globalVelocityBuilder_ == null) {
           if (commandCase_ == 3) {
@@ -2417,7 +2375,7 @@ public final class SslSimulationRobotControl {
        * Move with global velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
+       * <code>optional .proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
        */
       public Builder setGlobalVelocity(proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity value) {
         if (globalVelocityBuilder_ == null) {
@@ -2437,7 +2395,7 @@ public final class SslSimulationRobotControl {
        * Move with global velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
+       * <code>optional .proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
        */
       public Builder setGlobalVelocity(
           proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity.Builder builderForValue) {
@@ -2455,7 +2413,7 @@ public final class SslSimulationRobotControl {
        * Move with global velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
+       * <code>optional .proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
        */
       public Builder mergeGlobalVelocity(proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity value) {
         if (globalVelocityBuilder_ == null) {
@@ -2470,9 +2428,8 @@ public final class SslSimulationRobotControl {
         } else {
           if (commandCase_ == 3) {
             globalVelocityBuilder_.mergeFrom(value);
-          } else {
-            globalVelocityBuilder_.setMessage(value);
           }
+          globalVelocityBuilder_.setMessage(value);
         }
         commandCase_ = 3;
         return this;
@@ -2482,7 +2439,7 @@ public final class SslSimulationRobotControl {
        * Move with global velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
+       * <code>optional .proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
        */
       public Builder clearGlobalVelocity() {
         if (globalVelocityBuilder_ == null) {
@@ -2505,7 +2462,7 @@ public final class SslSimulationRobotControl {
        * Move with global velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
+       * <code>optional .proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
        */
       public proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity.Builder getGlobalVelocityBuilder() {
         return getGlobalVelocityFieldBuilder().getBuilder();
@@ -2515,9 +2472,8 @@ public final class SslSimulationRobotControl {
        * Move with global velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
+       * <code>optional .proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
        */
-      @java.lang.Override
       public proto.simulation.SslSimulationRobotControl.MoveGlobalVelocityOrBuilder getGlobalVelocityOrBuilder() {
         if ((commandCase_ == 3) && (globalVelocityBuilder_ != null)) {
           return globalVelocityBuilder_.getMessageOrBuilder();
@@ -2533,7 +2489,7 @@ public final class SslSimulationRobotControl {
        * Move with global velocity
        * </pre>
        *
-       * <code>.proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
+       * <code>optional .proto.simulation.MoveGlobalVelocity global_velocity = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity, proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity.Builder, proto.simulation.SslSimulationRobotControl.MoveGlobalVelocityOrBuilder> 
@@ -2550,7 +2506,7 @@ public final class SslSimulationRobotControl {
           command_ = null;
         }
         commandCase_ = 3;
-        onChanged();
+        onChanged();;
         return globalVelocityBuilder_;
       }
       @java.lang.Override
@@ -2586,18 +2542,7 @@ public final class SslSimulationRobotControl {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RobotMoveCommand(input, extensionRegistry);
       }
     };
 
@@ -2627,7 +2572,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float front_right = 1;</code>
-     * @return Whether the frontRight field is set.
      */
     boolean hasFrontRight();
     /**
@@ -2636,7 +2580,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float front_right = 1;</code>
-     * @return The frontRight.
      */
     float getFrontRight();
 
@@ -2646,7 +2589,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float back_right = 2;</code>
-     * @return Whether the backRight field is set.
      */
     boolean hasBackRight();
     /**
@@ -2655,7 +2597,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float back_right = 2;</code>
-     * @return The backRight.
      */
     float getBackRight();
 
@@ -2665,7 +2606,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float back_left = 3;</code>
-     * @return Whether the backLeft field is set.
      */
     boolean hasBackLeft();
     /**
@@ -2674,7 +2614,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float back_left = 3;</code>
-     * @return The backLeft.
      */
     float getBackLeft();
 
@@ -2684,7 +2623,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float front_left = 4;</code>
-     * @return Whether the frontLeft field is set.
      */
     boolean hasFrontLeft();
     /**
@@ -2693,7 +2631,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float front_left = 4;</code>
-     * @return The frontLeft.
      */
     float getFrontLeft();
   }
@@ -2704,7 +2641,7 @@ public final class SslSimulationRobotControl {
    *
    * Protobuf type {@code proto.simulation.MoveWheelVelocity}
    */
-  public static final class MoveWheelVelocity extends
+  public  static final class MoveWheelVelocity extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.simulation.MoveWheelVelocity)
       MoveWheelVelocityOrBuilder {
@@ -2714,19 +2651,74 @@ public final class SslSimulationRobotControl {
       super(builder);
     }
     private MoveWheelVelocity() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new MoveWheelVelocity();
+      frontRight_ = 0F;
+      backRight_ = 0F;
+      backLeft_ = 0F;
+      frontLeft_ = 0F;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private MoveWheelVelocity(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+              bitField0_ |= 0x00000001;
+              frontRight_ = input.readFloat();
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              backRight_ = input.readFloat();
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              backLeft_ = input.readFloat();
+              break;
+            }
+            case 37: {
+              bitField0_ |= 0x00000008;
+              frontLeft_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2743,18 +2735,16 @@ public final class SslSimulationRobotControl {
 
     private int bitField0_;
     public static final int FRONT_RIGHT_FIELD_NUMBER = 1;
-    private float frontRight_ = 0F;
+    private float frontRight_;
     /**
      * <pre>
      * Velocity [m/s] of front right wheel
      * </pre>
      *
      * <code>required float front_right = 1;</code>
-     * @return Whether the frontRight field is set.
      */
-    @java.lang.Override
     public boolean hasFrontRight() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -2762,26 +2752,22 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float front_right = 1;</code>
-     * @return The frontRight.
      */
-    @java.lang.Override
     public float getFrontRight() {
       return frontRight_;
     }
 
     public static final int BACK_RIGHT_FIELD_NUMBER = 2;
-    private float backRight_ = 0F;
+    private float backRight_;
     /**
      * <pre>
      * Velocity [m/s] of back right wheel
      * </pre>
      *
      * <code>required float back_right = 2;</code>
-     * @return Whether the backRight field is set.
      */
-    @java.lang.Override
     public boolean hasBackRight() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -2789,26 +2775,22 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float back_right = 2;</code>
-     * @return The backRight.
      */
-    @java.lang.Override
     public float getBackRight() {
       return backRight_;
     }
 
     public static final int BACK_LEFT_FIELD_NUMBER = 3;
-    private float backLeft_ = 0F;
+    private float backLeft_;
     /**
      * <pre>
      * Velocity [m/s] of back left wheel
      * </pre>
      *
      * <code>required float back_left = 3;</code>
-     * @return Whether the backLeft field is set.
      */
-    @java.lang.Override
     public boolean hasBackLeft() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -2816,26 +2798,22 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float back_left = 3;</code>
-     * @return The backLeft.
      */
-    @java.lang.Override
     public float getBackLeft() {
       return backLeft_;
     }
 
     public static final int FRONT_LEFT_FIELD_NUMBER = 4;
-    private float frontLeft_ = 0F;
+    private float frontLeft_;
     /**
      * <pre>
      * Velocity [m/s] of front left wheel
      * </pre>
      *
      * <code>required float front_left = 4;</code>
-     * @return Whether the frontLeft field is set.
      */
-    @java.lang.Override
     public boolean hasFrontLeft() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <pre>
@@ -2843,9 +2821,7 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float front_left = 4;</code>
-     * @return The frontLeft.
      */
-    @java.lang.Override
     public float getFrontLeft() {
       return frontLeft_;
     }
@@ -2880,19 +2856,19 @@ public final class SslSimulationRobotControl {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeFloat(1, frontRight_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeFloat(2, backRight_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeFloat(3, backLeft_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeFloat(4, frontLeft_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2901,23 +2877,23 @@ public final class SslSimulationRobotControl {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, frontRight_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, backRight_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, backLeft_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, frontLeft_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2932,32 +2908,37 @@ public final class SslSimulationRobotControl {
       }
       proto.simulation.SslSimulationRobotControl.MoveWheelVelocity other = (proto.simulation.SslSimulationRobotControl.MoveWheelVelocity) obj;
 
-      if (hasFrontRight() != other.hasFrontRight()) return false;
+      boolean result = true;
+      result = result && (hasFrontRight() == other.hasFrontRight());
       if (hasFrontRight()) {
-        if (java.lang.Float.floatToIntBits(getFrontRight())
-            != java.lang.Float.floatToIntBits(
-                other.getFrontRight())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getFrontRight())
+            == java.lang.Float.floatToIntBits(
+                other.getFrontRight()));
       }
-      if (hasBackRight() != other.hasBackRight()) return false;
+      result = result && (hasBackRight() == other.hasBackRight());
       if (hasBackRight()) {
-        if (java.lang.Float.floatToIntBits(getBackRight())
-            != java.lang.Float.floatToIntBits(
-                other.getBackRight())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getBackRight())
+            == java.lang.Float.floatToIntBits(
+                other.getBackRight()));
       }
-      if (hasBackLeft() != other.hasBackLeft()) return false;
+      result = result && (hasBackLeft() == other.hasBackLeft());
       if (hasBackLeft()) {
-        if (java.lang.Float.floatToIntBits(getBackLeft())
-            != java.lang.Float.floatToIntBits(
-                other.getBackLeft())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getBackLeft())
+            == java.lang.Float.floatToIntBits(
+                other.getBackLeft()));
       }
-      if (hasFrontLeft() != other.hasFrontLeft()) return false;
+      result = result && (hasFrontLeft() == other.hasFrontLeft());
       if (hasFrontLeft()) {
-        if (java.lang.Float.floatToIntBits(getFrontLeft())
-            != java.lang.Float.floatToIntBits(
-                other.getFrontLeft())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getFrontLeft())
+            == java.lang.Float.floatToIntBits(
+                other.getFrontLeft()));
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2987,7 +2968,7 @@ public final class SslSimulationRobotControl {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getFrontLeft());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3108,22 +3089,30 @@ public final class SslSimulationRobotControl {
 
       // Construct using proto.simulation.SslSimulationRobotControl.MoveWheelVelocity.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         frontRight_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000001);
         backRight_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
         backLeft_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000004);
         frontLeft_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -3150,64 +3139,60 @@ public final class SslSimulationRobotControl {
       @java.lang.Override
       public proto.simulation.SslSimulationRobotControl.MoveWheelVelocity buildPartial() {
         proto.simulation.SslSimulationRobotControl.MoveWheelVelocity result = new proto.simulation.SslSimulationRobotControl.MoveWheelVelocity(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.frontRight_ = frontRight_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.backRight_ = backRight_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.backLeft_ = backLeft_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.frontLeft_ = frontLeft_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.simulation.SslSimulationRobotControl.MoveWheelVelocity result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.frontRight_ = frontRight_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.backRight_ = backRight_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.backLeft_ = backLeft_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.frontLeft_ = frontLeft_;
-          to_bitField0_ |= 0x00000008;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3233,7 +3218,7 @@ public final class SslSimulationRobotControl {
         if (other.hasFrontLeft()) {
           setFrontLeft(other.getFrontLeft());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3260,50 +3245,17 @@ public final class SslSimulationRobotControl {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.simulation.SslSimulationRobotControl.MoveWheelVelocity parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                frontRight_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 13
-              case 21: {
-                backRight_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 21
-              case 29: {
-                backLeft_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 29
-              case 37: {
-                frontLeft_ = input.readFloat();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 37
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.simulation.SslSimulationRobotControl.MoveWheelVelocity) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -3315,11 +3267,9 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float front_right = 1;</code>
-       * @return Whether the frontRight field is set.
        */
-      @java.lang.Override
       public boolean hasFrontRight() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -3327,9 +3277,7 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float front_right = 1;</code>
-       * @return The frontRight.
        */
-      @java.lang.Override
       public float getFrontRight() {
         return frontRight_;
       }
@@ -3339,13 +3287,10 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float front_right = 1;</code>
-       * @param value The frontRight to set.
-       * @return This builder for chaining.
        */
       public Builder setFrontRight(float value) {
-        
-        frontRight_ = value;
         bitField0_ |= 0x00000001;
+        frontRight_ = value;
         onChanged();
         return this;
       }
@@ -3355,7 +3300,6 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float front_right = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearFrontRight() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -3371,11 +3315,9 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float back_right = 2;</code>
-       * @return Whether the backRight field is set.
        */
-      @java.lang.Override
       public boolean hasBackRight() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -3383,9 +3325,7 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float back_right = 2;</code>
-       * @return The backRight.
        */
-      @java.lang.Override
       public float getBackRight() {
         return backRight_;
       }
@@ -3395,13 +3335,10 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float back_right = 2;</code>
-       * @param value The backRight to set.
-       * @return This builder for chaining.
        */
       public Builder setBackRight(float value) {
-        
-        backRight_ = value;
         bitField0_ |= 0x00000002;
+        backRight_ = value;
         onChanged();
         return this;
       }
@@ -3411,7 +3348,6 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float back_right = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearBackRight() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -3427,11 +3363,9 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float back_left = 3;</code>
-       * @return Whether the backLeft field is set.
        */
-      @java.lang.Override
       public boolean hasBackLeft() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -3439,9 +3373,7 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float back_left = 3;</code>
-       * @return The backLeft.
        */
-      @java.lang.Override
       public float getBackLeft() {
         return backLeft_;
       }
@@ -3451,13 +3383,10 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float back_left = 3;</code>
-       * @param value The backLeft to set.
-       * @return This builder for chaining.
        */
       public Builder setBackLeft(float value) {
-        
-        backLeft_ = value;
         bitField0_ |= 0x00000004;
+        backLeft_ = value;
         onChanged();
         return this;
       }
@@ -3467,7 +3396,6 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float back_left = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearBackLeft() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -3483,11 +3411,9 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float front_left = 4;</code>
-       * @return Whether the frontLeft field is set.
        */
-      @java.lang.Override
       public boolean hasFrontLeft() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <pre>
@@ -3495,9 +3421,7 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float front_left = 4;</code>
-       * @return The frontLeft.
        */
-      @java.lang.Override
       public float getFrontLeft() {
         return frontLeft_;
       }
@@ -3507,13 +3431,10 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float front_left = 4;</code>
-       * @param value The frontLeft to set.
-       * @return This builder for chaining.
        */
       public Builder setFrontLeft(float value) {
-        
-        frontLeft_ = value;
         bitField0_ |= 0x00000008;
+        frontLeft_ = value;
         onChanged();
         return this;
       }
@@ -3523,7 +3444,6 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float front_left = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearFrontLeft() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -3564,18 +3484,7 @@ public final class SslSimulationRobotControl {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MoveWheelVelocity(input, extensionRegistry);
       }
     };
 
@@ -3605,7 +3514,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float forward = 1;</code>
-     * @return Whether the forward field is set.
      */
     boolean hasForward();
     /**
@@ -3614,7 +3522,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float forward = 1;</code>
-     * @return The forward.
      */
     float getForward();
 
@@ -3624,7 +3531,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float left = 2;</code>
-     * @return Whether the left field is set.
      */
     boolean hasLeft();
     /**
@@ -3633,7 +3539,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float left = 2;</code>
-     * @return The left.
      */
     float getLeft();
 
@@ -3643,7 +3548,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float angular = 3;</code>
-     * @return Whether the angular field is set.
      */
     boolean hasAngular();
     /**
@@ -3652,7 +3556,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float angular = 3;</code>
-     * @return The angular.
      */
     float getAngular();
   }
@@ -3663,7 +3566,7 @@ public final class SslSimulationRobotControl {
    *
    * Protobuf type {@code proto.simulation.MoveLocalVelocity}
    */
-  public static final class MoveLocalVelocity extends
+  public  static final class MoveLocalVelocity extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.simulation.MoveLocalVelocity)
       MoveLocalVelocityOrBuilder {
@@ -3673,19 +3576,68 @@ public final class SslSimulationRobotControl {
       super(builder);
     }
     private MoveLocalVelocity() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new MoveLocalVelocity();
+      forward_ = 0F;
+      left_ = 0F;
+      angular_ = 0F;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private MoveLocalVelocity(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+              bitField0_ |= 0x00000001;
+              forward_ = input.readFloat();
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              left_ = input.readFloat();
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              angular_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3702,18 +3654,16 @@ public final class SslSimulationRobotControl {
 
     private int bitField0_;
     public static final int FORWARD_FIELD_NUMBER = 1;
-    private float forward_ = 0F;
+    private float forward_;
     /**
      * <pre>
      * Velocity forward [m/s] (towards the dribbler)
      * </pre>
      *
      * <code>required float forward = 1;</code>
-     * @return Whether the forward field is set.
      */
-    @java.lang.Override
     public boolean hasForward() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -3721,26 +3671,22 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float forward = 1;</code>
-     * @return The forward.
      */
-    @java.lang.Override
     public float getForward() {
       return forward_;
     }
 
     public static final int LEFT_FIELD_NUMBER = 2;
-    private float left_ = 0F;
+    private float left_;
     /**
      * <pre>
      * Velocity to the left [m/s]
      * </pre>
      *
      * <code>required float left = 2;</code>
-     * @return Whether the left field is set.
      */
-    @java.lang.Override
     public boolean hasLeft() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -3748,26 +3694,22 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float left = 2;</code>
-     * @return The left.
      */
-    @java.lang.Override
     public float getLeft() {
       return left_;
     }
 
     public static final int ANGULAR_FIELD_NUMBER = 3;
-    private float angular_ = 0F;
+    private float angular_;
     /**
      * <pre>
      * Angular velocity counter-clockwise [rad/s]
      * </pre>
      *
      * <code>required float angular = 3;</code>
-     * @return Whether the angular field is set.
      */
-    @java.lang.Override
     public boolean hasAngular() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -3775,9 +3717,7 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float angular = 3;</code>
-     * @return The angular.
      */
-    @java.lang.Override
     public float getAngular() {
       return angular_;
     }
@@ -3808,16 +3748,16 @@ public final class SslSimulationRobotControl {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeFloat(1, forward_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeFloat(2, left_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeFloat(3, angular_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -3826,19 +3766,19 @@ public final class SslSimulationRobotControl {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, forward_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, left_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, angular_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3853,26 +3793,30 @@ public final class SslSimulationRobotControl {
       }
       proto.simulation.SslSimulationRobotControl.MoveLocalVelocity other = (proto.simulation.SslSimulationRobotControl.MoveLocalVelocity) obj;
 
-      if (hasForward() != other.hasForward()) return false;
+      boolean result = true;
+      result = result && (hasForward() == other.hasForward());
       if (hasForward()) {
-        if (java.lang.Float.floatToIntBits(getForward())
-            != java.lang.Float.floatToIntBits(
-                other.getForward())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getForward())
+            == java.lang.Float.floatToIntBits(
+                other.getForward()));
       }
-      if (hasLeft() != other.hasLeft()) return false;
+      result = result && (hasLeft() == other.hasLeft());
       if (hasLeft()) {
-        if (java.lang.Float.floatToIntBits(getLeft())
-            != java.lang.Float.floatToIntBits(
-                other.getLeft())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getLeft())
+            == java.lang.Float.floatToIntBits(
+                other.getLeft()));
       }
-      if (hasAngular() != other.hasAngular()) return false;
+      result = result && (hasAngular() == other.hasAngular());
       if (hasAngular()) {
-        if (java.lang.Float.floatToIntBits(getAngular())
-            != java.lang.Float.floatToIntBits(
-                other.getAngular())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getAngular())
+            == java.lang.Float.floatToIntBits(
+                other.getAngular()));
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -3897,7 +3841,7 @@ public final class SslSimulationRobotControl {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getAngular());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4018,21 +3962,28 @@ public final class SslSimulationRobotControl {
 
       // Construct using proto.simulation.SslSimulationRobotControl.MoveLocalVelocity.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         forward_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000001);
         left_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
         angular_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -4059,60 +4010,56 @@ public final class SslSimulationRobotControl {
       @java.lang.Override
       public proto.simulation.SslSimulationRobotControl.MoveLocalVelocity buildPartial() {
         proto.simulation.SslSimulationRobotControl.MoveLocalVelocity result = new proto.simulation.SslSimulationRobotControl.MoveLocalVelocity(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.forward_ = forward_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.left_ = left_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.angular_ = angular_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.simulation.SslSimulationRobotControl.MoveLocalVelocity result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.forward_ = forward_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.left_ = left_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.angular_ = angular_;
-          to_bitField0_ |= 0x00000004;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -4135,7 +4082,7 @@ public final class SslSimulationRobotControl {
         if (other.hasAngular()) {
           setAngular(other.getAngular());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -4159,45 +4106,17 @@ public final class SslSimulationRobotControl {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.simulation.SslSimulationRobotControl.MoveLocalVelocity parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                forward_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 13
-              case 21: {
-                left_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 21
-              case 29: {
-                angular_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 29
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.simulation.SslSimulationRobotControl.MoveLocalVelocity) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -4209,11 +4128,9 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float forward = 1;</code>
-       * @return Whether the forward field is set.
        */
-      @java.lang.Override
       public boolean hasForward() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -4221,9 +4138,7 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float forward = 1;</code>
-       * @return The forward.
        */
-      @java.lang.Override
       public float getForward() {
         return forward_;
       }
@@ -4233,13 +4148,10 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float forward = 1;</code>
-       * @param value The forward to set.
-       * @return This builder for chaining.
        */
       public Builder setForward(float value) {
-        
-        forward_ = value;
         bitField0_ |= 0x00000001;
+        forward_ = value;
         onChanged();
         return this;
       }
@@ -4249,7 +4161,6 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float forward = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearForward() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -4265,11 +4176,9 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float left = 2;</code>
-       * @return Whether the left field is set.
        */
-      @java.lang.Override
       public boolean hasLeft() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -4277,9 +4186,7 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float left = 2;</code>
-       * @return The left.
        */
-      @java.lang.Override
       public float getLeft() {
         return left_;
       }
@@ -4289,13 +4196,10 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float left = 2;</code>
-       * @param value The left to set.
-       * @return This builder for chaining.
        */
       public Builder setLeft(float value) {
-        
-        left_ = value;
         bitField0_ |= 0x00000002;
+        left_ = value;
         onChanged();
         return this;
       }
@@ -4305,7 +4209,6 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float left = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearLeft() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -4321,11 +4224,9 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float angular = 3;</code>
-       * @return Whether the angular field is set.
        */
-      @java.lang.Override
       public boolean hasAngular() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -4333,9 +4234,7 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float angular = 3;</code>
-       * @return The angular.
        */
-      @java.lang.Override
       public float getAngular() {
         return angular_;
       }
@@ -4345,13 +4244,10 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float angular = 3;</code>
-       * @param value The angular to set.
-       * @return This builder for chaining.
        */
       public Builder setAngular(float value) {
-        
-        angular_ = value;
         bitField0_ |= 0x00000004;
+        angular_ = value;
         onChanged();
         return this;
       }
@@ -4361,7 +4257,6 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float angular = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearAngular() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -4402,18 +4297,7 @@ public final class SslSimulationRobotControl {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MoveLocalVelocity(input, extensionRegistry);
       }
     };
 
@@ -4443,7 +4327,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float x = 1;</code>
-     * @return Whether the x field is set.
      */
     boolean hasX();
     /**
@@ -4452,7 +4335,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float x = 1;</code>
-     * @return The x.
      */
     float getX();
 
@@ -4462,7 +4344,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float y = 2;</code>
-     * @return Whether the y field is set.
      */
     boolean hasY();
     /**
@@ -4471,7 +4352,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float y = 2;</code>
-     * @return The y.
      */
     float getY();
 
@@ -4481,7 +4361,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float angular = 3;</code>
-     * @return Whether the angular field is set.
      */
     boolean hasAngular();
     /**
@@ -4490,7 +4369,6 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float angular = 3;</code>
-     * @return The angular.
      */
     float getAngular();
   }
@@ -4501,7 +4379,7 @@ public final class SslSimulationRobotControl {
    *
    * Protobuf type {@code proto.simulation.MoveGlobalVelocity}
    */
-  public static final class MoveGlobalVelocity extends
+  public  static final class MoveGlobalVelocity extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.simulation.MoveGlobalVelocity)
       MoveGlobalVelocityOrBuilder {
@@ -4511,19 +4389,68 @@ public final class SslSimulationRobotControl {
       super(builder);
     }
     private MoveGlobalVelocity() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new MoveGlobalVelocity();
+      x_ = 0F;
+      y_ = 0F;
+      angular_ = 0F;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private MoveGlobalVelocity(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+              bitField0_ |= 0x00000001;
+              x_ = input.readFloat();
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              y_ = input.readFloat();
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              angular_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -4540,18 +4467,16 @@ public final class SslSimulationRobotControl {
 
     private int bitField0_;
     public static final int X_FIELD_NUMBER = 1;
-    private float x_ = 0F;
+    private float x_;
     /**
      * <pre>
      * Velocity on x-axis of the field [m/s]
      * </pre>
      *
      * <code>required float x = 1;</code>
-     * @return Whether the x field is set.
      */
-    @java.lang.Override
     public boolean hasX() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -4559,26 +4484,22 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float x = 1;</code>
-     * @return The x.
      */
-    @java.lang.Override
     public float getX() {
       return x_;
     }
 
     public static final int Y_FIELD_NUMBER = 2;
-    private float y_ = 0F;
+    private float y_;
     /**
      * <pre>
      * Velocity on y-axis of the field [m/s]
      * </pre>
      *
      * <code>required float y = 2;</code>
-     * @return Whether the y field is set.
      */
-    @java.lang.Override
     public boolean hasY() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -4586,26 +4507,22 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float y = 2;</code>
-     * @return The y.
      */
-    @java.lang.Override
     public float getY() {
       return y_;
     }
 
     public static final int ANGULAR_FIELD_NUMBER = 3;
-    private float angular_ = 0F;
+    private float angular_;
     /**
      * <pre>
      * Angular velocity counter-clockwise [rad/s]
      * </pre>
      *
      * <code>required float angular = 3;</code>
-     * @return Whether the angular field is set.
      */
-    @java.lang.Override
     public boolean hasAngular() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -4613,9 +4530,7 @@ public final class SslSimulationRobotControl {
      * </pre>
      *
      * <code>required float angular = 3;</code>
-     * @return The angular.
      */
-    @java.lang.Override
     public float getAngular() {
       return angular_;
     }
@@ -4646,16 +4561,16 @@ public final class SslSimulationRobotControl {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeFloat(1, x_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeFloat(2, y_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeFloat(3, angular_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -4664,19 +4579,19 @@ public final class SslSimulationRobotControl {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, x_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, y_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, angular_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4691,26 +4606,30 @@ public final class SslSimulationRobotControl {
       }
       proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity other = (proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity) obj;
 
-      if (hasX() != other.hasX()) return false;
+      boolean result = true;
+      result = result && (hasX() == other.hasX());
       if (hasX()) {
-        if (java.lang.Float.floatToIntBits(getX())
-            != java.lang.Float.floatToIntBits(
-                other.getX())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getX())
+            == java.lang.Float.floatToIntBits(
+                other.getX()));
       }
-      if (hasY() != other.hasY()) return false;
+      result = result && (hasY() == other.hasY());
       if (hasY()) {
-        if (java.lang.Float.floatToIntBits(getY())
-            != java.lang.Float.floatToIntBits(
-                other.getY())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getY())
+            == java.lang.Float.floatToIntBits(
+                other.getY()));
       }
-      if (hasAngular() != other.hasAngular()) return false;
+      result = result && (hasAngular() == other.hasAngular());
       if (hasAngular()) {
-        if (java.lang.Float.floatToIntBits(getAngular())
-            != java.lang.Float.floatToIntBits(
-                other.getAngular())) return false;
+        result = result && (
+            java.lang.Float.floatToIntBits(getAngular())
+            == java.lang.Float.floatToIntBits(
+                other.getAngular()));
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -4735,7 +4654,7 @@ public final class SslSimulationRobotControl {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getAngular());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4856,21 +4775,28 @@ public final class SslSimulationRobotControl {
 
       // Construct using proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         x_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000001);
         y_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
         angular_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -4897,60 +4823,56 @@ public final class SslSimulationRobotControl {
       @java.lang.Override
       public proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity buildPartial() {
         proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity result = new proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.x_ = x_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.y_ = y_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.angular_ = angular_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.x_ = x_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.y_ = y_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.angular_ = angular_;
-          to_bitField0_ |= 0x00000004;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -4973,7 +4895,7 @@ public final class SslSimulationRobotControl {
         if (other.hasAngular()) {
           setAngular(other.getAngular());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -4997,45 +4919,17 @@ public final class SslSimulationRobotControl {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13: {
-                x_ = input.readFloat();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 13
-              case 21: {
-                y_ = input.readFloat();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 21
-              case 29: {
-                angular_ = input.readFloat();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 29
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.simulation.SslSimulationRobotControl.MoveGlobalVelocity) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -5047,11 +4941,9 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float x = 1;</code>
-       * @return Whether the x field is set.
        */
-      @java.lang.Override
       public boolean hasX() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -5059,9 +4951,7 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float x = 1;</code>
-       * @return The x.
        */
-      @java.lang.Override
       public float getX() {
         return x_;
       }
@@ -5071,13 +4961,10 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float x = 1;</code>
-       * @param value The x to set.
-       * @return This builder for chaining.
        */
       public Builder setX(float value) {
-        
-        x_ = value;
         bitField0_ |= 0x00000001;
+        x_ = value;
         onChanged();
         return this;
       }
@@ -5087,7 +4974,6 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float x = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearX() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -5103,11 +4989,9 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float y = 2;</code>
-       * @return Whether the y field is set.
        */
-      @java.lang.Override
       public boolean hasY() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -5115,9 +4999,7 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float y = 2;</code>
-       * @return The y.
        */
-      @java.lang.Override
       public float getY() {
         return y_;
       }
@@ -5127,13 +5009,10 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float y = 2;</code>
-       * @param value The y to set.
-       * @return This builder for chaining.
        */
       public Builder setY(float value) {
-        
-        y_ = value;
         bitField0_ |= 0x00000002;
+        y_ = value;
         onChanged();
         return this;
       }
@@ -5143,7 +5022,6 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float y = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearY() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -5159,11 +5037,9 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float angular = 3;</code>
-       * @return Whether the angular field is set.
        */
-      @java.lang.Override
       public boolean hasAngular() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -5171,9 +5047,7 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float angular = 3;</code>
-       * @return The angular.
        */
-      @java.lang.Override
       public float getAngular() {
         return angular_;
       }
@@ -5183,13 +5057,10 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float angular = 3;</code>
-       * @param value The angular to set.
-       * @return This builder for chaining.
        */
       public Builder setAngular(float value) {
-        
-        angular_ = value;
         bitField0_ |= 0x00000004;
+        angular_ = value;
         onChanged();
         return this;
       }
@@ -5199,7 +5070,6 @@ public final class SslSimulationRobotControl {
        * </pre>
        *
        * <code>required float angular = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearAngular() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -5240,18 +5110,7 @@ public final class SslSimulationRobotControl {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new MoveGlobalVelocity(input, extensionRegistry);
       }
     };
 
@@ -5326,7 +5185,7 @@ public final class SslSimulationRobotControl {
    *
    * Protobuf type {@code proto.simulation.RobotControl}
    */
-  public static final class RobotControl extends
+  public  static final class RobotControl extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.simulation.RobotControl)
       RobotControlOrBuilder {
@@ -5340,16 +5199,59 @@ public final class SslSimulationRobotControl {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new RobotControl();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private RobotControl(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                robotCommands_ = new java.util.ArrayList<proto.simulation.SslSimulationRobotControl.RobotCommand>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              robotCommands_.add(
+                  input.readMessage(proto.simulation.SslSimulationRobotControl.RobotCommand.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          robotCommands_ = java.util.Collections.unmodifiableList(robotCommands_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -5365,7 +5267,6 @@ public final class SslSimulationRobotControl {
     }
 
     public static final int ROBOT_COMMANDS_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<proto.simulation.SslSimulationRobotControl.RobotCommand> robotCommands_;
     /**
      * <pre>
@@ -5374,7 +5275,6 @@ public final class SslSimulationRobotControl {
      *
      * <code>repeated .proto.simulation.RobotCommand robot_commands = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<proto.simulation.SslSimulationRobotControl.RobotCommand> getRobotCommandsList() {
       return robotCommands_;
     }
@@ -5385,7 +5285,6 @@ public final class SslSimulationRobotControl {
      *
      * <code>repeated .proto.simulation.RobotCommand robot_commands = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends proto.simulation.SslSimulationRobotControl.RobotCommandOrBuilder> 
         getRobotCommandsOrBuilderList() {
       return robotCommands_;
@@ -5397,7 +5296,6 @@ public final class SslSimulationRobotControl {
      *
      * <code>repeated .proto.simulation.RobotCommand robot_commands = 1;</code>
      */
-    @java.lang.Override
     public int getRobotCommandsCount() {
       return robotCommands_.size();
     }
@@ -5408,7 +5306,6 @@ public final class SslSimulationRobotControl {
      *
      * <code>repeated .proto.simulation.RobotCommand robot_commands = 1;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslSimulationRobotControl.RobotCommand getRobotCommands(int index) {
       return robotCommands_.get(index);
     }
@@ -5419,7 +5316,6 @@ public final class SslSimulationRobotControl {
      *
      * <code>repeated .proto.simulation.RobotCommand robot_commands = 1;</code>
      */
-    @java.lang.Override
     public proto.simulation.SslSimulationRobotControl.RobotCommandOrBuilder getRobotCommandsOrBuilder(
         int index) {
       return robotCommands_.get(index);
@@ -5448,7 +5344,7 @@ public final class SslSimulationRobotControl {
       for (int i = 0; i < robotCommands_.size(); i++) {
         output.writeMessage(1, robotCommands_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -5461,7 +5357,7 @@ public final class SslSimulationRobotControl {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, robotCommands_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5476,10 +5372,11 @@ public final class SslSimulationRobotControl {
       }
       proto.simulation.SslSimulationRobotControl.RobotControl other = (proto.simulation.SslSimulationRobotControl.RobotControl) obj;
 
-      if (!getRobotCommandsList()
-          .equals(other.getRobotCommandsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      boolean result = true;
+      result = result && getRobotCommandsList()
+          .equals(other.getRobotCommandsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -5493,7 +5390,7 @@ public final class SslSimulationRobotControl {
         hash = (37 * hash) + ROBOT_COMMANDS_FIELD_NUMBER;
         hash = (53 * hash) + getRobotCommandsList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5614,25 +5511,29 @@ public final class SslSimulationRobotControl {
 
       // Construct using proto.simulation.SslSimulationRobotControl.RobotControl.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRobotCommandsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (robotCommandsBuilder_ == null) {
           robotCommands_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          robotCommands_ = null;
           robotCommandsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -5659,15 +5560,9 @@ public final class SslSimulationRobotControl {
       @java.lang.Override
       public proto.simulation.SslSimulationRobotControl.RobotControl buildPartial() {
         proto.simulation.SslSimulationRobotControl.RobotControl result = new proto.simulation.SslSimulationRobotControl.RobotControl(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(proto.simulation.SslSimulationRobotControl.RobotControl result) {
+        int from_bitField0_ = bitField0_;
         if (robotCommandsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
             robotCommands_ = java.util.Collections.unmodifiableList(robotCommands_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -5675,43 +5570,41 @@ public final class SslSimulationRobotControl {
         } else {
           result.robotCommands_ = robotCommandsBuilder_.build();
         }
-      }
-
-      private void buildPartial0(proto.simulation.SslSimulationRobotControl.RobotControl result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -5751,7 +5644,7 @@ public final class SslSimulationRobotControl {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -5771,43 +5664,17 @@ public final class SslSimulationRobotControl {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.simulation.SslSimulationRobotControl.RobotControl parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                proto.simulation.SslSimulationRobotControl.RobotCommand m =
-                    input.readMessage(
-                        proto.simulation.SslSimulationRobotControl.RobotCommand.PARSER,
-                        extensionRegistry);
-                if (robotCommandsBuilder_ == null) {
-                  ensureRobotCommandsIsMutable();
-                  robotCommands_.add(m);
-                } else {
-                  robotCommandsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.simulation.SslSimulationRobotControl.RobotControl) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -5815,7 +5682,7 @@ public final class SslSimulationRobotControl {
       private java.util.List<proto.simulation.SslSimulationRobotControl.RobotCommand> robotCommands_ =
         java.util.Collections.emptyList();
       private void ensureRobotCommandsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           robotCommands_ = new java.util.ArrayList<proto.simulation.SslSimulationRobotControl.RobotCommand>(robotCommands_);
           bitField0_ |= 0x00000001;
          }
@@ -6116,7 +5983,7 @@ public final class SslSimulationRobotControl {
           robotCommandsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               proto.simulation.SslSimulationRobotControl.RobotCommand, proto.simulation.SslSimulationRobotControl.RobotCommand.Builder, proto.simulation.SslSimulationRobotControl.RobotCommandOrBuilder>(
                   robotCommands_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
                   isClean());
           robotCommands_ = null;
@@ -6156,18 +6023,7 @@ public final class SslSimulationRobotControl {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new RobotControl(input, extensionRegistry);
       }
     };
 
@@ -6247,10 +6103,18 @@ public final class SslSimulationRobotControl {
       "n.RobotCommandB8Z6github.com/RoboCup-SSL" +
       "/ssl-simulation-protocol/pkg/sim"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_proto_simulation_RobotCommand_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_simulation_RobotCommand_fieldAccessorTable = new

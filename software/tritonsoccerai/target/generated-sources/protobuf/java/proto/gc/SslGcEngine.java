@@ -57,11 +57,10 @@ public final class SslGcEngine {
      *
      * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
      */
-    /* nullable */
-proto.gc.SslGcEngine.GcStateTeam getTeamStateOrDefault(
+
+    proto.gc.SslGcEngine.GcStateTeam getTeamStateOrDefault(
         java.lang.String key,
-        /* nullable */
-proto.gc.SslGcEngine.GcStateTeam defaultValue);
+        proto.gc.SslGcEngine.GcStateTeam defaultValue);
     /**
      * <pre>
      * the state of each team
@@ -69,6 +68,7 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue);
      *
      * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
      */
+
     proto.gc.SslGcEngine.GcStateTeam getTeamStateOrThrow(
         java.lang.String key);
 
@@ -111,11 +111,10 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue);
      *
      * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
      */
-    /* nullable */
-proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrDefault(
+
+    proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrDefault(
         java.lang.String key,
-        /* nullable */
-proto.gc.SslGcEngine.GcStateAutoRef defaultValue);
+        proto.gc.SslGcEngine.GcStateAutoRef defaultValue);
     /**
      * <pre>
      * the states of the auto referees
@@ -123,6 +122,7 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue);
      *
      * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
      */
+
     proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrThrow(
         java.lang.String key);
 
@@ -165,11 +165,10 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue);
      *
      * <code>map&lt;string, string&gt; trackers = 3;</code>
      */
-    /* nullable */
-java.lang.String getTrackersOrDefault(
+
+    java.lang.String getTrackersOrDefault(
         java.lang.String key,
-        /* nullable */
-java.lang.String defaultValue);
+        java.lang.String defaultValue);
     /**
      * <pre>
      * the attached trackers (uuid -&gt; source_name)
@@ -177,6 +176,7 @@ java.lang.String defaultValue);
      *
      * <code>map&lt;string, string&gt; trackers = 3;</code>
      */
+
     java.lang.String getTrackersOrThrow(
         java.lang.String key);
 
@@ -275,7 +275,7 @@ java.lang.String defaultValue);
    *
    * Protobuf type {@code proto.gc.GcState}
    */
-  public static final class GcState extends
+  public  static final class GcState extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.GcState)
       GcStateOrBuilder {
@@ -290,16 +290,110 @@ java.lang.String defaultValue);
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new GcState();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private GcState(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                teamState_ = com.google.protobuf.MapField.newMapField(
+                    TeamStateDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, proto.gc.SslGcEngine.GcStateTeam>
+              teamState__ = input.readMessage(
+                  TeamStateDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              teamState_.getMutableMap().put(
+                  teamState__.getKey(), teamState__.getValue());
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                autoRefState_ = com.google.protobuf.MapField.newMapField(
+                    AutoRefStateDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef>
+              autoRefState__ = input.readMessage(
+                  AutoRefStateDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              autoRefState_.getMutableMap().put(
+                  autoRefState__.getKey(), autoRefState__.getValue());
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                trackers_ = com.google.protobuf.MapField.newMapField(
+                    TrackersDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              trackers__ = input.readMessage(
+                  TrackersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              trackers_.getMutableMap().put(
+                  trackers__.getKey(), trackers__.getValue());
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                continueActions_ = new java.util.ArrayList<proto.gc.SslGcEngine.ContinueAction>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              continueActions_.add(
+                  input.readMessage(proto.gc.SslGcEngine.ContinueAction.PARSER, extensionRegistry));
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                continueHints_ = new java.util.ArrayList<proto.gc.SslGcEngine.ContinueHint>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              continueHints_.add(
+                  input.readMessage(proto.gc.SslGcEngine.ContinueHint.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          continueActions_ = java.util.Collections.unmodifiableList(continueActions_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          continueHints_ = java.util.Collections.unmodifiableList(continueHints_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -342,7 +436,6 @@ java.lang.String defaultValue);
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   proto.gc.SslGcEngine.GcStateTeam.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.String, proto.gc.SslGcEngine.GcStateTeam> teamState_;
     private com.google.protobuf.MapField<java.lang.String, proto.gc.SslGcEngine.GcStateTeam>
@@ -353,6 +446,7 @@ java.lang.String defaultValue);
       }
       return teamState_;
     }
+
     public int getTeamStateCount() {
       return internalGetTeamState().getMap().size();
     }
@@ -363,16 +457,15 @@ java.lang.String defaultValue);
      *
      * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
      */
-    @java.lang.Override
+
     public boolean containsTeamState(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       return internalGetTeamState().getMap().containsKey(key);
     }
     /**
      * Use {@link #getTeamStateMap()} instead.
      */
-    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam> getTeamState() {
       return getTeamStateMap();
@@ -384,7 +477,7 @@ java.lang.String defaultValue);
      *
      * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
      */
-    @java.lang.Override
+
     public java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam> getTeamStateMap() {
       return internalGetTeamState().getMap();
     }
@@ -395,13 +488,11 @@ java.lang.String defaultValue);
      *
      * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
      */
-    @java.lang.Override
-    public /* nullable */
-proto.gc.SslGcEngine.GcStateTeam getTeamStateOrDefault(
+
+    public proto.gc.SslGcEngine.GcStateTeam getTeamStateOrDefault(
         java.lang.String key,
-        /* nullable */
-proto.gc.SslGcEngine.GcStateTeam defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
+        proto.gc.SslGcEngine.GcStateTeam defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam> map =
           internalGetTeamState().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -413,10 +504,10 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue) {
      *
      * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
      */
-    @java.lang.Override
+
     public proto.gc.SslGcEngine.GcStateTeam getTeamStateOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam> map =
           internalGetTeamState().getMap();
       if (!map.containsKey(key)) {
@@ -437,7 +528,6 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue) {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   proto.gc.SslGcEngine.GcStateAutoRef.getDefaultInstance());
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> autoRefState_;
     private com.google.protobuf.MapField<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef>
@@ -448,6 +538,7 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue) {
       }
       return autoRefState_;
     }
+
     public int getAutoRefStateCount() {
       return internalGetAutoRefState().getMap().size();
     }
@@ -458,16 +549,15 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue) {
      *
      * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
      */
-    @java.lang.Override
+
     public boolean containsAutoRefState(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       return internalGetAutoRefState().getMap().containsKey(key);
     }
     /**
      * Use {@link #getAutoRefStateMap()} instead.
      */
-    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> getAutoRefState() {
       return getAutoRefStateMap();
@@ -479,7 +569,7 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue) {
      *
      * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
      */
-    @java.lang.Override
+
     public java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> getAutoRefStateMap() {
       return internalGetAutoRefState().getMap();
     }
@@ -490,13 +580,11 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue) {
      *
      * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
      */
-    @java.lang.Override
-    public /* nullable */
-proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrDefault(
+
+    public proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrDefault(
         java.lang.String key,
-        /* nullable */
-proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
+        proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> map =
           internalGetAutoRefState().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -508,10 +596,10 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
      *
      * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
      */
-    @java.lang.Override
+
     public proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> map =
           internalGetAutoRefState().getMap();
       if (!map.containsKey(key)) {
@@ -532,7 +620,6 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "");
     }
-    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.String, java.lang.String> trackers_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -543,6 +630,7 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
       }
       return trackers_;
     }
+
     public int getTrackersCount() {
       return internalGetTrackers().getMap().size();
     }
@@ -553,16 +641,15 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
      *
      * <code>map&lt;string, string&gt; trackers = 3;</code>
      */
-    @java.lang.Override
+
     public boolean containsTrackers(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       return internalGetTrackers().getMap().containsKey(key);
     }
     /**
      * Use {@link #getTrackersMap()} instead.
      */
-    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getTrackers() {
       return getTrackersMap();
@@ -574,7 +661,7 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
      *
      * <code>map&lt;string, string&gt; trackers = 3;</code>
      */
-    @java.lang.Override
+
     public java.util.Map<java.lang.String, java.lang.String> getTrackersMap() {
       return internalGetTrackers().getMap();
     }
@@ -585,13 +672,11 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
      *
      * <code>map&lt;string, string&gt; trackers = 3;</code>
      */
-    @java.lang.Override
-    public /* nullable */
-java.lang.String getTrackersOrDefault(
+
+    public java.lang.String getTrackersOrDefault(
         java.lang.String key,
-        /* nullable */
-java.lang.String defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetTrackers().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -603,10 +688,10 @@ java.lang.String defaultValue) {
      *
      * <code>map&lt;string, string&gt; trackers = 3;</code>
      */
-    @java.lang.Override
+
     public java.lang.String getTrackersOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetTrackers().getMap();
       if (!map.containsKey(key)) {
@@ -616,7 +701,6 @@ java.lang.String defaultValue) {
     }
 
     public static final int CONTINUE_ACTIONS_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
     private java.util.List<proto.gc.SslGcEngine.ContinueAction> continueActions_;
     /**
      * <pre>
@@ -625,7 +709,6 @@ java.lang.String defaultValue) {
      *
      * <code>repeated .proto.gc.ContinueAction continue_actions = 4;</code>
      */
-    @java.lang.Override
     public java.util.List<proto.gc.SslGcEngine.ContinueAction> getContinueActionsList() {
       return continueActions_;
     }
@@ -636,7 +719,6 @@ java.lang.String defaultValue) {
      *
      * <code>repeated .proto.gc.ContinueAction continue_actions = 4;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends proto.gc.SslGcEngine.ContinueActionOrBuilder> 
         getContinueActionsOrBuilderList() {
       return continueActions_;
@@ -648,7 +730,6 @@ java.lang.String defaultValue) {
      *
      * <code>repeated .proto.gc.ContinueAction continue_actions = 4;</code>
      */
-    @java.lang.Override
     public int getContinueActionsCount() {
       return continueActions_.size();
     }
@@ -659,7 +740,6 @@ java.lang.String defaultValue) {
      *
      * <code>repeated .proto.gc.ContinueAction continue_actions = 4;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcEngine.ContinueAction getContinueActions(int index) {
       return continueActions_.get(index);
     }
@@ -670,14 +750,12 @@ java.lang.String defaultValue) {
      *
      * <code>repeated .proto.gc.ContinueAction continue_actions = 4;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcEngine.ContinueActionOrBuilder getContinueActionsOrBuilder(
         int index) {
       return continueActions_.get(index);
     }
 
     public static final int CONTINUE_HINTS_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
     private java.util.List<proto.gc.SslGcEngine.ContinueHint> continueHints_;
     /**
      * <pre>
@@ -686,7 +764,6 @@ java.lang.String defaultValue) {
      *
      * <code>repeated .proto.gc.ContinueHint continue_hints = 5;</code>
      */
-    @java.lang.Override
     public java.util.List<proto.gc.SslGcEngine.ContinueHint> getContinueHintsList() {
       return continueHints_;
     }
@@ -697,7 +774,6 @@ java.lang.String defaultValue) {
      *
      * <code>repeated .proto.gc.ContinueHint continue_hints = 5;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends proto.gc.SslGcEngine.ContinueHintOrBuilder> 
         getContinueHintsOrBuilderList() {
       return continueHints_;
@@ -709,7 +785,6 @@ java.lang.String defaultValue) {
      *
      * <code>repeated .proto.gc.ContinueHint continue_hints = 5;</code>
      */
-    @java.lang.Override
     public int getContinueHintsCount() {
       return continueHints_.size();
     }
@@ -720,7 +795,6 @@ java.lang.String defaultValue) {
      *
      * <code>repeated .proto.gc.ContinueHint continue_hints = 5;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcEngine.ContinueHint getContinueHints(int index) {
       return continueHints_.get(index);
     }
@@ -731,7 +805,6 @@ java.lang.String defaultValue) {
      *
      * <code>repeated .proto.gc.ContinueHint continue_hints = 5;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcEngine.ContinueHintOrBuilder getContinueHintsOrBuilder(
         int index) {
       return continueHints_.get(index);
@@ -787,7 +860,7 @@ java.lang.String defaultValue) {
       for (int i = 0; i < continueHints_.size(); i++) {
         output.writeMessage(5, continueHints_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -834,7 +907,7 @@ java.lang.String defaultValue) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, continueHints_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -849,18 +922,19 @@ java.lang.String defaultValue) {
       }
       proto.gc.SslGcEngine.GcState other = (proto.gc.SslGcEngine.GcState) obj;
 
-      if (!internalGetTeamState().equals(
-          other.internalGetTeamState())) return false;
-      if (!internalGetAutoRefState().equals(
-          other.internalGetAutoRefState())) return false;
-      if (!internalGetTrackers().equals(
-          other.internalGetTrackers())) return false;
-      if (!getContinueActionsList()
-          .equals(other.getContinueActionsList())) return false;
-      if (!getContinueHintsList()
-          .equals(other.getContinueHintsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      boolean result = true;
+      result = result && internalGetTeamState().equals(
+          other.internalGetTeamState());
+      result = result && internalGetAutoRefState().equals(
+          other.internalGetAutoRefState());
+      result = result && internalGetTrackers().equals(
+          other.internalGetTrackers());
+      result = result && getContinueActionsList()
+          .equals(other.getContinueActionsList());
+      result = result && getContinueHintsList()
+          .equals(other.getContinueHintsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -890,7 +964,7 @@ java.lang.String defaultValue) {
         hash = (37 * hash) + CONTINUE_HINTS_FIELD_NUMBER;
         hash = (53 * hash) + getContinueHintsList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1041,35 +1115,39 @@ java.lang.String defaultValue) {
 
       // Construct using proto.gc.SslGcEngine.GcState.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getContinueActionsFieldBuilder();
+          getContinueHintsFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         internalGetMutableTeamState().clear();
         internalGetMutableAutoRefState().clear();
         internalGetMutableTrackers().clear();
         if (continueActionsBuilder_ == null) {
           continueActions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          continueActions_ = null;
           continueActionsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         if (continueHintsBuilder_ == null) {
           continueHints_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
-          continueHints_ = null;
           continueHintsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1096,15 +1174,15 @@ java.lang.String defaultValue) {
       @java.lang.Override
       public proto.gc.SslGcEngine.GcState buildPartial() {
         proto.gc.SslGcEngine.GcState result = new proto.gc.SslGcEngine.GcState(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(proto.gc.SslGcEngine.GcState result) {
+        int from_bitField0_ = bitField0_;
+        result.teamState_ = internalGetTeamState();
+        result.teamState_.makeImmutable();
+        result.autoRefState_ = internalGetAutoRefState();
+        result.autoRefState_.makeImmutable();
+        result.trackers_ = internalGetTrackers();
+        result.trackers_.makeImmutable();
         if (continueActionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
             continueActions_ = java.util.Collections.unmodifiableList(continueActions_);
             bitField0_ = (bitField0_ & ~0x00000008);
           }
@@ -1113,7 +1191,7 @@ java.lang.String defaultValue) {
           result.continueActions_ = continueActionsBuilder_.build();
         }
         if (continueHintsBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
             continueHints_ = java.util.Collections.unmodifiableList(continueHints_);
             bitField0_ = (bitField0_ & ~0x00000010);
           }
@@ -1121,55 +1199,41 @@ java.lang.String defaultValue) {
         } else {
           result.continueHints_ = continueHintsBuilder_.build();
         }
-      }
-
-      private void buildPartial0(proto.gc.SslGcEngine.GcState result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.teamState_ = internalGetTeamState();
-          result.teamState_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.autoRefState_ = internalGetAutoRefState();
-          result.autoRefState_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.trackers_ = internalGetTrackers();
-          result.trackers_.makeImmutable();
-        }
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1185,13 +1249,10 @@ java.lang.String defaultValue) {
         if (other == proto.gc.SslGcEngine.GcState.getDefaultInstance()) return this;
         internalGetMutableTeamState().mergeFrom(
             other.internalGetTeamState());
-        bitField0_ |= 0x00000001;
         internalGetMutableAutoRefState().mergeFrom(
             other.internalGetAutoRefState());
-        bitField0_ |= 0x00000002;
         internalGetMutableTrackers().mergeFrom(
             other.internalGetTrackers());
-        bitField0_ |= 0x00000004;
         if (continueActionsBuilder_ == null) {
           if (!other.continueActions_.isEmpty()) {
             if (continueActions_.isEmpty()) {
@@ -1244,7 +1305,7 @@ java.lang.String defaultValue) {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1269,83 +1330,17 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcEngine.GcState parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                com.google.protobuf.MapEntry<java.lang.String, proto.gc.SslGcEngine.GcStateTeam>
-                teamState__ = input.readMessage(
-                    TeamStateDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableTeamState().getMutableMap().put(
-                    teamState__.getKey(), teamState__.getValue());
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                com.google.protobuf.MapEntry<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef>
-                autoRefState__ = input.readMessage(
-                    AutoRefStateDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableAutoRefState().getMutableMap().put(
-                    autoRefState__.getKey(), autoRefState__.getValue());
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                trackers__ = input.readMessage(
-                    TrackersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableTrackers().getMutableMap().put(
-                    trackers__.getKey(), trackers__.getValue());
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 34: {
-                proto.gc.SslGcEngine.ContinueAction m =
-                    input.readMessage(
-                        proto.gc.SslGcEngine.ContinueAction.PARSER,
-                        extensionRegistry);
-                if (continueActionsBuilder_ == null) {
-                  ensureContinueActionsIsMutable();
-                  continueActions_.add(m);
-                } else {
-                  continueActionsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 42: {
-                proto.gc.SslGcEngine.ContinueHint m =
-                    input.readMessage(
-                        proto.gc.SslGcEngine.ContinueHint.PARSER,
-                        extensionRegistry);
-                if (continueHintsBuilder_ == null) {
-                  ensureContinueHintsIsMutable();
-                  continueHints_.add(m);
-                } else {
-                  continueHintsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcEngine.GcState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1353,7 +1348,7 @@ java.lang.String defaultValue) {
       private com.google.protobuf.MapField<
           java.lang.String, proto.gc.SslGcEngine.GcStateTeam> teamState_;
       private com.google.protobuf.MapField<java.lang.String, proto.gc.SslGcEngine.GcStateTeam>
-          internalGetTeamState() {
+      internalGetTeamState() {
         if (teamState_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               TeamStateDefaultEntryHolder.defaultEntry);
@@ -1361,7 +1356,8 @@ java.lang.String defaultValue) {
         return teamState_;
       }
       private com.google.protobuf.MapField<java.lang.String, proto.gc.SslGcEngine.GcStateTeam>
-          internalGetMutableTeamState() {
+      internalGetMutableTeamState() {
+        onChanged();;
         if (teamState_ == null) {
           teamState_ = com.google.protobuf.MapField.newMapField(
               TeamStateDefaultEntryHolder.defaultEntry);
@@ -1369,10 +1365,9 @@ java.lang.String defaultValue) {
         if (!teamState_.isMutable()) {
           teamState_ = teamState_.copy();
         }
-        bitField0_ |= 0x00000001;
-        onChanged();
         return teamState_;
       }
+
       public int getTeamStateCount() {
         return internalGetTeamState().getMap().size();
       }
@@ -1383,16 +1378,15 @@ java.lang.String defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
        */
-      @java.lang.Override
+
       public boolean containsTeamState(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         return internalGetTeamState().getMap().containsKey(key);
       }
       /**
        * Use {@link #getTeamStateMap()} instead.
        */
-      @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam> getTeamState() {
         return getTeamStateMap();
@@ -1404,7 +1398,7 @@ java.lang.String defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
        */
-      @java.lang.Override
+
       public java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam> getTeamStateMap() {
         return internalGetTeamState().getMap();
       }
@@ -1415,13 +1409,11 @@ java.lang.String defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
        */
-      @java.lang.Override
-      public /* nullable */
-proto.gc.SslGcEngine.GcStateTeam getTeamStateOrDefault(
+
+      public proto.gc.SslGcEngine.GcStateTeam getTeamStateOrDefault(
           java.lang.String key,
-          /* nullable */
-proto.gc.SslGcEngine.GcStateTeam defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
+          proto.gc.SslGcEngine.GcStateTeam defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam> map =
             internalGetTeamState().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1433,10 +1425,10 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
        */
-      @java.lang.Override
+
       public proto.gc.SslGcEngine.GcStateTeam getTeamStateOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam> map =
             internalGetTeamState().getMap();
         if (!map.containsKey(key)) {
@@ -1444,8 +1436,8 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearTeamState() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableTeamState().getMutableMap()
             .clear();
         return this;
@@ -1457,9 +1449,10 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
        */
+
       public Builder removeTeamState(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableTeamState().getMutableMap()
             .remove(key);
         return this;
@@ -1469,8 +1462,7 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam>
-          getMutableTeamState() {
-        bitField0_ |= 0x00000001;
+      getMutableTeamState() {
         return internalGetMutableTeamState().getMutableMap();
       }
       /**
@@ -1483,11 +1475,10 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue) {
       public Builder putTeamState(
           java.lang.String key,
           proto.gc.SslGcEngine.GcStateTeam value) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableTeamState().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -1497,18 +1488,18 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.GcStateTeam&gt; team_state = 1;</code>
        */
+
       public Builder putAllTeamState(
           java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateTeam> values) {
         internalGetMutableTeamState().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000001;
         return this;
       }
 
       private com.google.protobuf.MapField<
           java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> autoRefState_;
       private com.google.protobuf.MapField<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef>
-          internalGetAutoRefState() {
+      internalGetAutoRefState() {
         if (autoRefState_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               AutoRefStateDefaultEntryHolder.defaultEntry);
@@ -1516,7 +1507,8 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue) {
         return autoRefState_;
       }
       private com.google.protobuf.MapField<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef>
-          internalGetMutableAutoRefState() {
+      internalGetMutableAutoRefState() {
+        onChanged();;
         if (autoRefState_ == null) {
           autoRefState_ = com.google.protobuf.MapField.newMapField(
               AutoRefStateDefaultEntryHolder.defaultEntry);
@@ -1524,10 +1516,9 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue) {
         if (!autoRefState_.isMutable()) {
           autoRefState_ = autoRefState_.copy();
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
         return autoRefState_;
       }
+
       public int getAutoRefStateCount() {
         return internalGetAutoRefState().getMap().size();
       }
@@ -1538,16 +1529,15 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
        */
-      @java.lang.Override
+
       public boolean containsAutoRefState(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         return internalGetAutoRefState().getMap().containsKey(key);
       }
       /**
        * Use {@link #getAutoRefStateMap()} instead.
        */
-      @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> getAutoRefState() {
         return getAutoRefStateMap();
@@ -1559,7 +1549,7 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
        */
-      @java.lang.Override
+
       public java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> getAutoRefStateMap() {
         return internalGetAutoRefState().getMap();
       }
@@ -1570,13 +1560,11 @@ proto.gc.SslGcEngine.GcStateTeam defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
        */
-      @java.lang.Override
-      public /* nullable */
-proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrDefault(
+
+      public proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrDefault(
           java.lang.String key,
-          /* nullable */
-proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
+          proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> map =
             internalGetAutoRefState().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1588,10 +1576,10 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
        */
-      @java.lang.Override
+
       public proto.gc.SslGcEngine.GcStateAutoRef getAutoRefStateOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> map =
             internalGetAutoRefState().getMap();
         if (!map.containsKey(key)) {
@@ -1599,8 +1587,8 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearAutoRefState() {
-        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableAutoRefState().getMutableMap()
             .clear();
         return this;
@@ -1612,9 +1600,10 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
        */
+
       public Builder removeAutoRefState(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableAutoRefState().getMutableMap()
             .remove(key);
         return this;
@@ -1624,8 +1613,7 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef>
-          getMutableAutoRefState() {
-        bitField0_ |= 0x00000002;
+      getMutableAutoRefState() {
         return internalGetMutableAutoRefState().getMutableMap();
       }
       /**
@@ -1638,11 +1626,10 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
       public Builder putAutoRefState(
           java.lang.String key,
           proto.gc.SslGcEngine.GcStateAutoRef value) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableAutoRefState().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -1652,18 +1639,18 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
        *
        * <code>map&lt;string, .proto.gc.GcStateAutoRef&gt; auto_ref_state = 2;</code>
        */
+
       public Builder putAllAutoRefState(
           java.util.Map<java.lang.String, proto.gc.SslGcEngine.GcStateAutoRef> values) {
         internalGetMutableAutoRefState().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000002;
         return this;
       }
 
       private com.google.protobuf.MapField<
           java.lang.String, java.lang.String> trackers_;
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-          internalGetTrackers() {
+      internalGetTrackers() {
         if (trackers_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               TrackersDefaultEntryHolder.defaultEntry);
@@ -1671,7 +1658,8 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
         return trackers_;
       }
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-          internalGetMutableTrackers() {
+      internalGetMutableTrackers() {
+        onChanged();;
         if (trackers_ == null) {
           trackers_ = com.google.protobuf.MapField.newMapField(
               TrackersDefaultEntryHolder.defaultEntry);
@@ -1679,10 +1667,9 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
         if (!trackers_.isMutable()) {
           trackers_ = trackers_.copy();
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
         return trackers_;
       }
+
       public int getTrackersCount() {
         return internalGetTrackers().getMap().size();
       }
@@ -1693,16 +1680,15 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
        *
        * <code>map&lt;string, string&gt; trackers = 3;</code>
        */
-      @java.lang.Override
+
       public boolean containsTrackers(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         return internalGetTrackers().getMap().containsKey(key);
       }
       /**
        * Use {@link #getTrackersMap()} instead.
        */
-      @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getTrackers() {
         return getTrackersMap();
@@ -1714,7 +1700,7 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
        *
        * <code>map&lt;string, string&gt; trackers = 3;</code>
        */
-      @java.lang.Override
+
       public java.util.Map<java.lang.String, java.lang.String> getTrackersMap() {
         return internalGetTrackers().getMap();
       }
@@ -1725,13 +1711,11 @@ proto.gc.SslGcEngine.GcStateAutoRef defaultValue) {
        *
        * <code>map&lt;string, string&gt; trackers = 3;</code>
        */
-      @java.lang.Override
-      public /* nullable */
-java.lang.String getTrackersOrDefault(
+
+      public java.lang.String getTrackersOrDefault(
           java.lang.String key,
-          /* nullable */
-java.lang.String defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.String> map =
             internalGetTrackers().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1743,10 +1727,10 @@ java.lang.String defaultValue) {
        *
        * <code>map&lt;string, string&gt; trackers = 3;</code>
        */
-      @java.lang.Override
+
       public java.lang.String getTrackersOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         java.util.Map<java.lang.String, java.lang.String> map =
             internalGetTrackers().getMap();
         if (!map.containsKey(key)) {
@@ -1754,8 +1738,8 @@ java.lang.String defaultValue) {
         }
         return map.get(key);
       }
+
       public Builder clearTrackers() {
-        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableTrackers().getMutableMap()
             .clear();
         return this;
@@ -1767,9 +1751,10 @@ java.lang.String defaultValue) {
        *
        * <code>map&lt;string, string&gt; trackers = 3;</code>
        */
+
       public Builder removeTrackers(
           java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableTrackers().getMutableMap()
             .remove(key);
         return this;
@@ -1779,8 +1764,7 @@ java.lang.String defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String>
-          getMutableTrackers() {
-        bitField0_ |= 0x00000004;
+      getMutableTrackers() {
         return internalGetMutableTrackers().getMutableMap();
       }
       /**
@@ -1793,11 +1777,10 @@ java.lang.String defaultValue) {
       public Builder putTrackers(
           java.lang.String key,
           java.lang.String value) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        if (value == null) { throw new NullPointerException("map value"); }
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableTrackers().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000004;
         return this;
       }
       /**
@@ -1807,18 +1790,18 @@ java.lang.String defaultValue) {
        *
        * <code>map&lt;string, string&gt; trackers = 3;</code>
        */
+
       public Builder putAllTrackers(
           java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableTrackers().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000004;
         return this;
       }
 
       private java.util.List<proto.gc.SslGcEngine.ContinueAction> continueActions_ =
         java.util.Collections.emptyList();
       private void ensureContinueActionsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
           continueActions_ = new java.util.ArrayList<proto.gc.SslGcEngine.ContinueAction>(continueActions_);
           bitField0_ |= 0x00000008;
          }
@@ -2119,7 +2102,7 @@ java.lang.String defaultValue) {
           continueActionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               proto.gc.SslGcEngine.ContinueAction, proto.gc.SslGcEngine.ContinueAction.Builder, proto.gc.SslGcEngine.ContinueActionOrBuilder>(
                   continueActions_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
                   isClean());
           continueActions_ = null;
@@ -2130,7 +2113,7 @@ java.lang.String defaultValue) {
       private java.util.List<proto.gc.SslGcEngine.ContinueHint> continueHints_ =
         java.util.Collections.emptyList();
       private void ensureContinueHintsIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
           continueHints_ = new java.util.ArrayList<proto.gc.SslGcEngine.ContinueHint>(continueHints_);
           bitField0_ |= 0x00000010;
          }
@@ -2431,7 +2414,7 @@ java.lang.String defaultValue) {
           continueHintsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               proto.gc.SslGcEngine.ContinueHint, proto.gc.SslGcEngine.ContinueHint.Builder, proto.gc.SslGcEngine.ContinueHintOrBuilder>(
                   continueHints_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
                   isClean());
           continueHints_ = null;
@@ -2471,18 +2454,7 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GcState(input, extensionRegistry);
       }
     };
 
@@ -2512,7 +2484,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional bool connected = 1;</code>
-     * @return Whether the connected field is set.
      */
     boolean hasConnected();
     /**
@@ -2521,7 +2492,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional bool connected = 1;</code>
-     * @return The connected.
      */
     boolean getConnected();
 
@@ -2531,7 +2501,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional bool connection_verified = 2;</code>
-     * @return Whether the connectionVerified field is set.
      */
     boolean hasConnectionVerified();
     /**
@@ -2540,7 +2509,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional bool connection_verified = 2;</code>
-     * @return The connectionVerified.
      */
     boolean getConnectionVerified();
 
@@ -2550,7 +2518,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional bool remote_control_connected = 3;</code>
-     * @return Whether the remoteControlConnected field is set.
      */
     boolean hasRemoteControlConnected();
     /**
@@ -2559,7 +2526,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional bool remote_control_connected = 3;</code>
-     * @return The remoteControlConnected.
      */
     boolean getRemoteControlConnected();
 
@@ -2569,7 +2535,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional bool remote_control_connection_verified = 4;</code>
-     * @return Whether the remoteControlConnectionVerified field is set.
      */
     boolean hasRemoteControlConnectionVerified();
     /**
@@ -2578,7 +2543,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional bool remote_control_connection_verified = 4;</code>
-     * @return The remoteControlConnectionVerified.
      */
     boolean getRemoteControlConnectionVerified();
 
@@ -2588,7 +2552,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.TeamAdvantageChoice advantage_choice = 5;</code>
-     * @return Whether the advantageChoice field is set.
      */
     boolean hasAdvantageChoice();
     /**
@@ -2597,7 +2560,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.TeamAdvantageChoice advantage_choice = 5;</code>
-     * @return The advantageChoice.
      */
     proto.gc.SslGcEngine.TeamAdvantageChoice getAdvantageChoice();
     /**
@@ -2616,7 +2578,7 @@ java.lang.String defaultValue) {
    *
    * Protobuf type {@code proto.gc.GcStateTeam}
    */
-  public static final class GcStateTeam extends
+  public  static final class GcStateTeam extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.GcStateTeam)
       GcStateTeamOrBuilder {
@@ -2626,19 +2588,87 @@ java.lang.String defaultValue) {
       super(builder);
     }
     private GcStateTeam() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new GcStateTeam();
+      connected_ = false;
+      connectionVerified_ = false;
+      remoteControlConnected_ = false;
+      remoteControlConnectionVerified_ = false;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private GcStateTeam(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              connected_ = input.readBool();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              connectionVerified_ = input.readBool();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              remoteControlConnected_ = input.readBool();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              remoteControlConnectionVerified_ = input.readBool();
+              break;
+            }
+            case 42: {
+              proto.gc.SslGcEngine.TeamAdvantageChoice.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                subBuilder = advantageChoice_.toBuilder();
+              }
+              advantageChoice_ = input.readMessage(proto.gc.SslGcEngine.TeamAdvantageChoice.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(advantageChoice_);
+                advantageChoice_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000010;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2655,18 +2685,16 @@ java.lang.String defaultValue) {
 
     private int bitField0_;
     public static final int CONNECTED_FIELD_NUMBER = 1;
-    private boolean connected_ = false;
+    private boolean connected_;
     /**
      * <pre>
      * true: The team is connected
      * </pre>
      *
      * <code>optional bool connected = 1;</code>
-     * @return Whether the connected field is set.
      */
-    @java.lang.Override
     public boolean hasConnected() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -2674,26 +2702,22 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional bool connected = 1;</code>
-     * @return The connected.
      */
-    @java.lang.Override
     public boolean getConnected() {
       return connected_;
     }
 
     public static final int CONNECTION_VERIFIED_FIELD_NUMBER = 2;
-    private boolean connectionVerified_ = false;
+    private boolean connectionVerified_;
     /**
      * <pre>
      * true: The team connected via TLS with a verified certificate
      * </pre>
      *
      * <code>optional bool connection_verified = 2;</code>
-     * @return Whether the connectionVerified field is set.
      */
-    @java.lang.Override
     public boolean hasConnectionVerified() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -2701,26 +2725,22 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional bool connection_verified = 2;</code>
-     * @return The connectionVerified.
      */
-    @java.lang.Override
     public boolean getConnectionVerified() {
       return connectionVerified_;
     }
 
     public static final int REMOTE_CONTROL_CONNECTED_FIELD_NUMBER = 3;
-    private boolean remoteControlConnected_ = false;
+    private boolean remoteControlConnected_;
     /**
      * <pre>
      * true: The remote control for the team is connected
      * </pre>
      *
      * <code>optional bool remote_control_connected = 3;</code>
-     * @return Whether the remoteControlConnected field is set.
      */
-    @java.lang.Override
     public boolean hasRemoteControlConnected() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -2728,26 +2748,22 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional bool remote_control_connected = 3;</code>
-     * @return The remoteControlConnected.
      */
-    @java.lang.Override
     public boolean getRemoteControlConnected() {
       return remoteControlConnected_;
     }
 
     public static final int REMOTE_CONTROL_CONNECTION_VERIFIED_FIELD_NUMBER = 4;
-    private boolean remoteControlConnectionVerified_ = false;
+    private boolean remoteControlConnectionVerified_;
     /**
      * <pre>
      * true: The remote control for the team connected via TLS with a verified certificate
      * </pre>
      *
      * <code>optional bool remote_control_connection_verified = 4;</code>
-     * @return Whether the remoteControlConnectionVerified field is set.
      */
-    @java.lang.Override
     public boolean hasRemoteControlConnectionVerified() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <pre>
@@ -2755,9 +2771,7 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional bool remote_control_connection_verified = 4;</code>
-     * @return The remoteControlConnectionVerified.
      */
-    @java.lang.Override
     public boolean getRemoteControlConnectionVerified() {
       return remoteControlConnectionVerified_;
     }
@@ -2770,11 +2784,9 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.TeamAdvantageChoice advantage_choice = 5;</code>
-     * @return Whether the advantageChoice field is set.
      */
-    @java.lang.Override
     public boolean hasAdvantageChoice() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <pre>
@@ -2782,9 +2794,7 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.TeamAdvantageChoice advantage_choice = 5;</code>
-     * @return The advantageChoice.
      */
-    @java.lang.Override
     public proto.gc.SslGcEngine.TeamAdvantageChoice getAdvantageChoice() {
       return advantageChoice_ == null ? proto.gc.SslGcEngine.TeamAdvantageChoice.getDefaultInstance() : advantageChoice_;
     }
@@ -2795,7 +2805,6 @@ java.lang.String defaultValue) {
      *
      * <code>optional .proto.gc.TeamAdvantageChoice advantage_choice = 5;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcEngine.TeamAdvantageChoiceOrBuilder getAdvantageChoiceOrBuilder() {
       return advantageChoice_ == null ? proto.gc.SslGcEngine.TeamAdvantageChoice.getDefaultInstance() : advantageChoice_;
     }
@@ -2814,22 +2823,22 @@ java.lang.String defaultValue) {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBool(1, connected_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBool(2, connectionVerified_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBool(3, remoteControlConnected_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBool(4, remoteControlConnectionVerified_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeMessage(5, getAdvantageChoice());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -2838,27 +2847,27 @@ java.lang.String defaultValue) {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, connected_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(2, connectionVerified_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, remoteControlConnected_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, remoteControlConnectionVerified_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getAdvantageChoice());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2873,33 +2882,34 @@ java.lang.String defaultValue) {
       }
       proto.gc.SslGcEngine.GcStateTeam other = (proto.gc.SslGcEngine.GcStateTeam) obj;
 
-      if (hasConnected() != other.hasConnected()) return false;
+      boolean result = true;
+      result = result && (hasConnected() == other.hasConnected());
       if (hasConnected()) {
-        if (getConnected()
-            != other.getConnected()) return false;
+        result = result && (getConnected()
+            == other.getConnected());
       }
-      if (hasConnectionVerified() != other.hasConnectionVerified()) return false;
+      result = result && (hasConnectionVerified() == other.hasConnectionVerified());
       if (hasConnectionVerified()) {
-        if (getConnectionVerified()
-            != other.getConnectionVerified()) return false;
+        result = result && (getConnectionVerified()
+            == other.getConnectionVerified());
       }
-      if (hasRemoteControlConnected() != other.hasRemoteControlConnected()) return false;
+      result = result && (hasRemoteControlConnected() == other.hasRemoteControlConnected());
       if (hasRemoteControlConnected()) {
-        if (getRemoteControlConnected()
-            != other.getRemoteControlConnected()) return false;
+        result = result && (getRemoteControlConnected()
+            == other.getRemoteControlConnected());
       }
-      if (hasRemoteControlConnectionVerified() != other.hasRemoteControlConnectionVerified()) return false;
+      result = result && (hasRemoteControlConnectionVerified() == other.hasRemoteControlConnectionVerified());
       if (hasRemoteControlConnectionVerified()) {
-        if (getRemoteControlConnectionVerified()
-            != other.getRemoteControlConnectionVerified()) return false;
+        result = result && (getRemoteControlConnectionVerified()
+            == other.getRemoteControlConnectionVerified());
       }
-      if (hasAdvantageChoice() != other.hasAdvantageChoice()) return false;
+      result = result && (hasAdvantageChoice() == other.hasAdvantageChoice());
       if (hasAdvantageChoice()) {
-        if (!getAdvantageChoice()
-            .equals(other.getAdvantageChoice())) return false;
+        result = result && getAdvantageChoice()
+            .equals(other.getAdvantageChoice());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2933,7 +2943,7 @@ java.lang.String defaultValue) {
         hash = (37 * hash) + ADVANTAGE_CHOICE_FIELD_NUMBER;
         hash = (53 * hash) + getAdvantageChoice().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3071,16 +3081,20 @@ java.lang.String defaultValue) {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         connected_ = false;
+        bitField0_ = (bitField0_ & ~0x00000001);
         connectionVerified_ = false;
+        bitField0_ = (bitField0_ & ~0x00000002);
         remoteControlConnected_ = false;
+        bitField0_ = (bitField0_ & ~0x00000004);
         remoteControlConnectionVerified_ = false;
-        advantageChoice_ = null;
-        if (advantageChoiceBuilder_ != null) {
-          advantageChoiceBuilder_.dispose();
-          advantageChoiceBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        if (advantageChoiceBuilder_ == null) {
+          advantageChoice_ = null;
+        } else {
+          advantageChoiceBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -3107,70 +3121,68 @@ java.lang.String defaultValue) {
       @java.lang.Override
       public proto.gc.SslGcEngine.GcStateTeam buildPartial() {
         proto.gc.SslGcEngine.GcStateTeam result = new proto.gc.SslGcEngine.GcStateTeam(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.connected_ = connected_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.connectionVerified_ = connectionVerified_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.remoteControlConnected_ = remoteControlConnected_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.remoteControlConnectionVerified_ = remoteControlConnectionVerified_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        if (advantageChoiceBuilder_ == null) {
+          result.advantageChoice_ = advantageChoice_;
+        } else {
+          result.advantageChoice_ = advantageChoiceBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcEngine.GcStateTeam result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.connected_ = connected_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.connectionVerified_ = connectionVerified_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.remoteControlConnected_ = remoteControlConnected_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.remoteControlConnectionVerified_ = remoteControlConnectionVerified_;
-          to_bitField0_ |= 0x00000008;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.advantageChoice_ = advantageChoiceBuilder_ == null
-              ? advantageChoice_
-              : advantageChoiceBuilder_.build();
-          to_bitField0_ |= 0x00000010;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3199,7 +3211,7 @@ java.lang.String defaultValue) {
         if (other.hasAdvantageChoice()) {
           mergeAdvantageChoice(other.getAdvantageChoice());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3214,57 +3226,17 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcEngine.GcStateTeam parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                connected_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                connectionVerified_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 24: {
-                remoteControlConnected_ = input.readBool();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 32: {
-                remoteControlConnectionVerified_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 42: {
-                input.readMessage(
-                    getAdvantageChoiceFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcEngine.GcStateTeam) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -3276,11 +3248,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool connected = 1;</code>
-       * @return Whether the connected field is set.
        */
-      @java.lang.Override
       public boolean hasConnected() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -3288,9 +3258,7 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool connected = 1;</code>
-       * @return The connected.
        */
-      @java.lang.Override
       public boolean getConnected() {
         return connected_;
       }
@@ -3300,13 +3268,10 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool connected = 1;</code>
-       * @param value The connected to set.
-       * @return This builder for chaining.
        */
       public Builder setConnected(boolean value) {
-        
-        connected_ = value;
         bitField0_ |= 0x00000001;
+        connected_ = value;
         onChanged();
         return this;
       }
@@ -3316,7 +3281,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool connected = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearConnected() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -3332,11 +3296,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool connection_verified = 2;</code>
-       * @return Whether the connectionVerified field is set.
        */
-      @java.lang.Override
       public boolean hasConnectionVerified() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -3344,9 +3306,7 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool connection_verified = 2;</code>
-       * @return The connectionVerified.
        */
-      @java.lang.Override
       public boolean getConnectionVerified() {
         return connectionVerified_;
       }
@@ -3356,13 +3316,10 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool connection_verified = 2;</code>
-       * @param value The connectionVerified to set.
-       * @return This builder for chaining.
        */
       public Builder setConnectionVerified(boolean value) {
-        
-        connectionVerified_ = value;
         bitField0_ |= 0x00000002;
+        connectionVerified_ = value;
         onChanged();
         return this;
       }
@@ -3372,7 +3329,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool connection_verified = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearConnectionVerified() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -3388,11 +3344,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool remote_control_connected = 3;</code>
-       * @return Whether the remoteControlConnected field is set.
        */
-      @java.lang.Override
       public boolean hasRemoteControlConnected() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -3400,9 +3354,7 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool remote_control_connected = 3;</code>
-       * @return The remoteControlConnected.
        */
-      @java.lang.Override
       public boolean getRemoteControlConnected() {
         return remoteControlConnected_;
       }
@@ -3412,13 +3364,10 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool remote_control_connected = 3;</code>
-       * @param value The remoteControlConnected to set.
-       * @return This builder for chaining.
        */
       public Builder setRemoteControlConnected(boolean value) {
-        
-        remoteControlConnected_ = value;
         bitField0_ |= 0x00000004;
+        remoteControlConnected_ = value;
         onChanged();
         return this;
       }
@@ -3428,7 +3377,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool remote_control_connected = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearRemoteControlConnected() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -3444,11 +3392,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool remote_control_connection_verified = 4;</code>
-       * @return Whether the remoteControlConnectionVerified field is set.
        */
-      @java.lang.Override
       public boolean hasRemoteControlConnectionVerified() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <pre>
@@ -3456,9 +3402,7 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool remote_control_connection_verified = 4;</code>
-       * @return The remoteControlConnectionVerified.
        */
-      @java.lang.Override
       public boolean getRemoteControlConnectionVerified() {
         return remoteControlConnectionVerified_;
       }
@@ -3468,13 +3412,10 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool remote_control_connection_verified = 4;</code>
-       * @param value The remoteControlConnectionVerified to set.
-       * @return This builder for chaining.
        */
       public Builder setRemoteControlConnectionVerified(boolean value) {
-        
-        remoteControlConnectionVerified_ = value;
         bitField0_ |= 0x00000008;
+        remoteControlConnectionVerified_ = value;
         onChanged();
         return this;
       }
@@ -3484,7 +3425,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool remote_control_connection_verified = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearRemoteControlConnectionVerified() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -3493,7 +3433,7 @@ java.lang.String defaultValue) {
         return this;
       }
 
-      private proto.gc.SslGcEngine.TeamAdvantageChoice advantageChoice_;
+      private proto.gc.SslGcEngine.TeamAdvantageChoice advantageChoice_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcEngine.TeamAdvantageChoice, proto.gc.SslGcEngine.TeamAdvantageChoice.Builder, proto.gc.SslGcEngine.TeamAdvantageChoiceOrBuilder> advantageChoiceBuilder_;
       /**
@@ -3502,10 +3442,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.TeamAdvantageChoice advantage_choice = 5;</code>
-       * @return Whether the advantageChoice field is set.
        */
       public boolean hasAdvantageChoice() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <pre>
@@ -3513,7 +3452,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.TeamAdvantageChoice advantage_choice = 5;</code>
-       * @return The advantageChoice.
        */
       public proto.gc.SslGcEngine.TeamAdvantageChoice getAdvantageChoice() {
         if (advantageChoiceBuilder_ == null) {
@@ -3535,11 +3473,11 @@ java.lang.String defaultValue) {
             throw new NullPointerException();
           }
           advantageChoice_ = value;
+          onChanged();
         } else {
           advantageChoiceBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000010;
-        onChanged();
         return this;
       }
       /**
@@ -3553,11 +3491,11 @@ java.lang.String defaultValue) {
           proto.gc.SslGcEngine.TeamAdvantageChoice.Builder builderForValue) {
         if (advantageChoiceBuilder_ == null) {
           advantageChoice_ = builderForValue.build();
+          onChanged();
         } else {
           advantageChoiceBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000010;
-        onChanged();
         return this;
       }
       /**
@@ -3569,18 +3507,19 @@ java.lang.String defaultValue) {
        */
       public Builder mergeAdvantageChoice(proto.gc.SslGcEngine.TeamAdvantageChoice value) {
         if (advantageChoiceBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0) &&
-            advantageChoice_ != null &&
-            advantageChoice_ != proto.gc.SslGcEngine.TeamAdvantageChoice.getDefaultInstance()) {
-            getAdvantageChoiceBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+              advantageChoice_ != null &&
+              advantageChoice_ != proto.gc.SslGcEngine.TeamAdvantageChoice.getDefaultInstance()) {
+            advantageChoice_ =
+              proto.gc.SslGcEngine.TeamAdvantageChoice.newBuilder(advantageChoice_).mergeFrom(value).buildPartial();
           } else {
             advantageChoice_ = value;
           }
+          onChanged();
         } else {
           advantageChoiceBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000010;
-        onChanged();
         return this;
       }
       /**
@@ -3591,13 +3530,13 @@ java.lang.String defaultValue) {
        * <code>optional .proto.gc.TeamAdvantageChoice advantage_choice = 5;</code>
        */
       public Builder clearAdvantageChoice() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        advantageChoice_ = null;
-        if (advantageChoiceBuilder_ != null) {
-          advantageChoiceBuilder_.dispose();
-          advantageChoiceBuilder_ = null;
+        if (advantageChoiceBuilder_ == null) {
+          advantageChoice_ = null;
+          onChanged();
+        } else {
+          advantageChoiceBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
       /**
@@ -3680,18 +3619,7 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GcStateTeam(input, extensionRegistry);
       }
     };
 
@@ -3721,7 +3649,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.TeamAdvantageChoice.AdvantageChoice choice = 1;</code>
-     * @return Whether the choice field is set.
      */
     boolean hasChoice();
     /**
@@ -3730,7 +3657,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.TeamAdvantageChoice.AdvantageChoice choice = 1;</code>
-     * @return The choice.
      */
     proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice getChoice();
   }
@@ -3741,7 +3667,7 @@ java.lang.String defaultValue) {
    *
    * Protobuf type {@code proto.gc.TeamAdvantageChoice}
    */
-  public static final class TeamAdvantageChoice extends
+  public  static final class TeamAdvantageChoice extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.TeamAdvantageChoice)
       TeamAdvantageChoiceOrBuilder {
@@ -3755,16 +3681,59 @@ java.lang.String defaultValue) {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TeamAdvantageChoice();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private TeamAdvantageChoice(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice value = proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                choice_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -3829,8 +3798,6 @@ java.lang.String defaultValue) {
       }
 
       /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -3838,10 +3805,6 @@ java.lang.String defaultValue) {
         return forNumber(value);
       }
 
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
       public static AdvantageChoice forNumber(int value) {
         switch (value) {
           case 0: return STOP;
@@ -3897,17 +3860,16 @@ java.lang.String defaultValue) {
 
     private int bitField0_;
     public static final int CHOICE_FIELD_NUMBER = 1;
-    private int choice_ = 0;
+    private int choice_;
     /**
      * <pre>
      * the choice of the team
      * </pre>
      *
      * <code>optional .proto.gc.TeamAdvantageChoice.AdvantageChoice choice = 1;</code>
-     * @return Whether the choice field is set.
      */
-    @java.lang.Override public boolean hasChoice() {
-      return ((bitField0_ & 0x00000001) != 0);
+    public boolean hasChoice() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -3915,10 +3877,10 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.TeamAdvantageChoice.AdvantageChoice choice = 1;</code>
-     * @return The choice.
      */
-    @java.lang.Override public proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice getChoice() {
-      proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice result = proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice.forNumber(choice_);
+    public proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice getChoice() {
+      @SuppressWarnings("deprecation")
+      proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice result = proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice.valueOf(choice_);
       return result == null ? proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice.STOP : result;
     }
 
@@ -3936,10 +3898,10 @@ java.lang.String defaultValue) {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeEnum(1, choice_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -3948,11 +3910,11 @@ java.lang.String defaultValue) {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, choice_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3967,12 +3929,13 @@ java.lang.String defaultValue) {
       }
       proto.gc.SslGcEngine.TeamAdvantageChoice other = (proto.gc.SslGcEngine.TeamAdvantageChoice) obj;
 
-      if (hasChoice() != other.hasChoice()) return false;
+      boolean result = true;
+      result = result && (hasChoice() == other.hasChoice());
       if (hasChoice()) {
-        if (choice_ != other.choice_) return false;
+        result = result && choice_ == other.choice_;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -3986,7 +3949,7 @@ java.lang.String defaultValue) {
         hash = (37 * hash) + CHOICE_FIELD_NUMBER;
         hash = (53 * hash) + choice_;
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4107,19 +4070,24 @@ java.lang.String defaultValue) {
 
       // Construct using proto.gc.SslGcEngine.TeamAdvantageChoice.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         choice_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -4146,52 +4114,48 @@ java.lang.String defaultValue) {
       @java.lang.Override
       public proto.gc.SslGcEngine.TeamAdvantageChoice buildPartial() {
         proto.gc.SslGcEngine.TeamAdvantageChoice result = new proto.gc.SslGcEngine.TeamAdvantageChoice(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.choice_ = choice_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcEngine.TeamAdvantageChoice result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.choice_ = choice_;
-          to_bitField0_ |= 0x00000001;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -4208,7 +4172,7 @@ java.lang.String defaultValue) {
         if (other.hasChoice()) {
           setChoice(other.getChoice());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -4223,42 +4187,17 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcEngine.TeamAdvantageChoice parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int tmpRaw = input.readEnum();
-                proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice tmpValue =
-                    proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(1, tmpRaw);
-                } else {
-                  choice_ = tmpRaw;
-                  bitField0_ |= 0x00000001;
-                }
-                break;
-              } // case 8
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcEngine.TeamAdvantageChoice) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -4270,10 +4209,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.TeamAdvantageChoice.AdvantageChoice choice = 1;</code>
-       * @return Whether the choice field is set.
        */
-      @java.lang.Override public boolean hasChoice() {
-        return ((bitField0_ & 0x00000001) != 0);
+      public boolean hasChoice() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -4281,11 +4219,10 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.TeamAdvantageChoice.AdvantageChoice choice = 1;</code>
-       * @return The choice.
        */
-      @java.lang.Override
       public proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice getChoice() {
-        proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice result = proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice.forNumber(choice_);
+        @SuppressWarnings("deprecation")
+        proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice result = proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice.valueOf(choice_);
         return result == null ? proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice.STOP : result;
       }
       /**
@@ -4294,8 +4231,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.TeamAdvantageChoice.AdvantageChoice choice = 1;</code>
-       * @param value The choice to set.
-       * @return This builder for chaining.
        */
       public Builder setChoice(proto.gc.SslGcEngine.TeamAdvantageChoice.AdvantageChoice value) {
         if (value == null) {
@@ -4312,7 +4247,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.TeamAdvantageChoice.AdvantageChoice choice = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearChoice() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -4353,18 +4287,7 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new TeamAdvantageChoice(input, extensionRegistry);
       }
     };
 
@@ -4394,7 +4317,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional bool connection_verified = 1;</code>
-     * @return Whether the connectionVerified field is set.
      */
     boolean hasConnectionVerified();
     /**
@@ -4403,7 +4325,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional bool connection_verified = 1;</code>
-     * @return The connectionVerified.
      */
     boolean getConnectionVerified();
   }
@@ -4414,7 +4335,7 @@ java.lang.String defaultValue) {
    *
    * Protobuf type {@code proto.gc.GcStateAutoRef}
    */
-  public static final class GcStateAutoRef extends
+  public  static final class GcStateAutoRef extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.GcStateAutoRef)
       GcStateAutoRefOrBuilder {
@@ -4424,19 +4345,56 @@ java.lang.String defaultValue) {
       super(builder);
     }
     private GcStateAutoRef() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new GcStateAutoRef();
+      connectionVerified_ = false;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private GcStateAutoRef(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              connectionVerified_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -4453,18 +4411,16 @@ java.lang.String defaultValue) {
 
     private int bitField0_;
     public static final int CONNECTION_VERIFIED_FIELD_NUMBER = 1;
-    private boolean connectionVerified_ = false;
+    private boolean connectionVerified_;
     /**
      * <pre>
      * true: The autoRef connected via TLS with a verified certificate
      * </pre>
      *
      * <code>optional bool connection_verified = 1;</code>
-     * @return Whether the connectionVerified field is set.
      */
-    @java.lang.Override
     public boolean hasConnectionVerified() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -4472,9 +4428,7 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional bool connection_verified = 1;</code>
-     * @return The connectionVerified.
      */
-    @java.lang.Override
     public boolean getConnectionVerified() {
       return connectionVerified_;
     }
@@ -4493,10 +4447,10 @@ java.lang.String defaultValue) {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBool(1, connectionVerified_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -4505,11 +4459,11 @@ java.lang.String defaultValue) {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, connectionVerified_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4524,13 +4478,14 @@ java.lang.String defaultValue) {
       }
       proto.gc.SslGcEngine.GcStateAutoRef other = (proto.gc.SslGcEngine.GcStateAutoRef) obj;
 
-      if (hasConnectionVerified() != other.hasConnectionVerified()) return false;
+      boolean result = true;
+      result = result && (hasConnectionVerified() == other.hasConnectionVerified());
       if (hasConnectionVerified()) {
-        if (getConnectionVerified()
-            != other.getConnectionVerified()) return false;
+        result = result && (getConnectionVerified()
+            == other.getConnectionVerified());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -4545,7 +4500,7 @@ java.lang.String defaultValue) {
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getConnectionVerified());
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4666,19 +4621,24 @@ java.lang.String defaultValue) {
 
       // Construct using proto.gc.SslGcEngine.GcStateAutoRef.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         connectionVerified_ = false;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -4705,52 +4665,48 @@ java.lang.String defaultValue) {
       @java.lang.Override
       public proto.gc.SslGcEngine.GcStateAutoRef buildPartial() {
         proto.gc.SslGcEngine.GcStateAutoRef result = new proto.gc.SslGcEngine.GcStateAutoRef(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.connectionVerified_ = connectionVerified_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcEngine.GcStateAutoRef result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.connectionVerified_ = connectionVerified_;
-          to_bitField0_ |= 0x00000001;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -4767,7 +4723,7 @@ java.lang.String defaultValue) {
         if (other.hasConnectionVerified()) {
           setConnectionVerified(other.getConnectionVerified());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -4782,35 +4738,17 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcEngine.GcStateAutoRef parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                connectionVerified_ = input.readBool();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcEngine.GcStateAutoRef) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -4822,11 +4760,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool connection_verified = 1;</code>
-       * @return Whether the connectionVerified field is set.
        */
-      @java.lang.Override
       public boolean hasConnectionVerified() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -4834,9 +4770,7 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool connection_verified = 1;</code>
-       * @return The connectionVerified.
        */
-      @java.lang.Override
       public boolean getConnectionVerified() {
         return connectionVerified_;
       }
@@ -4846,13 +4780,10 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool connection_verified = 1;</code>
-       * @param value The connectionVerified to set.
-       * @return This builder for chaining.
        */
       public Builder setConnectionVerified(boolean value) {
-        
-        connectionVerified_ = value;
         bitField0_ |= 0x00000001;
+        connectionVerified_ = value;
         onChanged();
         return this;
       }
@@ -4862,7 +4793,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional bool connection_verified = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearConnectionVerified() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -4903,18 +4833,7 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GcStateAutoRef(input, extensionRegistry);
       }
     };
 
@@ -4944,7 +4863,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional string source_name = 1;</code>
-     * @return Whether the sourceName field is set.
      */
     boolean hasSourceName();
     /**
@@ -4953,7 +4871,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional string source_name = 1;</code>
-     * @return The sourceName.
      */
     java.lang.String getSourceName();
     /**
@@ -4962,7 +4879,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional string source_name = 1;</code>
-     * @return The bytes for sourceName.
      */
     com.google.protobuf.ByteString
         getSourceNameBytes();
@@ -4973,7 +4889,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional string uuid = 4;</code>
-     * @return Whether the uuid field is set.
      */
     boolean hasUuid();
     /**
@@ -4982,7 +4897,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional string uuid = 4;</code>
-     * @return The uuid.
      */
     java.lang.String getUuid();
     /**
@@ -4991,7 +4905,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional string uuid = 4;</code>
-     * @return The bytes for uuid.
      */
     com.google.protobuf.ByteString
         getUuidBytes();
@@ -5002,7 +4915,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.Ball ball = 2;</code>
-     * @return Whether the ball field is set.
      */
     boolean hasBall();
     /**
@@ -5011,7 +4923,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.Ball ball = 2;</code>
-     * @return The ball.
      */
     proto.gc.SslGcEngine.Ball getBall();
     /**
@@ -5074,7 +4985,7 @@ java.lang.String defaultValue) {
    *
    * Protobuf type {@code proto.gc.GcStateTracker}
    */
-  public static final class GcStateTracker extends
+  public  static final class GcStateTracker extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.GcStateTracker)
       GcStateTrackerOrBuilder {
@@ -5090,16 +5001,84 @@ java.lang.String defaultValue) {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new GcStateTracker();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private GcStateTracker(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              sourceName_ = bs;
+              break;
+            }
+            case 18: {
+              proto.gc.SslGcEngine.Ball.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                subBuilder = ball_.toBuilder();
+              }
+              ball_ = input.readMessage(proto.gc.SslGcEngine.Ball.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(ball_);
+                ball_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                robots_ = new java.util.ArrayList<proto.gc.SslGcEngine.Robot>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              robots_.add(
+                  input.readMessage(proto.gc.SslGcEngine.Robot.PARSER, extensionRegistry));
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              uuid_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          robots_ = java.util.Collections.unmodifiableList(robots_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -5116,19 +5095,16 @@ java.lang.String defaultValue) {
 
     private int bitField0_;
     public static final int SOURCE_NAME_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object sourceName_ = "";
+    private volatile java.lang.Object sourceName_;
     /**
      * <pre>
      * Name of the source
      * </pre>
      *
      * <code>optional string source_name = 1;</code>
-     * @return Whether the sourceName field is set.
      */
-    @java.lang.Override
     public boolean hasSourceName() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -5136,9 +5112,7 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional string source_name = 1;</code>
-     * @return The sourceName.
      */
-    @java.lang.Override
     public java.lang.String getSourceName() {
       java.lang.Object ref = sourceName_;
       if (ref instanceof java.lang.String) {
@@ -5159,9 +5133,7 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional string source_name = 1;</code>
-     * @return The bytes for sourceName.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getSourceNameBytes() {
       java.lang.Object ref = sourceName_;
@@ -5177,19 +5149,16 @@ java.lang.String defaultValue) {
     }
 
     public static final int UUID_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object uuid_ = "";
+    private volatile java.lang.Object uuid_;
     /**
      * <pre>
      * UUID of the source
      * </pre>
      *
      * <code>optional string uuid = 4;</code>
-     * @return Whether the uuid field is set.
      */
-    @java.lang.Override
     public boolean hasUuid() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -5197,9 +5166,7 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional string uuid = 4;</code>
-     * @return The uuid.
      */
-    @java.lang.Override
     public java.lang.String getUuid() {
       java.lang.Object ref = uuid_;
       if (ref instanceof java.lang.String) {
@@ -5220,9 +5187,7 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional string uuid = 4;</code>
-     * @return The bytes for uuid.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getUuidBytes() {
       java.lang.Object ref = uuid_;
@@ -5245,11 +5210,9 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.Ball ball = 2;</code>
-     * @return Whether the ball field is set.
      */
-    @java.lang.Override
     public boolean hasBall() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -5257,9 +5220,7 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.Ball ball = 2;</code>
-     * @return The ball.
      */
-    @java.lang.Override
     public proto.gc.SslGcEngine.Ball getBall() {
       return ball_ == null ? proto.gc.SslGcEngine.Ball.getDefaultInstance() : ball_;
     }
@@ -5270,13 +5231,11 @@ java.lang.String defaultValue) {
      *
      * <code>optional .proto.gc.Ball ball = 2;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcEngine.BallOrBuilder getBallOrBuilder() {
       return ball_ == null ? proto.gc.SslGcEngine.Ball.getDefaultInstance() : ball_;
     }
 
     public static final int ROBOTS_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private java.util.List<proto.gc.SslGcEngine.Robot> robots_;
     /**
      * <pre>
@@ -5285,7 +5244,6 @@ java.lang.String defaultValue) {
      *
      * <code>repeated .proto.gc.Robot robots = 3;</code>
      */
-    @java.lang.Override
     public java.util.List<proto.gc.SslGcEngine.Robot> getRobotsList() {
       return robots_;
     }
@@ -5296,7 +5254,6 @@ java.lang.String defaultValue) {
      *
      * <code>repeated .proto.gc.Robot robots = 3;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends proto.gc.SslGcEngine.RobotOrBuilder> 
         getRobotsOrBuilderList() {
       return robots_;
@@ -5308,7 +5265,6 @@ java.lang.String defaultValue) {
      *
      * <code>repeated .proto.gc.Robot robots = 3;</code>
      */
-    @java.lang.Override
     public int getRobotsCount() {
       return robots_.size();
     }
@@ -5319,7 +5275,6 @@ java.lang.String defaultValue) {
      *
      * <code>repeated .proto.gc.Robot robots = 3;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcEngine.Robot getRobots(int index) {
       return robots_.get(index);
     }
@@ -5330,7 +5285,6 @@ java.lang.String defaultValue) {
      *
      * <code>repeated .proto.gc.Robot robots = 3;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcEngine.RobotOrBuilder getRobotsOrBuilder(
         int index) {
       return robots_.get(index);
@@ -5362,19 +5316,19 @@ java.lang.String defaultValue) {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sourceName_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeMessage(2, getBall());
       }
       for (int i = 0; i < robots_.size(); i++) {
         output.writeMessage(3, robots_.get(i));
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, uuid_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -5383,10 +5337,10 @@ java.lang.String defaultValue) {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sourceName_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getBall());
       }
@@ -5394,10 +5348,10 @@ java.lang.String defaultValue) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, robots_.get(i));
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, uuid_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5412,25 +5366,26 @@ java.lang.String defaultValue) {
       }
       proto.gc.SslGcEngine.GcStateTracker other = (proto.gc.SslGcEngine.GcStateTracker) obj;
 
-      if (hasSourceName() != other.hasSourceName()) return false;
+      boolean result = true;
+      result = result && (hasSourceName() == other.hasSourceName());
       if (hasSourceName()) {
-        if (!getSourceName()
-            .equals(other.getSourceName())) return false;
+        result = result && getSourceName()
+            .equals(other.getSourceName());
       }
-      if (hasUuid() != other.hasUuid()) return false;
+      result = result && (hasUuid() == other.hasUuid());
       if (hasUuid()) {
-        if (!getUuid()
-            .equals(other.getUuid())) return false;
+        result = result && getUuid()
+            .equals(other.getUuid());
       }
-      if (hasBall() != other.hasBall()) return false;
+      result = result && (hasBall() == other.hasBall());
       if (hasBall()) {
-        if (!getBall()
-            .equals(other.getBall())) return false;
+        result = result && getBall()
+            .equals(other.getBall());
       }
-      if (!getRobotsList()
-          .equals(other.getRobotsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && getRobotsList()
+          .equals(other.getRobotsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -5456,7 +5411,7 @@ java.lang.String defaultValue) {
         hash = (37 * hash) + ROBOTS_FIELD_NUMBER;
         hash = (53 * hash) + getRobotsList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5595,21 +5550,22 @@ java.lang.String defaultValue) {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         sourceName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
         uuid_ = "";
-        ball_ = null;
-        if (ballBuilder_ != null) {
-          ballBuilder_.dispose();
-          ballBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (ballBuilder_ == null) {
+          ball_ = null;
+        } else {
+          ballBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (robotsBuilder_ == null) {
           robots_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          robots_ = null;
           robotsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -5636,15 +5592,26 @@ java.lang.String defaultValue) {
       @java.lang.Override
       public proto.gc.SslGcEngine.GcStateTracker buildPartial() {
         proto.gc.SslGcEngine.GcStateTracker result = new proto.gc.SslGcEngine.GcStateTracker(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(proto.gc.SslGcEngine.GcStateTracker result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.sourceName_ = sourceName_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.uuid_ = uuid_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        if (ballBuilder_ == null) {
+          result.ball_ = ball_;
+        } else {
+          result.ball_ = ballBuilder_.build();
+        }
         if (robotsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
             robots_ = java.util.Collections.unmodifiableList(robots_);
             bitField0_ = (bitField0_ & ~0x00000008);
           }
@@ -5652,59 +5619,42 @@ java.lang.String defaultValue) {
         } else {
           result.robots_ = robotsBuilder_.build();
         }
-      }
-
-      private void buildPartial0(proto.gc.SslGcEngine.GcStateTracker result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.sourceName_ = sourceName_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.uuid_ = uuid_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.ball_ = ballBuilder_ == null
-              ? ball_
-              : ballBuilder_.build();
-          to_bitField0_ |= 0x00000004;
-        }
-        result.bitField0_ |= to_bitField0_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -5719,13 +5669,13 @@ java.lang.String defaultValue) {
       public Builder mergeFrom(proto.gc.SslGcEngine.GcStateTracker other) {
         if (other == proto.gc.SslGcEngine.GcStateTracker.getDefaultInstance()) return this;
         if (other.hasSourceName()) {
-          sourceName_ = other.sourceName_;
           bitField0_ |= 0x00000001;
+          sourceName_ = other.sourceName_;
           onChanged();
         }
         if (other.hasUuid()) {
-          uuid_ = other.uuid_;
           bitField0_ |= 0x00000002;
+          uuid_ = other.uuid_;
           onChanged();
         }
         if (other.hasBall()) {
@@ -5757,7 +5707,7 @@ java.lang.String defaultValue) {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -5782,60 +5732,17 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcEngine.GcStateTracker parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                sourceName_ = input.readBytes();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getBallFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 18
-              case 26: {
-                proto.gc.SslGcEngine.Robot m =
-                    input.readMessage(
-                        proto.gc.SslGcEngine.Robot.PARSER,
-                        extensionRegistry);
-                if (robotsBuilder_ == null) {
-                  ensureRobotsIsMutable();
-                  robots_.add(m);
-                } else {
-                  robotsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-              case 34: {
-                uuid_ = input.readBytes();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcEngine.GcStateTracker) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -5847,10 +5754,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional string source_name = 1;</code>
-       * @return Whether the sourceName field is set.
        */
       public boolean hasSourceName() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -5858,7 +5764,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional string source_name = 1;</code>
-       * @return The sourceName.
        */
       public java.lang.String getSourceName() {
         java.lang.Object ref = sourceName_;
@@ -5880,7 +5785,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional string source_name = 1;</code>
-       * @return The bytes for sourceName.
        */
       public com.google.protobuf.ByteString
           getSourceNameBytes() {
@@ -5901,14 +5805,14 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional string source_name = 1;</code>
-       * @param value The sourceName to set.
-       * @return This builder for chaining.
        */
       public Builder setSourceName(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         sourceName_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5918,11 +5822,10 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional string source_name = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearSourceName() {
-        sourceName_ = getDefaultInstance().getSourceName();
         bitField0_ = (bitField0_ & ~0x00000001);
+        sourceName_ = getDefaultInstance().getSourceName();
         onChanged();
         return this;
       }
@@ -5932,14 +5835,14 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional string source_name = 1;</code>
-       * @param value The bytes for sourceName to set.
-       * @return This builder for chaining.
        */
       public Builder setSourceNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         sourceName_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5951,10 +5854,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional string uuid = 4;</code>
-       * @return Whether the uuid field is set.
        */
       public boolean hasUuid() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -5962,7 +5864,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional string uuid = 4;</code>
-       * @return The uuid.
        */
       public java.lang.String getUuid() {
         java.lang.Object ref = uuid_;
@@ -5984,7 +5885,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional string uuid = 4;</code>
-       * @return The bytes for uuid.
        */
       public com.google.protobuf.ByteString
           getUuidBytes() {
@@ -6005,14 +5905,14 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional string uuid = 4;</code>
-       * @param value The uuid to set.
-       * @return This builder for chaining.
        */
       public Builder setUuid(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         uuid_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6022,11 +5922,10 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional string uuid = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearUuid() {
-        uuid_ = getDefaultInstance().getUuid();
         bitField0_ = (bitField0_ & ~0x00000002);
+        uuid_ = getDefaultInstance().getUuid();
         onChanged();
         return this;
       }
@@ -6036,19 +5935,19 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional string uuid = 4;</code>
-       * @param value The bytes for uuid to set.
-       * @return This builder for chaining.
        */
       public Builder setUuidBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         uuid_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private proto.gc.SslGcEngine.Ball ball_;
+      private proto.gc.SslGcEngine.Ball ball_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcEngine.Ball, proto.gc.SslGcEngine.Ball.Builder, proto.gc.SslGcEngine.BallOrBuilder> ballBuilder_;
       /**
@@ -6057,10 +5956,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.Ball ball = 2;</code>
-       * @return Whether the ball field is set.
        */
       public boolean hasBall() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
@@ -6068,7 +5966,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.Ball ball = 2;</code>
-       * @return The ball.
        */
       public proto.gc.SslGcEngine.Ball getBall() {
         if (ballBuilder_ == null) {
@@ -6090,11 +5987,11 @@ java.lang.String defaultValue) {
             throw new NullPointerException();
           }
           ball_ = value;
+          onChanged();
         } else {
           ballBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000004;
-        onChanged();
         return this;
       }
       /**
@@ -6108,11 +6005,11 @@ java.lang.String defaultValue) {
           proto.gc.SslGcEngine.Ball.Builder builderForValue) {
         if (ballBuilder_ == null) {
           ball_ = builderForValue.build();
+          onChanged();
         } else {
           ballBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000004;
-        onChanged();
         return this;
       }
       /**
@@ -6124,18 +6021,19 @@ java.lang.String defaultValue) {
        */
       public Builder mergeBall(proto.gc.SslGcEngine.Ball value) {
         if (ballBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            ball_ != null &&
-            ball_ != proto.gc.SslGcEngine.Ball.getDefaultInstance()) {
-            getBallBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              ball_ != null &&
+              ball_ != proto.gc.SslGcEngine.Ball.getDefaultInstance()) {
+            ball_ =
+              proto.gc.SslGcEngine.Ball.newBuilder(ball_).mergeFrom(value).buildPartial();
           } else {
             ball_ = value;
           }
+          onChanged();
         } else {
           ballBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000004;
-        onChanged();
         return this;
       }
       /**
@@ -6146,13 +6044,13 @@ java.lang.String defaultValue) {
        * <code>optional .proto.gc.Ball ball = 2;</code>
        */
       public Builder clearBall() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        ball_ = null;
-        if (ballBuilder_ != null) {
-          ballBuilder_.dispose();
-          ballBuilder_ = null;
+        if (ballBuilder_ == null) {
+          ball_ = null;
+          onChanged();
+        } else {
+          ballBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
       /**
@@ -6206,7 +6104,7 @@ java.lang.String defaultValue) {
       private java.util.List<proto.gc.SslGcEngine.Robot> robots_ =
         java.util.Collections.emptyList();
       private void ensureRobotsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
           robots_ = new java.util.ArrayList<proto.gc.SslGcEngine.Robot>(robots_);
           bitField0_ |= 0x00000008;
          }
@@ -6507,7 +6405,7 @@ java.lang.String defaultValue) {
           robotsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               proto.gc.SslGcEngine.Robot, proto.gc.SslGcEngine.Robot.Builder, proto.gc.SslGcEngine.RobotOrBuilder>(
                   robots_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
                   isClean());
           robots_ = null;
@@ -6547,18 +6445,7 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new GcStateTracker(input, extensionRegistry);
       }
     };
 
@@ -6588,7 +6475,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.Vector3 pos = 1;</code>
-     * @return Whether the pos field is set.
      */
     boolean hasPos();
     /**
@@ -6597,7 +6483,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.Vector3 pos = 1;</code>
-     * @return The pos.
      */
     proto.gc.SslGcGeometry.Vector3 getPos();
     /**
@@ -6615,7 +6500,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.Vector3 vel = 2;</code>
-     * @return Whether the vel field is set.
      */
     boolean hasVel();
     /**
@@ -6624,7 +6508,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.Vector3 vel = 2;</code>
-     * @return The vel.
      */
     proto.gc.SslGcGeometry.Vector3 getVel();
     /**
@@ -6643,7 +6526,7 @@ java.lang.String defaultValue) {
    *
    * Protobuf type {@code proto.gc.Ball}
    */
-  public static final class Ball extends
+  public  static final class Ball extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.Ball)
       BallOrBuilder {
@@ -6656,16 +6539,73 @@ java.lang.String defaultValue) {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Ball();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Ball(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              proto.gc.SslGcGeometry.Vector3.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = pos_.toBuilder();
+              }
+              pos_ = input.readMessage(proto.gc.SslGcGeometry.Vector3.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pos_);
+                pos_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 18: {
+              proto.gc.SslGcGeometry.Vector3.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = vel_.toBuilder();
+              }
+              vel_ = input.readMessage(proto.gc.SslGcGeometry.Vector3.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(vel_);
+                vel_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -6689,11 +6629,9 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.Vector3 pos = 1;</code>
-     * @return Whether the pos field is set.
      */
-    @java.lang.Override
     public boolean hasPos() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -6701,9 +6639,7 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.Vector3 pos = 1;</code>
-     * @return The pos.
      */
-    @java.lang.Override
     public proto.gc.SslGcGeometry.Vector3 getPos() {
       return pos_ == null ? proto.gc.SslGcGeometry.Vector3.getDefaultInstance() : pos_;
     }
@@ -6714,7 +6650,6 @@ java.lang.String defaultValue) {
      *
      * <code>optional .proto.gc.Vector3 pos = 1;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcGeometry.Vector3OrBuilder getPosOrBuilder() {
       return pos_ == null ? proto.gc.SslGcGeometry.Vector3.getDefaultInstance() : pos_;
     }
@@ -6727,11 +6662,9 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.Vector3 vel = 2;</code>
-     * @return Whether the vel field is set.
      */
-    @java.lang.Override
     public boolean hasVel() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -6739,9 +6672,7 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.Vector3 vel = 2;</code>
-     * @return The vel.
      */
-    @java.lang.Override
     public proto.gc.SslGcGeometry.Vector3 getVel() {
       return vel_ == null ? proto.gc.SslGcGeometry.Vector3.getDefaultInstance() : vel_;
     }
@@ -6752,7 +6683,6 @@ java.lang.String defaultValue) {
      *
      * <code>optional .proto.gc.Vector3 vel = 2;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcGeometry.Vector3OrBuilder getVelOrBuilder() {
       return vel_ == null ? proto.gc.SslGcGeometry.Vector3.getDefaultInstance() : vel_;
     }
@@ -6783,13 +6713,13 @@ java.lang.String defaultValue) {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, getPos());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, getVel());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -6798,15 +6728,15 @@ java.lang.String defaultValue) {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getPos());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getVel());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6821,18 +6751,19 @@ java.lang.String defaultValue) {
       }
       proto.gc.SslGcEngine.Ball other = (proto.gc.SslGcEngine.Ball) obj;
 
-      if (hasPos() != other.hasPos()) return false;
+      boolean result = true;
+      result = result && (hasPos() == other.hasPos());
       if (hasPos()) {
-        if (!getPos()
-            .equals(other.getPos())) return false;
+        result = result && getPos()
+            .equals(other.getPos());
       }
-      if (hasVel() != other.hasVel()) return false;
+      result = result && (hasVel() == other.hasVel());
       if (hasVel()) {
-        if (!getVel()
-            .equals(other.getVel())) return false;
+        result = result && getVel()
+            .equals(other.getVel());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -6850,7 +6781,7 @@ java.lang.String defaultValue) {
         hash = (37 * hash) + VEL_FIELD_NUMBER;
         hash = (53 * hash) + getVel().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -6989,17 +6920,18 @@ java.lang.String defaultValue) {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
-          posBuilder_ = null;
+        if (posBuilder_ == null) {
+          pos_ = null;
+        } else {
+          posBuilder_.clear();
         }
-        vel_ = null;
-        if (velBuilder_ != null) {
-          velBuilder_.dispose();
-          velBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (velBuilder_ == null) {
+          vel_ = null;
+        } else {
+          velBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -7026,60 +6958,60 @@ java.lang.String defaultValue) {
       @java.lang.Override
       public proto.gc.SslGcEngine.Ball buildPartial() {
         proto.gc.SslGcEngine.Ball result = new proto.gc.SslGcEngine.Ball(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (posBuilder_ == null) {
+          result.pos_ = pos_;
+        } else {
+          result.pos_ = posBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (velBuilder_ == null) {
+          result.vel_ = vel_;
+        } else {
+          result.vel_ = velBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcEngine.Ball result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.pos_ = posBuilder_ == null
-              ? pos_
-              : posBuilder_.build();
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.vel_ = velBuilder_ == null
-              ? vel_
-              : velBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -7099,7 +7031,7 @@ java.lang.String defaultValue) {
         if (other.hasVel()) {
           mergeVel(other.getVel());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -7124,49 +7056,22 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcEngine.Ball parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getVelFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcEngine.Ball) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
 
-      private proto.gc.SslGcGeometry.Vector3 pos_;
+      private proto.gc.SslGcGeometry.Vector3 pos_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcGeometry.Vector3, proto.gc.SslGcGeometry.Vector3.Builder, proto.gc.SslGcGeometry.Vector3OrBuilder> posBuilder_;
       /**
@@ -7175,10 +7080,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.Vector3 pos = 1;</code>
-       * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -7186,7 +7090,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.Vector3 pos = 1;</code>
-       * @return The pos.
        */
       public proto.gc.SslGcGeometry.Vector3 getPos() {
         if (posBuilder_ == null) {
@@ -7208,11 +7111,11 @@ java.lang.String defaultValue) {
             throw new NullPointerException();
           }
           pos_ = value;
+          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -7226,11 +7129,11 @@ java.lang.String defaultValue) {
           proto.gc.SslGcGeometry.Vector3.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
+          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -7242,18 +7145,19 @@ java.lang.String defaultValue) {
        */
       public Builder mergePos(proto.gc.SslGcGeometry.Vector3 value) {
         if (posBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            pos_ != null &&
-            pos_ != proto.gc.SslGcGeometry.Vector3.getDefaultInstance()) {
-            getPosBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              pos_ != null &&
+              pos_ != proto.gc.SslGcGeometry.Vector3.getDefaultInstance()) {
+            pos_ =
+              proto.gc.SslGcGeometry.Vector3.newBuilder(pos_).mergeFrom(value).buildPartial();
           } else {
             pos_ = value;
           }
+          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -7264,13 +7168,13 @@ java.lang.String defaultValue) {
        * <code>optional .proto.gc.Vector3 pos = 1;</code>
        */
       public Builder clearPos() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
-          posBuilder_ = null;
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          posBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
       /**
@@ -7321,7 +7225,7 @@ java.lang.String defaultValue) {
         return posBuilder_;
       }
 
-      private proto.gc.SslGcGeometry.Vector3 vel_;
+      private proto.gc.SslGcGeometry.Vector3 vel_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcGeometry.Vector3, proto.gc.SslGcGeometry.Vector3.Builder, proto.gc.SslGcGeometry.Vector3OrBuilder> velBuilder_;
       /**
@@ -7330,10 +7234,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.Vector3 vel = 2;</code>
-       * @return Whether the vel field is set.
        */
       public boolean hasVel() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -7341,7 +7244,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.Vector3 vel = 2;</code>
-       * @return The vel.
        */
       public proto.gc.SslGcGeometry.Vector3 getVel() {
         if (velBuilder_ == null) {
@@ -7363,11 +7265,11 @@ java.lang.String defaultValue) {
             throw new NullPointerException();
           }
           vel_ = value;
+          onChanged();
         } else {
           velBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -7381,11 +7283,11 @@ java.lang.String defaultValue) {
           proto.gc.SslGcGeometry.Vector3.Builder builderForValue) {
         if (velBuilder_ == null) {
           vel_ = builderForValue.build();
+          onChanged();
         } else {
           velBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -7397,18 +7299,19 @@ java.lang.String defaultValue) {
        */
       public Builder mergeVel(proto.gc.SslGcGeometry.Vector3 value) {
         if (velBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            vel_ != null &&
-            vel_ != proto.gc.SslGcGeometry.Vector3.getDefaultInstance()) {
-            getVelBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              vel_ != null &&
+              vel_ != proto.gc.SslGcGeometry.Vector3.getDefaultInstance()) {
+            vel_ =
+              proto.gc.SslGcGeometry.Vector3.newBuilder(vel_).mergeFrom(value).buildPartial();
           } else {
             vel_ = value;
           }
+          onChanged();
         } else {
           velBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -7419,13 +7322,13 @@ java.lang.String defaultValue) {
        * <code>optional .proto.gc.Vector3 vel = 2;</code>
        */
       public Builder clearVel() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        vel_ = null;
-        if (velBuilder_ != null) {
-          velBuilder_.dispose();
-          velBuilder_ = null;
+        if (velBuilder_ == null) {
+          vel_ = null;
+          onChanged();
+        } else {
+          velBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
@@ -7508,18 +7411,7 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Ball(input, extensionRegistry);
       }
     };
 
@@ -7549,7 +7441,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.vision.RobotId id = 1;</code>
-     * @return Whether the id field is set.
      */
     boolean hasId();
     /**
@@ -7558,7 +7449,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.vision.RobotId id = 1;</code>
-     * @return The id.
      */
     proto.vision.MessagesRobocupSslDetectionTracked.RobotId getId();
     /**
@@ -7576,7 +7466,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.Vector2 pos = 2;</code>
-     * @return Whether the pos field is set.
      */
     boolean hasPos();
     /**
@@ -7585,7 +7474,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.Vector2 pos = 2;</code>
-     * @return The pos.
      */
     proto.gc.SslGcGeometry.Vector2 getPos();
     /**
@@ -7604,7 +7492,7 @@ java.lang.String defaultValue) {
    *
    * Protobuf type {@code proto.gc.Robot}
    */
-  public static final class Robot extends
+  public  static final class Robot extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.Robot)
       RobotOrBuilder {
@@ -7617,16 +7505,73 @@ java.lang.String defaultValue) {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Robot();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Robot(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              proto.vision.MessagesRobocupSslDetectionTracked.RobotId.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = id_.toBuilder();
+              }
+              id_ = input.readMessage(proto.vision.MessagesRobocupSslDetectionTracked.RobotId.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(id_);
+                id_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 18: {
+              proto.gc.SslGcGeometry.Vector2.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = pos_.toBuilder();
+              }
+              pos_ = input.readMessage(proto.gc.SslGcGeometry.Vector2.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pos_);
+                pos_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -7650,11 +7595,9 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.vision.RobotId id = 1;</code>
-     * @return Whether the id field is set.
      */
-    @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -7662,9 +7605,7 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.vision.RobotId id = 1;</code>
-     * @return The id.
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.RobotId getId() {
       return id_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.RobotId.getDefaultInstance() : id_;
     }
@@ -7675,7 +7616,6 @@ java.lang.String defaultValue) {
      *
      * <code>optional .proto.vision.RobotId id = 1;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetectionTracked.RobotIdOrBuilder getIdOrBuilder() {
       return id_ == null ? proto.vision.MessagesRobocupSslDetectionTracked.RobotId.getDefaultInstance() : id_;
     }
@@ -7688,11 +7628,9 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.Vector2 pos = 2;</code>
-     * @return Whether the pos field is set.
      */
-    @java.lang.Override
     public boolean hasPos() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -7700,9 +7638,7 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.Vector2 pos = 2;</code>
-     * @return The pos.
      */
-    @java.lang.Override
     public proto.gc.SslGcGeometry.Vector2 getPos() {
       return pos_ == null ? proto.gc.SslGcGeometry.Vector2.getDefaultInstance() : pos_;
     }
@@ -7713,7 +7649,6 @@ java.lang.String defaultValue) {
      *
      * <code>optional .proto.gc.Vector2 pos = 2;</code>
      */
-    @java.lang.Override
     public proto.gc.SslGcGeometry.Vector2OrBuilder getPosOrBuilder() {
       return pos_ == null ? proto.gc.SslGcGeometry.Vector2.getDefaultInstance() : pos_;
     }
@@ -7744,13 +7679,13 @@ java.lang.String defaultValue) {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, getId());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, getPos());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -7759,15 +7694,15 @@ java.lang.String defaultValue) {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getId());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPos());
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7782,18 +7717,19 @@ java.lang.String defaultValue) {
       }
       proto.gc.SslGcEngine.Robot other = (proto.gc.SslGcEngine.Robot) obj;
 
-      if (hasId() != other.hasId()) return false;
+      boolean result = true;
+      result = result && (hasId() == other.hasId());
       if (hasId()) {
-        if (!getId()
-            .equals(other.getId())) return false;
+        result = result && getId()
+            .equals(other.getId());
       }
-      if (hasPos() != other.hasPos()) return false;
+      result = result && (hasPos() == other.hasPos());
       if (hasPos()) {
-        if (!getPos()
-            .equals(other.getPos())) return false;
+        result = result && getPos()
+            .equals(other.getPos());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -7811,7 +7747,7 @@ java.lang.String defaultValue) {
         hash = (37 * hash) + POS_FIELD_NUMBER;
         hash = (53 * hash) + getPos().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7950,17 +7886,18 @@ java.lang.String defaultValue) {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        id_ = null;
-        if (idBuilder_ != null) {
-          idBuilder_.dispose();
-          idBuilder_ = null;
+        if (idBuilder_ == null) {
+          id_ = null;
+        } else {
+          idBuilder_.clear();
         }
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
-          posBuilder_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (posBuilder_ == null) {
+          pos_ = null;
+        } else {
+          posBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -7987,60 +7924,60 @@ java.lang.String defaultValue) {
       @java.lang.Override
       public proto.gc.SslGcEngine.Robot buildPartial() {
         proto.gc.SslGcEngine.Robot result = new proto.gc.SslGcEngine.Robot(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (idBuilder_ == null) {
+          result.id_ = id_;
+        } else {
+          result.id_ = idBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (posBuilder_ == null) {
+          result.pos_ = pos_;
+        } else {
+          result.pos_ = posBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcEngine.Robot result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = idBuilder_ == null
-              ? id_
-              : idBuilder_.build();
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.pos_ = posBuilder_ == null
-              ? pos_
-              : posBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -8060,7 +7997,7 @@ java.lang.String defaultValue) {
         if (other.hasPos()) {
           mergePos(other.getPos());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -8085,49 +8022,22 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcEngine.Robot parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getIdFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getPosFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcEngine.Robot) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
 
-      private proto.vision.MessagesRobocupSslDetectionTracked.RobotId id_;
+      private proto.vision.MessagesRobocupSslDetectionTracked.RobotId id_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.vision.MessagesRobocupSslDetectionTracked.RobotId, proto.vision.MessagesRobocupSslDetectionTracked.RobotId.Builder, proto.vision.MessagesRobocupSslDetectionTracked.RobotIdOrBuilder> idBuilder_;
       /**
@@ -8136,10 +8046,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.vision.RobotId id = 1;</code>
-       * @return Whether the id field is set.
        */
       public boolean hasId() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -8147,7 +8056,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.vision.RobotId id = 1;</code>
-       * @return The id.
        */
       public proto.vision.MessagesRobocupSslDetectionTracked.RobotId getId() {
         if (idBuilder_ == null) {
@@ -8169,11 +8077,11 @@ java.lang.String defaultValue) {
             throw new NullPointerException();
           }
           id_ = value;
+          onChanged();
         } else {
           idBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -8187,11 +8095,11 @@ java.lang.String defaultValue) {
           proto.vision.MessagesRobocupSslDetectionTracked.RobotId.Builder builderForValue) {
         if (idBuilder_ == null) {
           id_ = builderForValue.build();
+          onChanged();
         } else {
           idBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -8203,18 +8111,19 @@ java.lang.String defaultValue) {
        */
       public Builder mergeId(proto.vision.MessagesRobocupSslDetectionTracked.RobotId value) {
         if (idBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            id_ != null &&
-            id_ != proto.vision.MessagesRobocupSslDetectionTracked.RobotId.getDefaultInstance()) {
-            getIdBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              id_ != null &&
+              id_ != proto.vision.MessagesRobocupSslDetectionTracked.RobotId.getDefaultInstance()) {
+            id_ =
+              proto.vision.MessagesRobocupSslDetectionTracked.RobotId.newBuilder(id_).mergeFrom(value).buildPartial();
           } else {
             id_ = value;
           }
+          onChanged();
         } else {
           idBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -8225,13 +8134,13 @@ java.lang.String defaultValue) {
        * <code>optional .proto.vision.RobotId id = 1;</code>
        */
       public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = null;
-        if (idBuilder_ != null) {
-          idBuilder_.dispose();
-          idBuilder_ = null;
+        if (idBuilder_ == null) {
+          id_ = null;
+          onChanged();
+        } else {
+          idBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
       /**
@@ -8282,7 +8191,7 @@ java.lang.String defaultValue) {
         return idBuilder_;
       }
 
-      private proto.gc.SslGcGeometry.Vector2 pos_;
+      private proto.gc.SslGcGeometry.Vector2 pos_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.gc.SslGcGeometry.Vector2, proto.gc.SslGcGeometry.Vector2.Builder, proto.gc.SslGcGeometry.Vector2OrBuilder> posBuilder_;
       /**
@@ -8291,10 +8200,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.Vector2 pos = 2;</code>
-       * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -8302,7 +8210,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.Vector2 pos = 2;</code>
-       * @return The pos.
        */
       public proto.gc.SslGcGeometry.Vector2 getPos() {
         if (posBuilder_ == null) {
@@ -8324,11 +8231,11 @@ java.lang.String defaultValue) {
             throw new NullPointerException();
           }
           pos_ = value;
+          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -8342,11 +8249,11 @@ java.lang.String defaultValue) {
           proto.gc.SslGcGeometry.Vector2.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
+          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -8358,18 +8265,19 @@ java.lang.String defaultValue) {
        */
       public Builder mergePos(proto.gc.SslGcGeometry.Vector2 value) {
         if (posBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            pos_ != null &&
-            pos_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
-            getPosBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              pos_ != null &&
+              pos_ != proto.gc.SslGcGeometry.Vector2.getDefaultInstance()) {
+            pos_ =
+              proto.gc.SslGcGeometry.Vector2.newBuilder(pos_).mergeFrom(value).buildPartial();
           } else {
             pos_ = value;
           }
+          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
-        onChanged();
         return this;
       }
       /**
@@ -8380,13 +8288,13 @@ java.lang.String defaultValue) {
        * <code>optional .proto.gc.Vector2 pos = 2;</code>
        */
       public Builder clearPos() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        pos_ = null;
-        if (posBuilder_ != null) {
-          posBuilder_.dispose();
-          posBuilder_ = null;
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          posBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
@@ -8469,18 +8377,7 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Robot(input, extensionRegistry);
       }
     };
 
@@ -8510,7 +8407,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>required .proto.gc.ContinueAction.Type type = 1;</code>
-     * @return Whether the type field is set.
      */
     boolean hasType();
     /**
@@ -8519,7 +8415,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>required .proto.gc.ContinueAction.Type type = 1;</code>
-     * @return The type.
      */
     proto.gc.SslGcEngine.ContinueAction.Type getType();
 
@@ -8529,7 +8424,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>required .proto.simulation.Team for_team = 2;</code>
-     * @return Whether the forTeam field is set.
      */
     boolean hasForTeam();
     /**
@@ -8538,7 +8432,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>required .proto.simulation.Team for_team = 2;</code>
-     * @return The forTeam.
      */
     proto.simulation.SslGcCommon.Team getForTeam();
 
@@ -8548,7 +8441,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>repeated string continuation_issues = 3;</code>
-     * @return A list containing the continuationIssues.
      */
     java.util.List<java.lang.String>
         getContinuationIssuesList();
@@ -8558,7 +8450,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>repeated string continuation_issues = 3;</code>
-     * @return The count of continuationIssues.
      */
     int getContinuationIssuesCount();
     /**
@@ -8567,8 +8458,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>repeated string continuation_issues = 3;</code>
-     * @param index The index of the element to return.
-     * @return The continuationIssues at the given index.
      */
     java.lang.String getContinuationIssues(int index);
     /**
@@ -8577,8 +8466,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>repeated string continuation_issues = 3;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the continuationIssues at the given index.
      */
     com.google.protobuf.ByteString
         getContinuationIssuesBytes(int index);
@@ -8589,7 +8476,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .google.protobuf.Timestamp ready_at = 4;</code>
-     * @return Whether the readyAt field is set.
      */
     boolean hasReadyAt();
     /**
@@ -8598,7 +8484,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .google.protobuf.Timestamp ready_at = 4;</code>
-     * @return The readyAt.
      */
     com.google.protobuf.Timestamp getReadyAt();
     /**
@@ -8616,7 +8501,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.ContinueAction.State state = 5;</code>
-     * @return Whether the state field is set.
      */
     boolean hasState();
     /**
@@ -8625,14 +8509,13 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.ContinueAction.State state = 5;</code>
-     * @return The state.
      */
     proto.gc.SslGcEngine.ContinueAction.State getState();
   }
   /**
    * Protobuf type {@code proto.gc.ContinueAction}
    */
-  public static final class ContinueAction extends
+  public  static final class ContinueAction extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.ContinueAction)
       ContinueActionOrBuilder {
@@ -8649,16 +8532,108 @@ java.lang.String defaultValue) {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ContinueAction();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private ContinueAction(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              proto.gc.SslGcEngine.ContinueAction.Type value = proto.gc.SslGcEngine.ContinueAction.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = rawValue;
+              }
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              proto.simulation.SslGcCommon.Team value = proto.simulation.SslGcCommon.Team.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(2, rawValue);
+              } else {
+                bitField0_ |= 0x00000002;
+                forTeam_ = rawValue;
+              }
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                continuationIssues_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              continuationIssues_.add(bs);
+              break;
+            }
+            case 34: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                subBuilder = readyAt_.toBuilder();
+              }
+              readyAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(readyAt_);
+                readyAt_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              proto.gc.SslGcEngine.ContinueAction.State value = proto.gc.SslGcEngine.ContinueAction.State.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(5, rawValue);
+              } else {
+                bitField0_ |= 0x00000008;
+                state_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          continuationIssues_ = continuationIssues_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -8847,8 +8822,6 @@ java.lang.String defaultValue) {
       }
 
       /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -8856,10 +8829,6 @@ java.lang.String defaultValue) {
         return forNumber(value);
       }
 
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
       public static Type forNumber(int value) {
         switch (value) {
           case 0: return TYPE_UNKNOWN;
@@ -8993,8 +8962,6 @@ java.lang.String defaultValue) {
       }
 
       /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -9002,10 +8969,6 @@ java.lang.String defaultValue) {
         return forNumber(value);
       }
 
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
       public static State forNumber(int value) {
         switch (value) {
           case 0: return STATE_UNKNOWN;
@@ -9065,17 +9028,16 @@ java.lang.String defaultValue) {
 
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_ = 0;
+    private int type_;
     /**
      * <pre>
      * type of action that will be performed next
      * </pre>
      *
      * <code>required .proto.gc.ContinueAction.Type type = 1;</code>
-     * @return Whether the type field is set.
      */
-    @java.lang.Override public boolean hasType() {
-      return ((bitField0_ & 0x00000001) != 0);
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -9083,25 +9045,24 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>required .proto.gc.ContinueAction.Type type = 1;</code>
-     * @return The type.
      */
-    @java.lang.Override public proto.gc.SslGcEngine.ContinueAction.Type getType() {
-      proto.gc.SslGcEngine.ContinueAction.Type result = proto.gc.SslGcEngine.ContinueAction.Type.forNumber(type_);
+    public proto.gc.SslGcEngine.ContinueAction.Type getType() {
+      @SuppressWarnings("deprecation")
+      proto.gc.SslGcEngine.ContinueAction.Type result = proto.gc.SslGcEngine.ContinueAction.Type.valueOf(type_);
       return result == null ? proto.gc.SslGcEngine.ContinueAction.Type.TYPE_UNKNOWN : result;
     }
 
     public static final int FOR_TEAM_FIELD_NUMBER = 2;
-    private int forTeam_ = 0;
+    private int forTeam_;
     /**
      * <pre>
      * for which team (if team specific)
      * </pre>
      *
      * <code>required .proto.simulation.Team for_team = 2;</code>
-     * @return Whether the forTeam field is set.
      */
-    @java.lang.Override public boolean hasForTeam() {
-      return ((bitField0_ & 0x00000002) != 0);
+    public boolean hasForTeam() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -9109,15 +9070,14 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>required .proto.simulation.Team for_team = 2;</code>
-     * @return The forTeam.
      */
-    @java.lang.Override public proto.simulation.SslGcCommon.Team getForTeam() {
-      proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(forTeam_);
+    public proto.simulation.SslGcCommon.Team getForTeam() {
+      @SuppressWarnings("deprecation")
+      proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(forTeam_);
       return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
     }
 
     public static final int CONTINUATION_ISSUES_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList continuationIssues_;
     /**
      * <pre>
@@ -9125,7 +9085,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>repeated string continuation_issues = 3;</code>
-     * @return A list containing the continuationIssues.
      */
     public com.google.protobuf.ProtocolStringList
         getContinuationIssuesList() {
@@ -9137,7 +9096,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>repeated string continuation_issues = 3;</code>
-     * @return The count of continuationIssues.
      */
     public int getContinuationIssuesCount() {
       return continuationIssues_.size();
@@ -9148,8 +9106,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>repeated string continuation_issues = 3;</code>
-     * @param index The index of the element to return.
-     * @return The continuationIssues at the given index.
      */
     public java.lang.String getContinuationIssues(int index) {
       return continuationIssues_.get(index);
@@ -9160,8 +9116,6 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>repeated string continuation_issues = 3;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the continuationIssues at the given index.
      */
     public com.google.protobuf.ByteString
         getContinuationIssuesBytes(int index) {
@@ -9176,11 +9130,9 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .google.protobuf.Timestamp ready_at = 4;</code>
-     * @return Whether the readyAt field is set.
      */
-    @java.lang.Override
     public boolean hasReadyAt() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
@@ -9188,9 +9140,7 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .google.protobuf.Timestamp ready_at = 4;</code>
-     * @return The readyAt.
      */
-    @java.lang.Override
     public com.google.protobuf.Timestamp getReadyAt() {
       return readyAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readyAt_;
     }
@@ -9201,23 +9151,21 @@ java.lang.String defaultValue) {
      *
      * <code>optional .google.protobuf.Timestamp ready_at = 4;</code>
      */
-    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getReadyAtOrBuilder() {
       return readyAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readyAt_;
     }
 
     public static final int STATE_FIELD_NUMBER = 5;
-    private int state_ = 0;
+    private int state_;
     /**
      * <pre>
      * state of the action
      * </pre>
      *
      * <code>optional .proto.gc.ContinueAction.State state = 5;</code>
-     * @return Whether the state field is set.
      */
-    @java.lang.Override public boolean hasState() {
-      return ((bitField0_ & 0x00000008) != 0);
+    public boolean hasState() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <pre>
@@ -9225,10 +9173,10 @@ java.lang.String defaultValue) {
      * </pre>
      *
      * <code>optional .proto.gc.ContinueAction.State state = 5;</code>
-     * @return The state.
      */
-    @java.lang.Override public proto.gc.SslGcEngine.ContinueAction.State getState() {
-      proto.gc.SslGcEngine.ContinueAction.State result = proto.gc.SslGcEngine.ContinueAction.State.forNumber(state_);
+    public proto.gc.SslGcEngine.ContinueAction.State getState() {
+      @SuppressWarnings("deprecation")
+      proto.gc.SslGcEngine.ContinueAction.State result = proto.gc.SslGcEngine.ContinueAction.State.valueOf(state_);
       return result == null ? proto.gc.SslGcEngine.ContinueAction.State.STATE_UNKNOWN : result;
     }
 
@@ -9254,22 +9202,22 @@ java.lang.String defaultValue) {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeEnum(1, type_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeEnum(2, forTeam_);
       }
       for (int i = 0; i < continuationIssues_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, continuationIssues_.getRaw(i));
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeMessage(4, getReadyAt());
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeEnum(5, state_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -9278,11 +9226,11 @@ java.lang.String defaultValue) {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, type_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, forTeam_);
       }
@@ -9294,15 +9242,15 @@ java.lang.String defaultValue) {
         size += dataSize;
         size += 1 * getContinuationIssuesList().size();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getReadyAt());
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, state_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9317,27 +9265,28 @@ java.lang.String defaultValue) {
       }
       proto.gc.SslGcEngine.ContinueAction other = (proto.gc.SslGcEngine.ContinueAction) obj;
 
-      if (hasType() != other.hasType()) return false;
+      boolean result = true;
+      result = result && (hasType() == other.hasType());
       if (hasType()) {
-        if (type_ != other.type_) return false;
+        result = result && type_ == other.type_;
       }
-      if (hasForTeam() != other.hasForTeam()) return false;
+      result = result && (hasForTeam() == other.hasForTeam());
       if (hasForTeam()) {
-        if (forTeam_ != other.forTeam_) return false;
+        result = result && forTeam_ == other.forTeam_;
       }
-      if (!getContinuationIssuesList()
-          .equals(other.getContinuationIssuesList())) return false;
-      if (hasReadyAt() != other.hasReadyAt()) return false;
+      result = result && getContinuationIssuesList()
+          .equals(other.getContinuationIssuesList());
+      result = result && (hasReadyAt() == other.hasReadyAt());
       if (hasReadyAt()) {
-        if (!getReadyAt()
-            .equals(other.getReadyAt())) return false;
+        result = result && getReadyAt()
+            .equals(other.getReadyAt());
       }
-      if (hasState() != other.hasState()) return false;
+      result = result && (hasState() == other.hasState());
       if (hasState()) {
-        if (state_ != other.state_) return false;
+        result = result && state_ == other.state_;
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -9367,7 +9316,7 @@ java.lang.String defaultValue) {
         hash = (37 * hash) + STATE_FIELD_NUMBER;
         hash = (53 * hash) + state_;
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9501,17 +9450,20 @@ java.lang.String defaultValue) {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         type_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
         forTeam_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
         continuationIssues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
-        readyAt_ = null;
-        if (readyAtBuilder_ != null) {
-          readyAtBuilder_.dispose();
-          readyAtBuilder_ = null;
+        if (readyAtBuilder_ == null) {
+          readyAt_ = null;
+        } else {
+          readyAtBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         state_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -9538,75 +9490,69 @@ java.lang.String defaultValue) {
       @java.lang.Override
       public proto.gc.SslGcEngine.ContinueAction buildPartial() {
         proto.gc.SslGcEngine.ContinueAction result = new proto.gc.SslGcEngine.ContinueAction(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(proto.gc.SslGcEngine.ContinueAction result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.type_ = type_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.forTeam_ = forTeam_;
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
           continuationIssues_ = continuationIssues_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.continuationIssues_ = continuationIssues_;
-      }
-
-      private void buildPartial0(proto.gc.SslGcEngine.ContinueAction result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.type_ = type_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.forTeam_ = forTeam_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.readyAt_ = readyAtBuilder_ == null
-              ? readyAt_
-              : readyAtBuilder_.build();
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000004;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.state_ = state_;
+        if (readyAtBuilder_ == null) {
+          result.readyAt_ = readyAt_;
+        } else {
+          result.readyAt_ = readyAtBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.bitField0_ |= to_bitField0_;
+        result.state_ = state_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -9642,7 +9588,7 @@ java.lang.String defaultValue) {
         if (other.hasState()) {
           setState(other.getState());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -9663,79 +9609,17 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcEngine.ContinueAction parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int tmpRaw = input.readEnum();
-                proto.gc.SslGcEngine.ContinueAction.Type tmpValue =
-                    proto.gc.SslGcEngine.ContinueAction.Type.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(1, tmpRaw);
-                } else {
-                  type_ = tmpRaw;
-                  bitField0_ |= 0x00000001;
-                }
-                break;
-              } // case 8
-              case 16: {
-                int tmpRaw = input.readEnum();
-                proto.simulation.SslGcCommon.Team tmpValue =
-                    proto.simulation.SslGcCommon.Team.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(2, tmpRaw);
-                } else {
-                  forTeam_ = tmpRaw;
-                  bitField0_ |= 0x00000002;
-                }
-                break;
-              } // case 16
-              case 26: {
-                com.google.protobuf.ByteString bs = input.readBytes();
-                ensureContinuationIssuesIsMutable();
-                continuationIssues_.add(bs);
-                break;
-              } // case 26
-              case 34: {
-                input.readMessage(
-                    getReadyAtFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              case 40: {
-                int tmpRaw = input.readEnum();
-                proto.gc.SslGcEngine.ContinueAction.State tmpValue =
-                    proto.gc.SslGcEngine.ContinueAction.State.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(5, tmpRaw);
-                } else {
-                  state_ = tmpRaw;
-                  bitField0_ |= 0x00000010;
-                }
-                break;
-              } // case 40
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcEngine.ContinueAction) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -9747,10 +9631,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>required .proto.gc.ContinueAction.Type type = 1;</code>
-       * @return Whether the type field is set.
        */
-      @java.lang.Override public boolean hasType() {
-        return ((bitField0_ & 0x00000001) != 0);
+      public boolean hasType() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -9758,11 +9641,10 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>required .proto.gc.ContinueAction.Type type = 1;</code>
-       * @return The type.
        */
-      @java.lang.Override
       public proto.gc.SslGcEngine.ContinueAction.Type getType() {
-        proto.gc.SslGcEngine.ContinueAction.Type result = proto.gc.SslGcEngine.ContinueAction.Type.forNumber(type_);
+        @SuppressWarnings("deprecation")
+        proto.gc.SslGcEngine.ContinueAction.Type result = proto.gc.SslGcEngine.ContinueAction.Type.valueOf(type_);
         return result == null ? proto.gc.SslGcEngine.ContinueAction.Type.TYPE_UNKNOWN : result;
       }
       /**
@@ -9771,8 +9653,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>required .proto.gc.ContinueAction.Type type = 1;</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
        */
       public Builder setType(proto.gc.SslGcEngine.ContinueAction.Type value) {
         if (value == null) {
@@ -9789,7 +9669,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>required .proto.gc.ContinueAction.Type type = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -9805,10 +9684,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>required .proto.simulation.Team for_team = 2;</code>
-       * @return Whether the forTeam field is set.
        */
-      @java.lang.Override public boolean hasForTeam() {
-        return ((bitField0_ & 0x00000002) != 0);
+      public boolean hasForTeam() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -9816,11 +9694,10 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>required .proto.simulation.Team for_team = 2;</code>
-       * @return The forTeam.
        */
-      @java.lang.Override
       public proto.simulation.SslGcCommon.Team getForTeam() {
-        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.forNumber(forTeam_);
+        @SuppressWarnings("deprecation")
+        proto.simulation.SslGcCommon.Team result = proto.simulation.SslGcCommon.Team.valueOf(forTeam_);
         return result == null ? proto.simulation.SslGcCommon.Team.UNKNOWN : result;
       }
       /**
@@ -9829,8 +9706,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>required .proto.simulation.Team for_team = 2;</code>
-       * @param value The forTeam to set.
-       * @return This builder for chaining.
        */
       public Builder setForTeam(proto.simulation.SslGcCommon.Team value) {
         if (value == null) {
@@ -9847,7 +9722,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>required .proto.simulation.Team for_team = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearForTeam() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -9858,7 +9732,7 @@ java.lang.String defaultValue) {
 
       private com.google.protobuf.LazyStringList continuationIssues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureContinuationIssuesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
           continuationIssues_ = new com.google.protobuf.LazyStringArrayList(continuationIssues_);
           bitField0_ |= 0x00000004;
          }
@@ -9869,7 +9743,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>repeated string continuation_issues = 3;</code>
-       * @return A list containing the continuationIssues.
        */
       public com.google.protobuf.ProtocolStringList
           getContinuationIssuesList() {
@@ -9881,7 +9754,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>repeated string continuation_issues = 3;</code>
-       * @return The count of continuationIssues.
        */
       public int getContinuationIssuesCount() {
         return continuationIssues_.size();
@@ -9892,8 +9764,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>repeated string continuation_issues = 3;</code>
-       * @param index The index of the element to return.
-       * @return The continuationIssues at the given index.
        */
       public java.lang.String getContinuationIssues(int index) {
         return continuationIssues_.get(index);
@@ -9904,8 +9774,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>repeated string continuation_issues = 3;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the continuationIssues at the given index.
        */
       public com.google.protobuf.ByteString
           getContinuationIssuesBytes(int index) {
@@ -9917,14 +9785,13 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>repeated string continuation_issues = 3;</code>
-       * @param index The index to set the value at.
-       * @param value The continuationIssues to set.
-       * @return This builder for chaining.
        */
       public Builder setContinuationIssues(
           int index, java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureContinuationIssuesIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureContinuationIssuesIsMutable();
         continuationIssues_.set(index, value);
         onChanged();
         return this;
@@ -9935,13 +9802,13 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>repeated string continuation_issues = 3;</code>
-       * @param value The continuationIssues to add.
-       * @return This builder for chaining.
        */
       public Builder addContinuationIssues(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureContinuationIssuesIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureContinuationIssuesIsMutable();
         continuationIssues_.add(value);
         onChanged();
         return this;
@@ -9952,8 +9819,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>repeated string continuation_issues = 3;</code>
-       * @param values The continuationIssues to add.
-       * @return This builder for chaining.
        */
       public Builder addAllContinuationIssues(
           java.lang.Iterable<java.lang.String> values) {
@@ -9969,7 +9834,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>repeated string continuation_issues = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearContinuationIssues() {
         continuationIssues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -9983,19 +9847,19 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>repeated string continuation_issues = 3;</code>
-       * @param value The bytes of the continuationIssues to add.
-       * @return This builder for chaining.
        */
       public Builder addContinuationIssuesBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureContinuationIssuesIsMutable();
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureContinuationIssuesIsMutable();
         continuationIssues_.add(value);
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.Timestamp readyAt_;
+      private com.google.protobuf.Timestamp readyAt_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> readyAtBuilder_;
       /**
@@ -10004,10 +9868,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .google.protobuf.Timestamp ready_at = 4;</code>
-       * @return Whether the readyAt field is set.
        */
       public boolean hasReadyAt() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <pre>
@@ -10015,7 +9878,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .google.protobuf.Timestamp ready_at = 4;</code>
-       * @return The readyAt.
        */
       public com.google.protobuf.Timestamp getReadyAt() {
         if (readyAtBuilder_ == null) {
@@ -10037,11 +9899,11 @@ java.lang.String defaultValue) {
             throw new NullPointerException();
           }
           readyAt_ = value;
+          onChanged();
         } else {
           readyAtBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000008;
-        onChanged();
         return this;
       }
       /**
@@ -10055,11 +9917,11 @@ java.lang.String defaultValue) {
           com.google.protobuf.Timestamp.Builder builderForValue) {
         if (readyAtBuilder_ == null) {
           readyAt_ = builderForValue.build();
+          onChanged();
         } else {
           readyAtBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000008;
-        onChanged();
         return this;
       }
       /**
@@ -10071,18 +9933,19 @@ java.lang.String defaultValue) {
        */
       public Builder mergeReadyAt(com.google.protobuf.Timestamp value) {
         if (readyAtBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            readyAt_ != null &&
-            readyAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-            getReadyAtBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000008) == 0x00000008) &&
+              readyAt_ != null &&
+              readyAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            readyAt_ =
+              com.google.protobuf.Timestamp.newBuilder(readyAt_).mergeFrom(value).buildPartial();
           } else {
             readyAt_ = value;
           }
+          onChanged();
         } else {
           readyAtBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000008;
-        onChanged();
         return this;
       }
       /**
@@ -10093,13 +9956,13 @@ java.lang.String defaultValue) {
        * <code>optional .google.protobuf.Timestamp ready_at = 4;</code>
        */
       public Builder clearReadyAt() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        readyAt_ = null;
-        if (readyAtBuilder_ != null) {
-          readyAtBuilder_.dispose();
-          readyAtBuilder_ = null;
+        if (readyAtBuilder_ == null) {
+          readyAt_ = null;
+          onChanged();
+        } else {
+          readyAtBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
       /**
@@ -10157,10 +10020,9 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.ContinueAction.State state = 5;</code>
-       * @return Whether the state field is set.
        */
-      @java.lang.Override public boolean hasState() {
-        return ((bitField0_ & 0x00000010) != 0);
+      public boolean hasState() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <pre>
@@ -10168,11 +10030,10 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.ContinueAction.State state = 5;</code>
-       * @return The state.
        */
-      @java.lang.Override
       public proto.gc.SslGcEngine.ContinueAction.State getState() {
-        proto.gc.SslGcEngine.ContinueAction.State result = proto.gc.SslGcEngine.ContinueAction.State.forNumber(state_);
+        @SuppressWarnings("deprecation")
+        proto.gc.SslGcEngine.ContinueAction.State result = proto.gc.SslGcEngine.ContinueAction.State.valueOf(state_);
         return result == null ? proto.gc.SslGcEngine.ContinueAction.State.STATE_UNKNOWN : result;
       }
       /**
@@ -10181,8 +10042,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.ContinueAction.State state = 5;</code>
-       * @param value The state to set.
-       * @return This builder for chaining.
        */
       public Builder setState(proto.gc.SslGcEngine.ContinueAction.State value) {
         if (value == null) {
@@ -10199,7 +10058,6 @@ java.lang.String defaultValue) {
        * </pre>
        *
        * <code>optional .proto.gc.ContinueAction.State state = 5;</code>
-       * @return This builder for chaining.
        */
       public Builder clearState() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -10240,18 +10098,7 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ContinueAction(input, extensionRegistry);
       }
     };
 
@@ -10277,17 +10124,14 @@ java.lang.String defaultValue) {
 
     /**
      * <code>required string message = 1;</code>
-     * @return Whether the message field is set.
      */
     boolean hasMessage();
     /**
      * <code>required string message = 1;</code>
-     * @return The message.
      */
     java.lang.String getMessage();
     /**
      * <code>required string message = 1;</code>
-     * @return The bytes for message.
      */
     com.google.protobuf.ByteString
         getMessageBytes();
@@ -10295,7 +10139,7 @@ java.lang.String defaultValue) {
   /**
    * Protobuf type {@code proto.gc.ContinueHint}
    */
-  public static final class ContinueHint extends
+  public  static final class ContinueHint extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.gc.ContinueHint)
       ContinueHintOrBuilder {
@@ -10309,16 +10153,53 @@ java.lang.String defaultValue) {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ContinueHint();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private ContinueHint(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              message_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -10335,21 +10216,16 @@ java.lang.String defaultValue) {
 
     private int bitField0_;
     public static final int MESSAGE_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object message_ = "";
+    private volatile java.lang.Object message_;
     /**
      * <code>required string message = 1;</code>
-     * @return Whether the message field is set.
      */
-    @java.lang.Override
     public boolean hasMessage() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required string message = 1;</code>
-     * @return The message.
      */
-    @java.lang.Override
     public java.lang.String getMessage() {
       java.lang.Object ref = message_;
       if (ref instanceof java.lang.String) {
@@ -10366,9 +10242,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <code>required string message = 1;</code>
-     * @return The bytes for message.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getMessageBytes() {
       java.lang.Object ref = message_;
@@ -10401,10 +10275,10 @@ java.lang.String defaultValue) {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -10413,10 +10287,10 @@ java.lang.String defaultValue) {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -10431,13 +10305,14 @@ java.lang.String defaultValue) {
       }
       proto.gc.SslGcEngine.ContinueHint other = (proto.gc.SslGcEngine.ContinueHint) obj;
 
-      if (hasMessage() != other.hasMessage()) return false;
+      boolean result = true;
+      result = result && (hasMessage() == other.hasMessage());
       if (hasMessage()) {
-        if (!getMessage()
-            .equals(other.getMessage())) return false;
+        result = result && getMessage()
+            .equals(other.getMessage());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -10451,7 +10326,7 @@ java.lang.String defaultValue) {
         hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
         hash = (53 * hash) + getMessage().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -10568,19 +10443,24 @@ java.lang.String defaultValue) {
 
       // Construct using proto.gc.SslGcEngine.ContinueHint.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         message_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -10607,52 +10487,48 @@ java.lang.String defaultValue) {
       @java.lang.Override
       public proto.gc.SslGcEngine.ContinueHint buildPartial() {
         proto.gc.SslGcEngine.ContinueHint result = new proto.gc.SslGcEngine.ContinueHint(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.message_ = message_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.gc.SslGcEngine.ContinueHint result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.message_ = message_;
-          to_bitField0_ |= 0x00000001;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -10667,11 +10543,11 @@ java.lang.String defaultValue) {
       public Builder mergeFrom(proto.gc.SslGcEngine.ContinueHint other) {
         if (other == proto.gc.SslGcEngine.ContinueHint.getDefaultInstance()) return this;
         if (other.hasMessage()) {
-          message_ = other.message_;
           bitField0_ |= 0x00000001;
+          message_ = other.message_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -10689,35 +10565,17 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.gc.SslGcEngine.ContinueHint parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                message_ = input.readBytes();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.gc.SslGcEngine.ContinueHint) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -10725,14 +10583,12 @@ java.lang.String defaultValue) {
       private java.lang.Object message_ = "";
       /**
        * <code>required string message = 1;</code>
-       * @return Whether the message field is set.
        */
       public boolean hasMessage() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required string message = 1;</code>
-       * @return The message.
        */
       public java.lang.String getMessage() {
         java.lang.Object ref = message_;
@@ -10750,7 +10606,6 @@ java.lang.String defaultValue) {
       }
       /**
        * <code>required string message = 1;</code>
-       * @return The bytes for message.
        */
       public com.google.protobuf.ByteString
           getMessageBytes() {
@@ -10767,37 +10622,36 @@ java.lang.String defaultValue) {
       }
       /**
        * <code>required string message = 1;</code>
-       * @param value The message to set.
-       * @return This builder for chaining.
        */
       public Builder setMessage(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         message_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
        * <code>required string message = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearMessage() {
-        message_ = getDefaultInstance().getMessage();
         bitField0_ = (bitField0_ & ~0x00000001);
+        message_ = getDefaultInstance().getMessage();
         onChanged();
         return this;
       }
       /**
        * <code>required string message = 1;</code>
-       * @param value The bytes for message to set.
-       * @return This builder for chaining.
        */
       public Builder setMessageBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         message_ = value;
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -10834,18 +10688,7 @@ java.lang.String defaultValue) {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new ContinueHint(input, extensionRegistry);
       }
     };
 
@@ -10988,14 +10831,22 @@ java.lang.String defaultValue) {
       "thub.com/RoboCup-SSL/ssl-game-controller" +
       "/internal/app/engine"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           proto.gc.SslGcGeometry.getDescriptor(),
           proto.simulation.SslGcCommon.getDescriptor(),
           proto.vision.MessagesRobocupSslDetectionTracked.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
-        });
+        }, assigner);
     internal_static_proto_gc_GcState_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_gc_GcState_fieldAccessorTable = new

@@ -20,12 +20,10 @@ public final class MessagesRobocupSslRefboxLog {
 
     /**
      * <code>required .proto.vision.SSL_DetectionFrame frame = 1;</code>
-     * @return Whether the frame field is set.
      */
     boolean hasFrame();
     /**
      * <code>required .proto.vision.SSL_DetectionFrame frame = 1;</code>
-     * @return The frame.
      */
     proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame getFrame();
     /**
@@ -35,17 +33,14 @@ public final class MessagesRobocupSslRefboxLog {
 
     /**
      * <code>required string refbox_cmd = 2;</code>
-     * @return Whether the refboxCmd field is set.
      */
     boolean hasRefboxCmd();
     /**
      * <code>required string refbox_cmd = 2;</code>
-     * @return The refboxCmd.
      */
     java.lang.String getRefboxCmd();
     /**
      * <code>required string refbox_cmd = 2;</code>
-     * @return The bytes for refboxCmd.
      */
     com.google.protobuf.ByteString
         getRefboxCmdBytes();
@@ -53,7 +48,7 @@ public final class MessagesRobocupSslRefboxLog {
   /**
    * Protobuf type {@code proto.vision.Log_Frame}
    */
-  public static final class Log_Frame extends
+  public  static final class Log_Frame extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.vision.Log_Frame)
       Log_FrameOrBuilder {
@@ -67,16 +62,66 @@ public final class MessagesRobocupSslRefboxLog {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Log_Frame();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Log_Frame(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = frame_.toBuilder();
+              }
+              frame_ = input.readMessage(proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(frame_);
+                frame_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              refboxCmd_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -96,44 +141,34 @@ public final class MessagesRobocupSslRefboxLog {
     private proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame frame_;
     /**
      * <code>required .proto.vision.SSL_DetectionFrame frame = 1;</code>
-     * @return Whether the frame field is set.
      */
-    @java.lang.Override
     public boolean hasFrame() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required .proto.vision.SSL_DetectionFrame frame = 1;</code>
-     * @return The frame.
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame getFrame() {
       return frame_ == null ? proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.getDefaultInstance() : frame_;
     }
     /**
      * <code>required .proto.vision.SSL_DetectionFrame frame = 1;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrameOrBuilder getFrameOrBuilder() {
       return frame_ == null ? proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.getDefaultInstance() : frame_;
     }
 
     public static final int REFBOX_CMD_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object refboxCmd_ = "";
+    private volatile java.lang.Object refboxCmd_;
     /**
      * <code>required string refbox_cmd = 2;</code>
-     * @return Whether the refboxCmd field is set.
      */
-    @java.lang.Override
     public boolean hasRefboxCmd() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>required string refbox_cmd = 2;</code>
-     * @return The refboxCmd.
      */
-    @java.lang.Override
     public java.lang.String getRefboxCmd() {
       java.lang.Object ref = refboxCmd_;
       if (ref instanceof java.lang.String) {
@@ -150,9 +185,7 @@ public final class MessagesRobocupSslRefboxLog {
     }
     /**
      * <code>required string refbox_cmd = 2;</code>
-     * @return The bytes for refboxCmd.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getRefboxCmdBytes() {
       java.lang.Object ref = refboxCmd_;
@@ -193,13 +226,13 @@ public final class MessagesRobocupSslRefboxLog {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, getFrame());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, refboxCmd_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -208,14 +241,14 @@ public final class MessagesRobocupSslRefboxLog {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getFrame());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, refboxCmd_);
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,18 +263,19 @@ public final class MessagesRobocupSslRefboxLog {
       }
       proto.vision.MessagesRobocupSslRefboxLog.Log_Frame other = (proto.vision.MessagesRobocupSslRefboxLog.Log_Frame) obj;
 
-      if (hasFrame() != other.hasFrame()) return false;
+      boolean result = true;
+      result = result && (hasFrame() == other.hasFrame());
       if (hasFrame()) {
-        if (!getFrame()
-            .equals(other.getFrame())) return false;
+        result = result && getFrame()
+            .equals(other.getFrame());
       }
-      if (hasRefboxCmd() != other.hasRefboxCmd()) return false;
+      result = result && (hasRefboxCmd() == other.hasRefboxCmd());
       if (hasRefboxCmd()) {
-        if (!getRefboxCmd()
-            .equals(other.getRefboxCmd())) return false;
+        result = result && getRefboxCmd()
+            .equals(other.getRefboxCmd());
       }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -259,7 +293,7 @@ public final class MessagesRobocupSslRefboxLog {
         hash = (37 * hash) + REFBOX_CMD_FIELD_NUMBER;
         hash = (53 * hash) + getRefboxCmd().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -393,13 +427,14 @@ public final class MessagesRobocupSslRefboxLog {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        frame_ = null;
-        if (frameBuilder_ != null) {
-          frameBuilder_.dispose();
-          frameBuilder_ = null;
+        if (frameBuilder_ == null) {
+          frame_ = null;
+        } else {
+          frameBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         refboxCmd_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -426,58 +461,56 @@ public final class MessagesRobocupSslRefboxLog {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslRefboxLog.Log_Frame buildPartial() {
         proto.vision.MessagesRobocupSslRefboxLog.Log_Frame result = new proto.vision.MessagesRobocupSslRefboxLog.Log_Frame(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (frameBuilder_ == null) {
+          result.frame_ = frame_;
+        } else {
+          result.frame_ = frameBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.refboxCmd_ = refboxCmd_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(proto.vision.MessagesRobocupSslRefboxLog.Log_Frame result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.frame_ = frameBuilder_ == null
-              ? frame_
-              : frameBuilder_.build();
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.refboxCmd_ = refboxCmd_;
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -495,11 +528,11 @@ public final class MessagesRobocupSslRefboxLog {
           mergeFrame(other.getFrame());
         }
         if (other.hasRefboxCmd()) {
-          refboxCmd_ = other.refboxCmd_;
           bitField0_ |= 0x00000002;
+          refboxCmd_ = other.refboxCmd_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -523,59 +556,32 @@ public final class MessagesRobocupSslRefboxLog {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.vision.MessagesRobocupSslRefboxLog.Log_Frame parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                input.readMessage(
-                    getFrameFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                refboxCmd_ = input.readBytes();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.vision.MessagesRobocupSslRefboxLog.Log_Frame) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
 
-      private proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame frame_;
+      private proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame frame_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame, proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.Builder, proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrameOrBuilder> frameBuilder_;
       /**
        * <code>required .proto.vision.SSL_DetectionFrame frame = 1;</code>
-       * @return Whether the frame field is set.
        */
       public boolean hasFrame() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required .proto.vision.SSL_DetectionFrame frame = 1;</code>
-       * @return The frame.
        */
       public proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame getFrame() {
         if (frameBuilder_ == null) {
@@ -593,11 +599,11 @@ public final class MessagesRobocupSslRefboxLog {
             throw new NullPointerException();
           }
           frame_ = value;
+          onChanged();
         } else {
           frameBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -607,11 +613,11 @@ public final class MessagesRobocupSslRefboxLog {
           proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.Builder builderForValue) {
         if (frameBuilder_ == null) {
           frame_ = builderForValue.build();
+          onChanged();
         } else {
           frameBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
@@ -619,31 +625,32 @@ public final class MessagesRobocupSslRefboxLog {
        */
       public Builder mergeFrame(proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame value) {
         if (frameBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            frame_ != null &&
-            frame_ != proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.getDefaultInstance()) {
-            getFrameBuilder().mergeFrom(value);
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              frame_ != null &&
+              frame_ != proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.getDefaultInstance()) {
+            frame_ =
+              proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.newBuilder(frame_).mergeFrom(value).buildPartial();
           } else {
             frame_ = value;
           }
+          onChanged();
         } else {
           frameBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
-        onChanged();
         return this;
       }
       /**
        * <code>required .proto.vision.SSL_DetectionFrame frame = 1;</code>
        */
       public Builder clearFrame() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        frame_ = null;
-        if (frameBuilder_ != null) {
-          frameBuilder_.dispose();
-          frameBuilder_ = null;
+        if (frameBuilder_ == null) {
+          frame_ = null;
+          onChanged();
+        } else {
+          frameBuilder_.clear();
         }
-        onChanged();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
       /**
@@ -685,14 +692,12 @@ public final class MessagesRobocupSslRefboxLog {
       private java.lang.Object refboxCmd_ = "";
       /**
        * <code>required string refbox_cmd = 2;</code>
-       * @return Whether the refboxCmd field is set.
        */
       public boolean hasRefboxCmd() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required string refbox_cmd = 2;</code>
-       * @return The refboxCmd.
        */
       public java.lang.String getRefboxCmd() {
         java.lang.Object ref = refboxCmd_;
@@ -710,7 +715,6 @@ public final class MessagesRobocupSslRefboxLog {
       }
       /**
        * <code>required string refbox_cmd = 2;</code>
-       * @return The bytes for refboxCmd.
        */
       public com.google.protobuf.ByteString
           getRefboxCmdBytes() {
@@ -727,37 +731,36 @@ public final class MessagesRobocupSslRefboxLog {
       }
       /**
        * <code>required string refbox_cmd = 2;</code>
-       * @param value The refboxCmd to set.
-       * @return This builder for chaining.
        */
       public Builder setRefboxCmd(
           java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         refboxCmd_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
        * <code>required string refbox_cmd = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearRefboxCmd() {
-        refboxCmd_ = getDefaultInstance().getRefboxCmd();
         bitField0_ = (bitField0_ & ~0x00000002);
+        refboxCmd_ = getDefaultInstance().getRefboxCmd();
         onChanged();
         return this;
       }
       /**
        * <code>required string refbox_cmd = 2;</code>
-       * @param value The bytes for refboxCmd to set.
-       * @return This builder for chaining.
        */
       public Builder setRefboxCmdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         refboxCmd_ = value;
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -794,18 +797,7 @@ public final class MessagesRobocupSslRefboxLog {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Log_Frame(input, extensionRegistry);
       }
     };
 
@@ -856,7 +848,7 @@ public final class MessagesRobocupSslRefboxLog {
   /**
    * Protobuf type {@code proto.vision.Refbox_Log}
    */
-  public static final class Refbox_Log extends
+  public  static final class Refbox_Log extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.vision.Refbox_Log)
       Refbox_LogOrBuilder {
@@ -870,16 +862,59 @@ public final class MessagesRobocupSslRefboxLog {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Refbox_Log();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
+    }
+    private Refbox_Log(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                log_ = new java.util.ArrayList<proto.vision.MessagesRobocupSslRefboxLog.Log_Frame>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              log_.add(
+                  input.readMessage(proto.vision.MessagesRobocupSslRefboxLog.Log_Frame.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          log_ = java.util.Collections.unmodifiableList(log_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -895,19 +930,16 @@ public final class MessagesRobocupSslRefboxLog {
     }
 
     public static final int LOG_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
     private java.util.List<proto.vision.MessagesRobocupSslRefboxLog.Log_Frame> log_;
     /**
      * <code>repeated .proto.vision.Log_Frame log = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<proto.vision.MessagesRobocupSslRefboxLog.Log_Frame> getLogList() {
       return log_;
     }
     /**
      * <code>repeated .proto.vision.Log_Frame log = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends proto.vision.MessagesRobocupSslRefboxLog.Log_FrameOrBuilder> 
         getLogOrBuilderList() {
       return log_;
@@ -915,21 +947,18 @@ public final class MessagesRobocupSslRefboxLog {
     /**
      * <code>repeated .proto.vision.Log_Frame log = 1;</code>
      */
-    @java.lang.Override
     public int getLogCount() {
       return log_.size();
     }
     /**
      * <code>repeated .proto.vision.Log_Frame log = 1;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslRefboxLog.Log_Frame getLog(int index) {
       return log_.get(index);
     }
     /**
      * <code>repeated .proto.vision.Log_Frame log = 1;</code>
      */
-    @java.lang.Override
     public proto.vision.MessagesRobocupSslRefboxLog.Log_FrameOrBuilder getLogOrBuilder(
         int index) {
       return log_.get(index);
@@ -958,7 +987,7 @@ public final class MessagesRobocupSslRefboxLog {
       for (int i = 0; i < log_.size(); i++) {
         output.writeMessage(1, log_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -971,7 +1000,7 @@ public final class MessagesRobocupSslRefboxLog {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, log_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -986,10 +1015,11 @@ public final class MessagesRobocupSslRefboxLog {
       }
       proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log other = (proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log) obj;
 
-      if (!getLogList()
-          .equals(other.getLogList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
+      boolean result = true;
+      result = result && getLogList()
+          .equals(other.getLogList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1003,7 +1033,7 @@ public final class MessagesRobocupSslRefboxLog {
         hash = (37 * hash) + LOG_FIELD_NUMBER;
         hash = (53 * hash) + getLogList().hashCode();
       }
-      hash = (29 * hash) + getUnknownFields().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1120,25 +1150,29 @@ public final class MessagesRobocupSslRefboxLog {
 
       // Construct using proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getLogFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
         if (logBuilder_ == null) {
           log_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          log_ = null;
           logBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1165,15 +1199,9 @@ public final class MessagesRobocupSslRefboxLog {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log buildPartial() {
         proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log result = new proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log result) {
+        int from_bitField0_ = bitField0_;
         if (logBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
             log_ = java.util.Collections.unmodifiableList(log_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -1181,43 +1209,41 @@ public final class MessagesRobocupSslRefboxLog {
         } else {
           result.log_ = logBuilder_.build();
         }
-      }
-
-      private void buildPartial0(proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log result) {
-        int from_bitField0_ = bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1257,7 +1283,7 @@ public final class MessagesRobocupSslRefboxLog {
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1277,43 +1303,17 @@ public final class MessagesRobocupSslRefboxLog {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log parsedMessage = null;
         try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                proto.vision.MessagesRobocupSslRefboxLog.Log_Frame m =
-                    input.readMessage(
-                        proto.vision.MessagesRobocupSslRefboxLog.Log_Frame.PARSER,
-                        extensionRegistry);
-                if (logBuilder_ == null) {
-                  ensureLogIsMutable();
-                  log_.add(m);
-                } else {
-                  logBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (proto.vision.MessagesRobocupSslRefboxLog.Refbox_Log) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          onChanged();
-        } // finally
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
         return this;
       }
       private int bitField0_;
@@ -1321,7 +1321,7 @@ public final class MessagesRobocupSslRefboxLog {
       private java.util.List<proto.vision.MessagesRobocupSslRefboxLog.Log_Frame> log_ =
         java.util.Collections.emptyList();
       private void ensureLogIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           log_ = new java.util.ArrayList<proto.vision.MessagesRobocupSslRefboxLog.Log_Frame>(log_);
           bitField0_ |= 0x00000001;
          }
@@ -1550,7 +1550,7 @@ public final class MessagesRobocupSslRefboxLog {
           logBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               proto.vision.MessagesRobocupSslRefboxLog.Log_Frame, proto.vision.MessagesRobocupSslRefboxLog.Log_Frame.Builder, proto.vision.MessagesRobocupSslRefboxLog.Log_FrameOrBuilder>(
                   log_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
                   isClean());
           log_ = null;
@@ -1590,18 +1590,7 @@ public final class MessagesRobocupSslRefboxLog {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
+        return new Refbox_Log(input, extensionRegistry);
       }
     };
 
@@ -1647,11 +1636,19 @@ public final class MessagesRobocupSslRefboxLog {
       "box_cmd\030\002 \002(\t\"2\n\nRefbox_Log\022$\n\003log\030\001 \003(\013" +
       "2\027.proto.vision.Log_Frame"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           proto.vision.MessagesRobocupSslDetection.getDescriptor(),
-        });
+        }, assigner);
     internal_static_proto_vision_Log_Frame_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_vision_Log_Frame_fieldAccessorTable = new
