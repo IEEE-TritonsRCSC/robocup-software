@@ -16,19 +16,20 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.2</version>
-      <scope>test</scope>
-    </dependency>
 
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-api</artifactId>
-      <version>5.0.0-M5</version>
-      <scope>test</scope>
-    </dependency>
+      <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-api</artifactId>
+          <version>5.4.2</version>
+          <scope>test</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-engine</artifactId>
+          <version>5.4.2</version>
+          <scope>test</scope>
+      </dependency>
 
     <!-- https://mvnrepository.com/artifact/com.rabbitmq/amqp-client -->
     <dependency>
@@ -129,6 +130,25 @@
               <descriptorRef>jar-with-dependencies</descriptorRef>
             </descriptorRefs>
           </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>0.8.2</version>
+          <executions>
+              <execution>
+                  <goals>
+                      <goal>prepare-agent</goal>
+                  </goals>
+              </execution>
+              <execution>
+                  <id>report</id>
+                  <phase>prepare-package</phase>
+                  <goals>
+                      <goal>report</goal>
+                  </goals>
+              </execution>
+          </executions>
         </plugin>
       </plugins>
     </pluginManagement>

@@ -1,6 +1,6 @@
-package main.java.core.constants;
+package core.constants;
 
-import main.java.core.module.testModule.*;
+import core.module.testModule.*;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -13,7 +13,8 @@ public enum AITest {
     SPIN_WITH_BALL(SpinWBallTestModule.class, "Test ability of robot to spin in place with the ball."),
     SPIN_WITHOUT_BALL(SpinWOBallTestModule.class, "Test ability of robot to spin in place without the ball."),
     ROTATE(RotateBotTestModule.class, "Test the ability for the robot to rotate to a particular orientation."),
-    COORDINATEDPASS(CoordinatePassTestModule.class, "Test the ability to perform a coordinated pass.")
+    COORDINATEDPASS(CoordinatePassTestModule.class, "Test the ability to perform a coordinated pass."),
+    POSITIONSELF(PositionTestModule.class, "Test the ability for robots to position themself")
     ;
 
     private final Class<? extends TestModule> testClass;

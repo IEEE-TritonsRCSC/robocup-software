@@ -1,9 +1,9 @@
-package main.java.core.module.processingModule;
+package core.module.processingModule;
 
 import com.rabbitmq.client.Delivery;
-import main.java.core.module.Module;
-import main.java.core.util.ConvertCoordinate;
-import main.java.core.util.Vector2d;
+import core.module.Module;
+import core.util.ConvertCoordinate;
+import core.util.Vector2d;
 import proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame;
 
 import java.io.IOException;
@@ -12,9 +12,9 @@ import java.util.List;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
-import static main.java.core.messaging.Exchange.AI_BIASED_VISION_WRAPPER;
-import static main.java.core.messaging.Exchange.AI_VISION_WRAPPER;
-import static main.java.core.messaging.SimpleSerialize.simpleDeserialize;
+import static core.messaging.Exchange.AI_BIASED_VISION_WRAPPER;
+import static core.messaging.Exchange.AI_VISION_WRAPPER;
+import static core.messaging.SimpleSerialize.simpleDeserialize;
 import static proto.vision.MessagesRobocupSslDetection.SSL_DetectionBall;
 import static proto.vision.MessagesRobocupSslDetection.SSL_DetectionRobot;
 import static proto.vision.MessagesRobocupSslGeometry.*;
@@ -26,6 +26,8 @@ import static proto.vision.MessagesRobocupSslWrapper.SSL_WrapperPacket;
  */
 public class VisionBiasedConverter extends Module {
     
+    private static SSL_DetectionFrame detection;
+    private static SSL_GeometryData geometry;
     
     public VisionBiasedConverter(ScheduledThreadPoolExecutor executor) {
         super(executor);
@@ -63,8 +65,14 @@ public class VisionBiasedConverter extends Module {
      */
     private static SSL_WrapperPacket wrapperAudienceToBiased(SSL_WrapperPacket wrapper) {
         SSL_WrapperPacket.Builder biasedWrapper = wrapper.toBuilder();
-        biasedWrapper.setDetection(detectionAudienceToBiased(wrapper.getDetection()));
-        biasedWrapper.setGeometry(geometryAudienceToBiased(wrapper.getGeometry()));
+        if ((wrapper.getDetection() != null) && (wrapper.getDetection().hasCameraId())) {
+            detection = detectionAudienceToBiased(wrapper.getDetection());
+        }
+        if ((wrapper.getGeometry() != null) && (wrapper.getGeometry().hasField())) {
+            geometry = geometryAudienceToBiased(wrapper.getGeometry());
+        }
+        biasedWrapper.setDetection(detection);
+        biasedWrapper.setGeometry(geometry);
         return biasedWrapper.build();
     }
 

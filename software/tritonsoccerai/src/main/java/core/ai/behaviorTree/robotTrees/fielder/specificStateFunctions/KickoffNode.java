@@ -1,20 +1,20 @@
-package main.java.core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions;
+package core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
+import core.ai.GameInfo;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
 import static proto.triton.FilteredObject.Robot;
-import main.java.core.util.Vector2d;
+import core.util.Vector2d;
 
-import static main.java.core.constants.ProgramConstants.objectConfig;
-import static main.java.core.constants.RobotConstants.DRIBBLE_THRESHOLD;
+import static core.constants.ProgramConstants.objectConfig;
+import static core.constants.RobotConstants.DRIBBLE_THRESHOLD;
 
-import static main.java.core.constants.ProgramConstants.gameConfig;
+import static core.constants.ProgramConstants.gameConfig;
 
-import static main.java.core.util.ProtobufUtils.getPos;
-import static main.java.core.util.ObjectHelper.awardedBall;
+import static core.util.ProtobufUtils.getPos;
+import static core.util.ObjectHelper.awardedBall;
 
 /**
  * Handles Prepare Kickoff game state
@@ -32,6 +32,7 @@ public class KickoffNode extends TaskNode {
         super("Prepare Kickoff Node: " + allyID, allyID);
         this.closestToBallNode = closestToBallNode;
         this.moveToPositionNode = new MoveToPositionNode(allyID);
+        this.moveToPositionNode.setAvoidBall(true);
     }
 
     @Override

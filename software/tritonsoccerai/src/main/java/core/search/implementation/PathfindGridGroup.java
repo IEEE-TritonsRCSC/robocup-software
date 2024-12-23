@@ -1,7 +1,7 @@
-package main.java.core.search.implementation;
+package core.search.implementation;
 
-import main.java.core.search.node2d.Node2d;
-import main.java.core.util.Vector2d;
+import core.search.node2d.Node2d;
+import core.util.Vector2d;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -22,14 +22,14 @@ public class PathfindGridGroup {
             pathfindGrids.put(i, new PathfindGrid(field));
     }
 
-    public void updateObstacles(FilteredWrapperPacket wrapper) {
-        updateObstacles(wrapper.getAlliesMap(), wrapper.getFoesMap());
+    public void updateObstacles(FilteredWrapperPacket wrapper, boolean avoidBall) {
+        updateObstacles(wrapper.getAlliesMap(), wrapper.getFoesMap(), avoidBall);
     }
 
-    private void updateObstacles(Map<Integer, Robot> allies, Map<Integer, Robot> foes) {
+    private void updateObstacles(Map<Integer, Robot> allies, Map<Integer, Robot> foes, boolean avoidBall) {
         pathfindGrids.forEach((id, pathfindGrid) -> {
             Robot excludeAlly = allies.get(id);
-            pathfindGrid.updateObstacles(allies, foes, excludeAlly);
+            pathfindGrid.updateObstacles(allies, foes, excludeAlly, avoidBall);
         });
     }
 

@@ -1,26 +1,26 @@
-package main.java.core.ai.behaviorTree.robotTrees.basicFunctions;
+package core.ai.behaviorTree.robotTrees.basicFunctions;
 
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import main.java.core.util.Vector2d;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.util.Vector2d;
 
-import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
+import static core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
 
-import main.java.core.constants.ProgramConstants;
-import main.java.core.ai.GameInfo;
+import core.constants.ProgramConstants;
+import core.ai.GameInfo;
 
 import proto.simulation.SslSimulationRobotControl;
 
-import main.java.core.util.ObjectHelper;
+import core.util.ObjectHelper;
 
-import static main.java.core.constants.ProgramConstants.aiConfig;
+import static core.constants.ProgramConstants.aiConfig;
 
 import static proto.simulation.SslGcCommon.RobotId;
 import static proto.triton.FilteredObject.Robot;
 
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.RotateInPlaceNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.RotateInPlaceNode;
 
-import main.java.core.constants.RobotConstants;
+import core.constants.RobotConstants;
 
 /**
  * Sends message to robot to kick ball with provided speed in provided direction
@@ -50,7 +50,7 @@ public class KickBallNode extends TaskNode {
 
             SslSimulationRobotControl.RobotMoveCommand.Builder moveCommand = SslSimulationRobotControl.RobotMoveCommand.newBuilder();
             SslSimulationRobotControl.MoveLocalVelocity.Builder localCommand = SslSimulationRobotControl.MoveLocalVelocity.newBuilder();
-            localCommand.setForward(1.6f);
+            localCommand.setForward(2.0f);
             localCommand.setLeft(0);
             localCommand.setAngular(0);
             moveCommand.setLocalVelocity(localCommand);
@@ -61,7 +61,8 @@ public class KickBallNode extends TaskNode {
             robotCommand.setDribblerSpeed(0);
 
             ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
-            System.out.println("SUCCESSfully kicked");
+            // System.out.println("SUCCESSfully kicked");
+            return NodeState.SUCCESS;
          }
         // if robot is not facing the right direction, rotate 
         else {
@@ -71,7 +72,7 @@ public class KickBallNode extends TaskNode {
 
             SslSimulationRobotControl.RobotMoveCommand.Builder moveCommand = SslSimulationRobotControl.RobotMoveCommand.newBuilder();
             SslSimulationRobotControl.MoveLocalVelocity.Builder localCommand = SslSimulationRobotControl.MoveLocalVelocity.newBuilder();
-            localCommand.setForward(0.03f);
+            localCommand.setForward(0.0f);
             localCommand.setLeft(0);
             localCommand.setAngular(RotateInPlaceNode.getAngular(direction.angle(), allyID, true) / 2);
             moveCommand.setLocalVelocity(localCommand);
@@ -82,9 +83,8 @@ public class KickBallNode extends TaskNode {
 
             ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, robotCommand.build());
             // System.out.println("Orientation INCORRECT for kick");
+            return NodeState.FAILURE;
         }
-
-        return NodeState.SUCCESS;
     }
 
 }

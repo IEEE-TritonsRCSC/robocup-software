@@ -1,7 +1,7 @@
-package main.java.core.ai.behaviorTree.nodes.serviceNodes;
+package core.ai.behaviorTree.nodes.serviceNodes;
 
-import main.java.core.ai.behaviorTree.nodes.BTNode;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.BTNode;
+import core.ai.behaviorTree.nodes.NodeState;
 
 /**
  * Attach to composite nodes and execute at defined frequency while branch is being executed

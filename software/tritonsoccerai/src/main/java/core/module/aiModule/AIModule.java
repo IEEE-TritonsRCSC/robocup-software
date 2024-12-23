@@ -1,9 +1,9 @@
-package main.java.core.module.aiModule;
+package core.module.aiModule;
 
 import com.rabbitmq.client.Delivery; // Class that encapsulates a message
 
-import main.java.core.module.Module;
-import main.java.core.ai.GameInfo;
+import core.module.Module;
+import core.ai.GameInfo;
 
 import static proto.gc.SslGcRefereeMessage.Referee;
 
@@ -12,9 +12,10 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
 // enum for all Exchange relevant Objects
-import static main.java.core.messaging.Exchange.*;
+import static core.messaging.Exchange.*;
  // method for deserializing the message (in bytes)
-import static main.java.core.messaging.SimpleSerialize.simpleDeserialize;
+import static core.messaging.SimpleSerialize.simpleDeserialize;
+import static proto.triton.CoordinatedPassInfo.CoordinatedPass;
 
 /**
  * AI Module - refer to Figure 1
@@ -36,6 +37,7 @@ public class AIModule extends Module {
     @Override
     protected void declareConsumes() throws IOException, TimeoutException {
         declareConsume(AI_GAME_CONTROLLER_WRAPPER, this::callbackWrapper);
+        declareConsume(CENTRAL_COORDINATOR_PASSING, this::passingCallBack);
     }
 
     /**
@@ -58,6 +60,11 @@ public class AIModule extends Module {
             System.out.println(wrapper.getCommand());
         }
         GameInfo.setReferee(wrapper);
+    }
+
+    private void passingCallBack(String s, Delivery delivery) {
+        CoordinatedPass pass = (CoordinatedPass) simpleDeserialize(delivery.getBody());
+        GameInfo.setCoordinatedPass(pass);
     }
 
     @Override

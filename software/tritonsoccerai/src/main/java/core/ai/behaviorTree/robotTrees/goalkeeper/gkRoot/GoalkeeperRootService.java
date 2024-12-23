@@ -1,15 +1,15 @@
-package main.java.core.ai.behaviorTree.robotTrees.goalkeeper.gkRoot;
+package core.ai.behaviorTree.robotTrees.goalkeeper.gkRoot;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.GameState;
-import main.java.core.constants.ProgramConstants;
-import main.java.core.ai.behaviorTree.nodes.BTNode;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
-import main.java.core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
-import main.java.core.ai.behaviorTree.robotTrees.goalkeeper.defense.defenseRoot.GKDefenseRootService;
-import main.java.core.ai.behaviorTree.robotTrees.goalkeeper.offense.offenseRoot.GKOffenseRootService;
-import main.java.core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions.*;
+import core.ai.GameInfo;
+import core.ai.GameState;
+import core.constants.ProgramConstants;
+import core.ai.behaviorTree.nodes.BTNode;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
+import core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
+import core.ai.behaviorTree.robotTrees.goalkeeper.defense.defenseRoot.GKDefenseRootService;
+import core.ai.behaviorTree.robotTrees.goalkeeper.offense.offenseRoot.GKOffenseRootService;
+import core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions.*;
 
 import static proto.gc.SslGcRefereeMessage.Referee;
 
@@ -126,7 +126,8 @@ public class GoalkeeperRootService extends ServiceNode {
                 this.currentlyExecutingNode = this.prepareKickoffNode;
                 break;
             case PREPARE_PENALTY_YELLOW, PREPARE_PENALTY_BLUE:
-                this.branchFuture = this.executor.submit(this.preparePenaltyNode);
+                this.branchFuture = this.executor.scheduleAtFixedRate(this.preparePenaltyNode, ProgramConstants.INITIAL_DELAY,
+                                                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
                 this.currentlyExecutingNode = this.preparePenaltyNode;
                 break;
             case NORMAL_START:

@@ -1,4 +1,4 @@
-package main.java.core.util;
+package core.util;
 
 public class PIDControl {
     private final float kp;

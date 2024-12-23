@@ -1,19 +1,19 @@
-package main.java.core.ai.behaviorTree.robotTrees.fielder.offense;
+package core.ai.behaviorTree.robotTrees.fielder.offense;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.KickBallNode;
-import main.java.core.constants.RobotConstants;
-import main.java.core.util.Vector2d;
+import core.ai.GameInfo;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.KickBallNode;
+import core.constants.RobotConstants;
+import core.util.Vector2d;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static main.java.core.constants.ProgramConstants.*;
+import static core.constants.ProgramConstants.*;
 
-import static main.java.core.util.ObjectHelper.distToPath;
-import static main.java.core.util.ProtobufUtils.getPos;
+import static core.util.ObjectHelper.distToPath;
+import static core.util.ProtobufUtils.getPos;
 import static proto.triton.FilteredObject.FilteredWrapperPacket;
 import static proto.triton.FilteredObject.Robot;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
@@ -47,8 +47,8 @@ public class ShootBallNode extends SequenceNode {
      */
     public NodeState execute(Vector2d shotTo) {
         // kicks the ball
-        this.kickBall.execute(shotTo.sub(getPos(GameInfo.getAlly(allyID))), RobotConstants.MAX_KICK_VELOCITY, false);
-        // System.out.println("Executed shot: " + shotTo);
+        NodeState result = this.kickBall.execute(shotTo.sub(getPos(GameInfo.getAlly(allyID))), RobotConstants.MAX_KICK_VELOCITY, false);
+        if (result == NodeState.SUCCESS) {System.out.println("Shot ball.");}
         return NodeState.SUCCESS;
     }
 
@@ -92,7 +92,7 @@ public class ShootBallNode extends SequenceNode {
         //best kick direction
         Vector2d bestKickTo = null;
 
-        float maxScore = Float.MIN_VALUE;
+        float maxScore = -1;
 
         //defines the best kick direction based on the position of the obstacles
         for (Vector2d kickTo : kickTos) {

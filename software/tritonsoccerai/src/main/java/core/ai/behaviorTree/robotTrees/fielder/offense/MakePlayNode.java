@@ -1,17 +1,17 @@
-package main.java.core.ai.behaviorTree.robotTrees.fielder.offense;
+package core.ai.behaviorTree.robotTrees.fielder.offense;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
-import main.java.core.util.Vector2d;
+import core.ai.GameInfo;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
+import core.util.Vector2d;
 
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.DribbleBallNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
 
 import static proto.triton.FilteredObject.Robot;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
 
-import static main.java.core.util.ProtobufUtils.getPos;
+import static core.util.ProtobufUtils.getPos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,10 +23,13 @@ public class MakePlayNode extends CompositeNode {
     private final DribbleBallNode dribble;
     private final CoordinatedPassNode coordinatedPass;
 
+    private final int allyID;
+
     public MakePlayNode(int allyID) {
         super("Make Play Node " + allyID);
         this.dribble = new DribbleBallNode(allyID);
         this.coordinatedPass = new CoordinatedPassNode(allyID);
+        this.allyID = allyID;
     }
     
     @Override
@@ -34,12 +37,11 @@ public class MakePlayNode extends CompositeNode {
         //If there is a space between robot and goal, dribble
         //otherwise, pass the ball to the other robots
         // if (checkDribble()) {
-        //     this.dribble.execute(new Vector2d(0, GameInfo.getField().getFieldLength() / 2));
+            this.dribble.execute(DribbleBallNode.findDribblingDirection(allyID));
         // }
         // else {
         //     this.coordinatedPass.execute();
         // }
-        this.coordinatedPass.execute();
 
         return NodeState.SUCCESS;
     }

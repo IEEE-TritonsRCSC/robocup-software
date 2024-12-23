@@ -1,10 +1,10 @@
-package main.java.core.ai.behaviorTree.robotTrees.fielder.defense.playDefense;
+package core.ai.behaviorTree.robotTrees.fielder.defense.playDefense;
 
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.ChaseBallNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
-import main.java.core.ai.behaviorTree.robotTrees.fielder.defense.CutPassingLaneNode;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.ChaseBallNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.ClosestToBallNode;
+import core.ai.behaviorTree.robotTrees.fielder.defense.CutPassingLaneNode;
 import static proto.triton.FilteredObject.Robot;
 
 public class PlayDefenseService extends ServiceNode {
@@ -30,7 +30,7 @@ public class PlayDefenseService extends ServiceNode {
     public NodeState execute() {
         if (NodeState.isSuccess(this.closestToBallNode.execute())) {
             this.chaseBallNode.execute();
-            // System.out.println("Chase ball node executed " + curr);
+            // System.out.println("Chase ball node executed");
             // curr++;
         }
         else {

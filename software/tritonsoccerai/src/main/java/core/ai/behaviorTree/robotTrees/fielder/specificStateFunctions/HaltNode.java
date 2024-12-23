@@ -1,21 +1,21 @@
-package main.java.core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions;
+package core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions;
 
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
-import main.java.core.ai.GameInfo;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
+import core.ai.GameInfo;
 import static proto.triton.FilteredObject.Robot;
-import main.java.core.util.Vector2d;
+import core.util.Vector2d;
 
-import main.java.core.constants.ProgramConstants;
+import core.constants.ProgramConstants;
 
-import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
+import static core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
 
 import static proto.simulation.SslSimulationRobotControl.RobotCommand;
 import static proto.simulation.SslSimulationRobotControl.MoveLocalVelocity;
 
-import static main.java.core.util.ObjectHelper.generateLocalMoveCommand;
-import static main.java.core.util.ProtobufUtils.getPos;
+import static core.util.ObjectHelper.generateLocalMoveCommand;
+import static core.util.ProtobufUtils.getPos;
 
 /**
  * Handles Halt game state
@@ -43,7 +43,6 @@ public class HaltNode extends SequenceNode {
                                                     GameInfo.getAlly(allyID).getOrientation(), allyID);
         localCommand = localCommand.toBuilder()
                                     .setDribblerSpeed(0f)
-                                    .setKickSpeed(0f)
                                     .build();
         ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, localCommand);
         return NodeState.SUCCESS;

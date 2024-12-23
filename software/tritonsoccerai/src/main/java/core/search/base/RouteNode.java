@@ -1,4 +1,4 @@
-package main.java.core.search.base;
+package core.search.base;
 
 public class RouteNode<T extends GraphNode> implements Comparable<RouteNode> {
     

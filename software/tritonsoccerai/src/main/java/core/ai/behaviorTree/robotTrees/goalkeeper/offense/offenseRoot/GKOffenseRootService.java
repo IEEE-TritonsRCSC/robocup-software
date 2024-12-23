@@ -1,11 +1,11 @@
-package main.java.core.ai.behaviorTree.robotTrees.goalkeeper.offense.offenseRoot;
+package core.ai.behaviorTree.robotTrees.goalkeeper.offense.offenseRoot;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.RobotHasPossessionNode;
-import main.java.core.ai.behaviorTree.robotTrees.goalkeeper.offense.GKPositionSelfNode;
+import core.ai.GameInfo;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.RobotHasPossessionNode;
+import core.ai.behaviorTree.robotTrees.goalkeeper.offense.GKPositionSelfNode;
 
 /**
  * Defines behavior for goalkeeper when on offense
@@ -22,7 +22,7 @@ public class GKOffenseRootService extends ServiceNode {
         super("GK Offense Root Service");
         this.havePossession = new RobotHasPossessionNode(0);
         this.passBall = new CoordinatedPassNode(0);
-        this.gkPositionSelfNode = new GKPositionSelfNode(null);
+        this.gkPositionSelfNode = new GKPositionSelfNode();
     }
 
     public NodeState execute() {
