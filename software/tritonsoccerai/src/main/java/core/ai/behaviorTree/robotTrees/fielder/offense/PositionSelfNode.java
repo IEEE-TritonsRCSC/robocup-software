@@ -75,7 +75,7 @@ public class PositionSelfNode extends TaskNode {
     private ArrayList<Vector2d> compute_offense_plan(int radius, int directShootingBonus) {
         Robot finalShooter = this.allyWithBall;
         double bestScore = 0;
-        int n = (int)(3.14 * radius * radius / 100); // Sample points for fielders
+        int n = (int)(Math.PI * radius * radius / 100); // Sample points for fielders
         ArrayList<Vector2d> output = new ArrayList<Vector2d>();
         ArrayList<Vector2d> sample_points_start = new ArrayList<Vector2d>(); 
             // Stores the sample points around this.allyWithBall
@@ -157,11 +157,11 @@ public class PositionSelfNode extends TaskNode {
     private ArrayList<Vector2d> sample_points(int radius, Vector2d center, int n) {
         ArrayList<Vector2d> points = new ArrayList<Vector2d>();
         for(int i = 0; i < n; i++) {
-            double angle = Math.random() * 2 * 3.14;
+            double angle = Math.random() * 2 * Math.PI;
             double d = Math.random() * radius;
             int x = (int)(center.x + d * Math.cos(angle));
             int y = (int)(center.y + d * Math.sin(angle));
-            if(x < 0 || x >= 9000 || y < 0 || y >= 6000) {
+            if (Math.abs(x) > 3000 || Math.abs(y) > 4500) {
                 i--;
                 continue;
             }
