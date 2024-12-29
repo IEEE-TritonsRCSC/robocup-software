@@ -75,7 +75,7 @@ public class PositionSelfNode extends TaskNode {
     private ArrayList<Vector2d> compute_offense_plan(int radius, int directShootingBonus) {
         Robot finalShooter = this.allyWithBall;
         double bestScore = 0;
-        int n = (int)(3.14 * radius * radius / 100); // Sample points for fielders
+        int n = (int)(3.14 * radius * radius / 1000); // Sample points for fielders
         ArrayList<Vector2d> output = new ArrayList<Vector2d>();
         ArrayList<Vector2d> sample_points_start = new ArrayList<Vector2d>(); 
             // Stores the sample points around this.allyWithBall
@@ -94,6 +94,7 @@ public class PositionSelfNode extends TaskNode {
         for(Robot fielder: this.allies) {
             sample_points_intermediate.addAll(sample_points(radius, getPos(fielder), n));
         }
+        System.out.print("Flag 1");
         
         // Determining optimal passing plan
         Vector2d startPoint = new Vector2d(0, 0);
@@ -112,6 +113,7 @@ public class PositionSelfNode extends TaskNode {
                 shootPoint = p1;
                 finalShooter = this.allyWithBall;
             }
+            System.out.print("Flag 2.1");
 
             for(int i = 0; i < sample_points_intermediate.size(); i++) {
                 Vector2d p2 = sample_points_intermediate.get(i);
@@ -126,8 +128,10 @@ public class PositionSelfNode extends TaskNode {
                     shootPoint = p2;
                     finalShooter = alliesWithoutBall.get(i % n);
                 }
+                System.out.print("Flag 2.2");
             }
         }
+        System.out.print("Flag 2");
 
         // For every fielder not passing ball, assign to one foe; For the ones passing ball, assign according to the plan
         for(Robot fielder: this.allies) {
@@ -143,6 +147,7 @@ public class PositionSelfNode extends TaskNode {
                     output.add(shootPoint);
                 }
             }
+            System.out.print("Flag 3");
         }
         return output;
     }
