@@ -3,4 +3,5 @@
         ".",
         "software/tritonsoccerai/src"
     ],
+    "cmake.sourceDirectory": "C:/Users/Stefan/Documents/Robocup/robocup-software/framework",
 }

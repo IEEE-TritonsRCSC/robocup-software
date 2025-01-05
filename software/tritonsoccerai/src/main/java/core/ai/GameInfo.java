@@ -203,6 +203,22 @@ public class GameInfo {
         return wrapper.getField().getFieldWidth();
     }
 
+    public static int getGoalWidth() {
+        return wrapper.getField().getGoalWidth();
+    }
+
+    public static Vector2d getGoalCenter() {
+        return new Vector2d(0, -getFieldLength() / 2);
+    }
+
+    public static Vector2d getLeftPost() {
+        return new Vector2d(-getGoalWidth() / 2, -getFieldLength() / 2);
+    }
+
+    public static Vector2d getRightPost() {
+        return new Vector2d(getGoalWidth() / 2, -getFieldLength() / 2);
+    }
+
     public static boolean inOpenPlay() {
         return inOpenPlay;
     }

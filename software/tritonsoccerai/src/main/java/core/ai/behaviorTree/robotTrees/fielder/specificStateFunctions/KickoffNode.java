@@ -43,7 +43,8 @@ public class KickoffNode extends TaskNode {
             // robot is closest to ball
             if (NodeState.isSuccess(this.closestToBallNode.execute())) {
                 if (!GameInfo.getPossessBall(allyID)) {
-                    Vector2d desiredLocation = new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - DRIBBLE_THRESHOLD - objectConfig.robotRadius);
+                    // Robot collides with ball, increasing distance from ball to 1.5*DRIBBLE_THRESHOLD to avoid collision
+                    Vector2d desiredLocation = new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - 1.5f * DRIBBLE_THRESHOLD - objectConfig.robotRadius);
                     this.moveToPositionNode.execute(desiredLocation);
                 }
             }

@@ -176,4 +176,46 @@ public class Vector2d {
     public float dist(Vector2d vector) {
         return sub(vector).mag();
     }
+
+    /**
+     * Finds the intersection point of two lines
+     * @param pointA A point on the first line
+     * @param directionA Any vector describing the direction of the first line
+     * @param pointB A point on the second line
+     * @param directionB Any vector describing the direction of the second line
+     * @return The intersection point of the two lines
+     */
+    public static Vector2d intersectLines(Vector2d pointA, Vector2d directionA, Vector2d pointB, Vector2d directionB) {
+        // long startTime = System.nanoTime();
+
+        // Extract components of the direction vectors
+        float a1 = directionA.x;
+        float b1 = -directionB.x;
+        float c1 = pointB.x - pointA.x;
+
+        float a2 = directionA.y;
+        float b2 = -directionB.y;
+        float c2 = pointB.y - pointA.y;
+
+        // Calculate the determinant (cross product in 2D)
+        float determinant = a1 * b2 - a2 * b1;
+
+        // If the determinant is 0, lines are parallel or coincident
+        if (Math.abs(determinant) < 1e-7) {
+            return null; // Lines don't intersect uniquely
+        }
+
+        // Calculate the scalar parameters t1 and t2 (we only need t1 here)
+        float t1 = (c1 * b2 - c2 * b1) / determinant;
+
+        // Calculate the intersection point
+        float intersectionX = pointA.x + t1 * directionA.x;
+        float intersectionY = pointA.y + t1 * directionA.y;
+
+        // Code to measure
+        // long endTime = System.nanoTime();
+        // System.out.println("Time taken intersect: " + (endTime - startTime) + " ns");
+
+        return new Vector2d(intersectionX, intersectionY);
+    }
 }
