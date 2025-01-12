@@ -83,18 +83,13 @@ public class PositionSelfNode extends TaskNode {
             // Stores the sample points around the other fielders, in groups of n
 
         // Sampling
-        if(!GameInfo.getPossessBall(this.allyWithBall.getId())) {
-            // If self.allyWithBall doesn't possess, go to the ball
-            sample_points_start.add(this.ballPos);
-        }
-        else {
-            // If self.allyWithBall possesses the ball, sample points around this.allyWithBall
-            sample_points_start = sample_points(radius, this.ballPos, n);
-        }
+        sample_points_start = sample_points(radius, this.ballPos, n);
         for(Robot fielder: this.allies) {
+            if (fielder == this.allyWithBall) {
+                continue;
+            }
             sample_points_intermediate.addAll(sample_points(radius, getPos(fielder), n));
         }
-        System.out.print("Flag 1");
         
         // Determining optimal passing plan
         Vector2d startPoint = new Vector2d(0, 0);
@@ -113,7 +108,6 @@ public class PositionSelfNode extends TaskNode {
                 shootPoint = p1;
                 finalShooter = this.allyWithBall;
             }
-            System.out.print("Flag 2.1");
 
             for(int i = 0; i < sample_points_intermediate.size(); i++) {
                 Vector2d p2 = sample_points_intermediate.get(i);
@@ -128,10 +122,8 @@ public class PositionSelfNode extends TaskNode {
                     shootPoint = p2;
                     finalShooter = alliesWithoutBall.get(i % n);
                 }
-                System.out.print("Flag 2.2");
             }
         }
-        System.out.print("Flag 2");
 
         // For every fielder not passing ball, assign to one foe; For the ones passing ball, assign according to the plan
         for(Robot fielder: this.allies) {
@@ -147,7 +139,6 @@ public class PositionSelfNode extends TaskNode {
                     output.add(shootPoint);
                 }
             }
-            System.out.print("Flag 3");
         }
         return output;
     }
@@ -166,7 +157,7 @@ public class PositionSelfNode extends TaskNode {
             double d = Math.random() * radius;
             int x = (int)(center.x + d * Math.cos(angle));
             int y = (int)(center.y + d * Math.sin(angle));
-            if(x < 0 || x >= 9000 || y < 0 || y >= 6000) {
+            if(x < -4500 || x >= 4500 || y < -3000 || y >= 3000) {
                 i--;
                 continue;
             }
