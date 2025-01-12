@@ -153,11 +153,11 @@ public class PositionSelfNode extends TaskNode {
     private ArrayList<Vector2d> sample_points(int radius, Vector2d center, int n) {
         ArrayList<Vector2d> points = new ArrayList<Vector2d>();
         for(int i = 0; i < n; i++) {
-            double angle = Math.random() * 2 * 3.14;
+            double angle = Math.random() * 2 * Math.PI;
             double d = Math.random() * radius;
             int x = (int)(center.x + d * Math.cos(angle));
             int y = (int)(center.y + d * Math.sin(angle));
-            if(x < -4500 || x >= 4500 || y < -3000 || y >= 3000) {
+            if (Math.abs(x) > 3000 || Math.abs(y) > 4500) {
                 i--;
                 continue;
             }
