@@ -20,24 +20,25 @@ import proto.triton.FilteredObject.Robot;
 import main.java.core.ai.GameInfo;
 // import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.CoordinatedPassNode;
 // import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.RotateBotNode;
+import java.util.ArrayList;
 
 public class PositionTestModule extends TestModule{
-    private final int TEST_ALLY_ID;
-    private PositionSelfNode PositionBot;
+    private final int[] TEST_ALLY_IDS = {0, 1, 2, 3};
+    private ArrayList<PositionSelfNode> PositionBots = new ArrayList<PositionSelfNode>();
 
     private Future<?> future;
     private float kP = 0.6f; 
-    private Robot ally;
+    private ArrayList<Robot> allies = new ArrayList<Robot>();
     private MoveToObjectNode moveToObjectNode;
     private Future<?> moveFuture;
 
 
     public PositionTestModule(ScheduledThreadPoolExecutor executor) {
         super(executor);
-        // this.TEST_ALLY_ID = GameInfo.getAllyClosestToBall().getId();
-        this.TEST_ALLY_ID = 0;
-        this.ally = GameInfo.getAlly(this.TEST_ALLY_ID);
-        System.out.println("ALLY ID: " + this.TEST_ALLY_ID);
+        for (int TEST_ALLY_ID : TEST_ALLY_IDS) {
+            this.allies.add(GameInfo.getAlly(TEST_ALLY_ID));
+            System.out.println("ALLY ID: " + TEST_ALLY_ID);
+        }
     }
 
     /**
@@ -63,10 +64,14 @@ public class PositionTestModule extends TestModule{
     @Override
     public void run() {
         super.run();
-        this.PositionBot = new PositionSelfNode(this.TEST_ALLY_ID);
+        for (int TEST_ALLY_ID : TEST_ALLY_IDS) {
+            this.PositionBots.add(new PositionSelfNode(TEST_ALLY_ID));
+        }
 
         while(true){
-            this.PositionBot.execute();
+            for (PositionSelfNode PositionBot : this.PositionBots) {
+                PositionBot.execute();
+            }
             try {
                 TimeUnit.MILLISECONDS.sleep(50);
             } catch (Exception e) {}
