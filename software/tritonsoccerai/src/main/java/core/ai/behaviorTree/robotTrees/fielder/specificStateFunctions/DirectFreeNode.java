@@ -46,7 +46,7 @@ public class DirectFreeNode extends TaskNode {
     public NodeState execute() {
         float DISTANCE_CONSTANT = 1;
         if (awardedBall())  {
-            if (NodeState.isSuccess(this.closestToBallNode.execute())) {
+            if (GameInfo.getBall().getY() > -GameInfo.getFieldLength() / 3f && NodeState.isSuccess(this.closestToBallNode.execute())) {
                 if (!GameInfo.getPossessBall(allyID)) {
                     // Robot collides with ball, increasing distance from ball to 1.5*DRIBBLE_THRESHOLD to avoid collision
                     Vector2d desiredLocation = new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - 1.5f * DRIBBLE_THRESHOLD - objectConfig.robotRadius);
@@ -54,11 +54,11 @@ public class DirectFreeNode extends TaskNode {
                 }
             }
             else {
-                this.positionSelfNode.execute();
+                // TODO - offensive positioning
+                // this.positionSelfNode.execute();
             }
         }
         else {
-            // TODO - improve to build wall instead
             buildWall();
         }
         return NodeState.SUCCESS;
