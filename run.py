@@ -32,10 +32,10 @@ simulator_path = dir_path + "/framework/build/bin"
 simulator = "./simulator-cli"
 
 game_controller_path = dir_path + "/game-controller"
-game_controller = "./ssl-game-controller_v2.13.0_linux_amd64"
+game_controller = "./game-controller"
 
-ssl_vision_client_path = dir_path + "/ssl-vision-client"
-ssl_vision_client = "./ssl-vision-client_v1.6.0_linux_amd64"
+ssl_vision_client_path = dir_path + "/vision-client"
+ssl_vision_client = "./vision-client"
 
 triton_soccer_ai_jar_path = dir_path + "/software/tritonsoccerai/target/"
 triton_soccer_ai_jar = "triton-soccer-ai-1.0-SNAPSHOT-jar-with-dependencies.jar"
@@ -72,16 +72,16 @@ if (args.team == 'blue' or args.team == 'both'):
 
 if (args.team == 'yellow' or args.team == 'both'):
     if (args.test == 'true'):
-        run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team=yellow", "--test"], triton_soccer_ai_jar_path, "tab")
+        run_cmd(["java", "-Xms512m", "-Xmx2g", "-jar", triton_soccer_ai_jar, "--team=yellow", "--test"], triton_soccer_ai_jar_path, "tab")
         time.sleep(0.1)
     else:
-        run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team=yellow"], triton_soccer_ai_jar_path, "tab")
+        run_cmd(["java", "-Xms512m", "-Xmx2g", "-jar", triton_soccer_ai_jar, "--team=yellow"], triton_soccer_ai_jar_path, "tab")
         time.sleep(0.1)
 
 if (args.team == 'blue' or args.team == 'both'):
     if (args.test == 'true'):
-        run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team=blue", "--test"], triton_soccer_ai_jar_path, "tab")
+        run_cmd(["java", "-Xms512m", "-Xmx2g", "-jar", triton_soccer_ai_jar, "--team=blue", "--test"], triton_soccer_ai_jar_path, "tab")
         time.sleep(0.1)
     else:
-        run_cmd(["java", "-jar", triton_soccer_ai_jar, "--team=blue"], triton_soccer_ai_jar_path, "tab")
+        run_cmd(["java", "-Xms512m", "-Xmx2g", "-jar", triton_soccer_ai_jar, "--team=blue"], triton_soccer_ai_jar_path, "tab")
         time.sleep(0.1)
