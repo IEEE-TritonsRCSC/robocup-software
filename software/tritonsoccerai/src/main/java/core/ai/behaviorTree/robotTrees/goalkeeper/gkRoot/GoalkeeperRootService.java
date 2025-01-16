@@ -128,6 +128,7 @@ public class GoalkeeperRootService extends ServiceNode {
                         this.currentlyExecutingNode = this.stopNode;
                         break;
                 }
+                break;
             case DIRECT_FREE_YELLOW, DIRECT_FREE_BLUE:
                 this.branchFuture = this.executor.scheduleAtFixedRate(this.prepareDirectFreeNode, ProgramConstants.INITIAL_DELAY,
                                                                     ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
