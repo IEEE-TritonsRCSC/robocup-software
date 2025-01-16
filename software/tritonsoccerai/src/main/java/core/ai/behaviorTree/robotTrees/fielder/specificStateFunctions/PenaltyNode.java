@@ -49,7 +49,7 @@ public class PenaltyNode extends TaskNode {
         if (awardedBall() && NodeState.isSuccess(this.closestToBallNode.execute())) {
             if (!GameInfo.getPossessBall(allyID)) {
                 Vector2d desiredLocation = new Vector2d(GameInfo.getBall().getX(), GameInfo.getBall().getY() - DRIBBLE_THRESHOLD - objectConfig.robotRadius);
-                this.moveToPositionNode.execute(desiredLocation);
+                this.moveToPositionNode.execute(desiredLocation, 1500);
             }
         }
         else {

@@ -42,6 +42,10 @@ public class MoveToPositionNode extends TaskNode {
     }
 
     public NodeState execute(Vector2d endLoc) {
+        return execute(endLoc, RobotConstants.MAX_MOVE_VELOCITY);
+    }
+
+    public NodeState execute(Vector2d endLoc, float maxSpeed) {
         Robot ally = GameInfo.getAlly(allyID);
         Ball ball = GameInfo.getBall();
         
@@ -59,10 +63,9 @@ public class MoveToPositionNode extends TaskNode {
         // Build robot command to be published
         Vector2d direction = next.sub(allyPos);
         Vector2d vel = direction;
-        
+        vel = vel.norm().scale(Math.min(direction.mag(), maxSpeed));
         if (this.dribbleOn) {
-            float mag = direction.mag();
-            vel = direction.norm().scale(Math.min(mag, RobotConstants.MAX_DRIBBLE_MOVE_VELOCITY));
+            vel = direction.norm().scale(Math.min(vel.mag(), RobotConstants.MAX_DRIBBLE_MOVE_VELOCITY));
         }
         vel = vel.scale(RobotConstants.MOVE_VELOCITY_DAMPENER);
 

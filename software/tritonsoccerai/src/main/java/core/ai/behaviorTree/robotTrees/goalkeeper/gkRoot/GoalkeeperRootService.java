@@ -106,20 +106,39 @@ public class GoalkeeperRootService extends ServiceNode {
                 this.currentlyExecutingNode = this.haltNode;
                 break;
             case STOP:
-                this.branchFuture = this.executor.scheduleAtFixedRate(this.stopNode, ProgramConstants.INITIAL_DELAY,
-                                                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
-                this.currentlyExecutingNode = this.stopNode;
-                break;
+                switch (GameInfo.getNextCommand()) {
+                    case DIRECT_FREE_YELLOW, DIRECT_FREE_BLUE:
+                        this.branchFuture = this.executor.scheduleAtFixedRate(this.prepareDirectFreeNode, ProgramConstants.INITIAL_DELAY,
+                                                                            ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
+                        this.currentlyExecutingNode = this.prepareDirectFreeNode;
+                        break;
+                    case PREPARE_KICKOFF_YELLOW, PREPARE_KICKOFF_BLUE:
+                        this.branchFuture = this.executor.scheduleAtFixedRate(this.prepareKickoffNode, ProgramConstants.INITIAL_DELAY,
+                                                                            ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
+                        this.currentlyExecutingNode = this.prepareKickoffNode;
+                        break;
+                    case PREPARE_PENALTY_YELLOW, PREPARE_PENALTY_BLUE:
+                        this.branchFuture = this.executor.scheduleAtFixedRate(this.preparePenaltyNode, ProgramConstants.INITIAL_DELAY,
+                                                                            ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
+                        this.currentlyExecutingNode = this.preparePenaltyNode;
+                        break;
+                    default:
+                        this.branchFuture = this.executor.scheduleAtFixedRate(this.stopNode, ProgramConstants.INITIAL_DELAY,
+                                                                            ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
+                        this.currentlyExecutingNode = this.stopNode;
+                        break;
+                }
             case DIRECT_FREE_YELLOW, DIRECT_FREE_BLUE:
                 this.branchFuture = this.executor.scheduleAtFixedRate(this.prepareDirectFreeNode, ProgramConstants.INITIAL_DELAY,
                                                                     ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
                 this.currentlyExecutingNode = this.prepareDirectFreeNode;
                 break;
-            case INDIRECT_FREE_YELLOW, INDIRECT_FREE_BLUE:
-                this.branchFuture = this.executor.scheduleAtFixedRate(this.prepareIndirectFreeNode, ProgramConstants.INITIAL_DELAY,
-                                                                    ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
-                this.currentlyExecutingNode = this.prepareIndirectFreeNode;
-                break;
+            // Deprecated
+            // case INDIRECT_FREE_YELLOW, INDIRECT_FREE_BLUE:
+            //     this.branchFuture = this.executor.scheduleAtFixedRate(this.prepareIndirectFreeNode, ProgramConstants.INITIAL_DELAY,
+            //                                                         ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
+            //     this.currentlyExecutingNode = this.prepareIndirectFreeNode;
+            //     break;
             case PREPARE_KICKOFF_YELLOW, PREPARE_KICKOFF_BLUE:
                 this.branchFuture = this.executor.scheduleAtFixedRate(this.prepareKickoffNode, ProgramConstants.INITIAL_DELAY,
                                                                     ProgramConstants.LOOP_DELAY, TimeUnit.MILLISECONDS);
