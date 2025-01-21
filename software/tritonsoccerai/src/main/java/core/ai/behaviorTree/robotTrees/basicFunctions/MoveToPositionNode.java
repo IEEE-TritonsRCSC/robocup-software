@@ -6,6 +6,9 @@ import core.ai.GameInfo;
 import core.ai.behaviorTree.nodes.NodeState;
 import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
 import core.util.Vector2d;
+import proto.simulation.SslSimulationRobotControl.RobotCommand;
+import proto.triton.FilteredObject.Ball;
+import proto.triton.FilteredObject.Robot;
 import core.search.implementation.*;
 import core.search.node2d.Node2d;
 import core.constants.ProgramConstants;
@@ -22,6 +25,14 @@ import static proto.simulation.SslSimulationRobotControl.MoveLocalVelocity;
 import static core.util.ProtobufUtils.getPos;
 import static core.util.ObjectHelper.generateLocalMoveCommand;
 
+/**
+ * MoveToPositionNode is a behavior tree node responsible for moving a robot 
+ * to a specified target position on the field.
+ * This class handles pathfinding, velocity calculation (with exponential 
+ * deceleration), and angular deceleration for orientation adjustment. 
+ * Commands are published to control the robot's movement and optionally 
+ * activate dribbling.
+ */
 public class MoveToPositionNode extends TaskNode {
 
     PathfindGridGroup pathfindGridGroup;
@@ -29,6 +40,13 @@ public class MoveToPositionNode extends TaskNode {
     boolean dribbleOn;
     boolean avoidBall;
     
+    /**
+     * Constructor for MoveToPositionNode for a specific robot (ID is allyID).
+     * Initializes the pathfinding system and default configuration 
+     * for movement behavior.
+     * 
+     * @param allyID The unique identifier of the robot that is receiving the command.
+     */
     public MoveToPositionNode(int allyID) {
         super("Move To Position Node: " + allyID, allyID);
         this.pathfindGridGroup = new PathfindGridGroup(ProgramConstants.gameConfig.numBots, GameInfo.getField());
@@ -41,6 +59,18 @@ public class MoveToPositionNode extends TaskNode {
         return null;
     }
 
+    /**
+     * Executes the move-to-position behavior for the robot, given a target location.
+     * Pathfinding and deceleration is applied to generate movement commands,
+     * which are then published to the robot for execution. Exponential deceleration is 
+     * for the velocity of the robot, and also applied to angular deceleration when the 
+     * robot is turning to its target orientation.
+     * 
+     * @param endLoc The target location for the robot.
+     * @return The state of the node after execution:
+     *         - NodeState.SUCCESS if the command is successfully executed.
+     *         - NodeState.FAILURE if the pathfinding fails or no route is found.
+     */
     public NodeState execute(Vector2d endLoc) {
         Robot ally = GameInfo.getAlly(allyID);
         Ball ball = GameInfo.getBall();
@@ -48,29 +78,59 @@ public class MoveToPositionNode extends TaskNode {
         Vector2d allyPos = getPos(GameInfo.getAlly(allyID));
 
         // Pathfinding to endLoc
+        //Update obstacles for the specific robot in the pathfinding grid 
         pathfindGridGroup.updateObstacles(GameInfo.getWrapper(), this.avoidBall);
+        //Linkedlist of the positions leading to the target route 
         LinkedList<Node2d> route = pathfindGridGroup.findRoute(allyID, allyPos, endLoc);
+        //Next target position in the pathfinding grid
         Vector2d next = pathfindGridGroup.findNext(allyID, route);
 
         if (next == null) {
             return NodeState.FAILURE;
         }
 
+
         // Build robot command to be published
-        Vector2d direction = next.sub(allyPos);
-        Vector2d vel = direction;
-        
+        Vector2d direction = next.sub(allyPos);  // Direction vector from current to next position
+        float distance = direction.mag();        // Distance to the next position
+        Vector2d vel;                            
+
+        // Exponential Deceleration 
+            //if dribbling is enabled (while the robot is dribbling)
         if (this.dribbleOn) {
-            float mag = direction.mag();
-            vel = direction.norm().scale(Math.min(mag, RobotConstants.MAX_DRIBBLE_MOVE_VELOCITY));
+            // Max dribble speed (constant, diff from without dribbling)
+            float maxDribbleSpeed = RobotConstants.MAX_DRIBBLE_MOVE_VELOCITY;  
+            //Decay rate for deceleration, higher values mean sharper deceleration
+            float decayRate = 3.0f;  
+            //applying exponential decay by scaling max dribble speed 
+            float scaledSpeed = maxDribbleSpeed * (float) Math.exp(-decayRate * distance);
+            //adjusted velocity vector after normalizing and scaling direction vector 
+            vel = direction.norm().scale(scaledSpeed);
+        } else { //dribbling not enabled, robot not dribbling
+            float maxMoveSpeed = RobotConstants.MAX_MOVE_VELOCITY;  // Max move speed (constant)
+            float decayRate = 2.0f;  // Adjust this based on testing
+            float scaledSpeed = maxMoveSpeed * (float) Math.exp(-decayRate * distance);
+            vel = direction.norm().scale(scaledSpeed);
         }
-        vel = vel.scale(RobotConstants.MOVE_VELOCITY_DAMPENER);
 
         float targetOrientation;
         if (this.dribbleOn) {targetOrientation = (float) Math.atan2(next.y - ally.getY(), next.x - ally.getX());}
         else {targetOrientation = (float) Math.atan2(ball.getY() - ally.getY(), ball.getX() - ally.getX());}
 
-        float angular = 3.0f * (Vector2d.angleDifference(GameInfo.getAlly(allyID).getOrientation(), targetOrientation));
+    
+        // Calculate angle difference between current orientation and target orientation
+        float angleDifference = Vector2d.angleDifference(GameInfo.getAlly(allyID).getOrientation(), targetOrientation);
+
+        // Angular deceleration scaling
+        float angularDecelerationRadius = RobotConstants.ANGULAR_DECELERATION_RADIUS; // Define in constants
+        //ensure that the scaling factor does  not exceed 1 
+        float angularScalingFactor = Math.min(1, distance / angularDecelerationRadius); // Scale angular velocity based on distance
+        float scaledAngularVelocity = angularScalingFactor * angleDifference * RobotConstants.MAX_ANGULAR_VELOCITY;
+
+        // Set angular velocity
+        float angular = 3.0f * scaledAngularVelocity;
+
+
         RobotCommand localCommand = generateLocalMoveCommand(vel.x, vel.y, angular, 
                                                             GameInfo.getAlly(allyID).getOrientation(), allyID);
         if (this.dribbleOn) {
@@ -81,7 +141,7 @@ public class MoveToPositionNode extends TaskNode {
         ProgramConstants.commandPublishingModule.publish(AI_BIASED_ROBOT_COMMAND, localCommand);
 
         return NodeState.SUCCESS;
-    }
+        }
 
     /**
      * Execute with target location set to (0, 0)
@@ -120,3 +180,4 @@ public class MoveToPositionNode extends TaskNode {
     }
 
 }
+
