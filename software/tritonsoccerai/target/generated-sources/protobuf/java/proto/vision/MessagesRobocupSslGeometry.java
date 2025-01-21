@@ -291,54 +291,6 @@ public final class MessagesRobocupSslGeometry {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Vector2f(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 13: {
-              bitField0_ |= 0x00000001;
-              x_ = input.readFloat();
-              break;
-            }
-            case 21: {
-              bitField0_ |= 0x00000002;
-              y_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.vision.MessagesRobocupSslGeometry.internal_static_proto_vision_Vector2f_descriptor;
@@ -354,7 +306,7 @@ public final class MessagesRobocupSslGeometry {
 
     private int bitField0_;
     public static final int X_FIELD_NUMBER = 1;
-    private float x_;
+    private float x_ = 0F;
     /**
      * <pre>
      * X-coordinate in mm
@@ -381,7 +333,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int Y_FIELD_NUMBER = 2;
-    private float y_;
+    private float y_ = 0F;
     /**
      * <pre>
      * Y-coordinate in mm
@@ -435,7 +387,7 @@ public final class MessagesRobocupSslGeometry {
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeFloat(2, y_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -452,7 +404,7 @@ public final class MessagesRobocupSslGeometry {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, y_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -479,7 +431,7 @@ public final class MessagesRobocupSslGeometry {
             != java.lang.Float.floatToIntBits(
                 other.getY())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -500,7 +452,7 @@ public final class MessagesRobocupSslGeometry {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getY());
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -621,26 +573,20 @@ public final class MessagesRobocupSslGeometry {
 
       // Construct using proto.vision.MessagesRobocupSslGeometry.Vector2f.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         x_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000001);
         y_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -667,6 +613,12 @@ public final class MessagesRobocupSslGeometry {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslGeometry.Vector2f buildPartial() {
         proto.vision.MessagesRobocupSslGeometry.Vector2f result = new proto.vision.MessagesRobocupSslGeometry.Vector2f(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.vision.MessagesRobocupSslGeometry.Vector2f result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -677,9 +629,7 @@ public final class MessagesRobocupSslGeometry {
           result.y_ = y_;
           to_bitField0_ |= 0x00000002;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -732,7 +682,7 @@ public final class MessagesRobocupSslGeometry {
         if (other.hasY()) {
           setY(other.getY());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -753,17 +703,40 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.vision.MessagesRobocupSslGeometry.Vector2f parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13: {
+                x_ = input.readFloat();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 13
+              case 21: {
+                y_ = input.readFloat();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 21
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.vision.MessagesRobocupSslGeometry.Vector2f) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -803,8 +776,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setX(float value) {
-        bitField0_ |= 0x00000001;
+        
         x_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -858,8 +832,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setY(float value) {
-        bitField0_ |= 0x00000002;
+        
         y_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -910,7 +885,18 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Vector2f(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1091,93 +1077,6 @@ public final class MessagesRobocupSslGeometry {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SSL_FieldLineSegment(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              name_ = bs;
-              break;
-            }
-            case 18: {
-              proto.vision.MessagesRobocupSslGeometry.Vector2f.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) != 0)) {
-                subBuilder = p1_.toBuilder();
-              }
-              p1_ = input.readMessage(proto.vision.MessagesRobocupSslGeometry.Vector2f.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(p1_);
-                p1_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000002;
-              break;
-            }
-            case 26: {
-              proto.vision.MessagesRobocupSslGeometry.Vector2f.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) != 0)) {
-                subBuilder = p2_.toBuilder();
-              }
-              p2_ = input.readMessage(proto.vision.MessagesRobocupSslGeometry.Vector2f.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(p2_);
-                p2_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
-              break;
-            }
-            case 37: {
-              bitField0_ |= 0x00000008;
-              thickness_ = input.readFloat();
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType value = proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(5, rawValue);
-              } else {
-                bitField0_ |= 0x00000010;
-                type_ = rawValue;
-              }
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.vision.MessagesRobocupSslGeometry.internal_static_proto_vision_SSL_FieldLineSegment_descriptor;
@@ -1193,7 +1092,8 @@ public final class MessagesRobocupSslGeometry {
 
     private int bitField0_;
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      * <pre>
      * Name of this field marking.
@@ -1329,7 +1229,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int THICKNESS_FIELD_NUMBER = 4;
-    private float thickness_;
+    private float thickness_ = 0F;
     /**
      * <pre>
      * Thickness of the line segment.
@@ -1356,7 +1256,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int TYPE_FIELD_NUMBER = 5;
-    private int type_;
+    private int type_ = 0;
     /**
      * <pre>
      * The type of this shape
@@ -1377,8 +1277,7 @@ public final class MessagesRobocupSslGeometry {
      * @return The type.
      */
     @java.lang.Override public proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType getType() {
-      @SuppressWarnings("deprecation")
-      proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType result = proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType.valueOf(type_);
+      proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType result = proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType.forNumber(type_);
       return result == null ? proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType.Undefined : result;
     }
 
@@ -1435,7 +1334,7 @@ public final class MessagesRobocupSslGeometry {
       if (((bitField0_ & 0x00000010) != 0)) {
         output.writeEnum(5, type_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1463,7 +1362,7 @@ public final class MessagesRobocupSslGeometry {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, type_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1503,7 +1402,7 @@ public final class MessagesRobocupSslGeometry {
       if (hasType()) {
         if (type_ != other.type_) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1535,7 +1434,7 @@ public final class MessagesRobocupSslGeometry {
         hash = (37 * hash) + TYPE_FIELD_NUMBER;
         hash = (53 * hash) + type_;
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1677,24 +1576,20 @@ public final class MessagesRobocupSslGeometry {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (p1Builder_ == null) {
-          p1_ = null;
-        } else {
-          p1Builder_.clear();
+        p1_ = null;
+        if (p1Builder_ != null) {
+          p1Builder_.dispose();
+          p1Builder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        if (p2Builder_ == null) {
-          p2_ = null;
-        } else {
-          p2Builder_.clear();
+        p2_ = null;
+        if (p2Builder_ != null) {
+          p2Builder_.dispose();
+          p2Builder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         thickness_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000008);
         type_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1721,26 +1616,28 @@ public final class MessagesRobocupSslGeometry {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslGeometry.SSL_FieldLineSegment buildPartial() {
         proto.vision.MessagesRobocupSslGeometry.SSL_FieldLineSegment result = new proto.vision.MessagesRobocupSslGeometry.SSL_FieldLineSegment(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.vision.MessagesRobocupSslGeometry.SSL_FieldLineSegment result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
           to_bitField0_ |= 0x00000001;
         }
-        result.name_ = name_;
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          if (p1Builder_ == null) {
-            result.p1_ = p1_;
-          } else {
-            result.p1_ = p1Builder_.build();
-          }
+          result.p1_ = p1Builder_ == null
+              ? p1_
+              : p1Builder_.build();
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          if (p2Builder_ == null) {
-            result.p2_ = p2_;
-          } else {
-            result.p2_ = p2Builder_.build();
-          }
+          result.p2_ = p2Builder_ == null
+              ? p2_
+              : p2Builder_.build();
           to_bitField0_ |= 0x00000004;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
@@ -1748,12 +1645,10 @@ public final class MessagesRobocupSslGeometry {
           to_bitField0_ |= 0x00000008;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.type_ = type_;
           to_bitField0_ |= 0x00000010;
         }
-        result.type_ = type_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -1801,8 +1696,8 @@ public final class MessagesRobocupSslGeometry {
       public Builder mergeFrom(proto.vision.MessagesRobocupSslGeometry.SSL_FieldLineSegment other) {
         if (other == proto.vision.MessagesRobocupSslGeometry.SSL_FieldLineSegment.getDefaultInstance()) return this;
         if (other.hasName()) {
-          bitField0_ |= 0x00000001;
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasP1()) {
@@ -1817,7 +1712,7 @@ public final class MessagesRobocupSslGeometry {
         if (other.hasType()) {
           setType(other.getType());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1850,17 +1745,66 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.vision.MessagesRobocupSslGeometry.SSL_FieldLineSegment parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                name_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getP1FieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getP2FieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 37: {
+                thickness_ = input.readFloat();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 37
+              case 40: {
+                int tmpRaw = input.readEnum();
+                proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType tmpValue =
+                    proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(5, tmpRaw);
+                } else {
+                  type_ = tmpRaw;
+                  bitField0_ |= 0x00000010;
+                }
+                break;
+              } // case 40
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.vision.MessagesRobocupSslGeometry.SSL_FieldLineSegment) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1931,11 +1875,9 @@ public final class MessagesRobocupSslGeometry {
        */
       public Builder setName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+        if (value == null) { throw new NullPointerException(); }
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1948,8 +1890,8 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1964,11 +1906,9 @@ public final class MessagesRobocupSslGeometry {
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+        if (value == null) { throw new NullPointerException(); }
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2015,11 +1955,11 @@ public final class MessagesRobocupSslGeometry {
             throw new NullPointerException();
           }
           p1_ = value;
-          onChanged();
         } else {
           p1Builder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2033,11 +1973,11 @@ public final class MessagesRobocupSslGeometry {
           proto.vision.MessagesRobocupSslGeometry.Vector2f.Builder builderForValue) {
         if (p1Builder_ == null) {
           p1_ = builderForValue.build();
-          onChanged();
         } else {
           p1Builder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2050,18 +1990,17 @@ public final class MessagesRobocupSslGeometry {
       public Builder mergeP1(proto.vision.MessagesRobocupSslGeometry.Vector2f value) {
         if (p1Builder_ == null) {
           if (((bitField0_ & 0x00000002) != 0) &&
-              p1_ != null &&
-              p1_ != proto.vision.MessagesRobocupSslGeometry.Vector2f.getDefaultInstance()) {
-            p1_ =
-              proto.vision.MessagesRobocupSslGeometry.Vector2f.newBuilder(p1_).mergeFrom(value).buildPartial();
+            p1_ != null &&
+            p1_ != proto.vision.MessagesRobocupSslGeometry.Vector2f.getDefaultInstance()) {
+            getP1Builder().mergeFrom(value);
           } else {
             p1_ = value;
           }
-          onChanged();
         } else {
           p1Builder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2072,13 +2011,13 @@ public final class MessagesRobocupSslGeometry {
        * <code>required .proto.vision.Vector2f p1 = 2;</code>
        */
       public Builder clearP1() {
-        if (p1Builder_ == null) {
-          p1_ = null;
-          onChanged();
-        } else {
-          p1Builder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000002);
+        p1_ = null;
+        if (p1Builder_ != null) {
+          p1Builder_.dispose();
+          p1Builder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -2171,11 +2110,11 @@ public final class MessagesRobocupSslGeometry {
             throw new NullPointerException();
           }
           p2_ = value;
-          onChanged();
         } else {
           p2Builder_.setMessage(value);
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2189,11 +2128,11 @@ public final class MessagesRobocupSslGeometry {
           proto.vision.MessagesRobocupSslGeometry.Vector2f.Builder builderForValue) {
         if (p2Builder_ == null) {
           p2_ = builderForValue.build();
-          onChanged();
         } else {
           p2Builder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2206,18 +2145,17 @@ public final class MessagesRobocupSslGeometry {
       public Builder mergeP2(proto.vision.MessagesRobocupSslGeometry.Vector2f value) {
         if (p2Builder_ == null) {
           if (((bitField0_ & 0x00000004) != 0) &&
-              p2_ != null &&
-              p2_ != proto.vision.MessagesRobocupSslGeometry.Vector2f.getDefaultInstance()) {
-            p2_ =
-              proto.vision.MessagesRobocupSslGeometry.Vector2f.newBuilder(p2_).mergeFrom(value).buildPartial();
+            p2_ != null &&
+            p2_ != proto.vision.MessagesRobocupSslGeometry.Vector2f.getDefaultInstance()) {
+            getP2Builder().mergeFrom(value);
           } else {
             p2_ = value;
           }
-          onChanged();
         } else {
           p2Builder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2228,13 +2166,13 @@ public final class MessagesRobocupSslGeometry {
        * <code>required .proto.vision.Vector2f p2 = 3;</code>
        */
       public Builder clearP2() {
-        if (p2Builder_ == null) {
-          p2_ = null;
-          onChanged();
-        } else {
-          p2Builder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000004);
+        p2_ = null;
+        if (p2Builder_ != null) {
+          p2Builder_.dispose();
+          p2Builder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -2320,8 +2258,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setThickness(float value) {
-        bitField0_ |= 0x00000008;
+        
         thickness_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2362,8 +2301,7 @@ public final class MessagesRobocupSslGeometry {
        */
       @java.lang.Override
       public proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType getType() {
-        @SuppressWarnings("deprecation")
-        proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType result = proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType.valueOf(type_);
+        proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType result = proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType.forNumber(type_);
         return result == null ? proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType.Undefined : result;
       }
       /**
@@ -2431,7 +2369,18 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SSL_FieldLineSegment(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2640,95 +2589,6 @@ public final class MessagesRobocupSslGeometry {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SSL_FieldCircularArc(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              name_ = bs;
-              break;
-            }
-            case 18: {
-              proto.vision.MessagesRobocupSslGeometry.Vector2f.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) != 0)) {
-                subBuilder = center_.toBuilder();
-              }
-              center_ = input.readMessage(proto.vision.MessagesRobocupSslGeometry.Vector2f.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(center_);
-                center_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000002;
-              break;
-            }
-            case 29: {
-              bitField0_ |= 0x00000004;
-              radius_ = input.readFloat();
-              break;
-            }
-            case 37: {
-              bitField0_ |= 0x00000008;
-              a1_ = input.readFloat();
-              break;
-            }
-            case 45: {
-              bitField0_ |= 0x00000010;
-              a2_ = input.readFloat();
-              break;
-            }
-            case 53: {
-              bitField0_ |= 0x00000020;
-              thickness_ = input.readFloat();
-              break;
-            }
-            case 56: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType value = proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(7, rawValue);
-              } else {
-                bitField0_ |= 0x00000040;
-                type_ = rawValue;
-              }
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.vision.MessagesRobocupSslGeometry.internal_static_proto_vision_SSL_FieldCircularArc_descriptor;
@@ -2744,7 +2604,8 @@ public final class MessagesRobocupSslGeometry {
 
     private int bitField0_;
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      * <pre>
      * Name of this field marking.
@@ -2842,7 +2703,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int RADIUS_FIELD_NUMBER = 3;
-    private float radius_;
+    private float radius_ = 0F;
     /**
      * <pre>
      * Radius of the arc.
@@ -2869,7 +2730,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int A1_FIELD_NUMBER = 4;
-    private float a1_;
+    private float a1_ = 0F;
     /**
      * <pre>
      * Start angle in counter-clockwise order.
@@ -2896,7 +2757,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int A2_FIELD_NUMBER = 5;
-    private float a2_;
+    private float a2_ = 0F;
     /**
      * <pre>
      * End angle in counter-clockwise order.
@@ -2923,7 +2784,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int THICKNESS_FIELD_NUMBER = 6;
-    private float thickness_;
+    private float thickness_ = 0F;
     /**
      * <pre>
      * Thickness of the arc.
@@ -2950,7 +2811,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int TYPE_FIELD_NUMBER = 7;
-    private int type_;
+    private int type_ = 0;
     /**
      * <pre>
      * The type of this shape
@@ -2971,8 +2832,7 @@ public final class MessagesRobocupSslGeometry {
      * @return The type.
      */
     @java.lang.Override public proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType getType() {
-      @SuppressWarnings("deprecation")
-      proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType result = proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType.valueOf(type_);
+      proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType result = proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType.forNumber(type_);
       return result == null ? proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType.Undefined : result;
     }
 
@@ -3039,7 +2899,7 @@ public final class MessagesRobocupSslGeometry {
       if (((bitField0_ & 0x00000040) != 0)) {
         output.writeEnum(7, type_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3075,7 +2935,7 @@ public final class MessagesRobocupSslGeometry {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, type_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3128,7 +2988,7 @@ public final class MessagesRobocupSslGeometry {
       if (hasType()) {
         if (type_ != other.type_) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3171,7 +3031,7 @@ public final class MessagesRobocupSslGeometry {
         hash = (37 * hash) + TYPE_FIELD_NUMBER;
         hash = (53 * hash) + type_;
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3310,24 +3170,18 @@ public final class MessagesRobocupSslGeometry {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (centerBuilder_ == null) {
-          center_ = null;
-        } else {
-          centerBuilder_.clear();
+        center_ = null;
+        if (centerBuilder_ != null) {
+          centerBuilder_.dispose();
+          centerBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         radius_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000004);
         a1_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000008);
         a2_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000010);
         thickness_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000020);
         type_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -3354,18 +3208,22 @@ public final class MessagesRobocupSslGeometry {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslGeometry.SSL_FieldCircularArc buildPartial() {
         proto.vision.MessagesRobocupSslGeometry.SSL_FieldCircularArc result = new proto.vision.MessagesRobocupSslGeometry.SSL_FieldCircularArc(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.vision.MessagesRobocupSslGeometry.SSL_FieldCircularArc result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
           to_bitField0_ |= 0x00000001;
         }
-        result.name_ = name_;
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          if (centerBuilder_ == null) {
-            result.center_ = center_;
-          } else {
-            result.center_ = centerBuilder_.build();
-          }
+          result.center_ = centerBuilder_ == null
+              ? center_
+              : centerBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
@@ -3385,12 +3243,10 @@ public final class MessagesRobocupSslGeometry {
           to_bitField0_ |= 0x00000020;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.type_ = type_;
           to_bitField0_ |= 0x00000040;
         }
-        result.type_ = type_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -3438,8 +3294,8 @@ public final class MessagesRobocupSslGeometry {
       public Builder mergeFrom(proto.vision.MessagesRobocupSslGeometry.SSL_FieldCircularArc other) {
         if (other == proto.vision.MessagesRobocupSslGeometry.SSL_FieldCircularArc.getDefaultInstance()) return this;
         if (other.hasName()) {
-          bitField0_ |= 0x00000001;
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasCenter()) {
@@ -3460,7 +3316,7 @@ public final class MessagesRobocupSslGeometry {
         if (other.hasType()) {
           setType(other.getType());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3496,17 +3352,74 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.vision.MessagesRobocupSslGeometry.SSL_FieldCircularArc parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                name_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getCenterFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 29: {
+                radius_ = input.readFloat();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 29
+              case 37: {
+                a1_ = input.readFloat();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 37
+              case 45: {
+                a2_ = input.readFloat();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 45
+              case 53: {
+                thickness_ = input.readFloat();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 53
+              case 56: {
+                int tmpRaw = input.readEnum();
+                proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType tmpValue =
+                    proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(7, tmpRaw);
+                } else {
+                  type_ = tmpRaw;
+                  bitField0_ |= 0x00000040;
+                }
+                break;
+              } // case 56
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.vision.MessagesRobocupSslGeometry.SSL_FieldCircularArc) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -3577,11 +3490,9 @@ public final class MessagesRobocupSslGeometry {
        */
       public Builder setName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+        if (value == null) { throw new NullPointerException(); }
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3594,8 +3505,8 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-        bitField0_ = (bitField0_ & ~0x00000001);
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -3610,11 +3521,9 @@ public final class MessagesRobocupSslGeometry {
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+        if (value == null) { throw new NullPointerException(); }
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3661,11 +3570,11 @@ public final class MessagesRobocupSslGeometry {
             throw new NullPointerException();
           }
           center_ = value;
-          onChanged();
         } else {
           centerBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3679,11 +3588,11 @@ public final class MessagesRobocupSslGeometry {
           proto.vision.MessagesRobocupSslGeometry.Vector2f.Builder builderForValue) {
         if (centerBuilder_ == null) {
           center_ = builderForValue.build();
-          onChanged();
         } else {
           centerBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3696,18 +3605,17 @@ public final class MessagesRobocupSslGeometry {
       public Builder mergeCenter(proto.vision.MessagesRobocupSslGeometry.Vector2f value) {
         if (centerBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0) &&
-              center_ != null &&
-              center_ != proto.vision.MessagesRobocupSslGeometry.Vector2f.getDefaultInstance()) {
-            center_ =
-              proto.vision.MessagesRobocupSslGeometry.Vector2f.newBuilder(center_).mergeFrom(value).buildPartial();
+            center_ != null &&
+            center_ != proto.vision.MessagesRobocupSslGeometry.Vector2f.getDefaultInstance()) {
+            getCenterBuilder().mergeFrom(value);
           } else {
             center_ = value;
           }
-          onChanged();
         } else {
           centerBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3718,13 +3626,13 @@ public final class MessagesRobocupSslGeometry {
        * <code>required .proto.vision.Vector2f center = 2;</code>
        */
       public Builder clearCenter() {
-        if (centerBuilder_ == null) {
-          center_ = null;
-          onChanged();
-        } else {
-          centerBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000002);
+        center_ = null;
+        if (centerBuilder_ != null) {
+          centerBuilder_.dispose();
+          centerBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -3810,8 +3718,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setRadius(float value) {
-        bitField0_ |= 0x00000004;
+        
         radius_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3865,8 +3774,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setA1(float value) {
-        bitField0_ |= 0x00000008;
+        
         a1_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3920,8 +3830,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setA2(float value) {
-        bitField0_ |= 0x00000010;
+        
         a2_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3975,8 +3886,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setThickness(float value) {
-        bitField0_ |= 0x00000020;
+        
         thickness_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -4017,8 +3929,7 @@ public final class MessagesRobocupSslGeometry {
        */
       @java.lang.Override
       public proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType getType() {
-        @SuppressWarnings("deprecation")
-        proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType result = proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType.valueOf(type_);
+        proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType result = proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType.forNumber(type_);
         return result == null ? proto.vision.MessagesRobocupSslGeometry.SSL_FieldShapeType.Undefined : result;
       }
       /**
@@ -4086,7 +3997,18 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SSL_FieldCircularArc(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -4474,133 +4396,6 @@ public final class MessagesRobocupSslGeometry {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SSL_GeometryFieldSize(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              bitField0_ |= 0x00000001;
-              fieldLength_ = input.readInt32();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              fieldWidth_ = input.readInt32();
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000004;
-              goalWidth_ = input.readInt32();
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              goalDepth_ = input.readInt32();
-              break;
-            }
-            case 40: {
-              bitField0_ |= 0x00000010;
-              boundaryWidth_ = input.readInt32();
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                fieldLines_ = new java.util.ArrayList<proto.vision.MessagesRobocupSslGeometry.SSL_FieldLineSegment>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              fieldLines_.add(
-                  input.readMessage(proto.vision.MessagesRobocupSslGeometry.SSL_FieldLineSegment.PARSER, extensionRegistry));
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                fieldArcs_ = new java.util.ArrayList<proto.vision.MessagesRobocupSslGeometry.SSL_FieldCircularArc>();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              fieldArcs_.add(
-                  input.readMessage(proto.vision.MessagesRobocupSslGeometry.SSL_FieldCircularArc.PARSER, extensionRegistry));
-              break;
-            }
-            case 64: {
-              bitField0_ |= 0x00000020;
-              penaltyAreaDepth_ = input.readInt32();
-              break;
-            }
-            case 72: {
-              bitField0_ |= 0x00000040;
-              penaltyAreaWidth_ = input.readInt32();
-              break;
-            }
-            case 80: {
-              bitField0_ |= 0x00000080;
-              centerCircleRadius_ = input.readInt32();
-              break;
-            }
-            case 88: {
-              bitField0_ |= 0x00000100;
-              lineThickness_ = input.readInt32();
-              break;
-            }
-            case 96: {
-              bitField0_ |= 0x00000200;
-              goalCenterToPenaltyMark_ = input.readInt32();
-              break;
-            }
-            case 104: {
-              bitField0_ |= 0x00000400;
-              goalHeight_ = input.readInt32();
-              break;
-            }
-            case 117: {
-              bitField0_ |= 0x00000800;
-              ballRadius_ = input.readFloat();
-              break;
-            }
-            case 125: {
-              bitField0_ |= 0x00001000;
-              maxRobotRadius_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
-          fieldLines_ = java.util.Collections.unmodifiableList(fieldLines_);
-        }
-        if (((mutable_bitField0_ & 0x00000040) != 0)) {
-          fieldArcs_ = java.util.Collections.unmodifiableList(fieldArcs_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.vision.MessagesRobocupSslGeometry.internal_static_proto_vision_SSL_GeometryFieldSize_descriptor;
@@ -4616,7 +4411,7 @@ public final class MessagesRobocupSslGeometry {
 
     private int bitField0_;
     public static final int FIELD_LENGTH_FIELD_NUMBER = 1;
-    private int fieldLength_;
+    private int fieldLength_ = 0;
     /**
      * <pre>
      * Field length (distance between goal lines) in mm
@@ -4643,7 +4438,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int FIELD_WIDTH_FIELD_NUMBER = 2;
-    private int fieldWidth_;
+    private int fieldWidth_ = 0;
     /**
      * <pre>
      * Field width (distance between touch lines) in mm
@@ -4670,7 +4465,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int GOAL_WIDTH_FIELD_NUMBER = 3;
-    private int goalWidth_;
+    private int goalWidth_ = 0;
     /**
      * <pre>
      * Goal width (distance between inner edges of goal posts) in mm
@@ -4697,7 +4492,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int GOAL_DEPTH_FIELD_NUMBER = 4;
-    private int goalDepth_;
+    private int goalDepth_ = 0;
     /**
      * <pre>
      * Goal depth (distance from outer goal line edge to inner goal back) in mm
@@ -4724,7 +4519,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int BOUNDARY_WIDTH_FIELD_NUMBER = 5;
-    private int boundaryWidth_;
+    private int boundaryWidth_ = 0;
     /**
      * <pre>
      * Boundary width (distance from touch/goal line centers to boundary walls) in mm
@@ -4751,6 +4546,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int FIELD_LINES_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private java.util.List<proto.vision.MessagesRobocupSslGeometry.SSL_FieldLineSegment> fieldLines_;
     /**
      * <pre>
@@ -4811,6 +4607,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int FIELD_ARCS_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
     private java.util.List<proto.vision.MessagesRobocupSslGeometry.SSL_FieldCircularArc> fieldArcs_;
     /**
      * <pre>
@@ -4871,7 +4668,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int PENALTY_AREA_DEPTH_FIELD_NUMBER = 8;
-    private int penaltyAreaDepth_;
+    private int penaltyAreaDepth_ = 0;
     /**
      * <pre>
      * Depth of the penalty/defense area (measured between line centers) in mm
@@ -4898,7 +4695,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int PENALTY_AREA_WIDTH_FIELD_NUMBER = 9;
-    private int penaltyAreaWidth_;
+    private int penaltyAreaWidth_ = 0;
     /**
      * <pre>
      * Width of the penalty/defense area (measured between line centers) in mm
@@ -4925,7 +4722,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int CENTER_CIRCLE_RADIUS_FIELD_NUMBER = 10;
-    private int centerCircleRadius_;
+    private int centerCircleRadius_ = 0;
     /**
      * <pre>
      * Radius of the center circle (measured between line centers) in mm
@@ -4952,7 +4749,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int LINE_THICKNESS_FIELD_NUMBER = 11;
-    private int lineThickness_;
+    private int lineThickness_ = 0;
     /**
      * <pre>
      * Thickness/width of the lines on the field in mm
@@ -4979,7 +4776,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int GOAL_CENTER_TO_PENALTY_MARK_FIELD_NUMBER = 12;
-    private int goalCenterToPenaltyMark_;
+    private int goalCenterToPenaltyMark_ = 0;
     /**
      * <pre>
      * Distance between the goal center and the center of the penalty mark in mm 
@@ -5006,7 +4803,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int GOAL_HEIGHT_FIELD_NUMBER = 13;
-    private int goalHeight_;
+    private int goalHeight_ = 0;
     /**
      * <pre>
      * Goal height in mm
@@ -5033,7 +4830,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int BALL_RADIUS_FIELD_NUMBER = 14;
-    private float ballRadius_;
+    private float ballRadius_ = 0F;
     /**
      * <pre>
      * Ball radius in mm (note that this is a float type to represent sub-mm precision)
@@ -5060,7 +4857,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int MAX_ROBOT_RADIUS_FIELD_NUMBER = 15;
-    private float maxRobotRadius_;
+    private float maxRobotRadius_ = 0F;
     /**
      * <pre>
      * Max allowed robot radius in mm (note that this is a float type to represent sub-mm precision)
@@ -5177,7 +4974,7 @@ public final class MessagesRobocupSslGeometry {
       if (((bitField0_ & 0x00001000) != 0)) {
         output.writeFloat(15, maxRobotRadius_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5246,7 +5043,7 @@ public final class MessagesRobocupSslGeometry {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(15, maxRobotRadius_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5332,7 +5129,7 @@ public final class MessagesRobocupSslGeometry {
             != java.lang.Float.floatToIntBits(
                 other.getMaxRobotRadius())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5405,7 +5202,7 @@ public final class MessagesRobocupSslGeometry {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getMaxRobotRadius());
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5522,62 +5319,45 @@ public final class MessagesRobocupSslGeometry {
 
       // Construct using proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getFieldLinesFieldBuilder();
-          getFieldArcsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         fieldLength_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
         fieldWidth_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
         goalWidth_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000004);
         goalDepth_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000008);
         boundaryWidth_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000010);
         if (fieldLinesBuilder_ == null) {
           fieldLines_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
+          fieldLines_ = null;
           fieldLinesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         if (fieldArcsBuilder_ == null) {
           fieldArcs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
+          fieldArcs_ = null;
           fieldArcsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000040);
         penaltyAreaDepth_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000080);
         penaltyAreaWidth_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000100);
         centerCircleRadius_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000200);
         lineThickness_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000400);
         goalCenterToPenaltyMark_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000800);
         goalHeight_ = 0;
-        bitField0_ = (bitField0_ & ~0x00001000);
         ballRadius_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00002000);
         maxRobotRadius_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00004000);
         return this;
       }
 
@@ -5604,6 +5384,34 @@ public final class MessagesRobocupSslGeometry {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize buildPartial() {
         proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize result = new proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize result) {
+        if (fieldLinesBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)) {
+            fieldLines_ = java.util.Collections.unmodifiableList(fieldLines_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.fieldLines_ = fieldLines_;
+        } else {
+          result.fieldLines_ = fieldLinesBuilder_.build();
+        }
+        if (fieldArcsBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0)) {
+            fieldArcs_ = java.util.Collections.unmodifiableList(fieldArcs_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.fieldArcs_ = fieldArcs_;
+        } else {
+          result.fieldArcs_ = fieldArcsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -5625,24 +5433,6 @@ public final class MessagesRobocupSslGeometry {
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.boundaryWidth_ = boundaryWidth_;
           to_bitField0_ |= 0x00000010;
-        }
-        if (fieldLinesBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)) {
-            fieldLines_ = java.util.Collections.unmodifiableList(fieldLines_);
-            bitField0_ = (bitField0_ & ~0x00000020);
-          }
-          result.fieldLines_ = fieldLines_;
-        } else {
-          result.fieldLines_ = fieldLinesBuilder_.build();
-        }
-        if (fieldArcsBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0)) {
-            fieldArcs_ = java.util.Collections.unmodifiableList(fieldArcs_);
-            bitField0_ = (bitField0_ & ~0x00000040);
-          }
-          result.fieldArcs_ = fieldArcs_;
-        } else {
-          result.fieldArcs_ = fieldArcsBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
           result.penaltyAreaDepth_ = penaltyAreaDepth_;
@@ -5676,9 +5466,7 @@ public final class MessagesRobocupSslGeometry {
           result.maxRobotRadius_ = maxRobotRadius_;
           to_bitField0_ |= 0x00001000;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -5816,7 +5604,7 @@ public final class MessagesRobocupSslGeometry {
         if (other.hasMaxRobotRadius()) {
           setMaxRobotRadius(other.getMaxRobotRadius());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5856,17 +5644,121 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                fieldLength_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                fieldWidth_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                goalWidth_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                goalDepth_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                boundaryWidth_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 50: {
+                proto.vision.MessagesRobocupSslGeometry.SSL_FieldLineSegment m =
+                    input.readMessage(
+                        proto.vision.MessagesRobocupSslGeometry.SSL_FieldLineSegment.PARSER,
+                        extensionRegistry);
+                if (fieldLinesBuilder_ == null) {
+                  ensureFieldLinesIsMutable();
+                  fieldLines_.add(m);
+                } else {
+                  fieldLinesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 58: {
+                proto.vision.MessagesRobocupSslGeometry.SSL_FieldCircularArc m =
+                    input.readMessage(
+                        proto.vision.MessagesRobocupSslGeometry.SSL_FieldCircularArc.PARSER,
+                        extensionRegistry);
+                if (fieldArcsBuilder_ == null) {
+                  ensureFieldArcsIsMutable();
+                  fieldArcs_.add(m);
+                } else {
+                  fieldArcsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+              case 64: {
+                penaltyAreaDepth_ = input.readInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+              case 72: {
+                penaltyAreaWidth_ = input.readInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
+              case 80: {
+                centerCircleRadius_ = input.readInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
+              case 88: {
+                lineThickness_ = input.readInt32();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
+              case 96: {
+                goalCenterToPenaltyMark_ = input.readInt32();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 96
+              case 104: {
+                goalHeight_ = input.readInt32();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 104
+              case 117: {
+                ballRadius_ = input.readFloat();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 117
+              case 125: {
+                maxRobotRadius_ = input.readFloat();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 125
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -5906,8 +5798,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setFieldLength(int value) {
-        bitField0_ |= 0x00000001;
+        
         fieldLength_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5961,8 +5854,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setFieldWidth(int value) {
-        bitField0_ |= 0x00000002;
+        
         fieldWidth_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6016,8 +5910,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setGoalWidth(int value) {
-        bitField0_ |= 0x00000004;
+        
         goalWidth_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -6071,8 +5966,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setGoalDepth(int value) {
-        bitField0_ |= 0x00000008;
+        
         goalDepth_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -6126,8 +6022,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setBoundaryWidth(int value) {
-        bitField0_ |= 0x00000010;
+        
         boundaryWidth_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -6805,8 +6702,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setPenaltyAreaDepth(int value) {
-        bitField0_ |= 0x00000080;
+        
         penaltyAreaDepth_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -6860,8 +6758,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setPenaltyAreaWidth(int value) {
-        bitField0_ |= 0x00000100;
+        
         penaltyAreaWidth_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -6915,8 +6814,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setCenterCircleRadius(int value) {
-        bitField0_ |= 0x00000200;
+        
         centerCircleRadius_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -6970,8 +6870,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setLineThickness(int value) {
-        bitField0_ |= 0x00000400;
+        
         lineThickness_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -7025,8 +6926,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setGoalCenterToPenaltyMark(int value) {
-        bitField0_ |= 0x00000800;
+        
         goalCenterToPenaltyMark_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -7080,8 +6982,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setGoalHeight(int value) {
-        bitField0_ |= 0x00001000;
+        
         goalHeight_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -7135,8 +7038,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setBallRadius(float value) {
-        bitField0_ |= 0x00002000;
+        
         ballRadius_ = value;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -7190,8 +7094,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setMaxRobotRadius(float value) {
-        bitField0_ |= 0x00004000;
+        
         maxRobotRadius_ = value;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -7242,7 +7147,18 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SSL_GeometryFieldSize(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -7480,129 +7396,6 @@ public final class MessagesRobocupSslGeometry {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SSL_GeometryCameraCalibration(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              bitField0_ |= 0x00000001;
-              cameraId_ = input.readUInt32();
-              break;
-            }
-            case 21: {
-              bitField0_ |= 0x00000002;
-              focalLength_ = input.readFloat();
-              break;
-            }
-            case 29: {
-              bitField0_ |= 0x00000004;
-              principalPointX_ = input.readFloat();
-              break;
-            }
-            case 37: {
-              bitField0_ |= 0x00000008;
-              principalPointY_ = input.readFloat();
-              break;
-            }
-            case 45: {
-              bitField0_ |= 0x00000010;
-              distortion_ = input.readFloat();
-              break;
-            }
-            case 53: {
-              bitField0_ |= 0x00000020;
-              q0_ = input.readFloat();
-              break;
-            }
-            case 61: {
-              bitField0_ |= 0x00000040;
-              q1_ = input.readFloat();
-              break;
-            }
-            case 69: {
-              bitField0_ |= 0x00000080;
-              q2_ = input.readFloat();
-              break;
-            }
-            case 77: {
-              bitField0_ |= 0x00000100;
-              q3_ = input.readFloat();
-              break;
-            }
-            case 85: {
-              bitField0_ |= 0x00000200;
-              tx_ = input.readFloat();
-              break;
-            }
-            case 93: {
-              bitField0_ |= 0x00000400;
-              ty_ = input.readFloat();
-              break;
-            }
-            case 101: {
-              bitField0_ |= 0x00000800;
-              tz_ = input.readFloat();
-              break;
-            }
-            case 109: {
-              bitField0_ |= 0x00001000;
-              derivedCameraWorldTx_ = input.readFloat();
-              break;
-            }
-            case 117: {
-              bitField0_ |= 0x00002000;
-              derivedCameraWorldTy_ = input.readFloat();
-              break;
-            }
-            case 125: {
-              bitField0_ |= 0x00004000;
-              derivedCameraWorldTz_ = input.readFloat();
-              break;
-            }
-            case 128: {
-              bitField0_ |= 0x00008000;
-              pixelImageWidth_ = input.readUInt32();
-              break;
-            }
-            case 136: {
-              bitField0_ |= 0x00010000;
-              pixelImageHeight_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.vision.MessagesRobocupSslGeometry.internal_static_proto_vision_SSL_GeometryCameraCalibration_descriptor;
@@ -7618,7 +7411,7 @@ public final class MessagesRobocupSslGeometry {
 
     private int bitField0_;
     public static final int CAMERA_ID_FIELD_NUMBER = 1;
-    private int cameraId_;
+    private int cameraId_ = 0;
     /**
      * <code>required uint32 camera_id = 1;</code>
      * @return Whether the cameraId field is set.
@@ -7637,7 +7430,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int FOCAL_LENGTH_FIELD_NUMBER = 2;
-    private float focalLength_;
+    private float focalLength_ = 0F;
     /**
      * <code>required float focal_length = 2;</code>
      * @return Whether the focalLength field is set.
@@ -7656,7 +7449,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int PRINCIPAL_POINT_X_FIELD_NUMBER = 3;
-    private float principalPointX_;
+    private float principalPointX_ = 0F;
     /**
      * <code>required float principal_point_x = 3;</code>
      * @return Whether the principalPointX field is set.
@@ -7675,7 +7468,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int PRINCIPAL_POINT_Y_FIELD_NUMBER = 4;
-    private float principalPointY_;
+    private float principalPointY_ = 0F;
     /**
      * <code>required float principal_point_y = 4;</code>
      * @return Whether the principalPointY field is set.
@@ -7694,7 +7487,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int DISTORTION_FIELD_NUMBER = 5;
-    private float distortion_;
+    private float distortion_ = 0F;
     /**
      * <code>required float distortion = 5;</code>
      * @return Whether the distortion field is set.
@@ -7713,7 +7506,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int Q0_FIELD_NUMBER = 6;
-    private float q0_;
+    private float q0_ = 0F;
     /**
      * <code>required float q0 = 6;</code>
      * @return Whether the q0 field is set.
@@ -7732,7 +7525,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int Q1_FIELD_NUMBER = 7;
-    private float q1_;
+    private float q1_ = 0F;
     /**
      * <code>required float q1 = 7;</code>
      * @return Whether the q1 field is set.
@@ -7751,7 +7544,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int Q2_FIELD_NUMBER = 8;
-    private float q2_;
+    private float q2_ = 0F;
     /**
      * <code>required float q2 = 8;</code>
      * @return Whether the q2 field is set.
@@ -7770,7 +7563,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int Q3_FIELD_NUMBER = 9;
-    private float q3_;
+    private float q3_ = 0F;
     /**
      * <code>required float q3 = 9;</code>
      * @return Whether the q3 field is set.
@@ -7789,7 +7582,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int TX_FIELD_NUMBER = 10;
-    private float tx_;
+    private float tx_ = 0F;
     /**
      * <code>required float tx = 10;</code>
      * @return Whether the tx field is set.
@@ -7808,7 +7601,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int TY_FIELD_NUMBER = 11;
-    private float ty_;
+    private float ty_ = 0F;
     /**
      * <code>required float ty = 11;</code>
      * @return Whether the ty field is set.
@@ -7827,7 +7620,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int TZ_FIELD_NUMBER = 12;
-    private float tz_;
+    private float tz_ = 0F;
     /**
      * <code>required float tz = 12;</code>
      * @return Whether the tz field is set.
@@ -7846,7 +7639,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int DERIVED_CAMERA_WORLD_TX_FIELD_NUMBER = 13;
-    private float derivedCameraWorldTx_;
+    private float derivedCameraWorldTx_ = 0F;
     /**
      * <code>optional float derived_camera_world_tx = 13;</code>
      * @return Whether the derivedCameraWorldTx field is set.
@@ -7865,7 +7658,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int DERIVED_CAMERA_WORLD_TY_FIELD_NUMBER = 14;
-    private float derivedCameraWorldTy_;
+    private float derivedCameraWorldTy_ = 0F;
     /**
      * <code>optional float derived_camera_world_ty = 14;</code>
      * @return Whether the derivedCameraWorldTy field is set.
@@ -7884,7 +7677,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int DERIVED_CAMERA_WORLD_TZ_FIELD_NUMBER = 15;
-    private float derivedCameraWorldTz_;
+    private float derivedCameraWorldTz_ = 0F;
     /**
      * <code>optional float derived_camera_world_tz = 15;</code>
      * @return Whether the derivedCameraWorldTz field is set.
@@ -7903,7 +7696,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int PIXEL_IMAGE_WIDTH_FIELD_NUMBER = 16;
-    private int pixelImageWidth_;
+    private int pixelImageWidth_ = 0;
     /**
      * <code>optional uint32 pixel_image_width = 16;</code>
      * @return Whether the pixelImageWidth field is set.
@@ -7922,7 +7715,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int PIXEL_IMAGE_HEIGHT_FIELD_NUMBER = 17;
-    private int pixelImageHeight_;
+    private int pixelImageHeight_ = 0;
     /**
      * <code>optional uint32 pixel_image_height = 17;</code>
      * @return Whether the pixelImageHeight field is set.
@@ -8053,7 +7846,7 @@ public final class MessagesRobocupSslGeometry {
       if (((bitField0_ & 0x00010000) != 0)) {
         output.writeUInt32(17, pixelImageHeight_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -8130,7 +7923,7 @@ public final class MessagesRobocupSslGeometry {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(17, pixelImageHeight_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -8244,7 +8037,7 @@ public final class MessagesRobocupSslGeometry {
         if (getPixelImageHeight()
             != other.getPixelImageHeight()) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -8337,7 +8130,7 @@ public final class MessagesRobocupSslGeometry {
         hash = (37 * hash) + PIXEL_IMAGE_HEIGHT_FIELD_NUMBER;
         hash = (53 * hash) + getPixelImageHeight();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8454,56 +8247,35 @@ public final class MessagesRobocupSslGeometry {
 
       // Construct using proto.vision.MessagesRobocupSslGeometry.SSL_GeometryCameraCalibration.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         cameraId_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
         focalLength_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000002);
         principalPointX_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000004);
         principalPointY_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000008);
         distortion_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000010);
         q0_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000020);
         q1_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000040);
         q2_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000080);
         q3_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000100);
         tx_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000200);
         ty_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000400);
         tz_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000800);
         derivedCameraWorldTx_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00001000);
         derivedCameraWorldTy_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00002000);
         derivedCameraWorldTz_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00004000);
         pixelImageWidth_ = 0;
-        bitField0_ = (bitField0_ & ~0x00008000);
         pixelImageHeight_ = 0;
-        bitField0_ = (bitField0_ & ~0x00010000);
         return this;
       }
 
@@ -8530,6 +8302,12 @@ public final class MessagesRobocupSslGeometry {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslGeometry.SSL_GeometryCameraCalibration buildPartial() {
         proto.vision.MessagesRobocupSslGeometry.SSL_GeometryCameraCalibration result = new proto.vision.MessagesRobocupSslGeometry.SSL_GeometryCameraCalibration(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.vision.MessagesRobocupSslGeometry.SSL_GeometryCameraCalibration result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -8600,9 +8378,7 @@ public final class MessagesRobocupSslGeometry {
           result.pixelImageHeight_ = pixelImageHeight_;
           to_bitField0_ |= 0x00010000;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -8700,7 +8476,7 @@ public final class MessagesRobocupSslGeometry {
         if (other.hasPixelImageHeight()) {
           setPixelImageHeight(other.getPixelImageHeight());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -8751,17 +8527,115 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.vision.MessagesRobocupSslGeometry.SSL_GeometryCameraCalibration parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                cameraId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 21: {
+                focalLength_ = input.readFloat();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 21
+              case 29: {
+                principalPointX_ = input.readFloat();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 29
+              case 37: {
+                principalPointY_ = input.readFloat();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 37
+              case 45: {
+                distortion_ = input.readFloat();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 45
+              case 53: {
+                q0_ = input.readFloat();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 53
+              case 61: {
+                q1_ = input.readFloat();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 61
+              case 69: {
+                q2_ = input.readFloat();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 69
+              case 77: {
+                q3_ = input.readFloat();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 77
+              case 85: {
+                tx_ = input.readFloat();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 85
+              case 93: {
+                ty_ = input.readFloat();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 93
+              case 101: {
+                tz_ = input.readFloat();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 101
+              case 109: {
+                derivedCameraWorldTx_ = input.readFloat();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 109
+              case 117: {
+                derivedCameraWorldTy_ = input.readFloat();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 117
+              case 125: {
+                derivedCameraWorldTz_ = input.readFloat();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 125
+              case 128: {
+                pixelImageWidth_ = input.readUInt32();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 128
+              case 136: {
+                pixelImageHeight_ = input.readUInt32();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 136
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.vision.MessagesRobocupSslGeometry.SSL_GeometryCameraCalibration) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -8789,8 +8663,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setCameraId(int value) {
-        bitField0_ |= 0x00000001;
+        
         cameraId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8828,8 +8703,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setFocalLength(float value) {
-        bitField0_ |= 0x00000002;
+        
         focalLength_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -8867,8 +8743,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setPrincipalPointX(float value) {
-        bitField0_ |= 0x00000004;
+        
         principalPointX_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -8906,8 +8783,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setPrincipalPointY(float value) {
-        bitField0_ |= 0x00000008;
+        
         principalPointY_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -8945,8 +8823,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setDistortion(float value) {
-        bitField0_ |= 0x00000010;
+        
         distortion_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -8984,8 +8863,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setQ0(float value) {
-        bitField0_ |= 0x00000020;
+        
         q0_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -9023,8 +8903,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setQ1(float value) {
-        bitField0_ |= 0x00000040;
+        
         q1_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -9062,8 +8943,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setQ2(float value) {
-        bitField0_ |= 0x00000080;
+        
         q2_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -9101,8 +8983,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setQ3(float value) {
-        bitField0_ |= 0x00000100;
+        
         q3_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -9140,8 +9023,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setTx(float value) {
-        bitField0_ |= 0x00000200;
+        
         tx_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -9179,8 +9063,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setTy(float value) {
-        bitField0_ |= 0x00000400;
+        
         ty_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -9218,8 +9103,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setTz(float value) {
-        bitField0_ |= 0x00000800;
+        
         tz_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -9257,8 +9143,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setDerivedCameraWorldTx(float value) {
-        bitField0_ |= 0x00001000;
+        
         derivedCameraWorldTx_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -9296,8 +9183,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setDerivedCameraWorldTy(float value) {
-        bitField0_ |= 0x00002000;
+        
         derivedCameraWorldTy_ = value;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -9335,8 +9223,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setDerivedCameraWorldTz(float value) {
-        bitField0_ |= 0x00004000;
+        
         derivedCameraWorldTz_ = value;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -9374,8 +9263,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setPixelImageWidth(int value) {
-        bitField0_ |= 0x00008000;
+        
         pixelImageWidth_ = value;
+        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -9413,8 +9303,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setPixelImageHeight(int value) {
-        bitField0_ |= 0x00010000;
+        
         pixelImageHeight_ = value;
+        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -9461,7 +9352,18 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SSL_GeometryCameraCalibration(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -9578,59 +9480,6 @@ public final class MessagesRobocupSslGeometry {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SSL_BallModelStraightTwoPhase(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 9: {
-              bitField0_ |= 0x00000001;
-              accSlide_ = input.readDouble();
-              break;
-            }
-            case 17: {
-              bitField0_ |= 0x00000002;
-              accRoll_ = input.readDouble();
-              break;
-            }
-            case 25: {
-              bitField0_ |= 0x00000004;
-              kSwitch_ = input.readDouble();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.vision.MessagesRobocupSslGeometry.internal_static_proto_vision_SSL_BallModelStraightTwoPhase_descriptor;
@@ -9646,7 +9495,7 @@ public final class MessagesRobocupSslGeometry {
 
     private int bitField0_;
     public static final int ACC_SLIDE_FIELD_NUMBER = 1;
-    private double accSlide_;
+    private double accSlide_ = 0D;
     /**
      * <pre>
      * Ball sliding acceleration [m/s^2] (should be negative)
@@ -9673,7 +9522,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int ACC_ROLL_FIELD_NUMBER = 2;
-    private double accRoll_;
+    private double accRoll_ = 0D;
     /**
      * <pre>
      * Ball rolling acceleration [m/s^2] (should be negative)
@@ -9700,7 +9549,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int K_SWITCH_FIELD_NUMBER = 3;
-    private double kSwitch_;
+    private double kSwitch_ = 0D;
     /**
      * <pre>
      * Fraction of the initial velocity where the ball starts to roll
@@ -9761,7 +9610,7 @@ public final class MessagesRobocupSslGeometry {
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeDouble(3, kSwitch_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -9782,7 +9631,7 @@ public final class MessagesRobocupSslGeometry {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(3, kSwitch_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9815,7 +9664,7 @@ public final class MessagesRobocupSslGeometry {
             != java.lang.Double.doubleToLongBits(
                 other.getKSwitch())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -9841,7 +9690,7 @@ public final class MessagesRobocupSslGeometry {
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             java.lang.Double.doubleToLongBits(getKSwitch()));
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9967,28 +9816,21 @@ public final class MessagesRobocupSslGeometry {
 
       // Construct using proto.vision.MessagesRobocupSslGeometry.SSL_BallModelStraightTwoPhase.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         accSlide_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000001);
         accRoll_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000002);
         kSwitch_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -10015,6 +9857,12 @@ public final class MessagesRobocupSslGeometry {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslGeometry.SSL_BallModelStraightTwoPhase buildPartial() {
         proto.vision.MessagesRobocupSslGeometry.SSL_BallModelStraightTwoPhase result = new proto.vision.MessagesRobocupSslGeometry.SSL_BallModelStraightTwoPhase(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.vision.MessagesRobocupSslGeometry.SSL_BallModelStraightTwoPhase result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -10029,9 +9877,7 @@ public final class MessagesRobocupSslGeometry {
           result.kSwitch_ = kSwitch_;
           to_bitField0_ |= 0x00000004;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -10087,7 +9933,7 @@ public final class MessagesRobocupSslGeometry {
         if (other.hasKSwitch()) {
           setKSwitch(other.getKSwitch());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -10111,17 +9957,45 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.vision.MessagesRobocupSslGeometry.SSL_BallModelStraightTwoPhase parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 9: {
+                accSlide_ = input.readDouble();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 9
+              case 17: {
+                accRoll_ = input.readDouble();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 17
+              case 25: {
+                kSwitch_ = input.readDouble();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 25
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.vision.MessagesRobocupSslGeometry.SSL_BallModelStraightTwoPhase) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -10161,8 +10035,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setAccSlide(double value) {
-        bitField0_ |= 0x00000001;
+        
         accSlide_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -10216,8 +10091,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setAccRoll(double value) {
-        bitField0_ |= 0x00000002;
+        
         accRoll_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -10271,8 +10147,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setKSwitch(double value) {
-        bitField0_ |= 0x00000004;
+        
         kSwitch_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -10323,7 +10200,18 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SSL_BallModelStraightTwoPhase(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -10436,59 +10324,6 @@ public final class MessagesRobocupSslGeometry {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SSL_BallModelChipFixedLoss(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 9: {
-              bitField0_ |= 0x00000001;
-              dampingXyFirstHop_ = input.readDouble();
-              break;
-            }
-            case 17: {
-              bitField0_ |= 0x00000002;
-              dampingXyOtherHops_ = input.readDouble();
-              break;
-            }
-            case 25: {
-              bitField0_ |= 0x00000004;
-              dampingZ_ = input.readDouble();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.vision.MessagesRobocupSslGeometry.internal_static_proto_vision_SSL_BallModelChipFixedLoss_descriptor;
@@ -10504,7 +10339,7 @@ public final class MessagesRobocupSslGeometry {
 
     private int bitField0_;
     public static final int DAMPING_XY_FIRST_HOP_FIELD_NUMBER = 1;
-    private double dampingXyFirstHop_;
+    private double dampingXyFirstHop_ = 0D;
     /**
      * <pre>
      * Chip kick velocity damping factor in XY direction for the first hop
@@ -10531,7 +10366,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int DAMPING_XY_OTHER_HOPS_FIELD_NUMBER = 2;
-    private double dampingXyOtherHops_;
+    private double dampingXyOtherHops_ = 0D;
     /**
      * <pre>
      * Chip kick velocity damping factor in XY direction for all following hops
@@ -10558,7 +10393,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int DAMPING_Z_FIELD_NUMBER = 3;
-    private double dampingZ_;
+    private double dampingZ_ = 0D;
     /**
      * <pre>
      * Chip kick velocity damping factor in Z direction for all hops
@@ -10619,7 +10454,7 @@ public final class MessagesRobocupSslGeometry {
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeDouble(3, dampingZ_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -10640,7 +10475,7 @@ public final class MessagesRobocupSslGeometry {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(3, dampingZ_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -10673,7 +10508,7 @@ public final class MessagesRobocupSslGeometry {
             != java.lang.Double.doubleToLongBits(
                 other.getDampingZ())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -10699,7 +10534,7 @@ public final class MessagesRobocupSslGeometry {
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             java.lang.Double.doubleToLongBits(getDampingZ()));
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -10821,28 +10656,21 @@ public final class MessagesRobocupSslGeometry {
 
       // Construct using proto.vision.MessagesRobocupSslGeometry.SSL_BallModelChipFixedLoss.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dampingXyFirstHop_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000001);
         dampingXyOtherHops_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000002);
         dampingZ_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -10869,6 +10697,12 @@ public final class MessagesRobocupSslGeometry {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslGeometry.SSL_BallModelChipFixedLoss buildPartial() {
         proto.vision.MessagesRobocupSslGeometry.SSL_BallModelChipFixedLoss result = new proto.vision.MessagesRobocupSslGeometry.SSL_BallModelChipFixedLoss(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.vision.MessagesRobocupSslGeometry.SSL_BallModelChipFixedLoss result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -10883,9 +10717,7 @@ public final class MessagesRobocupSslGeometry {
           result.dampingZ_ = dampingZ_;
           to_bitField0_ |= 0x00000004;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -10941,7 +10773,7 @@ public final class MessagesRobocupSslGeometry {
         if (other.hasDampingZ()) {
           setDampingZ(other.getDampingZ());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -10965,17 +10797,45 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.vision.MessagesRobocupSslGeometry.SSL_BallModelChipFixedLoss parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 9: {
+                dampingXyFirstHop_ = input.readDouble();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 9
+              case 17: {
+                dampingXyOtherHops_ = input.readDouble();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 17
+              case 25: {
+                dampingZ_ = input.readDouble();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 25
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.vision.MessagesRobocupSslGeometry.SSL_BallModelChipFixedLoss) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -11015,8 +10875,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setDampingXyFirstHop(double value) {
-        bitField0_ |= 0x00000001;
+        
         dampingXyFirstHop_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -11070,8 +10931,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setDampingXyOtherHops(double value) {
-        bitField0_ |= 0x00000002;
+        
         dampingXyOtherHops_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -11125,8 +10987,9 @@ public final class MessagesRobocupSslGeometry {
        * @return This builder for chaining.
        */
       public Builder setDampingZ(double value) {
-        bitField0_ |= 0x00000004;
+        
         dampingZ_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -11177,7 +11040,18 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SSL_BallModelChipFixedLoss(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -11257,70 +11131,6 @@ public final class MessagesRobocupSslGeometry {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private SSL_GeometryModels(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              proto.vision.MessagesRobocupSslGeometry.SSL_BallModelStraightTwoPhase.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) != 0)) {
-                subBuilder = straightTwoPhase_.toBuilder();
-              }
-              straightTwoPhase_ = input.readMessage(proto.vision.MessagesRobocupSslGeometry.SSL_BallModelStraightTwoPhase.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(straightTwoPhase_);
-                straightTwoPhase_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-            case 18: {
-              proto.vision.MessagesRobocupSslGeometry.SSL_BallModelChipFixedLoss.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) != 0)) {
-                subBuilder = chipFixedLoss_.toBuilder();
-              }
-              chipFixedLoss_ = input.readMessage(proto.vision.MessagesRobocupSslGeometry.SSL_BallModelChipFixedLoss.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(chipFixedLoss_);
-                chipFixedLoss_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000002;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -11420,7 +11230,7 @@ public final class MessagesRobocupSslGeometry {
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(2, getChipFixedLoss());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -11437,7 +11247,7 @@ public final class MessagesRobocupSslGeometry {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getChipFixedLoss());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -11462,7 +11272,7 @@ public final class MessagesRobocupSslGeometry {
         if (!getChipFixedLoss()
             .equals(other.getChipFixedLoss())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -11481,7 +11291,7 @@ public final class MessagesRobocupSslGeometry {
         hash = (37 * hash) + CHIP_FIXED_LOSS_FIELD_NUMBER;
         hash = (53 * hash) + getChipFixedLoss().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -11616,18 +11426,17 @@ public final class MessagesRobocupSslGeometry {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (straightTwoPhaseBuilder_ == null) {
-          straightTwoPhase_ = null;
-        } else {
-          straightTwoPhaseBuilder_.clear();
+        bitField0_ = 0;
+        straightTwoPhase_ = null;
+        if (straightTwoPhaseBuilder_ != null) {
+          straightTwoPhaseBuilder_.dispose();
+          straightTwoPhaseBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (chipFixedLossBuilder_ == null) {
-          chipFixedLoss_ = null;
-        } else {
-          chipFixedLossBuilder_.clear();
+        chipFixedLoss_ = null;
+        if (chipFixedLossBuilder_ != null) {
+          chipFixedLossBuilder_.dispose();
+          chipFixedLossBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -11654,27 +11463,27 @@ public final class MessagesRobocupSslGeometry {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslGeometry.SSL_GeometryModels buildPartial() {
         proto.vision.MessagesRobocupSslGeometry.SSL_GeometryModels result = new proto.vision.MessagesRobocupSslGeometry.SSL_GeometryModels(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.vision.MessagesRobocupSslGeometry.SSL_GeometryModels result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          if (straightTwoPhaseBuilder_ == null) {
-            result.straightTwoPhase_ = straightTwoPhase_;
-          } else {
-            result.straightTwoPhase_ = straightTwoPhaseBuilder_.build();
-          }
+          result.straightTwoPhase_ = straightTwoPhaseBuilder_ == null
+              ? straightTwoPhase_
+              : straightTwoPhaseBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          if (chipFixedLossBuilder_ == null) {
-            result.chipFixedLoss_ = chipFixedLoss_;
-          } else {
-            result.chipFixedLoss_ = chipFixedLossBuilder_.build();
-          }
+          result.chipFixedLoss_ = chipFixedLossBuilder_ == null
+              ? chipFixedLoss_
+              : chipFixedLossBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -11727,7 +11536,7 @@ public final class MessagesRobocupSslGeometry {
         if (other.hasChipFixedLoss()) {
           mergeChipFixedLoss(other.getChipFixedLoss());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -11752,17 +11561,44 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.vision.MessagesRobocupSslGeometry.SSL_GeometryModels parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getStraightTwoPhaseFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getChipFixedLossFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.vision.MessagesRobocupSslGeometry.SSL_GeometryModels) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -11797,11 +11633,11 @@ public final class MessagesRobocupSslGeometry {
             throw new NullPointerException();
           }
           straightTwoPhase_ = value;
-          onChanged();
         } else {
           straightTwoPhaseBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -11811,11 +11647,11 @@ public final class MessagesRobocupSslGeometry {
           proto.vision.MessagesRobocupSslGeometry.SSL_BallModelStraightTwoPhase.Builder builderForValue) {
         if (straightTwoPhaseBuilder_ == null) {
           straightTwoPhase_ = builderForValue.build();
-          onChanged();
         } else {
           straightTwoPhaseBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -11824,31 +11660,30 @@ public final class MessagesRobocupSslGeometry {
       public Builder mergeStraightTwoPhase(proto.vision.MessagesRobocupSslGeometry.SSL_BallModelStraightTwoPhase value) {
         if (straightTwoPhaseBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0) &&
-              straightTwoPhase_ != null &&
-              straightTwoPhase_ != proto.vision.MessagesRobocupSslGeometry.SSL_BallModelStraightTwoPhase.getDefaultInstance()) {
-            straightTwoPhase_ =
-              proto.vision.MessagesRobocupSslGeometry.SSL_BallModelStraightTwoPhase.newBuilder(straightTwoPhase_).mergeFrom(value).buildPartial();
+            straightTwoPhase_ != null &&
+            straightTwoPhase_ != proto.vision.MessagesRobocupSslGeometry.SSL_BallModelStraightTwoPhase.getDefaultInstance()) {
+            getStraightTwoPhaseBuilder().mergeFrom(value);
           } else {
             straightTwoPhase_ = value;
           }
-          onChanged();
         } else {
           straightTwoPhaseBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>optional .proto.vision.SSL_BallModelStraightTwoPhase straight_two_phase = 1;</code>
        */
       public Builder clearStraightTwoPhase() {
-        if (straightTwoPhaseBuilder_ == null) {
-          straightTwoPhase_ = null;
-          onChanged();
-        } else {
-          straightTwoPhaseBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000001);
+        straightTwoPhase_ = null;
+        if (straightTwoPhaseBuilder_ != null) {
+          straightTwoPhaseBuilder_.dispose();
+          straightTwoPhaseBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -11917,11 +11752,11 @@ public final class MessagesRobocupSslGeometry {
             throw new NullPointerException();
           }
           chipFixedLoss_ = value;
-          onChanged();
         } else {
           chipFixedLossBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -11931,11 +11766,11 @@ public final class MessagesRobocupSslGeometry {
           proto.vision.MessagesRobocupSslGeometry.SSL_BallModelChipFixedLoss.Builder builderForValue) {
         if (chipFixedLossBuilder_ == null) {
           chipFixedLoss_ = builderForValue.build();
-          onChanged();
         } else {
           chipFixedLossBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -11944,31 +11779,30 @@ public final class MessagesRobocupSslGeometry {
       public Builder mergeChipFixedLoss(proto.vision.MessagesRobocupSslGeometry.SSL_BallModelChipFixedLoss value) {
         if (chipFixedLossBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0) &&
-              chipFixedLoss_ != null &&
-              chipFixedLoss_ != proto.vision.MessagesRobocupSslGeometry.SSL_BallModelChipFixedLoss.getDefaultInstance()) {
-            chipFixedLoss_ =
-              proto.vision.MessagesRobocupSslGeometry.SSL_BallModelChipFixedLoss.newBuilder(chipFixedLoss_).mergeFrom(value).buildPartial();
+            chipFixedLoss_ != null &&
+            chipFixedLoss_ != proto.vision.MessagesRobocupSslGeometry.SSL_BallModelChipFixedLoss.getDefaultInstance()) {
+            getChipFixedLossBuilder().mergeFrom(value);
           } else {
             chipFixedLoss_ = value;
           }
-          onChanged();
         } else {
           chipFixedLossBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>optional .proto.vision.SSL_BallModelChipFixedLoss chip_fixed_loss = 2;</code>
        */
       public Builder clearChipFixedLoss() {
-        if (chipFixedLossBuilder_ == null) {
-          chipFixedLoss_ = null;
-          onChanged();
-        } else {
-          chipFixedLossBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000002);
+        chipFixedLoss_ = null;
+        if (chipFixedLossBuilder_ != null) {
+          chipFixedLossBuilder_.dispose();
+          chipFixedLossBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -12039,7 +11873,18 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SSL_GeometryModels(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -12145,82 +11990,6 @@ public final class MessagesRobocupSslGeometry {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SSL_GeometryData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) != 0)) {
-                subBuilder = field_.toBuilder();
-              }
-              field_ = input.readMessage(proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(field_);
-                field_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                calib_ = new java.util.ArrayList<proto.vision.MessagesRobocupSslGeometry.SSL_GeometryCameraCalibration>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              calib_.add(
-                  input.readMessage(proto.vision.MessagesRobocupSslGeometry.SSL_GeometryCameraCalibration.PARSER, extensionRegistry));
-              break;
-            }
-            case 26: {
-              proto.vision.MessagesRobocupSslGeometry.SSL_GeometryModels.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) != 0)) {
-                subBuilder = models_.toBuilder();
-              }
-              models_ = input.readMessage(proto.vision.MessagesRobocupSslGeometry.SSL_GeometryModels.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(models_);
-                models_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000002;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          calib_ = java.util.Collections.unmodifiableList(calib_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.vision.MessagesRobocupSslGeometry.internal_static_proto_vision_SSL_GeometryData_descriptor;
@@ -12262,6 +12031,7 @@ public final class MessagesRobocupSslGeometry {
     }
 
     public static final int CALIB_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private java.util.List<proto.vision.MessagesRobocupSslGeometry.SSL_GeometryCameraCalibration> calib_;
     /**
      * <code>repeated .proto.vision.SSL_GeometryCameraCalibration calib = 2;</code>
@@ -12370,7 +12140,7 @@ public final class MessagesRobocupSslGeometry {
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(3, getModels());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -12391,7 +12161,7 @@ public final class MessagesRobocupSslGeometry {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getModels());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -12418,7 +12188,7 @@ public final class MessagesRobocupSslGeometry {
         if (!getModels()
             .equals(other.getModels())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -12441,7 +12211,7 @@ public final class MessagesRobocupSslGeometry {
         hash = (37 * hash) + MODELS_FIELD_NUMBER;
         hash = (53 * hash) + getModels().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -12577,24 +12347,24 @@ public final class MessagesRobocupSslGeometry {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (fieldBuilder_ == null) {
-          field_ = null;
-        } else {
-          fieldBuilder_.clear();
+        bitField0_ = 0;
+        field_ = null;
+        if (fieldBuilder_ != null) {
+          fieldBuilder_.dispose();
+          fieldBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (calibBuilder_ == null) {
           calib_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          calib_ = null;
           calibBuilder_.clear();
         }
-        if (modelsBuilder_ == null) {
-          models_ = null;
-        } else {
-          modelsBuilder_.clear();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        models_ = null;
+        if (modelsBuilder_ != null) {
+          modelsBuilder_.dispose();
+          modelsBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -12621,16 +12391,13 @@ public final class MessagesRobocupSslGeometry {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData buildPartial() {
         proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData result = new proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          if (fieldBuilder_ == null) {
-            result.field_ = field_;
-          } else {
-            result.field_ = fieldBuilder_.build();
-          }
-          to_bitField0_ |= 0x00000001;
-        }
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData result) {
         if (calibBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
             calib_ = java.util.Collections.unmodifiableList(calib_);
@@ -12640,17 +12407,24 @@ public final class MessagesRobocupSslGeometry {
         } else {
           result.calib_ = calibBuilder_.build();
         }
+      }
+
+      private void buildPartial0(proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.field_ = fieldBuilder_ == null
+              ? field_
+              : fieldBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          if (modelsBuilder_ == null) {
-            result.models_ = models_;
-          } else {
-            result.models_ = modelsBuilder_.build();
-          }
+          result.models_ = modelsBuilder_ == null
+              ? models_
+              : modelsBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -12729,7 +12503,7 @@ public final class MessagesRobocupSslGeometry {
         if (other.hasModels()) {
           mergeModels(other.getModels());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -12760,17 +12534,57 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getFieldFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                proto.vision.MessagesRobocupSslGeometry.SSL_GeometryCameraCalibration m =
+                    input.readMessage(
+                        proto.vision.MessagesRobocupSslGeometry.SSL_GeometryCameraCalibration.PARSER,
+                        extensionRegistry);
+                if (calibBuilder_ == null) {
+                  ensureCalibIsMutable();
+                  calib_.add(m);
+                } else {
+                  calibBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getModelsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -12805,11 +12619,11 @@ public final class MessagesRobocupSslGeometry {
             throw new NullPointerException();
           }
           field_ = value;
-          onChanged();
         } else {
           fieldBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -12819,11 +12633,11 @@ public final class MessagesRobocupSslGeometry {
           proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize.Builder builderForValue) {
         if (fieldBuilder_ == null) {
           field_ = builderForValue.build();
-          onChanged();
         } else {
           fieldBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -12832,31 +12646,30 @@ public final class MessagesRobocupSslGeometry {
       public Builder mergeField(proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize value) {
         if (fieldBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0) &&
-              field_ != null &&
-              field_ != proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize.getDefaultInstance()) {
-            field_ =
-              proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize.newBuilder(field_).mergeFrom(value).buildPartial();
+            field_ != null &&
+            field_ != proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize.getDefaultInstance()) {
+            getFieldBuilder().mergeFrom(value);
           } else {
             field_ = value;
           }
-          onChanged();
         } else {
           fieldBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>required .proto.vision.SSL_GeometryFieldSize field = 1;</code>
        */
       public Builder clearField() {
-        if (fieldBuilder_ == null) {
-          field_ = null;
-          onChanged();
-        } else {
-          fieldBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000001);
+        field_ = null;
+        if (fieldBuilder_ != null) {
+          fieldBuilder_.dispose();
+          fieldBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -13165,11 +12978,11 @@ public final class MessagesRobocupSslGeometry {
             throw new NullPointerException();
           }
           models_ = value;
-          onChanged();
         } else {
           modelsBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -13179,11 +12992,11 @@ public final class MessagesRobocupSslGeometry {
           proto.vision.MessagesRobocupSslGeometry.SSL_GeometryModels.Builder builderForValue) {
         if (modelsBuilder_ == null) {
           models_ = builderForValue.build();
-          onChanged();
         } else {
           modelsBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -13192,31 +13005,30 @@ public final class MessagesRobocupSslGeometry {
       public Builder mergeModels(proto.vision.MessagesRobocupSslGeometry.SSL_GeometryModels value) {
         if (modelsBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0) &&
-              models_ != null &&
-              models_ != proto.vision.MessagesRobocupSslGeometry.SSL_GeometryModels.getDefaultInstance()) {
-            models_ =
-              proto.vision.MessagesRobocupSslGeometry.SSL_GeometryModels.newBuilder(models_).mergeFrom(value).buildPartial();
+            models_ != null &&
+            models_ != proto.vision.MessagesRobocupSslGeometry.SSL_GeometryModels.getDefaultInstance()) {
+            getModelsBuilder().mergeFrom(value);
           } else {
             models_ = value;
           }
-          onChanged();
         } else {
           modelsBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>optional .proto.vision.SSL_GeometryModels models = 3;</code>
        */
       public Builder clearModels() {
-        if (modelsBuilder_ == null) {
-          models_ = null;
-          onChanged();
-        } else {
-          modelsBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000004);
+        models_ = null;
+        if (modelsBuilder_ != null) {
+          modelsBuilder_.dispose();
+          modelsBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -13287,7 +13099,18 @@ public final class MessagesRobocupSslGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SSL_GeometryData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

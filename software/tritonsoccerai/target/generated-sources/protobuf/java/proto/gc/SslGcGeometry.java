@@ -71,54 +71,6 @@ public final class SslGcGeometry {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Vector2(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 13: {
-              bitField0_ |= 0x00000001;
-              x_ = input.readFloat();
-              break;
-            }
-            case 21: {
-              bitField0_ |= 0x00000002;
-              y_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.gc.SslGcGeometry.internal_static_proto_gc_Vector2_descriptor;
@@ -134,7 +86,7 @@ public final class SslGcGeometry {
 
     private int bitField0_;
     public static final int X_FIELD_NUMBER = 1;
-    private float x_;
+    private float x_ = 0F;
     /**
      * <code>required float x = 1;</code>
      * @return Whether the x field is set.
@@ -153,7 +105,7 @@ public final class SslGcGeometry {
     }
 
     public static final int Y_FIELD_NUMBER = 2;
-    private float y_;
+    private float y_ = 0F;
     /**
      * <code>required float y = 2;</code>
      * @return Whether the y field is set.
@@ -199,7 +151,7 @@ public final class SslGcGeometry {
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeFloat(2, y_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -216,7 +168,7 @@ public final class SslGcGeometry {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, y_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -243,7 +195,7 @@ public final class SslGcGeometry {
             != java.lang.Float.floatToIntBits(
                 other.getY())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -264,7 +216,7 @@ public final class SslGcGeometry {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getY());
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -385,26 +337,20 @@ public final class SslGcGeometry {
 
       // Construct using proto.gc.SslGcGeometry.Vector2.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         x_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000001);
         y_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -431,6 +377,12 @@ public final class SslGcGeometry {
       @java.lang.Override
       public proto.gc.SslGcGeometry.Vector2 buildPartial() {
         proto.gc.SslGcGeometry.Vector2 result = new proto.gc.SslGcGeometry.Vector2(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.gc.SslGcGeometry.Vector2 result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -441,9 +393,7 @@ public final class SslGcGeometry {
           result.y_ = y_;
           to_bitField0_ |= 0x00000002;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -496,7 +446,7 @@ public final class SslGcGeometry {
         if (other.hasY()) {
           setY(other.getY());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -517,17 +467,40 @@ public final class SslGcGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcGeometry.Vector2 parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13: {
+                x_ = input.readFloat();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 13
+              case 21: {
+                y_ = input.readFloat();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 21
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcGeometry.Vector2) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -555,8 +528,9 @@ public final class SslGcGeometry {
        * @return This builder for chaining.
        */
       public Builder setX(float value) {
-        bitField0_ |= 0x00000001;
+        
         x_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -594,8 +568,9 @@ public final class SslGcGeometry {
        * @return This builder for chaining.
        */
       public Builder setY(float value) {
-        bitField0_ |= 0x00000002;
+        
         y_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -642,7 +617,18 @@ public final class SslGcGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Vector2(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -730,59 +716,6 @@ public final class SslGcGeometry {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Vector3(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 13: {
-              bitField0_ |= 0x00000001;
-              x_ = input.readFloat();
-              break;
-            }
-            case 21: {
-              bitField0_ |= 0x00000002;
-              y_ = input.readFloat();
-              break;
-            }
-            case 29: {
-              bitField0_ |= 0x00000004;
-              z_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.gc.SslGcGeometry.internal_static_proto_gc_Vector3_descriptor;
@@ -798,7 +731,7 @@ public final class SslGcGeometry {
 
     private int bitField0_;
     public static final int X_FIELD_NUMBER = 1;
-    private float x_;
+    private float x_ = 0F;
     /**
      * <code>required float x = 1;</code>
      * @return Whether the x field is set.
@@ -817,7 +750,7 @@ public final class SslGcGeometry {
     }
 
     public static final int Y_FIELD_NUMBER = 2;
-    private float y_;
+    private float y_ = 0F;
     /**
      * <code>required float y = 2;</code>
      * @return Whether the y field is set.
@@ -836,7 +769,7 @@ public final class SslGcGeometry {
     }
 
     public static final int Z_FIELD_NUMBER = 3;
-    private float z_;
+    private float z_ = 0F;
     /**
      * <code>required float z = 3;</code>
      * @return Whether the z field is set.
@@ -889,7 +822,7 @@ public final class SslGcGeometry {
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeFloat(3, z_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -910,7 +843,7 @@ public final class SslGcGeometry {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, z_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -943,7 +876,7 @@ public final class SslGcGeometry {
             != java.lang.Float.floatToIntBits(
                 other.getZ())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -969,7 +902,7 @@ public final class SslGcGeometry {
         hash = (53 * hash) + java.lang.Float.floatToIntBits(
             getZ());
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1090,28 +1023,21 @@ public final class SslGcGeometry {
 
       // Construct using proto.gc.SslGcGeometry.Vector3.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         x_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000001);
         y_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000002);
         z_ = 0F;
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -1138,6 +1064,12 @@ public final class SslGcGeometry {
       @java.lang.Override
       public proto.gc.SslGcGeometry.Vector3 buildPartial() {
         proto.gc.SslGcGeometry.Vector3 result = new proto.gc.SslGcGeometry.Vector3(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.gc.SslGcGeometry.Vector3 result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -1152,9 +1084,7 @@ public final class SslGcGeometry {
           result.z_ = z_;
           to_bitField0_ |= 0x00000004;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -1210,7 +1140,7 @@ public final class SslGcGeometry {
         if (other.hasZ()) {
           setZ(other.getZ());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1234,17 +1164,45 @@ public final class SslGcGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.gc.SslGcGeometry.Vector3 parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13: {
+                x_ = input.readFloat();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 13
+              case 21: {
+                y_ = input.readFloat();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 21
+              case 29: {
+                z_ = input.readFloat();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 29
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.gc.SslGcGeometry.Vector3) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1272,8 +1230,9 @@ public final class SslGcGeometry {
        * @return This builder for chaining.
        */
       public Builder setX(float value) {
-        bitField0_ |= 0x00000001;
+        
         x_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1311,8 +1270,9 @@ public final class SslGcGeometry {
        * @return This builder for chaining.
        */
       public Builder setY(float value) {
-        bitField0_ |= 0x00000002;
+        
         y_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1350,8 +1310,9 @@ public final class SslGcGeometry {
        * @return This builder for chaining.
        */
       public Builder setZ(float value) {
-        bitField0_ |= 0x00000004;
+        
         z_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1398,7 +1359,18 @@ public final class SslGcGeometry {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Vector3(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

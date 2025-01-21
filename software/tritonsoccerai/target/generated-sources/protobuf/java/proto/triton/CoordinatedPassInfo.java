@@ -69,63 +69,6 @@ public final class CoordinatedPassInfo {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CoordinatedPass(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              receiverID_ = input.readInt32();
-              break;
-            }
-            case 16: {
-
-              senderID_ = input.readInt32();
-              break;
-            }
-            case 29: {
-
-              passLocX_ = input.readFloat();
-              break;
-            }
-            case 37: {
-
-              passLocY_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.triton.CoordinatedPassInfo.internal_static_proto_triton_CoordinatedPass_descriptor;
@@ -140,7 +83,7 @@ public final class CoordinatedPassInfo {
     }
 
     public static final int RECEIVERID_FIELD_NUMBER = 1;
-    private int receiverID_;
+    private int receiverID_ = 0;
     /**
      * <code>int32 receiverID = 1;</code>
      * @return The receiverID.
@@ -151,7 +94,7 @@ public final class CoordinatedPassInfo {
     }
 
     public static final int SENDERID_FIELD_NUMBER = 2;
-    private int senderID_;
+    private int senderID_ = 0;
     /**
      * <code>int32 senderID = 2;</code>
      * @return The senderID.
@@ -162,7 +105,7 @@ public final class CoordinatedPassInfo {
     }
 
     public static final int PASSLOCX_FIELD_NUMBER = 3;
-    private float passLocX_;
+    private float passLocX_ = 0F;
     /**
      * <code>float passLocX = 3;</code>
      * @return The passLocX.
@@ -173,7 +116,7 @@ public final class CoordinatedPassInfo {
     }
 
     public static final int PASSLOCY_FIELD_NUMBER = 4;
-    private float passLocY_;
+    private float passLocY_ = 0F;
     /**
      * <code>float passLocY = 4;</code>
      * @return The passLocY.
@@ -203,13 +146,13 @@ public final class CoordinatedPassInfo {
       if (senderID_ != 0) {
         output.writeInt32(2, senderID_);
       }
-      if (passLocX_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(passLocX_) != 0) {
         output.writeFloat(3, passLocX_);
       }
-      if (passLocY_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(passLocY_) != 0) {
         output.writeFloat(4, passLocY_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -226,15 +169,15 @@ public final class CoordinatedPassInfo {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, senderID_);
       }
-      if (passLocX_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(passLocX_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, passLocX_);
       }
-      if (passLocY_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(passLocY_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, passLocY_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -259,7 +202,7 @@ public final class CoordinatedPassInfo {
       if (java.lang.Float.floatToIntBits(getPassLocY())
           != java.lang.Float.floatToIntBits(
               other.getPassLocY())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -280,7 +223,7 @@ public final class CoordinatedPassInfo {
       hash = (37 * hash) + PASSLOCY_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getPassLocY());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -397,30 +340,22 @@ public final class CoordinatedPassInfo {
 
       // Construct using proto.triton.CoordinatedPassInfo.CoordinatedPass.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         receiverID_ = 0;
-
         senderID_ = 0;
-
         passLocX_ = 0F;
-
         passLocY_ = 0F;
-
         return this;
       }
 
@@ -447,12 +382,25 @@ public final class CoordinatedPassInfo {
       @java.lang.Override
       public proto.triton.CoordinatedPassInfo.CoordinatedPass buildPartial() {
         proto.triton.CoordinatedPassInfo.CoordinatedPass result = new proto.triton.CoordinatedPassInfo.CoordinatedPass(this);
-        result.receiverID_ = receiverID_;
-        result.senderID_ = senderID_;
-        result.passLocX_ = passLocX_;
-        result.passLocY_ = passLocY_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(proto.triton.CoordinatedPassInfo.CoordinatedPass result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.receiverID_ = receiverID_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.senderID_ = senderID_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.passLocX_ = passLocX_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.passLocY_ = passLocY_;
+        }
       }
 
       @java.lang.Override
@@ -511,7 +459,7 @@ public final class CoordinatedPassInfo {
         if (other.getPassLocY() != 0F) {
           setPassLocY(other.getPassLocY());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -526,19 +474,53 @@ public final class CoordinatedPassInfo {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.triton.CoordinatedPassInfo.CoordinatedPass parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                receiverID_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                senderID_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 29: {
+                passLocX_ = input.readFloat();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 29
+              case 37: {
+                passLocY_ = input.readFloat();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 37
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.triton.CoordinatedPassInfo.CoordinatedPass) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int receiverID_ ;
       /**
@@ -557,6 +539,7 @@ public final class CoordinatedPassInfo {
       public Builder setReceiverID(int value) {
         
         receiverID_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -565,7 +548,7 @@ public final class CoordinatedPassInfo {
        * @return This builder for chaining.
        */
       public Builder clearReceiverID() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         receiverID_ = 0;
         onChanged();
         return this;
@@ -588,6 +571,7 @@ public final class CoordinatedPassInfo {
       public Builder setSenderID(int value) {
         
         senderID_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -596,7 +580,7 @@ public final class CoordinatedPassInfo {
        * @return This builder for chaining.
        */
       public Builder clearSenderID() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         senderID_ = 0;
         onChanged();
         return this;
@@ -619,6 +603,7 @@ public final class CoordinatedPassInfo {
       public Builder setPassLocX(float value) {
         
         passLocX_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -627,7 +612,7 @@ public final class CoordinatedPassInfo {
        * @return This builder for chaining.
        */
       public Builder clearPassLocX() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         passLocX_ = 0F;
         onChanged();
         return this;
@@ -650,6 +635,7 @@ public final class CoordinatedPassInfo {
       public Builder setPassLocY(float value) {
         
         passLocY_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -658,7 +644,7 @@ public final class CoordinatedPassInfo {
        * @return This builder for chaining.
        */
       public Builder clearPassLocY() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         passLocY_ = 0F;
         onChanged();
         return this;
@@ -696,7 +682,18 @@ public final class CoordinatedPassInfo {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CoordinatedPass(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -759,53 +756,6 @@ public final class CoordinatedPassInfo {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MoveRobot(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 13: {
-
-              moveVectorX_ = input.readFloat();
-              break;
-            }
-            case 21: {
-
-              moveVectorY_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.triton.CoordinatedPassInfo.internal_static_proto_triton_MoveRobot_descriptor;
@@ -820,7 +770,7 @@ public final class CoordinatedPassInfo {
     }
 
     public static final int MOVEVECTORX_FIELD_NUMBER = 1;
-    private float moveVectorX_;
+    private float moveVectorX_ = 0F;
     /**
      * <code>float moveVectorX = 1;</code>
      * @return The moveVectorX.
@@ -831,7 +781,7 @@ public final class CoordinatedPassInfo {
     }
 
     public static final int MOVEVECTORY_FIELD_NUMBER = 2;
-    private float moveVectorY_;
+    private float moveVectorY_ = 0F;
     /**
      * <code>float moveVectorY = 2;</code>
      * @return The moveVectorY.
@@ -855,13 +805,13 @@ public final class CoordinatedPassInfo {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (moveVectorX_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(moveVectorX_) != 0) {
         output.writeFloat(1, moveVectorX_);
       }
-      if (moveVectorY_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(moveVectorY_) != 0) {
         output.writeFloat(2, moveVectorY_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -870,15 +820,15 @@ public final class CoordinatedPassInfo {
       if (size != -1) return size;
 
       size = 0;
-      if (moveVectorX_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(moveVectorX_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, moveVectorX_);
       }
-      if (moveVectorY_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(moveVectorY_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, moveVectorY_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -899,7 +849,7 @@ public final class CoordinatedPassInfo {
       if (java.lang.Float.floatToIntBits(getMoveVectorY())
           != java.lang.Float.floatToIntBits(
               other.getMoveVectorY())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -916,7 +866,7 @@ public final class CoordinatedPassInfo {
       hash = (37 * hash) + MOVEVECTORY_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getMoveVectorY());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1033,26 +983,20 @@ public final class CoordinatedPassInfo {
 
       // Construct using proto.triton.CoordinatedPassInfo.MoveRobot.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         moveVectorX_ = 0F;
-
         moveVectorY_ = 0F;
-
         return this;
       }
 
@@ -1079,10 +1023,19 @@ public final class CoordinatedPassInfo {
       @java.lang.Override
       public proto.triton.CoordinatedPassInfo.MoveRobot buildPartial() {
         proto.triton.CoordinatedPassInfo.MoveRobot result = new proto.triton.CoordinatedPassInfo.MoveRobot(this);
-        result.moveVectorX_ = moveVectorX_;
-        result.moveVectorY_ = moveVectorY_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(proto.triton.CoordinatedPassInfo.MoveRobot result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.moveVectorX_ = moveVectorX_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.moveVectorY_ = moveVectorY_;
+        }
       }
 
       @java.lang.Override
@@ -1135,7 +1088,7 @@ public final class CoordinatedPassInfo {
         if (other.getMoveVectorY() != 0F) {
           setMoveVectorY(other.getMoveVectorY());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1150,19 +1103,43 @@ public final class CoordinatedPassInfo {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.triton.CoordinatedPassInfo.MoveRobot parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13: {
+                moveVectorX_ = input.readFloat();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 13
+              case 21: {
+                moveVectorY_ = input.readFloat();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 21
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.triton.CoordinatedPassInfo.MoveRobot) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private float moveVectorX_ ;
       /**
@@ -1181,6 +1158,7 @@ public final class CoordinatedPassInfo {
       public Builder setMoveVectorX(float value) {
         
         moveVectorX_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1189,7 +1167,7 @@ public final class CoordinatedPassInfo {
        * @return This builder for chaining.
        */
       public Builder clearMoveVectorX() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         moveVectorX_ = 0F;
         onChanged();
         return this;
@@ -1212,6 +1190,7 @@ public final class CoordinatedPassInfo {
       public Builder setMoveVectorY(float value) {
         
         moveVectorY_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1220,7 +1199,7 @@ public final class CoordinatedPassInfo {
        * @return This builder for chaining.
        */
       public Builder clearMoveVectorY() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         moveVectorY_ = 0F;
         onChanged();
         return this;
@@ -1258,7 +1237,18 @@ public final class CoordinatedPassInfo {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MoveRobot(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

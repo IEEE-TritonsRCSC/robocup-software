@@ -75,70 +75,6 @@ public final class MessagesRobocupSslWrapper {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SSL_WrapperPacket(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) != 0)) {
-                subBuilder = detection_.toBuilder();
-              }
-              detection_ = input.readMessage(proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(detection_);
-                detection_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-            case 18: {
-              proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) != 0)) {
-                subBuilder = geometry_.toBuilder();
-              }
-              geometry_ = input.readMessage(proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(geometry_);
-                geometry_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000002;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return proto.vision.MessagesRobocupSslWrapper.internal_static_proto_vision_SSL_WrapperPacket_descriptor;
@@ -237,7 +173,7 @@ public final class MessagesRobocupSslWrapper {
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(2, getGeometry());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -254,7 +190,7 @@ public final class MessagesRobocupSslWrapper {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getGeometry());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -279,7 +215,7 @@ public final class MessagesRobocupSslWrapper {
         if (!getGeometry()
             .equals(other.getGeometry())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -298,7 +234,7 @@ public final class MessagesRobocupSslWrapper {
         hash = (37 * hash) + GEOMETRY_FIELD_NUMBER;
         hash = (53 * hash) + getGeometry().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -433,18 +369,17 @@ public final class MessagesRobocupSslWrapper {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (detectionBuilder_ == null) {
-          detection_ = null;
-        } else {
-          detectionBuilder_.clear();
+        bitField0_ = 0;
+        detection_ = null;
+        if (detectionBuilder_ != null) {
+          detectionBuilder_.dispose();
+          detectionBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (geometryBuilder_ == null) {
-          geometry_ = null;
-        } else {
-          geometryBuilder_.clear();
+        geometry_ = null;
+        if (geometryBuilder_ != null) {
+          geometryBuilder_.dispose();
+          geometryBuilder_ = null;
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -471,27 +406,27 @@ public final class MessagesRobocupSslWrapper {
       @java.lang.Override
       public proto.vision.MessagesRobocupSslWrapper.SSL_WrapperPacket buildPartial() {
         proto.vision.MessagesRobocupSslWrapper.SSL_WrapperPacket result = new proto.vision.MessagesRobocupSslWrapper.SSL_WrapperPacket(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(proto.vision.MessagesRobocupSslWrapper.SSL_WrapperPacket result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          if (detectionBuilder_ == null) {
-            result.detection_ = detection_;
-          } else {
-            result.detection_ = detectionBuilder_.build();
-          }
+          result.detection_ = detectionBuilder_ == null
+              ? detection_
+              : detectionBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          if (geometryBuilder_ == null) {
-            result.geometry_ = geometry_;
-          } else {
-            result.geometry_ = geometryBuilder_.build();
-          }
+          result.geometry_ = geometryBuilder_ == null
+              ? geometry_
+              : geometryBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -544,7 +479,7 @@ public final class MessagesRobocupSslWrapper {
         if (other.hasGeometry()) {
           mergeGeometry(other.getGeometry());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -569,17 +504,44 @@ public final class MessagesRobocupSslWrapper {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        proto.vision.MessagesRobocupSslWrapper.SSL_WrapperPacket parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getDetectionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getGeometryFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (proto.vision.MessagesRobocupSslWrapper.SSL_WrapperPacket) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -614,11 +576,11 @@ public final class MessagesRobocupSslWrapper {
             throw new NullPointerException();
           }
           detection_ = value;
-          onChanged();
         } else {
           detectionBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -628,11 +590,11 @@ public final class MessagesRobocupSslWrapper {
           proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.Builder builderForValue) {
         if (detectionBuilder_ == null) {
           detection_ = builderForValue.build();
-          onChanged();
         } else {
           detectionBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -641,31 +603,30 @@ public final class MessagesRobocupSslWrapper {
       public Builder mergeDetection(proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame value) {
         if (detectionBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0) &&
-              detection_ != null &&
-              detection_ != proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.getDefaultInstance()) {
-            detection_ =
-              proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.newBuilder(detection_).mergeFrom(value).buildPartial();
+            detection_ != null &&
+            detection_ != proto.vision.MessagesRobocupSslDetection.SSL_DetectionFrame.getDefaultInstance()) {
+            getDetectionBuilder().mergeFrom(value);
           } else {
             detection_ = value;
           }
-          onChanged();
         } else {
           detectionBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>optional .proto.vision.SSL_DetectionFrame detection = 1;</code>
        */
       public Builder clearDetection() {
-        if (detectionBuilder_ == null) {
-          detection_ = null;
-          onChanged();
-        } else {
-          detectionBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000001);
+        detection_ = null;
+        if (detectionBuilder_ != null) {
+          detectionBuilder_.dispose();
+          detectionBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -734,11 +695,11 @@ public final class MessagesRobocupSslWrapper {
             throw new NullPointerException();
           }
           geometry_ = value;
-          onChanged();
         } else {
           geometryBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -748,11 +709,11 @@ public final class MessagesRobocupSslWrapper {
           proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData.Builder builderForValue) {
         if (geometryBuilder_ == null) {
           geometry_ = builderForValue.build();
-          onChanged();
         } else {
           geometryBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -761,31 +722,30 @@ public final class MessagesRobocupSslWrapper {
       public Builder mergeGeometry(proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData value) {
         if (geometryBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0) &&
-              geometry_ != null &&
-              geometry_ != proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData.getDefaultInstance()) {
-            geometry_ =
-              proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData.newBuilder(geometry_).mergeFrom(value).buildPartial();
+            geometry_ != null &&
+            geometry_ != proto.vision.MessagesRobocupSslGeometry.SSL_GeometryData.getDefaultInstance()) {
+            getGeometryBuilder().mergeFrom(value);
           } else {
             geometry_ = value;
           }
-          onChanged();
         } else {
           geometryBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>optional .proto.vision.SSL_GeometryData geometry = 2;</code>
        */
       public Builder clearGeometry() {
-        if (geometryBuilder_ == null) {
-          geometry_ = null;
-          onChanged();
-        } else {
-          geometryBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000002);
+        geometry_ = null;
+        if (geometryBuilder_ != null) {
+          geometryBuilder_.dispose();
+          geometryBuilder_ = null;
+        }
+        onChanged();
         return this;
       }
       /**
@@ -856,7 +816,18 @@ public final class MessagesRobocupSslWrapper {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SSL_WrapperPacket(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
