@@ -1,18 +1,18 @@
-package main.java.core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot;
+package core.ai.behaviorTree.robotTrees.fielder.offense.offenseRoot;
 
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
-import main.java.core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
-import main.java.core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.RobotHasPossessionNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.CatchBallNode;
-import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.MakePlayNode;
-import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.PositionSelfNode;
-import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.ShootBallNode;
-import main.java.core.ai.behaviorTree.robotTrees.fielder.offense.HaveOpenShotNode;
-import main.java.core.util.Vector2d;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
+import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
+import core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.RobotHasPossessionNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.CatchBallNode;
+import core.ai.behaviorTree.robotTrees.fielder.offense.MakePlayNode;
+import core.ai.behaviorTree.robotTrees.fielder.offense.PositionSelfNode;
+import core.ai.behaviorTree.robotTrees.fielder.offense.ShootBallNode;
+import core.ai.behaviorTree.robotTrees.fielder.offense.HaveOpenShotNode;
+import core.util.Vector2d;
 import static proto.triton.FilteredObject.Robot;
-import main.java.core.ai.GameInfo;
+import core.ai.GameInfo;
 
 public class OffenseRootService extends ServiceNode {
 

@@ -1,24 +1,24 @@
-package main.java.core.ai.behaviorTree.robotTrees.basicFunctions;
+package core.ai.behaviorTree.robotTrees.basicFunctions;
 
 import java.util.*;
 
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import main.java.core.constants.ProgramConstants;
-import static main.java.core.constants.ProgramConstants.aiConfig;
-import main.java.core.util.Vector2d;
-import main.java.core.search.implementation.PathfindGridGroup;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
-import main.java.core.ai.GameInfo;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.constants.ProgramConstants;
+import static core.constants.ProgramConstants.aiConfig;
+import core.util.Vector2d;
+import core.search.implementation.PathfindGridGroup;
+import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
+import core.ai.GameInfo;
 
-import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
-import static main.java.core.constants.RobotConstants.DRIBBLE_RPM;
+import static core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
+import static core.constants.RobotConstants.DRIBBLE_RPM;
 
 import proto.simulation.SslSimulationRobotControl;
 import static proto.triton.FilteredObject.Robot;
 
-import static main.java.core.util.ProtobufUtils.getPos;
-import static main.java.core.util.ObjectHelper.distToPath;
+import static core.util.ProtobufUtils.getPos;
+import static core.util.ObjectHelper.distToPath;
 
 /**
  * Defines tasks to be performed to dribble ball

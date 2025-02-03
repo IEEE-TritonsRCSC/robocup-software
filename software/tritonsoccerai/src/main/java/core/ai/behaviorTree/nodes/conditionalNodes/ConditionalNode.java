@@ -1,7 +1,7 @@
-package main.java.core.ai.behaviorTree.nodes.conditionalNodes;
+package core.ai.behaviorTree.nodes.conditionalNodes;
 
-import main.java.core.ai.behaviorTree.nodes.BTNode;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.BTNode;
+import core.ai.behaviorTree.nodes.NodeState;
 
 /**
  * Attaches to other nodes to help makes decisions on whether a branch or node can/should

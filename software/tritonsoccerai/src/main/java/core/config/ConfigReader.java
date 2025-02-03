@@ -1,4 +1,4 @@
-package main.java.core.config;
+package core.config;
 
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;

@@ -1,9 +1,9 @@
-package main.java.core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions;
+package core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import main.java.core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions.GKHaltNode;
+import core.ai.GameInfo;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions.GKHaltNode;
 
 public class GKStopNode extends TaskNode {
 

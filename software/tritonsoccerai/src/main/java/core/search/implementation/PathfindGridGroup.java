@@ -1,7 +1,7 @@
-package main.java.core.search.implementation;
+package core.search.implementation;
 
-import main.java.core.search.node2d.Node2d;
-import main.java.core.util.Vector2d;
+import core.search.node2d.Node2d;
+import core.util.Vector2d;
 
 import java.util.HashMap;
 import java.util.LinkedList;

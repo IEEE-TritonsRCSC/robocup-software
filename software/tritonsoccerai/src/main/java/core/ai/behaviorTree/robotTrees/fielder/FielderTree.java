@@ -1,7 +1,7 @@
-package main.java.core.ai.behaviorTree.robotTrees.fielder;
+package core.ai.behaviorTree.robotTrees.fielder;
 
-import main.java.core.ai.behaviorTree.BehaviorTree;
-import main.java.core.ai.behaviorTree.robotTrees.fielder.fielderRoot.FielderRootNode;
+import core.ai.behaviorTree.BehaviorTree;
+import core.ai.behaviorTree.robotTrees.fielder.fielderRoot.FielderRootNode;
 import static proto.triton.FilteredObject.Robot;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;

@@ -1,8 +1,8 @@
-package main.java.core.constants;
+package core.constants;
 
-import main.java.core.config.*;
-import main.java.core.module.Module;
-import main.java.core.messaging.Exchange;
+import core.config.*;
+import core.module.Module;
+import core.messaging.Exchange;
 
 public class ProgramConstants {
 

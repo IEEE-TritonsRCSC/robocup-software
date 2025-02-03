@@ -1,16 +1,16 @@
-package main.java.core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions;
+package core.ai.behaviorTree.robotTrees.goalkeeper.specificStateFunctions;
 
 import java.util.Vector;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import main.java.core.constants.ProgramConstants;
-import main.java.core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.HaltNode;
-import static main.java.core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
-import main.java.core.util.Vector2d;
-import static main.java.core.util.ProtobufUtils.getPos;
-import static main.java.core.util.ObjectHelper.generateLocalMoveCommand;
+import core.ai.GameInfo;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.constants.ProgramConstants;
+import core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.HaltNode;
+import static core.messaging.Exchange.AI_BIASED_ROBOT_COMMAND;
+import core.util.Vector2d;
+import static core.util.ProtobufUtils.getPos;
+import static core.util.ObjectHelper.generateLocalMoveCommand;
 
 import static proto.simulation.SslSimulationRobotControl.RobotCommand;
 

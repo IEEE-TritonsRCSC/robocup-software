@@ -1,15 +1,15 @@
-package main.java.core.module.interfaceModule;
+package core.module.interfaceModule;
 
-import main.java.core.constants.ProgramConstants;
-import main.java.core.module.Module;
-import main.java.core.networking.UDP_MulticastReceiver;
+import core.constants.ProgramConstants;
+import core.module.Module;
+import core.networking.UDP_MulticastReceiver;
 
 import java.io.IOException;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
-import static main.java.core.messaging.Exchange.AI_GAME_CONTROLLER_WRAPPER;
+import static core.messaging.Exchange.AI_GAME_CONTROLLER_WRAPPER;
 import static proto.gc.SslGcRefereeMessage.Referee;
 
 public class GameControllerInterface extends Module {

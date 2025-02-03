@@ -1,4 +1,4 @@
-package main.java.core.networking;
+package core.networking;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

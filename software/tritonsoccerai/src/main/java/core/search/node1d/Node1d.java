@@ -1,6 +1,6 @@
-package main.java.core.search.node1d;
+package core.search.node1d;
 
-import main.java.core.search.base.GraphNode;
+import core.search.base.GraphNode;
 
 public class Node1d implements GraphNode {
     

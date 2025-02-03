@@ -1,12 +1,12 @@
-package main.java.core.module.interfaceModule;
+package core.module.interfaceModule;
 
 import com.google.protobuf.Any;
 import com.rabbitmq.client.Delivery;
 
-import main.java.core.constants.ProgramConstants;
-import main.java.core.constants.Team;
-import main.java.core.module.Module;
-import main.java.core.networking.UDP_Client;
+import core.constants.ProgramConstants;
+import core.constants.Team;
+import core.module.Module;
+import core.networking.UDP_Client;
 
 import proto.simulation.SslSimulationConfig;
 import proto.simulation.SslSimulationConfig.SimulatorConfig;
@@ -16,9 +16,9 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 
-import static main.java.core.messaging.Exchange.AI_SIMULATOR_CONFIG;
-import static main.java.core.messaging.Exchange.AI_SIMULATOR_CONTROL;
-import static main.java.core.messaging.SimpleSerialize.simpleDeserialize;
+import static core.messaging.Exchange.AI_SIMULATOR_CONFIG;
+import static core.messaging.Exchange.AI_SIMULATOR_CONTROL;
+import static core.messaging.SimpleSerialize.simpleDeserialize;
 import static proto.simulation.SslGcCommon.RobotId;
 import static proto.simulation.SslGcCommon.Team.BLUE;
 import static proto.simulation.SslGcCommon.Team.YELLOW;

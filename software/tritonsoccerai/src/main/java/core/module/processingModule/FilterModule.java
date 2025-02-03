@@ -1,11 +1,11 @@
-package main.java.core.module.processingModule;
+package core.module.processingModule;
 
 import com.rabbitmq.client.Delivery; // Class that encapsulates a message
-import main.java.core.constants.ProgramConstants;
-import main.java.core.constants.Team;
-import main.java.core.ai.GameInfo;
-import main.java.core.module.Module;
-import main.java.core.util.Vector2d;
+import core.constants.ProgramConstants;
+import core.constants.Team;
+import core.ai.GameInfo;
+import core.module.Module;
+import core.util.Vector2d;
 import proto.vision.MessagesRobocupSslWrapper.SSL_WrapperPacket;
 
 import java.io.IOException;
@@ -18,13 +18,13 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 // enum for all Exchange relevant Objects
-import static main.java.core.messaging.Exchange.*;
+import static core.messaging.Exchange.*;
  // method for deserializing the message (in bytes)
-import static main.java.core.messaging.SimpleSerialize.simpleDeserialize;
+import static core.messaging.SimpleSerialize.simpleDeserialize;
 // getter method nearest Robot given a target vector and position of all Robots
-import static main.java.core.util.ObjectHelper.getNearestRobot;
+import static core.util.ObjectHelper.getNearestRobot;
 // getter method for the current position of a robot
-import static main.java.core.util.ProtobufUtils.getPos;
+import static core.util.ProtobufUtils.getPos;
 // proto for feedback from a robot
 import static proto.simulation.SslSimulationRobotFeedback.RobotFeedback; 
 // proto for Ball, AllyCapture, FoeCapture, Robot, and FilteredWrapper Packet

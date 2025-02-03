@@ -1,11 +1,11 @@
-package main.java.core.ai.behaviorTree.robotTrees.fielder.offense;
+package core.ai.behaviorTree.robotTrees.fielder.offense;
 
-import main.java.core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
+import core.ai.behaviorTree.nodes.conditionalNodes.ConditionalNode;
 import static proto.triton.FilteredObject.Robot;
-import main.java.core.util.Vector2d;
+import core.util.Vector2d;
 import static proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
-import main.java.core.ai.GameInfo;
-import static main.java.core.util.ProtobufUtils.getPos;
+import core.ai.GameInfo;
+import static core.util.ProtobufUtils.getPos;
 
 import java.util.ArrayList;
 import java.util.List;

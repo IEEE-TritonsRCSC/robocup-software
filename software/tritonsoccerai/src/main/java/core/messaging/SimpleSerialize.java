@@ -1,4 +1,4 @@
-package main.java.core.messaging;
+package core.messaging;
 
 import java.io.*;
 

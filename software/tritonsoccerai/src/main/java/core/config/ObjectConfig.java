@@ -1,4 +1,4 @@
-package main.java.core.config;
+package core.config;
 
 public class ObjectConfig {
 

@@ -1,4 +1,4 @@
-package main.java.core.search.base;
+package core.search.base;
 
 public interface GraphNode {
     

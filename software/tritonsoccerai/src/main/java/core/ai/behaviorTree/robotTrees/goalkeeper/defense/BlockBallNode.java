@@ -1,16 +1,16 @@
-package main.java.core.ai.behaviorTree.robotTrees.goalkeeper.defense;
+package core.ai.behaviorTree.robotTrees.goalkeeper.defense;
 
 import java.lang.Math;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.taskNodes.TaskNode;
-import main.java.core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
+import core.ai.GameInfo;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.taskNodes.TaskNode;
+import core.ai.behaviorTree.robotTrees.basicFunctions.MoveToPositionNode;
 import static proto.triton.FilteredObject.Robot;
 import proto.vision.MessagesRobocupSslGeometry.SSL_GeometryFieldSize;
-import main.java.core.util.Vector2d;
+import core.util.Vector2d;
 
-import static main.java.core.util.ProtobufUtils.getPos;
+import static core.util.ProtobufUtils.getPos;
 
 /**
  * Moves goalkeeper to optimal position to block ball

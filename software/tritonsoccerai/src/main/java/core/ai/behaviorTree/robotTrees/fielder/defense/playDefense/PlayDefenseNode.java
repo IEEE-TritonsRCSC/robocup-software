@@ -1,8 +1,8 @@
-package main.java.core.ai.behaviorTree.robotTrees.fielder.defense.playDefense;
+package core.ai.behaviorTree.robotTrees.fielder.defense.playDefense;
 
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
-import main.java.core.constants.ProgramConstants;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
+import core.constants.ProgramConstants;
 import static proto.triton.FilteredObject.Robot;
 
 import java.util.concurrent.Future;

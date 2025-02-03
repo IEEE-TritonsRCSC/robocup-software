@@ -1,6 +1,6 @@
-package main.java.core.ai.behaviorTree;
+package core.ai.behaviorTree;
 
-import main.java.core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
+import core.ai.behaviorTree.nodes.compositeNodes.CompositeNode;
 
 /**
  * Superclass that defines behavior trees

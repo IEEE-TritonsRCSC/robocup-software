@@ -1,7 +1,7 @@
-package main.java.core.util;
+package core.util;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.constants.Team;
+import core.ai.GameInfo;
+import core.constants.Team;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -32,13 +32,10 @@ simulator_path = dir_path + "/framework/build/bin"
 simulator = "./simulator-cli"
 
 game_controller_path = dir_path + "/game-controller"
-game_controller = "./ssl-game-controller_v3.12.8_linux_arm64"
+game_controller = "./game-controller"
 
-#game_controller_path = dir_path + "/ssl-game-controller/cmd/ssl-game-controller/"
-#game_controller = "main.go"
-
-ssl_vision_client_path = dir_path + "/ssl-vision-client"
-ssl_vision_client = "./ssl-vision-client_v1.8.0_linux_arm64"
+ssl_vision_client_path = dir_path + "/vision-client"
+ssl_vision_client = "./vision-client"
 
 triton_soccer_ai_jar_path = dir_path + "/software/tritonsoccerai/target/"
 triton_soccer_ai_jar = "triton-soccer-ai-1.0-SNAPSHOT-jar-with-dependencies.jar"

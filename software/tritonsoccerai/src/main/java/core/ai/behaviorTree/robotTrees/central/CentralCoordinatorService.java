@@ -1,15 +1,15 @@
-package main.java.core.ai.behaviorTree.robotTrees.central;
+package core.ai.behaviorTree.robotTrees.central;
 
-import main.java.core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.GameState;
+import core.ai.behaviorTree.nodes.serviceNodes.ServiceNode;
+import core.ai.GameInfo;
+import core.ai.GameState;
 import static proto.triton.FilteredObject.Robot;
-import main.java.core.util.Vector2d;
-import main.java.core.ai.behaviorTree.nodes.NodeState;
+import core.util.Vector2d;
+import core.ai.behaviorTree.nodes.NodeState;
 
 import static proto.gc.SslGcRefereeMessage.Referee;
 
-import static main.java.core.util.ProtobufUtils.getPos;
+import static core.util.ProtobufUtils.getPos;
 
 // TODO : Not sure how to send pass details and process them
 public class CentralCoordinatorService extends ServiceNode {

@@ -1,8 +1,8 @@
-package main.java.core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions;
+package core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions;
 
-import main.java.core.ai.behaviorTree.nodes.NodeState;
-import main.java.core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
-import main.java.core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.HaltNode;
+import core.ai.behaviorTree.nodes.NodeState;
+import core.ai.behaviorTree.nodes.compositeNodes.SequenceNode;
+import core.ai.behaviorTree.robotTrees.fielder.specificStateFunctions.HaltNode;
 import static proto.triton.FilteredObject.Robot;
 
 /**

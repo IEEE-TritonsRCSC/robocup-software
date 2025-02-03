@@ -1,7 +1,7 @@
-package main.java.core.module.aiModule;
+package core.module.aiModule;
 
-import main.java.core.ai.behaviorTree.robotTrees.goalkeeper.GoalkeeperTree;
-import main.java.core.module.Module;
+import core.ai.behaviorTree.robotTrees.goalkeeper.GoalkeeperTree;
+import core.module.Module;
 
 import java.io.IOException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;

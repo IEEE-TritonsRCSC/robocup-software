@@ -1,4 +1,4 @@
-package main.java.core.constants;
+package core.constants;
 
 public enum Team {
     BLUE("blue"),

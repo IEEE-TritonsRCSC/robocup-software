@@ -2,19 +2,19 @@ package core;
 
 import java.lang.Thread;
 
-import main.java.core.ai.GameInfo;
-import main.java.core.ai.GameState;
-import main.java.core.config.*;
-import main.java.core.constants.AITest;
-import main.java.core.constants.ProgramConstants;
-import main.java.core.constants.Team;
-import main.java.core.module.Module;
-import main.java.core.module.aiModule.AIModule;
-import main.java.core.module.aiModule.CentralCoordinatorModule;
-import main.java.core.module.aiModule.FielderTreeModule;
-import main.java.core.module.aiModule.GKTreeModule;
-import main.java.core.module.interfaceModule.*;
-import main.java.core.module.processingModule.*;
+import core.ai.GameInfo;
+import core.ai.GameState;
+import core.config.*;
+import core.constants.AITest;
+import core.constants.ProgramConstants;
+import core.constants.Team;
+import core.module.Module;
+import core.module.aiModule.AIModule;
+import core.module.aiModule.CentralCoordinatorModule;
+import core.module.aiModule.FielderTreeModule;
+import core.module.aiModule.GKTreeModule;
+import core.module.interfaceModule.*;
+import core.module.processingModule.*;
 
 import static proto.triton.FilteredObject.*;
 
@@ -26,10 +26,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
-import static main.java.core.config.ConfigPath.*;
-import static main.java.core.config.ConfigReader.readConfig;
+import static core.config.ConfigPath.*;
+import static core.config.ConfigReader.readConfig;
 
-import main.java.core.module.testModule.TestModule;
+import core.module.testModule.TestModule;
 import org.apache.commons.cli.*;
 
 public class AI {
