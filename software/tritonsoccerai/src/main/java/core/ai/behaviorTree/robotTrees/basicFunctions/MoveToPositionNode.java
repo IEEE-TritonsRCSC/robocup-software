@@ -76,7 +76,7 @@ public class MoveToPositionNode extends TaskNode {
         Ball ball = GameInfo.getBall();
         
         Vector2d allyPos = getPos(GameInfo.getAlly(allyID));
-
+        
         // Pathfinding to endLoc
         //Update obstacles for the specific robot in the pathfinding grid 
         pathfindGridGroup.updateObstacles(GameInfo.getWrapper(), this.avoidBall);
@@ -99,40 +99,96 @@ public class MoveToPositionNode extends TaskNode {
             //if dribbling is enabled (while the robot is dribbling)
         if (this.dribbleOn) {
             // Max dribble speed (constant, diff from without dribbling)
+            System.out.println(this.dribbleOn);
             float maxDribbleSpeed = RobotConstants.MAX_DRIBBLE_MOVE_VELOCITY;  
             //Decay rate for deceleration, higher values mean sharper deceleration
-            float decayRate = 3.0f;  
+            //float decayRate = 50.0f;  
+            //float minSpeed = 50.0f;  // Ensure a minimum movement speed
+            //float scaledSpeed = maxDribbleSpeed * (1 - (decayRate/distance)); 
+            
+            float UNIT_SCALE = 0.005f;  // Increased from 0.001 for better distance scaling
+            float decayRate = 2.5f;     // More aggressive deceleration
+            float MIN_SPEED = 10.0f;    // Reduced from 100 to 10 (14% of max speed)
+
+            float effectiveDistance = distance * UNIT_SCALE;
+            float speedMultiplier = 1 / (1 + decayRate * effectiveDistance);
+            float scaledSpeed = maxDribbleSpeed * speedMultiplier;
+
+            // Double-clamp to prevent override
+            scaledSpeed = Math.min(scaledSpeed, maxDribbleSpeed); // Never exceed max
+            scaledSpeed = Math.max(scaledSpeed, MIN_SPEED);    // Maintain minimum
+
+            // Velocity safety check
+            vel = direction.mag() > 0 ? 
+                direction.norm().scale(scaledSpeed) : 
+                new Vector2d(0, 0);
             //applying exponential decay by scaling max dribble speed 
-            float scaledSpeed = maxDribbleSpeed * (float) Math.exp(-decayRate * distance);
+            //float scaledSpeed = maxDribbleSpeed * (float) Math.exp(-decayRate * (distance));
+            System.out.println(scaledSpeed);
             //adjusted velocity vector after normalizing and scaling direction vector 
             vel = direction.norm().scale(scaledSpeed);
+            System.out.println( "velocity" + vel);
         } else { //dribbling not enabled, robot not dribbling
+            System.out.println("DribbleOn:" + this.dribbleOn);
             float maxMoveSpeed = RobotConstants.MAX_MOVE_VELOCITY;  // Max move speed (constant)
-            float decayRate = 2.0f;  // Adjust this based on testing
-            float scaledSpeed = maxMoveSpeed * (float) Math.exp(-decayRate * distance);
+            System.out.println("maxmovespeed:" + maxMoveSpeed);
+            //float decayRate = 0.1f;  // Adjust this based on testing
+            //float scaledSpeed = maxMoveSpeed * (float) Math.exp(-decayRate * distance);
+            // MODIFIED SECTION (non-dribble case)
+            // float UNIT_SCALE = 0.005f;  // Increased from 0.001 for better distance scaling
+            // float decayRate = 2.5f;     // More aggressive deceleration
+            // float MIN_SPEED = 10.0f;    
+
+            // float effectiveDistance = distance * UNIT_SCALE;
+            // float speedMultiplier = 1 / (1 + decayRate * effectiveDistance);
+            float scaledSpeed = 0.5f;
+            //maxMoveSpeed * speedMultiplier;
+
+            // // Double-clamp to prevent override
+            // scaledSpeed = Math.min(scaledSpeed, maxMoveSpeed); // Never exceed max
+            // scaledSpeed = Math.max(scaledSpeed, MIN_SPEED);    // Maintain minimum
+
+            // // Velocity safety check
+            // vel = direction.mag() > 0 ? 
+            //     direction.norm().scale(scaledSpeed) : 
+            //     new Vector2d(0, 0);
+            // System.out.println("Distance" + distance);
+            // //System.out.println("exponent:" + Math.exp(-decayRate * distance));
+            // System.out.println("ball position" + allyPos);
+            // System.out.println("scaled speed:" + scaledSpeed);
             vel = direction.norm().scale(scaledSpeed);
+            System.out.println("velocity" + vel);
         }
 
         float targetOrientation;
         if (this.dribbleOn) {targetOrientation = (float) Math.atan2(next.y - ally.getY(), next.x - ally.getX());}
         else {targetOrientation = (float) Math.atan2(ball.getY() - ally.getY(), ball.getX() - ally.getX());}
 
+        float angular = 3.0f * (Vector2d.angleDifference(GameInfo.getAlly(allyID).getOrientation(), targetOrientation));
+        if (distance <= 50){
+            // Calculate angle difference between current orientation and target orientation
+            float angleDifference = Vector2d.angleDifference(GameInfo.getAlly(allyID).getOrientation(), targetOrientation);
+            
+            // Angular deceleration scaling
+            float angularDecelerationRadius = RobotConstants.ANGULAR_DECELERATION_RADIUS; // Define in constants
+            //ensure that the scaling factor does  not exceed 1 
+            float angularScalingFactor = Math.min(1, distance / angularDecelerationRadius); // Scale angular velocity based on distance
+            float scaledAngularVelocity = angularScalingFactor * angleDifference * RobotConstants.MAX_ANGULAR_VELOCITY;
+            angular = 3.0f * scaledAngularVelocity;
+        }
+        
     
-        // Calculate angle difference between current orientation and target orientation
-        float angleDifference = Vector2d.angleDifference(GameInfo.getAlly(allyID).getOrientation(), targetOrientation);
-
-        // Angular deceleration scaling
-        float angularDecelerationRadius = RobotConstants.ANGULAR_DECELERATION_RADIUS; // Define in constants
-        //ensure that the scaling factor does  not exceed 1 
-        float angularScalingFactor = Math.min(1, distance / angularDecelerationRadius); // Scale angular velocity based on distance
-        float scaledAngularVelocity = angularScalingFactor * angleDifference * RobotConstants.MAX_ANGULAR_VELOCITY;
+        
 
         // Set angular velocity
-        float angular = 3.0f * scaledAngularVelocity;
+        
 
-
+        System.out.println(angular);
         RobotCommand localCommand = generateLocalMoveCommand(vel.x, vel.y, angular, 
                                                             GameInfo.getAlly(allyID).getOrientation(), allyID);
+
+        
+        
         if (this.dribbleOn) {
             localCommand = localCommand.toBuilder().setDribblerSpeed(RobotConstants.DRIBBLE_RPM).build();
         }
