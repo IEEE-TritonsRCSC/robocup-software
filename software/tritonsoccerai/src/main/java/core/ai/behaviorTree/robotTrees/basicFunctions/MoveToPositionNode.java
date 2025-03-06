@@ -28,7 +28,7 @@ import static core.util.ObjectHelper.generateLocalMoveCommand;
 /**
  * MoveToPositionNode is a behavior tree node responsible for moving a robot 
  * to a specified target position on the field.
- * This class handles pathfinding, velocity calculation (with exponential 
+ * This class handles pathfinding, velocity calculation (with smoother 
  * deceleration), and angular deceleration for orientation adjustment. 
  * Commands are published to control the robot's movement and optionally 
  * activate dribbling.
@@ -98,14 +98,11 @@ public class MoveToPositionNode extends TaskNode {
         Vector2d vel;          
         //obtain robot's current speed
         Vector2d current_velocity = core.util.ProtobufUtils.getVel(ally).scale(0.001f);
-        System.out.println("current velocity:" + current_velocity);
         float current_speed = (float) current_velocity.mag();           
 
         //Decelerating smoothly towards the ball
         //if dribbling is enabled (while the robot is dribbling)
         if (this.dribbleOn) {
-            System.out.println("Distance:" + distance);
-            System.out.println("Ball is dribbling =" + this.dribbleOn);
             float maxDribbleSpeed = 2.0f;  
             float speed_target = 0.5f; //speed for first touch to approach ball
             float deceleration_constant = 8.0f; //increase for sharper deceleration
@@ -124,26 +121,18 @@ public class MoveToPositionNode extends TaskNode {
             // Double-clamp to prevent override, velocity constraints 
             scaledSpeed = Math.min(scaledSpeed, maxDribbleSpeed); // Never exceed max
             scaledSpeed = Math.max(scaledSpeed, speed_target * 0.1f);    // never go to near zero values!!
-            System.out.println("scaled speed:" + scaledSpeed);
             
             //adjusted velocity vector after normalizing and scaling direction vector 
             vel = direction.norm().scale(scaledSpeed);
             
         } else { //dribbling not enabled, robot not dribbling
-            //System.out.println("Direction:" + direction.norm());
-            System.out.println("Distance:" + distance);
-            System.out.println("DribbleOn:" + this.dribbleOn);
-            float maxMoveSpeed = 3.0f;  // Max move speed (constant)
-            System.out.println("maxmovespeed:" + maxMoveSpeed);
-            
+            float maxMoveSpeed = 3.0f;  // Max move speed (constant)            
             float speed_target = 1.0f; //speed for first touch to approach ball
             float deceleration_constant = 10.0f; //increase for sharper deceleration
             float min_distance = 0.01f; //to avoid distance going to zero for division
 
             //obtain robot's current speed
-            
             float effectiveDistance = Math.max(distance, min_distance); //avoid dist going to 0
-            System.out.println("Distance" + distance);
 
             //mathematical formula to decelerate smoothly towards the ball
             //as distance gets smaller, sharper deceleration
@@ -155,15 +144,12 @@ public class MoveToPositionNode extends TaskNode {
             // Double-clamp to prevent override, velocity constraints 
             scaledSpeed = Math.min(scaledSpeed, maxMoveSpeed); // Never exceed max
             scaledSpeed = Math.max(scaledSpeed, speed_target * 0.1f);    // never go to near zero values!!
-            System.out.println(scaledSpeed);
            
             //adjusted velocity vector after normalizing and scaling direction vector 
             vel = direction.norm().scale(scaledSpeed);
-            //System.out.println( "velocity" + vel);
             
             
         }
-        System.out.println( "velocity" + vel);
 
         float targetOrientation;
         if (this.dribbleOn) {targetOrientation = (float) Math.atan2(next.y - ally.getY(), next.x - ally.getX());}
@@ -171,7 +157,6 @@ public class MoveToPositionNode extends TaskNode {
 
         float angular = 3.0f * (Vector2d.angleDifference(GameInfo.getAlly(allyID).getOrientation(), targetOrientation));
         //TODO: clarify how the robot rotates with mechanical team!!!!
-        //we only want the robot to be rotating ()
         if (distance <= 50){
             // Calculate angle difference between current orientation and target orientation
             float angleDifference = Vector2d.angleDifference(GameInfo.getAlly(allyID).getOrientation(), targetOrientation);
@@ -184,13 +169,7 @@ public class MoveToPositionNode extends TaskNode {
             angular = 3.0f * scaledAngularVelocity;
         }
         
-    
-        
-
         // Set angular velocity
-        
-
-        System.out.println(angular);
         RobotCommand localCommand = generateLocalMoveCommand(vel.x, vel.y, angular, 
                                                             GameInfo.getAlly(allyID).getOrientation(), allyID);
 
