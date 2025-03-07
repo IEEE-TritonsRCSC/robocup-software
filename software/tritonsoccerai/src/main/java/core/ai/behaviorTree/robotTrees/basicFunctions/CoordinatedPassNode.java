@@ -38,16 +38,16 @@ public class CoordinatedPassNode extends SequenceNode {
 
     public final int passerID;
     private final KickBallNode kickBall;
-    private final RotateInPlaceNode spinBall;
-    private final RotateBotNode RotateBot;
+    //private final RotateInPlaceNode spinBall;
+    //private final RotateBotNode RotateBot;
 
 
     public CoordinatedPassNode(int passerID) {
         super("Coordinated Pass Node: " + passerID);
         this.passerID = passerID;
         this.kickBall = new KickBallNode(passerID);
-        this.spinBall = new RotateInPlaceNode(passerID);
-        this.RotateBot = new RotateBotNode(passerID);
+        //this.spinBall = new RotateInPlaceNode(passerID);
+        //this.RotateBot = new RotateBotNode(passerID);
     }
 
 
