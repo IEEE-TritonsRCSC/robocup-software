@@ -8,7 +8,7 @@ Each team works in sprints (1 or 2 weeks long) and engages in sprint planning an
 
 Product backlogs MUST be created by the Software Lead every year and must be periodically updated throughout the course of the year.
 
-## Roles:
+## Roles
 
 Product Owner: Software Lead
 Scrum Masters: Subteam Leads
